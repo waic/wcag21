@@ -540,7 +540,7 @@ details.respec-tests-details > li {
                 <a href="#timeouts" class="tocxref"><span class="secno">2.2.6 </span>タイムアウト</a>
               </li>
               <li class="tocline">
-                <a href="#animation-from-interactions" class="tocxref"><span class="secno">2.2.7 </span>インタラクションからのアニメーション</a>
+                <a href="#animation-from-interactions" class="tocxref"><span class="secno">2.2.7 </span>インタラクションによるアニメーション</a>
               </li>
             </ol>
           </li>
@@ -846,7 +846,7 @@ details.respec-tests-details > li {
 					<li>1.4.12 <a href="#text-spacing">テキストの間隔</a></li>
 					<li>1.4.13 <a href="#content-on-hover-or-focus">ホバーまたはフォーカスで表示されるコンテンツ</a></li>
 					<li>2.2.6 <a href="#timeouts">タイムアウト</a></li>
-					<li>2.2.7 <a href="#animation-from-interactions">インタラクションからのアニメーション</a></li>
+					<li>2.2.7 <a href="#animation-from-interactions">インタラクションによるアニメーション</a></li>
 					<li>2.4.11 <a href="#character-key-shortcuts">文字キーのショートカット</a></li>
 					<li>2.4.12 <a href="#label-in-name">名前 (name) のラベル</a></li>
 					<li>2.5.1 <a href="#pointer-gestures">ポインタのジェスチャ</a></li>
@@ -1717,13 +1717,13 @@ details.respec-tests-details > li {
 
                 <section class="sc new" id="animation-from-interactions" typeof="bibo:Chapter" resource="#animation-from-interactions" property="bibo:hasPart">
    					
-   <h4 id="x2-2-7-animation-from-interactions" resource="#x2-2-7-animation-from-interactions"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.2.7 </span>インタラクションからのアニメーション<span class="permalink" typeof="bookmark"><a href="#animation-from-interactions" aria-label="Permalink for 2.2.7 Animation from Interactions" title="Permalink for 2.2.7 Animation from Interactions" property="url"><span property="title" content="2.2.7 Animation from Interactions">§</span></a></span></span></h4>
+   <h4 id="x2-2-7-animation-from-interactions" resource="#x2-2-7-animation-from-interactions"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.2.7 </span>インタラクションによるアニメーション<span class="permalink" typeof="bookmark"><a href="#animation-from-interactions" aria-label="Permalink for 2.2.7 Animation from Interactions" title="Permalink for 2.2.7 Animation from Interactions" property="url"><span property="title" content="2.2.7 Animation from Interactions">§</span></a></span></span></h4>
    					
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#animation-from-interactions">How to Meet Animation from Interactions</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html">Understanding Animation from Interactions</a></div><p class="conformance-level">(レベル AAA)</p>
    					
    
 
-  <p><a href="#dfn-motion-animation" class="internalDFN" data-link-type="dfn">Motion animation</a> triggered by interaction can be disabled, unless the animation is <a href="#dfn-essential" class="internalDFN" data-link-type="dfn">essential</a> to the functionality or the information being conveyed.</p>
+  <p>アニメーションが、機能や伝達される情報に<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>でない限り、インタラクションによる<a href="#dfn-motion-animation" class="internalDFN" data-link-type="dfn">モーションアニメーション</a>は無効化できる。</p>
    				
 	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>編集者注</span></div><p class="">This success criterion is <a href="#at-risk">at risk</a>.</p></div>
 </section>
@@ -3258,13 +3258,13 @@ details.respec-tests-details > li {
 </dd>
 
 
-                <dt class="new"><dfn data-dfn-type="dfn" id="dfn-motion-animation">motion animation</dfn></dt>
+                <dt class="new"><dfn data-dfn-type="dfn" id="dfn-motion-animation">モーションアニメーション</dfn></dt>
 <dd class="new">
    					
    
    					
-   <p>addition of steps between conditions to create the illusion of movement or to give a sense of a smooth transition</p>
-	<p class="example">For example, an element which moves into place or changes size while appearing is considered to be animated. An element which appears instantly without transitioning is not using animation. Motion animation does not include changes of color, blurring or opacity.</p>
+    <p>動いているような錯覚やスムーズに移動しているように感じさせるために作る、状態と状態の間にステップを加えること。</p>
+    <p class="example">たとえば、別の場所に移動したりサイズが変わる要素はアニメーションしていると考えられます。モーションアニメーションには、色、ぼかしまたは不透明度の変更は含まれません。</p>
 
 	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="3"><span>編集者注</span></div><p class="">This term is <a href="#at-risk">at risk</a>.</p></div>
 </dd>
