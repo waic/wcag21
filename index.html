@@ -3229,15 +3229,15 @@ details.respec-tests-details > li {
    
 </dd>
 
-                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイルプロパティ (style properties)</dfn></dt>
+                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイル属性 (style properties)</dfn></dt>
   <dd class="new">
   
-  <p>ユーザーエージェントがコンテンツ要素を提示する際 (画面、音声スピーカー、点字ディスプレイなど) の提示方法 (フォント、カラー、サイズ、位置、パディング、音量、合成音声の音調など) を値によって指定するプロパティ。</p><p>
- 	</p><p>スタイルプロパティには、いくつかのパターンが考えられる。</p>
+  <p>ユーザエージェントがコンテンツ要素をレンダリングする際の (画面、音声スピーカー、点字ディスプレイなどを介する) 提示方法を値によって指定する属性。 (フォント、カラー、サイズ、位置、パディング、音量、合成音声の韻律など) </p><p>
+ 	</p><p>スタイル属性には、起源がいくつか考えられる。</p>
     <ul>
-      <li>ユーザーエージェントのデフォルトのスタイル: コンテンツ制作者やユーザがスタイルを指定しない場合は、ユーザーエージェントのデフォルトのスタイルプロパティが使用される。ウェブコンテンツ技術のなかには、デフォルトの提示方法を指定している技術とそうでない技術がある。</li>
-      <li>コンテンツ制作者のスタイル: コンテンツ制作者がコンテンツの一部として設定するスタイルプロパティ (インラインスタイル、コンテンツ制作者のスタイルシートなど)。</li>
-      <li>ユーザーのスタイル: ユーザーが設定するスタイルプロパティ (ユーザーエージェントのインタフェース設定やユーザーのスタイルシートなど)。</li>
+      <li>ユーザエージェントのデフォルトのスタイル: コンテンツ制作者やユーザがスタイルを指定しない場合は、ユーザエージェントのデフォルトのスタイル属性が使用される。ウェブコンテンツ技術には、デフォルトの提示方法を指定しているものとしていないものがある。</li>
+      <li>コンテンツ制作者のスタイル: コンテンツ制作者がコンテンツの一部として設定するスタイル属性 (インラインスタイル、コンテンツ制作者のスタイルシートなど)。</li>
+      <li>ユーザーのスタイル: ユーザーが設定するスタイル属性 (ユーザエージェントのインタフェース設定やユーザーのスタイルシートなど)。</li>
     </ul>
  	
 </dd>
@@ -3274,8 +3274,8 @@ details.respec-tests-details > li {
    					
    
    					
-     <p>region of the display that will accept a pointer action, such as the interactive area of a user interface component</p> 
-    <p>If two or more touch targets are overlapping, the overlapping area should not be included in the measurement of the target size, except when the overlapping targets perform the same action or open the same page.</p>
+     <p>ユーザインタフェース コンポーネントのインタラクティブな領域のような、ポインタアクションを受け入れるディスプレイの領域</p> 
+    <p>2つ以上のタッチターゲットが重なっている場合、重なっているターゲットが同じアクションを実行するか、同じページを開く場合を除いて、重なっているエリアを含めてターゲットのサイズを測定するべきでない。</p>
    <p></p>
   
 </dd>
@@ -3324,7 +3324,7 @@ details.respec-tests-details > li {
                 <dt class="new"><dfn data-dfn-type="dfn" id="dfn-up-event">アップイベント (up-event)</dfn></dt>
 <dd class="new">
   
-  <p>ポインタのトリガがリリースされた時に生じるプラットフォームのイベント。</p>
+  <p>ポインタのトリガ刺激が解除されたときに生じるプラットフォームイベント。</p>
 	<p>アップイベントは、プラットフォームによっては「タッチエンド」や「マウスアップ」などの異なる名称で呼ばれている場合がある。</p>
 </dd>
 
@@ -3378,7 +3378,7 @@ details.respec-tests-details > li {
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-134" aria-level="3"><span>注記</span></div><p class="">What is meant by "component" or "user interface component" here is also sometimes
       called "user interface element".
-   
+   ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれます。
    </p></div>
    
    <p class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。
