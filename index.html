@@ -1465,21 +1465,17 @@ details.respec-tests-details > li {
             </section>
 
             <section class="guideline new" id="pointer-accessible" typeof="bibo:Chapter" resource="#pointer-accessible" property="bibo:hasPart">
-                <h3 id="x2-5-pointer-accessible" resource="#x2-5-pointer-accessible"><span property="xhv:role" resource="xhv:heading"><span class="secno">Guideline 2.5 </span>Pointer Accessible<span class="permalink" typeof="bookmark"><a href="#pointer-accessible" aria-label="Permalink for 2.5 Pointer Accessible" title="Permalink for 2.5 Pointer Accessible" property="url"><span property="title" content="2.5 Pointer Accessible">§</span></a></span></span></h3>
+                <h3 id="x2-5-pointer-accessible" resource="#x2-5-pointer-accessible"><span property="xhv:role" resource="xhv:heading"><span class="secno">ガイドライン 2.5 </span>ポインタ<span class="permalink" typeof="bookmark"><a href="#pointer-accessible" aria-label="Permalink for 2.5 Pointer Accessible" title="Permalink for 2.5 Pointer Accessible" property="url"><span property="title" content="2.5 Pointer Accessible">§</span></a></span></span></h3>
                 
-                <p>Make it easier for users to operate pointer functionality.</p>
+                <p>ポインタ機能を、利用者にとって操作しやすくすること。</p>
 
                 <section class="sc new" id="pointer-gestures" typeof="bibo:Chapter" resource="#pointer-gestures" property="bibo:hasPart">
    					
    <h4 id="x2-5-1-pointer-gestures" resource="#x2-5-1-pointer-gestures"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.5.1 </span>ポインタのジェスチャ<span class="permalink" typeof="bookmark"><a href="#pointer-gestures" aria-label="Permalink for 2.5.1 Pointer Gestures" title="Permalink for 2.5.1 Pointer Gestures" property="url"><span property="title" content="2.5.1 Pointer Gestures">§</span></a></span></span></h4>
    					
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#pointer-gestures">How to Meet Pointer Gestures</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures.html">Understanding Pointer Gestures</a></div><p class="conformance-level">(レベル A)</p>
-   					
-   
-   					
-   <p>マルチポイントまたは軌跡をベースとしたジェスチャを使って操作する<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>はすべて、path-basedジェスチャーなしの<a href="#dfn-single-pointer" class="internalDFN" data-link-type="dfn">シングルポインタ</a>で操作することができる。ただし、マルチポイント又は軌跡をベースとしたジェスチャが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である場合は例外とする。</p>
-   					
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-22" aria-level="5"><span>注記</span></div><p class="">この要件は、ポインタのジェスチャを解釈するウェブコンテンツを対象としている (ユーザーエージェントや支援技術の操作に必要なジェスチャは対象としていない)。</p></div>
+<p>マルチポイントまたは軌跡ベースのジェスチャを使って操作する<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>はすべて、軌跡ベースのジェスチャーなしの<a href="#dfn-single-pointer" class="internalDFN" data-link-type="dfn">シングルポインタ</a>で操作することができる。ただし、マルチポイント又は軌跡ベースのジェスチャが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である場合は例外とする。</p>
+<div class="note"><div role="heading" class="note-title marker" id="h-note-22" aria-level="5"><span>注記</span></div><p class="">この要件は、ポインタのジェスチャを解釈するウェブコンテンツを対象としている (ユーザーエージェントや支援技術の操作に必要なジェスチャは対象としていない)。</p></div>
 	
 </section>
 
@@ -1500,10 +1496,10 @@ details.respec-tests-details > li {
      <dd>機能を実行する目的でポインタの<a href="#dfn-down-event" class="internalDFN" data-link-type="dfn">ダウンイベント</a>を使用していない。</dd>
       						
    <dt>中止または元に戻すことができる</dt>
-     <dd>機能を完了させる目的には<a href="#dfn-up-event" class="internalDFN" data-link-type="dfn">アップイベント</a>を使用し、かつ機能の完了前にを中止する、又はか機能の完了後に元に戻すための<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が存在する。</dd>
+     <dd>機能を完了させる目的には<a href="#dfn-up-event" class="internalDFN" data-link-type="dfn">アップイベント</a>を使用し、かつ機能の完了前にを中止する、又は機能の完了後に元に戻すための<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が利用できる。</dd>
       						
    <dt>アップイベントで戻すことができる</dt>
-     <dd>アップイベントを使うことで、先行したダウンイベントの結果を元に戻すことができる。</dd>
+     <dd>アップイベントによって、先行したダウンイベントの結果を元に戻すことができる。</dd>
       						
    <dt>必要不可欠</dt>
      <dd>ダウンイベントによって機能を完了させることが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である。</dd>
@@ -1528,7 +1524,7 @@ details.respec-tests-details > li {
 	<dt>インラインである</dt> 
   <dd>そのターゲットが文章またはテキストブロック内に存在する。</dd>
 	<dt>ユーザーエージェントのコントロールである</dt> 
-  <dd>ターゲットのサイズがユーザーエージェントによって制御されていて、かつコンテンツ制作者が変更していない。</dd>
+  <dd>ターゲットのサイズがユーザーエージェントによって定められており、かつコンテンツ制作者が変更していない。</dd>
 	<dt>必要不可欠</dt> 
   <dd>そのターゲットを特定の方法で提示することが、情報伝達にとって<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である。</dd>
 </dl>  
@@ -1540,7 +1536,7 @@ details.respec-tests-details > li {
    <h4 id="x2-5-4-concurrent-input-mechanisms" resource="#x2-5-4-concurrent-input-mechanisms"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.5.4 </span>入力メカニズム非依存<span class="permalink" typeof="bookmark"><a href="#concurrent-input-mechanisms" aria-label="Permalink for 2.5.4 Concurrent Input Mechanisms" title="Permalink for 2.5.4 Concurrent Input Mechanisms" property="url"><span property="title" content="2.5.4 Concurrent Input Mechanisms">§</span></a></span></span></h4>
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#concurrent-input-mechanisms">How to Meet Concurrent Input Mechanisms</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/concurrent-input-mechanisms.html">Understanding Concurrent Input Mechanisms</a></div><p class="conformance-level">(レベル AAA)</p>
   
-  <p>プラットフォームで提供されている入力モダリティの使用を、ウェブコンテンツが制限しない。ただし、その制限が<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合、コンテンツのセキュリティのために必要な場合、又は個別のユーザ設定に必要な場合は例外とする。</p>   					
+  <p>プラットフォームで提供されている入力モダリティの使用を、ウェブコンテンツが制限しない。ただし、その制限が<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合、コンテンツのセキュリティのために必要な場合、又はユーザ設定を尊重するうえで必要な場合は例外とする。</p>   					
 </section>
 
 
@@ -1594,7 +1590,7 @@ details.respec-tests-details > li {
 
         </section>
         <section class="principle" id="understandable" typeof="bibo:Chapter" resource="#understandable" property="bibo:hasPart">
-            <h2 id="x3-understandable" resource="#x3-understandable"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span> 理解可能 <span class="permalink" typeof="bookmark"><a href="#understandable" aria-label="Permalink for 3.  Understandable " title="Permalink for 3.  理解可能 " property="url"><span property="title" content="3.  Understandable ">§</span></a></span></span></h2>
+        <h2 id="x3-understandable" resource="#x3-understandable"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span> 理解可能 <span class="permalink" typeof="bookmark"><a href="#understandable" aria-label="Permalink for 3.  Understandable " title="Permalink for 3.  理解可能 " property="url"><span property="title" content="3.  Understandable ">§</span></a></span></span></h2>
             <p>情報及びユーザインタフェースの操作は理解可能でなければならない。</p>
 
             <section class="guideline" id="readable" typeof="bibo:Chapter" resource="#readable" property="bibo:hasPart">
