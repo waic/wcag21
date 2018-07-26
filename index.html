@@ -356,39 +356,500 @@ details.respec-tests-details > li {
           </p>
         
 
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">目次</span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">概要</a></li><li class="tocline"><a href="#sotd" class="tocxref">この文書のステータス</a></li><li class="tocline"><a href="#intro" class="tocxref">イントロダクション</a><ol class="toc"><li class="tocline"><a href="#background-on-wcag-2" class="tocxref"><span class="secno">0.1 </span>Background on WCAG 2</a></li><li class="tocline"><a href="#new-features-in-wcag-2-1" class="tocxref"><span class="secno">0.2 </span>New Features in WCAG 2.1</a></li><li class="tocline"><a href="#numbering-in-wcag-2-1" class="tocxref"><span class="secno">0.3 </span>Numbering in WCAG 2.1</a></li><li class="tocline"><a href="#conformance-to-wcag-2-1" class="tocxref"><span class="secno">0.4 </span>Conformance to WCAG 2.1</a></li><li class="tocline"><a href="#features-at-risk-in-the-wcag-2-1-candidate-recommendation" class="tocxref"><span class="secno">0.5 </span>Features at Risk in the WCAG 2.1 Candidate Recommendation</a></li><li class="tocline"><a href="#later-versions-of-accessibility-guidelines" class="tocxref"><span class="secno">0.6 </span>Later versions of Accessibility Guidelines</a></li></ol></li><li class="tocline"><a href="#perceivable" class="tocxref"><span class="secno">1. </span> 知覚可能 </a><ol class="toc"><li class="tocline"><a href="#text-alternatives" class="tocxref"><span class="secno">1.1 </span>テキストによる代替</a><ol class="toc"><li class="tocline"><a href="#non-text-content" class="tocxref"><span class="secno">1.1.1 </span>非テキストコンテンツ</a></li></ol></li><li class="tocline"><a href="#time-based-media" class="tocxref"><span class="secno">1.2 </span>時間依存メディア</a><ol class="toc"><li class="tocline"><a href="#audio-only-and-video-only-prerecorded" class="tocxref"><span class="secno">1.2.1 </span>音声のみ及び映像のみ (収録済)</a></li><li class="tocline"><a href="#captions-prerecorded" class="tocxref"><span class="secno">1.2.2 </span>キャプション (収録済)</a></li><li class="tocline"><a href="#audio-description-or-media-alternative-prerecorded" class="tocxref"><span class="secno">1.2.3 </span>音声解説、又はメディアに対する代替 (収録済)</a></li><li class="tocline"><a href="#captions-live" class="tocxref"><span class="secno">1.2.4 </span>キャプション (ライブ)</a></li><li class="tocline"><a href="#audio-description-prerecorded" class="tocxref"><span class="secno">1.2.5 </span>音声解説 (収録済)</a></li><li class="tocline"><a href="#sign-language-prerecorded" class="tocxref"><span class="secno">1.2.6 </span>手話 (収録済)</a></li><li class="tocline"><a href="#extended-audio-description-prerecorded" class="tocxref"><span class="secno">1.2.7 </span>拡張音声解説 (収録済)</a></li><li class="tocline"><a href="#media-alternative-prerecorded" class="tocxref"><span class="secno">1.2.8 </span>メディアに対する代替 (収録済)</a></li><li class="tocline"><a href="#audio-only-live" class="tocxref"><span class="secno">1.2.9 </span>音声のみ (ライブ)</a></li></ol></li><li class="tocline"><a href="#adaptable" class="tocxref"><span class="secno">1.3 </span>適応可能</a><ol class="toc"><li class="tocline"><a href="#info-and-relationships" class="tocxref"><span class="secno">1.3.1 </span>情報及び関係性</a></li><li class="tocline"><a href="#meaningful-sequence" class="tocxref"><span class="secno">1.3.2 </span>意味のある順序</a></li><li class="tocline"><a href="#sensory-characteristics" class="tocxref"><span class="secno">1.3.3 </span>感覚的な特徴</a></li><li class="tocline"><a href="#identify-common-purpose" class="tocxref"><span class="secno">1.3.4 </span>共通した（or 一般的な）目的の特定</a></li><li class="tocline"><a href="#contextual-information" class="tocxref"><span class="secno">1.3.5 </span>コンテキスト情報</a></li></ol></li><li class="tocline"><a href="#distinguishable" class="tocxref"><span class="secno">1.4 </span>判別可能</a><ol class="toc"><li class="tocline"><a href="#use-of-color" class="tocxref"><span class="secno">1.4.1 </span>色の使用</a></li><li class="tocline"><a href="#audio-control" class="tocxref"><span class="secno">1.4.2 </span>音声制御</a></li><li class="tocline"><a href="#contrast-minimum" class="tocxref"><span class="secno">1.4.3 </span>コントラスト (最低限)</a></li><li class="tocline"><a href="#resize-text" class="tocxref"><span class="secno">1.4.4 </span>テキストのサイズ変更</a></li><li class="tocline"><a href="#images-of-text" class="tocxref"><span class="secno">1.4.5 </span>文字画像</a></li><li class="tocline"><a href="#contrast-enhanced" class="tocxref"><span class="secno">1.4.6 </span>コントラスト (高度)</a></li><li class="tocline"><a href="#low-or-no-background-audio" class="tocxref"><span class="secno">1.4.7 </span>小さな背景音、又は背景音なし</a></li><li class="tocline"><a href="#visual-presentation" class="tocxref"><span class="secno">1.4.8 </span>視覚的提示</a></li><li class="tocline"><a href="#images-of-text-no-exception" class="tocxref"><span class="secno">1.4.9 </span>文字画像 (例外なし)</a></li><li class="tocline"><a href="#reflow" class="tocxref"><span class="secno">1.4.10 </span>リフロー</a></li><li class="tocline"><a href="#non-text-contrast" class="tocxref"><span class="secno">1.4.11 </span>Non-text Contrast</a></li><li class="tocline"><a href="#text-spacing" class="tocxref"><span class="secno">1.4.12 </span>テキストの間隔</a></li><li class="tocline"><a href="#content-on-hover-or-focus" class="tocxref"><span class="secno">1.4.13 </span>ホバーまたはフォーカスで表示されるコンテンツ</a></li></ol></li></ol></li><li class="tocline"><a href="#operable" class="tocxref"><span class="secno">2. </span> 操作可能 </a><ol class="toc"><li class="tocline"><a href="#keyboard-accessible" class="tocxref"><span class="secno">2.1 </span>キーボード操作可能</a><ol class="toc"><li class="tocline"><a href="#keyboard" class="tocxref"><span class="secno">2.1.1 </span>キーボード</a></li><li class="tocline"><a href="#no-keyboard-trap" class="tocxref"><span class="secno">2.1.2 </span>フォーカス移動</a></li><li class="tocline"><a href="#keyboard-no-exception" class="tocxref"><span class="secno">2.1.3 </span>キーボード (例外なし)</a></li></ol></li><li class="tocline"><a href="#enough-time" class="tocxref"><span class="secno">2.2 </span>十分な時間</a><ol class="toc"><li class="tocline"><a href="#timing-adjustable" class="tocxref"><span class="secno">2.2.1 </span>タイミング調整可能</a></li><li class="tocline"><a href="#pause-stop-hide" class="tocxref"><span class="secno">2.2.2 </span>一時停止、停止、非表示</a></li><li class="tocline"><a href="#no-timing" class="tocxref"><span class="secno">2.2.3 </span>タイミング非依存</a></li><li class="tocline"><a href="#interruptions" class="tocxref"><span class="secno">2.2.4 </span>割り込み</a></li><li class="tocline"><a href="#re-authenticating" class="tocxref"><span class="secno">2.2.5 </span>再認証</a></li><li class="tocline"><a href="#timeouts" class="tocxref"><span class="secno">2.2.6 </span>タイムアウト</a></li><li class="tocline"><a href="#animation-from-interactions" class="tocxref"><span class="secno">2.2.7 </span>インタラクションからのアニメーション</a></li></ol></li><li class="tocline"><a href="#seizures" class="tocxref"><span class="secno">2.3 </span>発作の防止</a><ol class="toc"><li class="tocline"><a href="#three-flashes-or-below-threshold" class="tocxref"><span class="secno">2.3.1 </span>3回の閃光、又は閾値以下</a></li><li class="tocline"><a href="#three-flashes" class="tocxref"><span class="secno">2.3.2 </span>3回の閃光</a></li></ol></li><li class="tocline"><a href="#navigable" class="tocxref"><span class="secno">2.4 </span>ナビゲーション可能</a><ol class="toc"><li class="tocline"><a href="#bypass-blocks" class="tocxref"><span class="secno">2.4.1 </span>ブロックスキップ</a></li><li class="tocline"><a href="#page-titled" class="tocxref"><span class="secno">2.4.2 </span>ページタイトル</a></li><li class="tocline"><a href="#focus-order" class="tocxref"><span class="secno">2.4.3 </span>フォーカス順序</a></li><li class="tocline"><a href="#link-purpose-in-context" class="tocxref"><span class="secno">2.4.4 </span>リンクの目的 (コンテキスト内)</a></li><li class="tocline"><a href="#multiple-ways" class="tocxref"><span class="secno">2.4.5 </span>複数の手段</a></li><li class="tocline"><a href="#headings-and-labels" class="tocxref"><span class="secno">2.4.6 </span>見出し及びラベル</a></li><li class="tocline"><a href="#focus-visible" class="tocxref"><span class="secno">2.4.7 </span>フォーカスの可視化</a></li><li class="tocline"><a href="#location" class="tocxref"><span class="secno">2.4.8 </span>現在位置</a></li><li class="tocline"><a href="#link-purpose-link-only" class="tocxref"><span class="secno">2.4.9 </span>リンクの目的 (リンクのみ)</a></li><li class="tocline"><a href="#section-headings" class="tocxref"><span class="secno">2.4.10 </span>セクション見出し</a></li><li class="tocline"><a href="#character-key-shortcuts" class="tocxref"><span class="secno">2.4.11 </span>文字キーのショートカット</a></li><li class="tocline"><a href="#label-in-name" class="tocxref"><span class="secno">2.4.12 </span>名前 (name) のラベル</a></li></ol></li><li class="tocline"><a href="#pointer-accessible" class="tocxref"><span class="secno">2.5 </span>Pointer Accessible</a><ol class="toc"><li class="tocline"><a href="#pointer-gestures" class="tocxref"><span class="secno">2.5.1 </span>ポインタのジェスチャ</a></li><li class="tocline"><a href="#pointer-cancellation" class="tocxref"><span class="secno">2.5.2 </span>ポインタのキャンセル</a></li><li class="tocline"><a href="#target-size" class="tocxref"><span class="secno">2.5.3 </span>ターゲットのサイズ</a></li><li class="tocline"><a href="#concurrent-input-mechanisms" class="tocxref"><span class="secno">2.5.4 </span>入力メカニズム非依存</a></li></ol></li><li class="tocline"><a href="#additional-sensor-inputs" class="tocxref"><span class="secno">2.6 </span>Additional sensor inputs</a><ol class="toc"><li class="tocline"><a href="#motion-actuation" class="tocxref"><span class="secno">2.6.1 </span>動作による起動</a></li><li class="tocline"><a href="#identify-common-purpose" class="tocxref"><span class="secno">2.6.2 </span>表示の向き</a></li></ol></li></ol></li><li class="tocline"><a href="#understandable" class="tocxref"><span class="secno">3. </span> 理解可能 </a><ol class="toc"><li class="tocline"><a href="#readable" class="tocxref"><span class="secno">3.1 </span>読みやすさ</a><ol class="toc"><li class="tocline"><a href="#language-of-page" class="tocxref"><span class="secno">3.1.1 </span>ページの言語</a></li><li class="tocline"><a href="#language-of-parts" class="tocxref"><span class="secno">3.1.2 </span>一部分の言語</a></li><li class="tocline"><a href="#unusual-words" class="tocxref"><span class="secno">3.1.3 </span>一般的ではない用語</a></li><li class="tocline"><a href="#abbreviations" class="tocxref"><span class="secno">3.1.4 </span>略語</a></li><li class="tocline"><a href="#reading-level" class="tocxref"><span class="secno">3.1.5 </span>読解レベル</a></li><li class="tocline"><a href="#pronunciation" class="tocxref"><span class="secno">3.1.6 </span>発音</a></li></ol></li><li class="tocline"><a href="#predictable" class="tocxref"><span class="secno">3.2 </span>予測可能</a><ol class="toc"><li class="tocline"><a href="#on-focus" class="tocxref"><span class="secno">3.2.1 </span>フォーカス時</a></li><li class="tocline"><a href="#on-input" class="tocxref"><span class="secno">3.2.2 </span>入力時</a></li><li class="tocline"><a href="#consistent-navigation" class="tocxref"><span class="secno">3.2.3 </span>一貫したナビゲーション</a></li><li class="tocline"><a href="#consistent-identification" class="tocxref"><span class="secno">3.2.4 </span>一貫した識別性</a></li><li class="tocline"><a href="#change-on-request" class="tocxref"><span class="secno">3.2.5 </span>要求による変化</a></li><li class="tocline"><a href="#status-changes" class="tocxref"><span class="secno">3.2.6 </span>ステータス変更</a></li></ol></li><li class="tocline"><a href="#input-assistance" class="tocxref"><span class="secno">3.3 </span>入力支援</a><ol class="toc"><li class="tocline"><a href="#error-identification" class="tocxref"><span class="secno">3.3.1 </span>エラーの特定</a></li><li class="tocline"><a href="#labels-or-instructions" class="tocxref"><span class="secno">3.3.2 </span>ラベル又は説明</a></li><li class="tocline"><a href="#error-suggestion" class="tocxref"><span class="secno">3.3.3 </span>エラー修正の提案</a></li><li class="tocline"><a href="#error-prevention-legal-financial-data" class="tocxref"><span class="secno">3.3.4 </span>エラー回避 (法的、金融、データ)</a></li><li class="tocline"><a href="#help" class="tocxref"><span class="secno">3.3.5 </span>ヘルプ</a></li><li class="tocline"><a href="#error-prevention-all" class="tocxref"><span class="secno">3.3.6 </span>エラー回避 (すべて)</a></li></ol></li></ol></li><li class="tocline"><a href="#robust" class="tocxref"><span class="secno">4. </span> 堅牢 (robust) </a><ol class="toc"><li class="tocline"><a href="#compatible" class="tocxref"><span class="secno">4.1 </span>互換性</a><ol class="toc"><li class="tocline"><a href="#parsing" class="tocxref"><span class="secno">4.1.1 </span>構文解析</a></li><li class="tocline"><a href="#name-role-value" class="tocxref"><span class="secno">4.1.2 </span>名前 (name) ・役割 (role) 及び値 (value)</a></li></ol></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">5. </span>適合</a><ol class="toc"><li class="tocline"><a href="#interpreting-normative-requirements" class="tocxref"><span class="secno">5.1 </span>Interpreting Normative Requirements</a></li><li class="tocline"><a href="#conformance-reqs" class="tocxref"><span class="secno">5.2 </span>適合要件</a><ol class="toc"><li class="tocline"><a href="#cc1" class="tocxref"><span class="secno">5.2.1 </span>適合レベル</a></li><li class="tocline"><a href="#cc2" class="tocxref"><span class="secno">5.2.2 </span>ウェブページ全体</a></li><li class="tocline"><a href="#cc3" class="tocxref"><span class="secno">5.2.3 </span>プロセス全体</a></li><li class="tocline"><a href="#cc4" class="tocxref"><span class="secno">5.2.4 </span>技術のアクセシビリティ サポーテッドな使用方法だけ</a></li><li class="tocline"><a href="#cc5" class="tocxref"><span class="secno">5.2.5 </span>非干渉</a></li></ol></li><li class="tocline"><a href="#conformance-claims" class="tocxref"><span class="secno">5.3 </span>適合表明 (任意) </a><ol class="toc"><li class="tocline"><a href="#conformance-required" class="tocxref"><span class="secno">5.3.1 </span>適合表明の必須要素</a></li><li class="tocline"><a href="#conformance-optional" class="tocxref"><span class="secno">5.3.2 </span>適合表明の任意要素 </a></li></ol></li><li class="tocline"><a href="#conformance-partial" class="tocxref"><span class="secno">5.4 </span>部分適合に関する記述 － 第三者によるコンテンツ</a></li><li class="tocline"><a href="#conformance-partial-lang" class="tocxref"><span class="secno">5.5 </span>部分適合に関する記述 － 言語</a></li></ol></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">6. </span>用語集</a></li><li class="tocline"><a href="#exit-criteria" class="tocxref"><span class="secno">A. </span>Candidate Recommendation Exit Criteria  </a></li><li class="tocline"><a href="#at-risk" class="tocxref"><span class="secno">B. </span>Items at Risk  </a></li><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">C. </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">C.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">C.2 </span>Other substantive changes since the <span class="formerLink">first public working draft</span></a></li></ol></li><li class="tocline"><a href="#acknowledgments" class="tocxref"><span class="secno">D. </span>謝辞</a><ol class="toc"><li class="tocline"><a href="#ack_participants-active" class="tocxref"><span class="secno">D.1 </span>Participants of the WCAG WG active in the development of this document:</a></li><li class="tocline"><a href="#ack_participants-previous" class="tocxref"><span class="secno">D.2 </span>Other previously active WCAG WG participants and other contributors to WCAG 2.0, WCAG 2.1, or supporting resources  </a></li><li class="tocline"><a href="#enabling-funders" class="tocxref"><span class="secno">D.3 </span>Enabling funders</a></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">E. </span> 参考文献</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">E.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">E.2 </span>Informative references</a></li></ol></li></ol><!--OddPage--></nav>
-        <section class="informative introductory" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
-			<h2 id="introduction" resource="#introduction"><span property="xhv:role" resource="xhv:heading">イントロダクション</span></h2><p><em>This section is non-normative.</em></p>
-			<section id="background-on-wcag-2" typeof="bibo:Chapter" resource="#background-on-wcag-2" property="bibo:hasPart">
-				<h3 id="x0-1-background-on-wcag-2" resource="#x0-1-background-on-wcag-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.1 </span>Background on WCAG 2<span class="permalink" typeof="bookmark"><a href="#background-on-wcag-2" aria-label="Permalink for 0.1 Background on WCAG 2" title="Permalink for 0.1 Background on WCAG 2" property="url"><span property="title" content="0.1 Background on WCAG 2">§</span></a></span></span></h3>
-				<p>Web Content Accessibility Guidelines (WCAG) 2.1 は、ウェブコンテンツを障害者にとってよりアクセシブルにする方法を定義している。アクセシビリティは、視覚、聴覚、身体、発話、認知、言語、学習、神経の障害を含む、広範な障害に関係している。このガイドラインは、広範囲に及ぶ事項を網羅しているが、障害のすべての種類、程度、組合せからくるニーズを満たすことはできない。また、このガイドラインは、加齢により能力が変化している高齢者にとってもウェブコンテンツをより使いやすくするものであるとともに、しばしば利用者全般のユーザビリティを向上させる。</p>
-				<p>WCAG 2.1 は、ウェブコンテンツのアクセシビリティに対して、様々な国の個人、組織、政府のニーズを満たすような共通の基準を提供することを目的として、<a href="https://www.w3.org/WAI/intro/w3c-process"><abbr title="World Wide Web Consortium">W3C</abbr> process</a>に従って世界中の個人及び組織の協力のもと作成されている。WCAG 2.1 builds on WCAG 2.0 [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>], which in turn built on WCAG 1.0 [<cite><a class="bibref" href="#bib-WAI-WEBCONTENT">WAI-WEBCONTENT</a></cite>] and is designed to apply broadly to different Web technologies now and in the future, and to be testable with a combination of automated testing and human evaluation. WCAG のイントロダクションとしては、<a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines (WCAG) Overview</a> を参照。</p>
+
+</section>
+
+<nav id="toc">
+    <h2 class="introductory" id="table-of-contents" resource="#table-of-contents">
+      <span property="xhv:role" resource="xhv:heading">目次</span>
+    </h2>
+    <ol class="toc">
+      <li class="tocline">
+        <a href="#abstract" class="tocxref">概要</a>
+      </li>
+      <li class="tocline">
+        <a href="#sotd" class="tocxref">この文書のステータス</a>
+      </li>
+      <li class="tocline">
+        <a href="#intro" class="tocxref">イントロダクション</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#background-on-wcag-2" class="tocxref"><span class="secno">0.1 </span>Background on WCAG 2</a>
+          </li>
+          <li class="tocline">
+            <a href="#new-features-in-wcag-2-1" class="tocxref"><span class="secno">0.2 </span>New Features in WCAG 2.1</a>
+          </li>
+          <li class="tocline">
+            <a href="#numbering-in-wcag-2-1" class="tocxref"><span class="secno">0.3 </span>Numbering in WCAG 2.1</a>
+          </li>
+          <li class="tocline">
+            <a href="#conformance-to-wcag-2-1" class="tocxref"><span class="secno">0.4 </span>Conformance to WCAG 2.1</a>
+          </li>
+          <li class="tocline">
+            <a href="#features-at-risk-in-the-wcag-2-1-candidate-recommendation" class="tocxref"><span class="secno">0.5 </span>Features at Risk in the WCAG 2.1 Candidate Recommendation</a>
+          </li>
+          <li class="tocline">
+            <a href="#later-versions-of-accessibility-guidelines" class="tocxref"><span class="secno">0.6 </span>アクセシビリティガイドラインの後続バージョン</a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#perceivable" class="tocxref"><span class="secno">1. </span> 知覚可能 </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#text-alternatives" class="tocxref"><span class="secno">1.1 </span>テキストによる代替</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#non-text-content" class="tocxref"><span class="secno">1.1.1 </span>非テキストコンテンツ</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#time-based-media" class="tocxref"><span class="secno">1.2 </span>時間依存メディア</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#audio-only-and-video-only-prerecorded" class="tocxref"><span class="secno">1.2.1 </span>音声のみ及び映像のみ (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#captions-prerecorded" class="tocxref"><span class="secno">1.2.2 </span>キャプション (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#audio-description-or-media-alternative-prerecorded" class="tocxref"><span class="secno">1.2.3 </span>音声解説、又はメディアに対する代替 (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#captions-live" class="tocxref"><span class="secno">1.2.4 </span>キャプション (ライブ)</a>
+              </li>
+              <li class="tocline">
+                <a href="#audio-description-prerecorded" class="tocxref"><span class="secno">1.2.5 </span>音声解説 (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#sign-language-prerecorded" class="tocxref"><span class="secno">1.2.6 </span>手話 (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#extended-audio-description-prerecorded" class="tocxref"><span class="secno">1.2.7 </span>拡張音声解説 (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#media-alternative-prerecorded" class="tocxref"><span class="secno">1.2.8 </span>メディアに対する代替 (収録済)</a>
+              </li>
+              <li class="tocline">
+                <a href="#audio-only-live" class="tocxref"><span class="secno">1.2.9 </span>音声のみ (ライブ)</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#adaptable" class="tocxref"><span class="secno">1.3 </span>適応可能</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#info-and-relationships" class="tocxref"><span class="secno">1.3.1 </span>情報及び関係性</a>
+              </li>
+              <li class="tocline">
+                <a href="#meaningful-sequence" class="tocxref"><span class="secno">1.3.2 </span>意味のある順序</a>
+              </li>
+              <li class="tocline">
+                <a href="#sensory-characteristics" class="tocxref"><span class="secno">1.3.3 </span>感覚的な特徴</a>
+              </li>
+              <li class="tocline">
+                <a href="#identify-common-purpose" class="tocxref"><span class="secno">1.3.4 </span>共通した (or 一般的な) 目的の特定</a>
+              </li>
+              <li class="tocline">
+                <a href="#identify-purpose" class="tocxref"><span class="secno">1.3.5 </span>Identify Purpose</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#distinguishable" class="tocxref"><span class="secno">1.4 </span>判別可能</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#use-of-color" class="tocxref"><span class="secno">1.4.1 </span>色の使用</a>
+              </li>
+              <li class="tocline">
+                <a href="#audio-control" class="tocxref"><span class="secno">1.4.2 </span>音声制御</a>
+              </li>
+              <li class="tocline">
+                <a href="#contrast-minimum" class="tocxref"><span class="secno">1.4.3 </span>コントラスト (最低限)</a>
+              </li>
+              <li class="tocline">
+                <a href="#resize-text" class="tocxref"><span class="secno">1.4.4 </span>テキストのサイズ変更</a>
+              </li>
+              <li class="tocline">
+                <a href="#images-of-text" class="tocxref"><span class="secno">1.4.5 </span>文字画像</a>
+              </li>
+              <li class="tocline">
+                <a href="#contrast-enhanced" class="tocxref"><span class="secno">1.4.6 </span>コントラスト (高度)</a>
+              </li>
+              <li class="tocline">
+                <a href="#low-or-no-background-audio" class="tocxref"><span class="secno">1.4.7 </span>小さな背景音、又は背景音なし</a>
+              </li>
+              <li class="tocline">
+                <a href="#visual-presentation" class="tocxref"><span class="secno">1.4.8 </span>視覚的提示</a>
+              </li>
+              <li class="tocline">
+                <a href="#images-of-text-no-exception" class="tocxref"><span class="secno">1.4.9 </span>文字画像 (例外なし)</a>
+              </li>
+              <li class="tocline">
+                <a href="#reflow" class="tocxref"><span class="secno">1.4.10 </span>リフロー</a>
+              </li>
+              <li class="tocline">
+                <a href="#non-text-contrast" class="tocxref"><span class="secno">1.4.11 </span>非テキストのコントラスト</a>
+              </li>
+              <li class="tocline">
+                <a href="#text-spacing" class="tocxref"><span class="secno">1.4.12 </span>テキストの間隔</a>
+              </li>
+              <li class="tocline">
+                <a href="#content-on-hover-or-focus" class="tocxref"><span class="secno">1.4.13 </span>ホバーまたはフォーカスで表示されるコンテンツ</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#operable" class="tocxref"><span class="secno">2. </span> 操作可能 </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#keyboard-accessible" class="tocxref"><span class="secno">2.1 </span>キーボード操作可能</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#keyboard" class="tocxref"><span class="secno">2.1.1 </span>キーボード</a>
+              </li>
+              <li class="tocline">
+                <a href="#no-keyboard-trap" class="tocxref"><span class="secno">2.1.2 </span>フォーカス移動</a>
+              </li>
+              <li class="tocline">
+                <a href="#keyboard-no-exception" class="tocxref"><span class="secno">2.1.3 </span>キーボード (例外なし)</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#enough-time" class="tocxref"><span class="secno">2.2 </span>十分な時間</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#timing-adjustable" class="tocxref"><span class="secno">2.2.1 </span>タイミング調整可能</a>
+              </li>
+              <li class="tocline">
+                <a href="#pause-stop-hide" class="tocxref"><span class="secno">2.2.2 </span>一時停止、停止、非表示</a>
+              </li>
+              <li class="tocline">
+                <a href="#no-timing" class="tocxref"><span class="secno">2.2.3 </span>タイミング非依存</a>
+              </li>
+              <li class="tocline">
+                <a href="#interruptions" class="tocxref"><span class="secno">2.2.4 </span>割り込み</a>
+              </li>
+              <li class="tocline">
+                <a href="#re-authenticating" class="tocxref"><span class="secno">2.2.5 </span>再認証</a>
+              </li>
+              <li class="tocline">
+                <a href="#timeouts" class="tocxref"><span class="secno">2.2.6 </span>タイムアウト</a>
+              </li>
+              <li class="tocline">
+                <a href="#animation-from-interactions" class="tocxref"><span class="secno">2.2.7 </span>インタラクションによるアニメーション</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#seizures" class="tocxref"><span class="secno">2.3 </span>発作の防止</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#three-flashes-or-below-threshold" class="tocxref"><span class="secno">2.3.1 </span>3回の閃光、又は閾値以下</a>
+              </li>
+              <li class="tocline">
+                <a href="#three-flashes" class="tocxref"><span class="secno">2.3.2 </span>3回の閃光</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#navigable" class="tocxref"><span class="secno">2.4 </span>ナビゲーション可能</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#bypass-blocks" class="tocxref"><span class="secno">2.4.1 </span>ブロックスキップ</a>
+              </li>
+              <li class="tocline">
+                <a href="#page-titled" class="tocxref"><span class="secno">2.4.2 </span>ページタイトル</a>
+              </li>
+              <li class="tocline">
+                <a href="#focus-order" class="tocxref"><span class="secno">2.4.3 </span>フォーカス順序</a>
+              </li>
+              <li class="tocline">
+                <a href="#link-purpose-in-context" class="tocxref"><span class="secno">2.4.4 </span>リンクの目的 (コンテキスト内)</a>
+              </li>
+              <li class="tocline">
+                <a href="#multiple-ways" class="tocxref"><span class="secno">2.4.5 </span>複数の手段</a>
+              </li>
+              <li class="tocline">
+                <a href="#headings-and-labels" class="tocxref"><span class="secno">2.4.6 </span>見出し及びラベル</a>
+              </li>
+              <li class="tocline">
+                <a href="#focus-visible" class="tocxref"><span class="secno">2.4.7 </span>フォーカスの可視化</a>
+              </li>
+              <li class="tocline">
+                <a href="#location" class="tocxref"><span class="secno">2.4.8 </span>現在位置</a>
+              </li>
+              <li class="tocline">
+                <a href="#link-purpose-link-only" class="tocxref"><span class="secno">2.4.9 </span>リンクの目的 (リンクのみ)</a>
+              </li>
+              <li class="tocline">
+                <a href="#section-headings" class="tocxref"><span class="secno">2.4.10 </span>セクション見出し</a>
+              </li>
+              <li class="tocline">
+                <a href="#character-key-shortcuts" class="tocxref"><span class="secno">2.4.11 </span>文字キーのショートカット</a>
+              </li>
+              <li class="tocline">
+                <a href="#label-in-name" class="tocxref"><span class="secno">2.4.12 </span>名前 (name) のラベル</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#pointer-accessible" class="tocxref"><span class="secno">2.5 </span>Pointer Accessible</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#pointer-gestures" class="tocxref"><span class="secno">2.5.1 </span>ポインタのジェスチャ</a>
+              </li>
+              <li class="tocline">
+                <a href="#pointer-cancellation" class="tocxref"><span class="secno">2.5.2 </span>ポインタのキャンセル</a>
+              </li>
+              <li class="tocline">
+                <a href="#target-size" class="tocxref"><span class="secno">2.5.3 </span>ターゲットのサイズ</a>
+              </li>
+              <li class="tocline">
+                <a href="#concurrent-input-mechanisms" class="tocxref"><span class="secno">2.5.4 </span>入力メカニズム非依存</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#additional-sensor-inputs" class="tocxref"><span class="secno">2.6 </span>Additional sensor inputs</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#motion-actuation" class="tocxref"><span class="secno">2.6.1 </span>動作による起動</a>
+              </li>
+              <li class="tocline">
+                <a href="#orientation" class="tocxref"><span class="secno">2.6.2 </span>表示の向き</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#understandable" class="tocxref"><span class="secno">3. </span> 理解可能 </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#readable" class="tocxref"><span class="secno">3.1 </span>読みやすさ</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#language-of-page" class="tocxref"><span class="secno">3.1.1 </span>ページの言語</a>
+              </li>
+              <li class="tocline">
+                <a href="#language-of-parts" class="tocxref"><span class="secno">3.1.2 </span>一部分の言語</a>
+              </li>
+              <li class="tocline">
+                <a href="#unusual-words" class="tocxref"><span class="secno">3.1.3 </span>一般的ではない用語</a>
+              </li>
+              <li class="tocline">
+                <a href="#abbreviations" class="tocxref"><span class="secno">3.1.4 </span>略語</a>
+              </li>
+              <li class="tocline">
+                <a href="#reading-level" class="tocxref"><span class="secno">3.1.5 </span>読解レベル</a>
+              </li>
+              <li class="tocline">
+                <a href="#pronunciation" class="tocxref"><span class="secno">3.1.6 </span>発音</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#predictable" class="tocxref"><span class="secno">3.2 </span>予測可能</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#on-focus" class="tocxref"><span class="secno">3.2.1 </span>フォーカス時</a>
+              </li>
+              <li class="tocline">
+                <a href="#on-input" class="tocxref"><span class="secno">3.2.2 </span>入力時</a>
+              </li>
+              <li class="tocline">
+                <a href="#consistent-navigation" class="tocxref"><span class="secno">3.2.3 </span>一貫したナビゲーション</a>
+              </li>
+              <li class="tocline">
+                <a href="#consistent-identification" class="tocxref"><span class="secno">3.2.4 </span>一貫した識別性</a>
+              </li>
+              <li class="tocline">
+                <a href="#change-on-request" class="tocxref"><span class="secno">3.2.5 </span>要求による変化</a>
+              </li>
+              <li class="tocline">
+                <a href="#status-changes" class="tocxref"><span class="secno">3.2.6 </span>ステータス変更</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#input-assistance" class="tocxref"><span class="secno">3.3 </span>入力支援</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#error-identification" class="tocxref"><span class="secno">3.3.1 </span>エラーの特定</a>
+              </li>
+              <li class="tocline">
+                <a href="#labels-or-instructions" class="tocxref"><span class="secno">3.3.2 </span>ラベル又は説明</a>
+              </li>
+              <li class="tocline">
+                <a href="#error-suggestion" class="tocxref"><span class="secno">3.3.3 </span>エラー修正の提案</a>
+              </li>
+              <li class="tocline">
+                <a href="#error-prevention-legal-financial-data" class="tocxref"><span class="secno">3.3.4 </span>エラー回避 (法的、金融、データ)</a>
+              </li>
+              <li class="tocline">
+                <a href="#help" class="tocxref"><span class="secno">3.3.5 </span>ヘルプ</a>
+              </li>
+              <li class="tocline">
+                <a href="#error-prevention-all" class="tocxref"><span class="secno">3.3.6 </span>エラー回避 (すべて)</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#robust" class="tocxref"><span class="secno">4. </span> 堅牢 (robust) </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#compatible" class="tocxref"><span class="secno">4.1 </span>互換性</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#parsing" class="tocxref"><span class="secno">4.1.1 </span>構文解析</a>
+              </li>
+              <li class="tocline">
+                <a href="#name-role-value" class="tocxref"><span class="secno">4.1.2 </span>名前 (name) ・役割 (role) 及び値 (value)</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#conformance" class="tocxref"><span class="secno">5. </span>適合</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#interpreting-normative-requirements" class="tocxref"><span class="secno">5.1 </span>Interpreting Normative Requirements</a>
+          </li>
+          <li class="tocline">
+            <a href="#conformance-reqs" class="tocxref"><span class="secno">5.2 </span>適合要件</a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#cc1" class="tocxref"><span class="secno">5.2.1 </span>適合レベル</a>
+              </li>
+              <li class="tocline">
+                <a href="#cc2" class="tocxref"><span class="secno">5.2.2 </span>ウェブページ全体</a>
+              </li>
+              <li class="tocline">
+                <a href="#cc3" class="tocxref"><span class="secno">5.2.3 </span>プロセス全体</a>
+              </li>
+              <li class="tocline">
+                <a href="#cc4" class="tocxref"><span class="secno">5.2.4 </span>技術のアクセシビリティ サポーテッドな使用方法だけ</a>
+              </li>
+              <li class="tocline">
+                <a href="#cc5" class="tocxref"><span class="secno">5.2.5 </span>非干渉</a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#conformance-claims" class="tocxref"><span class="secno">5.3 </span>適合表明 (任意) </a>
+            <ol class="toc">
+              <li class="tocline">
+                <a href="#conformance-required" class="tocxref"><span class="secno">5.3.1 </span>適合表明の必須要素</a>
+              </li>
+              <li class="tocline">
+                <a href="#conformance-optional" class="tocxref"><span class="secno">5.3.2 </span>適合表明の任意要素 </a>
+              </li>
+            </ol>
+          </li>
+          <li class="tocline">
+            <a href="#conformance-partial" class="tocxref"><span class="secno">5.4 </span>部分適合に関する記述 － 第三者によるコンテンツ</a>
+          </li>
+          <li class="tocline">
+            <a href="#conformance-partial-lang" class="tocxref"><span class="secno">5.5 </span>部分適合に関する記述 － 言語</a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#glossary" class="tocxref"><span class="secno">6. </span>用語集</a>
+      </li>
+      <li class="tocline">
+        <a href="#exit-criteria" class="tocxref"><span class="secno">A. </span>Candidate Recommendation Exit Criteria </a>
+      </li>
+      <li class="tocline">
+        <a href="#at-risk" class="tocxref"><span class="secno">B. </span>Items at Risk </a>
+      </li>
+      <li class="tocline">
+        <a href="#changelog" class="tocxref"><span class="secno">C. </span>Change Log</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">C.1 </span>Substantive changes since the
+              <span class="formerLink">last public working draft</span>
+            </a>
+          </li>
+          <li class="tocline">
+            <a href="#other-substantive-changes-since-the-first-public-working-draft" class="tocxref"><span class="secno">C.2 </span>Other substantive changes since the
+              <span class="formerLink">first public working draft</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#acknowledgments" class="tocxref"><span class="secno">D. </span>謝辞</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#ack_participants-active" class="tocxref"><span class="secno">D.1 </span>Participants of the WCAG WG active in the development of this document:</a>
+          </li>
+          <li class="tocline">
+            <a href="#ack_participants-previous" class="tocxref"><span class="secno">D.2 </span>Other previously active WCAG WG participants and other contributors to WCAG 2.0, WCAG 2.1, or supporting
+              resources </a>
+          </li>
+          <li class="tocline">
+            <a href="#enabling-funders" class="tocxref"><span class="secno">D.3 </span>Enabling funders</a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a href="#references" class="tocxref"><span class="secno">E. </span> 参考文献</a>
+        <ol class="toc">
+          <li class="tocline">
+            <a href="#normative-references" class="tocxref"><span class="secno">E.1 </span>Normative references</a>
+          </li>
+          <li class="tocline">
+            <a href="#informative-references" class="tocxref"><span class="secno">E.2 </span>Informative references</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <!--OddPage-->
+  </nav>
+
+  <section class="informative introductory" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
+			<h2 id="introduction" resource="#introduction"><span property="xhv:role" resource="xhv:heading">イントロダクション</span></h2><p><em>この節は規定ではない。</em></p>
+
+    <section id="background-on-wcag-2" typeof="bibo:Chapter" resource="#background-on-wcag-2" property="bibo:hasPart">
+				<h3 id="x0-1-background-on-wcag-2" resource="#x0-1-background-on-wcag-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.1 </span>WCAG 2 の背景<span class="permalink" typeof="bookmark"><a href="#background-on-wcag-2" aria-label="Permalink for 0.1 Background on WCAG 2" title="Permalink for 0.1 Background on WCAG 2" property="url"><span property="title" content="0.1 Background on WCAG 2">§</span></a></span></span></h3>
+
+      <p>Web Content Accessibility Guidelines (WCAG) 2.1 は、ウェブコンテンツを障害者にとってよりアクセシブルにする方法を定義している。アクセシビリティは、視覚、聴覚、身体、発話、認知、言語、学習、神経の障害を含む、広範な障害に関係している。このガイドラインは、広範囲に及ぶ事項を網羅しているが、障害のすべての種類、程度、組合せからくるニーズを満たすことはできない。また、このガイドラインは、加齢により能力が変化している高齢者にとってもウェブコンテンツをより使いやすくするものであるとともに、しばしば利用者全般のユーザビリティを向上させる。</p>
+				<p>WCAG 2.1 は、ウェブコンテンツのアクセシビリティに対して、様々な国の個人、組織、政府のニーズを満たすような共通の基準を提供することを目的として、<a href="https://www.w3.org/WAI/intro/w3c-process"><abbr title="World Wide Web Consortium">W3C</abbr> process</a>に従って世界中の個人及び組織の協力のもと作成されている。 WCAG 2.0 [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>] は WCAG 1.0 [<cite><a class="bibref" href="#bib-WAI-WEBCONTENT">WAI-WEBCONTENT</a></cite>] をベースに、 WCAG 2.1 は WCAG 2.0 [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>] をベースに、順に作られており、現在及び将来のさまざまなウェブ技術に広く適用され、自動テストと人的評価の組み合わせでテスト可能になるように設計されている。 WCAG のイントロダクションとしては、<a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines (WCAG) Overview</a> を参照。</p>
 				<p>ウェブアクセシビリティは、アクセシブルなコンテンツだけではなく、アクセシブルなウェブブラウザやその他のユーザエージェントにも依存している。そして、オーサリングツールもウェブアクセシビリティにおいて重要な役割を担っている。ウェブ開発やインタラクションを構成するこれらの要素が相互にどのように関係しているかの概要については、以下を参照:</p>
 				<ul>
 					<li><strong><a href="https://www.w3.org/WAI/intro/components">Essential Components of Web Accessibility</a></strong></li>
 					<li><strong><a href="https://www.w3.org/WAI/intro/uaag">User Agent Accessibility Guidelines (UAAG) Overview</a></strong></li>
 					<li><strong><a href="https://www.w3.org/WAI/intro/atag">Authoring Tool Accessibility Guidelines (ATAG) Overview</a></strong></li>
 				</ul>
-				<p>Further introductory information about the structure of WCAG 2.0, inherited by WCAG 2.1, is available in the introduction to WCAG 2.0. For brevity in this draft it is not repeated here but can be found at:</p>
+				<p>WCAG 2.1 に継承される、WCAG 2.0 の構成に関する詳細な紹介情報は、WCAG 2.0 のイントロダクションで入手可能である。この草案の簡潔さのためにここでは繰り返さないが、以下で参照可能である:</p>
 				<ul>
-					<li><a href="https://www.w3.org/TR/WCAG20/#intro-layers-guidance">WCAG 2.0 Layers of Guidance</a></li>
-					<li><a href="https://www.w3.org/TR/WCAG20/#intro-related-docs">WCAG 2.0 Supporting Documents</a></li>
-					<li><a href="https://www.w3.org/TR/WCAG20/#new-terms">Important Terms in WCAG 2.0</a></li>
+					<li><a href="https://www.w3.org/TR/WCAG20/#intro-layers-guidance">WCAG 2.0 Layers of Guidance</a> <a href="https://waic.jp/docs/WCAG20/Overview.html#intro-layers-guidance" title="WCAG 2.0 Layers of Guidance の日本語訳">[日本語訳]</a></li>
+					<li><a href="https://www.w3.org/TR/WCAG20/#intro-related-docs">WCAG 2.0 Supporting Documents</a> <a href="https://waic.jp/docs/WCAG20/Overview.html#intro-related-docs" title="WCAG 2.0 Supporting Documents の日本語訳">[日本語訳]</a></li>
+					<li><a href="https://www.w3.org/TR/WCAG20/#new-terms">Important Terms in WCAG 2.0</a> <a href="https://waic.jp/docs/WCAG20/Overview.html#new-terms" title="Important Terms in WCAG 2.0 の日本語訳">[日本語訳]</a></li>
 				</ul>
 			</section>
 			<section id="new-features-in-wcag-2-1" typeof="bibo:Chapter" resource="#new-features-in-wcag-2-1" property="bibo:hasPart">
 				<h3 id="x0-2-new-features-in-wcag-2-1" resource="#x0-2-new-features-in-wcag-2-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.2 </span>New Features in WCAG 2.1<span class="permalink" typeof="bookmark"><a href="#new-features-in-wcag-2-1" aria-label="Permalink for 0.2 New Features in WCAG 2.1" title="Permalink for 0.2 New Features in WCAG 2.1" property="url"><span property="title" content="0.2 New Features in WCAG 2.1">§</span></a></span></span></h3>
-				<p>WCAG 2.1 extends WCAG 2.0 by adding new success criteria, definitions to support them, guidelines to organize the additions, and a couple of additions to the conformance section. This additive approach helps to make it clear that sites which conform to WCAG 2.1 also conform to WCAG 2.0, thereby meeting conformance obligations that are specific to WCAG 2.0. The Accessibility Guidelines Working Group recommends that sites adopt WCAG 2.1 as their new conformance target, even if formal obligations mention WCAG 2.0, to provide improved accessibility and to anticipate future policy changes.</p>
-				<p>The following Success Criteria are new in WCAG 2.1:</p>
+				<p>WCAG2.1はWCAG2.0に新しい達成基準やそれらを補助する定義、追加分をまとめるガイドライン、適合の節への2、3の追加によって拡張されている。追加された方法はWCAG 2.1に適合するサイトはWCAG 2.0にも適合し、WCAG 2.0の適合義務も満たしていることを明らかにするのに役立つ。The Accessibility Guidelines Working Group は新しい適合目標として、例え法的義務がWCAG 2.0に言及するものであっても、将来のポリシーの変更を鑑みアクセシビリティをより向上させるために、サイトがWCAG 2.1を採用することを推奨する。</p>
+				<p>以下がWCAG 2.1の新しい達成基準である：</p>
 				<ul>
-					<li>1.3.4 <a href="#identify-common-purpose">共通した（or 一般的な）目的の特定</a></li>
-					<li>1.3.5 <a href="#contextual-information">コンテキスト情報</a></li>
+					<li>1.3.4 <a href="#identify-common-purpose">共通した (or 一般的な) 目的の特定</a></li>
+					<li>1.3.5 <a href="#identify-purpose">目的の特定</a></li>
 					<li>1.4.10 <a href="#reflow">リフロー</a></li>
-					<li>1.4.11 <a href="#non-text-contrast">Non-Text Contrast</a></li>
+					<li>1.4.11 <a href="#non-text-contrast">非テキストのコントラスト</a></li>
 					<li>1.4.12 <a href="#text-spacing">テキストの間隔</a></li>
 					<li>1.4.13 <a href="#content-on-hover-or-focus">ホバーまたはフォーカスで表示されるコンテンツ</a></li>
 					<li>2.2.6 <a href="#timeouts">タイムアウト</a></li>
-					<li>2.2.7 <a href="#animation-from-interactions">インタラクションからのアニメーション</a></li>
+					<li>2.2.7 <a href="#animation-from-interactions">インタラクションによるアニメーション</a></li>
 					<li>2.4.11 <a href="#character-key-shortcuts">文字キーのショートカット</a></li>
 					<li>2.4.12 <a href="#label-in-name">名前 (name) のラベル</a></li>
 					<li>2.5.1 <a href="#pointer-gestures">ポインタのジェスチャ</a></li>
@@ -399,12 +860,12 @@ details.respec-tests-details > li {
 					<li>2.6.2 <a href="#orientation">表示の向き</a></li>
 					<li>3.2.6 <a href="#status-changes">ステータス変更</a></li>
 				</ul>
-				<p>Many of these success criteria reference new terms that have also been added to the glossary and form part of the normative requirements of the success criteria.  </p>
-				<p>In the Conformance section, a third note about page variants has been added to <a href="#cc2">Full Pages</a>, and an option for machine-readable metadata added to <a href="#conformance-optional">Optional Components of a Conformance Claim</a>.</p>
+				<p>これらの達成基準の多くは用語集にも追加された達成基準の規定要件の一部となっている新しい用語に言及している。 </p>
+				<p>適合の節においては、ページのバリエーションについて注記の3分の1が<a href="#cc2">ウェブページ全体</a>の項目に追加されており、及び機械的に読み取れるメタデータのオプションが<a href="#conformance-optional">適合表明の任意要素</a>に追加されている。</p>
 			</section>
         	<section id="numbering-in-wcag-2-1" typeof="bibo:Chapter" resource="#numbering-in-wcag-2-1" property="bibo:hasPart">
-        		<h3 id="x0-3-numbering-in-wcag-2-1" resource="#x0-3-numbering-in-wcag-2-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.3 </span>Numbering in WCAG 2.1<span class="permalink" typeof="bookmark"><a href="#numbering-in-wcag-2-1" aria-label="Permalink for 0.3 Numbering in WCAG 2.1" title="Permalink for 0.3 Numbering in WCAG 2.1" property="url"><span property="title" content="0.3 Numbering in WCAG 2.1">§</span></a></span></span></h3>
-				<p>In order to avoid confusion for implementers for whom backwards compatibility to WCAG 2.0 is important, new success criteria in WCAG 2.1 have been appended to the end of the set of success criteria within their guideline. This avoids the need to change the section number of success criteria from WCAG 2.0, which would be caused by inserting new success critera between existing success criteria in the guideline, but it means success criteria in each guideline are no longer grouped by conformance level. The order of success criteria within each guideline does not imply information about conformance level; only the conformance level indicator (A / AA / AAA) on the success criterion itself indicates this. The <a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1 Quick Reference</a> provides ways to view success criteria grouped by conformance level, along with many other filter and sort options.</p>
+        		<h3 id="x0-3-numbering-in-wcag-2-1" resource="#x0-3-numbering-in-wcag-2-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.3 </span>WCAG 2.1におけるナンバリング<span class="permalink" typeof="bookmark"><a href="#numbering-in-wcag-2-1" aria-label="Permalink for 0.3 WCAG 2.1におけるナンバリング" title="Permalink for 0.3 WCAG 2.1におけるナンバリング" property="url"><span property="title" content="0.3 WCAG 2.1におけるナンバリング">§</span></a></span></span></h3>
+				<p>WCAG 2.0に対する後方互換性が重要となる開発者の混乱を招くことを避けるため、WCAG 2.1における新しい達成基準はガイドライン内の一連の達成基準の末尾に追加されている。しかしながら、このことは、各ガイドライン内の達成基準がもはや適合レベル毎にグループ分けされていないことを意味する。各ガイドライン内での達成基準の順番は、適合レベルに関する情報を暗示するものではなく、各達成基準自身の適合レベル表示 (A / AA / AAA) のみが適合レベルを示す。<a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1 クイックリファレンス</a>は、他の多数のフィルターや並べ替え方法と共に、適合レベル毎にグループ化された達成基準を見る方法を提供する。</p>
         	</section>
 			<section id="conformance-to-wcag-2-1" typeof="bibo:Chapter" resource="#conformance-to-wcag-2-1" property="bibo:hasPart">
 				<h3 id="x0-4-conformance-to-wcag-2-1" resource="#x0-4-conformance-to-wcag-2-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.4 </span>Conformance to WCAG 2.1<span class="permalink" typeof="bookmark"><a href="#conformance-to-wcag-2-1" aria-label="Permalink for 0.4 Conformance to WCAG 2.1" title="Permalink for 0.4 Conformance to WCAG 2.1" property="url"><span property="title" content="0.4 Conformance to WCAG 2.1">§</span></a></span></span></h3>
@@ -415,10 +876,9 @@ details.respec-tests-details > li {
 				<p>The <a href="#exit-criteria">Candidate Recommendation Exit Criteria</a> section describes how implementation testing of WCAG 2.1 will be performed during the Candidate Recommendation period. In order to advance, the document must meet the exit criteria described. In addition, some features have been marked as "<a href="#at-risk">at risk</a>". If a feature does not meet implementation targets by the end of the Candidate Recommendation period, it will be removed. Therefore, the final Web Content Accessibility Guidelines 2.1 could contain fewer requirements than this draft. Implementers are encouraged to pay extra attention to these features to help the Working Group gather implementation experience and avoid the need to remove such features.</p>
 			</section>
 			<section id="later-versions-of-accessibility-guidelines" typeof="bibo:Chapter" resource="#later-versions-of-accessibility-guidelines" property="bibo:hasPart">
-				<h3 id="x0-6-later-versions-of-accessibility-guidelines" resource="#x0-6-later-versions-of-accessibility-guidelines"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.6 </span>Later versions of Accessibility Guidelines<span class="permalink" typeof="bookmark"><a href="#later-versions-of-accessibility-guidelines" aria-label="Permalink for 0.6 Later versions of Accessibility Guidelines" title="Permalink for 0.6 Later versions of Accessibility Guidelines" property="url"><span property="title" content="0.6 Later versions of Accessibility Guidelines">§</span></a></span></span></h3>
-				<p>In parallel with WCAG 2.1, the Accessibility Guidelines Working Group is working on requirements for a 3.0 version of accessibility guidelines, developed by the <a href="https://www.w3.org/WAI/GL/task-forces/silver/">Silver Task Force</a>. The result of this work is expected to be a more substantial restructuring of web accessibility guidance than would be realistic for dot-releases of WCAG 2. The task force follows a research-focused, user-centered design methodology to produce the most effective and flexible outcome, including the roles of content authoring, user agent support, and authoring tool support. This is a multi-year effort, so WCAG 2.1 is needed as an interim measure to provide updated web accessibility guidance to reflect changes on the web since the publication of WCAG 2.0.</p>
-				<p>In order for WCAG 2.1 to achieve its goal to update web accessibility guidance in a time frame that is meaningful before the 3.0 project delivers results, WCAG 2.1 must be completed quickly. This inherently means that some proposed Success Criteria may prove too complex to include in WCAG 2.1, but nonetheless will be viewed as important accessibility guidance for current web content. The larger 3.0 project is expected to incorporate such guidance, but the Working Group could also decide that another set of guidelines between WCAG 2.1 and 3.0 is needed. In that case, a new version, WCAG 2.2, could be proposed. A decision to develop WCAG 2.2 will need to balance the benefits of providing additional accessibility guidance earlier, versus the opportunity cost the work could have on the more substantially restructured and comprehensive 3.0 project. The current <a href="https://www.w3.org/2017/01/ag-charter">Accessibility Guidelines Working Group charter</a> states "The
-					Working Group intends to produce updated guidance for accessibility on a regular interval, starting with WCAG 2.1. Depending on the outcome of the requirements development for the next major update to WCAG, it may be necessary to pursue further dot-releases of WCAG until a major release is ready to be completed in time for a scheduled release date."</p><!--OddPage-->
+				<h3 id="x0-6-later-versions-of-accessibility-guidelines" resource="#x0-6-later-versions-of-accessibility-guidelines"><span property="xhv:role" resource="xhv:heading"><span class="secno">0.6 </span> アクセシビリティガイドラインの後続バージョン<span class="permalink" typeof="bookmark"><a href="#later-versions-of-accessibility-guidelines" aria-label="Permalink for 0.6 Later versions of Accessibility Guidelines" title="Permalink for 0.6 Later versions of Accessibility Guidelines" property="url"><span property="title" content="0.6 Later versions of Accessibility Guidelines">§</span></a></span></span></h3>
+				<p>アクセシビリティガイドラインワーキンググループは、WCAG 2.1 と並行して、<a href="https://www.w3.org/WAI/GL/task-forces/silver/">Silver Task Force</a> によって開発されたアクセシビリティガイドライン 3.0 バージョンの要件について取り組んでいる。この作業の結果は、WCAG 2のドットリリースに現実的であるよりも、ウェブアクセシビリティガイダンスのより実質的な再構築になると期待されている。このタスクフォースは、コンテンツ制作、ユーザエージェントのサポート、及びオーサリングツールのサポートの役割を含む、最も効果的かつ柔軟な結果を生むために、研究に焦点を合わせた、ユーザー中心の設計方法論に従う。これは長年にわたる努力であるため、WCAG 2.0 の公開からのウェブ上の変化を反映するための最新のウェブアクセシビリティガイダンスを提供するための暫定措置として WCAG 2.1 が必要とされる。</p>
+				<p>WCAG 2.1 が、3.0 プロジェクトが結果を出す前に意味のある時間枠内でウェブアクセシビリティガイダンスを更新するという目標を達成するためには、WCAG 2.1 をすばやく完了しなければならない。これは、一部の提案された達成基準が WCAG 2.1 に含めるにはあまりにも複雑であると判明するかもしれないが、現在のウェブコンテンツにとって重要なアクセシビリティ指針とみなされることを本質的に意味する。より大きな 3.0 のプロジェクトは、そのようなガイダンスを組み込むことが期待されているが、ワーキンググループは、WCAG 2.1 と 3.0 の間の別のガイドラインが必要であると決定することもできる。その場合、新しいバージョンのWCAG 2.2 を提案するかもしれない。WCAG 2.2の開発を決定するには、より早く追加のアクセシビリティガイダンスを提供することの利点と、より十分に再構成された包括的な 3.0 プロジェクトで可能な機会費用とのバランスを取る必要がある。現在の<a href="https://www.w3.org/2017/01/ag-charter">Accessibility Guidelines Working Group charter</a>は、「ワーキンググループは、WCAG 2.1 を皮切りとして、定期的にアクセシビリティに関する最新のガイダンスを作成しようとしている。WCAG への次のメジャーアップデートに対する要件開発の結果によっては、メジャーリリースが予定リリース日に間に合う準備が整うまで、WCAG のさらなるドットリリースを続行する必要がありうる」と言及している。</p><!--OddPage-->
 			</section>
 		</section>
         <section class="principle" id="perceivable" typeof="bibo:Chapter" resource="#perceivable" property="bibo:hasPart">
@@ -936,14 +1396,14 @@ details.respec-tests-details > li {
    					
    
    					
-   <p>Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:</p>
+   <p>次の2次元において、スクロールを必要とせずに情報や機能を失うことなくコンテンツを提示することができる:</p>
    <ul>
-       <li>Vertical scrolling content at a width equivalent to 320 <a href="#dfn-css-pixels" class="internalDFN" data-link-type="dfn">CSS pixels</a>;</li>
-       <li>Horizontal scrolling content at a height equivalent to 256 <a href="#dfn-css-pixels" class="internalDFN" data-link-type="dfn">CSS pixels</a>;</li>
+       <li>320 <a href="#dfn-css-pixels" class="internalDFN" data-link-type="dfn">CSS ピクセル</a>に相当する幅の縦スクロールのコンテンツ;</li>
+       <li>256 <a href="#dfn-css-pixels" class="internalDFN" data-link-type="dfn">CSS ピクセル</a>に相当する高さの横スクロールのコンテンツ;</li>
    </ul>
-   <p>Except for parts of the content which require two-dimensional layout for usage or meaning.</p>
+   <p>利用や意味の理解に2次元のレイアウトが必須である一部のコンテンツを除く。</p>
   
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>注記</span></div><p class="">Note: 320 CSS ピクセルは、1280 CSS ピクセル幅を 400% ズームで見た場合の最初の表示幅に相当する。For web content which are designed to scroll horizontally (e.g. with vertical text), the 256 CSS pixels is equivalent to a starting viewport height of 1024px at 400% zoom.</p></div>
+   <div class="note"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>注記</span></div><p class="">Note: 320 CSS ピクセルは、1280 CSS ピクセル幅を 400% ズームで見た場合の最初の表示幅に相当する。横スクロールになるように設計されたウェブコンテンツ（例えば、縦書きのテキスト）では、256 CSS ピクセルは、高さ 1024px を 400％ ズームで見た場合の最初の表示の高さに相当する。</p></div>
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-6" aria-level="5"><span>注記</span></div><p class="">2次元のレイアウトを必要とするコンテンツの例としては、画像、マップ、図解、ビデオ、ゲーム、プレゼンテーション、データテーブル、およびコンテンツを操作している間にツールバーを表示しておく必要のあるインタフェースが挙げられる。</p></div>
    			
@@ -952,7 +1412,7 @@ details.respec-tests-details > li {
 
                 <section class="sc new" id="non-text-contrast" typeof="bibo:Chapter" resource="#non-text-contrast" property="bibo:hasPart">
    					
-   <h4 id="x1-4-11-non-text-contrast" resource="#x1-4-11-non-text-contrast"><span property="xhv:role" resource="xhv:heading"><span class="secno">Success Criterion 1.4.11 </span>Non-text Contrast<span class="permalink" typeof="bookmark"><a href="#non-text-contrast" aria-label="Permalink for 1.4.11 Non-text Contrast" title="Permalink for 1.4.11 Non-text Contrast" property="url"><span property="title" content="1.4.11 Non-text Contrast">§</span></a></span></span></h4>
+   <h4 id="x1-4-11-non-text-contrast" resource="#x1-4-11-non-text-contrast"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 1.4.11 </span>非テキストのコントラスト<span class="permalink" typeof="bookmark"><a href="#non-text-contrast" aria-label="Permalink for 1.4.11 Non-text Contrast" title="Permalink for 1.4.11 Non-text Contrast" property="url"><span property="title" content="1.4.11 Non-text Contrast">§</span></a></span></span></h4>
    					
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#non-text-contrast">How to Meet Non-text Contrast</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html">Understanding Non-text Contrast</a></div><p class="conformance-level">(レベル AA)</p>
    					
@@ -964,11 +1424,11 @@ details.respec-tests-details > li {
       						
       <dt>ユーザインタフェース コンポーネント</dt>
       						
-     <dd><a href="#dfn-states" class="internalDFN" data-link-type="dfn">ユーザーインタフェース コンポーネント</a>の<a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">状態</a>と境界線を示すための視覚的な情報。ただし、そのコンポーネントの見た目が、ユーザーエージェントによって提示されていてき、かつコンテンツ制作者が変更していない場合は例外とする。</dd>
+     <dd><a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザインタフェース コンポーネント</a>の<a href="#dfn-states" class="internalDFN" data-link-type="dfn">状態</a>と境界線を示すための視覚的な情報。ただし、アクティブではないユーザインタフェース コンポーネントや、そのコンポーネントの見た目がユーザエージェントによって提示されていてコンテンツ制作者が変更していない場合は除く。</dd>
       						
       <dt>グラフィカルオブジェクト</dt>
       						
-      <dd>コンテンツを理解するのに必要なグラフィック部分。ただし、そのグラフィック特有の提示が、情報を伝えるうえで<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合は例外とする。</dd>
+      <dd>コンテンツを理解するのに必要なグラフィック部分。ただし、そのグラフィック特有の提示が、情報を伝えるうえで<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合は除く。</dd>
       						
    </dl>
 
@@ -986,16 +1446,16 @@ details.respec-tests-details > li {
    					
    
 	
-   <p>In content implemented using markup languages that support the following <a href="#dfn-text" class="internalDFN" data-link-type="dfn">text</a> <a href="#dfn-style-properties" class="internalDFN" data-link-type="dfn">style properties</a>, no loss of content or functionality occurs by setting all of the following and by changing no other style property:</p>
+   <p>以下の<a href="#dfn-text" class="internalDFN" data-link-type="dfn">テキスト</a><a href="#dfn-style-properties" class="internalDFN" data-link-type="dfn">スタイルプロパティ</a>をサポートするマークアップ言語を用いて実装されているコンテンツにおいては、以下のとおりすべて設定し、かつ他のスタイルプロパティを変更しない場合、コンテンツ又は機能が損なわれない:</p>
    
    <ul>
      <li>行の間隔 (行送り) をフォントサイズの少なくとも1.5倍に設定する</li>
-     <li>Spacing following paragraphs to at least 2 times the font size;</li>
-     <li>字の間隔 (字送り) をフォントサイズの少なくとも0.12倍に設定する</li>
+     <li>段落に続く間隔をフォントサイズの少なくとも2倍に設定する</li>
+     <li>文字の間隔 (字送り) をフォントサイズの少なくとも0.12倍に設定する</li>
      <li>単語の間隔をフォントサイズの少なくとも0.16倍に設定する</li>
    </ul>
  
- <p>Exception: Human languages and scripts which do not make use of one or more of these text style properties in written text can conform using only the properties that are used.</p>
+ <p>例外: 自然言語及びスクリプトのうち、これらテキストスタイルプロパティの1つ又はそれ以上を用いずにテキストが記述されるものは、実際に用いられるプロパティのみをもって適合とみなすことができる。</p>
  
 </section>
 
@@ -1008,24 +1468,24 @@ details.respec-tests-details > li {
        
    
    					
-    	<p>Where receiving and removing pointer hover or keyboard focus triggers additional content to become visible and hidden, respectively, the following are true:</p>
+    	<p>ポインタホバーやキーボードフォーカスを受け取ったり外したりすることで、追加コンテンツの表示及び非表示をさせる場合は、以下の要件を満たす:</p>
 
   <dl>
 
     <dt>非表示にすることができる</dt>
-    <dd>A <a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">mechanism</a> is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an <a href="#dfn-input-error" class="internalDFN" data-link-type="dfn">input error</a> or does not obscure or replace other content;</dd>
+    <dd>ポインタホバーやキーボードフォーカスを動かさずに追加コンテンツを非表示にする<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が存在する。ただし、追加コンテンツが<a href="#dfn-input-error" class="internalDFN" data-link-type="dfn">入力エラー</a>を伝える場合や、他のコンテンツを不明瞭にしたり置き換えたりしない場合は除く。</dd>
 
     <dt>ホバーすることができる</dt>
-   <dd>If pointer hover can trigger the additional content, then the pointer can be moved  over the additional content without the additional content disappearing;</dd>
+   <dd>ポインタホバーによって追加コンテンツを表示させることができる場合、その追加コンテンツを消すことなく、ポインタを追加コンテンツ上で動かすことができる。</dd>
 
     <dt>表示が継続される</dt>
-    <dd>ホバーやフォーカスが解除される、ユーザが非表示にする、又はその情報が有効でなくなるまでは、追加コンテンツが表示され続ける。</dd>
+    <dd>ホバーやフォーカスが解除される、利用者が非表示にする、又はその情報が有効でなくなるまでは、追加コンテンツが表示され続ける。</dd>
 
   </dl>
     	
-    	<p>例外：追加コンテンツの視覚的提示がユーザーエージェントによって制御されていて、かつコンテンツ制作者が変更していない場合は例外とする。</p>
+    	<p>例外：追加コンテンツの視覚的提示がユーザエージェントによって制御されていて、かつコンテンツ制作者が変更していない場合は例外とする。</p>
 
-    	<div class="note"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>注記</span></div><p class="">ユーザーエージェントによって制御されている追加コンテンツの例としては、HTMLの<a href="https://www.w3.org/TR/html/dom.html#the-title-attribute"><code>title</code>属性</a>を使って作られているブラウザのツールチップが挙げられる。</p></div>
+    	<div class="note"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>注記</span></div><p class="">ユーザエージェントによって制御されている追加コンテンツの例としては、HTMLの <a href="https://www.w3.org/TR/html/dom.html#the-title-attribute"><code>title</code> 属性</a>を用いて作られているブラウザのツールチップが挙げられる。</p></div>
      <div class="note"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>注記</span></div><p class="">ホバー時やフォーカス時に表示されるカスタムツールチップ、サブメニュー、他の非モーダルポップアップは、この達成基準の適用対象となる「追加コンテンツ」の例である。</p></div><!--OddPage-->
 
   </section>
@@ -1244,22 +1704,22 @@ details.respec-tests-details > li {
    					
    
    					
-   <p>Users are warned of the duration of any <a href="#dfn-user-inactivity" class="internalDFN" data-link-type="dfn">user inactivity</a> that could cause data loss, unless the data is preserved for more than 20 hours when the user does not take any actions.</p>
+   <p>20時間以上ユーザーが何も操作をしないときにデータが保存されない限り、データの損失を引き起こす<a href="#dfn-user-inactivity" class="internalDFN" data-link-type="dfn">ユーザーの無操作</a>の時間が警告される。</p>
   
-<div class="note"><div role="heading" class="note-title marker" id="h-note-17" aria-level="5"><span>注記</span></div><p class="">プライバシー関連の規制により、ユーザーを認証する前、およびユーザーのデータが保存される前に、ユーザーからの明示的な同意が必要になる可能性がある。ユーザーが未成年の場合は、ユーザーからの明示的な同意は、ほとんどの裁判管轄、国又は地域で要請することができない。この達成基準に適合するためのアプローチとしてデータ保存を検討する際は、プライバシーの専門家や弁護士に相談するのが望ましい。</p></div>
+<div class="note"><div role="heading" class="note-title marker" id="h-note-17" aria-level="5"><span>注記</span></div><p class="">プライバシー関連の規制により、ユーザーを認証する前やユーザーのデータが保存される前に、ユーザーの明確な同意が必要になる可能性がある。ユーザーが未成年の場合、ほとんどの裁判管轄、国または地域で、ユーザーからの明示的な同意を要請することができない。この達成基準に適合するためのアプローチとしてデータの保存を検討する場合は、プライバシーの専門家や弁護士に相談するのが望ましい。</p></div>
   
 </section>
  
 
                 <section class="sc new" id="animation-from-interactions" typeof="bibo:Chapter" resource="#animation-from-interactions" property="bibo:hasPart">
    					
-   <h4 id="x2-2-7-animation-from-interactions" resource="#x2-2-7-animation-from-interactions"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.2.7 </span>インタラクションからのアニメーション<span class="permalink" typeof="bookmark"><a href="#animation-from-interactions" aria-label="Permalink for 2.2.7 Animation from Interactions" title="Permalink for 2.2.7 Animation from Interactions" property="url"><span property="title" content="2.2.7 Animation from Interactions">§</span></a></span></span></h4>
+   <h4 id="x2-2-7-animation-from-interactions" resource="#x2-2-7-animation-from-interactions"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.2.7 </span>インタラクションによるアニメーション<span class="permalink" typeof="bookmark"><a href="#animation-from-interactions" aria-label="Permalink for 2.2.7 Animation from Interactions" title="Permalink for 2.2.7 Animation from Interactions" property="url"><span property="title" content="2.2.7 Animation from Interactions">§</span></a></span></span></h4>
    					
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#animation-from-interactions">How to Meet Animation from Interactions</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html">Understanding Animation from Interactions</a></div><p class="conformance-level">(レベル AAA)</p>
    					
    
 
-  <p><a href="#dfn-motion-animation" class="internalDFN" data-link-type="dfn">Motion animation</a> triggered by interaction can be disabled, unless the animation is <a href="#dfn-essential" class="internalDFN" data-link-type="dfn">essential</a> to the functionality or the information being conveyed.</p>
+  <p>アニメーションが、機能や伝達される情報に<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>でない限り、インタラクションによる<a href="#dfn-motion-animation" class="internalDFN" data-link-type="dfn">モーションアニメーション</a>は無効化できる。</p>
    				
 	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-3" aria-level="5"><span>編集者注</span></div><p class="">This success criterion is <a href="#at-risk">at risk</a>.</p></div>
 </section>
@@ -1426,18 +1886,18 @@ details.respec-tests-details > li {
    					
    
 	
-  <p>If a <a href="#dfn-keyboard-shortcuts" class="internalDFN" data-link-type="dfn">keyboard shortcut</a> is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:</p>
+  <p>コンテンツに文字 (大文字と小文字を含む)、句読点、数字、又は記号のみを使用した<a href="#dfn-keyboard-shortcuts" class="internalDFN" data-link-type="dfn">キーボードショートカット</a>が実装されている場合、少なくとも次のいずれかを満たしている:</p>
 
   <dl>
    
    <dt>解除</dt>
-    <dd>A <a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">mechanism</a> is available to turn the shortcut off;</dd>
+    <dd>ショートカットを解除する<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が利用できる</dd>
       						
-   <dt>Remap</dt>
-     <dd>A mechanism is available to remap the shortcut to use one or more non-printable keyboard characters (e.g. Ctrl, Alt, etc).</dd>
+   <dt>再割り当て</dt>
+     <dd>1つ以上の非表示文字 (例えばCtrlやAltなど) にショートカットを再割り当てするメカニズムが利用できる</dd>
 
-    <dt>Active only on focus</dt>
-    <dd>The keyboard shortcut for a <a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">user interface component</a> is only active when that component has focus.</dd>
+    <dt>フォーカス中にのみ有効化</dt>
+    <dd><a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザインタフェース コンポーネント</a>のキーボードショートカットは、そのコンポーネントがフォーカスをもっているときのみ有効になる。</dd>
     
   </dl>  
 	
@@ -1445,11 +1905,11 @@ details.respec-tests-details > li {
 
                 
             	<section class="sc new" id="label-in-name" typeof="bibo:Chapter" resource="#label-in-name" property="bibo:hasPart">
-   <h4 id="x2-4-12-label-in-name" resource="#x2-4-12-label-in-name"><span property="xhv:role" resource="xhv:heading"><span class="secno">S達成基準 2.4.12 </span>名前 (name) のラベル<span class="permalink" typeof="bookmark"><a href="#label-in-name" aria-label="Permalink for 2.4.12 Label in Name" title="Permalink for 2.4.12 Label in Name" property="url"><span property="title" content="2.4.12 Label in Name">§</span></a></span></span></h4>
+   <h4 id="x2-4-12-label-in-name" resource="#x2-4-12-label-in-name"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.4.12 </span>名前 (name) のラベル<span class="permalink" typeof="bookmark"><a href="#label-in-name" aria-label="Permalink for 2.4.12 Label in Name" title="Permalink for 2.4.12 Label in Name" property="url"><span property="title" content="2.4.12 Label in Name">§</span></a></span></span></h4>
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#label-in-name">How to Meet Label in Name</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">Understanding Label in Name</a></div><p class="conformance-level">(レベル A)</p>
    
 	
-  <p><a href="#dfn-labels" class="internalDFN" data-link-type="dfn">ラベル</a>を伴う<a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザーインタフェース コンポーネント</a>に<a href="#dfn-text" class="internalDFN" data-link-type="dfn">テキスト</a>又は<a href="#dfn-images-of-text" class="internalDFN" data-link-type="dfn">文字画像</a>が含まれている場合、その視覚的に提示されたテキストが<a href="#dfn-name" class="internalDFN" data-link-type="dfn">名前 (name)</a> に含まれている。</p>
+  <p><a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザインタフェース コンポーネント</a>が<a href="#dfn-text" class="internalDFN" data-link-type="dfn">テキスト</a>又は<a href="#dfn-images-of-text" class="internalDFN" data-link-type="dfn">文字画像</a>を含む<a href="#dfn-labels" class="internalDFN" data-link-type="dfn">ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="#dfn-name" class="internalDFN" data-link-type="dfn">名前 (name)</a> に含まれている。</p>
   
   <div class="note"><div role="heading" class="note-title marker" id="h-note-21" aria-level="5"><span>注記</span></div><p class="">ベストプラクティスは、ラベルのテキストを名前の最初に使用することである。</p></div>
 	
@@ -1459,21 +1919,17 @@ details.respec-tests-details > li {
             </section>
 
             <section class="guideline new" id="pointer-accessible" typeof="bibo:Chapter" resource="#pointer-accessible" property="bibo:hasPart">
-                <h3 id="x2-5-pointer-accessible" resource="#x2-5-pointer-accessible"><span property="xhv:role" resource="xhv:heading"><span class="secno">Guideline 2.5 </span>Pointer Accessible<span class="permalink" typeof="bookmark"><a href="#pointer-accessible" aria-label="Permalink for 2.5 Pointer Accessible" title="Permalink for 2.5 Pointer Accessible" property="url"><span property="title" content="2.5 Pointer Accessible">§</span></a></span></span></h3>
+                <h3 id="x2-5-pointer-accessible" resource="#x2-5-pointer-accessible"><span property="xhv:role" resource="xhv:heading"><span class="secno">ガイドライン 2.5 </span>ポインタ<span class="permalink" typeof="bookmark"><a href="#pointer-accessible" aria-label="Permalink for 2.5 Pointer Accessible" title="Permalink for 2.5 Pointer Accessible" property="url"><span property="title" content="2.5 Pointer Accessible">§</span></a></span></span></h3>
                 
-                <p>Make it easier for users to operate pointer functionality.</p>
+                <p>ポインタ機能を、利用者にとって操作しやすくすること。</p>
 
                 <section class="sc new" id="pointer-gestures" typeof="bibo:Chapter" resource="#pointer-gestures" property="bibo:hasPart">
    					
    <h4 id="x2-5-1-pointer-gestures" resource="#x2-5-1-pointer-gestures"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.5.1 </span>ポインタのジェスチャ<span class="permalink" typeof="bookmark"><a href="#pointer-gestures" aria-label="Permalink for 2.5.1 Pointer Gestures" title="Permalink for 2.5.1 Pointer Gestures" property="url"><span property="title" content="2.5.1 Pointer Gestures">§</span></a></span></span></h4>
    					
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#pointer-gestures">How to Meet Pointer Gestures</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures.html">Understanding Pointer Gestures</a></div><p class="conformance-level">(レベル A)</p>
-   					
-   
-   					
-   <p>マルチポイントまたは軌跡をベースとしたジェスチャを使って操作する<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>はすべて、path-basedジェスチャーなしの<a href="#dfn-single-pointer" class="internalDFN" data-link-type="dfn">シングルポインタ</a>で操作することができる。ただし、マルチポイント又は軌跡をベースとしたジェスチャが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である場合は例外とする。</p>
-   					
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-22" aria-level="5"><span>注記</span></div><p class="">この要件は、ポインタのジェスチャを解釈するウェブコンテンツを対象としている (ユーザーエージェントや支援技術の操作に必要なジェスチャは対象としていない)。</p></div>
+<p>マルチポイントまたは軌跡ベースのジェスチャを使って操作する<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>はすべて、軌跡ベースのジェスチャーなしの<a href="#dfn-single-pointer" class="internalDFN" data-link-type="dfn">シングルポインタ</a>で操作することができる。ただし、マルチポイント又は軌跡ベースのジェスチャが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である場合は例外とする。</p>
+<div class="note"><div role="heading" class="note-title marker" id="h-note-22" aria-level="5"><span>注記</span></div><p class="">この要件は、ポインタのジェスチャを解釈するウェブコンテンツを対象としている (ユーザーエージェントや支援技術の操作に必要なジェスチャは対象としていない)。</p></div>
 	
 </section>
 
@@ -1494,10 +1950,10 @@ details.respec-tests-details > li {
      <dd>機能を実行する目的でポインタの<a href="#dfn-down-event" class="internalDFN" data-link-type="dfn">ダウンイベント</a>を使用していない。</dd>
       						
    <dt>中止または元に戻すことができる</dt>
-     <dd>機能を完了させる目的には<a href="#dfn-up-event" class="internalDFN" data-link-type="dfn">アップイベント</a>を使用し、かつ機能の完了前にを中止する、又はか機能の完了後に元に戻すための<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が存在する。</dd>
+     <dd>機能を完了させる目的には<a href="#dfn-up-event" class="internalDFN" data-link-type="dfn">アップイベント</a>を使用し、かつ機能の完了前にを中止する、又は機能の完了後に元に戻すための<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が利用できる。</dd>
       						
    <dt>アップイベントで戻すことができる</dt>
-     <dd>アップイベントを使うことで、先行したダウンイベントの結果を元に戻すことができる。</dd>
+     <dd>アップイベントによって、先行したダウンイベントの結果を元に戻すことができる。</dd>
       						
    <dt>必要不可欠</dt>
      <dd>ダウンイベントによって機能を完了させることが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である。</dd>
@@ -1522,7 +1978,7 @@ details.respec-tests-details > li {
 	<dt>インラインである</dt> 
   <dd>そのターゲットが文章またはテキストブロック内に存在する。</dd>
 	<dt>ユーザーエージェントのコントロールである</dt> 
-  <dd>ターゲットのサイズがユーザーエージェントによって制御されていて、かつコンテンツ制作者が変更していない。</dd>
+  <dd>ターゲットのサイズがユーザーエージェントによって定められており、かつコンテンツ制作者が変更していない。</dd>
 	<dt>必要不可欠</dt> 
   <dd>そのターゲットを特定の方法で提示することが、情報伝達にとって<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>である。</dd>
 </dl>  
@@ -1534,7 +1990,7 @@ details.respec-tests-details > li {
    <h4 id="x2-5-4-concurrent-input-mechanisms" resource="#x2-5-4-concurrent-input-mechanisms"><span property="xhv:role" resource="xhv:heading"><span class="secno">達成基準 2.5.4 </span>入力メカニズム非依存<span class="permalink" typeof="bookmark"><a href="#concurrent-input-mechanisms" aria-label="Permalink for 2.5.4 Concurrent Input Mechanisms" title="Permalink for 2.5.4 Concurrent Input Mechanisms" property="url"><span property="title" content="2.5.4 Concurrent Input Mechanisms">§</span></a></span></span></h4>
    <div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/quickref/#concurrent-input-mechanisms">How to Meet Concurrent Input Mechanisms</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/Understanding/concurrent-input-mechanisms.html">Understanding Concurrent Input Mechanisms</a></div><p class="conformance-level">(レベル AAA)</p>
   
-  <p>プラットフォームで提供されている入力モダリティの使用を、ウェブコンテンツが制限しない。ただし、その制限が<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合、コンテンツのセキュリティのために必要な場合、又は個別のユーザ設定に必要な場合は例外とする。</p>   					
+  <p>プラットフォームで提供されている入力モダリティの使用を、ウェブコンテンツが制限しない。ただし、その制限が<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合、コンテンツのセキュリティのために必要な場合、又はユーザ設定を尊重するうえで必要な場合は例外とする。</p>   					
 </section>
 
 
@@ -1554,12 +2010,12 @@ details.respec-tests-details > li {
    					
    
    					
-   <p>デバイスの動作やユーザの動作で操作できる<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>が、<a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザーインタフェース コンポーネント</a>でも操作でき、and responding to the motion、かつ予期しない起動を防ぐために無効化することができる。ただし、以下の場合は例外とする。</p>
+   <p>デバイスの動作やユーザの動作で操作できる<a href="#dfn-functionality" class="internalDFN" data-link-type="dfn">機能</a>が、<a href="#dfn-user-interface-components" class="internalDFN" data-link-type="dfn">ユーザーインタフェース コンポーネント</a>でも操作でき、かつ予期しない起動を防ぐために動作への反応を無効化することができる。ただし、以下の場合は例外とする。</p>
    
    <dl>
    
-   <dt>Supported Interface</dt>
-     <dd>The motion is used to operate functionality through an <a href="#dfn-accessibility-supported" class="internalDFN" data-link-type="dfn">accessibility supported</a> interface;</dd>
+   <dt>サポートされたインタフェース</dt>
+     <dd>動作は機能を操作するために<a href="#dfn-accessibility-supported" class="internalDFN" data-link-type="dfn">アクセシビリティ サポーテッド</a>なインタフェースを通じて用いられる。</dd>
    
    <dt>必要不可欠</dt>
    <dd>その動作が機能にとって<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>であり、これを無効化すればアクティビティを無効化してしまう。</dd>
@@ -1579,7 +2035,7 @@ details.respec-tests-details > li {
    					
   <p>コンテンツが、その表示及び操作を縦向き (ポートレート) または横向き (ランドスケープ) などの単一の向きに制限しない。ただし、その表示の向きが<a href="#dfn-essential" class="internalDFN" data-link-type="dfn">必要不可欠</a>な場合は例外とする。</p>
    				
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-23" aria-level="5"><span>注記</span></div><p class="">単一の表示の向きが必要不可欠な例としては、銀行の小切手、ピアノのアプリケーション、プロジェクタやテレビ向けのスライド、バイナリ表示が使用できないバーチャルリアリティのコンテンツなどが挙げられる。</p></div><!--OddPage-->
+   <div class="note"><div role="heading" class="note-title marker" id="h-note-23" aria-level="5"><span>注記</span></div><p class="">単一の表示の向きが必要不可欠な例としては、銀行の小切手、ピアノのアプリケーション、プロジェクタやテレビ向けのスライド、バイナリディスプレイ表示が適用されないバーチャルリアリティのコンテンツなどが挙げられる。</p></div><!--OddPage-->
    					
 </section>
 
@@ -1588,7 +2044,7 @@ details.respec-tests-details > li {
 
         </section>
         <section class="principle" id="understandable" typeof="bibo:Chapter" resource="#understandable" property="bibo:hasPart">
-            <h2 id="x3-understandable" resource="#x3-understandable"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span> 理解可能 <span class="permalink" typeof="bookmark"><a href="#understandable" aria-label="Permalink for 3.  Understandable " title="Permalink for 3.  理解可能 " property="url"><span property="title" content="3.  Understandable ">§</span></a></span></span></h2>
+        <h2 id="x3-understandable" resource="#x3-understandable"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span> 理解可能 <span class="permalink" typeof="bookmark"><a href="#understandable" aria-label="Permalink for 3.  Understandable " title="Permalink for 3.  理解可能 " property="url"><span property="title" content="3.  Understandable ">§</span></a></span></span></h2>
             <p>情報及びユーザインタフェースの操作は理解可能でなければならない。</p>
 
             <section class="guideline" id="readable" typeof="bibo:Chapter" resource="#readable" property="bibo:hasPart">
@@ -2798,13 +3254,13 @@ details.respec-tests-details > li {
 </dd>
 
 
-                <dt class="new"><dfn data-dfn-type="dfn" id="dfn-motion-animation">motion animation</dfn></dt>
+                <dt class="new"><dfn data-dfn-type="dfn" id="dfn-motion-animation">モーションアニメーション</dfn></dt>
 <dd class="new">
    					
    
    					
-   <p>addition of steps between conditions to create the illusion of movement or to give a sense of a smooth transition</p>
-	<p class="example">For example, an element which moves into place or changes size while appearing is considered to be animated. An element which appears instantly without transitioning is not using animation. Motion animation does not include changes of color, blurring or opacity.</p>
+    <p>動いているような錯覚やスムーズに移動しているように感じさせるために作る、状態と状態の間にステップを加えること。</p>
+    <p class="example">例えば、別の場所に移動したりサイズが変わる要素はアニメーションしていると考えられる。推移せずに即座に表示される要素は、アニメーションを用いていない。モーションアニメーションには、色、ぼかしまたは不透明度の変更は含まれない。</p>
 
 	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-5" aria-level="3"><span>編集者注</span></div><p class="">This term is <a href="#at-risk">at risk</a>.</p></div>
 </dd>
@@ -2879,7 +3335,7 @@ details.respec-tests-details > li {
    <p>マウス、ペン、タッチ接触のように、画面上の特定の (1つまたは複数の) 地点を指すことができる入力デバイス。
    </p>
    					
-   <p><a href="https://www.w3.org/TR/pointerevents/#dfn-pointer">ポインタイベント のポインタの定義</a>も参照できる[<cite><a class="bibref" href="#bib-pointerevents">pointerevents</a></cite>]
+   <p><a href="https://www.w3.org/TR/pointerevents/#dfn-pointer">Pointer Events pointerの定義</a>も参照[<cite><a class="bibref" href="#bib-pointerevents">pointerevents</a></cite>]。
    </p>
    				
 </dd>
@@ -2994,12 +3450,12 @@ details.respec-tests-details > li {
 </dd>
 
 
-                <dt class="new"><dfn data-lt="regions|region" data-dfn-type="dfn" id="dfn-regions">region</dfn></dt>
+                <dt class="new"><dfn data-lt="regions|region" data-dfn-type="dfn" id="dfn-regions">領域 (region)</dfn></dt>
 <dd class="new">
   
-  <p>perceivable, programmatically determined section of content</p>
-  <div class="note"><div role="heading" class="note-title marker" id="h-note-117" aria-level="3"><span>注記</span></div><p class="">In HTML, any area designated with a landmark role would be a region.</p></div>
-	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="3"><span>編集者注</span></div><p class="">This term is <a href="#at-risk">at risk</a>.</p></div>
+  <p>コンテンツの知覚可能、プログラムによる解釈が可能なセクション</p>
+  <div class="note"><div role="heading" class="note-title marker" id="h-note-117" aria-level="3"><span>注記</span></div><p class="">HTMLでは、landmarkロールが指定されたあらゆるエリアは領域になる。</p></div>
+	<div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote-6" aria-level="3"><span>編集者注</span></div><p class="">この用語は<a href="#at-risk">リスク下にある</a>.</p></div>
 </dd>
 
 
@@ -3133,10 +3589,7 @@ details.respec-tests-details > li {
    <p>共通の目的を共有し、同じコンテンツ制作者、グループ、又は組織により制作された<a href="#dfn-web-page-s" class="internalDFN" data-link-type="dfn">ウェブページ</a>の集合。
    </p>
    
-   <p class="example">Examples include a publication which is split across multiple Web pages, where each page contains
-      one chapter or other significant section of the work. The publication is logically
-      a single contiguous unit, and contains navigation features that enable access to the
-      full set of pages.
+   <p class="example">例には複数のウェブページにまたがる発行物が含まれ、各ページには1つの章又はその他の重要なセクションが含まれる。論理的に発行物は1つの連続した単位であり、ウェブページ一式へのアクセスを可能にするナビゲーション機能を有する。
    
    </p>
 
@@ -3169,7 +3622,7 @@ details.respec-tests-details > li {
    					
    
    	
-   <p>pointer input that operates with one point of contact with the screen, including single taps and clicks, double-taps and clicks, long presses, and path-based gestures</p>
+   <p>シングルタップやクリック、ダブルタップやクリック、長押し及びパスを基点としたジェスチャーを含む、画面と1つの接点で動作するポインタ入力</p>
   				
 </dd>
 
@@ -3222,15 +3675,15 @@ details.respec-tests-details > li {
    
 </dd>
 
-                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイルプロパティ (style properties)</dfn></dt>
+                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイル属性 (style properties)</dfn></dt>
   <dd class="new">
   
-  <p>ユーザーエージェントがコンテンツ要素を提示する際 (画面、音声スピーカー、点字ディスプレイなど) の提示方法 (フォント、カラー、サイズ、位置、パディング、音量、合成音声の音調など) を値によって指定するプロパティ。</p><p>
- 	</p><p>スタイルプロパティには、いくつかのパターンが考えられる。</p>
+  <p>ユーザエージェントがコンテンツ要素をレンダリングする際の (画面、音声スピーカー、点字ディスプレイなどを介する) 提示方法を値によって指定する属性。 (フォント、カラー、サイズ、位置、パディング、音量、合成音声の韻律など) </p><p>
+ 	</p><p>スタイル属性には、起源がいくつか考えられる。</p>
     <ul>
-      <li>ユーザーエージェントのデフォルトのスタイル: コンテンツ制作者やユーザがスタイルを指定しない場合は、ユーザーエージェントのデフォルトのスタイルプロパティが使用される。ウェブコンテンツ技術のなかには、デフォルトの提示方法を指定している技術とそうでない技術がある。</li>
-      <li>コンテンツ制作者のスタイル: コンテンツ制作者がコンテンツの一部として設定するスタイルプロパティ (インラインスタイル、コンテンツ制作者のスタイルシートなど)。</li>
-      <li>ユーザーのスタイル: ユーザーが設定するスタイルプロパティ (ユーザーエージェントのインタフェース設定やユーザーのスタイルシートなど)。</li>
+      <li>ユーザエージェントのデフォルトのスタイル: コンテンツ制作者やユーザがスタイルを指定しない場合は、ユーザエージェントのデフォルトのスタイル属性が使用される。ウェブコンテンツ技術には、デフォルトの提示方法を指定しているものとしていないものがある。</li>
+      <li>コンテンツ制作者のスタイル: コンテンツ制作者がコンテンツの一部として設定するスタイル属性 (インラインスタイル、コンテンツ制作者のスタイルシートなど)。</li>
+      <li>ユーザーのスタイル: ユーザーが設定するスタイル属性 (ユーザエージェントのインタフェース設定やユーザーのスタイルシートなど)。</li>
     </ul>
  	
 </dd>
@@ -3267,8 +3720,8 @@ details.respec-tests-details > li {
    					
    
    					
-     <p>region of the display that will accept a pointer action, such as the interactive area of a user interface component</p> 
-    <p>If two or more touch targets are overlapping, the overlapping area should not be included in the measurement of the target size, except when the overlapping targets perform the same action or open the same page.</p>
+     <p>ユーザインタフェース コンポーネントのインタラクティブな領域のような、ポインタアクションを受け入れるディスプレイの領域</p> 
+    <p>2つ以上のタッチターゲットが重なっている場合、重なっているターゲットが同じアクションを実行するか、同じページを開く場合を除いて、重なっているエリアを含めてターゲットのサイズを測定するべきでない。</p>
    <p></p>
   
 </dd>
@@ -3317,7 +3770,7 @@ details.respec-tests-details > li {
                 <dt class="new"><dfn data-dfn-type="dfn" id="dfn-up-event">アップイベント (up-event)</dfn></dt>
 <dd class="new">
   
-  <p>ポインタのトリガがリリースされた時に生じるプラットフォームのイベント。</p>
+  <p>ポインタのトリガ刺激が解除されたときに生じるプラットフォームイベント。</p>
 	<p>アップイベントは、プラットフォームによっては「タッチエンド」や「マウスアップ」などの異なる名称で呼ばれている場合がある。</p>
 </dd>
 
@@ -3371,7 +3824,7 @@ details.respec-tests-details > li {
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-134" aria-level="3"><span>注記</span></div><p class="">What is meant by "component" or "user interface component" here is also sometimes
       called "user interface element".
-   
+   ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれます。
    </p></div>
    
    <p class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。
