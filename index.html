@@ -2907,7 +2907,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </dt>
 <dd>
    
-   <p><a href="#dfn-user-agents" class="internalDFN" data-link-type="dfn">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び/あるいはソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。[mark]
+   <p><a href="#dfn-user-agents" class="internalDFN" data-link-type="dfn">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び/あるいはソフトウェアは、障害のある利用者の要求に、主流のユーザエージェント以上の機能を、提供する。
    </p>
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-46" aria-level="3"><span>注記</span></div><p class="">支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
@@ -3123,7 +3123,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
    <div class="note"><div role="heading" class="note-title marker" id="h-note-66" aria-level="3"><span>注記</span></div><p class="">複数の言語版が利用できる場合、各言語版に対して、適合している代替版を提供する必要がある。
    </p></div>
    
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-67" aria-level="3"><span>注記</span></div><p class="">様々な技術環境、又は利用者層に対応するために、複数の代替版を提供してもよい。この場合、各版は可能なかぎり適合したものでなければならず、<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。[mark]
+   <div class="note"><div role="heading" class="note-title marker" id="h-note-67" aria-level="3"><span>注記</span></div><p class="">代替版は異なる技術環境やユーザー層に適応するよう提供される。それぞれの版は可能な限り適合されるべきである。<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。
    </p></div>
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-68" aria-level="3"><span>注記</span></div><p class="">不適合版と同じように自由に利用可能であるかぎり、適合している代替版は、適合宣言の範囲に含まれている必要はなく、同一のウェブサイト上で提供されている必要もない。
@@ -3794,7 +3794,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   </div></div>
   
-   <div class="note"><div role="heading" class="note-title marker" id="h-note-119" aria-level="3"><span>注記</span></div><p class="">ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに他の色空間が用いられているのでなければ、コンテンツ制作者は sRGB 色空間を用いて計算するべきである。もしその他の色空間を用いるのであれば、<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast">Understanding Success Criterion 1.4.3</a> を参照。[mark]
+   <div class="note"><div role="heading" class="note-title marker" id="h-note-119" aria-level="3"><span>注記</span></div><p class="">ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっている場合は、制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast">Understanding Success Criterion 1.4.3</a> を参照。
    </p></div>
    
    <div class="note"><div role="heading" class="note-title marker" id="h-note-120" aria-level="3"><span>注記</span></div><p class="">表示時にディザリングが発生する場合は、元の色の値が用いられる。元々ディザリングがかけられている色については、用いられている色の平均値を用いるべきである (R の平均値、G の平均値、及び B の平均値)。
@@ -3963,10 +3963,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
    
 </dd>
 
-                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイル属性 (style properties) [mark]</dfn></dt>
+                <dt class="new"><dfn data-lt="style properties|style property" data-dfn-type="dfn" id="dfn-style-properties">スタイル属性 (style properties)</dfn></dt>
   <dd class="new">
   
-  <p>ユーザエージェントがコンテンツ要素をレンダリングする際の (画面、音声スピーカー、点字ディスプレイなどを介する) 提示方法を値によって指定する属性。(フォント、カラー、サイズ、位置、パディング、音量、合成音声の韻律など)</p><p>
+  <p>属性の値は、ユーザーエージェントによってレンダリングされるコンテンツ要素(画面、音声スピーカー、点字ディスプレイなどを介する) の表示形式(フォント、カラー、サイズ、位置、パディング、音量、合成音声の韻律など)を定義する</p><p>
  	</p><p>スタイル属性には、起源がいくつか考えられる。</p>
     <ul>
       <li>ユーザエージェントのデフォルトのスタイル: コンテンツ制作者やユーザがスタイルを指定しない場合は、ユーザエージェントのデフォルトのスタイル属性が使用される。ウェブコンテンツ技術には、デフォルトの提示方法を指定しているものとしていないものがある。</li>
