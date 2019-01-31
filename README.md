@@ -6,7 +6,7 @@ GitHub Pages により
 
 - https://waic.github.io/wcag21/guidelines/
 
-から閲覧可能です。WCAG 2.1 自体、W3C AGWG によって策定中の文書であることに注意してください。
+から閲覧可能です。WCAG 2.1 の策定は完了していますが、関連文書である Understanding WCAG 2.1及び Techniques for WCAG 2.1 は、W3C AGWG によって策定中の文書であることに注意してください。
 
 なお、WCAG 2.0 に関連する翻訳文書のレポジトリは、[waic/wcag20](https://github.com/waic/wcag20/) になります。
 
