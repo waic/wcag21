@@ -4,7 +4,7 @@
 
 GitHub Pages により
 
-- https://waic.github.io/wcag21/guidelines/
+- [https://waic.github.io/wcag21/guidelines/](https://waic.github.io/wcag21/guidelines/)
 
 から閲覧可能です。WCAG 2.1 の策定は完了していますが、関連文書である Understanding WCAG 2.1 及び Techniques for WCAG 2.1 は、W3C AGWG によって策定中の文書であることに注意してください。
 
