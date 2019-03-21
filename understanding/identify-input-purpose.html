@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.5: 入力目的の特定を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="orientation.html">Previous <abbr title="Success Criterion">SC</abbr>: 表示の向き</a></li>
+            <li><a href="identify-purpose.html">Next <abbr title="Success Criterion">SC</abbr>: 目的の特定</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.5: 入力目的の特定を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#identify-input-purpose" style="font-weight: bold;">1.3.5 入力目的の特定</a> (レベル AA): ユーザーの情報を集める入力フィールドのそれぞれの目的は、次の場合に<a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈が可能</a>である:</p>
+         <ul>
+            
+            <li>入力フィールドが、<a href="https://w3c.github.io/wcag/guidelines/#input-purposes">ユーザインタフェース コンポーネントの入力目的</a>の節で示される目的を提供している、かつ</li>
+            
+            <li>フォーム入力データとして想定される意味の特定をサポートする技術を用いて、コンテンツが実装されている。</li>
+            
+         </ul>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this Success Criterion is to ensure that the purpose of a form input collecting information about the user can be programmatically determined, so that user agents can extract and present this purpose to users using different modalities. The ability to programmatically declare the specific kind of data expected in a particular field makes filling out forms easier, especially for people with cognitive disabilities.</p>
+            <p>Appropriate visible labels and instruction can help users understand the purpose of form input fields, but users may benefit from having fields that collect specific types of information be rendered in an unambiguous, consistent, and possibly customized way for different modalities - either through defaults in their user agent, or through the aid of assistive technologies.</p>
+            <p>For some input fields, the type attribute already offers a way to broadly specify the intention of the input field, for example, input type="tel", input type="email", or input type="password". However, these are only very broad categories, describing the type of input, but not necessarily its purpose, especially as it relates to user-specific input fields. As an example, type="email" indicates that the field is for an e-mail address but does not clarify if the purpose is for entering the user's e-mail address or some other person's e-mail.</p>
+            <p>This success criterion defines the types of user interface component input purposes, found in <a href="https://www.w3.org/TR/WCAG21/#input-purposes">Section 7 of the WCAG 2.1 Recommendation</a>, that must be programmatically identifiable. When these user input purposes are present, and if the technology supports doing so, the field purpose must be programmatically identifiable.</p>
+            <p>The HTML autocomplete attribute only accepts a certain number of specific well-defined fixed values. This allows a more fine-grained definition or identification of purpose than the type attribute, for example, by allowing the author to specify a specific type of name: Name (autocomplete="name”), Given Name (autocomplete="given-name”), Family Name (autocomplete="family-name”), as well as Username (autocomplete="username”), and Nickname (autocomplete="nickname”).</p>
+            <p>By adopting and repurposing this predefined taxonomy of definitions, user agents and assistive technologies can now present the purpose of the inputs to users in different modalities. For example, assistive technologies may display familiar icons next to input fields to help users who have difficulties reading. An icon of a birthday cake may be shown in front of an input field with autocomplete="bday", or the icon of a telephone in front of an input field with autocomplete="tel".</p>
+            <p>In addition to repurposing this taxonomy, when the autocomplete attribute technique is used to meet this Success Criteria, browsers and other user-agents can suggest and 'autofill' the right content by autocompleting these fields based on past user input stored in the browser. By defining more granular definitions of common input purposes, for example “Birthday” (autocomplete=”bday”), browsers can store personalized values for each of these fields (the user's birthday date). The user is relieved of having to type the information and can instead confirm or, if needed, change the value of the field, a significant benefit for users with memory issues, dyslexia, and other disabilities. Because the autocomplete values are independent of language, users that may not be familiar with the text used to visually identify user input fields (the label) can still have that purpose consistently identified to them due to the fixed taxonomy of terms.</p>
+            <p>When the user agent and assistive technology support for other metadata formats matures, metadata schemes like the <a href="https://w3c.github.io/personalization-semantics/content/">Personalization Semantics Content Module</a> may be used in addition or instead of the HTML autocomplete attribute to identify the purpose of input fields. They can also support automated adaptations that identify and match author-provided input labels to defined vocabularies or symbols that are used instead for labelling inputs.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               <li>People with language and memory related disabilities or disabilities that affects executive function and decision-making benefit from the browser auto-filling personal information (such as name or address) when the autocomplete attribute is used to meet this Success Criteria, which means information does not need to be remembered by the user.</li>
+               
+               <li>People with cerebral palsy, stroke, head injury, motor neuron disease or learning disability sometimes prefer images for communication. They can employ assistive technology which adds icons to input fields to communicate the purpose of the fields visually.</li>
+               
+               <li>People with motor impairments also benefit from reducing the need for manual input when filling out forms.</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li><strong>A contact form using autofill</strong><br />A contact form auto-fills in the fields for name, street, post code, city, telephone number and email address from autofill values stored in the user's browser. Assistive technology can offer a customized way of identifying particular input fields, for example drawing on a set of symbols / icons that is familiar to the user, to communicate the purpose of the fields visually.</li>
+               
+               <li><strong>An order from with separate billing and shipping address</strong><br />A product order form fills in the address fields for billing address and a separate set of address fields for the shipping address, using the autofill detail tokens 'billing' and 'shipping'</li>
+               
+               <li><strong>A contact form using icons</strong><br />A browser plugin to add icons inserts icons representing the person's name, home address, telephone number and email address to identify the input purpose visually.</li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               <li><a href="https://www.w3.org/TR/coga-gap-analysis/#table3">COGA Gap Analysis Table 3: Entering Data, Error Prevention, &amp; Recovery</a></li>
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  
+                  <li><a href="https://w3c.github.io/wcag/techniques/html/H98">H98: Using HTML 5.2 autocomplete attributes</a></li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.3.3: インタラクションによるアニメーションを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="seizures-and-physical-reactions.html"><abbr title="Guideline">GL</abbr>: 発作と身体的反応</a></li>
+            <li><a href="three-flashes.html">Previous <abbr title="Success Criterion">SC</abbr>: 3 回の閃光</a></li>
+            <li><a href="bypass-blocks.html">Next <abbr title="Success Criterion">SC</abbr>: ブロックスキップ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.3.3: インタラクションによるアニメーションを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#animation-from-interactions" style="font-weight: bold;">2.3.3 インタラクションによるアニメーション</a> (レベル AAA): アニメーションが、機能又は伝達されている情報に<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>でない限り、インタラクションによって引き起こされる<a href="https://w3c.github.io/wcag/guidelines/#dfn-motion-animation" target="terms">モーションアニメーション</a>を無効にできる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this Success Criterion is to allow users to prevent animation from being displayed on Web pages. Some users experience distraction or nausea from animated content. For example, if scrolling a page causes elements to move (other than the essential movement associated with scrolling) it can trigger vestibular disorders. Vestibular (inner ear) disorder reactions include dizziness, nausea and headaches. Another animation that is often non-essential is parallax scrolling. Parallax scrolling occurs when backgrounds move at a different rate to foregrounds. Animation that is essential to the functionality or information of a web page is allowed by this Success Criterion.</p>
+            <p>"Animation from interactions" applies when a user’s interaction initiates non-essential animation. In contrast, <a href="">2.2.2 Pause, Stop, Hide</a> applies when the web page initiates animation.</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>The impact of animation on people with vestibular disorders can be quite severe. Triggered reactions include nausea, migraine headaches, and potentially needing bed rest to recover.</p>
+            </div>
+            <p><strong>How can a website reduce the chances of triggering a vestibular disorder?</strong> Choose any one of the following solutions. Avoid using unnecessary animation. Provide a control for users to turn off non-essential animations from user interaction. Take advantage of the reduce motion feature in the user-agent or operating system.</p>
+            <p><strong>What about movement caused by a user scrolling a page?</strong> Moving new content into the viewport is essential for scrolling. The user controls the essential scrolling movement so it is allowed. Only add non-essential animation to the scrolling interaction in a responsible way. Always give users the ability to turn off unnecessary movement.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               <li><strong>Vestibular Disorder</strong><ul>
+                     
+                     <li>People with vestibular disorders need control over movement triggered by interactions. Non-essential movement can trigger vestibular disorder reactions. Vestibular (inner ear) disorder reactions include distraction, dizziness, headaches and nausea.</li>
+                     
+                     <li>Persona Quote: "Stop that extra movement! You are making me so dizzy I cannot concentrate. Now I have to turn off my computer and go lie down."</li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li><strong>Parallax scrolling with option to turn off unnecessary motion globally:</strong><ul>
+                     
+                     <li>A site includes extra animations when the user scrolls. Decorative elements move in and out of view horizontally when the essential page content is scrolled vertically. A control at the top of each page allows the user to turn off unnecessary animations. The ability to turn off non-essential animations is a site-wide setting.</li>
+                     
+                  </ul>
+                  
+               </li>
+               				
+               <li><strong>Transitions that support the reduce motion preference:</strong><ul>
+                     
+                     <li>A site includes a non-essential transition when loading new content. The transition is a page-flipping animation that respects the reduce-motion CSS media query. When the user enables the reduce motion preference, the page-flipping animation is turned off.</li>
+                     
+                  </ul>
+                  
+               </li>
+               				
+               <li><strong>Essential animation:</strong><ul>
+                     
+                     <li>A web application provides a feature to author animated sequences. As part of this tool the author needs to preview the animation.</li>
+                     
+                  </ul>
+                  
+               </li>
+               			
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://css-tricks.com/introduction-reduced-motion-media-query/">An Introduction to the Reduced Motion Media Query</a></li>
+               
+               <li><a href="http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity">Designing Safer Web Animations for Motion Sensitivity</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  						
+                  <li><a href="https://w3c.github.io/wcag/techniques/css/C39">C39: Using the CSS reduce-motion query to prevent motion</a></li>
+                  						
+                  <li>Gx: Allowing users to set a preference that prevents animation.</li>
+                  					
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-motion-animation">モーションアニメーション (motion animation)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">動いているような錯覚やスムーズに移動しているように感じさせるために作る、状態と状態の間にステップを加えること。</p>
+                  	        
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">例えば、別の場所に移動したりサイズが変わる要素はアニメーションしていると考えられる。推移せずに即座に表示される要素は、アニメーションを用いていない。モーションアニメーションには、色、ぼかし又は不透明度の変更は含まれない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

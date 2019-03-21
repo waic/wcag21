@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.1.4: 文字キーのショートカットを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="keyboard-accessible.html"><abbr title="Guideline">GL</abbr>: キーボード操作可能</a></li>
+            <li><a href="keyboard-no-exception.html">Previous <abbr title="Success Criterion">SC</abbr>: キーボード (例外なし)</a></li>
+            <li><a href="timing-adjustable.html">Next <abbr title="Success Criterion">SC</abbr>: タイミング調整可能</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.1.4: 文字キーのショートカットを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#character-key-shortcuts" style="font-weight: bold;">2.1.4 文字キーのショートカット</a> (レベル A): 文字 (大文字と小文字を含む)、句読点、数字、又は記号のみを使用した<a href="https://w3c.github.io/wcag/guidelines/#dfn-keyboard-shortcut" target="terms">キーボードショートカット</a>がコンテンツに実装されている場合、少なくとも次のいずれかを満たしている:</p>
+         <dl>
+            
+            
+            <dt>解除</dt>
+            
+            <dd>ショートカットを解除する<a href="https://w3c.github.io/wcag/guidelines/#dfn-mechanism" target="terms">メカニズム</a>が利用できる</dd>
+            						
+            
+            <dt>再割り当て</dt>
+            
+            <dd>一つ以上の非印字文字 (例えば Ctrl や Alt など) を使用するようにショートカットを再割り当てするメカニズムが利用できる</dd>
+            
+            
+            <dt>フォーカス中にのみ有効化</dt>
+            
+            <dd><a href="https://w3c.github.io/wcag/guidelines/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>のキーボードショートカットは、そのコンポーネントがフォーカスをもっているときのみ有効になる。</dd>
+            
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>Character key shortcuts work well for many keyboard users, but are inappropriate and frustrating for speech input users — whose means of input is strings of letters — and for keyboard users who are prone to accidentally hitting keys. As a result, users must be able to turn off or reconfigure shortcuts made up of a single character key, or two or more successive character keys.</p>
+            <p>This success criterion is becoming increasingly important in the mobile realm as growing number of apps more fully enable keyboard controls.</p>
+            <p>Note that this success criterion doesn’t affect components such as listboxes and drop-down menus that contain words that may be selected by one or more character keys, since the shortcuts are only active when the components have focus. Similarly, components such as menus may be accessed or opened with an initial, non-single character shortcut (e.g., “ALT” or “ALT+F”). This makes the full path to invoking a menu a two-step shortcut that includes a non-printable key.</p>
+            <p>Note that <a href="https://www.w3.org/TR/html5/single-page.html#the-accesskey-attribute">Accesskeys</a> are not affected because they include modifier keys.</p>
+            <p>Speech Input users generally work in a single mode where they can use a mix of dictation and speech commands. This works well because the user knows to pause before and after commands, and commands are usually at least two words long. So, for instance, a user might say a bit of dictation, such as "the small boat", then pause, and say a command to delete that dictation, such as "Delete Line". In contrast, if the user were to say the two phrases together without a pause, the whole phrase would come out as dictation (i.e., "the small boat delete line"). Although speech input programs often include modes that listen only for dictation or only for commands, most speech users use the all-encompassing mode all the time because it is a much more efficient workflow. It could increase command inefficiency by 300% if users were to change to command mode and back before and after issuing a command.</p>
+            <p>Speech users can also speak most keyboard commands (e.g., "press Control Foxtrot") without any problems. If the website or app is keyboard enabled, the speech user can also write a native speech macro that calls the keyboard command, such as "This Print" to carry out Ctrl+P.</p>
+            <p>Single-key shortcuts are the exception. While using single letter keys as controls might be appropriate and efficient for many keyboard users, single-key shortcuts are disastrous for speech users. The reason for this is that when only a single key is used to trip a command, a spoken word can become a barrage of single-key commands if the cursor focus happens to be in the wrong place.</p>
+            <p>For example, if the cursor focus is in the main window of a web mail application that uses common keyboard shortcuts to navigate ("k"), archive ("y") and mute messages ("m"), and someone enters an office and says "Hey Kim" and the speech user's microphone picks that up, "y" archives the current message. "k" moves down one conversation and "m" mutes a message or thread. Or, if the speech user looks up and says "Hey Mike" without remembering to turn off the microphone, the same three things happen in a different sequence. A user interacting with a webpage or web app that doesn't use single-character shortcuts doesn't have this problem. A speech user filling in a text input form may find that a phrase that is accidentally picked up by the speech microphone results in stray text being entered into the field, but that is easily seen and undone. To see a video of these types of issues, go to the Resources section of this page.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               <li>Speech users will be able to turn off single-key shortcuts so they can avoid accidentally firing batches of them at once. This will allow speech users to make full use of programs that offer single-key shortcuts to keyboard users.</li>
+               
+               <li>Keyboard-only users who have dexterity challenges can also be prone to accidentally hitting keys. Those users would be able to avoid problematic single character shortcuts by turning them off or modifying them to include at least one non-character key.</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-disable-shortcuts">
+               			       
+               
+               <h3>Example 1: Disable Shortcuts</h3>
+               
+               <p>A mechanism is provided to allow users to disable character-key shortcuts. The character key shortcuts are not the only way to carry out these commands. A speech user disables the shortcuts and can prevent words that are picked up by the microphone from triggering single-key shortcuts.</p>
+               			
+            </section>
+            <section class="example" id="example-2-alternate-control">
+               
+               
+               <h3>Example 2: Alternate Control</h3>
+               
+               <p>A mechanism is provided to allow users to change character-key shortcuts</p>
+               
+               <p>A keyboard-only user is in a long issues thread. While reading the thread she accidentally hits the “s” key, which moves focus to the search bar at the top of the document. This causes her to lose her place and her train of thought. She changes the shortcut to include another key so she can avoid future interruptions.</p>
+               			
+            </section>
+            <section class="example" id="example-3-shared-alternate-control">
+               
+               <h3>Example 3: Shared Alternate Control</h3>
+               
+               <p>A mechanism is provided to allow users to change character-key shortcuts in such a way that the changes can be saved and shared with other users.</p>
+               
+               
+            </section>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <p>Web apps that use character-key shortcuts and allow users to disable and/or change these shortcuts:</p>
+            <ul>
+               
+               <li>Gmail</li>
+               
+               <li>WordPress</li>
+               
+            </ul>
+            <p>Videos of speech user trouble with single character key shortcuts:</p>
+            <ul>
+               
+               <li><a rel="nofollow" href="https://www.youtube.com/watch?v=xzSyIA4OWYE">Single character key shortcuts affecting speech input – example 1</a></li>
+               
+               <li><a rel="nofollow" href="https://www.youtube.com/watch?v=OPjfpDU9S08">Single character key shortcuts affecting speech input – example 2</a></li>
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  
+                  <li>Users have a way to turn off single-key shortcuts</li>
+                  
+                  <li>A mechanism is provided to allow users to change character-key shortcuts. The remapping mechanism includes non-printing characters. The alternative shortcuts could be longer strings of up to 25 characters that would directly serve as native speech commands for any speech engine.</li>
+                  
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  <li>Failure of Success Criteria 2.1.4 due to a webpage or web app that includes single-key shortcuts not including a control that allows users to turn the shortcuts off or a control that allows users to change the shortcuts to key combinations that include keys that are not upper or lower-case letters, punctuation, number, or symbol characters.</li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-keyboard-shortcut">キーボードショートカット (keyboard shortcut)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">1 つ以上のキーを押すことによる、動作のトリガーの代替手段</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://w3c.github.io/wcag/guidelines/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.5.1: ポインタのジェスチャを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-modalities.html"><abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+            <li><a href="bypass-blocks.html">Previous <abbr title="Success Criterion">SC</abbr>: 非テキストコンテンツ</a></li>
+            <li><a href="pointer-cancellation.html">Next <abbr title="Success Criterion">SC</abbr>: ポインタのキャンセル</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.5.1: ポインタのジェスチャを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#pointer-gestures" style="font-weight: bold;">2.5.1 ポインタのジェスチャ</a> (レベル A): マルチポイント又は軌跡ベースのジェスチャを使って操作する<a href="https://w3c.github.io/wcag/guidelines/#dfn-functionality" target="terms">機能</a>はすべて、軌跡ベースのジェスチャーなしの<a href="https://w3c.github.io/wcag/guidelines/#dfn-single-pointer" target="terms">シングルポインタ</a>で操作することができる。ただし、マルチポイント又は軌跡ベースのジェスチャが<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>である場合は例外とする。</p>
+         <p class="note">この要件は、ポインタの動作を解釈するウェブコンテンツに適用される (ユーザエージェントや支援技術の操作に必要なアクションには適用されない)。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this Success Criterion is to ensure that content can be operated using simple inputs on a wide range of pointing devices. This is important for users who cannot perform complex gestures, such as multi-point or path-based gestures, in a precise manner, either because they may lack the accuracy necessary to carry them out or because they use a pointing method that lacks the capability or accuracy.</p>
+            <p>A path-based gesture involves a user interaction where the gesture's success is dependent on the path of the user's pointer movement and not just the endpoints. Examples include swiping (which relies on the direction of movement) the dragging of a slider thumb, or gestures which trace a prescribed path, as in the drawing of a specific shape. Such paths may be drawn with a finger or stylus on a touchscreen, on a graphics tablet or trackpad, or with a mouse, joystick, or similar pointer device.</p>
+            <p>A user may find it difficult or impossible to accomplish these if they have impaired fine motor control, or if they use a specialized or adapted input device such as a head pointer, eye-gaze system, or speech-controlled mouse emulation.</p>
+            <p>Note that free-form drag and drop actions are not considered path-based gestures for the purposes of this Success Criterion.</p>
+            <p>Examples of multi-point gestures include a two-finger pinch zoom, a split tap where one finger rests on the screen and a second finger taps, or a two or three finger tap or swipe. A user may find it difficult or impossible to accomplish these if they type and point with a single finger or stick, in addition to any of the causes listed above.</p>
+            <p>Authors must ensure that their content can be operated without such complex gestures. When they implement multi-point or path-based gestures, they must ensure that the functionality can also be operated via single-point activation. Examples of single-point activation on a touchscreen or touchpad include taps, double taps, and long presses. Examples for a mouse, trackpad, head-pointer, or similar device include single clicks, click-and-hold and double clicks.</p>
+            <p>The success criterion applies to author-created gestures, as opposed to gestures defined on the level of operating system or user agent. An example for gestures provided on the operating system level would be swiping down to see system notifications, and gestures for built-in assistive technologies (AT) to focus or activate content, or to call up AT menus. An example of user agent-implemented gestures would be horizontal swiping implemented by browsers for navigating within the page history, or vertical swiping to scroll page content.</p>
+            <p>While some operating systems may provide ways to define "macros" to replace complex gestures, content authors cannot rely on such a capability because is not pervasive on all touch-enabled platforms. Moreover, this may work for standard gestures that a user can predefine, but may not work for other author-defined gestures.</p>
+            <p>This Success Criterion does not require all functionality to be available through pointing devices, but that which is must be available to users who use the pointing device but cannot perform complex gestures. While content authors may provide keyboard commands or other non-pointer mechanisms that perform actions equivalent to complex gestures (see Success Criterion 2.1.1 Keyboard), this is not sufficient to conform to this success criterion. That is because some users rely entirely on pointing devices, or find simple pointer inputs much easier than alternatives. For example, a user relying on a head-pointer would find clicking a control to be much more convenient than activating an on-screen keyboard to emulate a keyboard shortcut, and a person who has difficulty memorizing a series of keys (or gestures) may find it much easier to simply click on a labeled control. Therefore, if one or more pointer-based mechanisms are supported, then their benefits should be afforded to users through simple, single-point actions alone.</p>
+            <p>An exception is made for functionality that is inherently and necessarily based on complex paths or multi-point gestures. For example, entering one's signature may be inherently path-based (although acknowledging something or confirming one's identity need not be).</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               					
+               <li><p>Users who cannot (accurately) perform complex pointer gestures will have alternative means for operating the content.</p>
+               </li>
+               
+               <li><p>The availability of user interface elements provided as a fallback for complex gestures helps users who may often be unaware of the support for complex pointer gestures. This can be beneficial especially for users with cognitive or learning disabilities.</p>
+               </li>
+               				
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li><p>A web site includes a map view that supports the pinch gesture to zoom into the map content, and drag gestures to move the visible area. User interface controls offer the operation via [+] and [-] buttons to zoom in and out, and arrow buttons to pan stepwise in all directions.</p>
+               </li>
+               
+               <li><p>A news site has a horizontal content slider with hidden news teasers that can moved into the viewport via horizontal swiping. It also offers forward and backward arrow buttons for single-point activation to navigate to adjacent slider content.</p>
+               </li>
+               
+               <li><p>A mortgage lending site has a slider control for setting the amount of credit required. The slider can be operated by dragging the thumb, but also by a single tap or click anywhere on the slider groove in order to set the thumb to the chosen position.</p>
+               </li>
+               
+               <li><p>A slider control can be operated by dragging the thumb. Buttons on both sides of the slider increment and decrement the selected value and update the thumb position.</p>
+               </li>
+               
+               <li><p>A kanban widget with several vertical areas representing states in a defined process allows the user to right- or left-swipe over elements to move them to an adjacent silo. The user can also accomplish this by selecting the element with a single tap or click, and then activating an arrow button to move the selected element.</p>
+               </li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  
+                  <li><p>GXXX: Do not rely on path-based gestures</p>
+                  </li>
+                  
+                  <li><p>GXXX: Do not rely on multi-point gestures</p>
+                  </li>
+                  
+                  <li><p>GXXX: Provide controls that do not require complex gestures and perform the same function as complex gestures</p>
+                  </li>
+                  
+                  <li><p>GXXX: Single-point activation for spatial positioning and manipuation</p>
+                  </li>
+                  
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  <li>Functionality can be operated by pointer input but not with single-point activation alone</li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>及び結果。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-single-pointer">シングルポインタ (single pointer)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  	
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">シングルタップやクリック、ダブルタップやクリック、長押し及びパスを基点としたジェスチャーを含む、画面と 1 つの接点で動作するポインタ入力</p>
+                  				
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

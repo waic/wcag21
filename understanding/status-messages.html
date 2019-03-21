@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 4.1.3: ステータスメッセージを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="compatible.html"><abbr title="Guideline">GL</abbr>: 互換性</a></li>
+            <li><a href="name-role-value.html">Previous <abbr title="Success Criterion">SC</abbr>: 名前 (name) ・役割 (role) 及び値 (value)</a></li>
+            <li><a href="conformance.html">Next: 適合を理解する</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 4.1.3: ステータスメッセージを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#status-messages" style="font-weight: bold;">4.1.3 ステータスメッセージ</a> (レベル AA): マークアップ言語を使って実装されたコンテンツでは、<a href="https://w3c.github.io/wcag/guidelines/#dfn-status-message" target="terms">ステータスメッセージ</a>は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-role" target="terms">役割 (role)</a> 又はプロパティを通して<a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈が可能</a>であり、フォーカスを受けとらなくても<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>によってユーザに提示することができる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this Success Criterion is to make users aware of important changes in content that are not given focus, and to do so in a way that doesn't unnecessarily interrupt their work.</p>
+            <p>The intended beneficiaries are blind and low vision users of assistive technologies with screen reader capabilities. An additional benefit is that assistive technologies for users with cognitive disabilities may achieve an alternative means of indicating (or even delaying or supressing) status messages, as preferred by the user.</p>
+            <p>The scope of this Success Criterion is specific to changes in content that involve status messages. A <a href="https://www.w3.org/TR/WCAG21/#dfn-status-messages">status message</a> is a defined term in WCAG. There are two main criteria that determine whether something meets the definition of a status message:</p>
+            <ol>
+               		
+               <li>the message <q>provides information to the user on the success or results of an action, on the waiting state of an application, on the progress of a process, or on the existence of errors;</q></li>
+               		
+               <li>the message is not delivered via a change in context.</li>
+               	
+            </ol>
+            <p>Information can be added to pages which does not meet the definition of a status message. For example, the list of results obtained from a search are not considered a status update and thus are not covered by this Success Criterion. However, brief text messages displayed about the completion or status of the search, such as "Searching...", "18 results returned" or "No results returned" would be status updates if they do not take focus. Examples of status messages are given in the section titled <a href="#status-examples">Status Message Examples</a> below.</p>
+            <p>This Success Criterion specifically addresses scenarios where new content is added to the page without changing the user's context. <a href="https://www.w3.org/TR/WCAG21/#dfn-change-of-context">Changes of context</a>, by their nature, interrupt the user by taking focus. They are already surfaced by assistive technologies, and so have already met the goal to alert the user to new content. As such, messages that involve changes of context do not need to be considered and are not within the scope of this Success Criterion. Examples of scenarios that add new content by changing the context are given in the section titled <a href="#excepted-examples">Examples of Changes That Are Not Status Messages</a> below.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               					
+               <li>When appropriate roles or properties are assigned to status messages, the new content is spoken by screen readers in such a way as to assist blind and low vision users. Most sighted users can observe text peripherally added to the viewport. Such content provides additional information without affecting the user's current point of regard. The ability of an assistive technology to announce such new important text content allows more users to benefit from an awareness of the information in an equivalent manner.</li>
+               			
+               <li>Assigning proper roles or properties to status messages provides possible future uses and personalization opportunities, such as the potential to be exploited by assistive technologies created for users with some cognitive disabilities. Where page authors elect to design additions to the screen which do <em>not</em> change the user's context (i.e., take focus), the information is arguably of less importance than something presented using a modal dialog, which must be acknowledged by the user. As such, depending on the user's preferences, an assistive technology may choose to delay, suppress, or transform such messages so a user is not unnecessarily interrupted; or conversely the assistive technology may highlight such messages where the user finds it optimal to do so.</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="status-message-examples">
+               				
+               <h3>Status Message Examples</h3>
+               			
+               <ol>
+                  				
+                  <li>After a user presses a Search button, the page content is updated to include the results of the search, which are displayed in a section below the Search button. The change to content also includes the message "5 results returned" near the top of this new content. This text is given an appropriate role for a status message. A screen reader announces, "Five results returned".</li>
+                  				
+                  <li>After a user presses an Add to Shopping Cart button, a section of content near the Shopping Cart icon adds the text "5 items". A screen reader announces "Five items" or "Shopping cart, five items".</li>
+                  				
+                  <li>After a user enters incorrect text in an input called Postal Code, a message appears above the input reading "Invalid entry". The screen reader announces, "Invalid entry" or "Postal code, invalid entry".</li>
+                  				
+                  <li>After a user activates a process, an icon symbolizing 'busy' appears on the screen. The screen reader announces "application busy".</li>
+                  				
+                  <li>An application displays a progressbar to indicate the status of an upgrade. The element is assigned a suitable role. The screen reader provides intermittent announcements of the progress.</li>
+                  		        
+                  <li>After a user submits a form, text is added to the existing form which reads, "Your form was successfully submitted." The screen reader announces the same message.</li> 
+                  		        
+                  <li>After a user unsuccessfully fills in a form because some of the data is in the incorrect format, text is added to the existing form which reads "5 errors on page". The screen reader announces the same message.</li>
+                  		        
+                  <li>After a user puts a photo in an album in an online photo app, a <a href="https://material.io/design/components/snackbars.html#">snackbar </a> displays the message "Saved in 'Wedding' album", which is also read by a screen reader.</li>
+                  			
+               </ol>
+               			
+            </section>
+            <section class="example" id="examples-of-status-messages-that-do-not-add-new-text-to-the-screen">
+               				
+               <h3>Examples of Status Messages that Do Not Add New Text to the Screen</h3>
+               			
+               <p>This Success Criterion was intentionally worded to apply primarily when visible text is added to (or becomes visible on) the page. The reason for this is that where new text is displayed, it is intended to be visible to all users. By providing a programmatic means of ensuring the text is also surfaced through assistive technologies, the Success Criterion provides the same information to users who cannot or may not see it. However, not all changes to content involve the addition of text to the screen. The following are all considerations relevant to this Success Criterion:</p>
+               				
+               <ul>
+                  					
+                  <li>Non-displayed text specific to AT users;</li>
+                  
+                  
+                  <li>Modification of status text;</li>
+                  
+                  <li>Removal of status text; and</li>
+                  
+                  <li>Non-textual status content, such as images.</li>
+                  				
+               </ul>
+               				
+               <section id="non-displayed-text-specific-to-at-users">
+                  		
+                  <h4>Non-displayed text specific to AT users</h4>
+                  		
+                  		
+                  <p>There may be cases where the addition of visible text does not by itself convey sufficient information to the user of assistive technology. For example, the proximity of new content to other pieces of information on the screen may provide a visual context that is lacking in the text alone.</p>
+                  		
+                  <p>In such cases, authors may wish to designate additional content for inclusion in the status message, including non-displayed text which can be provided to the assistive technologies, for added context. Important considerations regarding the appropriate use of such techniques are further discussed in the Sufficient Techniques.</p>
+                  				
+               </section>
+               				
+               <section id="modification-of-status-text">
+                  		
+                  <h4>Modification of status text</h4>
+                  		
+                  <p>If a status message persists on the page, modifications to this text are usually equivalent to a new status message. An example would be a shopping cart which updates text from reading "0 items" to "3 items". Typical methods of writing such changes in the page content result in the entire modified text string being considered a new change, and thus read by assistive technologies. However, where only the number in this string was coded as an updated chunk of content, the resulting experience for screen reader users could be to only hear "three", which may not be sufficient information to provide context for the user. In such situations, marking the entire "3 items" string as the status text would normally be a better solution. See Sufficient Techniques for more discussion, including the use of <code>aria-atomic</code>. In this case it would also be a courtesy to add offscreen text such as "in shopping cart" to the message.</p>
+                  				
+               </section>
+               				
+               <section id="removal-of-status-text">
+                  		
+                  <h4>Removal of status text</h4>
+                  		
+                  <p>In situations where status text is entirely removed, its absence may itself convey information about the status. The most obvious example of this is where a message is displayed that the system is "busy" or "waiting". For a sighted user, when this text disappears, it is normally an indication that the state is now available. However non-sighted users would be unaware of this change, unless the end of the waiting state results in a change of context for the user. Where updating the visible message (e.g., to "system available") is not feasible, the use of a non-visible status message, such as "system available", ensures equivalent status information is provided. See Sufficient Techniques for more discussion.</p>
+                  				
+               </section>
+               				
+               <section id="non-textual-status-content">
+                  		
+                  <h4>Non-textual status content</h4>
+                  		
+                  <p>Changes in content are not restricted to text changes. Where an icon or sound indicates a status message, this information will be surfaced by the screen reader through a combination of two things: 1) existing WCAG requirements governing text alternatives (under SC 1.1.1 Non-Text Content), and 2) the requirement of this current Success Criterion to supply an appropriate role.</p>
+                  				
+               </section>
+               			
+            </section>
+            <section class="example" id="examples-of-changes-that-are-not-status-messages">
+               				
+               <h3>Examples of Changes That Are Not Status Messages</h3>
+               
+               			
+               <p>The following examples identify situations where no additional author action is necessary. All cases are excepted from this Success Criterion since they do not meet the definition of "status messages."</p>
+               			
+               <ul>
+                  			
+                  <li><p>An author displays an error message in a dialog.</p>
+                     				
+                     <p>Since the dialog takes focus, it is defined as a change of context and does not meet the definition of a status message. As a result of taking focus, the new change of context is already announced by the screen reader, and thus does not need to be included in the scope of this Success Criterion.</p>
+                     			
+                  </li>
+                  			
+                  <li><p>Content is exposed or hidden when a user interacts with a user interface component, for example expanding components such as a menu, select, accordion or tree, or selecting a different tab item in a tablist.</p>
+                     				
+                     <p>None of the resulting changes to content meet the definition of status messages. Further, all components that meet the definition of a user interface component already have requirements specified under <a href="name-role-value.html" class="sc">4.1.2 Name, Role, Value</a>, including the need to make notifications of changes to values and states available to user agents, including assistive technologies. As a result, changes in state, such as "expanded" or "collapsed," would be announced by the screen reader, and thus the user would be alerted to the 'addition' or 'removal' of content. As such, such content does not need to be addressed by this Success Criterion.</p>
+                     
+                     			
+                  </li>
+                  			
+                  <li><p>After a user completes an input that indicates they are unhappy, a series of new inputs are added to the page about customer satisfaction.</p>
+                     				
+                     <p>The new inputs do not meet the definition of status message. They do not "provide information to the user on the success or results of an action, on the waiting state of an application, on the progress of a process or on the existence of errors," and so are not required to meet this Success Criterion.</p>
+                     				
+                     <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                        <p>Creating a status message about these inputs being added, or notifying the user in advance that content changes may take place based on the user's response, are best practices but are not requirements in this scenario.</p>
+                     </div>
+                     				
+                  </li>
+                  
+                  			
+               </ul>
+               			
+            </section>
+            <section class="example" id="other-uses-of-live-regions">
+               		
+               <h3>Other uses of live regions</h3>
+               
+               
+               <p>There are a number of considerations for content changes which are relevant to this Success Criterion, but which fall outside its scope. There are a number of situations where a short off screen message may be appropriate for screen reader users. For example:</p>
+               
+               <ul>
+                  <li>A form field asks “How many children do you have?” and when the user responds with the number 5, five 'child name' fields are added to the form. Offscreen text may announce “5 form fields added”</li>
+                  
+                  <li>A list of 15 products are on a page with a “See More” button at the bottom. When the user clicks the button, offscreen text announces, “15 products added to the page”</li>
+               </ul>
+               
+               <p>Several Advisory Techniques are incorporated into this Understanding document.</p>
+               
+               		
+            </section>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="situation-a-if-a-status-message-advises-on-the-success-or-results-of-an-action-or-the-state-of-an-application">
+                  
+                  					
+                  <h4>Situation A: If a status message advises on the success or results of an action, or the state of an application:</h4>
+                  					
+                  <ul>
+                     						
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA22">ARIA22: Using role=status to present status messages</a> in combination with any of the following:<ul>
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G199">G199: データが正常に送信されたときに、フィードバックを提供する</a></li>
+                           							
+                        </ul>
+                        							
+                        						
+                     </li>
+                     					
+                  </ul>
+                  				
+               </section>
+               <section class="situation" id="situation-b-if-a-status-message-conveys-a-suggestion-or-a-warning-on-the-existence-of-an-error">
+                  
+                  					
+                  <h4>Situation B: If a status message conveys a suggestion, or a warning on the existence of an error:</h4>
+                  					
+                  <ul>
+                     						
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a> in combination with any of the following:<ul>
+                           								
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G84">G84: 利用者が許可された値のリストにない情報を与えた場合に、テキストの説明を提供する</a></li>
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G177">G177: テキストの修正候補を提示する</a></li>
+                           								
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G194">G194: テキスト入力に対するスペルチェック及び修正候補を提供する</a></li>
+                           								
+                           							
+                        </ul>
+                        						
+                     </li>
+                     					
+                  </ul>
+                  
+                  					
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="5">注記</div>
+                     <p>Not all examples in the preceding general techniques use status messages to convey warnings or errors to users. A role of "alert" is only necessary where a change of context does <em>not</em> take place.</p>
+                  </div>
+                  
+                  				
+               </section>
+               <section class="situation" id="situation-c-if-a-status-message-conveys-information-on-the-progress-of-a-process">
+                  
+                  					
+                  <h4>Situation C: If a status message conveys information on the progress of a process:</h4>
+                  					
+                  <ul>
+                     					
+                     						
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA23">ARIA23: Using role=log to identify sequential information updates</a></li>
+                     						
+                     <li>Using <code>role="progressbar"</code> (future link)</li>
+                     						
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA22">ARIA22: Using role=status to present status messages</a> in combination with <a class="general" href="https://w3c.github.io/wcag/techniques/general/G193">G193: Providing help by an assistant in the Web page</a></li>
+                     					
+                  </ul>
+                  				
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  		
+                  <li>Using aria-live regions with chat clients (future link)</li>
+                  		
+                  <li>Using aria-live regions to support <a href="https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html">1.4.13 Content on Hover or Focus</a> (future link)</li>
+                  		
+                  <li>Using <code>role="marquee"</code> (future link)</li>
+                  		
+                  <li>Using <code>role="timer"</code> (future link)</li>
+                  					
+                  <li>Moving focus to new content, including by using <code>alertdialog</code> and <code>dialog</code>; <a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA18">ARIA18: Using aria-alertdialog to Identify Errors</a></li>
+                  					
+                  <li>Support personalization by providing an option for users to set a preference on live content; <a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>	
+                  	
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  				
+                  <li>Using <code>role="alert"</code> or <code>aria-live="assertive"</code> on content which is not important and time-sensitive (future link)</li>
+                  				
+                  <li>Using a <code>visibilitychange</code> event to hide or display a document without switching the document's live regions between active and inactive (future link)</li>
+                  			
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">(この文書で用いられている) 支援技術 (assistive technology (as used in this document))</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害者を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。</li>
+                     
+                     
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。</li>
+                     
+                     
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。</li>
+                     
+                     
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+                     
+                     
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。</li>
+                     
+                     
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-role">役割 (role)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツに含まれるコンポーネントの機能を、ソフトウェアが識別するために用いることができるテキストや数字。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">画像の機能が、ハイパーリンク、コマンドボタン、又はチェックボックスのどれなのかを示している数字。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-status-message">ステータスメッセージ (status message)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-changes-of-context" target="terms">コンテキストの変化</a>ではなく、コンテンツにおける変化で、アクションの成否又は結果、アプリケーションの処理待ち状態、プロセスの進捗、又はエラーの存在に関する情報をユーザに提供する。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

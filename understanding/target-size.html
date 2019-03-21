@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.5.5: ターゲットのサイズを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-modalities.html"><abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+            <li><a href="motion-actuation.html">Previous <abbr title="Success Criterion">SC</abbr>: 動きによる起動</a></li>
+            <li><a href="concurrent-input-mechanisms.html">Next <abbr title="Success Criterion">SC</abbr>: 入力メカニズム非依存</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.5.5: ターゲットのサイズを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#target-size" style="font-weight: bold;">2.5.5 ターゲットのサイズ</a> (Level AAA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-pointer-input" target="terms">ポインタ入力</a>の<a href="https://w3c.github.io/wcag/guidelines/#dfn-target" target="terms">ターゲットのサイズ</a>が 44 × 44 <a href="https://w3c.github.io/wcag/guidelines/#dfn-css-pixel" target="terms">CSS ピクセル</a>以上である。ただし、以下の場合は例外とする。</p>
+         <dl>
+            	                 
+            <dt>同等のものが存在する</dt> 
+            
+            <dd>そのターゲットと同等のリンク又はコントロールが同じページに 44 × 44 CSS ピクセル以上のサイズで存在する。</dd>
+            	                 
+            <dt>インラインである</dt> 
+            
+            <dd>そのターゲットが文中、又はテキストブロック内に存在する。</dd>
+            	                 
+            <dt>ユーザエージェントのコントロールである</dt> 
+            
+            <dd>ターゲットのサイズがユーザエージェントによって定められており、かつコンテンツ制作者が変更していない。</dd>
+            	                 
+            <dt>必要不可欠</dt> 
+            
+            <dd>そのターゲットを特定の方法で提示することが、情報伝達にとって<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>である。</dd>
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this success criteria is to ensure that target sizes are large enough for users to easily activate them, even if the user is accessing content on a small handheld touch screen device, has limited dexterity, or has trouble activating small targets for other reasons. For instance, mice and similar pointing devices can be hard to use for these users, and a larger target will help them activate the target.</p>
+            <p>Touch is particularly problematic as it is an input mechanism with coarse precision. Users lack the same level of fine control when using inputs such as a mouse or stylus. A finger is larger than a mouse pointer, and generally obstructs the user's view of the precise location on the screen that is being touched/activated.</p>
+            <p>The issue can even be further complicated with responsive layouts on small screens like mobile, which need to accommodate different types of fine and coarse inputs. Both input types must be supported for a site that can be accessed both on a traditional desktop/laptop with a mouse, as well as on a tablet or mobile phone with a touch screen.</p>
+            <p>While this criterion defines a minimum target size, as a best practice it is recommended that larger sizes are used to reduce the possibility of unintentional activations. This is particularly relevant if any of the following are true:</p>
+            <ul>
+               
+               <li>A control is used frequently;</li>
+               
+               <li>Results of the interaction cannot be easily undone;</li>
+               
+               <li>The control is positioned where it will be difficult to reach, e.g. is near the edge of the screen;</li>
+               
+               <li>The control is part of a sequential task.</li>
+               
+            </ul>
+            <p>The targets on a screen can have different purposes and uses, and this Success Criterion specifies how each is to be handled.</p>
+            <p><strong>Equivalent targets:</strong> If there is more than one target on a screen that performs the same action, only one of the targets need to meet the target size of 44 by 44 CSS pixels.</p>
+            <p><strong>Inline:</strong> Content displayed can often be reflowed based on the screen width available. This is known as responsive design and makes it easier to read since you do not need to scroll both horizontally and vertically. In reflowed content, the targets can appear anywhere on a line and can change position based on the width of the available screen. Since targets can appear anywhere on the line, the size cannot be larger than the available text and spacing between the sentences or paragraphs, otherwise the targets could overlap. It is for this reason targets which are contained within one or more sentences are excluded from the target size requirements.</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>If the target is the full sentence and the sentence is not in a block of text, then the target needs to be at least 44 by 44 CSS pixels.</p>
+            </div>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>A footnote or an icon within or at the end of a sentence is considered to be part of a sentence and therefore are excluded from the minimum target size.</p>
+            </div>
+            <p><strong>User Agent Control:</strong> If the size of the target is not modified by the author through CSS or other size properties, then the target does not need to meet the target size of 44 by 44 CSS pixels.</p>
+            <p><strong>Essential:</strong> If the target is required to be a particular target size and cannot be provided in another way, while changing it would essentially change the information or functionality of the content, then the target does not need to meet the target size of 44 by 44 CSS pixels.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               <li>Users who use a mobile device where touch screen is the primary mode of interaction;</li>
+               
+               <li>Users with mobility impairments such as hand tremors;</li>
+               
+               <li>Users who use a mobile device in environments where they are exposed to shaking such as public transportation;</li>
+               
+               <li>Users who have difficulty with fine motor movements;</li>
+               
+               <li>Users who access a device using one hand;</li>
+               
+               <li>Users with large fingers, or who are operating the device with only a part of their finger or knuckle;</li>
+               
+               <li>Users who have low vision may better see the target.</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li><strong>Example 1: Buttons</strong><br /> Three buttons are on-screen and the touch target area of each button is 44 by 44 CSS pixels.</li>
+               
+               <li><strong>Example 2: Equivalent target</strong><br /> Multiple targets are provided on the page that perform the same function. One of the targets is 44 by 44 CSS pixels. The other targets do not have a minimum touch target of 44 by 44 CSS pixels.</li>
+               
+               <li><strong>Example 3: Anchor Link</strong><br /> The target is an in-page link and the target is less than 44px by 44px. Users can scroll the screen using browser functions so target size does not need to be met.</li>
+               
+               <li><strong>Example 4: Text Link in a paragraph</strong><br /> Links within a paragraph of text have varying touch target dimensions. Links within paragraphs of text do no need to meet the 44 by 44 CSS pixels requirements.</li>
+               
+               <li><strong>Example 5: Text Link in a sentence</strong><br /> A text link that is in a sentence is excluded and does not need to meet the 44 by 44 CSS pixel requirement. If the text link is the full sentence, then the text link target touch area does need to meet the 44 x 44 CSS pixels.</li>
+               
+               <li><strong>Example 6: Footnote</strong><br /> A footnote link at the end of a sentence does not need to meet the 44 by 44 CSS pixels requirements. The footnote at the end of the sentence is considered to be part of the sentence.</li>
+               
+               <li><strong>Example 7: Help icon</strong><br /> A help icon within or at the end of a sentence does not need to meet the 44 by 44 CSS pixels requirements. The icon at the end of the sentence is considered to be part of the sentence.</li>
+               
+            </ul>
+            <section class="example" id=""></section>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://developer.apple.com/ios/human-interface-guidelines/visual-design/layout/">Apple touch target size recommendations</a></li>
+               
+               <li><a href="https://developers.google.com/speed/docs/insights/SizeTapTargetsAppropriately">Android touch target size recommendations</a></li>
+               
+               <li><a href="http://download.microsoft.com/download/2/4/A/24A81A29-77CF-4AA5-967E-64E42554F21B/UWP%20app%20design%20guidelines%20v1509.pdf">Microsoft's Windows Phone UI Design and Interaction Guide (PDF)</a></li>
+               
+               <li><a href="http://touchlab.mit.edu/publications/2003_009.pdf">Human Fingertips to Investigate the Mechanics of Tactile Sense (PDF)</a></li>
+               
+               <li><a href="http://hcil.cs.umd.edu/trs/2006-11/2006-11.htm">One-Handed Thumb Use on Small Touchscreen Devices</a></li>
+               
+               <li><a href="http://blogs.msdn.com/b/ie/archive/2012/04/20/guidelines-for-building-touch-friendly-sites.aspx">Microsoft Guidelines for Building Touch Friendly Sites</a></li>
+               
+               <li><a href="https://developer.microsoft.com/en-us/windows/design/microsoft-design-language">Microsoft Design Language (PDF)</a></li>
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  
+                  <li>Ensuring that touch targets are at least 44 by 44 CSS pixels.</li>
+                  
+                  <li>Providing a mechanism to change the size of the target independent of magnification.</li>
+                  
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  <li>Ensuring inline links provide sufficiently large activation target.</li>
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  <li>Failure of success criterion 2.5.3 due to target size being less than 44 by 44 CSS pixels.</li>
+                  
+                  <li>Failure of success criterion 2.5.3 due to target size of a paragraph that is also a link being less than 44 x 44 CSS pixels.</li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-css-pixel">CSS ピクセル (CSS pixel)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">約 0.0213 度の視野角。</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">CSS ピクセルは、CSS におけるすべての長さ及び測定のための規範的な測定単位である。この単位は密度非依存で、ディスプレイに存在する実際のハードウェアピクセルとは異なる。ユーザエージェント及びオペレーティングシステムは CSS ピクセルが、ディスプレイの物理的な寸法と予想される視距離 (コンテンツ制作者は決定できない要因) を考慮した <a href="https://www.w3.org/TR/css3-values/#reference-pixel">CSS Values and Units Module Level 3 reference pixel</a> [css3-values] にできるだけ沿うように設定されていることを確認すべきである。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-pointer-input">ポインタ入力 (pointer input)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">マウス、ペン、タッチ接触のように、画面上の特定の (1 つ又は複数の) 地点を指すことができる入力デバイス。</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://www.w3.org/TR/pointerevents/#dfn-pointer">Pointer Events pointer の定義</a>も参照[pointerevents]。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-target">ターゲット (target)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ユーザインタフェース コンポーネントのインタラクティブな領域のような、ポインタアクションを受け入れるディスプレイの領域</p> 
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>2 つ以上のタッチターゲットが重なっている場合、重なっているターゲットが同じアクションを実行するか、同じページを開く場合を除いて、重なっているエリアを含めてターゲットのサイズを測定するべきでない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.6: 目的の特定を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="identify-input-purpose.html">Previous <abbr title="Success Criterion">SC</abbr>: 入力目的の特定</a></li>
+            <li><a href="use-of-color.html">Next <abbr title="Success Criterion">SC</abbr>: 色の使用</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.6: 目的の特定を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#identify-purpose" style="font-weight: bold;">1.3.6 目的の特定</a> (レベル AAA): マークアップ言語で実装されたコンテンツでは、<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>、アイコン、<a href="https://w3c.github.io/wcag/guidelines/#dfn-region" target="terms">領域</a>の目的は<a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈が可能</a>である。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>The intent of this success criterion is to support personalization and preferences in order for more people to use the web, communicate, and interact with society.</p>
+            <p>Familiar terms and symbols are key for users with a limited vocabulary to being able to use the web. However, what is familiar for some users may not be for other users so programmatically associating user-interface components and icons enables people to load a set of symbols that is appropriate for them.</p>
+            <p>This success criteria requires the author to add the context, propose, and meaning of symbols, regions, buttons, links, and fields so that user agents knows what they do and can adapt them to make them understandable for the user. It is achieved by adding semantics or metadata that provides this context. It is similar to adding role information (as required by 4.2.1) but instead of providing information about what the UI component is (such as an image) it provides information about what the component represents (such as a link to the home page).</p>
+            <p>Identifying regions of the page allows people to remove or highlight regions with their user agent.</p>
+            <p>Products for people who are non-vocal often use symbols to help users communicate. These symbols are in fact people's language. Unfortunately, many of these symbols are both subject to copyright and are not interoperable. That means end-users can only use one device, and cannot use content, apps, or assistive technology that has not been made by a single company.</p>
+            <p>This success criteria enables symbols to be interoperable so that symbol users can understand different content that was not just made by one company. When users' symbols are mapped to the same nodes then user agents can load the user-understandable symbol. That means people could buy the symbols and use them across different devices or applications. (Note that the symbols would still be proprietary, but they could then be interoperable.)</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>People who benefit have many different cognitive disabilities including:</p>
+            <ul>
+               				
+               <li>Memory</li>
+               				
+               <li>Focus and attention</li>
+               				
+               <li>Language-related</li>
+               				
+               <li>Executive function and decision making.</li>
+               			
+            </ul>
+            <p>Meeting this Success Criterion helps users who need extra support or a familiar interface, including the need for:</p>
+            <ul>
+               				
+               <li>Symbols and graphics with which users are familiar</li>
+               				
+               <li>Fewer features and less cognitive overload</li>
+               				
+               <li>Keyboard shortcuts.</li>
+               			
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               					
+               <li>A website uses <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/index.html">ARIA landmarks</a> to identify the regions of the page, and users can hide areas that are not the 'main'.</li>
+               					
+               <li>The links in the navigation of a website are marked-up so that users can add their own icons.</li>
+               					
+               <li>Icons on a website use are marked-up so that the user can substitute their own icon set into the page.</li>
+               				
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               				
+               <li><a href="https://rawgit.com/w3c/coga/master/issue-papers/personalization-preferences.html">Issue-papers on personalization and preferences</a>.</li>
+               				
+               <li>An <a href="https://github.com/ayelet-seeman/coga.personalisation/tree/ExampleWebPage/">example of adaptive page</a>.</li>
+               				
+               <li><a href="https://w3c.github.io/wcag/coga/user-research.html">Background research document</a>.</li>
+               				
+               <li><a href="https://w3c.github.io/personalization-semantics/">Semantics for adaptive interfaces</a>.</li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  					
+                  <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA11">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a>及び</li>
+                  					
+                  <li>Provide semantics that enables for symbols on key content (<a href="https://rawgit.com/w3c/coga/master/techniques/index.html">COGA Techniques</a> 4.2) AND</li>
+                  					
+                  <li>Using microdata to markup user interface components (future link)</li>
+                  				
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  					
+                  <li>Enable user agents to find the version of the content that best fits their needs.</li>
+                  					
+                  <li>Using semantics to identify important features (coga-simplification="simplest").</li>
+                  					
+                  <li>Use of aria-invalid and aria-required.</li>
+                  				
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-region">領域 (region)</dt>
+            <dd><definition xmlns="">
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの知覚可能、プログラムによる解釈が可能なセクション</p>
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>HTML では、landmark ロールが指定されたあらゆるエリアは領域になる。</p>
+                  </div>
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>
