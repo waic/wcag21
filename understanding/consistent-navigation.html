@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.2.3: 一貫したナビゲーションを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="predictable.html"><abbr title="Guideline">GL</abbr>: 予測可能</a></li>
+            <li><a href="on-input.html">Previous <abbr title="Success Criterion">SC</abbr>: 入力時</a></li>
+            <li><a href="consistent-identification.html">Next <abbr title="Success Criterion">SC</abbr>: 一貫した識別性</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.2.3: 一貫したナビゲーションを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#consistent-navigation" style="font-weight: bold;">3.2.3 一貫したナビゲーション</a> (レベル AA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-set-of-web-pages" target="terms">ウェブページ一式</a>の中にある複数の<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>上で繰り返されているナビゲーションのメカニズムは、繰り返されるたびに<a href="https://w3c.github.io/wcag/guidelines/#dfn-same-relative-order" target="terms">相対的に同じ順序</a>で出現する。ただし、利用者が変更した場合は除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、ウェブページ一式の中で繰り返されるコンテンツと情報のやりとりをし、特定の情報又は機能を複数回にわたって探す必要がある利用者のために、一貫した提示及びレイアウトの使用を促進することである。一度に画面のごく一部を表示する画面拡大ソフトを使用しているロービジョンの人は、繰り返されるコンテンツの位置を素早く探すために、しばしば視覚的な手がかり及びページの境界線を用いる。同じ順序で繰り返されるコンテンツを提示することは、繰り返されるコンテンツを探すためにデザイン内の空間記憶又は視覚的な手がかりを用いる使用する画面を見ている利用者にとっても重要である。</p>
+            <p>このセクションの「同じ順序」という語句の使用は、サブナビゲーションメニューを使用できないことや、補助ナビゲーションのブロック又はページ構造を使用できないことを意味しないということが重要である。代わりに、この達成基準は、ウェブページ全体にわたって繰り返されるコンテンツとやりとりする利用者が、探しているコンテンツの位置を予測できるようにし、再度発生したときにより素早く見つけることができるよう支援することを意図している。</p>
+            <p>利用者は、適応したユーザーエージェントを用いる、又は情報が利用者にとって最も有用な方法で表示されるようにプリファレンスを設定することによって、順序を変更をするかもしれない。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>繰り返されるコンポーネントが、サイトの各ページにおいて同じ順序で存在することを保証することで、利用者が各ページのどこにあるのかを予測できることを助ける。これは、<strong>認知的限界</strong>のある利用者、<strong>ロービジョン</strong>の利用者、<strong>知的障害</strong>のある利用者に加えて、<strong>全盲</strong>の利用者に役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>一貫して配置されているコントロール</strong></p>
+                  
+                  
+                  <p>検索のフィールドは、サイトにあるすべてのウェブページ上の最後の項目である。利用者は検索機能をすぐに見つけることができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>展開するナビゲーションメニュー</strong></p>
+                  
+                  
+                  <p>ナビゲーションメニューは、サイトの主要なセクションへのリンクを持つ七つの項目のリストを含んでいる。利用者がこれらの項目の一つを選択すると、サブナビゲーション項目のリストが、トップレベルのナビゲーションメニューに挿入される。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>一貫して配置されているスキップナビゲーションのコントロール</strong></p>
+                  
+                  
+                  <p>ウェブサイトにあるすべてのページ上に、「本文へジャンプする」というリンクが一番最初のリンクとして配置されている。そのリンクによって、利用者はヘッダーの情報及びナビゲーション部分をスキップして、ページのメインコンテンツ部分の開始位置へ移動することができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ナビゲーションへのスキップリンク</strong></p>
+                  
+                  
+                  <p>ナビゲーション部分は一貫して各ページの最後にある。キーボード利用者が、必要なときに容易に見つけられるように、「ナビゲーションへジャンプする」というリンクは一貫して各ページの先頭にある。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li>Detweiler, M.C. and Omanson, R.C. (1996), Ameritech Web Page User Interface Standards and Design Guidelines.</li>
+               
+               
+               <li><a href="http://www-03.ibm.com/able/access_ibm/disability.html">Understanding disability issues when designing Web sites</a>.</li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G61">G61: 毎回同じ相対的順序で繰り返されるコンポーネントを提示する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF14">PDF14: PDF 文書内に連続するヘッダーとフッターを提供する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF17">PDF17: PDF 文書に一貫性のあるページ番号を指定する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F66">F66: 達成基準 3.2.3 の失敗例 － 異なるページでさまざまな相対的な順序でナビゲーションリンクを提示している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-same-relative-order">相対的に同じ順序 (same relative order)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">他の項目との相対位置が同じ。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>当初の順序に対して、別の項目が挿入、又は削除されていたとしても、項目は相対的に同じ順序になっていると考えられる。例えば、展開するナビゲーションメニューに詳細な追加階層が挿入される、又は、読みの順序の途中に副次的なナビゲーション部分が挿入されることがある。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-set-of-web-pages">ウェブページ一式 (set of Web pages)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">共通の目的を共有し、同じコンテンツ制作者、グループ、又は組織により制作された<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>の集合。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">例には複数のウェブページにまたがる発行物が含まれ、各ページには 1 つの章又はその他の重要なセクションが含まれる。論理的に発行物は 1 つの連続した単位であり、ウェブページ一式へのアクセスを可能にするナビゲーション機能を有する。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>他言語版は、異なるウェブページ一式と見なされることもある。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

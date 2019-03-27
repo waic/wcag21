@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.6: 見出し及びラベルを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="multiple-ways.html">Previous <abbr title="Success Criterion">SC</abbr>: 複数の手段</a></li>
+            <li><a href="focus-visible.html">Next <abbr title="Success Criterion">SC</abbr>: フォーカスの可視化</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.6: 見出し及びラベルを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#headings-and-labels" style="font-weight: bold;">2.4.6 見出し及びラベル</a> (レベル AA): 見出し及び<a href="https://w3c.github.io/wcag/guidelines/#dfn-label" target="terms">ラベル</a>は、主題又は目的を説明している。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、ウェブページにどんな情報があるのか、及びその情報がどのように構成されているのかを、利用者が理解するのを手助けすることである。見出しが明快かつ内容が分かるように記述されている場合、利用者は自分の探している情報をより容易に見つけることができ、コンテンツ内の様々な部分間の関係をより容易に理解できる。内容が分かるように記述されているラベルは、利用者がコンテンツ内にある特定のコンポーネントを識別するのに役立つ。</p>
+            <p>ラベル及び見出しを長くする必要があるわけではない。単語一つ又は一文字だけであっても、コンテンツを見つけてナビゲートする手がかりとして適切であれば、それだけで十分なこともある。</p>
+            <p>この達成基準は見出しやラベルを必ずしも必要としない。見出しやラベルが提供されている場合、それらの内容が分かるように記述されていることが求められる。This Success Criterion also does not require that content acting as a heading or label be correctly marked up or identified - this aspect is covered separately by <a href="info-and-relationships.html">1.3.1: Info and Relationships</a>. It is possible for content to pass this Success Criterion (providing descriptive content that acts as headings or labels) while failing Success Criterion 1.3.1 (if the headings or labels aren&#39;t correctly marked up/identified). Conversely, it is also possible for content to pass Success Criterion 1.3.1 (with headings or labels correctly marked up or identified), while failing this Success Criterion (if those headings or labels are not sufficiently clear or descriptive).</p>
+            <p>Further, in the case of labels, this Success Criterion does not take into consideration whether or not alternative methods of providing an accessible name for form controls and inputs has been used - this aspect is covered separately by <a href="name-role-value.html">4.1.2: Name, Role and Value</a>. It is possible for controls and inputs to have an appropriate accessible name (e.g. using <code>aria-label=&quot;...&quot;</code>) and therefore pass Success Criterion 4.1.2, but to still fail this Success Criterion (if the label is not sufficiently clear or descriptive).</p>
+            <p>This success criteria does not require the use of labels; however, it does require that if labels are present, they must be sufficiently clear or descriptive. Please see <a href="labels-or-instructions.html">3.3.2: Labels or Instructions</a> for more information on the use of labels.</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>内容が分かるように記述された見出しは、読む速度が遅くなる障害のある利用者及び短期記憶に制約のある利用者に特に役立つ。そのような利用者にとっては、それぞれのセクションの内容を予測できるようにセクションの見出しが記述されていると役立つ。</li>
+               
+               
+               <li>Form input controls with labels that clearly describe the content that is expected to be entered helps users know how to successfully complete the form.</li>
+               
+               
+               <li>When headings and labels are also correctly marked up and identified in accordance with <a href="info-and-relationships.html">1.3.1: Info and Relationships</a>, この達成基準は、目次などで文脈を無視して読むとき、又はページ内の見出しから見出しへ移動するときに、ラベル及び見出しが意味のあることを保証することによって、スクリーンリーダーの利用者を手助けする。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>ニュースサイト</strong></p>
+                  
+                  
+                  <p>ニュースサイトのホームに、その時間帯のトップニュースの見出しが並んでいる。それぞれの見出しの下には、記事の冒頭の 35 ワードと、記事の全文へのリンクがある。そして、見出しはどれも、記事の主題を明快に伝えている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>上手な文章の書き方ガイド</strong></p>
+                  
+                  
+                  <p>文章の書き方に関するガイドに、次のようなセクション見出しがある。「上手な文章の書き方」、「無駄な語句を取り除く」、「不要な語句を見つけ出す」、などである。これらのセクション見出しは明快かつ簡潔で、情報の構造が見出しの構造にも反映されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>様々な記事での一貫した見出し</strong></p>
+                  
+                  
+                  <p>ウェブサイトには、ある学会の会議での論文が掲載されている。その学会の会議への投稿する論文は、次のような構成とすることが必須となっている: 要約、イントロダクション、(その論文に固有なその他のセクション)、結論、筆者略歴、用語集、そして参考文献。そうして、論文の独自性とセクション見出しの一貫性とのバランスをうまくとりながら、各ウェブページのタイトルはそのページにある論文をはっきりと特定している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>利用者に氏名を要求するフォーム</strong></p>
+                  
+                  
+                  <p>利用者に氏名を要求するフォーム。姓と名を要求する二つのテキストフィールドから成る。最初のフィールドは「姓」、次のフィールドは「名」とラベルづけされる。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/">How Users Read on the Web</a> ほとんどのユーザーが単語で単語を読むのではなく、ウェブページを走り読みすることを示す調査。</li>
+               
+               
+               <li><a href="https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/">Applying Writing Guidelines to Web Pages</a> ウェブサイトを簡潔に、走り読みしやすく、客観的にする効果についてのレポート。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G130">G130: 説明的な見出しをつける</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G131">G131: 説明的なラベルを提供する</a></li>
+                  
+                  
+               </ol>
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p><a href="info-and-relationships.html" class="guideline">達成基準 1.3.1</a> により、見出し及びラベルは、プログラムによる解釈がされなければならない。【訳注: 上記注記で「見出し及びラベルは、プログラムによる解釈がされなければならない。」と記述されているが、これは達成基準 1.3.1 を正確に反映したものではない。よって、この記述は達成基準 1.3.1 にあるとおり、「見出し及びラベルは、プログラムで決定できるか又はテキストで利用できなければならない。」と解釈するのが妥当と考えられる。w3c/wcag#315 で改善が提案されているので、あわせて参照されたい。】</p>
+                     
+                     
+                  </div>
+               </div>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-label">ラベル (label)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-text-alternative" target="terms">テキストによる代替</a>を伴うコンポーネントで、ウェブ<a href="https://w3c.github.io/wcag/guidelines/#dfn-content" target="terms">コンテンツ</a>内のコンポーネントを識別するために利用者に提示されているもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-name" target="terms">名前 (name)</a> は隠されていて支援技術に対してだけ明らかにされる場合がある一方で、ラベルはすべての利用者に提示される。多くの場合 (すべてではないが)、名前 (name) とラベルは同じである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ラベルという用語は、HTML における label 要素だけに限定されない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

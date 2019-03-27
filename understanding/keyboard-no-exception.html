@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.1.3: キーボード (例外なし) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="keyboard-accessible.html"><abbr title="Guideline">GL</abbr>: キーボード操作可能</a></li>
+            <li><a href="no-keyboard-trap.html">Previous <abbr title="Success Criterion">SC</abbr>: キーボードトラップなし</a></li>
+            <li><a href="character-key-shortcuts.html">Next <abbr title="Success Criterion">SC</abbr> 文字キーのショートカット</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.1.3: キーボード (例外なし) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#keyboard-no-exception" style="font-weight: bold;">2.1.3 キーボード (例外なし) </a> (レベル AAA): コンテンツのすべての<a href="https://w3c.github.io/wcag/guidelines/#dfn-functionality" target="terms">機能</a>は、個々のキーストロークに特定のタイミングを要することなく、<a href="https://w3c.github.io/wcag/guidelines/#dfn-keyboard-interface" target="terms">キーボードインタフェース</a>を通じて操作可能である。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、<strong>すべての</strong>コンテンツをキーボードで操作可能にすることである。例外が認められないということを除いては、達成基準 2.1.1 と同じである。これは、終点だけでなく利用者の動作の軌跡に依存する入力が、基本機能に必要なコンテンツ (つまり、達成基準 2.1.1 では例外とされていたコンテンツ) にキーボードでアクセシブルにする必要があることを意味しない。逆に、そういった軌跡に依存した入力を用いるコンテンツは、この達成基準に適合することができないため、ガイドライン 2.1 にレベル AAA で適合することはできないということである。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>この達成基準には、特に追加された達成方法があるわけではない。<a href="keyboard#techniques" class="understanding">達成基準 2.1.1 の達成方法</a>を参照のこと。アナログで時間の経過に依存した入力があるためにその達成方法が不可能な場合は、このレベル AAA の達成基準に適合することはできない。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>及び結果。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-keyboard-interface">キーボードインタフェース (keyboard interface)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">キーストローク入力を取得するためにソフトウェアが用いるインタフェース。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div><p>標準ではキーボードが存在しない技術であっても、キーボードインタフェースによって、利用者がキーストローク入力をプログラムに提供できる。</p>
+                        
+                        
+                        <p class="example">タッチスクリーンを搭載している PDA には、外部キーボードへのコネクタとあわせて、そのオペレーティングシステムに組み込まれたキーボードインタフェースがある。PDA 上のアプリケーションはそのインタフェースを用いて、外部キーボード、あるいは手書き解釈プログラムや「キーボードエミュレーション」機能付きの音声テキスト変換アプリケーションのような擬似キーボード出力を提供する他のアプリケーションのいずれかからキーボード入力を取得することができる。</p>
+                        
+                     </div>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マウスキーのようなキーボード操作によるマウスエミュレータによるアプリケーション (又は、そのアプリケーションの一部) の操作は、キーボードインタフェースからの操作とは見なさない。なぜならば、この場合、プログラムの操作は、キーボードインタフェースからではなく、そのポインティングデバイス インタフェースからの入力によって行われるからである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

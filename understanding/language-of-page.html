@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.1.1: ページの言語を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="readable.html"><abbr title="Guideline">GL</abbr>: 読みやすさ</a></li>
+            <li><a href="concurrent-input-mechanisms.html">Previous <abbr title="Success Criterion">SC</abbr>: 入力メカニズム非依存</a></li>
+            <li><a href="language-of-parts.html">Next <abbr title="Success Criterion">SC</abbr>: 一部分の言語</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.1.1: ページの言語を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#language-of-page" style="font-weight: bold;">3.1.1 ページの言語</a> (レベル A): それぞれの<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>のデフォルトの<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>がどの言語であるか、<a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈が可能</a>である。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、ユーザエージェントがテキスト及びその他の形式の言語学上の言語によるコンテンツを正しく提示するために必要なウェブページの情報を、コンテンツ制作者が提供することを保証することである。支援技術と従来のユーザエージェントはともに、ウェブページの言語が識別されるとき、テキストをより正確に描画することができる。スクリーンリーダーは、正しい発音規則を読み込むことができる。ビジュアルブラウザは、文字や書体を正しく表示することができる。メディアプレーヤーは、キャプションを正しく表示できる。結果として、障害のある利用者がコンテンツをより理解できるようになる。</p>
+            <p><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a> で述べられているように、ウェブページのデフォルトの自然言語が、デフォルトのテキスト処理言語となる。ウェブページがいくつかの言語を使用している時、デフォルトのテキスト処理言語は、最も使われている言語である。(複数の言語が同じ割合で使われている場合、最初に使われている言語をデフォルトの自然言語として選択する必要がある。)</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>適合レベル A を目指している多言語サイトについて、WCAG ワーキンググループはコンテンツ制作者に、レベル AA の達成基準ではあるが、達成基準 3.1.2 にも同じように適合することを強く推奨する。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>この達成基準は、次のような利用者にメリットがある:</p>
+            <ul>
+               
+               
+               <li>スクリーンリーダー又はテキストを合成音声に変換するその他の技術を使用している利用者。</li>
+               
+               
+               <li>例えば、文字及びアルファベットを認識したり、単語を読み取ったりすることのように、流暢かつ正確に書かれたものを読むことが困難な利用者。</li>
+               
+               
+               <li>テキストを音声に変換するソフトウェアを使用している、特定の認知の障害、言語の障害、及び学習障害のある利用者。</li>
+               
+               
+               <li>同期したメディアのコンテンツの音声トラックでの言語の変化を識別するのに、キャプションを頼りにしている利用者。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>事例 1. 二つの言語で書かれたコンテンツのあるウェブページ</strong></p>
+                  
+                  
+                  <p>ドイツで制作され、HTML で書かれたウェブページに、ドイツ語と英語の両方のコンテンツが含まれているが、コンテンツのほとんどはドイツ語である。デフォルトの自然言語は、html 要素の lang 属性によって、ドイツ語 (de)として識別される。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a></li>
+               
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H57">H57: html 要素の言語属性を使用する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH13">FLASH13: Flash コンテンツの言語を指定するために、HTML の言語属性を使用する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF16">PDF16: PDF 文書の文書カタログ内の /Lang エントリを使用して主たる言語を設定する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF19">PDF19: PDF 文書内で Lang エントリを使用して節や句の言語を指定する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="server" href="https://w3c.github.io/wcag/techniques/server-side-script/SVR5">SVR5: HTTP ヘッダーにデフォルト言語を指定する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-human-language">自然言語 (human language)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">人間とコミュニケーションをとるための言語で、話される、書かれる、又は (視覚的あるいは触覚的な手段で) 手話にされるもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-sign-language" target="terms">手話</a>も参照。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

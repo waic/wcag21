@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.2.2: 一時停止、停止、非表示を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="enough-time.html"><abbr title="Guideline">GL</abbr>: 十分な時間</a></li>
+            <li><a href="timing-adjustable.html">Previous <abbr title="Success Criterion">SC</abbr>: タイミング調整可能</a></li>
+            <li><a href="no-timing.html">Next <abbr title="Success Criterion">SC</abbr>: タイミング非依存</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.2.2: 一時停止、停止、非表示を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#pause-stop-hide" style="font-weight: bold;">2.2.2 一時停止、停止、非表示</a> (レベル A): 動きのある、<a href="https://w3c.github.io/wcag/guidelines/#dfn-blinking" target="terms">点滅している</a>、スクロールする、又は自動更新する情報は、次のすべての事項を満たしている</p>
+         <dl>
+            
+            
+            <dt>動き、点滅、スクロール</dt>
+            
+            
+            <dd><p>動きのある、点滅している、又はスクロールしている情報が、(1) 自動的に開始し、(2) 5 秒よりも長く継続し、かつ、(3) その他のコンテンツと並行して提示される場合、利用者がそれらを<a href="https://w3c.github.io/wcag/guidelines/#dfn-paused" target="terms">一時停止</a>、停止、又は非表示にすることのできるメカニズムがある。ただし、その動き、点滅、又はスクロールが<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>な動作の一部である場合は除く。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>自動更新</dt>
+            
+            
+            <dd><p>自動更新する情報が、(1) 自動的に開始し、 (2) その他のコンテンツと並行して提示される場合、利用者がそれを一時停止、停止、もしくは非表示にする、又はその更新頻度を調整することのできるメカニズムがある。ただし、その自動更新が必要不可欠な動作の一部である場合は除く。</p>
+               
+               
+            </dd>
+            
+            
+         </dl>
+         <p class="note">画面がちらつく、又は閃光を放つコンテンツに関する要件は、<a href="https://w3c.github.io/wcag/guidelines/#seizures-and-physical-reactions">ガイドライン 2.3</a> を参照。</p>
+         <p class="note">この達成基準を満たさないコンテンツでは、利用者がそのウェブページ全体を使用できない恐れがあるため、ウェブページ上のすべてのコンテンツは他の達成基準を満たすために用いられているか否かにかかわらず、この達成基準を満たさなければならない。<a href="https://w3c.github.io/wcag/guidelines/#cc5">適合要件 5: 非干渉</a>を参照。</p>
+         <p class="note">定期的にソフトウェアによって自動的に更新されるコンテンツ、又はユーザエージェントにストリーム配信されるコンテンツでは、コンテンツ再生の一時停止と再開の操作の間に生成、又は受信される情報を保持、又は提示する必要はない。これは技術的に不可能であることが考えられ、多くの状況において利用者の混乱を招くことにつながる可能性があるためである。</p>
+         <p class="note">コンテンツの読み込み中やそれに類似した状況の一部として表示されるアニメーションについては、この段階ですべての利用者に対していかなるインタラクションも発生する可能性がなく、かつコンテンツ読み込みの進行状況を表示しないことが利用者の混乱を招いたり、コンテンツが動作を停止した、又はコンテンツが破損しているという誤解を生じたりする可能性がある場合には、必要不可欠なものと考えることができる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者がウェブページとやりとりしている間、他の事に注意をそらされないようにすることである。</p>
+            <p>「動き、点滅、スクロール」は、目に見えるコンテンツが動きの感覚を伝えているコンテンツのことを指している。一般的な例は、動画、同期したメディアによる提示、アニメーション、リアルタイムのゲーム、スクロールする株価表示などがある。「自動更新」は、あらかじめ設定された間隔で更新したり、消えたりするコンテンツのことを指している。一般的な時間依存コンテンツは、音声、自動的に更新される天気情報、ニュース、株価更新、及び自動進行する提示やメッセージなどがある。動き、点滅、スクロールするコンテンツ及び自動更新するコンテンツに対する要件は、次のものを除いて同じである:</p>
+            <ul>
+               
+               
+               <li>コンテンツが自動的に更新される際に、コンテンツ制作者が利用者に更新頻度を制御する手段を提供するという選択肢がある。</li>
+               
+               
+               <li>5 秒間だけ自動更新をして，その後に停止するのはほとんど意味がないので、自動更新には 5 秒という例外はない。訳注: 原文では &quot;three second&quot; と記述されているが、達成基準に記載されている内容から「5 秒」が正しい値であると判断し、秒数を修正している。</li>
+               
+               
+            </ul>
+            <p>動きのある又は自動更新するコンテンツは、動きのあるオブジェクトを追うのが困難な利用者だけでなく、動かないテキストをすばやく読み取ることが困難な利用者にも障壁になりうる。スクリーンリーダーにも問題が発生する可能性がある。</p>
+            <p>特定のグループ、具体的には注意欠陥障害をもつグループは、点滅しているコンテンツに気を取られ、ウェブページの他の部分に集中することが困難となる。5 秒は、利用者の注意を引くのに十分な長さであるが、ページを使用するために利用者が必要に応じて待つことができないほど長くはないために選択された。</p>
+            <p>一時停止したコンテンツは、リアルタイムで再開するか、利用者が一時停止したところから再生を続けるかのどちらかである。</p>
+            <ol>
+               
+               
+               <li><p>一時停止した後、利用者が一時停止したところから再開することが、コンテンツを読むために一時停止したいと思う利用者にとっては最適であり、コンテンツがリアルタイムのイベント又は状態に関係のないときには最も良い方法である。</p>
+                  
+                  
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+                     <div><p>読むための制限時間に関するその他の要件については、<a href="timing-adjustable.html">達成基準 2.2.1 タイミング調整可能</a> を参照のこと。</p>
+                        
+                        
+                     </div>
+                  </div>
+                  
+                  
+               </li>
+               
+               
+               <li><p>一時停止した後、(一時停止を解除した時に) 最新の表示へ移ることが、リアルタイム又は本来の「状態」にある情報にとってよりよいことである。例えば、気象レーダー、株価表示、交通情報カメラ、又はオークションのタイマーなどは、コンテンツ再開時に一時停止したことで古い情報が表示されると、誤った情報を提供してしまうことになる。</p>
+                  
+                  
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+                     <div><p>コンテンツを非表示にすることは、一時停止した後、(一時停止を解除した時に) 最新の表示へ移るのと同じ効果が得られる。</p>
+                        
+                        
+                     </div>
+                  </div>
+                  
+                  
+               </li>
+               
+               
+            </ol>
+            <p>メカニズムが「利用者が一時停止するためのメカニズム」と判断されるためには、それが利用者に一時停止の手段として提供されつつも、利用者やフォーカスをそこに縛り付けてページが使用できなくなるようなものではない必要がある。ここでの「一時停止」という単語は「一時停止ボタン」という意味で使われているが、ボタンではないほかのメカニズムを使用することもできる。利用者がフォーカスしている時だけアニメーションが停止する(そしてフォーカスを解除し次第再開する)ようなものは、その過程でページが使い物にならなくするため「利用者が一時停止するためのメカニズム」とは判断されず、この達成基準も満たさないだろう。</p>
+            <p>「点滅」と「閃光」は、同じコンテンツを指すこともあることに注意することが重要である。</p>
+            <ul>
+               
+               
+               <li>「点滅」は、利用者の注意を散漫にさせる問題を引き起こすコンテンツを指す。点滅は、その点滅が停止する (又は停止させることができる) 限り、短時間であれば許容できる。</li>
+               
+               
+               <li>「閃光」は、(1 秒間に 3 回よりも多く、大きさ及び明るさが十分な場合に) 光感受性発作を引き起こす恐れのあるコンテンツを指す。これは、たとえ 1 秒間だけであったとしても許容されず、さもなければ光感受性発作を引き起こす恐れがある。そして、光感受性発作は利用者が閃光を停止するよりも速く発生する恐れがあるため、閃光を停止させることも選択肢にはならない。</li>
+               
+               
+               <li>通常、点滅は 1 秒間に 3 回以上の速度で起こらないが、その可能性はある。点滅が 1 秒間に 3 回を超える速さで起こる場合、これはまた閃光とみなされるであろう。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>5 秒後に点滅を停止するコンテンツを提供すること、又は利用者が点滅するコンテンツを停止できるメカニズムを提供することで、特定の障害のある利用者がウェブページを利用できるようになる。</li>
+               
+               
+               <li>点滅するコンテンツの一つの使い方は、そのコンテンツへ利用者の注意を引くことである。これは画面を見ているすべての利用者に対して効果的な達成方法ではあるが、点滅が続くとある利用者に対しては問題を引き起こす恐れがある。読み書き能力の低い利用者、読字障害及び知的障害のある利用者、及び注意力欠如障害のある利用者などにとっては、点滅するコンテンツは残りのウェブページの利用を困難にしたり、ときには不可能にしてしまうことがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>利用者の行動に影響を与えずに一時停止できる基本的なアニメーション</strong></p>
+                  
+                  
+                  <p>あるウェブサイトは、プロセスを説明するアニメーションによって、利用者が「どのように機能するか」を理解するための手助けをしている。アニメーションには「一時停止」と「再開」のボタンがある。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>株式相場表示機</strong></p>
+                  
+                  
+                  <p>株式相場表示機には、「一時停止」と「再開」のボタンがある。株式相場表示機を一時停止すると、現在表示している株価のところで一時停止する。再開すると、株式相場表示機は停止したところから再開するが、表示が遅れていることを示す注意書きが表示される。株式相場表示機の目的は、通常はリアルタイムの情報を提供することなので、株式相場表示機を最新の取引株価に進めるボタンもあるかもしれない。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>利用者がリアルタイムで競い合うのではなく、交代で行うように設計されたゲーム</strong></p>
+                  
+                  
+                  <p>一つのグループが、ゲームの競争時の形勢を無効にすることなく、ゲームを一時停止することができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ウェブ広告</strong></p>
+                  
+                  
+                  <p>広告は、閲覧者の注意を引くために点滅するが、5 秒後に停止する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>フォームのプロンプト</strong></p>
+                  
+                  
+                  <p>フォームは、利用者がフォームへの記入を終えたが送信ボタンを動作させない場合、送信ボタンの近くにある矢印が点滅する。その点滅は 5 秒後に停止する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>アニメーション</strong></p>
+                  
+                  
+                  <p>アニメーションはページの上部で再生されるが、アニメーションの下側には「アニメーションを一時停止する」ボタンがある。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>「読み込み中」のアニメーション</strong></p>
+                  
+                  
+                  <p>再生開始できるまでに大容量ファイルの何パーセントかがダウンロードされている必要があるページ上で、読み込み中であることを示すアニメーションが表示されている。ページ上のコンテンツはそのアニメーションだけで、映像を読み込んでいる間、利用者にしばらく待つ必要があることを知らせている。接続回線の遅い利用者に対してアニメーションが5秒以上再生されていたとしても、その動きのあるコンテンツは他のコンテンツと同時に表示されていないので、アニメーションを一時停止、停止、又は非表示にするメカニズムを提供する必要はない。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>全面広告</strong></p>
+                  
+                  
+                  <p>サイトは、利用者がサイトで利用できる無料コンテンツにアクセスする前に、すべての利用者に 15 秒の広告を閲覧することを要求している。広告を閲覧することはすべての利用者に対する要求であり、他のコンテンツと同時に表示されていないので、広告を一時停止、停止、又は非表示にするメカニズムを提供する必要はない。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G4">G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL11">SL11: Pausing or Stopping A Decorative Silverlight Animation</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL12">SL12: Pausing, Stopping, or Playing Media in Silverlight MediaElements</a></li>
+                  
+                  
+                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR33">SCR33: コンテンツをスクロールし、かつそれを一時停止するメカニズムを提供するためにスクリプトを使用する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH35">FLASH35: Flash コンテンツをスクロールさせて、それを停止させるメカニズムを提供するために、スクリプトを使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G11">G11: 5 秒未満で点滅するコンテンツを制作する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G187">G187: ユーザエージェントによって点滅するコンテンツを停止できるウェブコンテンツ技術を使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G152">G152: (5 秒以内の) 数回のループ後に点滅を停止するように、アニメーション GIF を設定する</a></li>
+                  
+                  
+                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR22">SCR22: 点滅を制御し、5 秒以内に停止させるために、スクリプトを使用する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH36">FLASH36: 点滅を制御し、5 秒以内に点滅を停止させるために、スクリプトを使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G186">G186: 動きのあるコンテンツ、点滅するコンテンツ、又は自動更新するコンテンツを停止させるコントロールを使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G191">G191: 点滅するコンテンツのないページを再読み込みするリンク、ボタン、又はその他のメカニズムを提供する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL24">SL24: Using AutoPlay to Keep Silverlight Media from Playing Automatically</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F16">F16: 達成基準 2.2.2 の失敗例 － コンテンツを一時停止及び再開するメカニズムなしで、動きが操作に不可欠ではないところにスクロールするコンテンツを含んでいる</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F47">F47: 達成基準 2.2.2 の失敗例 － blink 要素を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F4">F4: 達成基準 2.2.2 の失敗例 － 5 秒未満で停止させるメカニズムを提供せずに、text-decoration:blink を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F50">F50: 達成基準 2.2.2 の失敗例 － 5 秒以内に点滅を停止するメカニズムなしに、点滅効果を引き起こすスクリプト</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F7">F7: 達成基準 2.2.2 の失敗例 － 5 秒よりも長く点滅するコンテンツを一時停止するメカニズムなしでコンテンツを点滅している、Java 又は Flash などのオブジェクト又はアプレット</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-blinking">点滅 (blinking)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">注意を引く意図で、二つの視覚的な状態を交互に切り替えること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-flash" target="terms">閃光</a>も参照。ある程度の面積をもち、ある程度の明るさ、特定の頻度で点滅するものは、閃光に分類されることもありうる。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-paused">一時停止 (paused)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の要求により停止し、利用者の要求があるまで再開しない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.2: 意味のある順序理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="info-and-relationships.html">Previous <abbr title="Success Criterion">SC</abbr>: 情報及び関係性</a></li>
+            <li><a href="sensory-characteristics.html">Next <abbr title="Success Criterion">SC</abbr>: 感覚的な特徴</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.2: 意味のある順序理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#meaningful-sequence" style="font-weight: bold;">1.3.2 意味のある順序</a> (レベル A): コンテンツが提示されている順序が意味に影響を及ぼす場合には、<a href="https://w3c.github.io/wcag/guidelines/#dfn-correct-reading-sequence" target="terms">正しく読む順序</a>は<a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈が可能</a>である。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、コンテンツの意味を理解するのに必要な音声読み上げの順序を保ちながら、ユーザエージェントがコンテンツの代替表現を提供できるようにすることである。意味のあるコンテンツの少なくとも一つの順序がプログラムによる解釈が可能であることが重要である。この達成基準を満たしていないコンテンツは、支援技術がそのコンテンツを正しくない順序で読み上げたり、代替スタイルシート又はその他の書式変更が適用されたりしたときに、利用者を困惑あるいは混乱させてしまう恐れがある。</p>
+            <p>コンテンツの並び順を変更すると、コンテンツの意味に影響を及ぼす場合、その順序には<em>意味</em>がある。例えば、あるページに二つの独立した記事がある場合、それらの記事の相対的な順序がそれぞれの意味に影響を及ぼす可能性はない。そのような状況においては、それらの記事自体には意味のある順序があるかもしれないが、それらの記事が入っているテキストコンテナには意味のある順序はないかもしれない。</p>
+            <p>ある要素のプログラムが持つ意味が、そのコンテンツに意味のある順序があるかどうかを定義している。例えば、HTML では、テキストには常に意味のある順序がある。テーブル及び順序付きリストには意味のある順序があるが、順序なしリストには意味のある順序がない。</p>
+            <p>コンテンツの並び順には、常に意味があるとは限らない。例えば、あるウェブページのメイン部分とナビゲーション部分の相対的な順序は、それぞれの意味には影響を及ぼさない。それらは、プログラムによる解釈が可能な音声読み上げ順序で、どちらが先にもなりえる。もう一つの例としては、雑誌の記事にはいくつかの補足記事がいくつか含まれている。記事と補足記事の順序は、それぞれの意味に影響を及ぼすことはない。このような場合においては、この達成基準を満たすことのできるウェブページには、異なる音声読み上げ順序が複数あることになる。</p>
+            <p>誤解のないように書くと:</p>
+            <ol>
+               
+               
+               <li>特定の線形順序を提供することが要求されるのは、意味に影響を与えるときだけである。</li>
+               
+               
+               <li>複数の順序が (WCAG 2.0の定義する)「正しい」読み順となることもありえる。</li>
+               
+               
+               <li>提供する正しい読み順はひとつだけでよい。</li>
+               
+               
+            </ol>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、コンテンツを読み上げる支援技術に依存している利用者の役に立つ。デフォルトの表現における情報の並び順で明らかになる意味は、コンテンツを読み上げで提示したときも同じになるはずである。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><strong>事例 1:</strong> 段組をしている文書において、コンテンツを線形化した提示は、ある段の先頭から最後へと流れていき、その後次の段の先頭へと流れていく。</li>
+               
+               
+               <li><strong>事例 2:</strong> CSS を用いて、ナビゲーションバー、ページの本文、及び関連記事を配置している。それらの視覚的提示は、プログラムによる解釈される順序とは合致していないが、そのページの意味はその見た目の順序には依存していない。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li>ウェブページにあるすべてのコンテンツについて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G57">G57: コンテンツを意味のある順序で並べる</a></li>
+                  
+                  
+                  <li><p>次の達成方法のどれか一つを用いて、コンテンツの並び順を意味のあるものにする、<strong>かつ</strong>、その並び順については、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G57">G57: コンテンツを意味のある順序で並べる</a></p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H34">H34: インラインでテキストの方向を混在させるために、Unicode の right-to-left mark (RLM) 又は left-to-right mark (LRM) を使用する</a></li>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H56">H56: 入れ子になったテキストの表記方向に伴う問題を解決するために、インライン要素の dir 属性を使用する</a></li>
+                        
+                        
+                        <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
+                        
+                        
+                        <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C8">C8: 単語内の文字間隔を制御するために、CSS の letter-spacing を使用する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C27">C27: DOM の順序を表示順序と一致させる</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH15">FLASH15: Flash 内の論理的な読み上げ順序及びタブ順序を指定するために、tabIndex プロパティを使用する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF3">PDF3: PDF 文書で正しいタブ順序と読み上げ順序を確保する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL34">SL34: Using the Silverlight Default Tab Sequence and Altering Tab Sequences With Properties</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F34">F34: 達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツでテーブルの書式を整えるために、空白文字を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F33">F33: 達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツで複数の段組みを作成するために、空白文字を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F32">F32: 達成基準 1.3.2 の失敗例 － 単語内の間隔を制御するために、空白文字を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F49">F49: 達成基準 1.3.2 の失敗例 － 線形化したときに、意味を成さない HTML のレイアウトテーブルを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F1">F1: 達成基準 1.3.2 の失敗例 － CSS で情報を配置することにより、コンテンツの意味を変えている</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-correct-reading-sequence">正しく読む順序 (correct reading sequence)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの意味を変更せずに、単語や段落が提示される順序。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

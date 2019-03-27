@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.1.1: 非テキストコンテンツを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="text-alternatives.html"><abbr title="Guideline">GL</abbr>: テキストによる代替</a></li>
+            <li><a href="understanding-techniques.html">前へ: WCAG 達成基準の達成方法を理解する</a></li>
+            <li><a href="audio-only-and-video-only-prerecorded.html">Next <abbr title="Success Criterion">SC</abbr>: 音声のみ及び映像のみ (収録済)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.1.1: 非テキストコンテンツを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#non-text-content" style="font-weight: bold;">1.1.1 非テキストコンテンツ</a> (レベル A): 利用者に提示されるすべての<a href="https://w3c.github.io/wcag/guidelines/#dfn-non-text-content" target="terms">非テキストコンテンツ</a>には、同等の目的を果たす<a href="https://w3c.github.io/wcag/guidelines/#dfn-text-alternative" target="terms">テキストによる代替</a>が提供されている。ただし、次の場合は除く:</p>
+         <dl>
+            
+            
+            <dt>コントロール、入力</dt>
+            
+            
+            <dd><p>非テキストコンテンツが、コントロール又は利用者の入力を受け付けるものであるとき、その目的を説明する<a href="https://w3c.github.io/wcag/guidelines/#dfn-name" target="terms">名前 (name)</a> を提供している。(コントロール及び利用者の入力を受け入れるコンテンツに関するその他の要件は、<a href="https://w3c.github.io/wcag/guidelines/#name-role-value">達成基準 4.1.2</a> を参照。)</p>
+               
+               
+            </dd>
+            
+            
+            <dt>時間依存メディア</dt>
+            
+            
+            <dd><p>非テキストコンテンツが、時間に依存したメディアであるとき、テキストによる代替は、少なくとも、その非テキストコンテンツを識別できる説明を提供している。(メディアに関するその他の要件は、<a href="https://w3c.github.io/wcag/guidelines/#time-based-media">ガイドライン 1.2</a> を参照。)</p>
+               
+               
+            </dd>
+            
+            
+            <dt>テスト</dt>
+            
+            
+            <dd><p>非テキストコンテンツが、<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>で提示されると無効になるテスト又は演習のとき、テキストによる代替は、少なくともその非テキストコンテンツを識別できる説明を提供している。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>感覚的</dt>
+            
+            
+            <dd><p>非テキストコンテンツが、<a href="https://w3c.github.io/wcag/guidelines/#dfn-specific-sensory-experience" target="terms">特定の感覚的体験</a>を創り出すことを主に意図しているとき、テキストによる代替は、少なくともその非テキストコンテンツを識別できる説明を提供している。</p>
+               
+               
+            </dd>
+            
+            
+            <dt><a href="https://w3c.github.io/wcag/guidelines/#dfn-captcha" target="terms">CAPTCHA</a></dt>
+            
+            
+            <dd><p>非テキストコンテンツが、コンピュータではなく人間がコンテンツにアクセスしていることを確認する目的で用いられているとき、テキストによる代替は、その非テキストコンテンツの目的を特定し、説明している。なおかつ、他の感覚による知覚に対応して出力する CAPTCHA の代替形式を提供することで、様々な障害に対応している。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>装飾、整形、非表示</dt>
+            
+            
+            <dd><p>非テキストコンテンツが、<a href="https://w3c.github.io/wcag/guidelines/#dfn-pure-decoration" target="terms">純粋な装飾</a>である、見た目の整形のためだけに用いられている、又は利用者に提供されるものではないとき、<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>が無視できるように実装されている。</p>
+               
+               
+            </dd>
+            
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、非テキストコンテンツにより伝達される情報を、テキストによる代替を用いることによってアクセシブルにすることである。テキストによる代替は、利用者の要求に合わせてあらゆる感覚モダリティ (例えば、視覚、聴覚、又は触覚) を通じてレンダリング可能なので、情報をアクセシブルにするための最も重要な方法である。テキストによる代替を提供することにより、情報を様々なユーザエージェントによって様々な方法でレンダリングすることを可能にする。例えば、写真を見ることのできない利用者は、合成音声を用いてテキストによる代替を読み上げさせることができる。また、音声ファイルを聞くことができない利用者は、テキストによる代替を表示させることで、読むことができるようになる。将来的には、テキストによる代替は、情報を手話又は同じ言語のより単純な形式に、より容易に変換することも可能になるだろう。</p>
+            <section id="&#xA;------------note-on-captcha&#xA;------------&#xA;---------">
+               
+               
+               <h3>CAPTCHA に関する注記</h3>
+               
+               
+               <p>CAPTCHA は、アクセシビリティのコミュニティにおいて、議論の的になるトピックの一つである。<a href="https://www.w3.org/TR/turingtest/">Inaccessibility of CAPTCHA</a> で説明されているように、CAPTCHA はもともと、機械的な自動処理を排除しようとして、人間の能力の効果を追求するものである。特定の障害のある利用者は、あらゆる種類の CAPTCHA が解釈できないであろう。しかし、CAPTCHA は広く使われており、WCAG ワーキンググループは、もし CAPTCHA が完全に禁止されてしまったら、ウェブサイトは CAPTCHA の使用を断念するのではなく、WCAG に適合しないことを選択するだろうと考える。このことは、障害のある、非常に多くの利用者に対しての障壁を引き起こす。このため、ワーキンググループは、障害のある利用者のほとんどの要求を満たし、その上ウェブサイトが採用可能だと考えられる方法で、CAPTCHA に関する要件を構築することを選択した。異なる二つの形態の CAPTCHA をサイト上で提供することを要件として、障害のある利用者のほとんどが使用できる形式を見つけられるようにした。</p>
+               
+               
+               <p>中には最低限の要件を満たしているサイトに、それでもアクセスできない障害のある利用者もいるため、ワーキンググループは追加の手順に関する推奨を提供している。WCAG に適合する意欲のある組織は、このトピックの重要性を認識することが望ましく、かつ可能な限りこのガイドラインの最低要件を遥かに超えることが望ましい。追加の推奨される手段は、以下のものがある:</p>
+               
+               
+               <ul>
+                  
+                  
+                  <li>CAPTCHA を二つよりも多くのモダリティで提供する</li>
+                  
+                  
+                  <li>CAPTCHA を回避できる、カスタマーサービスの担当者へのアクセスを提供する</li>
+                  
+                  
+                  <li>認証された利用者には CAPTCHA を要求しない</li>
+                  
+                  
+               </ul>
+               
+               
+            </section>
+            <section id="additional-information">
+               
+               
+               <h3>補足情報</h3>
+               
+               
+               <p>非テキストコンテンツには様々な形態があり、この達成基準ではそれぞれをどのように扱うべきかを特定している。</p>
+               
+               
+               <p><strong>下記のその他の状況のいずれも適用されない非テキストコンテンツ</strong> (例: グラフ、図表、録音した音声、写真、及びアニメーション) の場合、テキストによる代替はあらゆる感覚モダリティ (例えば、視覚、聴覚、又は触覚) によってレンダリング可能な形態で同じ情報を入手可能にできる。短い、及び長いテキストによる代替は、非テキストコンテンツにある情報を伝達するのに必要に応じて用いられる。<strong>収録済の音声しか含まないファイル</strong>及び<strong>収録済の映像しか含まないファイル</strong>は、ここで扱われている。<strong>ライブの音声しか含まない</strong>ファイル及び<strong>ライブの映像しか含まない</strong>ファイルは、以下で扱われている (この段落の三つ後の段落を参照のこと)。</p>
+               
+               
+               <p><strong>コントロール又は利用者の入力を受け入れる非テキストコンテンツ</strong>、例えば、送信ボタンとして用いられる画像、イメージマップ、又は複雑なアニメーションなどの場合、名前は、少なくともその非テキストコンテンツが何で、なぜそこにあるのかを認識できるように、その非テキストコンテンツの目的を説明するために提供される。</p>
+               
+               
+               <p><strong>時間依存のメディアである非テキストコンテンツ</strong>は、<a href="time-based-media.html">1.2: Time-Based Media</a> によりアクセシブルになる。しかし、利用者がそのメディアを利用したいことがもしあれば、利用者がどんな動作をするかを解決できるので、利用者がページ上でそのメディアに出会ったときに、そのメディアが何であるかを知ることが重要である。したがって、時間依存のメディアを説明する、及び／又はそのメディアのタイトルを示すテキストによる代替を提供する。</p>
+               
+               
+               <p><strong>ライブの音声しか含まないコンテンツ及びライブの映像しか含まないコンテンツの場合</strong>、それらと同じ情報を示すテキストによる代替を提供することは、はるかに困難なこともありうる。このようなタイプの非テキストコンテンツに対しては、テキストによる代替は説明ラベルを提供する。</p>
+               
+               
+               <p><strong>テスト又は演習が、部分的又は全体的に非テキストの形式で提示されなければならないことがある。</strong>そのテスト又は演習は、聴覚又は視覚を用いて行う必要があるため、音声又は視覚情報はテキストに変換することのできないものとして提示される。例えば、ヒアリングテストは、もしテキストによる代替が提供されるなら、効力がないだろう。視覚能力向上のための演習も、テキスト形式では同様に意味を成さない。さらに、テキストによる代替のあるスペルのテストもあまり効果がない。このような場合には、テキストによる代替は非テキストコンテンツの目的を説明するために提供されることが望ましい。もちろん、そのテキストによる代替は、テストに合格するために必要な情報と同じものは提供しないことになる。</p>
+               
+               
+               <p><strong>言葉で完全に捉えられない特定の感覚的体験を作り出すことを主な目的とするコンテンツもある。</strong>例としては、交響楽団の演奏、視覚的な芸術作品などが挙げられる。そのようなコンテンツの場合、テキストによる代替は、少なくとも説明ラベルをもつ非テキストコンテンツ及び、可能ならば追加のテキストで特定できるようにする。ページにそのコンテンツを含む理由が分かっていて、かつ説明できる場合、その情報を含めることは役立つ。</p>
+               
+               
+               <p><strong>利用者が人間であることを証明するために用いられる、非テキストの試験。</strong>スパムロボットやその他のソフトウェアがサイトにアクセスしてくるのを回避するために、CAPTCHA と呼ばれている仕掛けが用いられる。CAPTCHA には通常、今日のウェブロボットの能力を超えた視覚的又は聴覚的な課題を伴う。しかし、その課題に対してテキストによる代替を提供することは、ロボットでも操作可能なものにしてしまい、結果としてその目的を挫折させてしまう。このような場合、テキストによる代替は、CAPTCHA の目的を説明し、かつ、様々な障害のある利用者の要求に対処するために、異なるモダリティを用いた代替形式が提供される。</p>
+               
+               
+               <p><strong>利用者が視覚的に確認したり、理解したりすることを実際には意図していない非テキストコンテンツ。</strong>ページ上でテキストを移動させるために用いる透過画像、ログ解析のために用いる非表示の画像、情報を伝えていないが、単に空白を埋めて美しい効果を作り出すコーナーのスウォール (渦巻き) などは、すべてこの例である。そのような画像にテキストによる代替を置くことは、スクリーンリーダーの利用者をそのページのコンテンツに集中できなくさせるだけである。しかし、形はどうあれコンテンツをマークアップしないことは、非テキストコンテンツがどのようなものか、(実際には何も見逃していていないにもかかわらず) どのような情報を見逃していたのかを利用者に推測させてしまうことになる。そのため、このような非テキストコンテンツについては、支援技術 (AT) がそれを無視して、かつ利用者に何も提示しない方法でマークアップ又は実装する。</p>
+               
+               
+            </section>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、視覚的なコンテンツを知覚するのが困難な利用者の役に立つ。支援技術が、テキストを読み上げたり、視覚的に提示したり、点字に変換したりすることができるようになる。</li>
+               
+               
+               <li>テキストによる代替は、写真、図面、その他の画像 (例えば、線画、グラフィックデザイン、絵画、3D 表現)、グラフ、図表、アニメーションなどの意味を理解するのが困難な利用者の役に立つことがある。</li>
+               
+               
+               <li>ろう、難聴、又は何らかの理由で音声情報を理解するのが困難な人が、テキストによる提示を読むことができる。テキストを手話に自動翻訳する研究が現在進められている。</li>
+               
+               
+               <li>盲ろうの利用者が、テキストを点字で読むことができるようになる。</li>
+               
+               
+               <li>加えて、テキストによる代替は非テキストコンテンツの検索する能力を支援し、コンテンツを様々な方法で再利用できるようにする。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ol>
+               
+               
+               <li><p><strong>データのグラフ</strong></p>
+                  
+                  
+                  <p>6 月、7 月、そして 8 月にどれだけの数の商品が売れたかを比較している棒グラフがある。短いラベルには、「図 1 - 6 月、7 月、8 月の売上」と書かれている。長い説明は、グラフの種類を特定し、そのグラフから見てとれるものに相当する、データ、傾向及び意味合いの高レベルな概要を提供している。可能かつ実用的な場合には、実際のデータが表で提供されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>演説を録音した音声</strong></p>
+                  
+                  
+                  <p>「議会での議長の演説」という音声クリップへのリンクがある。そして、音声クリップへのリンクの直後に、テキストの書き起こしへのリンクが提供されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>車のエンジンがどのように動くのかを説明するアニメーション</strong></p>
+                  
+                  
+                  <p>車のエンジンがどのように動くのかを見せているアニメーションがある。音声はなく、そのアニメーションはエンジンがどのように動くかを説明するチュートリアルの一部である。チュートリアルのテキストがすでに完全な説明をしているため、そのアニメーションはテキストの代替物であり、画像はテキストの代替物であり、テキストによる代替はそのアニメーションの簡潔な説明のみを含み、詳細についてはチュートリアルのテキストを参照している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>交通情報ウェブカメラ</strong></p>
+                  
+                  
+                  <p>利用者がある大都市の至る所に設置された様々なウェブカメラを選択できるウェブサイトがある。どれか一つのカメラを選択すると、画像が 2 分おきに更新される。簡潔なテキストによる代替では、そのウェブカメラを「交通情報ウェブカメラ」と説明している。そのサイトでは、ウェブカメラで扱われる経路のそれぞれの所要時間を表で提供している。その表も 2 分おきに更新されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ニュース記事にある歴史的な出来事の写真</strong></p>
+                  
+                  
+                  <p>握手を交わしている 2 人の世界的指導者の写真が国際首脳会議に関するニュース記事に添えられている。テキストにより代替には、「X 国の X 大統領が、Y 国の Y 首相と握手している。」と記述されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>外交関係を議論するコンテンツにある歴史的な出来事の写真</strong></p>
+                  
+                  
+                  <p>同じ写真が外交会談のニュアンスを説明するために、異なる文脈で使われている。首相と握手している大統領の画像が、複雑な外交関係を議論しているウェブサイトに掲載されている。最初のテキストによる代替には、「X 国の X 大統領が、2009年 1 月 2 日に、Y 国の Y 首相と握手している。」と書かれている。追加のテキストによる代替は、両首脳の顔の表情だけでなく 2 人が立っている部屋の説明もしており、さらに、その部屋にいる他の人を明らかにしている。その追加の説明は、写真と同じページに含まれるかもしれないし、リンク又はその他の標準的なプログラムによるメカニズムによってその画像と関連付けられた別のファイルに含まれるかもしれない。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>記者会見を録音した音声</strong></p>
+                  
+                  
+                  <p>ウェブページに、記者会見を録音した音声へのリンクがある。リンクテキストは、録音された音声を示している。また、そのページには記者会見のテキストによる書き起こしへのリンクもある。テキストによる書き起こしには、話者が発言したすべての逐語的な記録が含まれる。そこには、例えば、喝采、笑い、聴衆からの質問など、その録音の一部であるその他の重要な音声に言及するだけでなく、誰が話しているのかも記されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>E-ラーニングアプリケーション</strong></p>
+                  
+                  
+                  <p>回答が正しいかどうかを示すために効果音を用いている E-ラーニングアプリケーションがある。チャイム音はその回答が正解であることを示し、ビープ音はその回答が不正解であることを示している。テキストの説明もあるため、その音を聞いたり理解したりすることができない利用者も、その回答が正解かどうかを理解できる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>リンクのあるサムネイル画像</strong></p>
+                  
+                  
+                  <p>「スモールヴィル タイムス」のウェブサイトにリンクしている、新聞の一面のサムネイル画像がある。そのテキストによる代替には、「スモールヴィル タイムス」と記述されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>異なるサイトで使われている同じ画像</strong></p>
+                  
+                  
+                  <p>世界地図の画像に対する異なる代替の例: 旅行サイトで海外旅行コーナーへのリンクとして用いられている世界地図の画像には、「海外旅行」というテキストによる代替がある。同じ画像が、「国際キャンパス」というテキストによる代替とともに、ある大学のウェブサイトでリンクとして用いられている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>イメージマップ</strong></p>
+                  
+                  
+                  <p>ビルの見取り図のイメージマップ画像は操作可能で、利用者が特定の部屋を選択して、その部屋に関する情報のあるページへ移動できる。「ビルの見取り図。詳細については部屋を選択してください。」という簡潔なテキストによる代替が、そのイメージマップの画像と操作の目的を説明している。</p>
+                  
+                  
+               </li>
+               
+               
+            </ol>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/2000/08/nba-manual/Overview.html">Excerpts from the NBA Tape Recording Manual, Third Edition</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/turingtest/">Inaccessibility of CAPTCHA</a></li>
+               
+               
+               <li><a href="https://stuffandnonsense.co.uk/archives/accessible_alternatives.html">All That Malarkey: Accessible Alternatives</a></li>
+               
+               
+               <li><a href="http://www.456bereastreet.com/archive/200412/the_alt_and_title_attributes/">456 Berea Street: The Alt and Title Attributes</a></li>
+               
+               
+               <li><a href="http://green-beast.com/blog/?p=81">The Alt and Accessibility</a></li>
+               
+               
+               <li><a href="http://www.accessibilitynews.ca/cwdo/resources/resources.php?resources=187">Better Connected, Better Results: Alt Text</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="non-text-content-situation-0">
+                  
+                  
+                  <h4>状況 A: 短い説明が非テキストコンテンツと同じ目的を果たし、かつ同じ情報を提示できる場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-a-shorttext">状況 A における短いテキストによる代替の達成方法</a></strong>のいずれかを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、簡潔なテキストによる代替を提供する</a>:</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p id="text-equiv-all-situation-a-shorttext"><strong>状況 A における短いテキストによる代替の達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-a-shorttext-techs">
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA10">ARIA10: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G196">G196: 画像のグループにある一つの画像に、そのグループのすべての画像を説明するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH1">FLASH1: 非テキストオブジェクトに name プロパティを設定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH28">FLASH28: Flash で ASCII アート、顔文字、リート語に対するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H35">H35: applet 要素にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H37">H37: img 要素の alt 属性を使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H53">H53: object 要素のボディを使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H86">H86: ASCII アート、顔文字、及びリート語にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF1">PDF1: PDF 文書の Alt エントリによって画像にテキストによる代替を適用する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL5">SL5: Defining a Focusable Image Class for Silverlight</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section class="situation" id="non-text-content-situation-1">
+                  
+                  
+                  <h4>状況 B: 短い説明が非テキストコンテンツと同じ目的を果たせず、かつ同じ情報を提示<strong>できない</strong>場合 (例: チャート又は図表):</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-b-shorttext">状況 B における短いテキストによる代替の達成方法</a></strong>のいずれか<strong>及び</strong>、<strong><a href="#text-equiv-all-situation-b-longtext">状況 B における長いテキストによる代替の達成方法</a></strong>のいずれかを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G95">G95: 非テキストコンテンツの簡単な説明を提供する、簡潔なテキストによる代替を提供する</a>:</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p id="text-equiv-all-situation-b-shorttext"><strong>状況 B における短いテキストによる代替の達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-a-shorttext-techs2">
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA10">ARIA10: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G196">G196: 画像のグループにある一つの画像に、そのグループのすべての画像を説明するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH1">FLASH1: 非テキストオブジェクトに name プロパティを設定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH28">FLASH28: Flash で ASCII アート、顔文字、リート語に対するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H35">H35: applet 要素にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H37">H37: img 要素の alt 属性を使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H53">H53: object 要素のボディを使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H86">H86: ASCII アート、顔文字、及びリート語にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF1">PDF1: PDF 文書の Alt エントリによって画像にテキストによる代替を適用する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL5">SL5: Defining a Focusable Image Class for Silverlight</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+                  <p id="text-equiv-all-situation-b-longtext"><strong>状況 B における長いテキストによる代替の達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-b-longtext-techs">
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA15">ARIA15: 画像の説明を提供するために aria-describedby を使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G73">G73: 非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G74">G74: 短い説明の中で長い説明のある場所を示して、非テキストコンテンツの近くにあるテキストで長い説明を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G92">G92: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH2">FLASH2: Flash 内の非テキストオブジェクトに description プロパティを設定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH11">FLASH11: オブジェクトについて長いテキストの説明を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H45">H45: longdesc 属性を用いる</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H53">H53: object 要素のボディを使用する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL8">SL8: Displaying HelpText in Silverlight User Interfaces</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section class="situation" id="non-text-content-situation-2">
+                  
+                  
+                  <h4>状況 C: 非テキストコンテンツがコントロールである、又は利用者の入力を受け入れる場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-c-controls">状況 C におけるコントロールと入力のための短いテキストによる代替の達成方法</a></strong>のいずれかを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G82">G82: 非テキストコンテンツの目的を特定するテキストによる代替を提供する</a>:</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p id="text-equiv-all-situation-c-controls"><strong>状況 C におけるコントロールと入力のための短いテキストによる代替の達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-c-controls-techs">
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA9">ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH6">FLASH6: 非表示のボタンを使用してアクセシブルなホットスポットを作成する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH25">FLASH25: アクセシブルな名前 (accessible name) を設定することによって、フォームコントロールにラベルを付ける</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH27">FLASH27: ボタンの目的を説明するラベルを提供する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH29">FLASH29: フォームコンポーネントに label プロパティを設定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH30">FLASH30: 画像ボタンにアクセシブルな名前 (accessible name) を指定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH32">FLASH32: フォームコントロールにテキストラベルを関連付けるために、自動ラベリングを使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H24">H24: イメージマップの area 要素にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H30">H30: a 要素のリンクの目的を説明するリンクテキストを提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H36">H36: 送信ボタンとして用いる画像の alt 属性を使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL18">SL18: Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL26">SL26: Using LabeledBy to Associate Labels and Targets in Silverlight</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL30">SL30: Using Silverlight Control Compositing and AutomationProperties.Name</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section class="situation" id="non-text-content-situation-3">
+                  
+                  
+                  <h4>状況 D: 非テキストコンテンツが時間依存のメディアである (ライブの映像しか含まないコンテンツ及びライブの音声しか含まないコンテンツを含む)、テキストで提示されると無効になる試験又は演習である、又は、特定の感覚的体験を創り出すことを主に意図しているコンテンツである場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-d-shorttext">状況 D における短いテキストによる代替の達成方法</a></strong>のいずれかを用いて、ラベルを記述する:</li>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-d-shorttext">状況 D における短いテキストによる代替の達成方法</a></strong>のいずれかを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G68">G68: ライブの音声のみのコンテンツ及びライブの映像のみのコンテンツの目的を説明するために、簡潔なテキストによる代替を提供する</a>:</li>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-d-shorttext">状況 D における短いテキストによる代替の達成方法</a></strong>のいずれかを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G100">G100: 非テキストコンテンツの一般に認められた名前 (name) 又は説明的な名前となる簡潔なテキストによる代替を提供する</a>:</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p id="text-equiv-all-situation-d-shorttext"><strong>状況 D における短いテキストによる代替の達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-a-shorttext-techs3">
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA10">ARIA10: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G196">G196: 画像のグループにある一つの画像に、そのグループのすべての画像を説明するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH1">FLASH1: 非テキストオブジェクトに name プロパティを設定する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH28">FLASH28: Flash で ASCII アート、顔文字、リート語に対するテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H35">H35: applet 要素にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H37">H37: img 要素の alt 属性を使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H53">H53: object 要素のボディを使用する</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H86">H86: ASCII アート、顔文字、及びリート語にテキストによる代替を提供する</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF1">PDF1: PDF 文書の Alt エントリによって画像にテキストによる代替を適用する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL5">SL5: Defining a Focusable Image Class for Silverlight</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section class="situation" id="non-text-content-situation-4">
+                  
+                  
+                  <h4>状況 E: 非テキストコンテンツが CAPTCHA である場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G143">G143: CAPTCHA の目的を説明するために、テキストによる代替を提供する</a>、<strong>かつ</strong>、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G144">G144: 異なるモダリティを用いて同じ目的を果たす、もう一つの CAPTCHA がウェブページに含まれていることを確認する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="non-text-content-situation-5">
+                  
+                  
+                  <h4>状況 F: 非テキストコンテンツを支援技術が無視することが望ましい場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li>次に挙げる<strong><a href="#text-equiv-all-situation-f-notrequired">状況 F における必須ではないテキストによる代替を示す達成方法</a></strong>のいずれかを用いて、支援技術によって無視することができるように、非テキストコンテンツを実装またはマーク付けする:</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p id="text-equiv-all-situation-f-notrequired"><strong>状況 F における必須ではないテキストによる代替を示す達成方法</strong>:</p>
+                  
+                  
+                  <ul id="text-equiv-all-situation-f-notrequired-techs">
+                     
+                     
+                     <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C9">C9: 装飾目的の画像を付加するために、CSS を使用する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH3">FLASH3: 支援技術によって無視されるように Flash のオブジェクトにマークを付ける</a></li>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H67">H67: 支援技術が無視すべき画像に対して、img 要素の alt テキストを空にして、title 属性を付与しない</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF4">PDF4: PDF 文書の Artifact タグによって装飾的な画像を隠す</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <section id="html-techniques-advisory">
+                  
+                  
+                  <h4>HTML の達成方法（参考）</h4>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H46">H46: embed 要素と一緒に noembed 要素を用いる</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section id="css-techniques-advisory">
+                  
+                  
+                  <h4>CSS の達成方法 (参考)</h4>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C18">C18: レイアウトデザインのためのスペーサー画像ではなく、CSS のマージンとパディング規則を使用する</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+               <section id="silverlight-techniques-advisory">
+                  
+                  
+                  <h4>Silverlight の達成方法 (参考)</h4>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL19">SL19: Providing User Instructions With AutomationProperties.HelpText in Silverlight</a></li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </section>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F3">F3: 達成基準 1.1.1 の失敗例 － 重要な情報を伝える画像を付加するために、CSS を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F13">F13: 達成基準 1.4.1 の失敗例 － 画像の色の違いで伝られる情報が含まれないテキストによる代替を持っている</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F20">F20: 達成基準 1.1.1 及び 達成基準 4.1.2 の失敗例 － 非テキストコンテンツへの変更が発生するときにテキストによる代替を更新していない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F30">F30: 達成基準 1.1.1 及び 達成基準 1.2.1 の失敗例 － 代替ではないテキストによる代替を使用している (ファイル名、プレースホルダーテキストなど)</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F38">F38: 達成基準 1.1.1 の失敗例 － 支援技術が装飾的な画像を無視できる方法で、HTML でその画像をマークアップしていない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F39">F39: 達成基準 1.1.1 の失敗例 － 支援技術によって無視されることが望ましい画像に対して、空ではないテキストによる代替を提供している (例: alt=&quot;spacer&quot; 又は alt=&quot;image&quot;)</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F65">F65: 達成基準 1.1.1 の失敗例 － img 要素、area 要素、及び type &quot;image&quot; の input 要素の alt 属性又はテキストによる代替を省略している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F67">F67: 達成基準 1.1.1 及び 達成基準 1.2.1 の失敗例 － 非テキストコンテンツに対して、同じ目的を果たしていない、又は同じ情報を提示していない長い説明を提供している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F71">F71: 達成基準 1.1.1 の失敗例 － テキストを表すために、テキストによる代替を提供せずに、テキストのようなものを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F72">F72: 達成基準 1.1.1 の失敗例 － テキストによる代替を提供せずに、ASCII アートを用いている</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">(この文書で用いられている) 支援技術 (assistive technology (as used in this document))</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害者を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。</li>
+                     
+                     
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。</li>
+                     
+                     
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。</li>
+                     
+                     
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+                     
+                     
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。</li>
+                     
+                     
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-captcha">CAPTCHA</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンピュータと人間とを判別する完全自動化されたチューリングテスト (Completely Automated Public Turing test to tell Computers and Humans Apart) の頭文字語。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>CAPTCHA のテストは多くの場合、利用者に対し、不明瞭な画像又は音声ファイルによって提示されたテキストを入力するよう求める。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>チューリングテストは、人間とコンピュータを区別することを目的としたテストの仕組みである。その名は、高名なコンピュータ科学者のアラン チューリングにちなんでいる。この用語は、カーネギーメロン大学の研究者たちによる造語である。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-name">名前 (name)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ソフトウェアが、ウェブコンテンツのコンポーネントを利用者に識別させることができるテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-label" target="terms">ラベル</a>はすべての利用者に提示される一方で、名前 (name) は隠されていて、支援技術に対してだけ明らかにされる場合もある。多くの場合 (すべてではないが)、ラベルと名前 (name) は同じである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これは、HTML の name 属性とは関係がない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-non-text-content">非テキストコンテンツ (non-text content)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びではないコンテンツ、又は文字の並びが<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>においても何をも表現していないコンテンツ。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これには、 (文字による図画である) <a href="https://w3c.github.io/wcag/guidelines/#dfn-ascii-art" target="terms">ASCII アート</a>、顔文字、 (文字を置き換える) リートスピーク、文字を表現している画像が含まれる。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-pure-decoration">純粋な装飾 (pure decoration)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">見栄えのためだけのもので、情報は提供せず、機能性も備えていないもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキストが純粋な装飾といえるのは、単語を並べ替え、又は置き換えても意図が変わらないときだけである。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">背景にとても淡い文字で単語がランダムに並んでいる辞書の表紙。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-specific-sensory-experience">特定の感覚的な体験 (specific sensory experience)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">純粋な装飾ではなく、かつ重要な情報の伝達、又は機能の提供を主目的としない感覚的な体験。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">フルートのソロ演奏、視覚芸術の作品などが例として挙げられる。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text">テキスト (text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>で何かを表現しているもの。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text-alternative">テキストによる代替 (text alternative)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-non-text-content" target="terms">非テキストコンテンツ</a>とプログラムで関連付けられる<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>、又は非テキストコンテンツとプログラムで関連付けられるテキストから参照されるテキスト。プログラムで関連付けられたテキストとは、その場所を、非テキストコンテンツからプログラムによる解釈が可能なテキストである。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">チャートの画像があり、その直後の段落にテキストによる説明がある。チャートに対する短いテキストによる代替で後に説明があることを示している。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>より詳細な情報は、<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance">Understanding Text Alternatives</a> を参照。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

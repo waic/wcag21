@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.3.6: エラー回避 (すべて) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-assistance.html"><abbr title="Guideline">GL</abbr>: 入力支援</a></li>
+            <li><a href="help.html">Previous <abbr title="Success Criterion">SC</abbr>: ヘルプ</a></li>
+            <li><a href="parsing.html">Next <abbr title="Success Criterion">SC</abbr>: 構文解析</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.3.6: エラー回避 (すべて) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#error-prevention-all" style="font-weight: bold;">3.3.6 エラー回避 (すべて)</a> (レベル AAA): 利用者に情報の送信を要求する<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>では、次に挙げる事項のうち、少なくとも一つを満たしている</p>
+         <dl>
+            
+            <dt>取消</dt>
+            
+            <dd>送信を取り消すことができる。</dd>
+            
+            <dt>チェック</dt>
+            
+            <dd>利用者が入力したデータの入力エラーがチェックされ、利用者には修正する機会が提供される。</dd>
+            
+            <dt>確認</dt>
+            
+            <dd>送信を完了する前に、利用者が情報の見直し、確認及び修正をするメカニズムが利用できる。</dd>
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、障害のある利用者が、フォームのデータを送信するときにミスをしたことによりひきおこされる重大な結果を未然に防ぐことができるようにすることである。この達成基準は、利用者が情報を送信する必要のあるフォームすべてに適用されるという点において、<a href="error-prevention-legal-financial-data.html" class="guideline">達成基準 3.3.4</a> よりも上位のレベルである。</p>
+            <p>障害のある利用者は、ミスをしてしまう可能性が高く、フォームでのエラーに気づく又は修正するのにも困難を伴うことが多い。例えば、読字障害のある利用者は、数字と文字を取り違えてしまうことがある。そして、運動障害のある利用者は間違ってキーを押してしまうことがある。元の状態に戻せるようにすることによって、利用者がエラーを修正することができるようになる。また、情報を確認して修正できるようにすることによって、利用者はフォームのデータを送信する前にエラーに気づくことができる。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>ミスによる重大な結果を未然に防ぐ手段を提供することによって、ミスをする可能性の高い障害のある利用者すべてに役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li>利用者に情報の送信を要求するすべてのフォームにおいて、<a href="error-prevention-legal-financial-data#techniques" class="understanding">達成基準 3.3.4</a> を満たすことのできる達成方法に従うこと。</li>
+                  
+                  
+               </ol>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

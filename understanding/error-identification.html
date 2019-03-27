@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.3.1: エラーの特定を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-assistance.html"><abbr title="Guideline">GL</abbr>: 入力支援</a></li>
+            <li><a href="on-focus.html">Previous <abbr title="Success Criterion">SC</abbr>: キーボード</a></li>
+            <li><a href="labels-or-instructions.html">Next <abbr title="Success Criterion">SC</abbr>: ラベル又は説明</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.3.1: エラーの特定を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#error-identification" style="font-weight: bold;">3.3.1 エラーの特定</a> (Level A):<a href="https://w3c.github.io/wcag/guidelines/#dfn-input-error" target="terms">入力エラー</a>が自動的に検出された場合は、エラーとなっている箇所が特定され、そのエラーが利用者にテキストで説明される。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者がエラーの発生に気づき、何が誤っていたのかわかるようにすることである。エラーメッセージは、できる限り具体的なものであるべきである。フォームの送信がうまくいかなかった場合に、フォームを再度表示して、エラーになっているテキストフィールドを示すだけでは、エラーの発生を知覚して気がつくに不十分な利用者もいる。例えば、スクリーンリーダーの利用者は、エラー表示が読み上げられるまでは、エラーがあることに気づかない。単にそのページがうまく動作しないのだと考えて、エラーが発生していることに気づく前に、スクリーンリーダーの利用者はそのフォームを使うこと自体をあきらめてしまうかもしれない。WCAG 2.0 での定義より、「入力エラー」とは利用者が提供した情報で、受け付けられないものである。以下のものが含まれる:</p>
+            <ul>
+               
+               
+               <li>ウェブページでは必須とされているが、利用者が入力を省略した情報、又は</li>
+               
+               
+               <li>利用者が入力したが、要求されたデータ形式あるいは値ではない情報</li>
+               
+               
+            </ul>
+            <p>例えば:</p>
+            <ul>
+               
+               
+               <li>利用者は、州、管区、地域、等に適切な略語を入力できない。</li>
+               
+               
+               <li>利用者は、有効でない州の略語を入力する。</li>
+               
+               
+               <li>利用者は、実在しない郵便番号を入力する。</li>
+               
+               
+               <li>利用者は、2 年先の誕生日を入力する。</li>
+               
+               
+               <li>利用者は、数字のみを受け付ける電話番号蘭にアルファベットや丸括弧を入力する。</li>
+               
+               
+               <li>利用者は、前の入札を下回る入札または最小入札単位を下回る入札を入力する。</li>
+               
+               
+            </ul>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p> 利用者が高すぎる値、または低すぎる値を入力し、その値をページ上のコードが自動的に許容範囲内に変更した場合、達成基準によって要求されるよう、利用者の入力エラーはまだ変更したところに記載される必要がある。変更された値を人に伝えるエラーの説明などは、この達成基準 (エラーの特定) 及び達<a href="error-suggestion.html" class="understanding">成基準 3.3.3 (エラー修正の提案)</a> の両方を満たすことになる。</p>
+                  
+                  
+               </div>
+            </div>
+            <p>ユーザエージェント又は支援技術がエラーを特定して、エラーに関する情報を利用者に提供することのできる、プログラム的な情報を用いて、エラーがあることを示して、その内容を説明することができる。例えば、あるウェブコンテンツ技術では、利用者の入力には文字数制限があること、又はフォームのテキストフィールドが必須項目であることを明示できる。現在、このようなプログラム的な情報をサポートしているウェブコンテンツ技術はほとんどないが、この達成基準ではそういった技術の有無は問わない。</p>
+            <p>テキストによる説明に加えて、例えば画像や色などのその他の方法でもエラーを示すことは全く問題ない。</p>
+            <p><a href="error-suggestion.html">3.3.3: エラー修正の提案</a>も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>入力エラーに関する情報をテキストで提供することによって、全盲の利用者又は色覚異常の利用者はエラーが発生したことを知覚できるようになる。</li>
+               
+               
+               <li>この達成基準は、アイコン及びその他の視覚的な手がかりで示された意味を理解するのが困難な、認知の障害、言語の障害、及び学習障害のある利用者にも役立つことがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>フォーム送信におけるエラーの特定</strong></p>
+                  
+                  
+                  <p>ある航空会社のウェブサイトが、格安便の特別なプロモーションを展開している。利用者は、氏名、住所、電話番号、座席指定、及び電子メールアドレスなどの個人情報をシンプルなフォームに入力することを求められる。フォームにあるテキストフィールドのいずれかが、入力されていないか入力に誤りがある場合、どのテキストフィールドが未入力又はエラーであるかを利用者に知らせるアラートが表示される。</p>
+                  
+                  
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+                     <div><p>この達成基準は、エラー箇所を示すために、色又はテキストの表示スタイルを用いないほうがよいということを意味しない。単にエラー箇所がテキストでも示されていることを要求しているだけである。この事例では、色に加えて、二つのアスタリスク (*) が用いられている。</p>
+                        
+                        
+                     </div>
+                  </div>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>複数の手がかりの提供</strong></p>
+                  
+                  
+                  <p>利用者がフォームにある二つのテキストフィールドに入力し忘れている。エラーの説明及びそのテキストフィールドを見つけやすくするためにエラーであることを示す特定の文字列を提供するだけでなく、テキストフィールドを黄色で強調表示して、視覚的にも見つけやすくしている。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="error-identification-situation-0">
+                  
+                  
+                  <h4>状況 A: フォームが利用者からの情報が必須である入力フィールドを含む場合</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA21">ARIA21: エラーフィールドを示すために aria-invalid を使用する</a></li>
+                     
+                     
+                     <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF5">PDF5: PDF フォームで必須項目のフォームコントロールを示す</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL35">SL35: Using the Validation and ValidationSummary APIs to Implement Client Side Forms Validation in Silverlight</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="error-identification-situation-1">
+                  
+                  
+                  <h4>状況 B: 利用者によって提供される情報が、特別なデータフォーマットか特定の値であることが求められる場合</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA18">ARIA18: エラーを特定するために aria-alertdialog を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA21">ARIA21: エラーフィールドを示すために aria-invalid を使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G84">G84: 利用者が許可された値のリストにない情報を与えた場合に、テキストの説明を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
+                     
+                     
+                     <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+                     
+                     
+                     <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR32">SCR32: クライアントサイドのバリデーションを提供し、DOM を介してエラーテキストを追加する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH12">FLASH12: クライアントサイドのバリデーションを提供し、アクセシブルな説明 (accessible description) によってエラーテキストを追加する</a></li>
+                     
+                     
+                     <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF22">PDF22: PDF フォームにおいて、利用者の入力が必須形式又は値の範囲外となった場合に、そのことを明示する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL35">SL35: Using the Validation and ValidationSummary APIs to Implement Client Side Forms Validation in Silverlight</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G139">G139: 利用者がエラー箇所に移動できるメカニズムを作成する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G199">G199: データが正常に送信されたときに、フィードバックを提供する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-input-error">入力エラー (input error)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者が入力した情報で、受け付けられないもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div><p>以下のものが含まれる:</p>
+                        
+                        
+                        <ol>
+                           
+                           
+                           <li>その<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>では必須であるが、利用者が入力しなかった情報</li>
+                           
+                           
+                           <li>利用者が入力したが、要求されたデータ形式あるいは値ではない情報</li>
+                           
+                           
+                        </ol>
+                        
+                     </div>
+                  </div>
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.2.2: 入力時を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="predictable.html"><abbr title="Guideline">GL</abbr>: 予測可能</a></li>
+            <li><a href="on-focus.html">Previous <abbr title="Success Criterion">SC</abbr>: フォーカス時</a></li>
+            <li><a href="consistent-navigation.html">Next <abbr title="Success Criterion">SC</abbr>: 一貫したナビゲーション</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.2.2: 入力時を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#on-input" style="font-weight: bold;">3.2.2 入力時</a> (レベル A): <a href="https://w3c.github.io/wcag/guidelines/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>の設定を変更することが、<a href="https://w3c.github.io/wcag/guidelines/#dfn-changes-of-context" target="terms">コンテキストの変化</a>を自動的に引き起こさない。ただし、利用者が使用する前にその挙動を知らせてある場合を除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、データ入力又はフォームコントロールの選択の結果を予測可能にすることである。ユーザインタフェース要素の設定を変更すると、コントロールの状態を変化させ、その状態は利用者がそのユーザインタフェース要素とのやりとりを終了した後も持続する。つまり、チェックボックスを選択する、テキストフィールドにテキストを入力する、又はリストコントロールのオプションを選択すると、コンポーネントの設定を変更するが、リンク又はボタンを動作させるときはそうはならない。コンテキストの変化は、その変化を知覚しづらい利用者、又は変化によって気を取られやすい利用者を混乱させてしまう恐れがある。コンテキストの変化が起こってもよいのは、そのような変化が利用者の操作に反応して起こることが明らかなときだけである。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>この達成基準は、コントロールの設定を変更することによるコンテキストの変化をカバーする。リンク又はタブ コントロール内のタブのクリックすると、コントロールの設定を変更せずに、コントロールがアクティブになる。</p>
+                  
+                  
+               </div>
+            </div>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>ここでの「コンポーネント」及び「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、インタラクティブなコンテンツを、より予測可能にすることによって、障害のある利用者に役立つ。予期しないコンテキストの変化によって、視覚障害又は認知的限界のある利用者はとても混乱してしまう可能性があり、コンテンツを利用できなくなる。</li>
+               
+               
+               <li><p>コンテキストの変化に気づくことができない人は、サイトをナビゲートしている間に混乱した状態になりにくい。例えば:</p>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li>全盲又はロービジョンの人は、新しいウィンドウがポップアップするなど、視覚的なコンテキストの変化が発生したことを知るのが困難なことがある。この場合、前もって利用者にコンテキストの変化が起こることを知らせておくと、利用者が「戻る」ボタンがいつものように動作しないことに気づいたときの混乱を最小限に抑えることができる。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </li>
+               
+               
+               <li>ロービジョン、読字及び知的障害のある人、そして視覚的な手がかりの解釈が困難な人は、コンテキストの変化を知るために、追加の手がかかりから得るだろう。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>フォームは、ウェブベースのカレンダー及びスケジュール管理アプリケーションに、カレンダーのエントリーを作成するために提供されている。件名、時刻、場所の標準的なフィールドに加えて、作成するカレンダーのエントリーの種類を選択するラジオボタン一式がある。カレンダーのエントリの種類は、会議、アポイントメント又はリマインダにできる。利用者が会議のラジオボタンを選択すると、会議の参加者を入力する追加のフィールドがページに表示される。リマインダのボタンを選択した場合、異なるフィールドが表示される。エントリーの部分だけが変化し、全体の構造は同じままなので、基本的なコンテキストは利用者のために留まる。</li>
+               
+               
+               <li>フォームは、米国の電話番号を表すフィールドを含んでいる。すべての電話番号には、3 桁のエリアコード (市外局番) があり、続いて 3 桁の局番、最後に 4 桁の番号があり、それぞれの番号は別々のフィールドに入力される。利用者があるフィールドの入力を完了すると、フォーカスは自動的に電話番号の次のフィールドへ移動する。この電話フィールドのふるまいは、フォームの先頭で利用者に対して説明されている。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><p>以下に挙げる技術特有の手法を用いて <a class="general" href="https://w3c.github.io/wcag/techniques/general/G80">G80: コンテキストの変化を開始する送信ボタンを提供する</a></p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H32">H32: 送信ボタンを提供する</a></li>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H84">H84: アクションを実行するために、select 要素とともにボタンを使用する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH4">FLASH4: Flash で送信ボタンを提供する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF15">PDF15: PDF フォームで送信フォームアクションのある送信ボタンを提供する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL10">SL10: Implementing a Submit-Form Pattern in Silverlight</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G13">G13: コンテキストの変化を引き起こすフォームコントロールへの変更が行われる前に、何が起こるのかを説明する</a></li>
+                  
+                  
+                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR19">SCR19: select 要素の onchange イベントは、コンテキストの変化を引き起こすことのないように使用する</a></li>
+                  
+                  
+               </ol>
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p>コンテンツの変化が、必ず<a href="https://w3c.github.io/wcag/guidelines/#dfn-changes-of-context" target="terms">コンテキストの変化</a>になるとはかぎらない。コンテンツの変化がコンテキストの変化ではない場合、この達成基準は自動的に満たされていることになる。</p>
+                     
+                     
+                  </div>
+               </div>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G201">G201: 新しいウィンドウを開くときに、利用者へ事前に知らせる</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F36">F36: 達成基準 3.2.2 の失敗例 － フォームの最後のフィールドに値を与えたときに、自動的にフォームを送信し、事前の予告なしに新しいコンテンツを提示している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F37">F37: 達成基準 3.2.2 の失敗例 － ラジオボタン、チェックボックス、又はセレクトリストの選択を変更すると、事前の予告なしに新しいウィンドウを開いている</a></li>
+                  
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-changes-of-context">コンテキストの変化 (changes of context)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>のコンテンツにおける大きな変化で、利用者が気づかないと、ウェブページ全体を一度に見ることのできない利用者を混乱させる恐れのあるもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">状況の変化には次に挙げるものの変化が含まれる:</p>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a></li>
+                     
+                     
+                     <li><a href="https://w3c.github.io/wcag/guidelines/#dfn-viewport" target="terms">ビューポート</a></li>
+                     
+                     
+                     <li>フォーカス</li>
+                     
+                     
+                     <li><a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>の意味を変える<a href="https://w3c.github.io/wcag/guidelines/#dfn-content" target="terms">コンテンツ</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツの変化が、必ずコンテキストの変化になるとはかぎらない。アウトラインの展開、動的なメニュー、又はタブの切替などのコンテンツの変化は、それが上記のいずれか (例: フォーカス) を変更しないかぎり、状況を変化させるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">新しいウィンドウを開くこと、フォーカスを異なるコンポーネントへ移動させること、新しいウェブページへ移動すること (新しいウェブページへ移動したかのように思わせてしまうことも含む)、又はウェブページの内容を大きく再配置することなどは、コンテキストの変化の事例である。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

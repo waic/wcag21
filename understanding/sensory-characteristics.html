@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.3: 感覚的な特徴を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="meaningful-sequence.html">Previous <abbr title="Success Criterion">SC</abbr>: 意味のある順序</a></li>
+            <li><a href="orientation.html">Next <abbr title="Success Criterion">SC</abbr>: 表示の向き</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.3: 感覚的な特徴を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#sensory-characteristics" style="font-weight: bold;">1.3.3 感覚的な特徴</a> (レベル A): コンテンツを理解し操作するための説明は、形、色、大きさ、視覚的な位置、方向、又は音のような、構成要素が持つ感覚的な特徴だけに依存していない。</p>
+         <p class="note">色に関する要件は、<a href="https://w3c.github.io/wcag/guidelines/#distinguishable">ガイドライン 1.4</a> を参照。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、形又は大きさを知覚できない、もしくは空間的な位置又は方向に関する情報を利用できない場合でも、すべての利用者がコンテンツを利用するための指示にアクセスできるようにすることである。コンテンツによっては、コンテンツの構造からは入手できない対象の形又は位置の知識 (例えば、「円いボタン」又は「右のボタン」) に依存していることがある。障害のある利用者は、使用している支援技術の性質のために、形又は配置を知覚できないことがある。この達成基準は、このような情報に依存しているあらゆるものを明確にするために、補足の情報を提供することを要求している。</p>
+            <p>しかし、形及び／又は位置を用いて情報を提供することは、認知能力の低下している利用者を含む多くの利用者に対しては効果的な手法である。この達成基準は、情報が他の方法でも提供されている限り、これらのタイプの手がかりを妨げないほうがよい。</p>
+            <p>ある言語においては、「上記」はコンテンツのその地点よりも前にあるコンテンツを指し、「下記」はその地点よりも後にあるコンテンツを指すことが共通理解となっている。そのような言語では、参照されているコンテンツが読み上げ順序の中で適切な位置にあり、かつ参照が明確ならば、「下のリンクのいずれかを選択する」または「上記のすべてを選択する」などの文はこの達成基準に適合するだろう。</p>
+            <p>WCAG はウェブページ上に表示されたコントロールのみに該当するよう設計された。その意図は、視覚的又は聴覚的な手がかりのみを参考にコントロールを説明をすることを避けるためである。これを物理的なハードウェアコントロール (専用コンテンツのあるウェブキオスクなど) を操作するための手順に適用するとき、おそらく触知できる手がかり (例えば、矢印の形をしたキー、右側の丸いキー) が説明されるだろう。この達成基準は、指示の中で触知できる手がかりの使用を防ぐことを意図したものではない。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>全盲の利用者及びロービジョンの利用者は、情報が形及び／又は位置によって伝えられている場合、その情報を理解できないことがある。形及び／又は位置以外の情報を補足することで、形及び／又は位置だけで伝えられている情報を理解できるようになる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>事例 1: 重複したイベントのスケジュールに、それぞれのイベント時間を区別するために色と形を使う</strong></p>
+                  
+                  
+                  <p>テーブルの 1 行目に時間のリストが表示され、1 列目にイベントリストが表示されている表がある。セルは、色と形で定義づけできるため、特定のイベントの時間を背景色とダイヤモンドの形をした記号で表示する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 2: 複数のページによるオンライン調査</strong></p>
+                  
+                  
+                  <p>複数のページによるオンライン調査では、あるページから次のページへ遷移するためのリンクに緑色の矢印のアイコンを使っていて、それをコンテンツの右下に置いている。複数のページによるオンライン調査では、あるページから次のページへ遷移するためのリンクに緑色の矢印のアイコンを使っていて、それをコンテンツの右下に置いている。矢印には「次へ」というラベルがはっきりと記述されていて、「次の調査へ進むには、最後の質問の右下にある『次へ』というラベルの付いた緑色の矢印のアイコンを選択してください。」という説明文が書かれている。この例では、アイコンを特定できるように、配置、色及びラベルを用いている。 </p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G96">G96: 理解させる必要のあるアイテムを感覚的にだけ伝えるのではなく、テキストによる識別情報もあわせて提供する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F14">F14: 達成基準 1.3.3 の失敗例 － 形状又は位置のみでコンテンツを特定している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F26">F26: 達成基準 1.3.3 の失敗例 － 情報を伝えるために、グラフィカルなシンボルのみを使用している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

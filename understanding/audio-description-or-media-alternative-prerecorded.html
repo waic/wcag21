@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="time-based-media.html"><abbr title="Guideline">GL</abbr>: 時間依存メディア</a></li>
+            <li><a href="captions-prerecorded.html">Previous <abbr title="Success Criterion">SC</abbr>: キャプション (収録済) を理解する</a></li>
+            <li><a href="captions-live.html">Next <abbr title="Success Criterion">SC</abbr>: キャプション (ライブ)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#audio-description-or-media-alternative-prerecorded" style="font-weight: bold;">1.2.3 音声解説、又はメディアに対する代替 (収録済)</a> (レベル A): <a href="https://w3c.github.io/wcag/guidelines/#dfn-synchronized-media" target="terms">同期したメディア</a>に含まれている<a href="https://w3c.github.io/wcag/guidelines/#dfn-prerecorded" target="terms">収録済</a>の<a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>コンテンツに対して、<a href="https://w3c.github.io/wcag/guidelines/#dfn-alternative-for-time-based-media" target="terms">時間依存メディアに対する代替</a>コンテンツ又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-audio-description" target="terms">音声解説</a>が提供されている。ただし、その同期したメディアが<a href="https://w3c.github.io/wcag/guidelines/#dfn-media-alternative-for-text" target="terms">メディアによるテキストの代替</a>であって、メディアによる代替であることが明確にラベル付けされている場合は除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、全盲又は視覚障害のある利用者に、同期したメディアによる提示にある視覚的な情報へのアクセスを提供することである。この達成基準では、二つのアプローチについて説明しているが、いずれかを使用できる。</p>
+            <p>一つめのアプローチは、映像コンテンツの音声解説を提供することである。音声解説は、映像部分が利用できない場合に、必要とされる情報を持つその提示の音声部分を増強する。会話の切れ目の間に、音声解説は、重要かつ主音声では説明又は話されていない、動き、登場人物、シーンの変化、画面上の文字に関する情報を提供する。</p>
+            <p>二つめのアプローチは、同期したメディア (視覚と聴覚の両方) のすべての情報をテキスト形式で提供することである。時間の経過に伴って変化するメディアの代替は、同期したメディアのコンテンツで提供されているすべての情報をそのままに提供するものである。時間依存メディアの代替は、脚本や歌詞のようなものを読み上げる。音声解説とは異なり、映像部分の説明が、既存の発話の合間だけに制限されることはない。視覚的な状況、登場人物の動きや表情、及びその他のあらゆる視覚的なものを含めて、すべての視覚的な情報について、説明を十分に提供する。さらに、発話ではない音声 (笑い声、画面の外から聞こえてくる声など) を説明し、すべての発話の書き起こしテキストを含む。説明及び会話の書き起こしテキストの順序は、同期したメディア自体での順序と同じである。結果的に、時間の経過に伴って変化するメディアの代替は、同期したメディアコンテンツについて、音声解説だけでの場合よりもずっと多くの完全な説明を提供することが可能である。</p>
+            <p>同期したメディアによる提示の一部分として何らかのインタラクションがある場合 (例えば、「質問に答えるために、今、ボタンを押してください。」）、時間依存メディアの代替は、ハイパーリンク又は同じ機能を提供するのに必要なものを提示することになる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>達成基準 1.2.3、1.2.5、及び 1.2.7 では、映像トラックにある情報のすべてが音声トラックですでに提供されている場合に、音声解説を必要としない。</p>
+                  
+                  
+                  <p>達成基準 1.2.3、1.2.5、及び 1.2.8 は、互いにある程度重複する。これは、最低限の適合レベルではコンテンツ制作者に選択肢を与え、より高い適合レベルでは追加の要件を提示するためである。達成基準 1.2.3 のレベル A では、コンテンツ制作者には、音声解説又は完全なテキストによる代替のどちらかを提供するという選択肢がある。レベル AA の適合を望む場合、達成基準 1.2.5 のもとで、コンテンツ制作者は音声解説を提供しなければならない。これは、達成基準 1.2.3 に対して代替を選択する場合に、レベル AA の要件をすでに満たしていることになるが、そうでなければ、音声解説の提供は追加の要件ということになる。達成基準 1.2.8 のもとでのレベル AAA では、コンテンツ制作者は拡張したテキストの説明を提供しなければならない。達成基準 1.2.3 と 1.2.5 の両方が音声解説だけを提供することで要件を満たしていた場合には、これは追加の要件ということになる。しかし、達成基準 1.2.3 をテキストの説明を提供することで満たし、なおかつ達成基準 1.2.5 の音声解説の要件を満たしている場合には、達成基準 1.2.8 は新しい要件を追加することにはならない。</p>
+                  
+                  
+               </div>
+            </div>
+            <p><a href="audio-description-prerecorded.html">1.2.5: 音声解説 (収録済)</a>、<a href="extended-audio-description-prerecorded.html">1.2.7: 拡張音声解説 (収録済)</a>、<a href="media-alternative-prerecorded.html">1.2.8: メディアに対する代替 (収録済)</a> も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、映像コンテンツ又はその他の同期したメディアのコンテンツを見るのが困難な利用者の役に立つ。これには、動きのある画像を知覚又は理解するのが困難な利用者も含む。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>音声解説を提供している映画</strong></p>
+                  
+                  
+                  <p><strong>音声解説:</strong> タイトル「進化のケーススタディの授業 ボニー チェン」くちばしが長くて薄い鳥の写真を、先生が見せている。</p>
+                  
+                  
+                  <p><strong>ボニー チェン</strong>:「これらの写真はすべて、フロリダのエバーグレイド国立公園で撮影されたものです。」</p>
+                  
+                  
+                  <p><strong>音声解説:</strong> 先生が生徒ひとりひとりに二つの平らで薄い木の棒切れを手渡ししています。</p>
+                  
+                  
+                  <p><strong>ボニー チェン:</strong>「皆さん、今日は、こんなくちばしをした、脚の長い鳥になったふりをしてください。」</p>
+                  
+                  
+                  <p><strong>音声解説:</strong> 先生が、二つの棒切れを口にあてて、くちばしの形を作っています。</p>
+                  
+                  
+                  <p>音声の書き起こしは、「<a href="http://www.pbs.org/wgbh/evolution/educators/teachstuds/tvideos.html">Teaching Evolution Case Stuides, Bonnie Chen</a>」(copyright WGBH and Clear Blue Sky Productions, Inc.)の冒頭の数分間に基づいている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ある研修ビデオでの、時間依存メディアの代替</strong></p>
+                  
+                  
+                  <p>ある企業では、従業員のための研修ビデオを購入し、その企業のイントラネット上に置いている。そのビデオでは、新しい技術の使い方を説明していて、同時にそれを説明しながら実演する人物が登場している。会話の合間に、視覚的な実演の音声解説を挿入する箇所がないため、その企業では、その実演を見ることができない人を含む、すべての従業員がその実演をよりよく理解するために使用できる、時間依存メディアの代替を提供している。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://ncam.wgbh.org/invent_build/web_multimedia/accessible-digital-media-guide/guideline-h-multimedia#techH12">NCAM Rich Media Accessibility, Accessible SMIL Templates</a></li>
+               
+               
+               <li><a href="http://joeclark.org/access/description/ad-principles.html">Standard Techniques in Audio Description</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/REC-smil/">Synchronized Multimedia Integration Language (SMIL) 1.0</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/SMIL/">Synchronized Multimedia Integration Language (SMIL 2.0)</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/SMIL-access/">Accessibility Features of SMIL</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><p>次の達成方法のどれか一つを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a></p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G58">G58: 非テキストコンテンツのすぐ隣に、時間依存メディアの代替へのリンクを配置する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL17">SL17: Providing Static Alternative Content for Silverlight Media Playing in a MediaElement</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法のどれか一つを用いて、時間の経過に伴って変化するメディアの代替へリンクする</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H53">H53: object 要素のボディを使用する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G78">G78: 音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G78">G78: 音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</a>、<strong>かつ</strong>、<a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL1">SL1: Accessing Alternate Audio Tracks in Silverlight Media </a></li>
+                  
+                  
+                  <li><p>次のどれか一つを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G173">G173: 映像の音声解説付きバージョンを提供する</a>:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="smil" href="https://w3c.github.io/wcag/techniques/smil/SM6">SM6: SMIL 1.0 で音声解説を提供する</a></li>
+                        
+                        
+                        <li><a class="smil" href="https://w3c.github.io/wcag/techniques/smil/SM7">SM7: SMIL 2.0 で音声解説を提供する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH26">FLASH26: Flash ビデオに音声解説をつける</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL1">SL1: Accessing Alternate Audio Tracks in Silverlight Media</a></li>
+                        
+                        
+                        <li>音声及び映像をサポートしているプレーヤーを用いる</li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次のどれか一つを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G8">G8: 拡張音声解説が付いたムービーを提供する</a></p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="smil" href="https://w3c.github.io/wcag/techniques/smil/SM1">SM1: SMIL 1.0 で拡張音声解説を追加する</a></li>
+                        
+                        
+                        <li><a class="smil" href="https://w3c.github.io/wcag/techniques/smil/SM2">SM2: SMIL 2.0 で拡張音声解説を追加する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH26">FLASH26: Flash ビデオに音声解説をつける</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL1">SL1: Accessing Alternate Audio Tracks in Silverlight Media</a></li>
+                        
+                        
+                        <li>音声及び映像をサポートしているプレーヤーを用いる</li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G203">G203: 話者が話すのみの映像を説明するために、静的なテキストによる代替を使用する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H96">H96: 音声解説を提供するために、track 要素を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-alternative-for-time-based-media">時間依存メディアに対する代替コンテンツ (alternative for time-based media)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">時間依存の視覚的及び聴覚的情報を正しい順序で説明したテキストを含み、あらゆる時間依存のインタラクションによる結果を得る手段を提供している文書。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>同期したメディアのコンテンツを作るために用いられる脚本は、編集が終了した最終版の同期したメディアを正確に描写した脚本に修正されている場合だけ、この定義を満たす。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-audio-description">音声解説 (audio description)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">主音声のトラックだけでは理解できない重要で視覚的な詳細を説明するために、音声トラックに追加されたナレーション。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>の音声解説は、動作、登場人物、場面の変化、画面上のテキスト、及びその他の視覚的なコンテンツに関する情報を提供する。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>標準的な音声解説では、ナレーションが会話の合間に挿入される。(<a href="https://w3c.github.io/wcag/guidelines/#dfn-extended-audio-description" target="terms">拡張音声解説</a>も参照。)</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>情報のすべてが既存の<a href="https://w3c.github.io/wcag/guidelines/#dfn-audio" target="terms">音声</a>ですでに提供されている場合、補足の音声解説は不要である。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>video description&quot; や &quot;descriptive narration&quot; とも呼ばれる。訳注日本語では「音声ガイド」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-media-alternative-for-text">メディアによるテキストの代替 (media alternative for text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">テキストで (直接又はテキストによる代替によって) 既に提示されている情報以上のものを提示していないメディア。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メディアによるテキストの代替は、テキストを代替する提示の恩恵を受ける人たちのために提供される。テキストの代替メディアになりうるのは、音声しか含まないメディア、映像しか含まない (手話の映像を含む) メディア、又は音声付映像メディアである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-prerecorded">収録済 (prerecorded)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-live" target="terms">ライブ</a>ではない情報。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-synchronized-media">同期したメディア (synchronized media)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">情報を提示するために、他のフォーマットと同期した<a href="https://w3c.github.io/wcag/guidelines/#dfn-audio" target="terms">音声</a>もしくは<a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>、又は時間に依存するインタラクティブな構成要素と同期した音声又は映像。ただし、そのメディアが<a href="https://w3c.github.io/wcag/guidelines/#dfn-media-alternative-for-text" target="terms">メディアによるテキストの代替</a>であって、メディアによる代替であることが明確にラベル付けされているものは除く。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-video">映像 (video)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">写真や画像を動かしたり、連続して表示したりする技術。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>映像はアニメーション、実写、もしくはその両方で構成され得る。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

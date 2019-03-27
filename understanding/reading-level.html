@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.1.5: 読解レベルを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="readable.html"><abbr title="Guideline">GL</abbr>: 読みやすさ</a></li>
+            <li><a href="abbreviations.html">Previous <abbr title="Success Criterion">SC</abbr>: 略語</a></li>
+            <li><a href="pronunciation.html">Next <abbr title="Success Criterion">SC</abbr>: 発音</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.1.5: 読解レベルを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#reading-level" style="font-weight: bold;">3.1.5 読解レベル</a> (レベル AAA): 固有名詞や題名を取り除いた状態で、テキストが<a href="https://w3c.github.io/wcag/guidelines/#dfn-lower-secondary-education-level" target="terms">前期中等教育レベル</a>を超えた読解力を必要とする場合は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-supplemental-content" target="terms">補足コンテンツ</a>又は前期中等教育レベルを超えた読解力を必要としない版が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>コンテンツは、可能な限り明快かつ簡潔に書かれているべきである。この達成基準の意図は以下の通りである:</p>
+            <ul>
+               
+               
+               <li>難解又は複雑なテキストの理解を支援する追加コンテンツが利用できることを保証すること。</li>
+               
+               
+               <li>そのような追加コンテンツがいつ必要になるかを示すテスト可能な基準を保証すること。</li>
+               
+               
+            </ul>
+            <p>この達成基準は、コンテンツ制作者が難解又は複雑なウェブコンテンツを公開できるようにしながらも、読字障害のある利用者の手助けとなる。テキストの難しさは、テキストを読むのに必要とされる教育の水準という観点から説明されている。教育レベルは、教育システム間を国際的に比較できるようにするために作成された国際標準教育分類 [UNESCO] に従って定義している。</p>
+            <p>難解又は複雑なテキストは、想定した利用者層のほとんどのメンバー (つまり、コンテンツを作成したほとんどの人) に対しては適切なこともある。しかし、その分野の専門的な知識を持つ高い教育を受けた利用者の間にも、読字障害を含めて、障害のある利用者がいる。テキストをより読みやすくすることで、そうした利用者にも対処させることが可能である。テキストをより読みやすくすることができない場合には、補足的なコンテンツが必要となる。補足的なコンテンツは、前期中等教育レベル、つまり、9 年以上の学校教育以上のより高度な読解力を要求する場合に求められる。このようなテキストは、読字障害のある利用者にとって重大な障害となり、後期中等教育を修了した障害のない利用者にとっても難解であると考えられている。</p>
+            <p>ディスレクシアなどの読字障害は、書かれた又は印刷された単語を認識し正しい音に関連づけることを、困難にする。これは、テキストの「復号」と呼ばれる。人々が流暢に読むために、復号は自動的に行われなければならない。単語ごとにテキストを復号する行為は、ほとんどの人にとって、彼らが読んでいるものを理解するために使うことのできる、精神的なエネルギーをひどく消費する。短いか、一般的な単語か、短い文章を使っているテキストは容易に復号でき、通常、長い文章及び、長い又は馴染みのない単語を使ったテキストよりも、高度な読解力を必要としない。</p>
+            <p>テキストのコンテンツを読むのに必要な教育レベル (リーダビリティ (readability) とも呼ばれる) は、ウェブページからテキストの選択された部分を解析することで測定される。ウェブページに異なる目的で書かれた又は異なるスタイルを用いたテキストが含まれている場合、選択された部分は、ウェブページにあるコンテンツの種類及びそのコンテンツが書かれている異なるスタイルのサンプルを含める。(多くの場合、ウェブページには、例えば、技術的な文書、法律上の表示、マーケティング素材など、一つの種類のテキストコンテンツのみが含まれ、そして、すべてのコンテンツは同じスタイルを用いている)。</p>
+            <p>教育者は、テキストコンテンツを読むのに必要とされる教育レベルを測定することもできる。例えば、資格のある教師は、前期中等教育の最終学年の生徒に要求される以上の読解力を必要とするかどうかを判断するために、ローカルの教育標準に従って文章を評価することができる。</p>
+            <p>人名、都市名、又はその他の固有名詞は、短い音節で短い名前に変更することはできず、そして、そうすることや代名詞によって全てを参照することは文章を理解しづらくする恐れがあるため、この達成基準は、読解力の要件を満たしているかどうかを検証する前に、固有名詞をテキストから無視又は取り除くことができると述べられている。タイトルは、文書、書籍、映画などの名前を指している。タイトルにある文言を変更すると、読みやすくなるが、タイトルが参照しているアイテムを理解できなくなる可能性があるため、分析する際にタイトルを削除するか無視される。これにより、コンテンツを読み理解することが難しくなる。(例えば、書籍、学術論文、記事など)。したがって、タイトルも明確に免除される。</p>
+            <p>ウェブページに複数の言語が含まれているとき、リーダビリティの結果は、コンテンツの少なくとも 5％を占めていて、全文又は段落全体で使われている各言語ごとに算出すべきである (個々の単語又は語句だけというのは除く)。ページ全体のリーダビリティは、最も悪い結果をもたらす言語で判断するべきである。</p>
+            <p>コンテンツのリーダビリティは、選択した節にリーダビリティの計算式を適用することによっても判断してもよい。(すべてではないが) 多くのリーダビリティの計算式は、100 単語の節に基いて計算されている。そのような計算式は、多くの言語に対して開発された。その節にある単語の数を数え、単語の長さを音節の数又は文字数のいずれかを数えることによって判断される。ほとんどのリーダビリティの計算式は、文の長さと数も数える。コンテンツの単語及び文の平均的な長さを用いて、リーダビリティのスコアを算出している (日本語のような言語では、同じ節の中に複数のスクリプトが含まれていることがある。このような言語のリーダビリティの計算式は、計算式に「連続」の数及び長さを用いてもよい)。計算結果は、数字 (例えば、0〜100 の範囲) 又は学年で提示される。これらの結果は、国際標準教育分類に記載されている教育レベルを用いて評価することができる。このエンジンのオプションで、文書のチェックが終了したときに統計を取得するように指定した場合、一般的なソフトウェアでスペルチェック機能を実行したとき、少なくともいくつかの言語でリーダビリティの計算式が利用できる。</p>
+            <p>出典: 国際標準教育分類 [UNESCO]</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>Open Society Mental Health Initiative によれば、読みやすさの概念は万国共通ではなく、読み書きと理解に問題を抱えたすべての人の能力に合致するテキストを書くことはできないだろうといわれている。適切で明瞭かつで簡単な言葉を用いることが非常に望ましいが、WCAG ワーキンググループは、それが達成されているかどうかを検証する方法を見つけることができなかった。読解レベルの使用は、明快な文章を推奨する達成基準にテスト可能性を導入する方法である。補足的なコンテンツは、認知障害のいくつかのクラスのある人々のための、効果的な達成方法となる。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>この達成基準は、次のような利用者にメリットがある:</p>
+            <ul>
+               
+               
+               <li>一般的な知識又は特定の情報を得る目的で、書き言葉 (例: テキストあるいは点字の記事、説明文、又は新聞記事) を理解して解釈するのが困難である。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ol>
+               
+               
+               <li><p><strong>複雑な研究記事の読みやすい要約がある科学雑誌</strong></p>
+                  
+                  
+                  <p>科学雑誌には、その分野の専門家を対象とした、高度な専門用語で書かれた記事が含まれている。雑誌の目次ページには、各記事の平易な言葉の要約が含まれている。要約は、8 年間の学校教育を受けた一般的な読者を想定している。雑誌のメタデータは、「高等教育」を記事の想定している読者の教育レベル、そして「前期中等教育」を要約の想定している読者の教育レベルを示すために、Dublin Core (ダブリンコア) 仕様を用いている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>一般会員向けの医療情報</strong></p>
+                  
+                  
+                  <p>医科大学は、最近の医学的及び科学的発見を説明するウェブサイトを運営している。サイトの記事は、医学訓練をしていない人向けに書かれている。各記事では、「前期中等教育」を想定している読者の教育レベルと示すために、Dublin Core (ダブリンコア) のメタデータの仕様を用いて、そして、記事の Flesch Reading Ease のスコアを含んでいる。各ページのリンクは、教育レベル及びその他のメタデータを表示する。前期中等教育レベルの読者は記事を読むことができるので、補足的コンテンツは必要ない。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>e ラーニングアプリケーション</strong></p>
+                  
+                  
+                  <p>スペインの文化史に関するオンラインコースには、ムーア建築の単元が含まれている。単元には、読解力の異なる生徒のために書かれたテキストが含まれている。建築物の写真や画は、建築のコンセプト及び様式を解説している。グラフィックオーガナイザーは複雑な関係性を解説するために用いられ、合成音声を用いた音声バージョンが利用できる。各バージョンのメタデータは、コンテンツの教育レベルを記述し、スペイン語のテキスト用に開発された計算式に基づいたリーダビリティのスコアを含んでいる。ラーニングアプリケーションは、このメタデータ及び生徒に関するメタデータを用いて、個々の生徒のニーズに合った教材コンテンツのバージョンを提供する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>前期中等教育レベルの読解力を要する科学情報</strong></p>
+                  
+                  
+                  <p>次のテキスト (合計 116 ワード) は、Flesch-Kincaid 式に従って、米国ではグレード 4.2 の読解力が必要である。米国では、グレード 4.2 は初等教育レベルである。</p>
+                  
+                  
+                  <p>Science is about testing — and about looking closely. Some scientists use microscopes to take a close look. We&#39;re going to use a simple piece of paper.</p>
+                  
+                  
+                  <p>Here&#39;s what you do: Print this page and cut out the square to make a &quot;window&quot; one inch square. (It&#39;s easiest to fold the page in half before you cut.)</p>
+                  
+                  
+                  <p>Choose something interesting: a tree trunk, a leaf, flower, the soil surface, or a slice of soil from a shovel.</p>
+                  
+                  
+                  <p>Put your window over the thing and look at it closely. Take your time — this is not a race.</p>
+                  
+                  
+                  <p>To help you see more details, draw a picture of what&#39;s inside your square.</p>
+                  
+                  
+                  <p>Now let&#39;s think about what you&#39;ve found.</p>
+                  
+                  
+                  <p>(出典: Howard Hughes Medical Institute&quot;CoolScience for Kids&quot; Project)</p>
+                  
+                  
+               </li>
+               
+               
+            </ol>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li>Plain Language Association INternational (PLAIN) のウェブサイトは、様々な文化的及び修辞的な文脈において、明解なコミュニケーションを行う文書を作成するライターを助ける多くの有益なリソースを提供する。<a href="http://plainlanguagenetwork.org/">http://plainlanguagenetwork.org/</a> を参照。</li>
+               
+               
+               <li><a href="http://www.plainlanguage.gov">米国政府の plain language ウェブサイト</a>では、法的な要件を含む米国政府の文書における平易な表現 (plain language) の使用に関する情報だけでなく、平易な表現に関する一般的情報も提供している。</li>
+               
+               
+               <li><a href="http://www.plainenglish.co.uk/">The Plain English Campaign のウェブサイト</a>では、コンテンツ製作者が英語で書くために有用な情報や指針を提供する。</li>
+               
+               
+               <li><a href="http://juicystudio.com/services/readability.php">Juicy Studio&#39;s Readability Test</a> は、表示されたすべてのコンテンツのリーダビリティの解析を行う。</li>
+               
+               
+               <li><a href="http://dublincore.org/documents/usageguide/qualifiers.shtml">Entry for Audience Education Level. Using Dublin Core – Dublin Core Qualifiers</a></li>
+               
+               
+               <li><a href="http://www.imsglobal.org/profiles/lipinfo01.html#tab6.3">IMS Learner Information Packaging Model Information Specification, Table 6.3 &quot;accessibility&quot; learner information data structure detailed description </a></li>
+               
+               
+               <li><a href="http://www.textquest.de/pages/en/analysis-of-texts/readability-analysis.php">TextQuest.de</a> には、英語、ドイツ語、スペイン語、オランダ語フランス語及びスウェーデン語を含む多くの原語におけるリーダビリティの計算式のリストが提供されている。</li>
+               
+               
+               <li><a href="http://taalunieversum.org/publicaties/geletterd_in_de_lage_landen/richtlijnen.php">Richtlijnen Keurmerk Makkelijk Lezen</a> は、Stichting Makkelijk Lezen (Easy Reading Foundation) が用いているガイドラインである。</li>
+               
+               
+               <li><a href="http://www.leesbaarnederlands.nl/">Leesbaar Nederlands</a> (&quot;Readable Dutch&quot;「読みやすいオランダ語」) では、読字障害のある人にとってアクセシブルな文書の書き方に関するガイドラインが提供されている。このガイドラインでは、言葉遣い、内容及びデザインについて示されている。</li>
+               
+               
+               
+               <li><a href="http://inclusion-europe.eu/">European Easy-to-Read Guidelines</a></li>
+               
+               
+               <li><a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Flesch-Kincaid Readability Test</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G86">G86: 前期中等教育レベルの読解力をもつ人が理解できるテキストの要約を提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G103">G103: アイデア、イベント及びプロセスを説明するのに役立つ、視覚的なイラスト、写真及びシンボルを提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G79">G79: テキストの音声バージョンを提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G153">G153: テキストを読みやすくする</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G160">G160: コンテンツを利用するために理解が不可欠な情報、アイデア及びプロセスの手話バージョンを提供する</a></li>
+                  
+                  
+               </ol>
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p>サイトによっては、さまざまな方法でこの達成基準で対処してもよい。コンテンツの音声バージョンは、一部の利用者に有用かもしれない。聴覚障害のある利用者にとっては、手話が彼らの第一言語であることもあるので、書き言葉のバージョンよりもページの手話バージョンのほうが理解しやすいかもしれない。一部のサイトは、両方又はその他の組み合わせを行うことを決定するかもしれない。問題を抱えるすべての利用者に役立つ技術はない。そのため、サイトをよりアクセシブルにしようとしているコンテンツ制作者のために、達成基準として、様々な達成方法が提供される。上にある全ての番号の付いた達成方法又は組み合わせは、特定のサイトで用いることができ、ワーキンググループでは十分をみなされている。</p>
+                     
+                     
+                  </div>
+               </div>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-lower-secondary-education-level">前期中等教育レベル (lower secondary education level)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">6 年間の学校教育卒業の後に始まり、<a href="https://w3c.github.io/wcag/guidelines/#dfn-primary-education-level" target="terms">初等教育</a>の開始から 9 年後に終わる、2 年、又は 3 年の教育期間。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この定義は、&quot;International Standard Classification of Education&quot; [UNESCO]に基づいている。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-supplemental-content">補足コンテンツ (supplemental content)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">元の<a href="https://w3c.github.io/wcag/guidelines/#dfn-content" target="terms">コンテンツ</a>を説明、又はより明確にするために付加されたコンテンツ。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example"><a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>の音声版。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">複雑な<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>を示したイラスト。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">調査研究でなされた主要な成果及び提言を要約する段落。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

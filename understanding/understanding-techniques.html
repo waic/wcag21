@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>WCAG 達成基準の達成方法を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="intro.html">Previous: WCAG 2.1 解説書のイントロダクション</a></li>
+            <li><a href="text-alternatives.html">First <abbr title="Guideline">GL</abbr>: テキストによる代替</a></li>
+            <li><a href="non-text-content.html">First <abbr title="Success Criterion">SC</abbr>: 非テキストコンテンツ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+         </ul>
+      </nav>
+      <h1>WCAG 達成基準の達成方法を理解する</h1>
+      <main>
+         		
+         		
+         <p>WCAG 2.1 のガイドライン及び達成基準は、動的アプリケーション、モバイル、デジタルテレビなどを含む現在及び将来のウェブ技術に対して広く適用可能となるよう設計されている。これらは安定しており変わることはない。</p>
+         		
+         <p>WCAG 達成基準を満たすための、制作者や評価者に対する個別のガイダンスはコード例、リソース及びテストを含む達成方法集で提供されている。W3C の <a href="https://www.w3.org/WAI/WCAG21/Techniques/">Techniques for WCAG 2.1</a> (日本語訳は WCAG 2.1 達成方法集) 文書は概ね年に 2 回、より最新の成功事例及び技術やツールの変化をカバーするよう定期的に更新されている。</p>
+         		
+         <p><a href="https://www.w3.org/WAI/WCAG21/Techniques/">WCAG 2.1 達成方法集</a>における三つのタイプのガイダンスを以下に説明する:</p>
+         		
+         <ul>
+            			
+            <li><p>十分な達成方法</p>
+               			
+            </li>
+            			
+            <li><p>参考達成方法</p>
+               			
+            </li>
+            			
+            <li><p>失敗例</p>
+               			
+            </li>
+            		
+         </ul>
+         		
+         <p>また以下についても説明する:</p>
+         		
+         <ul>
+            			
+            <li><p>達成基準を満たすことのできる、又は参考にすることができる、一般的な及び技術特有の達成方法</p>
+               			
+            </li>
+            			
+            <li><p>W3C の発行文書を超えた、その他の達成方法</p>
+               			
+            </li>
+            			
+            <li><p>達成方法の検証</p>
+               			
+            </li>
+            			
+            <li><p>ユーザエージェント及び支援技術のサポート</p>
+               			
+            </li>
+            			
+            <li><p>重要な考慮とともに、達成方法を使用する</p>
+               			
+            </li>
+            		
+         </ul>
+         		
+         <p><a href="conformance.html">WCAG 2.1 への適合を理解する</a>では、<a href="conformance#accessibility-support">アクセシビリティサポートを理解する</a>に関するものを含む関連情報を提供している。</p>
+         		
+         <section id="techniques-are-informative">
+            			
+            <h2>達成方法は参考情報である</h2>
+            			
+            <p><em>達成方法は、参考情報である。つまり、達成方法は必須要件ではない。WCAG 2.1 への適合を判断する根拠は、WCAG 2.1 で規定している達成基準であり、達成方法ではない。</em></p>
+            			
+            <p class="prefix"><em>注記 1:</em> W3C は、W3C の十分な達成方法の要求に対して注意を促す。求められる唯一のことは WCAG 2.0 達成基準を満たすことである。より詳しくは、以下を参照のこと:</p>
+            			
+            <ul>
+               				
+               <li><p>WCAG 2 FAQ における <a href="https://www.w3.org/WAI/WCAG20/wcag2faq.html#techsnot">What would be the negative consequences of allowing <em>only</em> W3C&#39;s published techniques to be used for conformance to WCAG 2.1?</a></p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p class="prefix"><em>注記 2:</em> <a href="https://www.w3.org/WAI/WCAG21/Techniques/">WCAG 2.1 達成方法集</a>では、その達成方法のガイダンスを明確にするためにのみ &quot;しなければならない&quot; 及び &quot;することが望ましい&quot; という用語を用いており、WCAG への要求事項を伝えるためには用いない。</p>
+            		
+         </section>
+         		
+         <section id="sufficient-techniques">
+            			
+            <h2>十分な達成方法</h2>
+            			
+            <p><em>十分な達成方法</em>は達成基準を満たすのに信頼できる方法である。</p>
+            			
+            <ul>
+               				
+               <li><p>制作者の視点から: 与えられた基準に対して、十分な達成方法を正しく用い、かつそれが利用者に対して<a href="conformance#accessibility-support">アクセシビリティ サポーテッド</a>ならば、その達成基準を満たしていると確信できる。</p>
+                  				
+               </li>
+               				
+               <li><p>評価者の視点から: 与えられた達成基準に対して、ウェブコンテンツが、十分な達成方法によって正しく実装され、かつコンテンツの利用者に対して<a href="conformance#accessibility-support">アクセシビリティ サポーテッド</a>ならば、その達成基準を満たしている。(逆は真ではない。ウェブコンテンツがこれらの十分な達成方法で実装されていなくても、以下の<a href="#understanding-techniques-tests">達成方法の検証</a>で説明しているように、必ずしも達成基準を満たしていないとはいえない。)</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>以下の<a href="#understanding-techniques-othertechs">その他の達成方法</a>で説明しているように、W3C の <a href="https://www.w3.org/WAI/WCAG21/Techniques/">WCAG 2.1 達成方法集</a>文書にある十分な達成方法以外にも、達成基準を満たす方法はあるだろう。<em>(上記<a href="#understanding-techniques-informative">達成方法は参考情報である</a>も参照のこと。)</em></p>
+            			
+            <section id="numbered-lists-&#34;and&#34;">
+               				
+               <h3>番号付きリスト、&quot;かつ&quot;</h3>
+               				
+               <p>W3C 文書にある十分な達成方法は番号付きリストになっており、各リスト項目はその十分な達成方法、あるいは達成方法の組み合わせとなっている。一つの番号付きリスト項目に、&quot;かつ&quot; で連結された複数の達成方法がある場合、達成方法を満たすためにはすべての達成方法を用いなければならない。例えば、<a href="info-and-relationships#techniques">達成基準 1.3.1</a> を満たすことのできる達成方法では &quot;G115: セマンティックな要素を用いて、構造をマークアップする、かつ、H49: セマンティックなマークアップを用いて、強調又は特別なテキストをマークアップする (HTML)&quot;とある。</p>
+               			
+            </section>
+            		
+         </section>
+         		
+         <section id="advisory-techniques">
+            			
+            <h2>参考達成方法</h2>
+            			
+            <p><em>参考達成方法</em>はアクセシビリティを改善するために推奨される方法である。これは一部の利用者にとっては非常に有用であり、またある利用者がある種のコンテンツにアクセスできる唯一の方法となることもあるかもしれない。</p>
+            			
+            <p>参考達成方法は以下のようなさまざまな理由で、十分な達成方法とはならない:</p>
+            			
+            <ul>
+               				
+               <li><p>達成基準のすべての要求事項を満たすのに十分でない。</p>
+                  				
+               </li>
+               				
+               <li><p>まだ安定していない技術に基づいている。</p>
+                  				
+               </li>
+               				
+               <li><p>多くの場合において<a href="conformance#accessibility-support">アクセシビリティ サポーテッド</a>でない (例えば、支援技術が達成方法に対応できていない)。</p>
+                  				
+               </li>
+               				
+               <li><p>テスト可能でない。</p>
+                  				
+               </li>
+               				
+               <li><p>ある状況においてその達成方法が適用可能でないあるいは実用的でなく、かつその他の利用者に対してはアクセシビリティを向上させる一方、一部の利用者に対してアクセシビリティを低下させる可能性がある。</p>
+                  				
+               </li>
+               				
+               <li><p>達成基準そのものには対処しておらず、代わりに関連するアクセシビリティ上の利点を提供している。</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>制作者には、最も幅広い利用者のニーズに対処するのに最適なすべての達成方法を適用することが推奨される。</p>
+            		
+         </section>
+         		
+         <section id="failures">
+            			
+            <h2>失敗例</h2>
+            			
+            <p><em>失敗例</em>はアクセシビリティ上のバリアを引き起こし、特定の達成基準への不適合を招くものである。文書化された<em>失敗例</em>は以下の点で有益である:</p>
+            			
+            <ul>
+               				
+               <li><p>制作者にとっては、避けるべきことを知ることができる。</p>
+                  				
+               </li>
+               				
+               <li><p>評価者にとっては、コンテンツが WCAG 達成基準を満たしていない場合に、チェックに用いることができる。</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p><em>失敗例</em>にあるコンテンツは、失敗例にない代替版が提供されていなければ、WCAG 達成基準を満たしていない。</p>
+            			
+            <p>文書化された失敗例が正しくないような状況を確認した場合は、修正もしくは適切に削除できるように <a href="https://www.w3.org/WAI/WCAG21/comments/">WCAG コメントとしてその状況を報告していただきたい (英語)</a>。</p>
+            		
+         </section>
+         		
+         <section id="-general-and-technology-specific-techniques">
+            			
+            <h2>一般的及び技術特有の達成方法</h2>
+            			
+            <p><em>一般的な達成方法</em>には、すべての技術に適用する基本事例を記載している。<em>技術特有の達成方法</em>は個別の技術に適用する。</p>
+            			
+            <p>いくつかの達成基準は技術特有の達成方法を持っておらず、一般的な達成方法のみによりカバーされる。したがって、一般的な達成方法と、それに関連する技術特有の達成方法の両方を考慮するとよい。</p>
+            			
+            <p>特定の技術に対する達成方法を公開しているからといって、WCAG 2.1 達成基準及び適合要件を満たすコンテンツを制作するあらゆる状況においてその技術が用いられるわけではない。開発者は個々の技術の限界を知り、障害を持つ人にとってアクセシブルな方法でコンテンツを提供する必要がある。</p>
+            		
+         </section>
+         		
+         <section id="other-techniques">
+            			
+            <h2>その他の達成方法</h2>
+            			
+            <p>W3C の <a href="https://www.w3.org/WAI/WCAG21/Techniques/">WCAG 2.1 達成方法集</a>文書にある達成方法に加えて、<em>WCAG 達成基準を満たすその他の方法がある</em>。W3C の達成方法は包括的なものではなく、より新しい技術や状況をカバーしていないかもしれない。</p>
+            			
+            <p><em>ウェブコンテンツは、WCAG 2.1 に適合するために W3C が公開している達成方法を用いなくてもよい。</em><em>(上記<a href="understanding-techniques-informative">達成方法は参考情報である</a>も参照のこと。)</em></p>
+            			
+            <p>コンテンツ制作者はさまざまな達成方法を開発できる。例えば、制作者は HTML5 や <a href="https://www.w3.org/WAI/intro/aria">WAI-ARIA</a>、あるいはその他の新しい技術に対する達成方法を開発できる。他の組織が WCAG 2.1 達成基準を満たす達成方法集を開発してもよい。</p>
+            			
+            <p>任意の達成方法は、以下のような場合に達成基準を満たすことができる:</p>
+            			
+            <ul>
+               				
+               <li><p>それらが達成基準を満たし、かつ</p>
+                  				
+               </li>
+               				
+               <li><p>すべての <a href="conformance.html">WCAG 2.1 適合要件</a>が満たされている。</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <section id="submitting-techniques">
+               				
+               <h3>達成方法の提出</h3>
+               				
+               <p>WCAG Working Group では、<a href="https://www.w3.org/WAI/WCAG21/Techniques/">Techniques for WCAG 2.1</a> 文書の更新において取り入れることを検討できるように、新しい達成方法を提出することを推奨する。<a href="https://www.w3.org/WAI/GL/WCAG20/TECHS-SUBMIT/">Techniques Submission Form</a> を用いて、検討のための達成方法を提出いただきたい。</p>
+               			
+            </section>
+            		
+         </section>
+         		
+         <section id="testing-techniques">
+            			
+            <h2>達成方法の検証</h2>
+            			
+            <p>それぞれの達成方法には以下のように役立つ検証がある:</p>
+            			
+            <ul>
+               				
+               <li><p>制作者が、達成方法を正確に実装しているか確認し、かつ</p>
+                  				
+               </li>
+               				
+               <li><p>評価者が、ウェブコンテンツがその達成方法を満たしているか判断する。</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>この検証は達成方法に対してのみのものであり、WCAG 達成基準への適合を検証するものではない。</p>
+            			
+            <ul>
+               				
+               <li><p>達成方法は離散的であり (すなわち、特定の 1 点のみを扱っており)、かつこれらは要求事項ではないため、達成方法の検証失敗は必ずしも WCAG への不適合を意味していない。</p>
+                  				
+               </li>
+               				
+               <li><p>コンテンツは、W3C が公開している十分な達成方法以外にも様々な方法で WCAG 達成基準を満たすことができる。</p>
+                  				
+               </li>
+               				
+               <li><p>技術特有の達成方法の検証を通過したコンテンツは、必ずしもすべての WCAG 達成基準を満たしていない。いくつかの達成基準は一般的な達成方法のみを持っており、技術特有の達成方法を持っていない。</p>
+                  				
+               </li>
+               				
+               <li><p>コンテンツはその利用者に対して<a href="conformance#accessibility-support">アクセシビリティ サポーテッド</a>でなければならない。いくつかの十分な達成方法は、一部の利用者が持っていないかもしれないブラウザ、支援技術またはその他のサポートを必要とする。</p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>このように達成方法はコンテンツの評価において有益であるが、コンテンツが WCAG 達成基準にどのくらい適合しているか評価するためには、評価は十分な達成方法をただ検証することを超えて行わなければならない。</p>
+            			
+            <p><em>失敗例</em>は、(失敗のない代替版が提供されていない場合) 不適合を意味するため、評価において特に有益である。</p>
+            		
+         </section>
+         		
+         <section id="user-agent-and-assistive-technology-support-notes">
+            			
+            <h2>ユーザエージェント及び支援技術のサポートに関する注記</h2>
+            			
+            <p>いくつかの達成方法では、ウェブコンテンツの利用者に対して、その達成方法が<a href="conformance#accessibility-support">アクセシビリティ サポーテッド</a>となるために、特定のブラウザや支援技術を持つことを求めている。個々の達成方法における<em>ユーザエージェント及び支援技術のサポートに関する注記</em>の節は、アクセシビリティ サポーテッドを判断するのに役立つ情報を含んでいる。</p>
+            			
+            <section id="support-notes-change-over-time">
+               				
+               <h3>サポートに関する注記は時間とともに変化する</h3>
+               				
+               <p>時間の経過に伴い、列挙されているユーザエージェント (ブラウザなど) や支援技術のバージョンが最新のバージョンではなくなるかもしれない。ワーキンググループでは、新しいバージョンが公開されてもこれらの注記の多くを更新しないだろう。制作者は、利用者が現時点で利用可能なユーザエージェントや支援技術を用いて達成方法を検証することが望ましい。<a href="conformance#accessibility-support">アクセシビリティサポートを理解する</a>も参照のこと。</p>
+               			
+            </section>
+            		
+         </section>
+         		
+         <section id="using-the-techniques">
+            			
+            <h2>達成方法集の使用</h2>
+            			
+            <p><a href="https://www.w3.org/WAI/WCAG21/Techniques/">WCAG 2.1 達成方法集</a>は単体の文書として用いられることを意図していない。代わりに、コンテンツ制作者は、WCAG 達成基準を参照するために <a href="https://www.w3.org/WAI/WCAG21/quickref/">How to meet WCAG 2 (クイックリファレンス)</a> を用い、そこからリンクをたどって WCAG 2.1 解説書の特定の項及び特定の達成方法を参照することが想定している。</p>
+            			
+            <section id="alternatives-must-meet-success-criteria">
+               				
+               <h3>代替版は達成基準を満たしていなければならない</h3>
+               				
+               <p>いくつかの達成基準では、ユーザがコンテンツを得るための代替方法をどのように提供するかについて述べている。例えば、<a href="https://w3c.github.io/wcag/techniques/general/G73">G73: 非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する</a>では音声ファイルの代替としてトランスクリプトについて言及している。いくつかの代替はまた WCAG に適合していなければならない。例えばそのトランスクリプト自体は、関連するすべての達成基準を満たしていなければならない。</p>
+               			
+            </section>
+            			
+            <section id="example-code">
+               				
+               <h3>コード例</h3>
+               				
+               <p>達成方法集にあるコード例は、その達成方法において議論された特定の点についてのみ明示することを意図している。これらは、その達成方法と無関係なアクセシビリティ、ユーザビリティ、またはコーディングのその他の側面に対する最良の実例を示しているわけではない。これらはウェブコンテンツ開発の基礎としてコピーして用いられることを意図していない。</p>
+               				
+               <p>多くの達成方法ではより堅牢で、ウェブコンテンツにコピーしたり統合するのに適した &quot;機能する例&quot; を挙げている。</p>
+               			
+            </section>
+            		
+         </section>
+         	
+      </main>
+   </body>
+</html>

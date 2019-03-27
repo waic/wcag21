@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.3.2: 3 回の閃光を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="seizures-and-physical-reactions.html"><abbr title="Guideline">GL</abbr>: 発作と身体的反応</a></li>
+            <li><a href="three-flashes-or-below-threshold.html">Previous <abbr title="Success Criterion">SC</abbr>: 3 回の閃光、又は閾値以下</a></li>
+            <li><a href="animation-from-interactions.html">Next <abbr title="Success Criterion">SC</abbr>: インタラクションによるアニメーション</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.3.2: 3 回の閃光を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#three-flashes" style="font-weight: bold;">2.3.2 3 回の閃光</a> (レベル AAA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>には、どの 1 秒間においても 3 回を超える<a href="https://w3c.github.io/wcag/guidelines/#dfn-flash" target="terms">閃光を放つ</a>ものがない。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、発作を引き起こす可能性をさらに引き下げることである。とても過敏な利用者もいるため、発作の可能性を完全に取り除くことはできない。しかし、画面のあらゆる領域にわたって 1 秒間に 3 回閃光を放つものをすべて取り除くことにより、利用者が発作を起こす可能性は、達成基準 2.3.1 でそうしているように、単に今日の国際的な標準規格で通常用いられている基準を満たしているときよりも、さらに引き下げられる。</p>
+            <p><a href="three-flashes-or-below-threshold.html" class="guideline">達成基準 2.3.1</a> では、十分に薄暗い又は領域が十分に小さい閃光を許容しているが、達成基準 2.3.2 は、その明るさ又はサイズに関係なく、1 秒間に 3 回よりも多く閃光を放つことを認めていない。結果として、1 ピクセルの閃光であっても、この達成基準には反することになる。その意図は、1 ピクセルよりも大きい閃光を防ぐことにあるが、コンテンツ制作者が知る術のない画面拡大又はハイコントラストの設定が適用されているかもしれないため、あらゆる閃光を禁じているのである。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>場合によっては、AG ワーキンググループが「点滅」と称しているものと「閃光」と称しているものが、わずかに重なり合うことがあるかもしれない。この二つに対して異なる用語を用いているのは、「点滅」は利用者を注意散漫にさせる問題を引き起こすが、停止する (又は停止させることが可能である) 限り、短い間であれば許容できるのに対して、「閃光」は発作を引き起こすものであり、許容できないものだからである。発作は、ほとんどの利用者が閃光をオフにすることができるのよりも早く起こるものである。そのため、「点滅」はゆっくりと繰り返す変化で、利用者が気を取られるものを指している。そして、「閃光」は十分に明るい又は十分に長く持続すると発作を引き起こす恐れのある変化を指している。通常、点滅は 1 秒間に 3 回以上の速度にはならないし、点滅と閃光が部分的に一致することもまずない。しかし、点滅が 1 秒間に 3 回以上の速度の場合には、部分的に一致することもありえる。点滅に関するより詳細な情報は、<a href="pause-stop-hide.html">2.2.2: 一時停止、停止、非表示</a>を参照のこと。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>閃光を放つコンテンツを閲覧している際に発作を起こす可能性のある利用者が、発作を起こすことなく、そしてテキストによる代替では限定されてしまうようなコンテンツの完全な体験を逃すことなく、サイト上のすべてのコンテンツを閲覧することが可能になる。これには、光感受性てんかん及び光感受性による発作性障害のある利用者も含まれる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>非常に明るい稲妻の閃光のシーンがある映画は、稲妻が任意の 1 秒間に 3 回しか閃光を放たないように編集されている。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.hardingfpa.com/">Harding FPA Web Site</a></li>
+               
+               
+               <li><a href="http://trace.wisc.edu/peat/">Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)</a></li>
+               
+               
+               <li><a href="http://trace.wisc.edu/peat/photosensitive.php">Information about Photosensitive Seizure Disorders</a></li>
+               
+               
+               <li><a href="https://www.epilepsy.org.uk/">Epilepsy Action</a></li>
+               
+               
+               <li><a href="http://www.epilepsy.com/learn/triggers-seizures/photosensitivity-and-seizures">Epilepsy Foundation</a></li>
+               
+               
+               <li><a href="http://www.ofcom.org.uk/static/archive/itc/itc_publications/codes_guidance/flashing_images/index.asp.html">ITC Guidance Note for Licensees on Flashing Images and Regular Patterns in Television</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-flash">閃光 (flash)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-relative-luminance" target="terms">相対輝度</a>の交互の変化で、ある程度の面積と特定の頻度によって、一部の人の発作を誘発する恐れがあるもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>許容されない閃光の種類に関する情報は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-general-flash-and-red-flash-thresholds" target="terms">一般閃光閾値及び赤色閃光閾値</a>を参照。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-blinking" target="terms">点滅</a>も参照。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

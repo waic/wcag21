@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.4.4: テキストのサイズ変更を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html"><abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="contrast-minimum.html">Previous <abbr title="Success Criterion">SC</abbr>: コントラスト (最低限)</a></li>
+            <li><a href="images-of-text.html">Next <abbr title="Success Criterion">SC</abbr>: 文字画像</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.4.4: テキストのサイズ変更を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#resize-text" style="font-weight: bold;">1.4.4 テキストのサイズ変更</a> (レベル AA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-captions" target="terms">キャプション</a>及び<a href="https://w3c.github.io/wcag/guidelines/#dfn-image-of-text" target="terms">文字画像</a>を除き、<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>は、コンテンツ又は機能を損なうことなく、<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>なしで 200％ までサイズ変更できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、テキストベースのコントロール ([ASCII などのデータ形式であるテキスト文字に対して] 視覚的に見ることができるように表示された文字) を含む視覚的にレンダリングされたテキストを、例えば画面拡大ソフトのような支援技術を使わずに軽度の視覚障害のある人が、そのまま読むことができるように保証することである。利用者はウェブページ上のすべてのコンテンツを拡大することでメリットを得ることができるが、テキストは最も重要である。</p>
+            <p>コンテンツを拡大縮小することは、第一にユーザエージェントが果たすべき役割である。<a href="https://www.w3.org/TR/WAI-USERAGENT/guidelines.html#tech-configure-text-scale">UAAG 1.0 チェックポイント 4.1</a> を満たしているユーザエージェントは、利用者がテキストの拡大縮小を設定できるようにしている。コンテンツ制作者の責任は、ユーザエージェントがコンテンツを効果的に拡大縮小することを妨げないウェブコンテンツを制作することである。コンテンツ制作者は、コンテンツがテキストベースのコントロールを含むテキストのサイズ変更のためのユーザエージェントのサポートを妨げていないことを確認すること、又はテキストのサイズ変更もしくはレイアウトの変更を直接サポートすることによって、この達成基準を満たすことができる。直接サポートの例は、異なるスタイルシートを割り当てるために使用できるサーバーサイドスクリプトを介したものかもしれない。</p>
+            <p>利用者が、ズームサポートを持つユーザエージェントにアクセスできない場合、コンテンツ制作者は、HTML コンテンツに対するこの達成基準を満たすためにユーザエージェントに依存することはできない。例えば、IE 6 を使用する必要のある環境で動作する場合などである。訳注: ほとんどのモダンブラウザでは拡大機能が提供されている。また、IE6 は、サポートが終了したブラウザである。一目で分かる、各Windows OSでのInternet Explorerのサポート終了時期：Tech TIPS - ＠IT も参照されたい。</p>
+            <p>コンテンツ制作者が、ユーザエージェントによってズームサポートを提供していないウェブコンテンツ技術を使用している場合、コンテンツ制作者はこのタイプの機能を提供するか、又はユーザエージェントによって提供される機能のタイプで動作するコンテンツを提供する義務がある。ユーザエージェントがズーム機能を提供していないが、利用者にテキストの大きさの変更するのを許可する場合、コンテンツ制作者は、テキストの大きさを変更するときにコンテンツが利用可能なままであることを保証する責任がある。</p>
+            <p>ラベルとして機能し、コンテンツにアクセスするために利用者によるアクティベーションを必要とするユーザインターフェースコンポーネントの中には、ラベルコンテンツを収容するのに十分な幅がないものがある。例えば、ウェブメールアプリケーションにおける件名のカラムは、全ての可能性がある件名の見出しを収容するために十分な幅でなくてもよいが、件名の見出しをアクティブにすることで、利用者は、完全な件名の見出しを伴う完全なメッセージを得る。ウェブベースのスプレッドシートでは、カラム内に表示するには長すぎるセルのコンテンツは切り落とされ、そのセルの全コンテンツは、セルがフォーカスを受け取ったとき、利用者に提供される。ユーザインタフェースコンポーネントのコンテンツは、利用者がカラムの幅の大きさを変更することができるユーザインタフェースでも同様に、広くするかもしれない。このタイプのユーザインタフェースコンポーネントでは、改行が必須ではない。コンポーネントの完全なコンテンツが、フォーカスを置く又は利用者のアクティベーションの後に利用可能であり、この情報にアクセスすることができることが示され、それが切り捨てられるという事実の他にいずれかの方法で利用者へ提供される場合、切り捨ては許容される。</p>
+            <p>コンテンツが 200％ まで、言い換えれば、幅と高さが 2 倍になるまで拡大可能である場合、コンテンツは達成基準を満たしている。コンテンツ制作者はそれ以上の拡大をサポートしてもよいが、拡大が極端に大きくなると、アダプティブレイアウトはユーザビリティの問題を引き起こす可能性がある。例えば、語句の広くなりすぎると、使用可能な横幅に収まりきらず、切り取られる可能性がある。レイアウト上の制約によって、拡大していったときに、テキストが他のコンテンツと重なり合ってしまうこともある。あるいは、文章中の一つの単語だけが各行にある状態になると、その文章が縦に表示されてしまって読みづらくなってしまう。</p>
+            <p>WCAG ワーキンググループは、広範囲に及ぶデザイン及びレイアウトをサポートできるという点と、最小の拡大率が 200％ である古い画面拡大ソフトを補完するという点から、200％ が合理的な適応と考えている。200％ を超えると、拡大 (テキスト、画像、及びレイアウト領域のサイズを変更し、横スクロールと縦スクロールの両方を必要とする可能性のある大きなキャンバスを作り出す) のほうが、テキストのサイズ変更よりも効果的かもしれない。このような状況では、通常、拡大機能専用の支援技術が使用されており、コンテンツ制作者が利用者に直接サポートする機能よりもより良いアクセシビリティを提供することができる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>文字画像は、画素に分解されてしまうので、テキストと同じように拡大できないため、可能な限りテキストを用いることを勧める。また、文字画像の前景と背景のコントラスト及び色の組み合わせを変更することを必要とする利用者もいるが、テキストよりも困難である。</p>
+                  
+                  
+               </div>
+            </div>
+            <p><a href="visual-presentation.html">1.4.8 視覚的提示</a>も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、コンテンツのテキストサイズを拡大して読むことができるようにすることで、ロービジョンの人に役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>視覚障害のある利用者は、ブラウザにあるウェブページのテキストの大きさを 1 em から 1.2 em に増やしている。その利用者は、小さいテキストを読むことはできないが、大きいテキストは読むことができる。テキストに大きなフォントを使用すると、ページ上のすべての情報が表示される。</li>
+               
+               
+               <li>ウェブページは、ページの縮尺を変更するコントロールを含んでいる。異なる設定を選択すると、ページのレイアウトが変更され、その縮尺に最適なデザインが使用される。</li>
+               
+               
+               <li>利用者は、ユーザエージェントのズーム機能を使って、コンテンツの縮尺を変更する。すべてのコンテンツは均一に拡大し、必要に応じてユーザエージェントがスクロールバーを提供している。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/TR/CSS2/box.html">CSS 2 Box Model</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/CSS2/visuren.html">CSS 2 Visual formatting Model</a></li>
+               
+               
+               <li><a href="https://www.w3.org/TR/CSS2/visudet.html">CSS 2 Visual formatting Model Details</a></li>
+               
+               
+               <li><a href="http://www.456bereastreet.com/archive/200504/about_fluid_and_fixed_width_layouts/">About fluid and fixed width layouts</a></li>
+               
+               
+               <li><a href="http://cookiecrook.com/AIR/2003/train/accessiblecss.php">Accessible CSS</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G142">G142: ズーム機能をサポートする一般に入手可能なユーザエージェントのあるウェブコンテンツ技術を使用する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL22">SL22: Supporting Browser Zoom in Silverlight</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL23">SL23: Using A Style Switcher to Increase Font Size of Silverlight Text Elements</a></li>
+                  
+                  
+                  <li><p>テキストのサイズを変更した際に、テキストコンテナもサイズ変更するようにする、<strong>かつ</strong>、次の達成方法の一つ以上を用いて、コンテンツにあるその他の大きさと相対的な大きさにする</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C28">C28: em 単位を用いて、テキストコンテナのサイズを指定する</a></li>
+                        
+                        
+                        <li><p>相対的な大きさの達成方法:</p>
+                           
+                           
+                           <ul>
+                              
+                              
+                              <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C12">C12: フォントサイズにパーセントを使用する</a></li>
+                              
+                              
+                              <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C13">C13: 名前付きフォントサイズを使用する</a></li>
+                              
+                              
+                              <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C14">C14: フォントサイズに em 単位を使用する</a></li>
+                              
+                              
+                           </ul>
+                           
+                           
+                        </li>
+                        
+                        
+                        <li><p>テキストコンテナのサイズを可変にする達成方法:</p>
+                           
+                           
+                           <ul>
+                              
+                              
+                              <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR34">SCR34: テキストサイズに応じて拡大縮小するように、サイズ及びポジションを定める</a></li>
+                              
+                              
+                              <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G146">G146: リキッドレイアウトを使用する</a></li>
+                              
+                              
+                           </ul>
+                           
+                           
+                        </li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G178">G178: 利用者がウェブページ上のすべてのテキストを 200％まで徐々に変更できるコントロールをウェブページ上で提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G179">G179: 文字サイズを変更し、かつテキストコンテナの幅を変更しないときに、コンテンツ又は機能が損なわれないようにする</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C17">C17: テキストを含むフォーム要素を拡大縮小する</a></li>
+                  
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C20">C20: ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C22">C22: テキストの視覚的提示を制御するために、CSS を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F69">F69: 達成基準 1.4.4 の失敗例 － 視覚的にレンダリングされたテキストを 200% まで拡大するときに、テキスト、画像又はコントロールが、切り取られたり、端が欠けたり、又は覆い隠されたりする</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F80">F80: 達成基準 1.4.4 の失敗例 － 視覚的にレンダリングされたテキストを 200% まで拡大するときに、テキストベースのフォームコントロールのサイズが変更されない</a></li>
+                  	
+                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F94">F94: Failure of Success Criterion 1.4.4 due to text sized in viewport units</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">(この文書で用いられている) 支援技術 (assistive technology (as used in this document))</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害者を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。</li>
+                     
+                     
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。</li>
+                     
+                     
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。</li>
+                     
+                     
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+                     
+                     
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。</li>
+                     
+                     
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-captions">キャプション (captions)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">そのメディアのコンテンツを理解するのに必要な、会話及び会話でない音声情報に対する、同期した視覚、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-text-alternative" target="terms">テキストによる代替</a>。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>キャプションは会話のみの字幕と似ているが、会話の内容だけを伝えるのではなく、その番組の内容を理解するために必要な効果音、音楽、笑い声、話者の特定、位置などを含む、会話でない音声情報と同等の内容も伝える点が異なる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>クローズドキャプションは、音声情報と同等の内容で、プレーヤーによっては表示／非表示を切り替えることができるものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>オープンキャプションは、非表示にできないキャプションである。例えば、キャプションが同等の視覚化された<a href="https://w3c.github.io/wcag/guidelines/#dfn-image-of-text" target="terms">文字画像</a>で<a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>に埋め込まれている場合である。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>キャプションは、映像に含まれる情報を分かりにくくしたり遮ったりすべきではない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>国によっては、キャプションは &quot;subtitle&quot; と呼ばれている。訳注subtitle には、「字幕」の意がある。日本では、キャプションのことを一般に字幕と呼ぶことが多い。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-audio-description" target="terms">音声解説</a>にキャプションをつけることもできるが、つける必要はない。なぜなら、音声解説は既に視覚的に提示されている情報の説明だからである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">特定の視覚的効果を得るために非テキスト形式 (例えば画像) でレンダリングされたテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>は該当しない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">写真に写っている人の名札にある人名。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text">テキスト (text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>で何かを表現しているもの。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.2.3: タイミング非依存を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="enough-time.html"><abbr title="Guideline">GL</abbr>: 十分な時間</a></li>
+            <li><a href="pause-stop-hide.html">Previous <abbr title="Success Criterion">SC</abbr>: 一時停止、停止、非表示</a></li>
+            <li><a href="interruptions.html">Next <abbr title="Success Criterion">SC</abbr>: 割り込み</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.2.3: タイミング非依存を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#no-timing" style="font-weight: bold;">2.2.3 タイミング非依存</a> (レベル AAA): タイミングは、コンテンツによって提示されるイベント又は動作の<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>な部分ではない。ただし、インタラクティブではない<a href="https://w3c.github.io/wcag/guidelines/#dfn-synchronized-media" target="terms">同期したメディア</a>及び<a href="https://w3c.github.io/wcag/guidelines/#dfn-real-time-event" target="terms">リアルタイムのイベント</a>は除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、制限時間のあるインタラクションを要求するコンテンツの提供を最小限にすることである。それにより、全盲、ロービジョン、認知能力の低下、又は運動障害のある利用者が、コンテンツを利用できるようになる。この達成基準は、唯一の例外がリアルタイムのイベントであるという点で、達成基準レベル A とは異なる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>手話のような映像しか含まないコンテンツは<a href="text-alternatives.html" class="guideline">ガイドライン 1.1</a> で取り上げられている。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>身体障害のある利用者は、反応したり、入力したり、タスクを完了したりするのに、より長い時間を要することが多い。ロービジョンの利用者は、画面上で何かを探したり、読んだりするのに時間がかかる。全盲でスクリーンリーダーを使用している利用者は、画面のレイアウトを理解したり、情報を見つけたり、そしてコントロールを操作したりするのに時間がかかるかもしれない。認知能力の低下、又は言語の障害のある利用者は、読んだり、理解したりするのに時間がかかる。ろう者で手話によるコミュニケーションしている利用者は、（彼らにとっては第二言語のようなものかもしれない）テキストで書かれた情報を読むのに時間がかかるかもしれない。</li>
+               
+               
+               <li>手話通訳者がろう者に音声コンテンツを通訳しているような状況では、制限時間を調整できることも重要である。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>試験を完了する時間が採点に影響しないように設計された試験</strong></p>
+                  
+                  
+                  <p>制限時間を用いてオンライン試験の結果を評価するのではなく、制限時間がないときの点数をもとに試験の結果を評価している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>利用者がリアルタイムで競い合うのではなく、交代で行うように設計されたゲーム</strong></p>
+                  
+                  
+                  <p>一つのグループが、ゲームの競争時の形勢を無効にすることなく、ゲームを一時停止することができる。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G5">G5: 利用者が制限時間なしで操作を完了できるようにする</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-real-time-event">リアルタイムのイベント (real-time event)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">a) 閲覧と同時に発生し、b) コンテンツによる生成だけでは完結しないイベント。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ライブパフォーマンスのウェブ放送 (閲覧と同時に発生していて、収録済ではない)。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">人々が入札するオンラインのオークション (閲覧と同時に発生している)。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アバターを用いたバーチャルな世界での、生身の人間のやりとり (コンテンツによる生成だけで完結するものではなく、閲覧と同時に発生する)。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-synchronized-media">同期したメディア (synchronized media)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">情報を提示するために、他のフォーマットと同期した<a href="https://w3c.github.io/wcag/guidelines/#dfn-audio" target="terms">音声</a>もしくは<a href="https://w3c.github.io/wcag/guidelines/#dfn-video" target="terms">映像</a>、又は時間に依存するインタラクティブな構成要素と同期した音声又は映像。ただし、そのメディアが<a href="https://w3c.github.io/wcag/guidelines/#dfn-media-alternative-for-text" target="terms">メディアによるテキストの代替</a>であって、メディアによる代替であることが明確にラベル付けされているものは除く。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

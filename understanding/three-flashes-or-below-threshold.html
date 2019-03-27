@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.3.1: 3 回の閃光、又は閾値以下を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="seizures-and-physical-reactions.html"><abbr title="Guideline">GL</abbr>: 発作と身体的反応</a></li>
+            <li><a href="timing-adjustable.html">Previous <abbr title="Success Criterion">SC</abbr>: 非テキストコンテンツ</a></li>
+            <li><a href="three-flashes.html">Next <abbr title="Success Criterion">SC</abbr>: 3 回の閃光</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.3.1: 3 回の閃光、又は閾値以下を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#three-flashes-or-below-threshold" style="font-weight: bold;">2.3.1 3 回の閃光、又は閾値以下</a> (レベル A): <a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>には、どの 1 秒間においても 3 回を超える閃光を放つものがない、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-flash" target="terms">閃光</a>が<a href="https://w3c.github.io/wcag/guidelines/#dfn-general-flash-and-red-flash-thresholds" target="terms">一般閃光閾値及び赤色閃光閾値</a>を下回っている。</p>
+         <p class="note">この達成基準を満たさないコンテンツでは、利用者がそのウェブページ全体を使用できない恐れがあるため、ウェブページ上のすべてのコンテンツは他の達成基準を満たすために用いられているか否かにかかわらず、この達成基準を満たさなければならない。<a href="https://w3c.github.io/wcag/guidelines/#cc5">適合要件 5: 非干渉</a>を参照。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者が光感受性による発作を引き起こすことなく、サイト上のすべてのコンテンツを利用できるようにすることである。</p>
+            <p>光感受性による発作性障害のある人は、特定の周波数で数回以上の閃光を放つコンテンツによって発作を引き起こす恐れがある。人間は他の色よりも赤色の閃光に対してさらに敏感であるため、彩度の高い赤色の閃光に対して特別な試験方法が提供されている。このガイドラインは、コンピュータの画面にも適合するような、放送業界向けのガイドラインに基づいている。</p>
+            <p>そこでは、コンテンツがより近い距離で (より大きな視角を用いて) 閲覧される。閃光は、ディスプレイ、画像をレンダリングするコンピュータ、又はレンダリングされたコンテンツによって、発生する可能性がある。コンテンツ制作者には、最初の二つを制御することはできない。それらは、ディスプレイ及びコンピュータの設計及び速度によって対処される。この達成基準の意図は、コンテンツ自体が閃光閾値に違反する明滅を引き起こさないようにすることである。</p>
+            <p>例えば、コンテンツは、ストロボの閃光を放つ、又は立て続けに起こる爆発をクローズアップした、動画又はアニメーション画像が含まれているかもしれない。この達成基準は、広い周波数帯域 (3～50 ヘルツ) 内のあらゆる閃光 (1 ピクセルでさえも) を許容しなかった、はるかに厳格な WCAG 1.0 の基準を置き換えるものである。この達成基準は、英国及び諸国でテレビ放送向けに用いられている既存の仕様に基づいており、コンピュータのディスプレイの表示にも適応している。1024 x 768 ピクセルの画面を評価の基準となる画面解像度として用いている。341 x 256 ピクセルの矩形が、典型的な視距離で視野角 10 度のビューポートに相当する (10 度の視野角は、原仕様から取り出した数字で、人間が光の刺激に対して最も敏感である、眼の中心視野に相当する)。</p>
+            <p>同時に、かつ隣接して存在する閃光を組み合わせた領域は、実質的には同時に閃光を放っている全領域を意味する。その領域は、任意の視角 10 度以内で同時に閃光を放っている隣接した領域を合計して算出される。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>「点滅」と「閃光」は、同じコンテンツを指すこともある。</p>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li>「点滅」は、利用者の注意を散漫にさせる問題を引き起こすコンテンツを指す。点滅は、その点滅が停止する (又は停止させることができる) 限り、短時間であれば許容できる。</li>
+                     
+                     
+                     <li>「閃光」は、(1 秒間に 3 回よりも多く、大きさ及び明るさが十分な場合に) 光感受性発作を引き起こす恐れのあるコンテンツを指す。これは、たとえ 1 秒間だけであったとしても許容されず、さもなければ光感受性発作を引き起こす恐れがある。そして、光感受性発作は利用者が閃光を停止するよりも速く発生する恐れがあるため、閃光を停止させることも選択肢にはならない。</li>
+                     
+                     
+                     <li>通常、点滅は 1 秒間に 3 回以上の速度で起こらないが、その可能性はある。点滅が 1 秒間に 3 回を超える速さで起こる場合、これはまた閃光とみなされるであろう。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>閃光を放つコンテンツを閲覧している際に発作を起こす可能性のある利用者が、発作を起こすことなく、そしてテキストによる代替では限定されてしまうようなコンテンツの完全な体験を逃すことなく、サイト上のすべてのコンテンツを閲覧することが可能になる。これには、光感受性てんかん及び光感受性による発作性障害のある利用者も含まれる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>ウェブサイトには、閃光を放つ機関銃の銃火の映像があるが、閃光を発する画像のサイズは閃光閾値のサイズを下回る画面のほんの一部に限定している。</li>
+               
+               
+               <li>非常に明るい稲妻の閃光のシーンがある映画は、稲妻が任意の 1 秒間に 3 回しか閃光を放たないように編集されている。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.hardingfpa.com/">Harding FPA Web Site</a></li>
+               
+               
+               <li><a href="http://trace.wisc.edu/peat/">Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)</a></li>
+               
+               
+               <li><a href="http://trace.wisc.edu/peat/photosensitive.php">Information about Photosensitive Seizure Disorders</a></li>
+               
+               
+               <li><a href="https://www.epilepsy.org.uk/">Epilepsy Action</a></li>
+               
+               
+               <li><a href="http://www.epilepsy.com/learn/triggers-seizures/photosensitivity-and-seizures">Epilepsy Foundation</a></li>
+               
+               
+               <li><a href="http://www.ofcom.org.uk/static/archive/itc/itc_publications/codes_guidance/flashing_images/index.asp.html">ITC Guidance Note for Licensees on Flashing Images and Regular Patterns in Television</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G176">G176: 閃光を放つ領域を十分に小さくする</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G15">G15: コンテンツが一般閃光閾値及び赤色閃光閾値を越えていないことを確認するためにツールを使用する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-flash">閃光 (flash)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-relative-luminance" target="terms">相対輝度</a>の交互の変化で、ある程度の面積と特定の頻度によって、一部の人の発作を誘発する恐れがあるもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>許容されない閃光の種類に関する情報は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-general-flash-and-red-flash-thresholds" target="terms">一般閃光閾値及び赤色閃光閾値</a>を参照。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-blinking" target="terms">点滅</a>も参照。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-general-flash-and-red-flash-thresholds">一般閃光閾値及び赤色閃光閾値 (general flash and red flash thresholds)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">次のいずれかに該当していれば、連続した<a href="https://w3c.github.io/wcag/guidelines/#dfn-flash" target="terms">閃光</a>、又は急速に変化する画像の連続は、閾値を下回っている (すなわち、コンテンツは基準を<strong>満たしている</strong>) ことになる:</p>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>あらゆる 1 秒間において、<strong>一般閃光</strong>及び／又は<strong>赤色閃光</strong>は 3 回以下である。もしくは、</li>
+                     
+                     
+                     <li>一般的な閲覧距離で、同時に生じている閃光が占める領域の合計が、画面上のどの視野 10 度においても、合計 0.006 ステラジアン (画面上の視野 10 度の 25％) よりも多くを占めていない。</li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ここで:</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><strong>一般閃光</strong>とは、暗いほうの相対輝度が 0.80 未満であるときの、最大相対輝度の 10%以上の<a href="https://w3c.github.io/wcag/guidelines/#dfn-relative-luminance" target="terms">相対輝度</a>の交互の変化のことである。ここでいう「交互の変化」とは、増加した後に減少する、又は減少した後に増加するものを指す。そして、</li>
+                     
+                     
+                     <li><strong>赤色閃光</strong>とは、彩度の高い赤色を含んだ交互の遷移のことである。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><em>例外:</em> ホワイトノイズ又は 1 辺が (典型的な閲覧距離における視野の) 0.1 度未満の市松模様のように、細かくて整っている模様の閃光は、閾値を超えることにはならない。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>一般的なソフトウェアやウェブコンテンツでは、コンテンツを 1024 × 768 ピクセルの解像度で閲覧している際の画面上での 341 × 256 ピクセルの矩形が、標準的な画面サイズ及び画面からの距離 (例: 22～26 インチの距離で、15～17 インチの画面) における視野角 10 度に該当する (同じコンテンツでも高解像度のディスプレイでは小さく安全になるので、閾値を定めるには低解像度が用いられている)。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>遷移とは、相対輝度 (赤色閃光の相対輝度/色) の計測値を時間軸でプロットしたときの隣接する山と谷の間における相対輝度 (赤色閃光の相対輝度/色) の変化である。閃光は、ひと組の逆方向の遷移から成る。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><strong>「彩度の高い赤色を含む相反する遷移の組合せ」</strong>の現時点での定義は、各遷移に含まれる状態の一方又は双方とも、R / (R＋G＋B) >= 0.8 で、(R－G－B) × 320 の値の変化が双方の遷移において 20 より大きい (ただし、(R－G－B) × 320 が負の値になるときはゼロとする)。R、G、B の値は、相対輝度 の定義で定められているように 0～1 の範囲である。[[HARDING-BINNIE]]</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ビデオの画面キャプチャから分析を行うツールを利用できる。しかし、閃光があらゆる 1 秒間の間隔において 3 回以下であれば、ツールでこの条件を満たしているかどうかを確認する必要はない。コンテンツは自動的に条件を満たしたことになるからである (上記 1.及び2.を参照)。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

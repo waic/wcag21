@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.1.4: 略語を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="readable.html"><abbr title="Guideline">GL</abbr>: 読みやすさ</a></li>
+            <li><a href="unusual-words.html">Previous <abbr title="Success Criterion">SC</abbr>: 一般的ではない用語</a></li>
+            <li><a href="reading-level.html">Next <abbr title="Success Criterion">SC</abbr>: 読解レベル</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.1.4: 略語を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#abbreviations" style="font-weight: bold;">3.1.4 略語</a> (レベル AAA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-abbreviation" target="terms">略語</a>の元の語、又は意味を特定する<a href="https://w3c.github.io/wcag/guidelines/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者が略語の元の語句にアクセスできるようにすることである。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>この達成基準は、次のような利用者にメリットがある:</p>
+            <ul>
+               
+               
+               <li>文字から単語を復号化しづらい。</li>
+               
+               
+               <li>画面拡大ソフトに依存している（画面を拡大すると、前後の文脈の手がかりをつかみづらくなる）。</li>
+               
+               
+               <li>記憶力に限界がある。</li>
+               
+               
+               <li>前後の文脈を用いて理解するのが困難である。</li>
+               
+               
+            </ul>
+            <p>略語は様々なかたちで利用者を混乱させることがある:</p>
+            <ul>
+               
+               
+               <li>略語の中には、普通の単語のようには見えなくて、その言語の通常の規則に従って発音できないものがある。例えば、英語の単語 &quot;room&quot; は &quot;rm&quot; と略されるが、英語のどの単語又は音素にも該当するものがない。利用者は、正しく読むために、&quot;rm&quot; は単語 &quot;room&quot; の略語であることを知る必要がある。</li>
+               
+               
+               <li>時には、同じ略語であっても、異なる文脈において異なる意味になることがある。例えば、英語の文章 &quot;Dr. Johnson lives on Boswell Dr.,&quot; は、最初の &quot;Dr.&quot; は &quot;Doctor&quot; の略語で、二つめは &quot;Drive&quot; の略語である (「通り」を意味する単語)。利用者は、その略語がどういう意味なのかを知るために、文脈を理解できなければならない。</li>
+               
+               
+               <li>頭字語の中には、一般的な単語の綴りだが、異なる意味で用いられるものがある。例えば、&quot;JAWS&quot; は &quot;Job Access with Speech&quot; というスクリーンリーダーの頭字語である。それはまた、歯を保持する口の一部を指す一般的な英語の単語である。頭字語は、一般的な単語とは異なって用いられている。</li>
+               
+               
+               <li>頭字語の中には、一般的な単語と同じように発音するが、綴りが異なるものもある。例えば、Synchronized Multimedia Integration Language の頭字語である S M I L は、英語の単語 &quot;smile&quot; のように発音する。</li>
+               
+               
+            </ul>
+            <p>また、視覚障害のある次のような利用者にも役立つ:</p>
+            <ul>
+               
+               
+               <li>画面拡大ソフトで拡大していて前後の文脈を見失っている。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>コンテンツ中で初めて使用されているところで元の語句が提供されている略語</strong></p>
+                  
+                  
+                  <p>&quot;World Wide Web Consortium&quot; という名前が、組織のウェブページの最初の見出しとして表示されている。略語の &quot;W3C&quot; が、同じ見出しに括弧で囲まれている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>辞書検索フォーム</strong></p>
+                  
+                  
+                  <p>ウェブサイトには、オンライン頭字語サービスによって提供される検索フォームが含まれている。利用者が頭字語を入力すると、フォームは検索した情報源から展開可能なリストが返される。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>医療系ウェブサイト</strong></p>
+                  
+                  
+                  <p>医療のウェブサイトは、医者と患者の両方に情報を提供している。そのサイトには、カスケード表示の辞書のセットが含まれている。とても専門的な医学辞書が最初にあり、一般向けの医学辞書が二番目に続いている。カスケード表示には、サイト固有の頭字語及び略語のリストも含まれ、最後に標準的な辞書もある。リストの最後にある標準的な辞書は、テキストにあるほとんどの単語の定義を提供している。専門的な医学辞書は、一般的ではない医学用語の定義をもたらしている。複数の辞書に現れる単語の定義は、カスケード表示の順序で一覧にされる。頭字語及び略語の意味は、頭字語及び略語の一覧によって提供される。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>略語の元の語句</strong></p>
+                  
+                  
+                  <p>それぞれの略語の元の語句は、プログラムによる解釈が可能な方法で利用可能である。テキストを読み上げるユーザエージェントは、略語を知らせるために元の語句を用いることができる。その他のユーザエージェントは、略語のツールチップ又は状況に応じたヘルプとして利用できる元の語句となるかもしれない。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.acronymfinder.com/">Acronym finder</a> - このサイトでは、頭字語の完全一致検索、前方一致検索、ワイルドカード検索、逆引きを行うことができる。</li>
+               
+               
+               <li><a href="http://www.abbreviations.com/">Abbreviations.com</a>.</li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="abbreviations-situation-0">
+                  
+                  
+                  <h4>状況 A: 略語がそのウェブページ内で一つの意味しか持たない場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p>ウェブページ上で略語の初出時に、以下のいずれかの方法で <a class="general" href="https://w3c.github.io/wcag/techniques/general/G102">G102: 略語の元の語又は説明を提供する</a>:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G97">G97: 略語の初出時、その直前又は直後に元の語を提供する</a></li>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G55">G55: 定義にリンクする</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H28">H28: abbr 要素を用いて、略語の定義を提供する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF8">PDF8: 構造要素の E エントリによって略語の定義を提供する</a></li>
+                           
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                     <li><p>以下のいずれかの方法を用いて、その略語がウェブページ上に出現する度に <a class="general" href="https://w3c.github.io/wcag/techniques/general/G102">G102: 略語の元の語又は説明を提供する</a>:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G55">G55: 定義にリンクする</a></li>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G62">G62: 用語集を提供する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H60">H60: 用語集にリンクするために、link 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G70">G70: オンライン辞書を検索する機能を提供する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H28">H28: abbr 要素を用いて、略語の定義を提供する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF8">PDF8: 構造要素の E エントリによって略語の定義を提供する</a></li>
+                           
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="abbreviations-situation-1">
+                  
+                  
+                  <h4>状況 B: 略語が同じウェブページで異なるものを意味している場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p>以下のいずれかの方法を用いて、その略語がウェブページ上に出現する度に <a class="general" href="https://w3c.github.io/wcag/techniques/general/G102">G102: 略語の元の語又は説明を提供する</a>:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G55">G55: 定義にリンクする</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H28">H28: abbr 要素を用いて、略語の定義を提供する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF8">PDF8: 構造要素の E エントリによって略語の定義を提供する</a></li>
+                           
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-abbreviation">略語 (abbreviation)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単語、語句、又は名称の短縮形で、その略語が言語の一部になっていないもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これは、頭文字語及び頭字語を含む:</p>
+                  </div>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><p><strong>頭文字語</strong>は、その名称あるいは語句に含まれる単語や音節の頭文字による、名称あるいは語句の短縮形である。</p>
+                        
+                        
+                        <div class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                           <p>すべての言語で定義されているわけではない。</p>
+                        </div>
+                        
+                        
+                        <p class="example">SNCF は、フランス語の頭文字語で、フランス国有鉄道の <span lang="fr">Societe Nationale des Chemins de Fer</span> の頭文字を含んでいる。</p>
+                        
+                        
+                        <p class="example">ESP は、&quot;extrasensory perception&quot;の頭文字語である。</p>
+                        
+                        
+                     </li>
+                     
+                     
+                     <li><p><strong>頭字語</strong>は、(名称や語句の中の) 頭文字あるいは他の単語の一部から作られた省略形で、一つの単語のように発音されることがあるものである。</p>
+                        
+                        
+                        <p class="example">NOAA は、米国の &quot;National Oceanic and Atmospheric Administration&quot; の頭文字による頭字語である。</p>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>頭文字語だったものを社名として採用している会社がある。そのような場合、その会社の新しい社名はその文字列であるにすぎず (例: Ecma)、その単語はもはや略語とは考えられない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://w3c.github.io/wcag/guidelines/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

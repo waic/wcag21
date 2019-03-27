@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.1.6: 発音を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="readable.html"><abbr title="Guideline">GL</abbr>: 読みやすさ</a></li>
+            <li><a href="reading-level.html">Previous <abbr title="Success Criterion">SC</abbr>: 読解レベル</a></li>
+            <li><a href="on-focus.html">Next <abbr title="Success Criterion">SC</abbr>: フォーカス時</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.1.6: 発音を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#pronunciation" style="font-weight: bold;">3.1.6 発音</a> (レベル AAA): 文脈において、発音が分からないと単語の意味が不明瞭になる場合、その単語の明確な発音を特定する<a href="https://w3c.github.io/wcag/guidelines/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、意味が発音に依存する場合のコンテンツを理解するために全盲の利用者、ロービジョンの利用者、及び読字障害のある利用者を支援することである。多くの場合、単語や文字は異なる意味を持ち、それぞれ独自の発音をする。そのような単語又は文字の意味は、文の前後の文脈から通常は決定される。しかし、より複雑又は曖昧な文章、いくつかの言語においては、発音を知らないと、その単語の意味を容易に決定できない又は全く決定できないことがある。文を音読やスクリーンリーダーによって間違った発音で単語を読むと、視覚的に読むよりも理解するのがさらに難しくなる可能性がある。発音が分からない限り、単語が曖昧又ははっきりしない場合は、発音を判断する手段を提供する必要がある。</p>
+            <p>たとえば、英語の同形異音異義語の &quot;desert&quot; (見捨てる) と&quot;desert&quot; (砂漠) のように、スペルは同じでも発音と意味が異なる単語がある。適切な発音を文の文脈から決定できる場合は、何も必要とされない。それができない場合は、適切な発音を決定するための何らかの仕組みが必要になる。さらに、一部の言語は、特定の文字が異なる方法で発音されることがある。例えば、日本語では、複数の発音を持つ漢字のような文字がある。スクリーンリーダーは、発音に関する情報がないと、文字を間違って話すことがある。間違って読むと、コンテンツは利用者にとって意味をなさなくなるだろう。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>この達成基準は、次のような利用者にメリットがある:</p>
+            <ul>
+               
+               
+               <li>単語を復号化しづらい。</li>
+               
+               
+               <li>前後の文脈を用いて理解するのが困難である。</li>
+               
+               
+               <li>音声で読み上げる支援技術を使用している。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>人名の読み方を提供</strong></p>
+                  
+                  
+                  <p>日本語のウェブコンテンツは、人名の発音を表している、漢字の後に書かれた仮名を提供する。仮名は、単語の直後にかっこで括弧書きで提供される。漢字で書かれた単語を読むことで、目の見える利用者とスクリーンリーダーの両方が、その語句を正しく読み/発音することができる。ただし、スクリーンリーダーは、単語を 2 回読むことになる。誤った発音が可能な漢字を先に読み、正しい読みを提供するために仮名が読み上げられる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ruby 要素で読み仮名を提供</strong></p>
+                  
+                  
+                  <p>XHTML 1.1 を用いているウェブコンテンツは、ruby 要素を用いることによって、単語の読み (発音) を示すために文字の上に仮名を提供する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>発音の音声ファイルを提供</strong></p>
+                  
+                  
+                  <p>文書には、正しい発音を知らないと、その意味を判断できない単語が含まれている。それぞれの単語は、正しい発音を提供する音声ファイルにリンクされている。利用者は、単語の発音の仕方を調べるために、リンクを選択することができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>用語集で発音の情報を提供</strong></p>
+                  
+                  
+                  <p>ウェブページに用語集の章が含まれている。用語集の一部の項目には、定義だけでなく発音情報も含まれている。発音を知らないと意味が分からない内容の単語は、用語集の適切な項目にリンクされている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>いくつかの言語で共通の文字だが、発音は言語によって異なる文字の発音に関する情報があるテキスト</strong></p>
+                  
+                  
+                  <p>日本のある大学のウェブサイトに、中国語及び韓国語の学術的なテキストから引用されたいくつかの短い節が含まれている。引用は、日本語のテキストと同じ文字を用いて書かれている。中国語及び韓国語の文字の正しい発音を示すために、発音の情報が提供されている。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>日本語では、「発音」というよりも「読み仮名」を示すために ruby 要素を用いる。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G120">G120: 単語の直後に発音 (読み) を提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G121">G121: 発音 (読み) にリンクする</a></li>
+                  
+                  
+                  <li>そのコンテンツ特有の発音があったり、発音で意味が変わるような単語の発音に関する情報を含む <a class="general" href="https://w3c.github.io/wcag/techniques/general/G62">G62: 用語集を提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G163">G163: オフにすることが可能な標準的な発音区別符号を使用する</a></li>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H62">H62: ruby 要素を使用する</a> (XHTML 1.1)</li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://w3c.github.io/wcag/guidelines/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

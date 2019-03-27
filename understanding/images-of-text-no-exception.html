@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.4.9: 文字画像 (例外なし) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html"><abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="visual-presentation.html">Previous <abbr title="Success Criterion">SC</abbr>: 視覚的提示</a></li>
+            <li><a href="reflow.html">Next <abbr title="Success Criterion">SC</abbr>: リフロー</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.4.9: 文字画像 (例外なし) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#images-of-text-no-exception" style="font-weight: bold;">1.4.9 文字画像 (例外なし) </a> (レベル AAA): <a href="https://w3c.github.io/wcag/guidelines/#dfn-image-of-text" target="terms">文字画像</a>は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-pure-decoration" target="terms">純粋な装飾</a>に用いられているか、<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>の特定の表現が伝えようとする情報にとって<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>である場合に用いられている。</p>
+         <p class="note">ロゴタイプ (ロゴ又はブランド名の一部である文字) は必要不可欠なものであると考えられる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、テキストによる特定の視覚的な提示を必要とする人が、必要に応じてテキストによる提示を調整できるようにすることである。これは、テキストに、特定のフォントサイズ、前景色及び背景色、書体、行間、又は配置を必要とする人を含む。</p>
+            <p>これは、テキストによる提示を変更できるようにそのテキストを実装すること、又は利用者が代替の提示を選択できるメカニズムを提供することを意味する。文字画像を使用することは、利用者がテキストの提示を変更することを許さない実装の一例である。</p>
+            <p>状況によっては、テキストの特定の視覚的提示がその情報を伝える上で不可欠である。これは、その特定の視覚的提示でないと、その情報が損なわれてしまうことを意味する。この場合は、テキストを変更できるような方法で実装する必要はない。これには、特定の書体のようなテキストの特定の視覚的な側面を示すテキスト、又は企業のロゴ内にあるテキストのようなアイデンティティを伝えるテキストが含まれる。</p>
+            <p>装飾を目的にした文字は、その提示を変更できるように実装する必要はない。</p>
+            <p>文字画像の定義には、「注記: テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれるテキストは該当しない。」とある。そのような画像の事例としては、グラフ、スクリーンショットやダイアグラムなどが挙げられ、それらは文字以外のものを通じて重要な情報を視覚的に伝えているからである。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>ロービジョンの利用者 (コンテンツ制作者の指定した書体、サイズ、及び／又は色では、テキストが読みづらいことがある)</li>
+               
+               
+               <li>視線移動に問題のある利用者 (コンテンツ制作者の指定した行間及び／又は配置では、テキストが読みづらいことがある)</li>
+               
+               
+               <li>読字に影響を及ぼす認知の障害のある利用者</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>引用</strong></p>
+                  
+                  
+                  <p>あるウェブページに引用がある。その引用部分自体は、イタリックのテキストで、左側をインデントした状態で提示されている。その引用した部分の人名が、引用の下に 1.5 倍の行間を空けて、左側からさらにインデントした状態になっている。そのテキストの配置、行間スペースの指定、そしてテキストの書体、サイズ、色及び装飾には、CSS を用いている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ナビゲーション</strong></p>
+                  
+                  
+                  <p>ウェブページに、ナビゲーションリンクのメニューがあり、アイコンとテキストの両方でリンク先を示している。CSS を用いて、テキストの書体、サイズ、前景色及び背景色、そしてナビゲーションリンク間の間隔を指定している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>文字を含んだロゴ</strong></p>
+                  
+                  
+                  <p>あるウェブサイトには、各ウェブページの左上のコーナーに組織のロゴがある。そのロゴには、ロゴタイプ (ロゴの一部又は全部がテキスト) がある。テキストの視覚的提示は、そのロゴの特定に不可欠であり、そのテキストの特徴を変更することができない GIF 画像として含まていれる。そして、その画像には、テキストによる代替がある。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>書体のサンプル</strong></p>
+                  
+                  
+                  <p>ウェブページに、特定の書体に関する情報がある。その書体を他の書体に置き換えると、サンプルとしての目的が損なわれてしまう。そのサンプルは、その文字の特徴を変更することができない JPEG 画像である。そして、その画像には、テキストによる代替がある。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>手紙の写し</strong></p>
+                  
+                  
+                  <p>ウェブページに、手紙の原本を描写したものがある。オリジナルの体裁でその手紙を見せることが、その手紙の書かれた時代に関する情報を伝える上で不可欠である。その手紙は、その文字の特徴を変更することができない GIF 画像である。そして、その画像には、テキストによる代替がある。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>記号的な文字</strong></p>
+                  
+                  
+                  <p>利用者がテキストのブロックを入力できるフォームがある。そのフォームは、テキストのスタイル指定やスペルチェックなどの機能のボタンをたくさん提供している。ボタンの中には文字を用いたものがあり、その文字に自然言語で何かを表現する並び順はない。例えば、フォントを太字にする機能には &quot;B&quot;、テキストをイタリックにする機能には &quot;I&quot;、そしてスペルチェックの機能には &quot;ABC&quot; が使われている。その記号的な文字は、その文字の特徴を変更することができない GIF 画像としてボタンになっている。そして、そのボタンにはテキストによる代替がある。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://alistapart.com/article/cssatten">CSS Web fonts</a></li>
+               
+               
+               <li><a href="http://clagnut.com/blog/2042/">Weblog comments: WebKit now supports CSS @font-face rules</a></li>
+               
+               
+               <li><a href="http://www.workingwith.me.uk/articles/css/cross-browser-drop-shadows">Creating Cross Browser Compatible CSS Text Shadows</a></li>
+               
+               
+               <li><a href="http://www.yourhtmlsource.com/stylesheets/csstext.html">CSS and text</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C22">C22: テキストの視覚的提示を制御するために、CSS を使用する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL31">SL31: Using Silverlight Font Properties to Control Text Presentation</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C30">C30: テキストを文字画像に置き換えるために CSS を利用し、切り替えのためのユーザインタフェースコントロールを提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G140">G140: 異なる提示を可能にするために、情報と構造を表現から分離する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF7">PDF7: スキャンされた PDF 文書で OCR を実行し、実際のテキストを提供する</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C12">C12: フォントサイズにパーセントを使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C13">C13: 名前付きフォントサイズを使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C14">C14: フォントサイズに em 単位を使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C8">C8: 単語内の文字間隔を制御するために、CSS の letter-spacing を使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">特定の視覚的効果を得るために非テキスト形式 (例えば画像) でレンダリングされたテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://w3c.github.io/wcag/guidelines/#dfn-text" target="terms">テキスト</a>は該当しない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">写真に写っている人の名札にある人名。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-pure-decoration">純粋な装飾 (pure decoration)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">見栄えのためだけのもので、情報は提供せず、機能性も備えていないもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキストが純粋な装飾といえるのは、単語を並べ替え、又は置き換えても意図が変わらないときだけである。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">背景にとても淡い文字で単語がランダムに並んでいる辞書の表紙。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text">テキスト (text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>で何かを表現しているもの。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

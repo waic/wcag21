@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.3.4: エラー回避 (法的、金融、データ) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-assistance.html"><abbr title="Guideline">GL</abbr>: 入力支援</a></li>
+            <li><a href="error-suggestion.html">Previous <abbr title="Success Criterion">SC</abbr>: エラー修正の提案</a></li>
+            <li><a href="help.html">Next <abbr title="Success Criterion">SC</abbr>: ヘルプ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.3.4: エラー回避 (法的、金融、データ) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#error-prevention-legal-financial-data" style="font-weight: bold;">3.3.4 エラー回避 (法的、金融、データ)</a> (レベル AA): 利用者にとって<a href="https://w3c.github.io/wcag/guidelines/#dfn-legal-commitments" target="terms">法律行為</a>もしくは金融取引が生じる、<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-controllable" target="terms">利用者が制御可能な</a>データストレージシステム上のデータを変更もしくは削除する、又は利用者が試験の解答を送信する<a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>では、次に挙げる事項のうち、少なくとも一つを満たしている</p>
+         <dl>
+            
+            <dt>取消</dt>
+            
+            <dd>送信を取り消すことができる。</dd>
+            
+            <dt>チェック</dt>
+            
+            <dd>利用者が入力したデータの入力エラーがチェックされ、利用者には修正する機会が提供される。</dd>
+            
+            <dt>確認</dt>
+            
+            <dd>送信を完了する前に、利用者が情報の見直し、確認及び修正をするメカニズムが利用できる。</dd>
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、障害のある利用者が、元の状態に戻すことのできない動作を実行するときのミスによる深刻な結果を回避するのを助けることである。例えば、払い戻し不可の航空券の購入、又は証券取引口座での株購入の注文は、重大な結果につながる金銭的な取引である。利用者が発着日を間違えれば、その利用者は交換できない誤った日付の航空券を購入したことになってしまう。利用者が購入する株式の数を間違えると、意図した数よりも多くの株式を購入したことになってしまう。どちらのミスも、すぐに処理される取引であり、後から変更することはできないものであり、また非常に高価である。同様に、旅行サービスのウェブサイトにある旅行履歴のように、後からアクセスする必要のあるデータベースのデータを無意識に修正又は削除してしまった場合、そのエラーは回復不能なことがある。「利用者が自分で制御可能な」データの変更又は削除を参照する場合、この達成基準の意図は、ファイル又はレコードの削除のようなデータの大量損失を防ぐことである。保存のコマンド又は、ドキュメント、レコード、もしくはその他データの単純な作成もしくは編集に対して、確認を必要とすることを意図するものではない。</p>
+            <p>障害のある利用者は、ミスをしてしまう可能性が高い。例えば、読字障害のある利用者は、数字と文字を取り違えてしまうことがある。そして、運動障害のある利用者は間違ってキーを押してしまうことがある。元の状態に戻せるようにすることによって、利用者が重大な結果につながる恐れのあるミスを修正できるようになる。また、入力内容を確認して修正できるようにすることで、重大な結果につながることをしてしまう前に、利用者がミスに気づくことができるようになる。</p>
+            <p>利用者が自分で制御可能なデータというのは、利用者が意図的行為を通して変更及び/又は削除できる利用者が閲覧可能なデータである。そのようなデータを制御する利用者の例としては、利用者のアカウントの電話番号及び住所を更新する、又はウェブサイトから過去の請求書のレコードを削除することが挙げられる。これは、利用者が直接に表示又は情報交換できないインターネットのログ又は検索エンジンの監視データのようなものを指すものではない。</p>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <ul>
+               
+               
+               <li>ミスによる重大な結果を未然に防ぐ手段を提供することによって、ミスをする可能性の高い障害のある利用者すべてに役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><em>注文内容の確認</em></p>
+                  
+                  
+                  <p>ある小売店がウェブでオンラインショッピングのサービスを顧客に提供している。注文が送信されると、利用者が注文内容に間違いがないかを確認できるように、注文した商品、各商品の数、送り先の住所、支払方法などの注文情報が表示される。利用者は、注文内容を確認したり、変更したりすることができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><em>株式売買</em></p>
+                  
+                  
+                  <p>ある金融サービスのウェブサイトで、利用者は株をオンラインで売買できる。利用者が株の売買の注文を送信すると、システムは市場が開いているかどうかを確認する。時間外だった場合は、利用者にその取引が時間外取引になることを知らせて、通常の取引時間外であることに伴うリスクについても伝える。そして、利用者はその注文をキャンセルするか、確認することができる。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="error-prevention-legal-financial-data-situation-0">
+                  
+                  
+                  <h4>状況 A: アプリケーションで、購入又は所得税申告の提出のように、法的なトランザクションが発生する場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G164">G164: オンラインリクエスト後に、利用者がそのリクエスト (又はトランザクション) を修正又はキャンセルできる一定の時間を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G98">G98: 送信する前に、利用者が回答を確認及び修正できるようにする</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G155">G155: 送信ボタンに加えてチェックボックスを提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="error-prevention-legal-financial-data-situation-1">
+                  
+                  
+                  <h4>状況 B: 利用者のアクションによって情報が削除される可能性がある場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G99">G99: 削除した情報を復元する機能を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G168">G168: 選択されたアクションを続行するために確認を求める</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G155">G155: 送信ボタンに加えてチェックボックスを提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="error-prevention-legal-financial-data-situation-2">
+                  
+                  
+                  <h4>状況 C: ウェブページに試験を実施するアプリケーションがある場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G98">G98: 送信する前に、利用者が回答を確認及び修正できるようにする</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G168">G168: 選択されたアクションを続行するために確認を求める</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL35">SL35: Using the Validation and ValidationSummary APIs to Implement Client Side Forms Validation in Silverlight</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G199">G199: データが正常に送信されたときに、フィードバックを提供する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-legal-commitments">法律行為 (legal commitments)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">法的に拘束力のある義務あるいは利益が発生する取引。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">結婚許可証、株取引 (金銭上及び法的)、遺言、ローン、採用、軍隊への入隊登録、あらゆる契約、など</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-controllable">利用者が制御可能 (user-controllable)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者によってアクセスされることを意図したデータ。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これは、インターネットのログや検索エンジンの監視データのようなものは指していない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ユーザアカウントのための氏名と住所のフィールド。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

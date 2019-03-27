@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.3: フォーカス順序を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="page-titled.html">Previous <abbr title="Success Criterion">SC</abbr>: ページタイトル</a></li>
+            <li><a href="link-purpose-in-context.html">Next <abbr title="Success Criterion">SC</abbr>: リンクの目的 (コンテキスト内)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.3: フォーカス順序を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#focus-order" style="font-weight: bold;">2.4.3 フォーカス順序</a> (レベル A): <a href="https://w3c.github.io/wcag/guidelines/#dfn-web-page" target="terms">ウェブページ</a>が<a href="https://w3c.github.io/wcag/guidelines/#dfn-navigated-sequentially" target="terms">順を追ってナビゲート</a>できて、そのナビゲーション順が意味又は操作に影響を及ぼす場合、フォーカス可能なコンポーネントは、意味及び操作性を損なわない順序でフォーカスを受け取る。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者がコンテンツ内を一つずつ順を追いながら行き来している際に、キーボードにより操作可能な順序でコンテンツの意味に添って、情報と出会うようにすることである。このことにより、利用者のコンテンツに対するメンタルモデルを一貫したものとし、利用者が困惑する可能性を引き下げる。コンテンツの論理的な関係性を反映した異なる順序になることもある。例えば、テーブルのある行又は列にある構成要素内を一度に移動する際には、行を移動する際も列を移動する際もコンテンツにおける関係性を反映した順序になる。どちらの順序もこの達成基準を満たすことができる 。</p>
+            <p>ウェブコンテンツでのナビゲーションの順番が決まる方法は、コンテンツで用いるウェブコンテンツ技術によって定義されている。例えば、シンプルな HTML は、タブ移動順序によってナビゲーション順序を定義している。動的な HTML では、フォーカスを他の要素にも割り当てることができるように tabindex 属性を付加して、スクリプトを用いてナビゲーション順序を修正することができる。スクリプトも、tabindex 属性も使用していない場合、ナビゲーション順序は、コンポーネントがコンテンツの流れの中で表れる順序になる (HTML 4.01 仕様書の 17.11 &quot;Giving focus to an element&quot; を参照のこと)。【訳注: HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、HTML 5.2§5.4.3.The tabindex attribute を代わりに参照できる。】</p>
+            <p>この達成基準で対処しているナビゲーション順序ではない、キーボードナビゲーションの一例は、ツリーコンポーネントを行き来するための矢印キーを用いたナビゲーションである。利用者は、上下の矢印キーを使って、ツリーのノードからノードへと移動することができる。右向き矢印キーを押下するとノードを展開して、それから下向き矢印キーを使用すると新しく展開されたノードへと移動していく。アイテムが展開されたり閉じられたりするたびに、ナビゲーション順序に追加されたり削除されたりするので、このナビゲーション順序は、ツリーコントロールで予期される順序に従っている。そして、アイテムが展開されたり閉じられたりするたびに、ナビゲーション順序に追加されたり削除されたりする。</p>
+            <p>利用者はウェブページを理解して操作できているが、フォーカス順序がプログラムによる解釈される音声読み上げ順序 (達成基準 1.3.2 を参照) とは一致しないかもしれない。コンテンツに対して考えられうる論理的な音声読み上げ順序が数通りあり、フォーカス順序はそのうちのどれかと合致するのかもしれない。しかし、特定の提示における順序が、プログラムによる解釈される音声読み上げ順序とは異なるとき、複数ある提示の一つを使う利用者は、そのウェブページを理解したり操作したりするのを難しいと感じるかもしれない。コンテンツ制作者は、ウェブページを設計する際に、すべての利用者のことを注意深く考慮すべきである。</p>
+            <p>例えば、晴眼のキーボードの利用者がウェブページの視覚的提示で情報をやりとりしている一方で、スクリーンリーダーの利用者は、プログラムによる解釈される音声読み上げ順序で情報をやりとりしている。フォーカス順序が双方の利用者にとって意味が通じるようにし、どちらかの利用者がランダムに飛び回るようなことのないように注意すべきである。</p>
+            <p>誤解のないように書くと:</p>
+            <ol>
+               
+               
+               <li>フォーカス可能な構成要素は、ナビゲーションの順序が意味と操作性に影響を及ぼす時のみ、意味と操作性を保つ順序でフォーカスを受ける必要がある。</li>
+               
+               
+               <li>必要な場合は、意味と操作性を保つ複数の順序があるかもしれない。</li>
+               
+               
+               <li>意味と操作性を保つ複数の順序がある場合、それらのうち一つは提供される必要がある。</li>
+               
+               
+            </ol>
+         </section>
+         <section id="benefits">
+            <h2>Benefits</h2>
+            <p>これらの達成方法は、コンテンツ内を順番に行き来していて、フォーカス順序が音声読み上げ順序と一致しているものと考えている、キーボードの利用者の役に立つ。</p>
+            <ul>
+               
+               
+               <li>論理的で、使いやすいフォーカス順序は、ページの操作をキーボード使用に依存している運動障害のある利用者の役に立つ。</li>
+               
+               
+               <li>字を読むのが困難な障害のある利用者は、Tab キーを押下してフォーカスが予期しないどこかへ移動してしまうと、迷子のようになってしまう恐れがある。彼らは論理的なフォーカス順序の恩恵を受けている。</li>
+               
+               
+               <li>視覚障害のある利用者は、Tab キーを押下してフォーカスが予期しないどこかへ移動してしまったり、インタラクティブな要素に囲まれているコンテンツを容易に見つけることができなかったりすると、迷子のようになってしまう恐れがある。</li>
+               
+               
+               <li>画面拡大ソフトを使用していて、拡大率を高くしている利用者には、ページのごく小さい一部分だけしか見えないことがある。そのような利用者は、フォーカス順序が論理的でないと、誤った文脈でコンテンツの一部分を解釈してしまう恐れがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ol>
+               
+               
+               <li>インタラクティブなコントロールのツリーがあるウェブページ上で、利用者は上下の矢印キーを使って、ツリーのノードからノードへと移動することができる。右向き矢印キーを押下するとノードを展開して、それから下矢印キーを使用すると新しく展開されたノードへと移動していく。</li>
+               
+               
+               <li>あるウェブページは、スクリプトでモードレスダイアログを実装している。起動ボタンを動作させると、ダイアログが開く。ダイアログ内にあるインタラクティブな要素が、起動ボタンのすぐ後のフォーカス順序の位置に挿入される。ダイアログが開いているときには、フォーカス順序は、その起動ボタンからダイアログ内の要素へ移動し、それから起動ボタンの後にあるインタラクティブな要素へと移動する。ダイアログが閉じているときは、フォーカス順序は起動ボタンからその次に続いている要素へ移動する。訳注: モードレスダイアログとは、ダイアログボックスを閉じなくても作業が続行できるタイプのダイアログボックスのことである。モードレスダイアログ（モードレスウィンドウ）とは - IT 用語辞典も参照のこと。</li>
+               
+               
+               <li>あるウェブページは、スクリプトでモーダルダイアログを実装している。起動ボタンを動作させると、ダイアログが開き、そのダイアログにある最初のインタラクティブな要素にフォーカスがあたる。ダイアログが開いている限り、フォーカスはダイアログ内の要素だけに限定される。ダイアログが閉じられると、フォーカスはボタン又はボタンの次にある要素へ戻る。訳注: モーダルダイアログとは、ダイアログボックスの中だけで強制的に作業をさせるダイアログボックスで、それが閉じられない限り作業の続行ができないタイプのダイアログボックスのことである。モーダルダイアログ（モーダルウィンドウ）とは - IT 用語辞典も参照のこと。</li>
+               
+               
+               <li><p>HTML で制作されたウェブページには、左側にナビゲーションがある。そのナビゲーションは、HTML ではメインコンテンツの後にあり、CSS を用いてページの左側に表示されるように指定されている。tabindex 属性又は JavaScript を用いずに、フォーカスがメインコンテンツへ移動できるようにするためである。</p>
+                  
+                  
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+                     <div><p>この事例は達成基準を満たしているが、必ずしもすべての CSS による配置が当てはまるとはかぎらない。配置が複雑な例では、意味及び操作性を保持できることもあれば、できないこともある。</p>
+                        
+                        
+                     </div>
+                  </div>
+                  
+                  
+               </li>
+               
+               
+               <li><p>次の例は、<strong>この達成基準を満たさない</strong>:</p>
+                  
+                  
+                  <p>ある企業のウェブサイトに、マーケティングデータを収集するフォームがあり、利用者がその企業の発行するいくつかのニュースレターに登録できるようになっている。マーケティングデータを収集するためのフォームのセクションには、氏名、郵便番号、県、市町村、番地などのテキストフィールドがある。フォームのその他のセクションには、利用者が配信してほしいニュースレターを指定することができるようにいくつかのチェックボックスがある。しかし、そのフォームのタブ移動順序は、フォームにおける異なるセクションのフィールドを行ったり来たりする。そのため、フォーカスは、氏名のテキストフィールドからあるチェックボックスへ、次に番地のテキストフィールドへ、そしてまた別のチェックボックスへというふうに移動してしまう。</p>
+                  
+                  
+               </li>
+               
+               
+            </ol>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G59">G59: コンテンツ内の順番及び関係に従った順序で、インタラクティブな要素を配置する</a></li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、コンテンツ内の順序及び関係性に従った順序でフォーカスを要素に与える:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H4">H4: リンク、フォームコントロール、及びオブジェクトを通して、論理的なタブ順序を作成する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH15">FLASH15: Flash 内の論理的な読み上げ順序及びタブ順序を指定するために、tabIndex プロパティを使用する</a></li>
+                        
+                        
+                        <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C27">C27: DOM の順序を表示順序と一致させる</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF3">PDF3: PDF 文書で正しいタブ順序と読み上げ順序を確保する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL34">SL34: Using the Silverlight Default Tab Sequence and Altering Tab Sequences With Properties</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、ウェブページを動的に変化させる:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR26">SCR26: 動的なコンテンツを、Document Object Model の、そのトリガーとなる要素の直後に挿入する</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR37">SCR37: デバイス非依存な方法でカスタムダイアログを作成する</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR27">SCR27: Document Object Model を用いて、ページ上にある複数のセクションを並び替える</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F44">F44: 達成基準 2.4.3 の失敗例 － 意味及び操作性を保持しないタブ順序を作成するために、tabindex 属性を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F85">F85: 達成基準 2.4.3 の失敗例 － 連続するナビゲーション順序において、トリガーとなるコントロールに隣接していないダイアログ又はメニューを使用している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-navigated-sequentially">順を追ってナビゲート (navigated sequentially)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://w3c.github.io/wcag/guidelines/#dfn-keyboard-interface" target="terms">キーボードインタフェース</a>を用いて (一つの要素から次へ) フォーカスを移動するために、定義された順序でナビゲートすること。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>
