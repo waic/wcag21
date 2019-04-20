@@ -30,12 +30,12 @@
       <h1>達成基準 2.2.6: タイムアウトを理解する</h1>
       <blockquote class="scquote">
          <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#timeouts" style="font-weight: bold;">2.2.6 タイムアウト</a> (Level AAA): データの損失を引き起こす恐れのある<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-inactivity" target="terms">利用者の無操作</a>の残り時間が警告される。ただし、利用者が 20 時間以上何もしなくてもデータが保持される場合は、この限りではない。</p>
-         <p class="note">プライバシー関連の規制により、ユーザーを認証する前やユーザーのデータが保存される前に、ユーザーの明確な同意が必要になる可能性がある。ユーザーが未成年の場合、ほとんどの裁判管轄、国又は地域で、ユーザーからの明示的な同意を要請することができない。この達成基準に適合するためのアプローチとしてデータの保存を検討する場合は、プライバシーの専門家や弁護士に相談するのが望ましい。</p>
+         <p class="note">プライバシー関連の規制により、利用者を認証する前や利用者のデータが保存される前に、利用者の明確な同意が必要になる可能性がある。利用者が未成年の場合、ほとんどの裁判管轄、国又は地域で、利用者からの明示的な同意を要請することができない。この達成基準に適合するためのアプローチとしてデータの保存を検討する場合は、プライバシーの専門家や弁護士に相談するのが望ましい。</p>
       </blockquote>
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion is to ensure that when a timeout is used, users know what duration of inactivity will cause the page to time out and result in lost data. The use of timed events can present significant barriers for users with cognitive disabilities, as these users may require more time to read content or to perform functions, such as completing an online form.</p>
+            <p>この達成基準の意図は、タイムアウトが用いられるときに、どの程度の無操作時間によってページがタイムアウトしてデータが失われるのかを、利用者が確実に把握することである。認知障害のある利用者にとっては、コンテンツを閲覧したりオンラインフォームの完成など機能を実行したりするのに時間がかかるため、時間制限のあるイベントの使用は大きな障害となる可能性がある。</p>
             <p>During the completion of an online process, such as to reserve a hotel room or purchase a plane ticket, a user with a cognitive impairment may become overwhelmed with lengthy instructions and data input required to complete the process. The user may not be able to complete the process in one sitting and may need to take a break. Users should be able to leave a process without losing their current place within the process, and without losing information that has already been entered. If users cannot take a break and check their work, many will often be unable to complete a task correctly.</p>
             <p>This Success Criterion works in tandem with Success Criterion 2.2.1 Timing Adjustable, but is specifically focused on notification of timeouts related to user inactivity.</p>
             <p>The best way to conform to this success criteria is to keep the user data for at least 20 hours. This enables the user with disabilities and the aging community to start and finish a task, taking breaks as needed. However, when it is not practical to save the user data the author must warn the user about the duration of inactivity which will result in a timeout. Timeouts should be displayed to the user once at the beginning of the related task or process and not at each step.</p>
