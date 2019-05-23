@@ -46,16 +46,16 @@
             <h2>意図</h2>
             <p>この達成基準の意図は、テキストを拡大して1列にまとめて読む必要があるロービジョンの利用者を支援することである。ブラウザのズーム機能を利用してコンテンツを400％に拡大するとリフローされる。それにより、1列で表示されるため、複数の方向にスクロールする必要はない。</p>
             <p>ロービジョンの利用者にとって、リフローでテキストが拡大されることによって、読むことができるようになることは重要である。拡大によって文字が知覚できるようになり、リフローによってトラッキングができるようになる。トラッキングは、1行の終わりから次の行の始めまでを含むテキストの行に沿って行われる。</p>
-            <p>ビューポートによって切れて隠れている行を表示するために、読み方向にスクロールする必要性を回避することは重要である。そのようなスクロールは読むために必要な労力を著しく増長させるからである。また、コンテンツが画面外に隠れないようにすることも重要である。例えば、縦方向にスクロールするページを拡大することで、コンテンツが片側に隠れてしまうべきではない。</p>
+            <p>ビューポートによって切れて隠れている行を表示するために、読み方向にスクロールする必要性を回避することは重要である。そのようなスクロールは読むために必要な労力を著しく増長させるからである。また、コンテンツが画面外に隠れないようにすることも重要である。例えば、縦方向にスクロールするページを拡大することで、コンテンツが片側に隠れてしまうのはよくない。</p>
             <section id="how-reflow-works">
                
-               <h3>How reflow works</h3>
+               <h3>リフローのしくみ</h3>
                
-               <p>User agents for technologies such as HTML/CSS, PDF, and ePub have methods for reflowing content to fit the width of the window (viewport). When appropriately authored, page content can reflow (wrap) to stay within the window&#39;s boundaries (viewport) when users zoom in to enlarge the size of content. Spatial relationships of content may change when users zoom, but all information and functionality should continue to be available.</p>
+               <p>ユーザーエージェントには、HTML / CSS、PDF、ePubなどの技術に向けて、ウィンドウ（ビューポート）の幅に合わせてコンテンツをリフローするためのメソッドがある。適切に作成されていれば、利用者がコンテンツのサイズを拡大するためにズームインしたときに、ページコンテンツはウィンドウの境界内（ビューポート）に収まるようにリフロー（ラップ）可能である。利用者が拡大することによって、コンテンツの空間的な関係性が変わる可能性があるが、すべての情報と機能は引き続き利用できるようにするべきである。</p>
                
-               <p>Supporting the reflow of content is also known as &#39;Responsive Web Design&#39;. It is enabled by CSS media queries which reformat the web content for different viewport widths (at particular break points) in order to provide optimised layouts for mobile devices such as tablets or smartphones. Importantly, these breakpoints are not only triggered by narrower viewports, but also when users employ the browser zoom function to zoom into the page.</p>
+               <p>コンテンツのリフローをサポートすることは「レスポンシブWebデザイン」とも呼ばれる。タブレットやスマートフォンなどのモバイルデバイス用に最適化されたレイアウトを提供することは、さまざまなビューポートの幅で（特定のブレークポイントで）Webコンテンツを再フォーマットするCSSメディアクエリによって可能になる。重要なのは、これらのブレークポイントは、狭いビューポートだけでなく、利用者がブラウザのズーム機能を使用してページを拡大するときにも発生することである。</p>
                
-               <p>In a desktop browser at 100% (default) scale, typical web pages that support reflow display content in two, three or more columns. Zooming in will at some point trigger a change of layout, so content will now be displayed in fewer columns. At a higher magnification scale of 200% or more, content will usually be rendered in a single column. Parts of content that were in the marginal columns, like a navigation menu or supplementary content, will now typically appear on top of or below the main content.</p>
+               <p>100％（デフォルト）の倍率のデスクトップブラウザでは、リフローをサポートする一般的なWebページは2、3、又はそれ以上の列にコンテンツを表示する。ズームインするとレイアウトが変更されるため、コンテンツの表示列が少なくなる。200％以上の高倍率では、コンテンツは通常1列で表示される。ナビゲーションメニューや補足コンテンツのように、はみ出した列にあったコンテンツの一部は、通常、メインコンテンツの上又は下に表示される。</p>
                	
             </section>
             <section id="viewing-distance-and-display-resolution">
