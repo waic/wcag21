@@ -48,21 +48,23 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this success criterion is to ensure that functions that are triggered by moving a device (for example, shaking or tilting) or by gesturing towards the device (so that sensors like a camera can pick up and interpret the gesturing), can also be operated by more conventional user interface components, unless the motion is essential for the function or not using motions or gestures would invalidate the activity.</p>
+            <p>この達成基準の目的は、（カメラのようなセンサーが握ってジェスチャーを解釈できるように）デバイスを動かすこと（たとえば、振ることや傾けること）によって、またはデバイスに向かってジェスチャーすることによって引き起こされる機能を確実にすることである。 動きが機能にとって不可欠であるか、または動きまたはジェスチャーを使用しないことが活動を無効にしない限り、より従来のユーザインターフェースコンポーネントによって操作される。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>This criterion concerns input through sensors which respond directly to motions such as gesturing towards, tilting or shaking a device. It does not cover the movement of users through space as registered by geolocation sensors or beacons, or events observed by the device other than intentional gesturing by the user. It also does not cover indirect motion associated with operating a keyboard, pointer, or assistive technology.</p>
+               <p>この基準は、デバイスに向かってジェスチャーする、デバイスを傾ける、またはデバイスを振るなどの動作に直接反応するセンサを介した入力に関するものである。 それは、地理的位置センサまたはビーコンによって記録されるような空間を通過するユーザの動き、またはユーザによる意図的なジェスチャ以外のデバイスで観察されるイベントをカバーしない。 また、キーボード、ポインター、または支援技術の操作に関連した間接的な動作についてもカバーしない。</p>
             </div>
-            <p>Devices often have sensors that can act as inputs, such as accelerometer and gyroscope sensors on a phone or tablet device. These sensors can allow the user to control something by simply changing the orientation or moving the device in particular ways. In other situations, web content can interpret user gestures via the camera or other sensors to actuate functions. For example, shaking the device might issue an &quot;Undo&quot; command, or a gentle hand wave might be used to move forward or backward in a sequence of pages. Some users with disabilities are not able to operate these device sensors (either not at all, or not precisely enough) because the device is on a fixed mount (perhaps a wheelchair) or due to motor impairments. Functionality must be implemented in a way that other or additional means of activation are available.</p>
-            <p>In addition, some users may accidentally activate sensors due to tremors or other motor impairments. The user must have the ability to turn off motion actuation to prevent such accidental triggering of functions. Applications may be able to meet this requirement by supporting operating system settings which allow the user to disable motion detection at the system level.</p>
-            <p>Some applications are specifically created to use device sensor data. Examples of content that are exempt from this requirement include a pedometer that relies on device motion to count steps.</p>
+            <p>デバイスには、電話やタブレットデバイスの加速度センサーやジャイロセンサーなど、入力として機能するセンサーがある。 これらのセンサーは、ユーザが単に向きを変えるかまたは装置を特定の方法で動かすことで何かを制御することを可能にできる。 他の状況では、ウェブコンテンツはカメラまたは他のセンサを介してユーザのジェスチャを解釈して機能を作動させることができる。 たとえば、デバイスを振ると”Undo”コマンドが発行されうる。また、穏やかな手の波（訳注：スワイプ動作に相当する）を使い一連のページを前後に移動しうる。 デバイスが（おそらく車いすの）固定マウントにあるため、または運動障害のために、ある障害者ユーザはこれらのデバイスセンサーを（まったく、または正確には不十分にしか）操作できない。機能は、他のまたは追加の活性化する手段が利用できるよう実装されなければならない。
+</p>
+            <p>さらに、あるユーザは、振戦（訳注：医学用語。手、頭、声帯、体幹、脚などの体の一部に起こる、不随意でリズミカルなふるえ。）または他の運動障害のために誤ってセンサを作動させる可能性がある。 ユーザは、このような偶然の機能の起動を防ぐよう動きによ起動をオフにする能力を持たなければならない。 アプリケーションは、ユーザがシステムレベルで動きの検出を無効に設定できるオペレーティングシステムをサポートすることでこの要求を満たすことができるであろう。</p>
+            <p>一部のアプリケーションは、デバイスセンサーデータを使用するように特別に作成されている。 この要件から除外されるコンテンツの例には、歩数をカウントするためにデバイスの動きに依存する歩数計が含まれる。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
             <ul>
                					
-               <li>This Success Criterion helps people who may be unable to perform particular motions (such as tilting, shaking, or gesturing) because the device may be mounted or users may be physically unable to perform the necessary movement. This success criterion ensures that users can still operate all functionality by other means (e.g., touch or voice input).</li>
+               <li>この達成基準は、デバイスが取り付けられているか、ユーザーが必要な動きを物理的に実行できないために、特定の動作（傾斜、揺れ、身振りなど）を実行できない場合がある人々を支援します。 この達成基準は、ユーザが他の手段（例えばタッチまたは音声入力）によって依然としてすべての機能を操作できることを保証する。
+</li>
                
-               <li>Other users may benefit in situations where they are unable to hold and move the device because their hands are occupied with some other activity.</li>
+               <li>他のユーザは、自分の手が他の活動に専念しているために装置を握って動かすことができない状況で利益を得ることができる。</li>
                				
             </ul>
          </section>
@@ -70,15 +72,15 @@
             <h2>事例</h2>
             <ul>
                				
-               <li>After text is input in a field, shaking a device shows a dialog offering users to undo the input. A cancel button next to the text field offers the same functionality.</li>
+               <li>テキストを入力フィールドに入力した後、デバイスを振るとダイアログが表示され、入力を元に戻すことができる。 テキストフィールドの横にあるキャンセルボタンも同じ機能を提供する。</li>
                
-               <li>A user can tilt a device to advance to the next or a previous page. Buttons or links are also provided to perform the same function.</li>
+               <li>ユーザはデバイスを傾けて次または前のページに進むことができる。 ボタンやリンクも同じ機能を実行するために提供されている。</li>
                
-               <li>A user can move or pan a device to change the view in an interactive photo. A control is also available to perform these same functions.</li>
+               <li>ユーザはデバイスを移動またはパンして、インタラクティブな写真の表示を変更できる。 これらと同じ機能を実行するためのコントロールもある。</li>
                
-               <li>A user can gesture towards the device to navigate content. Controls are also available to navigate.</li>
+               <li>ユーザはデバイスに向かってジェスチャーしてコンテンツをナビゲートできる。 ナビゲートするためのコントロールもある。</li>
                
-               <li>A user can choose an application setting which turns off Shake to Undo features.</li>
+               <li>ユーザはShake to Undo機能をオフにするアプリケーション設定を選択できる。</li>
                			
             </ul>
          </section>
@@ -114,13 +116,13 @@
                <h3>十分な達成方法</h3>
                <ul>
                   
-                  <li>GXXX: Not using the devicemotion event to activate content functionality</li>
+                  <li>GXXX: コンテンツ機能を有効にするためにデバイスモーションイベントを使用しない</li>
                   
-                  <li>GXXX: Ensuring that alternative means of input exist when using device motion sensor input to activate content functionality</li>
+                  <li>GXXX: デバイスのモーションセンサー入力を使用してコンテンツ機能を有効にするときに、代替の入力手段が存在することを確認する</li>
                   
-                  <li>GXXX: Providing an application setting to disable motion actuation</li>
+                  <li>GXXX: モーション作動を無効にするためのアプリケーション設定を提供する</li>
                   
-                  <li>GXXX: Supporting system level features which allow the user to disable motion actuation</li>
+                  <li>GXXX: ユーザがモーション作動を無効にできるようにするシステムレベルの機能をサポートする</li>
                   
                </ul>
             </section>
@@ -133,11 +135,11 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to functionality that can only be activated via devicemotion events (e.g., shaking or tilting)</li>
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － デバイスのモーションイベント（揺れや傾斜など）によってのみ有効になる機能</li>
                   
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to an inability to disable motion actuation</li>
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － モーション作動を無効にできない</li>
                   
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to disrupting or disabling system level features which allow the user to disable motion actuation</li>
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － ユーザがモーション作動を無効にできるようにするシステムレベルの機能を中断または無効にしている</li>
                   
                </ul>
             </section>
