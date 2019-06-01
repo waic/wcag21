@@ -20,7 +20,7 @@
          <p>このページの内容:</p>
          <ul id="navbar">
             <li><a href="#intent">意図</a></li>
-            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#benefits">メリット</a></li>
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
@@ -35,36 +35,32 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion is to ensure that content displays in the orientation (portrait or landscape) preferred by the user. Some websites and applications automatically set and restrict the screen to a particular display orientation and expect that users will respond by rotating their device to match, but this can create problems. Some users have their devices mounted in a fixed orientation (e.g. on the arm of a power wheelchair). Therefore, websites and applications need to support both orientations by not restricting the orientation. Changes in content or functionality due to the size of display are not covered by this criteria which is focused on restrictions of orientation.</p>
-            <p>Historically, devices tended to have a fixed-orientation display, and all content was created to match that display orientation. Today, most handhelds and many other devices (e.g., monitors) have a hardware-level ability to dynamically adjust default display orientation based on sensor information. The goal of this Success Criterion is that authors should never restrict content&#39;s orientation, thus ensuring that it always match the device display orientation.</p>
-            <p>It is important to distinguish between an author&#39;s responsibility not to restrict content to a specific orientation, and device-specific settings governing the locking of display orientation.</p>
-            <p>Many hand-held devices offer a mechanical switch or a system setting (or both) to allow the user to lock the device display to a specific orientation. Where a user decides to lock their entire device to an orientation, all applications are expected to pick up that setting and to display content accordingly.</p>
-            <p>This Success Criterion complements device &quot;lock orientation&quot; settings. A web page that does not restrict its display orientation will always support the system-level orientation setting, since the system setting is picked up by the user agent. Alternatively, where a device-level orientation lock is not in place, the user agent should display the page according to the orientation of the device (either its default, or the current orientation determined by any device sensors).</p>
+            <p>この達成基準の意図は、コンテンツがユーザーの好みの向き (縦向き又は横向き) で表示されるようにすることである。ウェブサイトやアプリケーションの中には、自動的に画面を特定の表示方向に制限し利用者がデバイスを適応するように回転させることを期待するものがあり、これにより問題が生じる可能性がある。利用者の中には、 (例えば電動車椅子の腕に) 固定された向きでデバイスを取り付けている。したがって、ウェブサイトやアプリケーションは向きを制限せず両方の向きをサポートする必要がある。ディスプレイのサイズによるコンテンツ又は機能の変更は、向きの制限に焦点を当てているこの達成基準では対象としていない。</p>
+            <p>歴史的に、デバイスは固定の向きのディスプレイを持つ傾向があり、全てのコンテンツはディスプレイの向きに合わせて制作されてきた。今日では、ほとんどの携帯情報端末及びその他多くのデバイス (モニターなど) はセンサー情報に基づいてデフォルトのディスプレイの向きを動的に調整するハードウェアレベルの機能を備えている。この達成基準の目的は、コンテンツ制作者がコンテンツの向きを決して制限しないことで、コンテンツが常にデバイスのディスプレイの向きに一致することを保証することである。</p>
+            <p>コンテンツを特定の向きに制限しないという制作者の責任と、ディスプレイの向きの固定を調整するデバイス固有の設定とを区別することが重要である。</p>
+            <p>多くの携帯情報端末は、利用者がディスプレイを特定の向きに固定することを可能にするために、機械的なスイッチ又はシステム設定 (又はその両方) を提供している。利用者がデバイス全体の向きを固定した場合、全てのアプリケーションはその設定を取得し、向きに応じてコンテンツを表示することが期待される。</p>
+            <p>この達成基準は、デバイスの「向きを固定する」設定を補完するものである。システム設定はユーザーエージェントによって選択されるため、ディスプレイの向きを制限しないウェブページは常にシステムレベルの表示設定をサポートする。あるいは、デバイスレベルの向き固定が設定されていない場合、ユーザーエージェントはデバイスの向き (デフォルト、又は任意のデバイスセンサーによって特定された現在の向きのいずれか) によってページを表示するべきである。</p>
          </section>
          <section id="benefits">
-            <h2>Benefits</h2>
+            <h2>メリット</h2>
             <ul>
+              <li>固定したデバイスを持つ巧緻性障害の利用者が、自分の決めた向きでコンテンツを利用できる。</li>
                					
-               <li>Users with dexterity impairments, who have a mounted device will be able to use the content in their fixed orientation.</li>
-               					
-               <li>Users with low-vision will be able to view content in the orientation that works best for them, for example to increase the text size by viewing content in landscape.</li>
-               				
+              <li>ロービジョンの利用者が、横長のコンテンツを見るときにテキストサイズを大きくするなど、自分に最適な向きでコンテンツを見ることができる。</li>
             </ul>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <ul>
+               <li><strong>事例1: オンライン映像サイト</strong><br />利用者が選択した向きに基づいて、映像が縦向き又は横向きに表示される。</li>
                				
-               <li><strong>Example 1: Online video site</strong><br /> A video is shown in either portrait or in landscape based on the user&#39;s chosen orientation.</li>
+               <li><strong>事例2: メッセージングウェブサイト</strong><br />メッセージングウェブサイトは縦向きと横向きの両方でメッセージを表示できる。</li>
                				
-               <li><strong>Example 2: Messaging website</strong><br /> A messaging website can display messages in both portrait and landscape orientations.</li>
+               <li><strong>事例3: 電子書籍ウェブアプリ</strong><br />電子書籍ウェブアプリは縦向きと横向きの両方で本の内容を表示できる。</li>
                				
-               <li><strong>Example 3: eReader web app</strong><br /> An eReader web app can display the contents of a book in both portrait and landscape orientation.</li>
-               				
-               <li><strong>Example 4: Check deposit in banking app</strong><br /> An example where orientation is essential could be a banking app that requires the device be in landscape mode to easily and accurately capture an image of a check for deposit. These paper forms are typically about twice as wide as they are high.</li>
-               				
-               <li><strong>Example 5: Piano app</strong><br /> An example where orientation is essential could be a piano app that requires the device to be in landscape mode to allow room for enough of the piano keys to be functionally usable. Since a piano app is emulating a physical piano keyboard that needs to retain relative physical characteristics between keys, either too few keys would be available, or the keys would be much too narrow.</li>
-               			
+               <li><strong>事例4: 銀行アプリで預金を確認する</strong><br />向きが必要不可欠な例としては、預金小切手の画像を簡単かつ正確に読み取るために、ランドスケープモードにする必要がある銀行アプリがある。これらの紙の形は、通常高さの約二倍の幅がある。</li>
+
+               <li><strong>事例5: ピアノアプリ</strong><br />向きが必要不可欠な例としては、ピアノの鍵を十分に機能的に使用できるスペースを確保するために、ランドスケープモードにする必要があるピアノアプリがある。ピアノアプリは、鍵の間の物理的な特徴を保持する必要がある物理的なピアノの鍵盤を模しているため、使用できる鍵が少なすぎるか、鍵が狭くなりすぎるかのいずれかになる。</li>
             </ul>
          </section>
          <section id="resources">
@@ -94,11 +90,9 @@
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <ul>
-                  					
-                  <li>Using CSS to set the orientation to allow both landscape and portrait.</li>
-                  					
-                  <li>Use of show/hide controls to allow access to content in different orientations.</li>
-                  				
+                 <li>CSS を使用して縦方向と横方向の両方を許可するように向きを設定する。</li>
+
+                 <li>表示・非表示制御を使用し、異なる向きのコンテンツにアクセスできるようにする。</li>
                </ul>
             </section>
             <section id="failure">
@@ -106,7 +100,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   					
-                  <li>Locking the orientation.</li>
+                  <li>向きを固定する。</li>
                   				
                </ul>
             </section>
