@@ -36,9 +36,9 @@
             <h2>意図</h2>
             <p>この達成基準の意図は、ウェブページにどんな情報があるのか、及びその情報がどのように構成されているのかを、利用者が理解するのを手助けすることである。見出しが明快かつ内容が分かるように記述されている場合、利用者は自分の探している情報をより容易に見つけることができ、コンテンツ内の様々な部分間の関係をより容易に理解できる。内容が分かるように記述されているラベルは、利用者がコンテンツ内にある特定のコンポーネントを識別するのに役立つ。</p>
             <p>ラベル及び見出しを長くする必要があるわけではない。単語一つ又は一文字だけであっても、コンテンツを見つけてナビゲートする手がかりとして適切であれば、それだけで十分なこともある。</p>
-            <p>この達成基準は見出しやラベルを必ずしも必要としない。見出しやラベルが提供されている場合、それらの内容が分かるように記述されていることが求められる。This Success Criterion also does not require that content acting as a heading or label be correctly marked up or identified - this aspect is covered separately by <a href="info-and-relationships.html">1.3.1: Info and Relationships</a>. It is possible for content to pass this Success Criterion (providing descriptive content that acts as headings or labels) while failing Success Criterion 1.3.1 (if the headings or labels aren&#39;t correctly marked up/identified). Conversely, it is also possible for content to pass Success Criterion 1.3.1 (with headings or labels correctly marked up or identified), while failing this Success Criterion (if those headings or labels are not sufficiently clear or descriptive).</p>
-            <p>Further, in the case of labels, this Success Criterion does not take into consideration whether or not alternative methods of providing an accessible name for form controls and inputs has been used - this aspect is covered separately by <a href="name-role-value.html">4.1.2: Name, Role and Value</a>. It is possible for controls and inputs to have an appropriate accessible name (e.g. using <code>aria-label=&quot;...&quot;</code>) and therefore pass Success Criterion 4.1.2, but to still fail this Success Criterion (if the label is not sufficiently clear or descriptive).</p>
-            <p>This success criteria does not require the use of labels; however, it does require that if labels are present, they must be sufficiently clear or descriptive. Please see <a href="labels-or-instructions.html">3.3.2: Labels or Instructions</a> for more information on the use of labels.</p>
+            <p>この達成基準は見出しやラベルを必要としない。見出しやラベルが提供されている場合、それらの内容が分かるように記述されていることが求められる。この達成基準は見出し又はラベルとして機能するコンテンツを正しくマークアップすること又は識別することも必要としない。この点は <a href="info-and-relationships.html">1.3.1: 情報及び関係性</a>で別途取り扱っている。コンテンツがこの達成基準に合格しながら (見出し又はラベルとして機能する説明的なコンテンツを提供している)、達成基準 1.3.1 (見出し又はラベルを誤ってマークアップ / 識別している場合) に失敗することがありえる。反対に、コンテンツが達成基準 1.3.1 に合格しながら (見出し又はラベルが正しくマークアップ又は識別されている)、この達成基準に失敗することも可能である (それらの見出し又はラベルが十分に明確又は説明的ではない場合)。</p>
+            <p>さらに、ラベルの場合、この達成基準はフォームコントロール及び入力にアクセシブルな名前を提供する代替手段が用いられているか否かを考慮しない。この点は <a href="name-role-value.html">4.1.2: 名前 (name) ・役割 (role) 及び値 (value)</a>で別途取り扱っている。コントロール及び入力に適したアクセシブルな名前 (例えば、<code>aria-label="..."</code> を使用して) を持ち、その結果達成基準 4.1.2 に合格したとしても、(ラベルが十分に明確又は説明的ではない場合) この達成基準に失敗する可能性がある。</p>
+            <p>この達成基準はラベルの使用を求めていない。しかし、ラベルが存在する場合、それらが十分に明確又は説明的でなければならないことは求めている。ラベルの使用の詳細については、<a href="labels-or-instructions.html">3.3.2: ラベル又は説明</a>を参照すること。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
@@ -48,10 +48,10 @@
                <li>内容が分かるように記述された見出しは、読む速度が遅くなる障害のある利用者及び短期記憶に制約のある利用者に特に役立つ。そのような利用者にとっては、それぞれのセクションの内容を予測できるようにセクションの見出しが記述されていると役立つ。</li>
                
                
-               <li>Form input controls with labels that clearly describe the content that is expected to be entered helps users know how to successfully complete the form.</li>
+               <li>入力が予想されるコンテンツを明確に説明するラベルの付いたフォーム入力コントロールは利用者がフォームに正しく入力するのを手助けする。</li>
                
                
-               <li>When headings and labels are also correctly marked up and identified in accordance with <a href="info-and-relationships.html">1.3.1: Info and Relationships</a>, この達成基準は、目次などで文脈を無視して読むとき、又はページ内の見出しから見出しへ移動するときに、ラベル及び見出しが意味のあることを保証することによって、スクリーンリーダーの利用者を手助けする。</li>
+               <li>見出し及びラベルも <a href="info-and-relationships.html">1.3.1: 情報及び関係性</a>に従って正しくマークアップ及び識別されている場合、この達成基準は、目次などで文脈を無視して読むとき、又はページ内の見出しから見出しへ移動するときに、ラベル及び見出しが意味のあることを保証することによって、スクリーンリーダーの利用者を手助けする。</li>
                
                
             </ul>
@@ -105,7 +105,7 @@
             <ul>
                
                
-               <li><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/">How Users Read on the Web</a> ほとんどのユーザーが単語で単語を読むのではなく、ウェブページを走り読みすることを示す調査。</li>
+               <li><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/">How Users Read on the Web</a> ほとんどの利用者が 1 語ずつ読むのではなく、ウェブページを走り読みすることを示す調査。</li>
                
                
                <li><a href="https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/">Applying Writing Guidelines to Web Pages</a> ウェブサイトを簡潔に、走り読みしやすく、客観的にする効果についてのレポート。</li>
