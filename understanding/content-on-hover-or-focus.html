@@ -56,96 +56,96 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>Additional content that appears and disappears in coordination with keyboard focus or pointer hover often leads to accessibility issues. Reasons for such issues include:</p>
+            <p>キーボードフォーカス又はポインタホバーと連動して現れたり消えたりする追加のコンテンツはしばしばアクセシビリティの問題へ発展することがある。そのような問題の理由には以下が含まれる:</p>
             <ol>
                			
-               <li>the user may not have intended to trigger the interaction</li>
+               <li>利用者はインタラクションを引き起こすことを目的としていなかった可能性がある</li>
                			
-               <li>the user may not know new content has appeared</li>
+               <li>利用者は新しいコンテンツが現れたことに気づかない可能性がある</li>
                			
-               <li>the new content may intefere with a user&#39;s ability to do a task</li>
+               <li>新しいコンテンツは利用者のタスクを実行する能力を妨げる可能性がある</li>
                		
             </ol>
-            <p>Examples of such interactions can include custom tooltips, sub-menus and other nonmodal popups which display on hover and focus. The intent of this success criterion is to ensure that authors who cause additional content to appear and disappear in this manner must design the interaction in such a way that users can:</p>
+            <p>そのようなインタラクションの例には、ホバー及びフォーカスで表示されるカスタムツールチップ、サブメニュー及びその他の非モーダルポップアップが含まれる。この達成基準の意図は、追加のコンテンツをこのように表示及び非表示にするコンテンツ制作者が、以下を利用できるような方法で利用者がインタラクションを設計しなければならないことを保証することである:</p>
             <ul>
                					
-               <li>perceive the additional content AND</li>
+               <li>追加のコンテンツを知覚できる、及び</li>
                					
-               <li>dismiss it without disrupting their page experience.</li>
+               <li>ページ体験を損なうことなく非表示にすることができる。</li>
                				
             </ul>
-            <p>There are usually more predictable and accessible means of adding content to the page, which authors are recommended to employ. If an author <em>does</em> choose to make additional content appear and disappear in coordination with hover and keyboard focus, this success criterion specifies three conditions that must be met:</p>
+            <p>大抵はより予測可能かつアクセシブルな、ページにコンテンツを追加する方法があり、コンテンツ制作者はその方法を使用することを推奨する。コンテンツ制作者が追加のコンテンツをホバー及びキーボードフォーカスと連携して表示及び非表示にすることを<em>選んだ</em>場合、この達成基準は満たさなければならない三つの条件を指定する:</p>
             <ul>
                					
-               <li>dismissable</li>
+               <li>非表示にすることができる</li>
                					
-               <li>hoverable</li>
+               <li>ホバーすることができる</li>
                					
-               <li>persistent</li>
+               <li>表示が継続される</li>
                				
             </ul>
-            <p>Each of these is discussed in a separate section.</p>
+            <p>それぞれは個別の節で議論されている。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>This SC covers content that appears in addition to the triggering component itself. Therefore, a non-visible component, like a Skip to Main link, that is made visible on keyboard focus (with no <em>additional</em> content beyond the trigger becoming visible) is not covered by the SC.</p>
+               <p>この達成基準はトリガーとなるコンポーネントそのものに加えて現れるコンテンツを取り扱う。そのため、「メインにスキップ」リンクのようなキーボードフォーカスで可視になる非可視のコンポーネント (トリガーを超える<em>追加の</em>コンテンツが可視にならない) はこの達成基準では取り扱われない。</p>
             </div>
             <section id="dismissable">
                			
                <h3>非表示にすることができる</h3>
                			
-               <p>The intent of this condition is to ensure that the additional content does not interfere with viewing or operating the page&#39;s original content. When magnified, the portion of the page visible in the viewport can be signficantly reduced. Mouse users frequently move the pointer to pan the magnified viewport and display another portion of the screen. However, almost the entire portion of the page visible in this restricted viewport may trigger the additional content, making it difficult for a user to pan without re-triggering the content. A keyboard means of dismissing the additional content provides a workaround.</p>
+               <p>この条件の意図は、追加のコンテンツがページの元のコンテンツを確認する又は操作することを妨げないようにすることである。拡大時、ビューポート内で表示されるページの部分はかなり縮小する。マウスの利用者は、拡大したビューポートをパンして画面の他の部分を表示するために、頻繁にポインタを動かす。しかし、この限られたビューポートで表示されるページのほぼ全域が追加のコンテンツをトリガーするかもしれず、利用者がコンテンツを再トリガーせずにパンすることを困難にする。キーボードで追加コンテンツを非表示にする方法は、回避方法を提供する。</p>
                			
-               <p>Alternatively, low vision users who can only navigate via the keyboard do not want the small area of their magnified viewport cluttered with trivial hover text. They need a keyboard method of dismissing something that is obscuring the current focal area.</p>
+               <p>代わりに、キーボードを用いてのみナビゲートするロービジョンの利用者は、拡大されたビューポートの小さい領域がさまつなホバーテキストで雑然としてほしくない。彼らはキーボードで現在の焦点が当たっている領域を覆い隠す何かを非表示にする方法が必要である。</p>
                		
-               <p>Two methods may be used to satisfy this condition and prevent such interference:</p>
+               <p>この条件を満たし、このような干渉を防ぐために、二つの方法が使用できる:</p>
                			
                <ol>
                   			
-                  <li>Position the additional content so that it does not obscure any other content including the trigger, with the exception of white space and purely decorative content, such as a background graphic which provides no information.</li>
+                  <li>余白及び情報を提供しない背景画像などの純粋な装飾コンテンツを除き、トリガーを含む他のあらゆるコンテンツを隠さないよう追加のコンテンツを配置する。</li>
                   			
-                  <li>Provide a mechanism to easily dismiss the additional content, such as by pressing Escape or selecting a close button.</li>
+                  <li>Esc キー又は閉じるボタンを押すなど、追加のコンテンツを容易に非表示にするメカニズムを提供する。</li>
                   			
                </ol>
                			
-               <p>For most triggers of relatively small size, it is desirable for both methods to be implemented. If the trigger is large, noticing the additional content may be of concern if it appears away from the trigger. In those cases, only the second method may be appropriate.</p>
+               <p>ほとんどの比較的小さいサイズのトリガーには、両方の方法が実装されることが望ましい。トリガーが大きい場合、追加コンテンツがトリガーより遠くに現れると、気づくことが難しいかもしれない。そのような場合は、二つ目の方法のみが適切かもしれない。</p>
                			
             </section>
             <section id="hoverable">
                			
                <h3>ホバーすることができる</h3>
                			
-               <p>The intent of this condition is to ensure that additional content which may appear on hover of a target may also be hovered itself. Content which appears on hover can be difficult or impossible to perceive if a user is required to keep their mouse pointer over the trigger. When the added content is large, magnified views may mean that the user needs to scroll or pan to completely view it, which is impossible unless the user is able to move their pointer off the trigger without the additional content disappearing.</p>
+               <p>この条件の意図は、ターゲットにホバーすることで現れるかもしれない追加のコンテンツがそれ自身にもホバーできるように保証することである。ホバーで現れるコンテンツは、利用者がマウスポインタをトリガーの上に固定することを求められた場合、知覚するのが難しい又は不可能な可能性がある。追加されたコンテンツが大きい場合、拡大されたビューは、利用者がそのコンテンツを完全に表示するためにスクロール又はパンする必要があることを意味し、これは、追加コンテンツが消えないように利用者がトリガーからポインタを移動できない限り不可能である。</p>
                			
-               <p>Another common situation is when large pointers have been selected via platform settings or assistive technology. Here, the pointer can obscure a significant area of the additional content. A technique to view the content fully in both situations is to move the mouse pointer directly from the trigger onto the new content. This capability also offers significant advantages for users who utilize screen reader feedback on mouse interactions. This condition generally implies that the additional content overlaps or is positioned adjacent to the target.</p>
+               <p>もう一つの一般的な状況は、大きいポインタがプラットフォームの設定又は支援技術により選択されていた場合である。ここでは、ポインタが追加コンテンツの重要な領域を隠してしまう可能性がある。両方の状況でコンテンツを完全に見る方法は、マウスポインタをトリガーから新しいコンテンツに直接移動させることである。この機能はまた、マウスとのインタラクションのフィードバックにスクリーンリーダーを使用する利用者に重要な利点を提供する。この条件は、ほとんどの場合、追加コンテンツがターゲットに重なる又はそれが隣接して配置されていることを暗示する。</p>
                			
             </section>
             <section id="persistent">
                			
                <h3>表示が継続される</h3>
                			
-               <p>The intent of this condition is to ensure users have adequate time to perceive the additional content after it becomes visible. Users with disabilities may require more time for many reasons, such as to change magnification, move the pointer, or simply to bring the new content into their visual field. Once it appears, the content should remain visible until:</p>
+               <p>この条件の意図は、利用者に追加コンテンツが可視になった後、知覚するための十分な時間があるようにすることである。障害のある利用者は拡大率を変更する、ポインタを動かす、又は可視領域に新しいコンテンツを持ってくるなどの様々な理由により、より多くの時間が必要かもしれない。一度現れたら、次のことをする時までコンテンツは可視のままにするべきである:</p>
                			
                <ul>
                   			
-                  <li>The user removes hover or focus from the trigger and the additional content, consistent with the typical user experience;</li>
+                  <li>利用者が、典型的なユーザ体験と一致して、トリガー及び追加コンテンツからホバー又はフォーカスを取り除く。</li>
                   			
-                  <li>The user dismisses the additional content via the mechanism provided to satisfy the Dismissable condition; or</li>
+                  <li>利用者が非表示にすることができる条件を満たすために提供されたメカニズムを通して追加コンテンツを非表示にする。又は、</li>
                   			
-                  <li>The information conveyed by the additional content becomes invalid, such as a &#39;busy&#39; message that is no longer valid.</li>
+                  <li>もはや有効ではない「使用中」メッセージなど、追加コンテンツにより伝えられた情報が無効になる。</li>
                   			
                </ul>
                			
             </section>
             <section id="additional-notes">
                			
-               <h3>Additional Notes</h3>
+               <h3>追加の注記</h3>
                			
                <ul>
                   			
-                  <li>This criterion does not attempt to solve such issues when the appearance of the additional content is completely controlled by the user agent. A prominent example is the common behavior of browsers to display the <code>title</code>  attribute in HTML as a small tooltip.</li>
+                  <li>この基準は、追加コンテンツの見た目が完全にユーザエージェントにより制御されている時に、このような問題を解決することに努めていない。顕著な例は、HTML の <code>title</code> 属性を小さなツールチップとして表示するブラウザの一般的な挙動である。</li>
                   			
-                  <li>Modal dialogs are out of scope for this criterion because they must take keyboard focus and thus should not appear on hover or focus. Refer to <a href="https://www.w3.org/TR/WCAG21/#on-focus">Success Criterion 3.2.1, On Focus</a>.</li>
+                  <li>モーダルダイアログはキーボードフォーカスを受け取らなければならないため、ホバー又はフォーカスで現れるべきではなく、この基準のスコープ外である。<a href="https://www.w3.org/TR/WCAG21/#on-focus">達成基準 3.2.1 フォーカス時</a>を参照すること。</li>
                   			
-                  <li>Content which can be triggered via pointer hover should also be able to be triggered by keyboard focus. Refer to <a href="https://www.w3.org/TR/WCAG21/#keyboard">Success Criterion 2.1.1, Keyboard</a>.</li>
+                  <li>ポインタホバーを通して動作できるコンテンツはキーボードフォーカスでも動作できるべきである。<a href="https://www.w3.org/TR/WCAG21/#keyboard">達成基準 2.1.1 キーボード</a>を参照すること。</li>
                   			
                </ul>
                			
@@ -155,13 +155,13 @@
             <h2>メリット</h2>
             <ul>
                			
-               <li>Users with low vision who view content under magnification will be better able to view content on hover or focus without reducing their desired magnification.</li>
+               <li>拡大してコンテンツを見ているロービジョンの利用者は、望ましい倍率を減らさなくてもより上手くホバー又はフォーカスしたコンテンツ見ることができるようになる。</li>
                			
-               <li>Users who increase the size of mouse cursors via platform settings or assistive technology will be able to employ a technique to view obscured content on hover.</li>
+               <li>プラットフォームの設定又は支援技術を通してマウスカーソルのサイズを大きくしている利用者は、ホバー時に隠されたコンテンツを見る方法を使用できるようになる。</li>
                			
-               <li>Users with low vision or cognitive disabilities will have adequate time to perceive additional content appearing on hover or focus and to view the trigger content with less distraction.</li>
+               <li>ロービジョン又は認知障害のある利用者はホバー又はフォーカスで現れる追加コンテンツを知覚し、かつトリガーコンテンツを気を散らすことなく見るための十分な時間を持てるようになる。</li>
                			
-               <li>users with low pointer accuracy will be able to more easily dismiss unintentionally-triggered additional content</li>
+               <li>ポインタの正確さが低い利用者は、より簡単に意図せず動作させた追加コンテンツを非表示にできるようになる。</li>
                			
             </ul>
          </section>
@@ -169,22 +169,22 @@
             <h2>事例</h2>
             <section class="example" id="example-1-dismissable-tooltip">
                				
-               <h3>Example 1: Dismissable Tooltip</h3>
+               <h3>事例 1: 非表示にすることができるツールチップ</h3>
                				
-               <figure><img src="img/button-pointer-tooltip.png" alt="Screenshot of a button with a mouse pointer over it, and a tooltip displayed below the button" /> <img src="img/button-pointer.png" alt="Screenshot of a button with a mouse pointer over it, and no tooltip" /><figcaption>A tooltip is displayed below a LVTF button on hover so as not to obscure the button itself. It does however obscure content below the button (the next red button, called ~comment-zoom-content). To meet the Dismissible requirement, a user can press the Escape key to clear the tooltip without moving the mouse, as demonstrated in the second image.</figcaption>
+               <figure><img src="img/button-pointer-tooltip.png" alt="ボタンの下にツールチップが表示されている、マウスポインタが上にのっているボタンのスクリーンショット" /> <img src="img/button-pointer.png" alt="ツールチップがなく、マウスポインタが上にのっているボタンのスクリーンショット" /><figcaption>ボタンそのものを覆い隠さないように、ホバーしている LVTF ボタンの下にツールチップが表示されている。それはしかし、ボタンの下にあるコンテンツを覆い隠している (~comment-zoom-content と呼ばれている次の赤いボタン)。非表示にすることができる必須条件を満たすため、二つ目の画像で示している通り、利用者は Esc キーを押してマウスを動かさずにツールチップを消去できる。</figcaption>
                   				
                </figure>
                				
-               <figure><img src="img/button-focus-indicator.png" alt="Screenshot of a button with a focus indicator on it, and no tooltip" /><figcaption>The button&#39;s tooltip also appears on focus and can be removed with the Escape key. The screen shot shows the same LVTF button with focus, but the tooltip has been dismissed and is no longer visible.</figcaption>
+               <figure><img src="img/button-focus-indicator.png" alt="ツールチップがなく、フォーカスインジケータがあるボタンのスクリーンショット" /><figcaption>ボタンのツールチップはフォーカス時にも現れ、Esc キーで取り除くことができる。スクリーンショットは同じ LVTF ボタンのフォーカス時を表しているが、ツールチップは非表示にされ、すでに可視ではない。</figcaption>
                   				
                </figure>
                			
             </section>
             <section class="example" id="example-2-hoverable-tooltip">
                				
-               <h3>Example 2: Hoverable Tooltip</h3>
+               <h3>事例 2: ホバーすることができるツールチップ</h3>
                				
-               <figure><img src="img/button-pointer-on-tooltip.png" alt="Screenshot of a button with a large mouse pointer over it, and a tooltip displayed below the button which is obscured by the large pointer" /> <img src="img/button-pointer-below-tooltip.png" alt="Screenshot of a button with a tooltip below it, and a large mouse pointer at the bottom of the tooltip" /><figcaption>A button&#39;s tooltip is displayed directly below it on mouse hover which can easily be obscured by a large pointer. The tooltip itself is able to be hovered so the mouse pointer can be moved down to its bottom edge in order to view the tooltip text.</figcaption>
+               <figure><img src="img/button-pointer-on-tooltip.png" alt="大きいポインタに覆い隠されたツールチップがボタンの下に表示されている、大きいマウスポインタが上にのっているボタンのスクリーンショット" /> <img src="img/button-pointer-below-tooltip.png" alt="大きいマウスポインタがツールチップの下部にある、ツールチップが下にあるボタンのスクリーンショット" /><figcaption>ボタンのツールチップはマウスホバーの直下に表示されており、大きなポインタで簡単に隠すことができる。ツールチップそのものはホバーできるので、ツールチップのテキストを見るためにマウスポインタをその下側に下げることができる。</figcaption>
                   				
                </figure>
                			
@@ -206,9 +206,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   						
-                  <li>@@ ARIA: Using role=&quot;tooltip&quot;</li>
+                  <li>@@ ARIA: role=&quot;tooltip&quot; を使用する</li>
                   						
-                  <li>@@ CSS: Using hover and focus pseudo classes</li>
+                  <li>@@ CSS: hover 及び focus 疑似クラスを使用する</li>
                   					
                </ul>
             </section>
@@ -217,11 +217,12 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   					
-                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F95">F95: Failure of Success Criterion 1.4.13 due to content shown on hover not being hoverable</a></li>
+                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F95">F95: 達成基準 1.4.13 の失敗例 － ホバー時に表示されるホバーできないコンテンツ</a></li>
                   					
-                  <li>@@ Failure to make content dismissable without moving pointer hover or keyboard focus</li>
+                  <li>@@ ポインタホバー又はキーボードフォーカスを移動させずにコンテンツを非表示にできるようにする
+失敗例</li>
                   					
-                  <li>@@ Failure to meet by content on hover or focus not remaining visible until dismissed or invalid</li>
+                  <li>@@ ホバー又はフォーカス時に非表示又は無効になるまで可視のままではないコンテンツで満たす失敗例</li>
                   				
                </ul>
             </section>
