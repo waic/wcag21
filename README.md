@@ -14,7 +14,7 @@ GitHub Pages により
 
 Pull Request は、ブランチ `master` にお願いします。また、issue を立ててもらっても構いません。どちらの方法でも歓迎します。
 `master` に push されれば、GitHub Pages によりに出力されるようになっています。
-メールで込み入った質問等をしたい場合は、[WAIC のお問い合わせページ](https://waic.jp/contact/)にお願いします。
+メールで込み入った質問等をしたい場合は、[WAIC のお問い合わせページ](http://waic.jp/contact/)にお願いします。
 
 ### ブランチの運用（参考情報）
 
