@@ -38,90 +38,96 @@
             
          </ul>
          <p>利用や意味の理解に 2 次元のレイアウトが必須である一部のコンテンツを除く。</p>
-         <p class="note">320 CSS ピクセルは、1280 CSS ピクセル幅を 400% ズームで見た場合の最初の表示幅に相当する。横スクロールになるように設計されたウェブコンテンツ (例えば、縦書きのテキスト) では、256 CSS ピクセルは、高さ 1024px を 400％ ズームで見た場合の最初の表示の高さに相当する。</p>
+         <p class="note">320 CSS ピクセルは、1280 CSS ピクセル幅を 400 ％ズームで見た場合の最初の表示幅に相当する。横スクロールになるように設計されたウェブコンテンツ (例えば、縦書きのテキスト) では、256 CSS ピクセルは、高さ 1024px を 400 ％ズームで見た場合の最初の表示の高さに相当する。</p>
          <p class="note">2 次元のレイアウトを必要とするコンテンツの例としては、画像、マップ、図解、ビデオ、ゲーム、プレゼンテーション、データテーブル、及びコンテンツを操作している間にツールバーを表示しておく必要のあるインタフェースが挙げられる。</p>
       </blockquote>
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion is to support people with low vision who need to enlarge text and read it in a single column. When the browser zoom is used to scale content to 400%, it reflows - i.e., it is presented in one column so that scrolling in more than one direction is not necessary.</p>
-            <p>For people with low vision, enlarged text with reflow enables reading. It is critical. Enlargement enables perception of characters. Reflow enables tracking. Tracking is following along lines of text, including getting from the end of one line to the beginning of the next line.</p>
-            <p>Avoiding the need to scroll in the direction of reading in order to reveal lines that are cut off by the viewport is important, because such scrolling significantly increases the effort required to read. It is also important that content is not hidden off-screen. For example, zooming into a vertically scrolling page should not cause content to be hidden to one side.</p>
+            <p>この達成基準の意図は、テキストを拡大して 1 カラムにまとめて読む必要があるロービジョンの人を支援することである。ブラウザのズーム機能を利用してコンテンツを 400 ％に拡大するとリフローされる。それにより、1 カラムで表示されるため、複数の方向にスクロールする必要はない。</p>
+            <p>ロービジョンの人は、リフローとともに拡大されたテキストを読むことができる。拡大によって文字が知覚できるようになり、リフローによってトラッキングができるようになる。トラッキングは、1 行の終わりから次の行の始めまでを含む、テキストの行に沿って行われる。</p>
+            <p>ビューポートによって切り取られた行を表示するために、読み方向にスクロールする必要性を回避することは重要である。そのようなスクロールは読むために必要な労力を著しく増加させるからである。また、コンテンツが画面外に隠れないようにすることも重要である。例えば、縦方向にスクロールするページを拡大することで、コンテンツが片側に隠れるべきではない。</p>
             <section id="how-reflow-works">
                
-               <h3>How reflow works</h3>
+               <h3>リフローのしくみ</h3>
                
-               <p>User agents for technologies such as HTML/CSS, PDF, and ePub have methods for reflowing content to fit the width of the window (viewport). When appropriately authored, page content can reflow (wrap) to stay within the window&#39;s boundaries (viewport) when users zoom in to enlarge the size of content. Spatial relationships of content may change when users zoom, but all information and functionality should continue to be available.</p>
+               <p>HTML / CSS、PDF、ePub などの技術向けのユーザエージェントには、ウィンドウ (ビューポート) の幅に合わせてコンテンツをリフローするための手法がある。適切に作成されている場合、利用者がコンテンツのサイズを拡大するためにズームインしたときに、ページコンテンツはウィンドウの境界内 (ビューポート) に収まるようにリフロー (包むこと) 可能である。利用者がズームするときに、コンテンツの空間的な関係性が変わる可能性があるが、全ての情報及び機能は引き続き利用できるようにすべきである。</p>
                
-               <p>Supporting the reflow of content is also known as &#39;Responsive Web Design&#39;. It is enabled by CSS media queries which reformat the web content for different viewport widths (at particular break points) in order to provide optimised layouts for mobile devices such as tablets or smartphones. Importantly, these breakpoints are not only triggered by narrower viewports, but also when users employ the browser zoom function to zoom into the page.</p>
+               <p>コンテンツのリフローをサポートすることは 「レスポンシブウェブデザイン」 とも呼ばれる。これは、タブレットやスマートフォンなどのモバイルデバイス向けに最適化されたレイアウトを提供するために、さまざまなビューポートの幅で (特定のブレークポイントで) ウェブコンテンツを再フォーマットする CSS メディアクエリによって有効にされる。重要なのは、これらのブレークポイントは、狭いビューポートだけでなく、利用者がブラウザのズーム機能を使用してページを拡大するときにも発生することである。</p>
                
-               <p>In a desktop browser at 100% (default) scale, typical web pages that support reflow display content in two, three or more columns. Zooming in will at some point trigger a change of layout, so content will now be displayed in fewer columns. At a higher magnification scale of 200% or more, content will usually be rendered in a single column. Parts of content that were in the marginal columns, like a navigation menu or supplementary content, will now typically appear on top of or below the main content.</p>
+               <p>100 ％ (デフォルト) の倍率のデスクトップブラウザでは、リフローをサポートする一般的なウェブページは 2、3、又はそれ以上のカラム割りでコンテンツを表示する。ズームインするとレイアウトが変更されるため、コンテンツの表示カラム数が少なくなる。200 ％以上の高倍率では、コンテンツは通常 1 カラムで表示される。ナビゲーションメニューや補足コンテンツのように、はみ出したカラムにあったコンテンツの一部は、通常、メインコンテンツの上又は下に表示される。</p>
                	
             </section>
             <section id="viewing-distance-and-display-resolution">
                
-               <h3>Viewing distance and display resolution</h3>
+               <h3>視距離とディスプレイ解像度</h3>
                
-               <p>The value of 320 CSS pixels was chosen as a reasonable minimum size that authors can achieve. This value lines up with the reported viewport width of small displays of common mobile devices. The width of 320 CSS pixels exactly corresponds to a desktop browser window set to a width of 1280px and zoomed in to 400%. It should be noted that 400% applies to the dimension, not the area. It means four times the default width and four times the default height.</p> 
+               <p>320 CSS ピクセルの値は、コンテンツ制作者が実現可能である合理的な最小サイズとして挙げられている。この値は、一般的なモバイルデバイスの小型ディスプレイのビューポート幅と一致している。320 CSS ピクセルは 1280 ピクセルの幅に設定され、400 ％に拡大されたデスクトップブラウザウィンドウの幅に相当する。400 ％は領域ではなく次元に適用されることに注意すべきである。つまり、デフォルトの幅の 4 倍、デフォルトの高さの 4 倍を意味する。</p> 
                
-               <figure><img src="img/css-pixel-by-device.png" width="462" height="198" alt="Diagram showing the size of character needed by viewing distance to make the same image on the retina with small screen devices close, large screen devices further away." /><figcaption>Fig. 1: A letter of the same CSS pixel size on different displays with different resolutions</figcaption>
+               <figure><img src="img/css-pixel-by-device.png" width="462" height="198" alt="小さいスクリーンのデバイスは近づけ、大きなスクリーンのデバイスは遠ざけて、網膜上に同じ像を映すための視距離によって必要とされる文字の大きさを示す図。" /><figcaption>図 1: 異なる解像度の異なるディスプレイ上の同じ CSS ピクセルサイズの文字</figcaption>
                   
                </figure>
                
-               <p>When we read, the size of the print is not as important as the image it projects on the retina of our eye. Phones are designed for close viewing while desktops are designed for viewing farther away. As a consequence 16px print on a phone is physically smaller than 16px print on a desktop. This is not a problem because both print sizes cast the same image on our retina if they are viewed at their intended distance.</p>
+               <p>何かを読む際に、表示の大きさは目の網膜に映し出される像ほどは重要ではない。電話機は近くで見るように設計され、デスクトップは離れてみるよう設計されている。結果として、電話機の 16px 表示はデスクトップの 16px 表示より物理的に小さくなる。自分の意図した距離で見た場合、どちらの表示サイズも同じ像を網膜に投影するため、問題にはならない。</p>
                	
             </section>
             <section id="visibility-and-availability-of-content">
                
-               <h3>Visibility and availability of content</h3> 
+               <h3>コンテンツの可視性と可用性</h3> 
                
-               <p>How much of the content is visible may change at different scales. For example, navigation menus that are fully visible in the desktop layout are often collapsed into fewer items, or even into a single menu button (the &#39;hamburger&#39; icon pattern) so they take up less screen space.</p>
-               
-               <p>The Success Criterion is met as long as all content and functionality are still fully available - either directly, or revealed via accessible controls, or accessible via direct links.</p>
+               <p>どの程度の量のコンテンツが表示されるかは、縮尺によって異なる。例えば、デスクトップレイアウトで完全に表示されるナビゲーションメニューは、画面のスペースが少なくて済むため、少数の項目、又は 1 つのメニューボタン (「ハンバーガー」アイコンのパターン) にまとめられて表示されることがある。</p>
+               <p>全てのコンテンツと機能が直接、又はアクセス可能なコントロールを介して、又は直接リンクのいずれかを介して完全に利用可能である限り、達成基準は満たされる。</p>
                	
             </section>
             <section id="content-exceptions-for-reflow">
                
                
-               <h3>Content exceptions for reflow</h3>
+               <h3>リフローにおけるコンテンツの例外</h3>
                
-               <p>Content which requires two-dimensional layout for usage or meaning cannot reflow without losing meaning, and is therefore out of scope of this Success Criterion. For example, graphics and video are by their nature two-dimensional. Cutting up an image and stacking the blocks would render the content unusable so that is out of scope. However, it is possible to have these elements stay within the bounds of viewport at zoom levels to 400% (see advisory techniques).</p>
+               <p>利用や意味の理解のために 2 次元レイアウトを必須とするコンテンツは、意味を失うことなくリフローすることはできない。したがって、この達成基準の範囲外となる。例えば、画像及び動画は性質上 2 次元である。画像を切り取って縦に並べるとコンテンツは使用できなくなるため、範囲外となる。ただし、ズームレベルを 400 ％にすると、これらの要素をビューポートの境界内に収めることができる。(Advisory Techniquesを参照)。</p>
                
-               <p>Complex data tables have a two-dimensional relationship between the headings and data cells. This relationship is essential to convey the content. This Success Criterion therefore does not apply to data tables.</p>
+               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブルには適用されない。</p>
                
-               <p>Interfaces which provide toolbars to edit content need to show both the content and the toolbar in the viewport. Depending on the number of toolbar buttons, the toolbar may need to scroll in the direction of text (e.g., horizontally in a vertically scrolling page). This Success Criterion therefore does not apply to interfaces which provide toolbars.</p>
+               <p>コンテンツを編集するためのツールバーのあるインタフェースは、ビューポートにコンテンツとツールバーの両方を表示する必要がある。ツールバーのボタン数に応じて、ツールバーはテキストの方向にスクロールする必要があるかもしれない (例えば、縦スクロールするページで横方向に)。したがって、この達成基準はツールバーのあるインタフェースには適用されない。</p>
                	
             </section>
             <section id="browsers-in-mobile-operating-systems">
                
-               <h3>Browsers in mobile operating systems</h3>
+               <h3>モバイルオペレーティングシステムのブラウザ</h3>
                
-               <p>The layout method of most common browsers in mobile operating systems does not offer reflow in the same way as on desktop browsers. In these browsers, content can be magnified in different ways, for example, by using a pinch gesture to scale up content, or a double tap on a particular column to make it fill the viewport width. This means that currently, mobile browsers usually exhibit horizontal scrolling regardless of what an author does.</p>
+               <p>モバイルオペレーティングシステムにおける最も一般的なブラウザのレイアウト方法は、デスクトップブラウザの場合と同じようにはリフローを提供しない。これらのブラウザでは、ピンチジェスチャーを使用してコンテンツを拡大したり、特定の列をダブルタップしてビューポートの幅いっぱいに表示するなど、さまざまな方法でコンテンツを拡大できる。つまり、モバイルブラウザは通常、コンテンツ制作者の意図に関係なく横スクロールを示すことを意味する。</p>
                
-               <p>In principle, mobile user agents can equally offer reflow when users zoom into content, as evidenced by the Dolphin browser for Android. The lack of reflow support in mobile operating systems can therefore be regarded as a user agent support issue.</p>
+               <p>原則として、Android のドルフィンブラウザで証明されているように、モバイルユーザエージェントは、利用者がコンテンツにズームインしたときにも同様にリフローを提供できる。したがって、モバイルオペレーティングシステムにおいてリフローへの対応不足であることは、ユーザエージェント対応の問題と見なすことができる。</p>
                
             </section>
             <section id="responsive-web-design-and-other-ways-to-meet-this-success-criterion">
                
-               <h3>Responsive web design and other ways to meet this Success Criterion</h3>
+               <h3>レスポンシブウェブデザイン及びこの達成基準を満たすその他の方法</h3>
                
-               <p>Using the responsive web design approach is the most effective method of achieving the goal of allowing people to zoom in to 400%. Each variation (CSS break point) of the page at the same URL should conform (compare <a href="https://www.w3.org/TR/WCAG21/#h-note-27">Conformance for WCAG 2.1</a>).</p>
+               <p>レスポンシブウェブデザインの手法を取り入れることは、利用者が 400 ％にズームインできるようにするという目的を達成するための最も効果的な方法である。同じ URL である (CSS ブレークポイントによる) ページのバリエーションは適合している必要がある (<a href="https://www.w3.org/TR/WCAG21/#h-note-27">WCAG 2.1 の適合性</a>を比較）。</p>
                
-               <p>For organisations which are using legacy systems or are not able to update their layout methods for some reason, an alternative conforming version could be a mobile site which has a fixed 320px wide layout. The user should be able to find that version from the default website.</p>
+               <p>旧来のシステムを使用しているか、何らかの理由でレイアウト方法を更新できない組織の場合、代替の適合バージョンは、320px 幅の固定レイアウトを持つモバイルサイトである。利用者はデフォルトのウェブサイトからそのバージョンを見つけることができるようにすべきである。</p>
                	
             </section>
             <section id="avoiding-scrolling-in-horizontally-and-vertically-written-languages">
                
-               <h3>Avoiding scrolling in horizontally and vertically written languages</h3>
+               <h3>横書き及び縦書きの言語でのスクロールの回避</h3>
                
-               <p>The success Criterion applies to both horizontally and verticaly written languages. Zooming the page for horizontally written languages where pages scroll vertically by default (e.g. English) should not require horizontal scrolling. Zooming the page for vertically written languages which scroll horizontally by default should not require vertical scrolling.</p>
+               <p>達成基準は、横書きと縦書きの両方の言語に適用される。英語などの横書きの言語にとって、デフォルトで縦方向にスクロールするページをズームする場合、横方向のスクロールを発生させるべきではない。縦書きの言語にとって、デフォルトで横方向にスクロールするページをズームする場合、縦方向のスクロールを発生させるべきではない。</p>
                	
             </section>
             <section id="the-relation-of-reflow-to-the-success-criterion-1.4.4-resize-text">
                
-               <h3>The relation of Reflow to the Success Criterion 1.4.4 Resize Text</h3>
+               <h3>リフローと達成基準 1.4.4 テキストのサイズ変更の関係</h3>
                
-               <p>The focus of the Reflow Success Criterion is to enable users to zoom in without having to scroll in two directions. <a href="resize-text.html" class="sc">Success Criterion 1.4.4 Resize Text</a> also applies, so it should be possible to increase the size of all text to at least 200% while simultaneously meeting the reflow requirement. If text is reduced in size when people zoom in (or for small-screen usage), it should still be possible to get to 200% enlargement. For example, if text is set at 20px when the window is 1280px wide, at 200% zoom it should be at least 20px (so 200% of the default size), but at 400% zoom it could be set to 10px (therefore still 200% of the default 100% view). It is not required to achieve 200% enlargement at every breakpoint, but it should be possible to get 200% enlargement in some way.</p>
+               <p>リフローの達成基準の焦点は、利用者が 2 方向にスクロールしなくてもズームインできるようにすることである。<a href="resize-text.html" class="sc">達成基準 1.4.4 テキストのサイズ変更</a>も適用することで、リフローの要件を同時に満たしながら、全てのテキストのサイズを少なくとも 200 ％に拡大することができる。利用者がズームインしたとき (又は小さなスクリーンで利用しているとき) にテキストのサイズが縮小された場合でも、200% の拡大率を得ることは可能であるべきである。例えば、ウィンドウの幅が1280px のときにテキストが 20px に設定されている場合、200 ％ズームでは最低 20px (デフォルトサイズの 200 ％) になるが、400 ％ズームでは (デフォルトの 100 ％表示の まだ 200 ％であるので) 10px に設定できる。全てのブレークポイントで 200 ％の拡大を可能にする必要はないが、何かしらの方法で 200 ％の拡大を可能にすべきである。</p>
+
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">訳注</div>
+                  <div>
+                     <p>「リフローと達成基準 1.4.4 テキストのサイズ変更の関係」の説明には不明瞭な箇所があるが、この箇所の翻訳は原文に忠実な形で行った。なお、最新の原文の該当箇所は大幅に加筆されている。Understanding WCAG 2.1 <a href="https://w3c.github.io/wcag/understanding/reflow.html#the-relation-of-reflow-to-the-success-criterion-1.4.4-resize-text">The relation of Reflow to the Success Criterion 1.4.4 Resize Text</a> もあわせて参照のこと。</p>
+                  </div>
+               </div>
                
             </section>
          </section>
@@ -129,9 +135,9 @@
             <h2>メリット</h2>
             <ul>
                
-               <li><strong>One column view in responsive design</strong><br />A site uses responsive design. When a person zooms in to over 300%, the layout is reflowed to one column. The user can read the content easily and does not have to scroll sideways to read.</li>
+               <li><strong>レスポンシブデザインの 1 カラム表示</strong><br />あるサイトはレスポンシブデザインを取り入れている。利用者が 300 ％を超えてズームインすると、レイアウトは 1 カラムにリフローされる。利用者はコンテンツを簡単に読むことができ、読むために横にスクロールする必要がない。</li>
                
-               <li><strong>PDF offering reflow</strong><br />In a PDF created to conform to PDF/Universal Accessibility (ISO 14289), the content can be reflowed and zoomed in to make reading possible for someone with low-vision.</li>
+               <li><strong>PDF でのリフロー提供</strong><br />PDF / Universal Accessibility (ISO 14289) に準拠するように作成された PDF では、ロービジョンの利用者が読めるように、コンテンツのリフロー及びズームインが可能である。</li>
                
             </ul>
          </section>
@@ -139,14 +145,14 @@
             <h2>事例</h2>
             <section class="example" id="example-1-responsive-design">
                
-               <h3>Example 1: Responsive Design</h3>
+               <h3>例1: レスポンシブデザイン</h3>
                
                <p><video controls="controls">
                      <source src="https://alastairc.ac/w3c/reflow-example-1-BBC.mp4" type="video/mp4"></source>
                      <source src="https://alastairc.ac/w3c/reflow-example-1-BBC.ogv" type="video/ogg"></source>Animation of zooming in on a responsive site. The content reflows to fit the screen.</video>
                </p>
                
-               <p>Note that as the zoom percentage increases, the navigation changes first to hide options behind a &quot;More&quot; dropdown menu. As zooming continues, most navigation options are eventually behind a &quot;hamburger&quot; menu button. All the information and functionality is still available from this web page. There is no horizontal scrolling.</p>
+               <p>ズーム率があがると、ナビゲーションが最初に変更されて 「More」 ドロップダウンメニューの背後にあるオプションが非表示になることに注意する。ズームを続けると、ほとんどのナビゲーションオプションは 「ハンバーガー」 メニューボタンの後ろになる。全ての情報及び機能はまだこのウェブページで利用可能である。横スクロールもない。</p>
                
             </section>
          </section>
@@ -167,7 +173,7 @@
          </section>
          <section id="techniques">
             <h2>達成方法</h2>
-            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の 「その他の達成方法」 を参照のこと。</p>
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <ul>
@@ -190,7 +196,7 @@
             </section>
             <section id="advisory">
                <h3>参考達成方法</h3>
-               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、全ての状況において、全ての達成方法が使用可能、又は効果的であるとは限らない。</p>
                <ul>
                   
                   <li><a href="https://w3c.github.io/wcag/techniques/css/C34">C34: Using media queries to un-fixing sticky headers / footers</a></li>
@@ -231,7 +237,7 @@
                   <p xmlns="http://www.w3.org/1999/xhtml">約 0.0213 度の視野角。</p>
                   					
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">CSS ピクセルは、CSS におけるすべての長さ及び測定のための規範的な測定単位である。この単位は密度非依存で、ディスプレイに存在する実際のハードウェアピクセルとは異なる。ユーザエージェント及びオペレーティングシステムは CSS ピクセルが、ディスプレイの物理的な寸法と予想される視距離 (コンテンツ制作者は決定できない要因) を考慮した <a href="https://www.w3.org/TR/css3-values/#reference-pixel">CSS Values and Units Module Level 3 reference pixel</a> [css3-values] にできるだけ沿うように設定されていることを確認すべきである。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">CSS ピクセルは、CSS における全ての長さ及び測定のための規範的な測定単位である。この単位は密度非依存で、ディスプレイに存在する実際のハードウェアピクセルとは異なる。ユーザエージェント及びオペレーティングシステムは CSS ピクセルが、ディスプレイの物理的な寸法と予想される視距離 (コンテンツ制作者は決定できない要因) を考慮した <a href="https://www.w3.org/TR/css3-values/#reference-pixel">CSS Values and Units Module Level 3 reference pixel</a> [css3-values] にできるだけ沿うように設定されていることを確認すべきである。</p>
                   				
                   
                </definition>
