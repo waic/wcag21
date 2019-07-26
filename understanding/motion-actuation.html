@@ -31,75 +31,82 @@
       <blockquote class="scquote">
          <p>達成基準 <a href="https://w3c.github.io/wcag/guidelines/#motion-actuation" style="font-weight: bold;">2.5.4 動きによる起動</a> (レベル A): デバイスの動き又は利用者の動きで操作できる<a href="https://w3c.github.io/wcag/guidelines/#dfn-functionality" target="terms">機能</a>は、<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>でも操作でき、かつ偶発的な起動を防ぐために動きへの反応を無効化することができる。ただし、以下の場合は例外とする。</p>
          <dl>
-            
-            
+
+
             <dt>サポートされたインタフェース</dt>
-            
+
             <dd><a href="https://w3c.github.io/wcag/guidelines/#dfn-accessibility-supported" target="terms">アクセシビリティ サポーテッド</a>なインタフェースを通じて機能を操作するために動きが用いられる。</dd>
-            
-            
+
+
             <dt>必要不可欠</dt>
-            
+
             <dd>その機能にとって動きが<a href="https://w3c.github.io/wcag/guidelines/#dfn-essential" target="terms">必要不可欠</a>であり、この達成基準に従うと動作を無効化してしまう。</dd>
-            
-            
+
+
          </dl>
       </blockquote>
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this success criterion is to ensure that functions that are triggered by moving a device (for example, shaking or tilting) or by gesturing towards the device (so that sensors like a camera can pick up and interpret the gesturing), can also be operated by more conventional user interface components, unless the motion is essential for the function or not using motions or gestures would invalidate the activity.</p>
+            <p>この達成基準の目的は、(カメラのようなセンサーがジェスチャーを取得して解釈できるように) デバイスを動かすこと (例えば、振ることや傾けること) によって、又はデバイスに向かってジェスチャーすることによって引き起こされる機能を確実にすることである。動きが機能にとって不可欠であるか、又は動きもしくはジェスチャーを使用しないことが活動を無効にしない限り、より従来型のユーザインターフェースコンポーネントによって操作される。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>This criterion concerns input through sensors which respond directly to motions such as gesturing towards, tilting or shaking a device. It does not cover the movement of users through space as registered by geolocation sensors or beacons, or events observed by the device other than intentional gesturing by the user. It also does not cover indirect motion associated with operating a keyboard, pointer, or assistive technology.</p>
+               <p>この基準は、デバイスに向かってジェスチャーする、デバイスを傾ける、又はデバイスを振るなどの動作に直接反応するセンサーを介した入力に関するものである。この基準は、地理的位置センサー、又はビーコンによって記録されるような空間を通過する利用者の動き、又は利用者による意図的なジェスチャー以外のデバイスで観察されるイベントを取り扱う。また、キーボード、ポインタ、又は支援技術の操作に関連した間接的な動作についてもカバーしない。</p>
             </div>
-            <p>Devices often have sensors that can act as inputs, such as accelerometer and gyroscope sensors on a phone or tablet device. These sensors can allow the user to control something by simply changing the orientation or moving the device in particular ways. In other situations, web content can interpret user gestures via the camera or other sensors to actuate functions. For example, shaking the device might issue an &quot;Undo&quot; command, or a gentle hand wave might be used to move forward or backward in a sequence of pages. Some users with disabilities are not able to operate these device sensors (either not at all, or not precisely enough) because the device is on a fixed mount (perhaps a wheelchair) or due to motor impairments. Functionality must be implemented in a way that other or additional means of activation are available.</p>
-            <p>In addition, some users may accidentally activate sensors due to tremors or other motor impairments. The user must have the ability to turn off motion actuation to prevent such accidental triggering of functions. Applications may be able to meet this requirement by supporting operating system settings which allow the user to disable motion detection at the system level.</p>
-            <p>Some applications are specifically created to use device sensor data. Examples of content that are exempt from this requirement include a pedometer that relies on device motion to count steps.</p>
+            <p>デバイスには、電話やタブレットデバイスの加速度センサーやジャイロセンサーなど、入力として機能するセンサーがある。これらのセンサーは、利用者が単に向きを変えるか、又は装置を特定の方法で動かすことで何かを制御することを可能にできる。他の状況では、ウェブコンテンツはカメラ、又は他のセンサーを介して利用者のジェスチャーを解釈して機能を作動させることができる。例えば、デバイスを振ると "Undo" コマンドが発行されうる。また、穏やかな手の波 (gentle hand wave) を使い一連のページを前後に移動しうる。デバイスが (おそらく車いすの) 固定マウントにあるため、又は運動障害のために、ある利用者はこれらのデバイスセンサーを (まったくないか、正確には十分ではないかのいずれかしか) 操作できない。機能は、他の又は追加の活性化する手段が利用できるよう実装されなければならない。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <p>日本語訳の穏やかな手の波 (gentle hand wave) はスワイプ動作に相当する。</p>
+            </div>
+            <p>さらに、ある利用者は、振戦、又は他の運動障害のために誤ってセンサーを作動させる可能性がある。利用者は、このような偶然の機能の起動を防ぐよう動きによる起動をオフにする能力を持たなければならない。 アプリケーションは、利用者がシステムレベルで動きの検出を無効に設定できるオペレーティングシステムをサポートすることでこの要求を満たすことができるであろう。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <p>振戦は医学用語。手、頭、声帯、体幹、脚などの体の一部に起こる、不随意でリズミカルなふるえ。<a href="https://www.msdmanuals.com/ja-jp/%E3%83%9B%E3%83%BC%E3%83%A0/09-%E8%84%B3%E3%80%81%E8%84%8A%E9%AB%84%E3%80%81%E6%9C%AB%E6%A2%A2%E7%A5%9E%E7%B5%8C%E3%81%AE%E7%97%85%E6%B0%97/%E9%81%8B%E5%8B%95%E9%9A%9C%E5%AE%B3/%E6%8C%AF%E6%88%A6">振戦 - 09. 脳、脊髄、末梢神経の病気 - MSDマニュアル家庭版</a>も参照のこと。</p>
+            </div>
+            <p>一部のアプリケーションは、デバイスセンサーデータを使用するように特別に作成されている。この要件から除外されるコンテンツの例には、歩数をカウントするためにデバイスの動きに依存する歩数計が含まれる。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
             <ul>
-               					
-               <li>This Success Criterion helps people who may be unable to perform particular motions (such as tilting, shaking, or gesturing) because the device may be mounted or users may be physically unable to perform the necessary movement. This success criterion ensures that users can still operate all functionality by other means (e.g., touch or voice input).</li>
-               
-               <li>Other users may benefit in situations where they are unable to hold and move the device because their hands are occupied with some other activity.</li>
-               				
+
+             <li>この達成基準は、デバイスが取り付けられているか、利用者が必要な動きを物理的に実行できないために、特定の動作 (傾斜、揺れ、身振りなど) を実行できない場合がある人々を支援する。この達成基準は、利用者が他の手段 (例えばタッチ、又は音声入力) によって依然としてすべての機能を操作できることを保証する。
+</li>
+
+               <li>他の利用者は、自分の手が他の活動に専念しているために装置を握って動かすことができない状況でメリットを得ることができる。</li>
+
             </ul>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <ul>
-               				
-               <li>After text is input in a field, shaking a device shows a dialog offering users to undo the input. A cancel button next to the text field offers the same functionality.</li>
-               
-               <li>A user can tilt a device to advance to the next or a previous page. Buttons or links are also provided to perform the same function.</li>
-               
-               <li>A user can move or pan a device to change the view in an interactive photo. A control is also available to perform these same functions.</li>
-               
-               <li>A user can gesture towards the device to navigate content. Controls are also available to navigate.</li>
-               
-               <li>A user can choose an application setting which turns off Shake to Undo features.</li>
-               			
+
+               <li>テキストを入力フィールドに入力した後、デバイスを振るとダイアログが表示され、入力を元に戻すことができる。テキストフィールドの隣にあるキャンセルボタンも同じ機能を提供する。</li>
+
+               <li>利用者はデバイスを傾けて次、又は前のページに進むことができる。ボタンやリンクも同じ機能を実行するために提供されている。</li>
+
+               <li>利用者はデバイスを移動、又はパンして、インタラクティブな写真の表示を変更できる。これらと同じ機能を実行するためのコントロールもある。</li>
+
+               <li>利用者はデバイスに向かってジェスチャーしてコンテンツをナビゲートできる。ナビゲートするためのコントロールもある。</li>
+
+               <li>利用者は Shake to Undo 機能をオフにするアプリケーション設定を選択できる。</li>
+
             </ul>
          </section>
          <section id="resources">
             <h2>関連リソース</h2>
             <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
-               			
+
                <li><a href="//developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">Mozilla documentation for &#39;prefers-reduced-motion&#39;</a></li>
-               			
+
                <li><a href="//webkit.org/blog-files/prefers-reduced-motion/prm.htm">Demonstration of &#39;prefers-reduced-motion&#39; in Webkit</a></li>
-               			
+
             </ul>
             <ul>
-               			
+
                <li><a href="//support.apple.com/en-gb/HT202655"><strong>iOS:</strong> Reduce Motion on iPhone, iPad or iPod touch</a></li>
-               			
+
                <li><a href="//apple.stackexchange.com/questions/253756/speed-up-mission-control-animations-in-macos-sierra"><strong>Mac:</strong> Reduce Motion</a></li>
-               			
+
                <li><a href="//www.laptopmag.com/articles/disable-minimize-maximize-animations-windows-10"><strong>Windows 10:</strong> Reduce motion</a></li>
-               			
+
             </ul>
          </section>
          <section id="resources">
@@ -113,15 +120,15 @@
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <ul>
-                  
-                  <li>GXXX: Not using the devicemotion event to activate content functionality</li>
-                  
-                  <li>GXXX: Ensuring that alternative means of input exist when using device motion sensor input to activate content functionality</li>
-                  
-                  <li>GXXX: Providing an application setting to disable motion actuation</li>
-                  
-                  <li>GXXX: Supporting system level features which allow the user to disable motion actuation</li>
-                  
+
+                  <li>GXXX: コンテンツ機能を有効にするためにデバイスモーションイベントを使用しない</li>
+
+                  <li>GXXX: デバイスのモーションセンサー入力を使用してコンテンツ機能を有効にするときに、代替の入力手段が存在することを確認する</li>
+
+                  <li>GXXX: モーション作動を無効にするためのアプリケーション設定を提供する</li>
+
+                  <li>GXXX: 利用者がモーション作動を無効にできるようにするシステムレベルの機能をサポートする</li>
+
                </ul>
             </section>
             <section id="advisory">
@@ -132,13 +139,13 @@
                <h3>失敗例</h3>
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
-                  
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to functionality that can only be activated via devicemotion events (e.g., shaking or tilting)</li>
-                  
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to an inability to disable motion actuation</li>
-                  
-                  <li>FXXX: Failure of Success Criterion 2.5.4 due to disrupting or disabling system level features which allow the user to disable motion actuation</li>
-                  
+
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － デバイスのモーションイベント (揺れや傾斜など) によってのみ有効になる機能</li>
+
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － モーション作動を無効にできない</li>
+
+                  <li>FXXX: 達成基準 2.5.4 の失敗例 － 利用者がモーション作動を無効にできるようにするシステムレベルの機能を中断、又は無効にしている</li>
+
                </ul>
             </section>
          </section>
@@ -146,153 +153,153 @@
             <h2>重要な用語</h2>
             <dt id="dfn-accessibility-supported">アクセシビリティ サポーテッド (accessibility supported)</dt>
             <dd><definition xmlns="">
-                  
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml">利用者の<a href="https://w3c.github.io/wcag/guidelines/#dfn-assistive-technology" target="terms">支援技術</a>と、ブラウザ及びその他の<a href="https://w3c.github.io/wcag/guidelines/#dfn-user-agent" target="terms">ユーザエージェント</a>にあるアクセシビリティ機能でサポートされていること。</p>
-                  
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml">あるウェブコンテンツ技術 (あるいは、ある技術の機能) の使用方法がアクセシビリティ サポーテッドであると認められるためには、そのウェブコンテンツ技術 (あるいは、機能) について、次の 1.と2.の両方が満たされていなければならない:</p>
-                  
-                  
+
+
                   <ol xmlns="http://www.w3.org/1999/xhtml">
-                     
-                     
+
+
                      <li><p><strong>その<a href="https://w3c.github.io/wcag/guidelines/#dfn-technology" target="terms">ウェブコンテンツ技術</a>の使用方法が、利用者の支援技術によりサポートされていなければならない。</strong>これは、その技術の使用方法が、そのコンテンツの<a href="https://w3c.github.io/wcag/guidelines/#dfn-human-language" target="terms">自然言語</a>における利用者の支援技術との相互運用性について検証されていることを意味する。</p>
-                        
-                        
+
+
                         <p><strong>かつ</strong></p>
-                        
-                        
+
+
                      </li>
-                     
-                     
+
+
                      <li><p><strong>そのウェブコンテンツ技術には、アクセシビリティ サポーテッドで、利用者が利用できるユーザエージェントがなければならない。</strong>これは、少なくとも次の 4 つのうち一つを満たしていることを意味する:</p>
-                        
-                        
+
+
                         <ol>
-                           
-                           
+
+
                            <li><p>その技術が (HTML や CSS のように)、広く配布されているアクセシビリティ サポーテッドなユーザエージェントに標準でサポートされている。</p>
-                              
-                              
+
+
                               <p><strong>又は、</strong></p>
-                              
+
                            </li>
-                           
-                           
+
+
                            <li><p>その技術が、広く配布されているアクセシビリティ サポーテッドなプラグインでサポートされている。</p>
-                              
-                              
+
+
                               <p><strong>又は、</strong></p>
-                              
+
                            </li>
-                           
-                           
+
+
                            <li><p>そのコンテンツが、大学あるいは企業内ネットワークのような閉じた環境で利用できるものであり、その技術に必要とされていて、その組織で使用されているユーザエージェントがアクセシビリティ サポーテッドである。</p>
-                              
-                              
+
+
                               <p><strong>又は、</strong></p>
-                              
+
                            </li>
-                           
-                           
+
+
                            <li><p>その技術をサポートするユーザエージェントが、アクセシビリティ サポーテッドであって、次のようにダウンロードあるいは購入できる:</p>
-                              
-                              
+
+
                               <ul>
-                                 
-                                 
+
+
                                  <li>障害のある人に障害のない人よりも時間や労力がかかるようなことはなく、<strong>かつ</strong>、</li>
-                                 
-                                 
+
+
                                  <li>障害のある人も障害のない人と同じくらい容易に探して入手することができる。</li>
-                                 
-                                 
+
+
                               </ul>
-                              
-                              
+
+
                            </li>
-                           
-                           
+
+
                         </ol>
-                        
-                        
+
+
                      </li>
-                     
-                     
+
+
                   </ol>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>Accessibility Guidelines Working Group ならびに W3C は、あるウェブ技術のある特定の使用方法がアクセシビリティ サポーテッドであると分類するために、そのウェブ技術の特定の使用方法に対して、どの支援技術によるどれだけのサポートが必要なのかを定めない(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level">Level of Assistive Technology Support Needed for &quot;Accessibility Support&quot;</a> を参照)。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>そのウェブ技術に<a href="https://w3c.github.io/wcag/guidelines/#dfn-relied-upon" target="terms">依存して</a>おらず、<a href="#cc4">適合要件 4</a> 及び<a href="#cc5">適合要件 5</a> が満たしている場合は、そのウェブ技術をアクセシビリティ サポーテッドではない方法で用いることができる。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p><a href="https://w3c.github.io/wcag/guidelines/#dfn-technology" target="terms">ウェブ技術</a>がアクセシビリティ サポーテッドな方法で用いられている場合、その技術全体、又はその技術の使用方法すべてがアクセシビリティ サポーテッドであるということを暗に示すわけではない。ほとんどの技術は、HTML を含めてアクセシビリティ サポーテッドではない機能、又は使用方法が少なくとも一つある。ウェブページが WCAG に適合するのは、依存する技術のアクセシビリティ サポーテッドな使用方法を用いて WCAG の要件を満たしている場合だけである。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>複数のバージョンを有するウェブコンテンツ技術を挙げる際は、アクセシビリティ サポーテッドなバージョンを特定すべきである。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#documented-lists">Understanding Accessibility-Supported Web Technology Uses</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしていなければならない。</p>
                   </div>
-                  
-                  
+
+
                </definition>
             </dd>
             <dt id="dfn-essential">必要不可欠 (essential)</dt>
             <dd><definition xmlns="">
-                  					
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
-                  				
-                  
+
+
                </definition>
             </dd>
             <dt id="dfn-functionality">機能 (functionality)</dt>
             <dd><definition xmlns="">
-                  
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://w3c.github.io/wcag/guidelines/#dfn-process" target="terms">プロセス</a>及び結果。</p>
-                  
-                  
+
+
                </definition>
             </dd>
             <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
             <dd><definition xmlns="">
-                  
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
                   </div>
-                  
-                  
+
+
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
                   </div>
-                  
-                  
+
+
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
-                  
-                  
+
+
                </definition>
             </dd>
          </section>
