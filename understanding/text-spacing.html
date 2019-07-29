@@ -46,31 +46,31 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>この達成基準の意図は、利用者がテキストを読みやすくするためにテキストの間隔を変更できるようにすることである。達成基準の 4 つの箇条書きで挙げられている各要件は、利用者がテキストのスタイルを自分のニーズに合わせて調整できるようにするために役立つ。</p>
-            <p>この達成基準は、行、単語、文字、段落間の間隔を広げる機能に焦点を当てている。これらの任意の組み合わせによって、利用者がテキストを効率よく読むことを支援できる。また、コンテンツ制作者によって設定された間隔を利用者がオーバーライドできるようにすることで、他のスタイルを利用者が設定できる可能性も大幅に高まる。例えば、テキストを効率よく読むためには、コンテンツ制作者が設定したものよりも幅の広いフォントファミリーに変更する必要があるかもしれない。</p>
+            <p>この達成基準の意図は、利用者がテキストを読みやすくするためにテキストの間隔をオーバーライドできるようにすることである。達成基準の 4 つの箇条書きで規定される各要件は、利用者がテキストのスタイルを自分のニーズに合わせて調整できるようにするのに役立つ。</p>
+            <p>この達成基準は、行、単語、文字及び段落間の間隔を広げる機能に焦点を当てている。これらの任意の組み合わせによって、利用者がテキストを効率よく読むことを支援できる。また、コンテンツ制作者によって設定された間隔を利用者がオーバーライドできるようにすることで、他のスタイルを利用者が設定できる可能性も大幅に高まる。例えば、テキストを効率よく読むためには、コンテンツ制作者が設定したものよりも幅の広いフォントファミリーに変更する必要があるかもしれない。</p>
             <section id="author-responsibility-">
                
                <h3>コンテンツ制作者の責任</h3>
                
-               <p>この達成基準はコンテンツ制作者が全てのコンテンツを、指定された基準に設定しなければならないと指示しているのではない。そうではなく、コンテンツ制作者が作成したコンテンツを、コンテンツや機能を損なうことなく、それらの基準に設定できるようにすることを指示している。コンテンツ制作者の要件は、コンテンツ制作者の設定を利用者がオーバーライドすることを妨げないことと、そのように変更されたコンテンツが、"間隔のオーバーライドを許可しないことによる影響" の図 1 ～ 3 に示されている方法でコンテンツを壊させないようにすることである。</p>
+               <p>この達成基準は、コンテンツ制作者が全てのコンテンツを指定された基準に設定しなければならないと指示しているのではない。そうではなく、コンテンツ制作者が作成したコンテンツを、コンテンツ又は機能を損なうことなく、それらの基準に設定できるようにすることを指示している。コンテンツ制作者の要件は、コンテンツ制作者の設定を利用者がオーバーライドすることを妨げないことと、そのように変更されたコンテンツが、"間隔のオーバーライドを許可しないことによる影響" の図 1 ～ 3 に示されている方法でコンテンツを壊させないようにすることの両方である。</p>
                
                <section id="applicability">
                   
                   <h4>適用範囲</h4>
                   
-                  <p>使用されているマークアップベースの技術が達成基準の指標まで、テキストをオーバーライドすることができるならば、この達成基準は適用可能である。例えば、Cascading Style Sheet / HTML 技術は、指定された間隔基準を十分に実現させることができる。プラグイン技術には、スタイルを指定された基準に変更するための組み込まれた機能が必要である。現在のところ、PDFはマークアップを使用して実装されていないため、この達成基準は適用されない。</p>
+                  <p>使用されているマークアップベースの技術が、達成基準の基準にテキストをオーバーライドすることができる場合、この達成基準は適用可能である。例えば、Cascading Style Sheet / HTML 技術は、規定の間隔基準を十分に可能にすることができる。プラグイン技術には、スタイルを規定の基準に変更するための組み込み機能が必要である。現在のところ、PDF はマークアップを使用して実装されていないため、この達成基準は適用されない。</p>
                   
-                  <p><a href="https://www.w3.org/TR/WCAG21/#dfn-style-properties">スタイルプロパティ (style properties)</a> の影響を受けず、適応が見込まれないテキストの例は次の通りである:</p>
+                  <p><a href="https://www.w3.org/TR/WCAG21/#dfn-style-properties">スタイルプロパティ</a>の影響を受けず、適応が見込まれないテキストの例は次の通りである:</p>
                   
                   <ul>
                      
-                     <li>動画の字幕は動画のフレームに直接埋め込まれ、関連する字幕ファイルとしては提供されない</li>
+                     <li>動画のキャプションは動画のフレームに直接埋め込まれ、関連するキャプションファイルとしては提供されない</li>
                      
-                     <li><a href="http://rawgit.com/w3c/wcag/master/guidelines/index.html#dfn-images-of-text">文字画像 (image of text)</a></li>
+                     <li><a href="http://rawgit.com/w3c/wcag/master/guidelines/index.html#dfn-images-of-text">文字画像</a></li>
                      
                   </ul>
                   
-                  <p>この達成基準では、<a href="https://www.w3.org/TR/html5/scripting-1.html#the-canvas-element">canvas</a> でのテキストの実装は<a href="https://w3c.github.io/wcag/guidelines/#dfn-image-of-text" target="terms">文字画像 (image of text)</a> と見なされる。</p>
+                  <p>この達成基準では、<a href="https://www.w3.org/TR/html5/scripting-1.html#the-canvas-element">canvas</a> でのテキストの実装は<a href="http://rawgit.com/w3c/wcag/master/guidelines/index.html#dfn-images-of-text">文字画像</a>と見なされる。</p>
                   	
                </section>
                	
@@ -79,30 +79,30 @@
                
                <h3>利用者の責任</h3>
                
-               <p>オーバーライドされた間隔から意味を読んで導き出す能力は利用者にかかっている。間隔が広がることがそれらの能力に影響を与える場合、利用者は調整するか、デフォルトの表示に戻すであろう。とにかく、利用者は達成基準で定められた範囲内で間隔を調整できる柔軟性を必要としている。そのような変更は、ユーザースタイルシート、ブックマークレット、拡張機能、アプリケーションを介して実現できる。</p>
+               <p>オーバーライドされた間隔から意味を読んで導き出す能力は利用者次第である。間隔が広がることがそれらの能力に影響を与える場合、利用者は調整するか、デフォルトの表示に戻すであろう。とにかく、利用者は達成基準で定められた範囲内で間隔を調整できる柔軟性を必要としている。そのような変更は、ユーザスタイルシート、ブックマークレット、拡張機能、又はアプリケーションを介して実現できる。</p>
                	
             </section>
             <section id="effects-of-not-allowing-for-spacing-override">
                
                <h3>間隔のオーバーライドを許可しないことによる影響</h3>
                
-               <p>次の画像は、利用者がこの達成基準の指標に間隔を変更する可能性を、コンテンツ制作者が考慮していない場合のいくつかの失敗を示している。</p>
+               <p>次の画像は、利用者がこの達成基準の基準に間隔をオーバーライドする可能性を、コンテンツ制作者が考慮していない場合のいくつかの失敗を示している。</p>
                		
                <section id="text-cut-off">
                   
                   <h4>切り取られるテキスト</h4>
                   
-                  <p>図 1 では、&quot;Your Needs&quot; という単語の下部が見出しで切り取られているため、そのテキストが判読できない。&quot;We Provide a Mobile Application Service to Meet Your Needs.&quot; と読まれるべきである。</p>
+                  <p>図 1 では、見出しにある &quot;Your Needs&quot; という単語の下部が切り取られているため、そのテキストが判読できない。&quot;We Provide a Mobile Application Service to Meet Your Needs.&quot; と読まれるべきである。</p>
                   
                   <figure>
                      
-                     <figcaption>図 1: 切り取られた縦書きのテキストは失敗である。</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/b/ba/Spacing_cutoff_fail_vertical.png" alt="Heading text truncated vertically." width="420" height="190" /></figure>
+                     <figcaption>図 1: 失敗となる切り取られた縦書きのテキスト</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/b/ba/Spacing_cutoff_fail_vertical.png" alt="Heading text truncated vertically." width="420" height="190" /></figure>
                   
-                  <p>図 2 では、3 つの横に並んだ見出しでテキストの最後の部分が切り取られている。最初の見出しは &quot;A cog in the wheel.&quot; と読まれるべきだが、&quot;A cog in the whe&quot; と読める。2 番目の &quot;e&quot; は半分しか表示されず、&quot;l&quot; という文字は完全に欠落している。2 番目の見出しは &quot;A penny for your thoughts&quot; と読まれるべきだが、&quot;A penny for your&quot; と読める。3 番目の見出しは &quot;Back to the drawing board.&quot; と読まれるべきだが、&quot;Back to the drawi&quot; と読める。</p>
+                  <p>図 2 では、3 つの横に並んだ見出しにあるテキストの最後の部分が切り取られている。最初の見出しは &quot;A cog in the wheel.&quot; と読まれるべきだが、&quot;A cog in the whe&quot; と読める。二つ目の &quot;e&quot; は半分しか表示されず、&quot;l&quot; という文字は完全に欠落している。2 番目の見出しは &quot;A penny for your thoughts&quot; と読まれるべきだが、&quot;A penny for your&quot; と読める。3 番目の見出しは &quot;Back to the drawing board.&quot; と読まれるべきだが、&quot;Back to the drawi&quot; と読める。</p>
                   
                   <figure>
                      
-                     <figcaption>図 2: 切り取られた横書きのテキストは失敗である。</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/c/c2/Spacing_cutoff_fail_horizontal.png" alt="3 side-by-side headings with truncated text." width="509" height="184" /></figure>
+                     <figcaption>図 2: 失敗となる切り取られた横書きのテキスト</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/c/c2/Spacing_cutoff_fail_horizontal.png" alt="3 side-by-side headings with truncated text." width="509" height="184" /></figure>
                   		
                </section>
                		
@@ -110,11 +110,11 @@
                   
                   <h4>テキストの重なり</h4>
                   
-                  <p>図 3 では、&quot;Technologists Seeking Input from Groups and Programs&quot; という見出しの最後の 3 つの単語 &quot;Groups and Programs&quot; が、次の文と重なっている。その文章は、&quot;You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective.&quot; と読まれるべきだが、&quot;You are invited to share ideas&quot; という言葉では曖昧で判読できない。</p>
+                  <p>図 3 では、&quot;Technologists Seeking Input from Groups and Programs&quot; という見出しの最後の 3 つの単語 &quot;Groups and Programs&quot; が、次に続く文と重なっている。その文は、&quot;You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective.&quot; と読まれるべきだが、&quot;You are invited to share ideas&quot; という言葉では不明瞭で判読できない。</p>
                   
                   <figure>
                      
-                     <figcaption>図 3: テキストの重なりは失敗である。</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/1/11/Spacing_overlap_fail.png" alt="Heading text overlaps part of paragraph text." width="510" height="170" /></figure>
+                     <figcaption>図 3: 失敗となるテキストの重なり</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/1/11/Spacing_overlap_fail.png" alt="Heading text overlaps part of paragraph text." width="510" height="170" /></figure>
                   		
                </section>
                	
@@ -124,11 +124,11 @@
             <h2>メリット</h2>
             <ul>
                
-               <li>行、単語、文字の間の間隔を広げる必要があるロービジョンの人が、テキストを読むことができるようになる。</li>
+               <li>行、単語、及び文字の間の間隔を広げる必要があるロービジョンの人が、テキストを読むことができるようになる。</li>
                
-               <li>失読症の人が読字速度を上げるために、行、単語、文字の間隔を広げることができるようになる。</li>
+               <li>失読症の人が読字速度を上げるために、行、単語、及び文字の間隔を広げることができるようになる。</li>
                
-               <li>この達成基準では必須ではないが、テキストのブロック間の余白は認知障害のある人がセクションや吹き出しの囲みを見分けるのに役立つ。</li>
+               <li>この達成基準では必須ではないが、テキストのブロック間の余白は認知障害のある人がセクション及び吹き出しの囲みを見分けるのに役立つ。</li>
                
             </ul>
          </section>
@@ -137,9 +137,9 @@
             <p>間隔が達成基準の指標にオーバーライドされた場合:</p>
             <ol>
                
-               <li>テキストは切り取られることなく、それを含むボックスの範囲内に収まる。</li>
+               <li>テキストは切り取られることなく、それを包含するボックスに収まる。</li>
                
-               <li>テキストは、他のボックスと重ならずに、それを含むボックスの範囲内に収まる。</li>
+               <li>テキストは、他のボックスと重ならずに、それを包含するボックスに収まる。</li>
                
             </ol>
          </section>
@@ -150,13 +150,13 @@
                		
                <h3>研究</h3>
                
-               <p>この達成基準の根拠は<a href="#resources">研究に基づいている</a>。基準値として挙げられた指標は、<a href="http://journals.sagepub.com/doi/pdf/10.1177/0264619607075995">McLeish</a> の研究に基づいている。彼女は 0.04em から 0.25em までテストを行った。McLeish は 0.25 まで実際の資料の読書速度の増加するカーブを見つけたが、それは 0.20 で平らになりはじめた。改善が報告されていない以前の調査では 0.5em ではじまった。まさに平らな地点である。 <a href="https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2017Jun/0047.html">Wayne E. Dick 博士は McLeish の研究を分析</a>し、要点から翻訳した。Dick 博士は、ワーキンググループが採択した指標を推奨した。</p>
+               <p>この達成基準の根拠は<a href="#resources">研究に基づいている</a>。基準値として規定された数値は、<a href="http://journals.sagepub.com/doi/pdf/10.1177/0264619607075995">McLeish</a> の研究に基づいている。McLeish は 0.04em から 0.25em までテストを行った。McLeish は 0.25 まで実際の資料の読書速度の増加するカーブを見つけたが、それは 0.20 で平らになりはじめた。改善が報告されていない以前の調査では 0.5em ではじまった。まさに平らな地点である。 <a href="https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2017Jun/0047.html">Wayne E. Dick 博士は McLeish の研究を分析</a>し、要点から翻訳した。Dick 博士は、ワーキンググループが採択した基準を推奨した。</p>
                		
                <section id="languages-and-scripts">
                   
                   <h4>言語とスクリプト</h4>
                   
-                  <p>およそ480の異なる言語とスクリプトが<a href="https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2018Feb/0001.html">テストされている</a>。
+                  <p>およそ 480 の異なる言語とスクリプトが<a href="https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2018Feb/0001.html">テストされている</a>。
                      達成基準によって許容されている最大間隔調整は、次の 3 ページに記載されている。</p>
                   
                   <ol>
@@ -193,9 +193,9 @@
                      
                   </dl>
                   
-                  <p>前述したように、間隔を調整してテキストを読む能力は<a href="#userresp">利用者の責任</a>である。これは言語に関係なく当てはまる。</p>
+                  <p>前述したように、間隔を調整してテキストを読む能力は<a href="#user-responsibility">利用者の責任</a>である。これは言語に関係なく当てはまる。</p>
                   
-                  <p>達成基準の例外は、テキストのスタイルプロパティが言語またはスクリプトで使用されていない場合に対処する。そのような場合、コンテンツは関連プロパティがレイアウトを壊さないことを保証することだけが求められる。</p>
+                  <p>達成基準の例外は、テキストのスタイルプロパティが言語またはスクリプトで使用されていない場合に対処する。そのような場合、コンテンツ制作者は関連プロパティがレイアウトを壊さないことを保証することだけが求められる。</p>
                   			
                </section>
                		
