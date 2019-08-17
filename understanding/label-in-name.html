@@ -35,20 +35,20 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion (SC) is to help ensure that people with disabilities who rely on visual labels can also use those labels programmatically. Controls are often labeled with visible text. Controls also have a programmatic label, known as its <a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name</a>. Users have a much better experience if the visible text labels of controls match their accessible names.</p>
-            <p>Speech input users can navigate by speaking the visible text labels of menus, links and buttons that appear on the screen. It&#39;s confusing to speech input users when they say a visible text label they see, but the speech input does not work because the accessible name that is enabled as a speech input command does not match the visible label.</p>
-            <p>In addition, when the accessible names of controls are visually hidden, speech users may accidentally activate these controls when they happen to speak words that map to these hidden accessible names.</p>
-            <p>Text-to-speech users will also have a better experience if the text they hear matches the text they see on the screen.</p>
-            <p>Sometimes authors want to add additional text to provide more context to a link or other control to make it more descriptive for users of assistive technologies. In this case, it is a recommended practice to add that text <strong>after</strong> the visible label so the accessible name starts with the visible label. In the case of the search button, the accessible name could be &quot;search this site&quot;, in the case of the home link, the text could be &quot;home - go to start page&quot;. In both cases, the hidden portion of the label may be supplied by different means, for example, as text accessibly hidden via CSS or by using the aria-label or the aria-labelledby attribute.</p>
-            <p>This issue is even more important for speech input and text-to-speech users who also have cognitive challenges. It’s an extra cognitive load for a speech input user to remember and say a speech command that is different from the visible label they see on a control. It’s also an extra cognitive load for a text-to-speech user to absorb and understand speech output that does not match the visible label.</p>
+            <p>この達成基準の意図は、視覚的なラベルに依存する障害者が、プログラムでもこれらのラベルを使用できるようにすることである。多くの場合、コントロールには視認できるテキストのラベルが付けられる。コントロールには、加えて、アクセシブルな名前 (<a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name</a>) と呼ばれるプログラムによって利用可能なラベルもある。コントロール上の視覚的なテキストラベルが、アクセシブルな名前と一致している場合、利用者ははるかによりよい体験が得られる。</p>
+            <p>音声入力を行う利用者は、画面に表示されるメニュー、リンク、ボタンのテキストラベルを読み上げることで、ナビゲートすることができる。音声入力を行う利用者が、目にした視覚的なテキストラベルを読み上げながらも、音声入力コマンドとして有効なアクセシブルな名前がその視覚的なラベルと一致していないことで音声入力が正常に機能しない場合、利用者は混乱してしまう。</p>
+            <p>さらに、コントロールのアクセシブルな名前が視覚的に隠されている場合、音声入力を行う利用者がたまたま、これら隠されたアクセス可能な名前に対応した語を発話してしまうと、これらのコントロールが誤って動作してしまうことがある。</p>
+            <p>また、テキスト読み上げツールの利用者の場合、聞き取ったテキストが画面に表示されているテキストと一致していることによって、よりよい体験が得られるだろう。</p>
+            <p>コンテンツ制作者は、リンク又は他のコントロールに文脈を付加して、支援技術の利用者にとってよりわかりやすいものにするために、テキストを追加したくなることがあるだろう。この場合は、アクセシブルな名前が視覚的なラベルで始まるように、視覚的なラベルの<strong>後に</strong>テキストを追加することが推奨される。検索（search）ボタンであれば、アクセシブルな名前は "search this site" になり、ホーム（home）へのリンクであれば、テキストは "home - go to start page" という具合である。いずれの場合でも、ラベルの隠された部分は異なる手段、例えば、CSS を介してアクセシブルな形で隠されたテキストとして、又は aria-label もしくは aria-labelledby 属性を使用することによって、提供され得る。</p>
+            <p>この問題は、音声入力及びテキスト読み上げツールの利用者で、認知の問題も抱える人たちにとって、さらに重要なものとなる。音声入力の利用者にとっては、コントロール上に表示される視覚的なラベルとは異なる音声コマンドを記憶して発話することは、余計な認知負荷となる。また、テキスト読み上げツールの利用者にとっては、視覚的なラベルと一致しない音声出力を吸収して理解することは、余計な認知負荷となる。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
             <ul>
                					
-               <li>Speech input users can directly activate controls on a page with fewer surprising changes of focus.</li>
+               <li>音声入力の利用者は、意図せずフォーカス位置が変更されてしまうことのない形で、直接、ページ上のコントロールを動作させることができる。</li>
                					
-               <li>Text-to-speech users will have a better experience because the labels that they hear match the visible text labels that they see on the screen.</li>
+               <li>テキスト読み上げツールの利用者は、聞き取ったラベルが画面上で目にした視覚的なテキストラベルと一致するため、よりよい体験が得られる。</li>
                				
             </ul>
          </section>
@@ -56,9 +56,9 @@
             <h2>事例</h2>
             <ul>
                				
-               <li><strong>Accessible name matches visible label:</strong> The accessible name and visible label of a control match.</li>
+               <li><strong>アクセシブルな名前が視覚的なラベルと一致する:</strong> アクセシブルな名前及びコントロールの視覚的なラベルが同一である。</li>
                				
-               <li><strong>Accessible name starts with visible label:</strong> The acessible name of a &quot;Buy Now&quot; button begins with the same text as the visible label.</li>
+               <li><strong><strong>アクセシブルな名前が視覚的なラベルで始まる:</strong> "Buy Now (今すぐ購入する)" ボタンのアクセシブルな名前は、視覚的なラベルと同じテキストで始まっている。</li>
                			
             </ul>
          </section>
@@ -80,9 +80,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   					
-                  <li><a href="https://w3c.github.io/wcag/techniques/general/G208">G208: Ensure the &quot;accessible name&quot; includes the visible text</a></li>
+                  <li><a href="https://w3c.github.io/wcag/techniques/general/G208">G208: "アクセシブルな名前" が視覚的なテキストを含むようにする</a></li>
                   					
-                  <li>@@ Ensure the accessible name matches the visible label text.</li>
+                  <li>@@ アクセシブルな名前が視覚的なラベルのテキストと一致するようにする</li>
                   				
                </ul>
             </section>
@@ -90,7 +90,7 @@
                <h3>参考達成方法</h3>
                <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
                <ul>
-                  <li>@@ If an icon has no accompanying text, consider using its hover text as its accessible name</li>
+                  <li>@@ アイコンに付随するテキストがある場合、アクセシブルな名前としてそのホバーテキストを用いることを検討する。</li>
                </ul>
             </section>
             <section id="failure">
@@ -98,11 +98,11 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   					
-                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F96">F96: Failure due to &quot;accessible name&quot; not containing the visible label text</a></li>
+                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F96">F96: 達成基準 2.5.3 の失敗例 - "アクセシブルな名前" が視覚的なラベルのテキストを含んでいない。</a></li>
                   					
-                  <li>@@ Accessible name contains the visible label text, but the words of the visible label are not in the same order as they are in the visible label text</li>
+                  <li>FXX: 達成基準 2.5.3 の失敗例 - @@ アクセシブルな名前が視覚的なラベルのテキストを含んでいるが、語順が視覚的なラベルのテキストと同一でない。</li>
                   					
-                  <li>@@ Accessible name contains the visible label text, but one or more other words is interspersed in the label</li>
+                  <li>FXX: 達成基準 2.5.3 の失敗例 - @@ アクセシブルな名前が視覚的なラベルのテキストを含んでいるが、一つ又はそれ以上の語がラベルの中に挿入されている。</li>
                   				
                </ul>
             </section>
