@@ -20,7 +20,7 @@
          <p>このページの内容:</p>
          <ul id="navbar">
             <li><a href="#intent">意図</a></li>
-            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#benefits">メリット</a></li>
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
@@ -53,22 +53,30 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>Character key shortcuts work well for many keyboard users, but are inappropriate and frustrating for speech input users — whose means of input is strings of letters — and for keyboard users who are prone to accidentally hitting keys. As a result, users must be able to turn off or reconfigure shortcuts made up of a single character key, or two or more successive character keys.</p>
-            <p>This success criterion is becoming increasingly important in the mobile realm as growing number of apps more fully enable keyboard controls.</p>
-            <p>Note that this success criterion doesn’t affect components such as listboxes and drop-down menus that contain words that may be selected by one or more character keys, since the shortcuts are only active when the components have focus. Similarly, components such as menus may be accessed or opened with an initial, non-single character shortcut (e.g., “ALT” or “ALT+F”). This makes the full path to invoking a menu a two-step shortcut that includes a non-printable key.</p>
-            <p>Note that <a href="https://www.w3.org/TR/html5/single-page.html#the-accesskey-attribute">Accesskeys</a> are not affected because they include modifier keys.</p>
-            <p>Speech Input users generally work in a single mode where they can use a mix of dictation and speech commands. This works well because the user knows to pause before and after commands, and commands are usually at least two words long. So, for instance, a user might say a bit of dictation, such as &quot;the small boat&quot;, then pause, and say a command to delete that dictation, such as &quot;Delete Line&quot;. In contrast, if the user were to say the two phrases together without a pause, the whole phrase would come out as dictation (i.e., &quot;the small boat delete line&quot;). Although speech input programs often include modes that listen only for dictation or only for commands, most speech users use the all-encompassing mode all the time because it is a much more efficient workflow. It could increase command inefficiency by 300% if users were to change to command mode and back before and after issuing a command.</p>
-            <p>Speech users can also speak most keyboard commands (e.g., &quot;press Control Foxtrot&quot;) without any problems. If the website or app is keyboard enabled, the speech user can also write a native speech macro that calls the keyboard command, such as &quot;This Print&quot; to carry out Ctrl+P.</p>
-            <p>Single-key shortcuts are the exception. While using single letter keys as controls might be appropriate and efficient for many keyboard users, single-key shortcuts are disastrous for speech users. The reason for this is that when only a single key is used to trip a command, a spoken word can become a barrage of single-key commands if the cursor focus happens to be in the wrong place.</p>
-            <p>For example, if the cursor focus is in the main window of a web mail application that uses common keyboard shortcuts to navigate (&quot;k&quot;), archive (&quot;y&quot;) and mute messages (&quot;m&quot;), and someone enters an office and says &quot;Hey Kim&quot; and the speech user&#39;s microphone picks that up, &quot;y&quot; archives the current message. &quot;k&quot; moves down one conversation and &quot;m&quot; mutes a message or thread. Or, if the speech user looks up and says &quot;Hey Mike&quot; without remembering to turn off the microphone, the same three things happen in a different sequence. A user interacting with a webpage or web app that doesn&#39;t use single-character shortcuts doesn&#39;t have this problem. A speech user filling in a text input form may find that a phrase that is accidentally picked up by the speech microphone results in stray text being entered into the field, but that is easily seen and undone. To see a video of these types of issues, go to the Resources section of this page.</p>
+            <p>文字キーのショートカットは、多くのキーボード利用者にはうまく機能するが、(入力手段がひとつずつの文字列である) 音声入力の利用者や、誤ってキーを押す傾向にあるキーボード利用者にとっては不適切かつ、いら立たしい。その結果、利用者は単一の文字キー又は二つ以上の連続した文字キーで構成されたショートカットを解除又は再設定できるようにしなければならない。</p>
+            <p>この達成基準は、より完全にキーボード制御が可能になるアプリの数が増えるにつれて、モバイルの分野でますます重要になってきている。</p>
+            <p>この達成基準は、ショートカットがコンポーネントにフォーカスされている時のみ有効であるため、リストボックスやドロップダウンメニューなどの一つ以上の文字キーで選択可能な単語を含むコンポーネントには影響しないことに注意すること。同様に、メニューなどのコンポーネントはイニシャル、単一ではない文字のショートカット (例:「ALT」又は「ALT+F」) でアクセス又は開くことができる。これにより、メニューを起動するための完全なパスが非印字文字を含む 2 段階ショートカットになる。</p>
+            <p><a href="https://www.w3.org/TR/html5/single-page.html#the-accesskey-attribute">accesskeys</a> は修飾キーを含んでいるため、影響を受けないことに注意すること。</p>
+            <p>音声入力の利用者は通常、口述と音声コマンドを組み合わせて使用できるよう、単一モードで作業する。これは、利用者がコマンドの前後で休止することを知っており、コマンドは通常少なくとも 2 語以上のため、うまく動作する。そのため、例えば、利用者は「小さい船」のような短い口述をしてから休止し、「行を削除」などのその口述を削除するコマンドを言う。一方で、利用者が休止せずに二つのフレーズを一緒に言うならば、フレーズ全体が口述として表現されるだろう (すなわち、「その小さい船行を削除」)。音声入力プログラムはよく口述のみを聞く又はコマンドのみを聞くモードを搭載しているが、ほとんどの音声入力の利用者は、包括的なモードのほうがはるかに効率的なワークフローであるため、常に利用している。もし利用者がコマンド指示を出した前後にコマンドモードを切り替え無ければならない場合、利用者のコマンド非効率性は 300% 増加する可能性があるだろう。</p>
+            <p>音声入力の利用者は、ほとんどのキーボードコマンド (例 : 「Control Foxtrot を押す」) を問題なく話すことができる。ウェブサイト又はアプリがキーボードを有効化している場合、音声入力の利用者は Ctrl+P を実行するための「これを印刷」などのキーボードコマンドを呼び出すネイティブ音声マクロを作成することもできる。</p>
+            <p>単一キーのショートカットは例外である。単一文字キーをコントロールとして用いるのは多くのキーボード利用者にとって適切かつ効率的かもしれないが、音声入力の利用者にとって単一キーのショートカットは悲惨なものである。これは、単一キーのみがコマンドを実行するために使用されると、カーソルフォーカスが誤った位置にあると、発話された単語が単一キーコマンドの連発となる可能性があるためである。</p>
+            <p>例えば、移動 ("k")、アーカイブ ("y")、メッセージをミュート ("m") する一般的なキーボードショートカットを使用しているウェブメールアプリケーションの主ウィンドウ内にカーソルフォーカスがあり、他の人がオフィスに入室して "Hey Kim" と言ったのを音声入力の利用者のマイクが拾った場合、「y」は現在のメッセージをアーカイブする。「k」はひとつ下の会話に移動し、「m」はメッセージ又はスレッドをミュートする。又は、音声入力の利用者がマイクをオフにすることを忘れ、顔を上げて "Hey Mike" と言った場合、同じような三つの出来事が異なる順序で発生する。単一文字のショートカットを用いないウェブページ又はウェブアプリを操作している利用者にはこのような問題はない。テキスト入力フォームを記入している音声入力の利用者は音声マイクに偶然拾われたフレーズが、フィールドに入力されているテキストをもたらすが、これは簡単に確認及び元に戻すことに気づくかもしれない。このような種類の問題の映像を見るには、このページの関連リソースセクションを確認すること。</p>
+            
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                 <p>音声入力のコマンドは日本語にせず、英語のままにしている。
+                 </p>
+               </div>
+             </div>
          </section>
          <section id="benefits">
-            <h2>Benefits</h2>
+            <h2>メリット</h2>
             <ul>
                
-               <li>Speech users will be able to turn off single-key shortcuts so they can avoid accidentally firing batches of them at once. This will allow speech users to make full use of programs that offer single-key shortcuts to keyboard users.</li>
+               <li>音声入力の利用者は、単一キーのショートカットを無効することができ、そして一度にそれらショートカットの一括処理を起動するのを回避することができる。これは、音声入力の利用者が、キーボードの利用者のために単一キーのショートカットを提供しているプログラムを十分に活用できるようにする。</li>
                
-               <li>Keyboard-only users who have dexterity challenges can also be prone to accidentally hitting keys. Those users would be able to avoid problematic single character shortcuts by turning them off or modifying them to include at least one non-character key.</li>
+               <li>キーボードのみの利用者で巧緻性に課題がある場合、誤ってキーを押す可能性もある。これらの利用者は、問題のある単一文字のショートカットを無効にするか、又は最低でもひとつの非印字文字キーを含めるように変更することで避けることができる。</li>
                
             </ul>
          </section>
@@ -77,26 +85,26 @@
             <section class="example" id="example-1-disable-shortcuts">
                			       
                
-               <h3>Example 1: Disable Shortcuts</h3>
+               <h3>事例 1: ショートカットを無効にする</h3>
                
-               <p>A mechanism is provided to allow users to disable character-key shortcuts. The character key shortcuts are not the only way to carry out these commands. A speech user disables the shortcuts and can prevent words that are picked up by the microphone from triggering single-key shortcuts.</p>
+               <p>利用者が文字キーのショートカットを無効にできるようなメカニズムが提供されている。文字キーのショートカットはこれらのコマンドを実行する唯一の方法ではない。音声入力の利用者はショートカットを無効にし、マイクにより拾われた単語が単一キーのショートカットを動作させることを防げる。</p>
                			
             </section>
             <section class="example" id="example-2-alternate-control">
                
                
-               <h3>Example 2: Alternate Control</h3>
+               <h3>事例 2: 代替コントロール</h3>
                
-               <p>A mechanism is provided to allow users to change character-key shortcuts</p>
+               <p>文字キーのショートカットを変更するメカニズムが利用者に提供されている</p>
                
-               <p>A keyboard-only user is in a long issues thread. While reading the thread she accidentally hits the “s” key, which moves focus to the search bar at the top of the document. This causes her to lose her place and her train of thought. She changes the shortcut to include another key so she can avoid future interruptions.</p>
+               <p>キーボードのみの利用者は、長い問題のスレッド内にいる。このスレッドを読んでいる間に、彼女は誤って「s」キーを押し、これによりこのドキュメントの上部にあるサーチバーにフォーカスを移動した。これは彼女の位置や一連の考えを失わせる。彼女は、今後中断させられることを避けるため、ショートカットに別のキーを含めるように変更した。</p>
                			
             </section>
             <section class="example" id="example-3-shared-alternate-control">
                
-               <h3>Example 3: Shared Alternate Control</h3>
+               <h3>事例 3: 共有の代替コントロール</h3>
                
-               <p>A mechanism is provided to allow users to change character-key shortcuts in such a way that the changes can be saved and shared with other users.</p>
+               <p>利用者が文字キーのショートカットを変更し、その変更を保存して他の利用者と共有できるようなメカニズムが提供されている。</p>
                
                
             </section>
@@ -104,7 +112,7 @@
          <section id="resources">
             <h2>関連リソース</h2>
             <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
-            <p>Web apps that use character-key shortcuts and allow users to disable and/or change these shortcuts:</p>
+            <p>文字キーのショートカットを使用し、利用者がこれらのショートカットを無効及び／又は変更できるようにしているウェブアプリ:</p>
             <ul>
                
                <li>Gmail</li>
@@ -112,7 +120,7 @@
                <li>WordPress</li>
                
             </ul>
-            <p>Videos of speech user trouble with single character key shortcuts:</p>
+            <p>単一文字キーのショートカットで困る音声入力の利用者の映像:</p>
             <ul>
                
                <li><a rel="nofollow" href="https://www.youtube.com/watch?v=xzSyIA4OWYE">Single character key shortcuts affecting speech input – example 1</a></li>
@@ -128,9 +136,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   
-                  <li>Users have a way to turn off single-key shortcuts</li>
+                  <li>利用者が単一キーのショートカットを無効にする方法がある</li>
                   
-                  <li>A mechanism is provided to allow users to change character-key shortcuts. The remapping mechanism includes non-printing characters. The alternative shortcuts could be longer strings of up to 25 characters that would directly serve as native speech commands for any speech engine.</li>
+                  <li>利用者が文字キーのショートカットを変更できるメカニズムが提供されている。再割り当てのメカニズムには非印字文字が含まれる。代替のショートカットは、どの音声エンジンに対してもネイティブ音声コマンドとして直接機能する最大 25 文字のより長い文字列にできる。</li>
                   
                </ul>
             </section>
@@ -143,7 +151,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   
-                  <li>Failure of Success Criteria 2.1.4 due to a webpage or web app that includes single-key shortcuts not including a control that allows users to turn the shortcuts off or a control that allows users to change the shortcuts to key combinations that include keys that are not upper or lower-case letters, punctuation, number, or symbol characters.</li>
+                  <li>達成基準 2.1.4 の失敗例 － 利用者がショートカットを無効にできるコントロール、又は利用者が大文字もしくは小文字、句読点、数字、もしくは記号文字でないキーを含むキーの組み合わせに変更できるコントロールを含まない、単一キーのショートカットを含むウェブページ又はウェブアプリ</li>
                   
                </ul>
             </section>
@@ -157,7 +165,7 @@
                   <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
                   					
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">1 つ以上のキーを押すことによる、動作のトリガーの代替手段</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">一つ以上のキーを押すことによる、動作のトリガーの代替手段</p>
                   				
                   
                </definition>

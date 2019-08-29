@@ -20,7 +20,7 @@
          <p>このページの内容:</p>
          <ul id="navbar">
             <li><a href="#intent">意図</a></li>
-            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#benefits">メリット</a></li>
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
@@ -53,50 +53,50 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this success criteria is to ensure that target sizes are large enough for users to easily activate them, even if the user is accessing content on a small handheld touch screen device, has limited dexterity, or has trouble activating small targets for other reasons. For instance, mice and similar pointing devices can be hard to use for these users, and a larger target will help them activate the target.</p>
-            <p>Touch is particularly problematic as it is an input mechanism with coarse precision. Users lack the same level of fine control when using inputs such as a mouse or stylus. A finger is larger than a mouse pointer, and generally obstructs the user&#39;s view of the precise location on the screen that is being touched/activated.</p>
-            <p>The issue can even be further complicated with responsive layouts on small screens like mobile, which need to accommodate different types of fine and coarse inputs. Both input types must be supported for a site that can be accessed both on a traditional desktop/laptop with a mouse, as well as on a tablet or mobile phone with a touch screen.</p>
-            <p>While this criterion defines a minimum target size, as a best practice it is recommended that larger sizes are used to reduce the possibility of unintentional activations. This is particularly relevant if any of the following are true:</p>
+            <p>この達成基準の意図は、たとえ利用者が小型の携帯用タッチスクリーンデバイスでコンテンツにアクセスしていたり、身体運動の細かさに制約があったり、その他の理由で小さなターゲットをうまく動作させることができなかったりしても、ターゲットのサイズが利用者にとって容易に動作可能な十分な大きさであることを担保することである。例えば、マウスのようなポインティングデバイスはこれらの利用者にとって使いにくいことがあるが、ターゲットを大きくすることによって、そのターゲットを動作させやすくすることができるだろう。</p>
+            <p>タッチというものは、精度の粗い入力メカニズムであるので、特に問題である。マウスやスタイラスペンといった入力手段を用いるのと同じレベルほどには、利用者は細かいコントロールができない。指はマウスポインタよりも大きく、概して、利用者がタッチしている／動作させようとしている正確な位置の視認を遮る。</p>
+            <p>モバイルのような小さな画面におけるレスポンシブなレイアウトでは、粗さの異なる入力操作を受け入れる必要があるため、この問題はさらに複雑になる可能性がある。従来のマウスを使ったデスクトップ／ラップトップと、タッチスクリーンを使ったタブレット又は携帯電話の、どちらからのアクセスも可能なサイトでは、どちらの入力タイプもサポートされていなければならない。</p>
+            <p>この達成基準では最低限のターゲットのサイズが定義されているが、ベストプラクティスとして、意図しない動作の可能性を減らすためにより大きなサイズを使用することが推奨される。これは、次のいずれかに該当する場合に特に重要である。</p>
             <ul>
                
-               <li>A control is used frequently;</li>
+               <li>コントロールが頻繁に使用される。</li>
                
-               <li>Results of the interaction cannot be easily undone;</li>
+               <li>インタラクションの結果を簡単に元に戻すことができない。</li>
                
-               <li>The control is positioned where it will be difficult to reach, e.g. is near the edge of the screen;</li>
+               <li>コントロールが、手が届きにくい位置、たとえば画面の端に近い場所に配置されている。</li>
                
-               <li>The control is part of a sequential task.</li>
+               <li>コントロールが連続したタスクの一部である。</li>
                
             </ul>
-            <p>The targets on a screen can have different purposes and uses, and this Success Criterion specifies how each is to be handled.</p>
-            <p><strong>Equivalent targets:</strong> If there is more than one target on a screen that performs the same action, only one of the targets need to meet the target size of 44 by 44 CSS pixels.</p>
-            <p><strong>Inline:</strong> Content displayed can often be reflowed based on the screen width available. This is known as responsive design and makes it easier to read since you do not need to scroll both horizontally and vertically. In reflowed content, the targets can appear anywhere on a line and can change position based on the width of the available screen. Since targets can appear anywhere on the line, the size cannot be larger than the available text and spacing between the sentences or paragraphs, otherwise the targets could overlap. It is for this reason targets which are contained within one or more sentences are excluded from the target size requirements.</p>
+            <p>画面上のターゲットには様々な目的と用途があり、この達成基準では、それぞれに対する対処方法が定められている。</p>
+            <p><strong>同等のターゲットが存在する:</strong> 画面上に、同じアクションを実行するターゲットが複数ある場合、44 × 44 CSS ピクセルのターゲットのサイズを満たすのは、ターゲットのうち一つだけでよい。</p>
+            <p><strong>インラインである:</strong> 表示されるコンテンツは、多くの場合、画面幅に基づいてリフローされる。これはレスポンシブデザインとして知られており、水平方向と垂直方向の両方向にスクロールする必要がないので読みやすくなっている。リフローされたコンテンツでは、ターゲットは行のどこにでも表示される可能性があり、画面幅に基づいて位置が変わる可能性がある。ターゲットは行のどこにでも現れることができるので、そのサイズは行のテキスト及び、文又は段落の間隔より大きくすることはできない (もし大きくしたら、ターゲットが他の行と重なってしまう可能性がある)。このため、一つ以上の文の中に含まれるターゲットは、ターゲットのサイズ要件の対象から除外される。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>If the target is the full sentence and the sentence is not in a block of text, then the target needs to be at least 44 by 44 CSS pixels.</p>
+               <p>文の全体がターゲットで、かつその文がテキストのブロック内にない場合、ターゲットは少なくとも 44 × 44 CSS ピクセルである必要がある。</p>
             </div>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>A footnote or an icon within or at the end of a sentence is considered to be part of a sentence and therefore are excluded from the minimum target size.</p>
+               <p>文中又は文末にある脚注又はアイコンは、文の一部とみなされるため、最低限のターゲットのサイズの対象から除外される。</p>
             </div>
-            <p><strong>User Agent Control:</strong> If the size of the target is not modified by the author through CSS or other size properties, then the target does not need to meet the target size of 44 by 44 CSS pixels.</p>
-            <p><strong>Essential:</strong> If the target is required to be a particular target size and cannot be provided in another way, while changing it would essentially change the information or functionality of the content, then the target does not need to meet the target size of 44 by 44 CSS pixels.</p>
+            <p><strong>ユーザエージェントのコントロールである:</strong> CSS 又はその他のサイズプロパティを用いてコンテンツ制作者がターゲットのサイズを変更しない場合、ターゲットは 44 × 44 CSS ピクセルのターゲットのサイズを満たす必要はない。</p>
+            <p><strong>必要不可欠である:</strong> ターゲットが特定のターゲットのサイズである必要があり、かつ別の方法で提供できない場合、サイズ変更するとコンテンツの情報又は機能が本質的に変わってしまう場合は、ターゲットは 44 × 44 CSS ピクセルのターゲットのサイズを満たす必要はない。</p>
          </section>
          <section id="benefits">
-            <h2>Benefits</h2>
+            <h2>メリット</h2>
             <ul>
                
-               <li>Users who use a mobile device where touch screen is the primary mode of interaction;</li>
+               <li>タッチスクリーンが主要なインタラクションモードであるモバイルデバイスを使用する利用者。</li>
                
-               <li>Users with mobility impairments such as hand tremors;</li>
+               <li>手の震えなどの運動障害のある利用者。</li>
                
-               <li>Users who use a mobile device in environments where they are exposed to shaking such as public transportation;</li>
+               <li>公共交通機関などの揺れにさらされる環境でモバイルデバイスを使用する利用者。</li>
                
-               <li>Users who have difficulty with fine motor movements;</li>
+               <li>細かな身体運動が難しい利用者。</li>
                
-               <li>Users who access a device using one hand;</li>
+               <li>片手でデバイスにアクセスする利用者。</li>
                
-               <li>Users with large fingers, or who are operating the device with only a part of their finger or knuckle;</li>
+               <li>指が大きい、又は指や関節の一部だけでデバイスを操作している利用者。</li>
                
-               <li>Users who have low vision may better see the target.</li>
+               <li>ターゲットを大きくすることで見やすくなることが期待できるロービジョンの利用者。</li>
                
             </ul>
          </section>
@@ -104,19 +104,19 @@
             <h2>事例</h2>
             <ul>
                
-               <li><strong>Example 1: Buttons</strong><br /> Three buttons are on-screen and the touch target area of each button is 44 by 44 CSS pixels.</li>
+               <li><strong>例 1: ボタン</strong><br /> 画面上には 3 個のボタンがあり、各ボタンのタッチターゲット領域は 44 × 44 CSS ピクセルある。</li>
                
-               <li><strong>Example 2: Equivalent target</strong><br /> Multiple targets are provided on the page that perform the same function. One of the targets is 44 by 44 CSS pixels. The other targets do not have a minimum touch target of 44 by 44 CSS pixels.</li>
+               <li><strong>例 2: 同等のターゲット</strong><br /> ページには、同じ機能を実行する複数のターゲットが提供されている。ターゲットの一つは 44 × 44 CSS ピクセルである。その他のターゲットには、最低限のタッチターゲットとして 44 × 44 CSS ピクセルあるものはない。</li>
                
-               <li><strong>Example 3: Anchor Link</strong><br /> The target is an in-page link and the target is less than 44px by 44px. Users can scroll the screen using browser functions so target size does not need to be met.</li>
+               <li><strong>例 3: アンカーリンク</strong><br /> ターゲットはページ内リンクであり、ターゲットは 44 × 44 CSS ピクセル未満である。ただし利用者はブラウザの機能によって画面をスクロールできるため、ターゲットのサイズの要件を満たす必要はない。</li>
                
-               <li><strong>Example 4: Text Link in a paragraph</strong><br /> Links within a paragraph of text have varying touch target dimensions. Links within paragraphs of text do no need to meet the 44 by 44 CSS pixels requirements.</li>
+               <li><strong>例 4: 段落内のテキストリンク</strong><br /> 段落内のテキストリンクは、様々なタッチターゲット寸法を持つ。段落内のテキストリンクは、44 × 44 CSS ピクセルの要件を満たす必要はない。</li>
                
-               <li><strong>Example 5: Text Link in a sentence</strong><br /> A text link that is in a sentence is excluded and does not need to meet the 44 by 44 CSS pixel requirement. If the text link is the full sentence, then the text link target touch area does need to meet the 44 x 44 CSS pixels.</li>
+               <li><strong>例 5: 文中のテキストリンク</strong><br /> 文内のテキストリンクは達成基準の対象外であり、44 × 44 CSS ピクセルの要件を満たす必要はない。文全体がテキストリンクの場合は、そのテキストリンクのタッチターゲット領域は 44 × 44 CSS ピクセルを満たす必要がある。</li>
                
-               <li><strong>Example 6: Footnote</strong><br /> A footnote link at the end of a sentence does not need to meet the 44 by 44 CSS pixels requirements. The footnote at the end of the sentence is considered to be part of the sentence.</li>
+               <li><strong>例 6: 脚注</strong><br /> 文末の脚注リンクは、44 × 44 CSS ピクセルの要件を満たす必要はない。文末の脚注は文の一部とみなされる。</li>
                
-               <li><strong>Example 7: Help icon</strong><br /> A help icon within or at the end of a sentence does not need to meet the 44 by 44 CSS pixels requirements. The icon at the end of the sentence is considered to be part of the sentence.</li>
+               <li><strong>例 7: ヘルプアイコン</strong><br /> 文中又は文末にあるヘルプアイコンは、44 × 44 CSS ピクセルの要件を満たす必要はない。文末のアイコンは文の一部とみなされる。</li>
                
             </ul>
             <section class="example" id=""></section>
@@ -149,9 +149,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   
-                  <li>Ensuring that touch targets are at least 44 by 44 CSS pixels.</li>
+                  <li>タッチターゲットが少なくとも 44 × 44 CSS ピクセルであることを確認する。</li>
                   
-                  <li>Providing a mechanism to change the size of the target independent of magnification.</li>
+                  <li>画面拡大とは別に、ターゲットのサイズを変更するメカニズムを提供する。</li>
                   
                </ul>
             </section>
@@ -160,7 +160,7 @@
                <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
                <ul>
                   
-                  <li>Ensuring inline links provide sufficiently large activation target.</li>
+                  <li>インラインのリンクは、動作させるための十分な大きさのターゲットを提供する。</li>
                   
                </ul>
             </section>
@@ -169,9 +169,9 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   
-                  <li>Failure of success criterion 2.5.3 due to target size being less than 44 by 44 CSS pixels.</li>
+                  <li>達成基準 2.5.5 の失敗例: ターゲットのサイズが 44 × 44 CSS ピクセル未満である。</li>
                   
-                  <li>Failure of success criterion 2.5.3 due to target size of a paragraph that is also a link being less than 44 x 44 CSS pixels.</li>
+                  <li>達成基準 2.5.5 の失敗例: リンクでもある段落のターゲットのサイズが  44 × 44 CSS ピクセル未満である。</li>
                   
                </ul>
             </section>
