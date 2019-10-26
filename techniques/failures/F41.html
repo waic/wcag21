@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+   <head>
+      <meta charset="UTF-8" />
+      <title>F41: Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to
+         reload the page
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
+            <li><a href="F40">Previous Technique: F40</a></li>
+            <li><a href="F42">Next Technique: F42</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>On this page:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">Important Information about Techniques</a></li>
+            <li><a href="#applicability">Applicability</a></li>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#tests">Tests</a></li>
+         </ul>
+      </nav>
+      <h1>Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to
+         reload the page
+      </h1>
+      <section id="important-information">
+         <h2>Important Information about Techniques</h2>
+         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
+            they relate to the normative WCAG 2.1 success criteria. The Applicability section
+            explains the scope of the technique, and the presence of techniques for a specific
+            technology does not imply that the technology can be used in all situations to create
+            content that meets WCAG 2.1.
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>Applicability</h2>
+            <p>HTML and XHTML</p>
+            <p>This technique relates to:</p>
+            <ul>
+               <li><a href="https://w3c.github.io/wcag/understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Failure)
+               </li>
+               <li><a href="https://w3c.github.io/wcag/understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Failure)
+               </li>
+               <li><a href="https://w3c.github.io/wcag/understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Failure)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>Description</h2>
+            <p> 
+               meta
+               						   http-equiv of refresh is often used to periodically refresh
+               pages or to redirect users to another page. If the time interval is too
+               short, and there is no way to turn auto-refresh off, people who are blind will not
+               have enough time to make their screen
+               readers read the page before the page refreshes unexpectedly and causes the
+               screen reader to begin reading at the top. Sighted users may also be
+               disoriented by the unexpected refresh.
+            </p>
+         </section>
+         <section id="examples">
+            <h2>Examples</h2>
+            <section class="example" id="example-1">
+               <h3>Example 1</h3>
+               <p> This is a deprecated example that changes the user's page at regular
+                  intervals. Content developers should not use this technique to
+                  simulate "push" technology. Developers cannot predict how much time
+                  a user will require to read a page; premature refresh can disorient
+                  users. Content developers should avoid periodic refresh and allow
+                  users to choose when they want the latest information. (The number
+                  in the content attribute is the refresh interval in
+                  seconds.)
+               </p><pre xml:space="preserve">
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
+  &lt;head&gt;     
+    &lt;title&gt;HTML Techniques for WCAG 2.0&lt;/title&gt;     
+    &lt;meta http-equiv="refresh" content="60" /&gt;   
+  &lt;/head&gt;   
+  &lt;body&gt;
+    ...     
+  &lt;/body&gt; 
+&lt;/html&gt;
+</pre></section>
+         </section>
+         <section id="tests">
+            <h2>Tests</h2>
+            <section class="procedure" id="procedure">
+               <h3>Procedure</h3>
+               
+               <p>For a page that uses <code>meta http-equiv="refresh"</code>:
+               </p> 
+               
+               <ol>
+                  
+                  <li>Check that the numerical value for seconds until refresh in the 
+                     <att>content</att> attribute is present.
+                  </li>
+                  
+                  <li>Check that the numerical value for seconds until refresh in the 
+                     <att>content</att> attribute is less than one or greater than 72,000.
+                  </li>
+                  
+                  <li>Check if the page qualifies for Real-time or Essential Exceptions in <a href="https://www.w3.org/TR/WCAG21/#timing-adjustable">Success Criterion 2.2.1 Timing Adjustable</a>.
+                  </li>
+                  
+                  <li>Check if the user is provided an opportunity to turn off, extend, or adjust the timing
+                     of the page refresh.
+                  </li>
+                  
+                  <li>Check if the page does not refresh after the duration specified in the 
+                     <att>content</att> attribute.
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>Expected Results</h3>
+               
+               <ul>
+                  
+                  <li>If checks #1-5 are false then this failure condition applies and content fails Success
+                     Criteria 2.2.1.
+                  </li>
+                  
+                  <li>If checks #1, #2, #4, and #5 are false, this failure condition applies and the content
+                     fails Success Criterion 2.2.4.
+                  </li>
+                  
+                  <li>If checks #1 and #4 are false then this failure condition applies and content fails
+                     Success Criterion 3.2.5.
+                  </li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>
