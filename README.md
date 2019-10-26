@@ -1,12 +1,14 @@
 # WCAG 2.1 (Understanding)
 
-[ウェブアクセシビリティ基盤委員会 (WAIC) 翻訳ワーキンググループ (WG4)](http://waic.jp/committee/wg4/) が管理する、WCAG 2.1 のレポジトリです。
+[ウェブアクセシビリティ基盤委員会 (WAIC) 翻訳ワーキンググループ (WG4)](http://waic.jp/committee/wg4/) が管理する、WCAG 2.1 (Understanding) のレポジトリです。
 
 RawGit ライクなサービスにより閲覧可能です。例えば raw.githack.com であれば
 
 - [https://raw.githack.com/waic/wcag21/Understanding-20190306-ED/understanding/](https://raw.githack.com/waic/wcag21/Understanding-20190306-ED/understanding/)
 
 から閲覧可能です。WCAG 2.1 の策定は完了していますが、関連文書である Understanding WCAG 2.1 及び Techniques for WCAG 2.1 は、W3C AGWG によって策定中の文書であることに注意してください。
+
+W3C のソースファイルのハッシュ：[dfad86](https://github.com/w3c/wcag/tree/dfad867083e7137d27e472e3b85aaac8cd2c2c77/understanding)
 
 ## Pull Request 等について
 
