@@ -15,6 +15,8 @@ W3C のソースファイルのハッシュ：[0a32c3](https://github.com/w3c/wc
 Pull Request は、ブランチ `techniques-20191001` にお願いします。また、issue を立ててもらっても構いません。どちらの方法でも歓迎します。
 メールで込み入った質問等をしたい場合は、[WAIC のお問い合わせページ](http://waic.jp/contact/)にお願いします。
 
+作業の進め方については[work-step.md](work-step.md)を参照ください。
+
 ### ブランチの運用（参考情報）
 
 基本、GitHub Flow での運用を考えています。以下のようなフローを想定しています。
