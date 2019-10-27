@@ -8,6 +8,11 @@ GitHub Pages により
 
 から閲覧可能です。WCAG 2.1 の策定は完了していますが、関連文書である Understanding WCAG 2.1 及び Techniques for WCAG 2.1 は、W3C AGWG によって策定中の文書であることに注意してください。
 
+Understanding WCAG 2.1 及び Techniques for WCAG 2.1 の作業ブランチはそれぞれ次のとおりです。
+
+- Understanding WCAG 2.1: [Understanding-20190306-ED](https://github.com/waic/wcag21/tree/Understanding-20190306-ED)
+- Techniques for WCAG 2.1: [techniques-20191001](https://github.com/waic/wcag21/tree/techniques-20191001)
+
 なお、WCAG 2.0 に関連する翻訳文書のレポジトリは、[waic/wcag20](https://github.com/waic/wcag20/) になります。
 
 ## Pull Request 等について
