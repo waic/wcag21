@@ -2,9 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G61: Presenting repeated components in the same relative order each time they
-         appear
-      </title>
+      <title>G61: 毎回同じ相対的順序で繰り返されるコンポーネントを提示する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,117 +10,70 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G60">Previous Technique: G60</a></li>
-            <li><a href="G62">Next Technique: G62</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G60">前の達成方法: G60</a></li>
+            <li><a href="G62">次の達成方法: G62</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Presenting repeated components in the same relative order each time they
-         appear
-      </h1>
+      <h1>毎回同じ相対的順序で繰り返されるコンポーネントを提示する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/consistent-navigation">Success Criterion 3.2.3: Consistent Navigation</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象) </h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/consistent-navigation">達成基準 3.2.3: 一貫したナビゲーション</a> (十分な達成方法) </span>に関連する達成方法である。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to make content easier to use by making
-               the placement of repeated components more predictable. This technique helps
-               maintain consistent layout or presentation between Web pages by presenting components
-               that are repeated in these Web  units in the same relative order each time they appear.
-               Other
-               components can be inserted between them, but their relative order is not
-               changed.
-            </p>
-            <p>This technique also applies to navigational components that are repeated.
-               Web pages often contain a navigation menu or other
-               navigational component that allows the user to jump to other Web pages. This technique
-               makes the placement of navigational
-               components more predictable by presenting the links or programmatic
-               references inside a navigational component in the same relative order each
-               time the navigational component is repeated. Other links can be removed or
-               inserted between the existing ones, for example to allow navigation inside a
-               subsection of a set of Web pages, but the relative order is not
-               changed.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、繰り返し現れる一連のコンポーネント中での配置を予測可能にすることによって、コンテンツを使いやすくすることである。この達成方法は、現れるたびに同じ相対的な順序で、ウェブページ単位で繰り返されるコンポーネントを提示することにより、ウェブページ間の一貫性のあるレイアウト又は提示を維持するのを助ける。それらのコンポーネント間に別のコンポーネントを挿入することはあってもよいが、元のコンポーネント間の相対的順序は変更しない。</p>
+            <p>この達成方法は、繰り返し出現するナビゲーション コンポーネントについても当てはまる。ウェブページには利用者が他のページにジャンプできるよう、ナビゲーション メニュー又は他のナビゲーション コンポーネントを置くことが多い。この達成方法は、ナビゲーション コンポーネントが繰り返し用いられる度にその中に置かれるリンク又はプログラム的参照を一定の順序で提示することにより、コンポーネント間の配置を予測しやすくする。リンク先のウェブページについてそれぞれのサブセクションに移動できるようにしたい場合など、リンクを削除したり、既存のリンクの間に他のリンクを挿入したりしてもよいが、リンク間の相対的位置は変更しない。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A Web site has a logo, a title, a search form and a navigation bar
-                  at the top of each page; these appear in the same relative order on
-                  each page where they are repeated. On one page the search form is
-                  missing but the other items are still in the same order.
-               </li>
+               <li>あるウェブサイトでは各ページの先頭に、ロゴ、タイトル、検索フォーム、ナビゲーションバーが置かれている。これらは同じ相対的順序で提示される。あるページには検索フォームがないが、その他のコンポーネントは繰り返し現れるどのページにおいてもやはり同じ順序で提示される。</li>
                
-               <li>A Web site has a left-hand navigation menu with links to the major
-                  sections of the site. When the user follows a link to another
-                  section of the site, the links to the major sections appear in the
-                  same relative order in the next page. Sometime links are dropped and
-                  other links are added, but the other links always stay in the same
-                  relative order. For example, on a Web site of a company that sells
-                  products and offers training, when a user moves from the section on
-                  products to the section on training, the links to individual
-                  products are removed from the navigation list, while links to
-                  training offerings are added.
-               </li>
-               
+               <li>あるウェブサイトでは左側にナビゲーションメニューがあり、サイト内の主要なセクションへのリンクが置かれている。利用者がサイト内の他のセクションへのリンクをたどると、移動先のページでも主要なセクションへのリンクが同じ相対的順序で提示される。ページによっては一部のリンクが省かれたり他のリンクが追加されたりするが、その他のリンクは必ず同じ相対的順序を保っている。例えば製品とそのトレーニングサービスを提供する企業のウェブサイトでは、ナビゲーションリストには製品とトレーニングサービスが主要なセクションとして提示されている。また製品のページでは個別の製品へのリンクもナビゲーションリスト内に置かれている。利用者が製品のページからトレーニングのページに移動すると、ナビゲーションリストから個別の製品へのリンクが省かれ、個別のトレーニングサービスへのリンクが追加される。</li>
+
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>List components that are repeated on each Web page in a set
-                     of Web pages (for example, on each page in a Web site).
-                  </li>
-                  
-                  <li>For each component, check that it appears in the same relative
-                     order with regard to other repeated components on each Web page where it appears.
-                  </li>
-                  
-                  <li>For each navigational component, check that the links or
-                     programmatic references are always in the same relative order.
-                  </li>
+                  <li>ウェブページ一式 (例えば一つのウェブサイト) 中の各ウェブページで繰り返されるコンポーネントをリストアップする。</li>
+                  <li>それぞれのコンポーネントにおいて、そのコンポーネントが現れる各ウェブページで他の繰り返されるコンポーネントに関して同じ相対的順序で現れることを確認する。</li>
+                  <li>それぞれのナビゲーションのためのコンポーネントにおいて、リンク又はやプログラムの参照が常に同じ相対的順序であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true.</li>
+                  <li>2.の結果が真である。</li>
                   
-                  <li>#3 is true.</li>
+                  <li>3.の結果が真である。</li>
                   
                </ul>
                
