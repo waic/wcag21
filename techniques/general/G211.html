@@ -10,8 +10,8 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="目次">目次</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
             <li><a href="G210">前の達成方法: G210</a></li>
             <li><a href="G212">次の達成方法: G212</a></li>
          </ul>
@@ -144,25 +144,16 @@
                </figure>
                <p>図 3 では、入力が積み重ねられ、左揃えにされており、ラベルもまた各入力のすぐ前で左揃えになっている。ラベルが関連したテキスト入力と最も近くなるよう、ラベルとその前の入力の間には追加の空白がある。横の余白が限られているモバイルデザインでは、積み重ねられたラベルは比較的一般的である。
                </p>
-               <p>Figure 4 shows a variation on stacked labels, where hints and guidance are included
-                  between the label and the input. This design does not provide an adjacent label. However,
-                  the "New Password" label is still considered to be in close enough proximity, especially
-                  given its size and boldness relative to the smaller and lower-contrast guidance text.
-                  The associations are reinforced programmatically, where the hint text is given a role
-                  of <code>aria-describedby</code> and the label is properly associated with the input.
+               <p>図 4 はヒントや助言がラベルと入力の間に含まれた積み重ねられたラベルの変化形を表している。このデザインでは、隣接したラベルを提供していない。ただし、"New Password" というラベルは、特により小さくコントラストの低い助言テキストに比べて、そのサイズと太さを考慮すると、まだ十分近接していると考えられる。この関連性は、<code>aria-describedby</code> というロールがヒントテキストに与えられ、かつ入力がラベルと適切に関連づけられている場合、プログラムにより強化される。
                </p>
                <figure id="figure-new-password">
                   					<img src="img/new-password.png" alt="New Password. Passwords must be 10 or more characters, and contain at least one capital, numeric and non-alphanumeric.'" />
                   					
-                  <figcaption>Figure 4Figure 4 New Password label positioned above input with a smaller-point text string
-                     about the password requirements positioned between the large label and the input.
+                  <figcaption>図 4 New Password というラベルが入力の上に配置され、パスワード要件についてのサイズの小さいテキスト文字列は大きいラベルと入力の間に配置されている。
                   </figcaption>
                   				
                </figure>
-               <p>The hint text in such implementations should be kept to a single line where possible,
-                  since accessibility issues can arise where a more lengthy hint separates the label
-                  from its input. Figure 4 illustrates that the concept of "adjacent text" is a guide
-                  for label interpretation, but cannot always serve as a hard rule.
+               <p>より長いヒントが入力からラベルを離す場合、アクセシビリティの問題が発生する可能性があるため、そのような実装のヒントテキストは可能であれば一行にとどめるべきである。図 4 は「隣接しているテキスト」という概念は、ラベル解釈の助言であることを説明するが、常に厳格なルールとして機能するわけではない。
                </p><code>
                   				&lt;form&gt;<br />
                   			&lt;label class="label" for="example-2"&gt;<br />
@@ -174,27 +165,19 @@
                   			&lt;/span&gt;<br />
                   			&lt;input class="input" id="example-2" name="example-2" type="text" aria-describedby="example-2-hint"&gt;<br />
                   		&lt;/form&gt;<br />
-                  	</code><p class="working-example"><a href="../../working-examples/label-in-name-general/example2.html" target="_blank">Working example of stacked labels</a></p>
+                  	</code><p class="working-example"><a href="../../working-examples/label-in-name-general/example2.html" target="_blank">積み重ねられたラベルの動作する例</a></p>
             </section>
             <section class="example" id="example-7-range-of-inputs-with-few-labels">
-               <h3>Example 7: Range of inputs with few labels</h3>
-               <p>A less common disparity between labels and inputs can occur when a group of radio
-                  buttons is set up to elicit a choice across a range. The labels may only be located
-                  at each end of the range or may be interspersed at various points in the range.
+               <h3>例 7: 範囲の入力と少ないラベル</h3>
+               <p>ラベル及び入力のあまり一般的ではない不均衡は、ラジオボタンのグループが範囲にわたった選択を引き出すよう設定されていた場合に発生する。ラベルは範囲の両端に配置されるかもしれないし、もしくは範囲のさまざまな場所に散っているかもしれない。
                </p>
                <figure id="figure-rate-response">
                   					<img src="img/rate-response.png" alt="Rate your response, Hated it, Loved it" />
                   					
-                  <figcaption>Figure 5Figure 6 Line of 5 radio buttons with Hated it and Loved it labels at each end</figcaption>
+                  <figcaption>図 5 Hated it と Loved it というラベルが両端にある五つのラジオボタンの列</figcaption>
                   				
                </figure>
-               <p>The two labels, "Hated it" and "Loved it", are adjacent to the first and last radio
-                  buttons, and should be their accessible names. Speech-input users can speak either
-                  of these labels to select a radio button, and then use arrow navigation (e.g., "Press
-                  right arrow") to modify the selection. "Rate your response" is the text describing
-                  the whole widget and can be associated as the group label (here using <code>legend</code>). The three middle radio buttons do not have visible labels. In the code example
-                  they are given title attributes of "Disliked", "So-so" and "Liked" in order to meet
-                  3.3.2 Labels or Instructions.
+               <p>"Hated it" 及び "Loved it" の二つのラベルは、最初及び最後のラジオボタンに隣接しており、かつそれらのアクセシブルな名前であるべきである。音声入力の利用者はこれらのいずれかのラベルを発話することでラジオボタンを選択でき、矢印操作を使用し選択を変更できる (例「右矢印を押す」)。"Rate your response" がウィジェット全体を説明するテキストであり、(ここで <code>legend</code> を使用することで) グループラベルとして関連付けられる。三つの中央のラジオボタンは可視のラベルを持たない。コード例では、3.3.2 ラベル又は説明を満たすために "Disliked"、"So-so" 及び "Liked" という title 属性を与えられている。
                </p>
                <p>
                   					<code>
@@ -210,12 +193,12 @@
                      </code>
                   
                </p>
-               <p class="working-example"><a href="../../working-examples/label-in-name-general/example4.html" target="_blank">Working example of range of inputs</a></p>
+               <p class="working-example"><a href="../../working-examples/label-in-name-general/example4.html" target="_blank">範囲の入力の動作する例</a></p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                				
                <li><a href="https://www.w3.org/TR/accname-aam-1.1/"> Accessible Name and Description Computation</a></li>
@@ -228,14 +211,13 @@
             <h2>関連する達成方法</h2>
             <ul>
                				
-               <li><a href="http://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H44"> H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="./html/H44"> H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="http://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/H71"> H71: Providing a description for groups of form controls using fieldset and legend
-                     elements</a></li>
+               <li><a href="./html/H71"> H71: fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する</a></li>
                
-               <li><a href="http://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/H85"> H85: Using OPTGROUP to group OPTION elements inside a SELECT</a></li>
+               <li><a href="./html/H85"> H85: select 要素内の option 要素をグループ化するために、optgroup 要素を使用する</a></li>
                
-               <li><a href="http://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/ARIA17"> ARIA17: Using grouping roles to identify related form controls</a> 
+               <li><a href="./aria/ARIA17"> ARIA17: 関連するフォームコントロールを特定するために、グルーピングロールを使用する</a> 
                   
                </li>
                			
@@ -247,21 +229,16 @@
                <h3>手順</h3>
                <ol>
                   					
-                  <li>For input controls, examine each input that has adjacent text which serves as its
-                     label
+                  <li>入力コントロール対して、ラベルとして機能する隣接テキストを持つ各入力を調べる
                   </li>
                   					
-                  <li>For each input, check that the entire string of text (disregarding letter case and
-                     punctuation) matches the accessible name for the input, according to the accessible
-                     name computation
+                  <li>各入力に対して、アクセシブルな名前の計算に基づき、(文字のケース及び句読点を無視した) テキストの文字列全体が入力のアクセシブルな名前に一致することを確認する
                   </li>
                   			
-                  <li>For buttons, links, menus and other non-input controls, examine each control that
-                     contains text which serves as its label
+                  <li>ボタン、リンク、メニュー及びその他の非入力コントロールに対して、そのラベルとして機能するテキストを含む各コントロールを調べる
                   </li>
                   						
-                  <li>For each non-input control, check that the entire string of text (disregarding letter
-                     case and punctuation) matches the accessible name for the input
+                  <li>各非入力コントロールに対して、(文字のケース及び句読点を無視した) テキストの文字列全体が入力のアクセシブルな名前に一致することを確認する
                   </li>
                </ol>
             </section>
@@ -269,7 +246,7 @@
                <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>Checks #2 and #4 are true.</li>
+                  <li>2. 及び 4. の結果が真である。</li>
                   				
                </ul>
             </section>
