@@ -31,6 +31,24 @@ https://services.w3.org/htmldiff?doc1=https%3A%2F%2Fwww.w3.org%2FTR%2FWCAG20-TEC
 Techniques for WCAG 2.1の新規文章や、差分を取って変更がある箇所については、新たに翻訳を行う必要があります。任意のツールの力を借りつつ、翻訳を行います。
 翻訳ガイドラインの確認をお忘れなく。
 
+### Techniquesの独自ルール（2019年11月ミーティング確認済み）
+
+#### `<ul id="navigation">`部分について
+
+- `title`属性の値はママとします。要素の内容は翻訳します。
+    - 実例としては[PR #323](https://github.com/waic/wcag21/pull/323/files)のような形になっていればよいです
+
+#### リンクURLについて
+
+- WCAG 2.1（本体）へのリンクは https://waic.jp/docs/WCAG21/ に置換します
+- Understanding WCAG 2.1へのリンクは、作業時点でwaic.jpで公開されていないので、そのママとします
+    - あとで一括置換します。
+- Techniques for WCAG 2.1内のリンクは、相対リンクにします。
+    - 非常に面倒なことに、WCAG 2.0達成方法集とは異なるディレクトリ構造になっています。例えばARIA1とG1だと
+       - ARIA1: https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1
+       - G1: https://www.w3.org/WAI/WCAG21/Techniques/general/G1
+    - …というURLで、例えば、G1からG4へリンクする場合は`href="G4"`でよいですが、G1からARIA1にリンクする場合は、`href="../aria/ARIA1"`とする必要があります。
+
 ## 3. Pull Requestをする
 
 ブランチ `techniques-20191001` にPull Requestを行い、レビュワーは@momdoに向けてください。
