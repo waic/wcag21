@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>C34: Using media queries to un-fixing sticky headers / footers</title>
+      <title>C34: 固定されていないスティッキー ヘッダー／フッターに、メディア クエリを利用する。</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,92 +10,71 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C33">Previous Technique: C33</a></li>
-            <li><a href="C35">Next Technique: C35</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C33">前の達成方法: C33</a></li>
+            <li><a href="C35">次の達成方法: C35</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な方法</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">テスト</a></li>
          </ul>
       </nav>
-      <h1>Using media queries to un-fixing sticky headers / footers</h1>
+      <h1>固定されていないスティッキー ヘッダー／フッターに、メディア クエリを利用する。</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。
+            適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique is applicable to Cascading Style Sheet / HTML technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Advisory)</span>.
-            </p>
+            <h2>適用 (対象) </h2>
+            <p>この達成方法は、カスケーディング スタイル シート／HTMLの技術に、適用される。</p>
+            <p>この達成方法は、<span><a href="https://w3c.github.io/wcag/understanding/reflow">達成基準1.4.10: リフロー</a> (参考) </span>に関連する。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to be able to present content with sticky headers
-               and footers when there is enough space. This is done by using <code>min-height</code>, <code>max-height</code> and <code>min-width</code> media queries techniques that adapt to the available space of the viewport.
+            <h2>解説</h2>
+            <p>このテクニックの目的は、十分なスペースがあるとき、コンテンツにスティッキー ヘッダーとフッターを表示できるようにすることである。
+               これは、<code>min-height</code>、<code>max-height</code>、および<code>min-width</code>といったメディア クエリーの達成方法を使用し、これらは、ビューポートの使用可能なスペースに適応する。
             </p>
-            <p>Sticky regions always stay visible in the viewport while the other content will disappear
-               underneath when scrolling. In terms of content visibility, this is often not a problem
-               on the desktop and on mobile devices in portrait orientation. However, when using
-               mobile devices in landscape orientation or when zooming in on the desktop, sticky
-               regions may block a big portion of the screen: the height of the sticky region may
-               leave only a small part of the screen for the display of page content.
+            <p>スティッキー領域は常にビューポートに表示されたままになり、他のコンテンツはスクロール時に下に消える。コンテンツの視認性の点では、これはデスクトップや縦向きのモバイルデバイスでは問題にならないことが多い。
+               ただし、モバイルデバイスを横向きで使用している場合やデスクトップでズームインしている場合は、スティッキー領域が画面の大部分を遮ることがある。: つまり、スティッキー領域の高さのせいで、ページの内容を表示するための画面の一部分だけが残る場合がある。
             </p>
-            <p>Disabling, or un-fixing sticky regions, is an effective way to allow for enough available
-               space when users prefer different reading and zoom preferences or when using landscape
-               mode.
+            <p>リーディングとズームで異なる設定にすることをユーザーが好む場合や、ランドスケープ モードを使用している場合は、スティッキー領域を無効にするか、固定解除にすることで、十分な空き領域を確保できる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>Be aware that sticky regions can create disadvantages for keyboard users and should
-                  therefore be used judiciously. The problem for keyboard users tabbing through a page
-                  with a fixed header is that once the page has started to scroll, tabbing backwards
-                  to reach interactive elements higher up on the page will often mean that the focus
-                  becomes invisible once it moves behind the sticky header. Users must then scroll up
-                  to be able to see the focus, something they may not necessarily be aware of. In the
-                  same way the visible focus can disappear behind a sticky footer, so users would need
-                  to scroll down to be able to see their focus position, which is a major inconvenience.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>スティッキー領域は、キーボード ユーザにとって不利になる可能性があるため、慎重に使用する必要があることに注意する。
+                  固定ヘッダーのあるページをタブで移動するキーボード　ユーザーにとっての問題は、ページがスクロールを開始した後に、ページの上の方にあるインタラクティブ要素にフォーカスを移動するため、逆方向にタブで移動すると、スティッキー ヘッダーの後ろにフォーカスが移動してしまうと、しばしばそのフォーカスが見えなくなる。                  
+                  そのため、ユーザーは、フォーカスを見るために上にスクロールしなければならないが、これは必ずしも意識して行っているわけではないだろう。
+                  これと同じように、目に見えるフォーカスはスティッキー フッターの後ろに消えてしまうので、ユーザーはフォーカスの位置を見るために下にスクロールする必要があり、これは非常に面倒である。
                </p>
             </div>
-            <p>The basic approach for un-fixing sticky headers / footers is to:</p>
+            <p>固定されていないヘッダー/フッターの基本的な使い方は、次のとおりである。</p>
             <ol>
                
-               <li>Define the first sticky regions using media query <code>min-height</code> properties, so they get fixed or un-fixed depending on the available space;
+               <li>最初のスティッキー領域を定義するには、メディアクエリの<code>min-height</code>プロパティを使用し、使用可能なスペースに応じて固定または非固定になるようにする。;
                </li>
                
                
-               <li>Define other sticky regions using media query <code>min-width</code> and <code>max-height</code> properties for specific viewport sizes, so they get fixed or un-fixed depending on
-                  the available space, e.g. for tablets depending on the portrait or landscape position
-                  of the device;
+               <li>他のスティッキー領域を定義するには、特定のビューポート サイズにメディアクエリの<code>min-width</code>および<code>max-height</code>プロパティを使用する。これにより、使用可能なスペースに応じて固定または非固定になる。たとえば、タブレットの場合、デバイスの縦位置または横位置に応じて固定または非固定になる。;
                </li>
                
             </ol>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-un-fix-sticky-headers-/-footers-in-html-and-css">
-               <h3>Example 1: Un-fix sticky headers / footers in HTML and CSS</h3>
-               <p>The following example uses HTML and CSS to un-fix sticky headers / footers.
-                  
-                  The sticky regions get un-fixed as the height of the viewport is limited or the orientation
-                  is changed.
-                  
-                  When the <code>min-height</code> property matches the viewport space defined via media queries, regions which are
-                  not sticky get fixed or vice versa. This particular example uses the CSS <code>min-height</code>, <code>max-height</code> and <code>min-width</code> media query properties.
+               <h3>例1: HTMLとCSSでスティッキー ヘッダー/フッターを固定しない</h3>
+               <p>次の例では、HTMLとCSSを使用して、スティッキー ヘッダー/フッターの固定を解除している。
+                  ビューポートの高さが制限されたり縦横の方向が変更されると、スティッキー領域は固定されなくなる。<code>min-height</code>プロパティがメディア クエリーによって定義されたビューポートの隙間に一致する場合、スティッキーでない領域は固定され、その逆も同様となる。この例では、CSSの<code>min-height</code>、<code>max-height</code>、および<code>min-width</code>メディア クエリー プロパティーを使用する。
                </p><pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -162,50 +141,41 @@
 
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p class="working-example">Working example: <a href="../../working-examples/css-sticky/">Using CSS Flexbox for Reflow</a></p>
+</code></pre><p class="working-example">作業例:<a href="../../working-examples/css-sticky/">CSSフレックスボックスを使用したリフロー</a></p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>Depending on the environment to be tested the actual modes or sizes can differ.</p>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>実際のモードやサイズは、テストする環境によって異なる。</p>
                </div>
                <ol>
                   
-                  <li>Display content on a device / user agent in portrait mode.</li>
+                  <li>デバイス/ユーザー エージェント上のコンテンツを縦長モードで表示する。</li>
                   
-                  <li>Change the orientation to landscape.</li>
+                  <li>方向を横向きに変更する。</li>
                   
-                  <li>Check whether the sticky header and footer will be un-fixed depending on the existing
-                     media query settings.
-                  </li>
+                  <li>既存のメディア クエリの設定に応じて、スティッキー ヘッダーとスティッキー フッターが固定解除されるかどうかを確認する。</li>
                   
-                  <li>Display content on a desktop / user agent at a starting viewport width of 1280x1024
-                     CSS pixels.
-                  </li>
+                  <li>開始時のビューポートの幅を1280x1024CSSピクセルとし、デスクトップ/ユーザーエージェントにコンテンツを表示する。</li>
                   
-                  <li>Change the viewport size in width and height or use the zoom function of the browser.</li>
+                  <li>ビューポートの幅と高さを変更するか、ブラウザのズーム機能を使用する。</li>
                   
-                  <li>Check whether the sticky header and footer will be un-fixed at specific sizes depending
-                     on the existing media query settings.
-                  </li>
+                  <li>既存のメディア クエリの設定に応じて、スティッキー ヘッダーとフッターが、特定のサイズで固定解除されるかどうかを確認する。</li>
                   
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   
-                  <li>#3 and #6 are true.</li>
+                  <li>上記3と6の結果が真である。</li>
                   
                </ul>
-               <p>If this is a sufficient technique for a success criterion, failing this test procedure
-                  does not necessarily mean that the success criterion has not been satisfied in some
-                  other way, only that this technique has not been successfully implemented and can
-                  not be used to claim conformance.
+               <p>この達成方法が「十分な達成方法」の一つである場合、この手順や期待される結果を満たしていなければ、それはこの達成方法が正しく用いられていないことを意味するが、必ずしも達成基準を満たしていないことにはならない。場合によっては、別の達成方法によってその達成基準が満たされていることもありうる。
                </p>
             </section>
          </section>
