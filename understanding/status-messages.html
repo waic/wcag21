@@ -86,55 +86,54 @@
             </section>
             <section class="example" id="examples-of-status-messages-that-do-not-add-new-text-to-the-screen">
                				
-               <h3>Examples of Status Messages that Do Not Add New Text to the Screen</h3>
+               <h3>画面に新しいテキストを追加しないステータスメッセージの例</h3>
                			
-               <p>This Success Criterion was intentionally worded to apply primarily when visible text is added to (or becomes visible on) the page. The reason for this is that where new text is displayed, it is intended to be visible to all users. By providing a programmatic means of ensuring the text is also surfaced through assistive technologies, the Success Criterion provides the same information to users who cannot or may not see it. However, not all changes to content involve the addition of text to the screen. The following are all considerations relevant to this Success Criterion:</p>
+               <p>この達成基準は、主に目に見えるテキストがページに追加された（又は見えるようになった）場合に適用されるように意図的に表現された。この理由は、新しいテキストが表示される場所では、それが全ての利用者に表示されることを意図しているためである。支援技術を介してテキストも表示されることを保証するプログラム的な手段を提供することにより、達成基準は、テキストを見ることができない又は見ないかもしれない利用者に同じ情報を提供する。しかしながら、コンテンツへの全ての変更が画面へのテキストの追加を伴うわけではない。以下は、この達成基準に関連する全ての考慮事項である:</p>
                				
                <ul>
                   					
-                  <li>Non-displayed text specific to AT users;</li>
+                  <li>支援技術の利用者に固有の非表示のテキスト</li>
                   
+                  <li>ステータステキストの変更</li>
                   
-                  <li>Modification of status text;</li>
+                  <li>ステータステキストの削除</li>
                   
-                  <li>Removal of status text; and</li>
-                  
-                  <li>Non-textual status content, such as images.</li>
+                  <li>画像などの非テキストステータスコンテンツ</li>
                   				
                </ul>
                				
                <section id="non-displayed-text-specific-to-at-users">
                   		
-                  <h4>Non-displayed text specific to AT users</h4>
+                  <h4>支援技術の利用者に固有の非表示のテキスト</h4>
                   		
                   		
-                  <p>There may be cases where the addition of visible text does not by itself convey sufficient information to the user of assistive technology. For example, the proximity of new content to other pieces of information on the screen may provide a visual context that is lacking in the text alone.</p>
+                  <p>表示テキストの追加だけでは、支援技術の利用者に十分な情報を伝えない可能性がある。例えば、新しいコンテンツが画面上の他の情報に近接していることで、テキストだけでは欠けている視覚的なコンテキストを提供してもよい。</p>
                   		
-                  <p>In such cases, authors may wish to designate additional content for inclusion in the status message, including non-displayed text which can be provided to the assistive technologies, for added context. Important considerations regarding the appropriate use of such techniques are further discussed in the Sufficient Techniques.</p>
+                  <p>このような場合、制作者は、追加されたコンテキストのために、支援技術に提供できる非表示テキストを含むステータスメッセージに含める追加コンテンツを指定してもよい。このような手法の適切な使用に関する重要な考慮事項は、十分な達成方法でさらに説明する。</p>
                   				
                </section>
                				
                <section id="modification-of-status-text">
                   		
-                  <h4>Modification of status text</h4>
+                  <h4>ステータステキストの変更</h4>
                   		
-                  <p>If a status message persists on the page, modifications to this text are usually equivalent to a new status message. An example would be a shopping cart which updates text from reading &quot;0 items&quot; to &quot;3 items&quot;. Typical methods of writing such changes in the page content result in the entire modified text string being considered a new change, and thus read by assistive technologies. However, where only the number in this string was coded as an updated chunk of content, the resulting experience for screen reader users could be to only hear &quot;three&quot;, which may not be sufficient information to provide context for the user. In such situations, marking the entire &quot;3 items&quot; string as the status text would normally be a better solution. See Sufficient Techniques for more discussion, including the use of <code>aria-atomic</code>. In this case it would also be a courtesy to add offscreen text such as &quot;in shopping cart&quot; to the message.</p>
+                  <p>ステータスメッセージがページに存続している場合、このテキストの変更は、通常新しいステータスメッセージと同等である。例は「0アイテム」の読み取りから「3アイテム」に更新するショッピングカードだろう。ページコンテンツにこのような変更を書き込む一般的な方法は、修正されたテキスト文字列全体が新しい変更と見なされ、こうして支援技術によって読まれるのだ。しかしながら、この文字列内の数字だけがコンテンツの更新された塊として実装された場合、スクリーンリーダーユーザーのエクスペリエンスは「3」と聞こえるだけであり、利用者にコンテキストを提供するのに十分な情報ではないだろう。このような状況では、「3アイテム」の文字列全体をステータステキストとして示すと、通常より良い解決策になるだろう。<code>aria-atomic</code>の使用を含むさらなる説明は、十分な達成方法を参照。この場合、「ショッピングカート内」などの画面外のテキストをメッセージに追加すると親切だろう。</p>
                   				
                </section>
                				
                <section id="removal-of-status-text">
                   		
-                  <h4>Removal of status text</h4>
+                  <h4>ステータステキストの削除</h4>
                   		
-                  <p>In situations where status text is entirely removed, its absence may itself convey information about the status. The most obvious example of this is where a message is displayed that the system is &quot;busy&quot; or &quot;waiting&quot;. For a sighted user, when this text disappears, it is normally an indication that the state is now available. However non-sighted users would be unaware of this change, unless the end of the waiting state results in a change of context for the user. Where updating the visible message (e.g., to &quot;system available&quot;) is not feasible, the use of a non-visible status message, such as &quot;system available&quot;, ensures equivalent status information is provided. See Sufficient Techniques for more discussion.</p>
+                  <p>ステータステキストが完全に削除される状況では、ステータステキストがないこと自体がその状況についての情報を伝える場合がある。この最も明白な例は、システムが「ビジー」又は「待機中」であるというメッセージが表示されている場合である。目の見える利用者にとっては、このテキストが消えた時、通常は利用可能な状態であるというしるしである。しかしながら、目の見えない利用者は、待機状態が終了して利用者のコンテキストが変更されない限り、この変化に気づかないだろう。可視メッセージ（例えば「システムは利用可能」）の更新が実行できない場合、「システムは利用可能」などの不可視のステータスメッセージの使用が、同等のステータス情報が提供されることを保証する。詳細については、十分な達成方法を参照。</p>
                   				
                </section>
                				
                <section id="non-textual-status-content">
                   		
-                  <h4>Non-textual status content</h4>
+                  <h4>非テキストのステータスコンテンツ</h4>
                   		
-                  <p>Changes in content are not restricted to text changes. Where an icon or sound indicates a status message, this information will be surfaced by the screen reader through a combination of two things: 1) existing WCAG requirements governing text alternatives (under SC 1.1.1 Non-Text Content), and 2) the requirement of this current Success Criterion to supply an appropriate role.</p>
+                  <p>アイコン又は音声がステータスメッセージを示す場合、この情報は次の2つのことを組み合わせてスクリーンリーダーによって表面化される。1) テキストによる代替を定める既存のWCAG要件  (達成基準 1.1.1 非テキストコンテンツ) かつ 2) 適切な役割を与えるためのこの現在の達成基準の要件</p>
                   				
                </section>
                			
