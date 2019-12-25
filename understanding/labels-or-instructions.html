@@ -34,21 +34,21 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion is to have content authors present instructions or labels that identify the controls in a form so that users know what input data is expected. 特に一般的なフォーマットではない場合、又は正しい入力のための特定のルールがある場合、入力欄のデータフォーマットを説明文又はラベルで明示してもよい。特に説明が長く詳細である場合、個々のコントロールがフォーカスを受け取ったときだけそのような説明文を利用者が利用できるように作ることをコンテンツ制作者は選択してもよい。</p>
-            <p>この達成基準の意図は、ページを不要な情報だらけにしてしまうことではなく、障害のある利用者に役立つ重要な手がかり及び説明文を提供することである。Too much information or instruction can be just as harmful as too little. 目標は、利用者の混乱を最小限に抑えて、必要以上のナビゲーションを提供することなく、利用者がタスクを完了するために十分な情報を提供することである。</p>
-            <p>This Success Criterion does not require that labels or instructions be correctly marked up, identified, or associated with their respective controls - this aspect is covered separately by <a href="info-and-relationships.html">1.3.1: Info and Relationships</a>. It is possible for content to pass this Success Criterion (providing relevant labels and instructions) while failing Success Criterion 1.3.1 (if the labels or instructions aren&#39;t correctly marked up, identified, or associated).</p>
-            <p>Further, this Success Criterion does not take into consideration whether or not alternative methods of providing an accessible name or description for form controls and inputs has been used - this aspect is covered separately by <a href="name-role-value.html">4.1.2: Name, Role and Value</a>. It is possible for controls and inputs to have an appropriate accessible name or description (e.g. using <code>aria-label=&quot;...&quot;</code>) and therefore pass Success Criterion 4.1.2, but to still fail this Success Criterion (if the labels or instructions aren&#39;t presented to all users, not just those using assistive technologies).</p>
-            <p>While this Success Criterion requires that controls and inputs have labels, whether or not these labels are sufficiently clear or descriptive is covered separately by <a href="labels-or-instructions.html">2.4.6: Headings and Labels</a>.</p>
+            <p>この達成基準の目的は、コンテンツの作成者が、利用者が入力欄に何を入力すればよいか予想できるように、フォームのコントロールを特定するための説明又はラベルを提示することである。特に一般的なフォーマットではない場合、又は正しい入力のための特定のルールがある場合、入力欄のデータフォーマットを説明文又はラベルで明示してもよい。特に説明が長く詳細である場合、個々のコントロールがフォーカスを受け取ったときだけそのような説明文を利用者が利用できるように作ることをコンテンツ制作者は選択してもよい。</p>
+            <p>この達成基準の意図は、ページを不要な情報だらけにしてしまうことではなく、障害のある利用者に役立つ重要な手がかり及び説明文を提供することである。過剰な情報又は説明文は情報が少ないのと同じくらい有害である。目標は、利用者の混乱を最小限に抑えて、必要以上のナビゲーションを提供することなく、利用者がタスクを完了するために十分な情報を提供することである。</p>
+            <p>この達成基準では、必ずしもラベル又は説明を適切にマークアップ、識別、またはそれぞれのコントロールに関連付ける事を要求しているわけではない。この観点は、 <a href="info-and-relationships.html">1.3.1：情報及び関係性</a>で個別に扱われる。なお、コンテンツが達成基準1.3.1に失敗している場合（ラベル又は説明が正しくマークアップ、識別、または関連付けられていない）でも、この達成基準には合格している場合（関連するラベルと説明が提供されている）がある。</p>
+            <p>さらに、この達成基準では、フォームのコントロールと入力欄にアクセス可能な名前又は説明を提供するための代替方法が使用されているかどうかは考慮されない。この観点は、<a href="name-role-value.html">4.1.2：名前 (name)・役割 (role) 及び値 (value)</a>で個別に扱われる。しかし、たとえコントロールと入力欄が適切なアクセス可能な名前又は説明（たとえば、<code>aria-label = &quot;...&quot;</code>を使用する）を持って達成基準4.1.2に合格したとしても、この達成基準には失敗している場合（支援技術を使用しているユーザーだけでなく、すべてのユーザーにラベルまたは指示が提示されていない）がある。</p>
+            <p>この達成基準では、コントロールと入力欄にラベルをつける必要があるが、これらのラベルが十分に明確で説明的であるかどうかは、<a href="headings-and-labels.html">2.4.6：見出し及びラベルを理解する</a>で個別に扱われる。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
             <ul>
                
                
-               <li>Providing clear and unambiguous labels and instructions (including examples of expected data formats) helps all users - but particularly those with cognitive, language, and learning disabilities - to enter information correctly.</li>
+               <li>明確で明快なラベルと説明（予想されるデータフォーマットの例を含む）を提供すると、すべての利用者、特に認知障害、言語障害、学習障害のある利用者が、情報を正しく入力するのに役立つ。</li>
                
                
-               <li>Providing clear and unambiguous labels and instructions (including clear identification of required fields) can prevent users from making incomplete or incorrect form submissions, which prevents users from having to navigate once more through a page/form in order to fix submission errors.</li>
+               <li>明確で明快なラベルと説明（必須フィールドの明確な識別を含む）を提供することにより、利用者が不完全または誤ったフォーム送信を行うことを防ぐことができる。これにより、利用者は送信エラーを修正するためにページ/フォームをもう一度ナビゲーションする必要がなくなる。</li>
                
                
             </ul>
@@ -70,7 +70,7 @@
                <li> 米国の電話番号が、エリアコード、局番、そして番号の三つのテキストフィールドに分かれている。エリアコードのテキストフィールドには括弧が付いていて、局番と番号のテキストフィールドの間にはハイフンが入っている。この表記法は、米国の電話番号フォーマットに馴染みのある利用者には視覚的な手がかりを提供していることになるが、テキストフィールドのラベル付けとしてはこの表記法だけでは不十分である。また、「電話番号」という一つのラベルも、三つのテキストフィールドすべてをラベル付けすることはできない。これに対処するために、三つのテキストフィールドを fieldset 要素でグループ化して、legend 要素で「電話番号」というラベルを付けている。さらに、テキストフィールドに（この表記法に加えて）視覚的なラベルを提供することはデザイン上不可能なので、title 属性を用いて、三つのテキストフィールドそれぞれに視覚的には認識できないラベルを提供している。三つのテキストフィールドそれぞれの属性値は、「エリアコード」、「局番」、そして「番号」となっている。</li>
                
                
-               <li>In a form which contains both required and optional fields, the required fields and/or the optional fields are clearly labeled as such.</li>
+               <li>必須フィールドとオプションフィールドの両方を含むフォームでは、必須フィールドまたはオプションフィールド、あるいはその両方が明確にラベル付けされている。</li>
                
                
             </ul>
