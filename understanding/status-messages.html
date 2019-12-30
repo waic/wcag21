@@ -34,26 +34,26 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this Success Criterion is to make users aware of important changes in content that are not given focus, and to do so in a way that doesn&#39;t unnecessarily interrupt their work.</p>
-            <p>The intended beneficiaries are blind and low vision users of assistive technologies with screen reader capabilities. An additional benefit is that assistive technologies for users with cognitive disabilities may achieve an alternative means of indicating (or even delaying or supressing) status messages, as preferred by the user.</p>
-            <p>The scope of this Success Criterion is specific to changes in content that involve status messages. A <a href="https://www.w3.org/TR/WCAG21/#dfn-status-messages">status message</a> is a defined term in WCAG. There are two main criteria that determine whether something meets the definition of a status message:</p>
+            <p>この達成基準の目的は、フォーカスを受け取っていないコンテンツの重要な変更を利用者に認識させ、不必要に利用者の作業を中断させないようにすることである。</p>
+            <p>対象となる受益者は、スクリーンリーダー機能を備えた支援技術の全盲及びロービジョンの利用者である。付加的な恩恵として、認知障害のある利用者向けの支援技術が、利用者の好みに応じてステータスメッセージを示す（あるいは遅らせる、又は抑制する）代替手段を実現できることである。</p>
+            <p>この達成基準の範囲は、ステータスメッセージを含むコンテンツの変化に特化している。<a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージ</a>は WCAG で定められている用語である。何がステータスメッセージの定義を満たすかどうかを判断する主な二つの基準がある：</p>
             <ol>
                		
-               <li>the message <q>provides information to the user on the success or results of an action, on the waiting state of an application, on the progress of a process, or on the existence of errors;</q></li>
+               <li>メッセージは<q>アクションの成功又は結果、アプリケーションの待機状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供する</q></li>
                		
-               <li>the message is not delivered via a change in context.</li>
+               <li>メッセージはコンテキストの変更によって配信されない</li>
                	
             </ol>
-            <p>Information can be added to pages which does not meet the definition of a status message. For example, the list of results obtained from a search are not considered a status update and thus are not covered by this Success Criterion. However, brief text messages displayed about the completion or status of the search, such as &quot;Searching...&quot;, &quot;18 results returned&quot; or &quot;No results returned&quot; would be status updates if they do not take focus. Examples of status messages are given in the section titled <a href="#status-examples">Status Message Examples</a> below.</p>
-            <p>This Success Criterion specifically addresses scenarios where new content is added to the page without changing the user&#39;s context. <a href="https://www.w3.org/TR/WCAG21/#dfn-change-of-context">Changes of context</a>, by their nature, interrupt the user by taking focus. They are already surfaced by assistive technologies, and so have already met the goal to alert the user to new content. As such, messages that involve changes of context do not need to be considered and are not within the scope of this Success Criterion. Examples of scenarios that add new content by changing the context are given in the section titled <a href="#excepted-examples">Examples of Changes That Are Not Status Messages</a> below.</p>
+            <p>ステータスメッセージの定義を満たさないページに情報を追加できる。例えば、検索から取得した結果のリストはステータスの更新とは見なされないため、この達成基準の対象外である。ただし、「検索中...」、「18 件の結果が返されました」、「結果が返されませんでした」など、検索の完了又はステータスについて表示される簡潔なテキストメッセージは、フォーカスを受け取らないとステータスが更新される。ステータスメッセージの例は、以下の<a href="#status-examples">ステータスメッセージの例</a>というセクションにある。</p>
+            <p>この達成基準は、利用者のコンテキストを変更せずに新しいコンテンツがページに追加されるシナリオを特に扱う。<a href="https://waic.jp/docs/WCAG21/#dfn-change-of-context">コンテキストの変化</a>は、その性質上、フォーカスを受け取ることで利用者の邪魔をする。これらはすでに支援技術によって表面化されているため、利用者に新しいコンテンツを警告するという目標をすでに満たしている。そのため、コンテキストの変更を伴うメッセージは考慮する必要がなく、この達成基準の範囲内にない。コンテキストを変更して新しいコンテンツを追加するシナリオの例は、以下の<a href="#excepted-examples">ステータスメッセージではない変更の例</a>というセクションにある。</p>
          </section>
          <section id="benefits">
             <h2>メリット</h2>
             <ul>
                					
-               <li>When appropriate roles or properties are assigned to status messages, the new content is spoken by screen readers in such a way as to assist blind and low vision users. Most sighted users can observe text peripherally added to the viewport. Such content provides additional information without affecting the user&#39;s current point of regard. The ability of an assistive technology to announce such new important text content allows more users to benefit from an awareness of the information in an equivalent manner.</li>
+               <li>適切な役割 (role) 又はプロパティがステータスメッセージに割り当てられると、全盲及びロービジョンの利用者を支援するような方法で、新しいコンテンツがスクリーンリーダーによって読み上げられる。ほとんどの目の見える利用者は、ビューポートに周辺的に追加されたテキストを観察できる。このようなコンテンツは、利用者の現在の注視点に影響を与えることなく、追加の情報を提供する。そのような新しく重要なテキストコンテンツをアナウンスする支援技術の機能により、より多くの利用者が同等の方法で情報を認識できるようになる。</li>
                			
-               <li>Assigning proper roles or properties to status messages provides possible future uses and personalization opportunities, such as the potential to be exploited by assistive technologies created for users with some cognitive disabilities. Where page authors elect to design additions to the screen which do <em>not</em> change the user&#39;s context (i.e., take focus), the information is arguably of less importance than something presented using a modal dialog, which must be acknowledged by the user. As such, depending on the user&#39;s preferences, an assistive technology may choose to delay, suppress, or transform such messages so a user is not unnecessarily interrupted; or conversely the assistive technology may highlight such messages where the user finds it optimal to do so.</li>
+               <li>ステータスメッセージに適切な役割 (role) 又はプロパティを割り当てると、認知障害のある利用者向けに作られた支援技術によって活用される可能性など、将来的な用途及びパーソナライズの機会が提供される。ページの制作者が、利用者のコンテキストを変更しない画面への追加を設計することを選択した（すなわち、フォーカスする）場合、その情報は、モーダルダイアログを使用して表示されるもの（これは利用者に認識されなければならない）よりも、おそらく重要度が低い。そのため、利用者の好みに応じて、利用者が不必要に割り込まれないように、支援技術はそのようなメッセージを遅延、抑制、又は変換することを選択してもよい。又は、逆に利用者がそのようにすることが最適だと利用者が判断した場合、支援技術はそのようなメッセージを強調してもよい。</li>
                
             </ul>
          </section>
