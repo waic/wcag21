@@ -36,89 +36,55 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>The Technique is applicable to any technology that supports pointer input (e.g. supporting
-               any or all of the following: mouse pointer, touch on touch screen or trackpad, stylus
-               input, or laser pointer input).
+            <p>この達成方法は、ポインタ入力をサポートする全ての技術に適用できる (例えば、次のいずれかまたは全てをサポートする: マウスポインタ、タッチスクリーンまたはトラックパッドのタッチ、ペン入力、レーザーポインタ入力)。
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/pointer-cancellation">Success Criterion 2.5.2: Pointer Cancellation</a> (Sufficient)</span>.
+            <p>この達成方法は<span><a href="https://w3c.github.io/wcag/understanding/pointer-cancellation">達成基準 2.5.2: ポインタのキャンセル</a> (十分)</span> に関連する。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to ensure that users who use a path-based drag-and-drop
-               action to move an item from the initial location to a drop target can abort the action
-               after picking up the target. This can be done either by releasing the item outside
-               a drop area, or by moving the item back to its original position in a separate action
-               that undoes the first action. A third option is to have a step after the element is
-               dropped onto target, either with a dialog asking for confirmation of the action when
-               the item is dropped, or providing an undo command.
+            <p>この達成方法の目的は、パスベースのドラッグ＆ドロップ操作を使用して初期位置からドロップターゲットに移動する利用者が、ターゲットを選択した後に操作を中止できるようにすることだ。これは、ドロップ領域外でアイテムを離すか、最初の操作を元に戻す別の操作でアイテムを元の位置に戻すことで実行できる。3 番目のオプションは、要素がターゲットにドロップされた後に、アイテムがドロップされた時の操作の確認を尋ねるダイアログか、元に戻すコマンドを提供することである。
             </p>
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>This technique addresses pointer actions where support has been implemented by authors,
-                  not gestures provided by the user agent (such as horizontal swiping to move through
-                  the browser history or vertical swiping to scroll through page content) or the operating
-                  system (e.g., gestures to move between open apps, or call up contextual menus of assistive
-                  technologies when these are enabled).
+               <p>この達成方法は、ユーザーエージェントによって提供されるジェスチャー (ブラウザ履歴間を移動する水平方向のスワイプや、ページコンテンツをスクロールする垂直方向のスワイプなど) 又はオペレーティングシステムによって提供されるジェスチャー (例えば、起動中のアプリ間を移動するジェスチャーや、支援技術が有効になっているときに支援技術のコンテキストメニューを呼び出すジェスチャー) ではなく、コンテンツ制作者によって実現されているポインタアクションに対応する。
                </p>
             </div>
-            <p>On touch screen devices, author-supplied path-based and multipoint gestures usually
-               do not work when OS level assistive technologies (AT) like a built-in screenreader
-               is turned on. AT generally consumes path-based or multipoint gestures so they would
-               not reach the authored content. For example, a horizontal drag gesture may not move
-               a slider thumb as intended by the author, but move the screen reader focus to the
-               next or previous element. Some gestures may work if the user operates "pass through
-               gestures" which are often unreliable as they may depend on factors of hardware, operating
-               system, operating system "skin", operating system setting, or user agent.
+            <p>タッチスクリーンデバイスでは、組み込みのスクリーンリーダーなどのOSレベルの支援技術 (AT) がオンになっていると、通常、コンテンツ制作者が提供しているパスベース及びマルチポイントジェスチャは機能しない。
+利用者が「パススルージェスチャ」を操作すると、一部のジェスチャは機能する場合がある。パススルージェスチャは、ハードウェア、オペレーティングシステム、オペレーティングシステムの「スキン」、オペレーティングシステムの設定、又はユーザーエージェントの要素に依存する可能性があるため、多くの場合信頼できない。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <ul>
                				
-               <li>A site shows a file directory. Files can be picked up and moved over a trash can icon.
-                  When the picked-up file is released outside this target, it reverts to the old position.
+               <li>サイトはファイルディレクトリを表示している。ファイルは選択しゴミ箱アイコンの上に移動できる。ピックアップされたファイルがこのターゲットの外側で離されると、ファイルは古い位置に戻る。
                </li>
                				
-               <li>A site shows a file directory. Files can be picked up and moved over a trash can icon
-                  to delete it. When the picked-up file is released over the trash can, a modal dialog
-                  asks the user to confirm or cancel the delete action.
+               <li>プロジェクト計画サイトのかんばん実装は、アクティビティのフェーズごとに異なる列が表示される。利用者は、計画項目を表すアイコンを選択して別の列に移動できる。アイテムがピックアップされ、ポインタを辿ると、ドロップターゲット (列) の外側に移動してそこにドロップすると、操作をキャンセルできる。そのとき、アイテムは元の位置に戻る。
                </li>
                				
-               <li>A kanban implementation of a project planning site shows different columns for phases
-                  of an activity. Users can pick up and move icons representing planning items to another
-                  column. When an item has been picked up and now follows the pointer, it can be moved
-                  outside the drop targets (columns) and dropped there to cancel the action. The item
-                  will then jump back to the old position.
-               </li>
-               				
-               <li>A kanban implementation of an issue tracking system shows columns that indicate different
-                  phases in handling issues (such as new / processed / done / closed). There is no screen
-                  space outside the kanban columns. Users can pick up and move icons representing issues
-                  between columns. When an item has been dropped in another column, the action can be
-                  reversed by dragging the icon back to the original column where it will return to
-                  its original position (defined by sorting preferences).
+               <li>課題追跡システムのかんばん実装は、課題の取り扱い (新規 / 処理済み / 完了 / 終了など) での異なるフェーズを示す列を表示している。かんばん列の外側に画面の余白はない。利用者は列の間で課題を表すアイコンを選択し移動できる。アイテムが別の列にドロップされた場合、アイコンを元の列にドラッグして元の位置 (並べ替え設定で定義されている) 戻すことで、操作を元に戻すことができる。
                </li>
                			
             </ul>
          </section>
          <section id="resources">
             <h2>関連リソース</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p><a href="https://www.youtube.com/watch?v=DI5ALywD6Qc">Video of canceled drag-and-drop interaction (item released outside drop target) (Youtube)</a></section>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p><a href="https://www.youtube.com/watch?v=DI5ALywD6Qc">Video of canceled drag-and-drop interaction (item released outside drop target) (Youtube)</a></section>
          <section id="tests">
             <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For content that is draggable, check whether the drag-and-drop action can be reversed
-                  by:
+               <h3>手順</h3>
+               <p>ドラッグ可能なコンテンツの場合、次の操作でドラッグ＆ドロップ操作を元に戻すことができるかどうかを確認する:
                </p>
                <ol>				
                   					
-                  <li>releasing the picked-up item outside a drop target</li>
+                  <li>選択したアイテムをドロップターゲットの外に離す</li>
                   					
-                  <li>dragging the picked-up item back to its old position</li>
+                  <li>選択したアイテムを元の位置にドラッグして戻す</li>
                   					
-                  <li>a confirmation dialog or an undo control appears after the item has been dropped</li>
+                  <li>アイテムがドロップされた後、確認ダイアログ又は元に戻すコントロールが表示される</li>
                   				
                </ol>
             </section>
@@ -126,7 +92,7 @@
                <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>At least one option of #1, #2, #3 is true</li>
+                 <li>1、2、3の少なくとも一つのオプションが真</li>
                   				
                </ul>
             </section>
