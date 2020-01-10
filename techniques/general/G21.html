@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G21: Ensuring that users are not trapped in content</title>
+      <title>G21: 利用者がコンテンツ内に閉じ込められないことを確認する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,129 +10,106 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G19">Previous Technique: G19</a></li>
-            <li><a href="G53">Next Technique: G53</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G19">前の達成方法: G19</a></li>
+            <li><a href="G53">次の達成方法: G53</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that users are not trapped in content</h1>
+      <h1>利用者がコンテンツ内に閉じ込められないことを確認する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies which support interactive operation.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/no-keyboard-trap">Success Criterion 2.1.2: No Keyboard Trap</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>インタラクティブな操作をサポートするウェブコンテンツ技術すべて</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/no-keyboard-trap">達成基準 2.1.2: キーボードトラップなし</a> (十分な達成方法) </span>に関する達成基準である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that keyboard users do not become trapped
-               in a subset of the content that can only be exited using a mouse or pointing device.
-               A common example is content rendered by plug-ins. Plug-ins are user agents that render
-               content inside the user agent host window and respond to all user actions that takes
-               place while the plug-in has the focus. If the plug-in does not provide a keyboard
-               mechanism to return focus to the parent window, users who must use the keyboard may
-               become trapped in the plug-in content.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、マウス又はポインティングデバイスを使わなければ抜け出すことのできないコンテンツのサブセットに、キーボード利用者が閉じ込められてしまわないようにすることである。よくある事例としては、プラグインによって描画されるコンテンツが挙げられる。プラグインはユーザエージェントであり、ユーザエージェントの親ウィンドウの中にコンテンツを表示したり、プラグインがフォーカスを持っている間に起きる利用者の動作全てに反応したりする。もしプラグインが親ウィンドウへフォーカスを戻すキーボードのメカニズムを提供しない場合、キーボードを使用しなければならない利用者は、プラグインのコンテンツの中に閉じ込められてしまうことがある。
             </p>
-            <p>This problem can be avoided by using one of the following mechanisms to provide a
-               way for users to escape the subset of the content:
+            <p>この問題は、コンテンツのサブセットから抜け出す方法を提供する以下のメカニズムのうちの一つを使うことによって回避することができる。
             </p>
             <ul>
                
-               <li>Ensuring that the keyboard function for advancing focus within content (commonly the
-                  tab key) exits the subset of the content after it reaches the final navigation location.
+               <li>コンテンツ内でフォーカスを前進させるためのキーボード機能 (一般的には Tab キー) によって最後のナビゲーション位置に到達した後、コンテンツのサブセットから抜け出せるようにする。
                </li>
                
-               <li>Providing a keyboard function to move the focus out of the subset of the content.
-                  Be sure to document the feature in an accessible manner within the subset.
+               <li>コンテンツのサブセットからフォーカスを出すキーボード機能を提供する。サブセット内でアクセシブルな方法によってその機能を必ず明記する。
                </li>
                
-               <li>If the technology used in the subset of the content natively provides a "move to parent"
-                  keyboard command, documenting that command before the user enters the plug-in so they
-                  know how to get out again.
+               <li>コンテンツのサブセットで用いられているウェブコンテンツ技術が自然に「親コンテンツに戻る」ためのキーボードコマンドを提供している場合、利用者がそのプラグインに入る前に、そのコマンドを明記して利用者がどのように再びプラグインの外に出られるかをわかるようにする。
                </li>
                
             </ul>
-            <p>If the author uses a technology that allows users to enter the sub-content with keyboard
-               and does not allow users to exit the sub-content with keyboard by default (i.e., it
-               is not a feature of the Web content technology or its user agents) then, in order
-               to implement this technique the author would either build such a capability into their
-               content or not use the technology.
+            <p>コンテンツ制作者が、利用者がキーボードでサブコンテンツに入れてもデフォルトでのキーボード操作ではそのサブコンテンツから出ることができないウェブコンテンツ技術を使っている (すなわち、ウェブコンテンツ技術又はそのユーザエージェントの機能ではない) 場合、この達成方法を実装するためにはウェブコンテンツ制作者はそのような機能をコンテンツ内に構築するか、又はそのウェブコンテンツ技術を使わないか、どちらかにする。
             </p>
+            <div xmlns="" class="note">
+            <p class="prefix"><em>訳注:</em> WAIC では G21 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。</p>
+            <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G21.html">アクセシビリティ サポーテッド（AS）情報: G21</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。</p>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>Once a user tabs into an applet, further tabs are handled by the applet preventing
-                  the person from tabbing out. However, the applet is designed so that it returns keyboard
-                  focus back to the parent window when the person finishes tabbing through the tab sequence
-                  in the applet.
+               <li>いったん利用者がタブ移動でアプレットの中に入ると、それ以降のタブ移動はアプレットによって処理され、その利用者がタブ移動で外に出られないようになっている。しかしながら、そのアプレットは、アプレット内で連続したタブ移動を終えた時、キーボードフォーカスが親ウィンドウに戻るように作られている。
                </li>
                
-               <li>A page that includes content that is not accessibility-supported contains instructions
-                  about how to move focus back to the accessibility-supported content via the keyboard.
-                  The instructions precede the non accessibility-supported content.
+               <li>アクセシビリティ サポーテッドではないコンテンツを含んでいるページには、キーボードによってアクセシビリティ サポーテッドなコンテンツにフォーカスを戻す方法についての説明がある。その説明は、アクセシビリティ サポーテッドではないコンテンツより前に書かれている。
                </li>
                
-               <li>The help information available from the content that is not accessibility supported
-                  documents how to move focus back to the accessibility-supported content via the keyboard,
-                  and the help information can be accessed via the keyboard.
+               <li>アクセシビリティ サポーテッドではないコンテンツから入手可能なヘルプ情報は、キーボード操作によってアクセシビリティ サポーテッドなコンテンツへフォーカスを戻す方法を説明しており、そのヘルプ情報はキーボードによるアクセスが可能である。
                </li>
                
-               <li>The help information available for the Web page documents how to move focus
-                  from the content that is not accessibility supported to the accessibility-supported
-                  content via the keyboard, and the help information can be accessed via the keyboard.
+               <li>ウェブページで入手可能なヘルプ情報は、キーボード操作によってアクセシビリティ サポーテッドではないコンテンツからアクセシビリティ サポーテッドなコンテンツへフォーカスを戻す方法を説明しており、そのヘルプ情報はキーボードによるアクセスが可能である。
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Tab through content from start to finish.</li>
+                  <li>Tab キーでコンテンツ内を最初から最後まで移動する。</li>
                   
-                  <li>Check to see that keyboard focus is not trapped in any of the content.</li>
+                  <li>キーボードフォーカスがどのコンテンツにも閉じ込められていない。</li>
                   
-                  <li>If keyboard focus appears to be trapped in any of the content, check that help information
-                     is available explaining how to exit the content and can be accessed via the keyboard.
+                  <li>キーボードフォーカスがコンテンツに閉じ込められてしまう場合、コンテンツから抜け出す方法を説明したヘルプ情報が利用可能であり、キーボード操作でアクセスできることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is false</li>
+                  <li>2.の結果が偽である。</li>
                   
                </ul>
-               
+               <div class="note">
+                  <p class="prefix"><em>訳注: </em>「2. 又は 3. のいずれかの結果が真である」となるのが正しいと思われる。</p>
+              </div>
             </section>
          </section>
       </main>
