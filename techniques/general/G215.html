@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G215: ★Providing controls to achieve the same result as path based or multipoint gestures</title>
+      <title>G215: 軌跡ベース又はマルチポイントのジェスチャと同等の結果を得られるコントロールを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -26,55 +26,32 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing controls to achieve the same result as path based or multipoint gestures</h1>
+      <h1>軌跡ベース又はマルチポイントのジェスチャと同等の結果を得られるコントロールを提供する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>Any technology that supports pointer input (e.g., supporting any or all of the following:
-               mouse pointer, touch on touch screen or trackpad, stylus input, or laser pointer input).
+            <p>ポインタ入力をサポートするウェブコンテンツ技術すべて (例えば、次のいずれかまたはすべてをサポートする: マウスポインタ、タッチスクリーン又はトラックパッドのタッチ、スタイラスでの入力、レーザーポインタでの入力)。
             </p>
-            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/pointer-gestures">達成基準 2.5.1: Pointer Gestures</a> (十分な達成方法)</span> に関する達成方法である。
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/pointer-gestures">達成基準 2.5.1: ポインタのジェスチャ</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to ensure that users who have difficulties performing
-               path-based gestures can operate a content slider with a single pointer (e.g., a single
-               tap on a touch screen or a single mouse click). A content slider contains chunks of
-               content in a row. Usually several chunks of content are hidden, and only one chunk
-               is visible at any time. Left and right horizontal swiping over the visible part of
-               the slider brings adjacent hidden chunks of content into view. Providing controls
-               (for example, arrow buttons) as alternative means of input allows advancing the slider
-               with single pointer input.
+            <p>この達成方法の目的は、軌跡ベースのジェスチャを行うことが困難な利用者がシングルポインタ (例えば、タッチスクリーンのシングルタップ又はマウスのシングルクリック) によってコンテンツスライダーを操作できるようにすることである。コンテンツスライダーでは、コンテンツのチャンクが一列に並んでいる。通常、コンテンツの複数のチャンクは非表示になっており、一度に 1 つのチャンクだけが表示される。スライダーの表示部分を左右に水平スワイプすると、隣接する非表示だったコンテンツのチャンクが表示される。入力の代替手段としてコントロール (例えば、矢印ボタン) を提供することによって、シングルポインタによる入力でスライダーをめくることができる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>On touch screen devices, author-supplied path-based gestures usually do not work when
-                  OS level assistive technologies (AT) like a built-in screenreader are turned on. This
-                  is because AT generally consumes a path-based gestures so they would not reach the
-                  authored content. For example, a horizontal swipe gesture over the content slider
-                  will not work as intended by the author, but move the screen reader focus to the next
-                  or previous element. Some gestures may work if the user operates "pass-through gestures"
-                  which are often unreliable as they may depend on factors of hardware, operating system,
-                  operating system "skin", operating system setting, or user agent.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>タッチスクリーンデバイスでは、ビルトインのスクリーンリーダーなど OS レベルの支援技術が有効になっている場合、通常は、コンテンツ制作者によって実装された軌跡ベースのジェスチャは機能しない。これは、支援技術が一般に軌跡ベースのジェスチャを採用しており、制作されたコンテンツまでジェスチャが及ばないためである。例えば、コンテンツスライダー上で水平方向にスワイプするジェスチャは、コンテンツ制作者が意図したようには機能せず、スクリーンリーダーのフォーカスを次または前の要素に移動させるものである。一部のジェスチャは、利用者が「パススルージェスチャ」の操作を行うことで機能する場合があるが、ハードウェア、オペレーティングシステム (OS) の種類、OS のスキン、OS の設定、又はユーザエージェントといった要因に依存するため、信頼性が低いことが多い。
                </p>
             </div>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>This technique addresses gestures where support has been implemented by authors, not
-                  gestures provided by the user agent (such as horizontal swiping to move through the
-                  browser history or vertical swiping to scroll through page content) or the operating
-                  system (e.g., gestures to move between open apps, or call up contextual menus of assistive
-                  technologies when these are enabled).
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>この達成方法は、コンテンツ制作者によって実装されているジェスチャを対象とするものであり、ユーザエージェントが提供するジェスチャ (例えば、水平スワイプによるブラウザ履歴間の移動や、垂直スワイプによるページコンテンツのスクロールなど) 又はオペレーティングシステムが提供するジェスチャ (例えば、開いているアプリ間の移動や、利用可能な支援技術のコンテキストメニューの呼び出しなど) は対象外である。
                </p>
             </div>
          </section>
@@ -82,9 +59,7 @@
             <h2>事例</h2>
             <ul>
                				
-               <li>A content slider allows users to swipe left and right to reveal adjacent chunks of
-                  content. There are also next and previous buttons that enable users to advance to
-                  the next or previous chunks of content.
+               <li>コンテンツスライダーで、利用者は左右にスワイプして隣接するコンテンツのチャンクを表示することができる。併せて、次へボタン及び前へボタンが実装されており、それらによっても利用者は次のコンテンツや前のコンテンツに進むことができる。
                </li>
                			
             </ul>
@@ -92,12 +67,11 @@
          <section id="tests">
             <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For content sliders that respond to path-based gestures:</p>
+               <h3>手順</h3>
+               <p>軌跡ベースのジェスチャに対応しているコンテンツスライダーにおいて:</p>
                <ol>
                   		
-                  <li>Check that single pointer operable controls exist over or adjacent to the content
-                     slider that advance to adjacent chunks of content.
+                  <li>シングルポインタによる操作が可能なコントロールが、当該コンテンツスライダーの上又はすぐ近くに存在しており、隣接するコンテンツのチャンクに進むことができることを確認する。
                   </li>
                   		
                </ol>
