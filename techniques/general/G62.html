@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G62: Providing a glossary</title>
+      <title>G62: 用語集を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,160 +10,135 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G61">Previous Technique: G61</a></li>
-            <li><a href="G63">Next Technique: G63</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G61">前の達成方法: G61</a></li>
+            <li><a href="G63">次の達成方法: G63</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a glossary</h1>
+      <h1>用語集を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology containing text.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>テキストを提供するあらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/unusual-words">Success Criterion 3.1.3: Unusual Words</a> (Sufficient as a way to meet <a href="../general/G101">G101: Providing the definition of a word or phrase used in an unusual or restricted
-                     way</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/unusual-words">達成基準 3.1.3: 一般的ではない用語</a> (<a href="G101">G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/abbreviations">Success Criterion 3.1.4: Abbreviations</a> (Sufficient as a way to meet <a href="../general/G102">G102: Providing the expansion or explanation of an abbreviation</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/abbreviations">達成基準 3.1.4: 略語</a> (<a href="G102">G102: 略語の元の語又は説明を提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/pronunciation">Success Criterion 3.1.6: Pronunciation</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/pronunciation">達成基準 3.1.6: 発音</a> (十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to make the definition of a word, phrase, or abbreviation
-               available by providing the definition in a glossary. A glossary is an alphabetical
-               list of words, phrases, and abbreviations with their definitions. Glossaries are most
-               appropriate when the words, phrases, and abbreviations used within the content relate
-               to a specific discipline or technology area. A glossary can also provide the pronunciation
-               of a word or phrase.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、用語集で定義を提供することにより、単語、語句、又は略語の定義を利用できるようにするものである。用語集は、単語、語句、及び略語の定義を伴ったアルファベット順の一覧である。用語集は、単語、語句、及び略語が特殊な分野又は技術領域に関連するコンテンツ内で使用される時に最も適している。用語集は、単語又は語句の発音を提供することも可能である。
             </p>
-            <p>The glossary is included at the end of the Web page or the glossary is located via
-               one of the mechanisms for locating content within a set of Web pages. (See
-               <a href="https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways">Understanding Success Criterion 2.4.5</a>.)
+            <p>用語集はウェブページの最後に記載されているか、又は用語集は、ウェブページ一式の中のコンテンツを検索するメカニズムのうちの一つを使って探し出される。(<a href="https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways">達成基準 2.4.5 を理解する</a>を参照のこと。)
             </p>
-            <p>If the glossary contains several definitions for the same word, phrase, or abbreviation,
-               simply providing the glossary is not sufficient to satisfy this Success Criterion.
-               A different technique should be used to find the correct definition. This is especially
-               important if the uses of the word, phrase, or abbreviation are not unique within the
-               Web page, that is, if different occurrences of the item have different definitions.
+            <p>用語集が同じ単語、語彙、又は略語で複数の定義を提供する場合、単に用語集を提供しているだけではこの達成基準を満たすには不十分である。正しい定義を見つけるために異なる達成方法が用いられるべきである。単語、語句、又は略語の用途がウェブページ内で一意でない場合、すなわち、その項目の出現場所ごとに異なる定義がある場合、これは特に重要である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Users of on line chat forums have created several acronyms and abbreviations to speed
-                  up typing conversations on the computer. For example, LOL refers to "laughing out
-                  loud" and FWIW abbreviates "for what it's worth". The site provides a glossary page
-                  that lists the expansions for the commonly used acronyms and abbreviations.
+               <h3>事例 1</h3>
+               <p>オンラインのチャットフォーラムの利用者は、コンピュータでのタイピングによる会話のスピードアップのために、いくつかの頭字語や略語を造り出した。例えば、LOL は「高らかに笑う」を意味し、FWIW は「どれほど有用かはわからないけど。」を省略したものである。サイトは、一般的に使用される頭字語及び略語の元の語句を一覧表にした用語集のページを提供している。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A Web page discussing mathematical theory includes a glossary of commonly used mathematical
-                  terms, abbreviations and acronyms.
+               <h3>事例 2</h3>
+               <p>数学の理論を議論するウェブページには、一般的に使われる数学の専門用語、略語及び頭字語の用語集がある。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>A textbook contains a glossary of new vocabulary words introduced in each chapter.</p>
+               <h3>事例 3</h3>
+               <p>教科書には、各章で紹介される新しい語彙の用語集がある。</p>
             </section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>Dutch text uses the phrase '
+               <h3>事例 4</h3>
+               <p>オランダ語の言い回しは、「
                   <span lang="nl">Hij ging met de kippen op stok</span>
-                  ' (He went to roost with the chickens). The glossary explains that this phrase means
-                  '
+                  」(彼は鶏とねぐらに帰った) という語句を使用する。用語集は、この語句が「
                   <span lang="nl">Hij ging vroeg naar bed</span>
-                  ' (He went to bed early).
+                  」(彼は早く寝た) を意味していることを説明している。
                </p>
             </section>
             <section class="example" id="example-5-a-glossary-of-idiomatic-expressions">
-               <h3>Example 5: A glossary of idiomatic expressions</h3>
-               <p>The American novel "The Adventures of Huckleberry Finn" includes many idiomatic expressions
-                  that were used in the southwestern United States in the 1840s. In an online edition
-                  designed for students, each idiomatic expression is linked to an item in the glossary.
+               <h3>事例 5: 慣用表現の用語集</h3>
+               <p>アメリカの小説「ハックルベリー フィンの冒険」は、1840 年代の南西アメリカで用いられていた多くの固有表現を含んでいる。生徒向けに編集されたオンライン版において、個々の慣用表現は用語集の項目にリンクが張られている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G55">G55: Linking to definitions</a></li>
+               <li><a href="G55">G55: 定義にリンクする</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G70">G70: Providing a function to search an online dictionary</a></li>
+               <li><a href="G70">G70: オンライン辞書を検索する機能を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H40">H40: Using description lists</a></li>
+               <li><a href="../html/H40">H40: 記述リストを使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H60">H60: Using the link element to link to a glossary</a></li>
+               <li><a href="../html/H60">H60: 用語集にリンクするために、link 要素を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>Check that either</p>
+                     <p>次のいずれかであることを確認する</p>
                      
                      <ul>
                         
-                        <li>The glossary is included in the Web page, or</li>
+                        <li>用語集がウェブページに含まれている、又は</li>
                         
-                        <li>A mechanism is available to locate the glossary.</li>
+                        <li>用語集を見つけるためのメカニズムが利用できる。</li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li>Check that each word, phrase, or abbreviation to be defined is defined in the glossary</li>
+                  <li>定義される個々の単語、語句、又は略語が用語集で定義されていることを確認する。</li>
                   
-                  <li>Check that the glossary contains only one definition for each item.</li>
+                  <li>用語集には個々の項目に対して一つの定義のみが含まれることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All three checks above are true.</li>
+                  <li>上記の三つの結果全てが真である。</li>
                   
                </ul>
                
-               <p>Note: The definition of abbreviation used in WCAG is: "shortened form of a word, phrase,
-                  or name where the original expansion has not been rejected by the organization that
-                  it refers to and where the abbreviation has not become part of the language."
+               <p>注記: WCAG で使用される略語の定義は:「単語、語句、又は名称の短縮形で、短縮されていない元来の名称を当該組織が廃止していないもの、及びその略語が言語の一部になっていないもの。」である。
                </p>
                
             </section>
