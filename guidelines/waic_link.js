@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	const lastTrNote = document.querySelector("aside.trnote>p:last-child");
 	if(lastTrNote) lastTrNote.textContent = trNote;
 
-	const w3cDocumentAnchors = document.querySelectorAll("a[href*=https\\:\\/\\/www\\.w3\\.org\\/WAI\\/WCAG21]")
+	const w3cDocumentAnchors = document.querySelectorAll(".doclinks a[href*=https\\:\\/\\/www\\.w3\\.org\\/WAI\\/WCAG21]");
 	for(let i = 0; i < w3cDocumentAnchors.length; i++){
 		const anchor = w3cDocumentAnchors[i];
 		const href = anchor.getAttribute('href');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			jaAnchor.setAttribute('title', jaLinkTitle);
 			jaAnchor.textContent = jaLinkText;
 			anchor.parentNode.insertBefore(jaAnchor, anchor.nextSibling);
-			anchor.parentNode.insertBefore(document.createTextNode(" "), anchor);
+			jaAnchor.parentNode.insertBefore(document.createTextNode(" "), jaAnchor);
 		}
 	}
 });
