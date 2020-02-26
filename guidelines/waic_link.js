@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			jaAnchor.setAttribute('href', jaLinkUrl);
 			jaAnchor.setAttribute('title', jaLinkTitle);
 			jaAnchor.textContent = jaLinkText;
+			anchor.parentNode.insertBefore(document.createTextNode(" "),anchor.nextSibling);
 			anchor.parentNode.insertBefore(jaAnchor,anchor.nextSibling);
 		}		
 	});
