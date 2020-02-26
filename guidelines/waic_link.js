@@ -2,12 +2,12 @@ const trNote = "この文書内にあるリンクのうち、「Understanding WC
 const jaLinkText = '[日本語訳]';
 const jaLinkTitleSuffix = 'の日本語訳';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function(){
 	const lastTrNote = document.querySelector("aside.trnote>p:last-child");
 	if(lastTrNote) lastTrNote.textContent = trNote;
 
 	const w3cDocumentAnchors = document.querySelectorAll("a[href*=https\\:\\/\\/www\\.w3\\.org\\/WAI\\/WCAG21]")
-	w3cDocumentAnchors.forEach((anchor, index)=>{
+	w3cDocumentAnchors.forEach(function(anchor){
 		const href = anchor.getAttribute('href');
 		if(href.indexOf("Understanding")!=-1 ){
 			const jaLinkUrl = href.replace('\/\/www.w3.org\/WAI\/WCAG21\/Understanding','//waic.jp/docs/WCAG21/Understanding');
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			jaAnchor.setAttribute('href', jaLinkUrl);
 			jaAnchor.setAttribute('title', jaLinkTitle);
 			jaAnchor.textContent = jaLinkText;
-			anchor.parentNode.insertBefore(document.createTextNode(" "),anchor.nextSibling);
-			anchor.parentNode.insertBefore(jaAnchor,anchor.nextSibling);
+			anchor.parentNode.insertBefore(document.createTextNode(" "), anchor.nextSibling);
+			anchor.parentNode.insertBefore(jaAnchor, anchor.nextSibling);
 		}		
 	});
 });
