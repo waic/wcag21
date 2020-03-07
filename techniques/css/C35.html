@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>C35: Allowing for text spacing without wrapping</title>
+      <title>C35: 折り返しのないテキストの間隔を見込む</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,82 +10,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C34">Previous Technique: C34</a></li>
-            <li><a href="C36">Next Technique: C36</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C34">前の達成方法: C34</a></li>
+            <li><a href="C36">次の達成方法: C36</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Allowing for text spacing without wrapping</h1>
+      <h1>折り返しのないテキストの間隔を見込む</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content using technologies that support <a href="https://www.w3.org/TR/CSS/">Cascading Style Sheets (CSS)</a>.
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/CSS/">Cascading Style Sheets (CSS)</a> をサポートするウェブコンテンツ技術を使用したコンテンツ
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/text-spacing">Success Criterion 1.4.12: Text Spacing</a> (Sufficient)</span>.
+            <p>これは、 <span><a href="https://w3c.github.io/wcag/understanding/text-spacing">達成基準 1.4.12: テキストの間隔を理解する</a> (十分) </span> に関連する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to allow a user to override text spacing via user
-               stylesheet, bookmarklet, extension, or application. Increased spacing between paragraphs,
-               lines, words, and characters benefits people with low vision or some cognitive disabilities.
-               Content needs to allow spacing changes without loss of content or functionality by
-               allowing the elements containing the text to expand as needed.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者がユーザスタイルシート、ブックマークレット、拡張機能、又はアプリケーションを介してテキスト間隔を上書きできるようにすることである。段落、行、単語、及び文字の間隔を広げることは、ロービジョン又はは認知障害のある人に役立つ。コンテンツは、テキストを含む要素を必要に応じて拡大できるようにすることで、コンテンツ又は機能を損なうことなく間隔を変更できる必要がある。
             </p>
-            <p><strong>Where text is not intended to wrap</strong>, authors should either:
+            <p><strong>テキストが折り返しを意図していない場合</strong>、コンテンツ制作者は以下のいずれかを行うべきである:
             </p>
             <ul>
                
-               <li>size containers to a have a value greater than the default width of the text, or</li>
+               <li>コンテナのサイズをテキストのデフォルト幅よりも大きい値にする、又は</li>
                
-               <li>allow the containers to expand in the direction of text.</li>
+               <li>コンテナをテキストの方向に拡張できるようにする。</li>
                
             </ul>
-            <p>There is some variability in the width that words or phrases will grow to when setting
-               the letter and word spacing. If elements must use a fixed width, a safe value is 20%
-               wider than the default maximum width. For example, if a small text-container allows
-               for 20 characters, allowing enough width for 24 characters should allow enough space
-               for text-spacing to be applied.
+            <p>文字及び単語の間隔を設定するときに、単語又はフレーズが大きくなる幅にはある程度のばらつきがある。要素で固定幅を使用しなければならない場合、安全な値はデフォルトの最大幅より 20 ％広くなる。例えば、小さなテキストコンテナで 20 文字を見込む場合、24 文字の十分な幅を考慮することでテキスト間隔を適用するのに十分なスペースを割り当てるべきである。
             </p>
-            <p>For boxes which can expand with the text, authors can take advantage of the inline-block
-               value of the CSS display property and not set negative margins to allow for text-spacing
-               overrides.
+            <p>テキストで拡大できるボックスの場合、コンテンツ制作者は、CSS display プロパティの inline-block 値を利用し、負のマージンを設定しないことで、テキスト間隔を上書きすることができる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
-            <p>When a user adapts the page to increase the text spacing, text fits within the bounds
-               of its containing box.
+            <h2>事例</h2>
+            <p>利用者がページを調整してテキストの間隔を広げると、テキストはその包含ボックスの境界内に収まる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>The <code>ex</code> unit has been used as as the closest available unit for character width, <code>ex </code>"Represents the x-height of the element's font." (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">MDN page for CSS units</a>). It is not perfect, different characters have different default widths.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p><code>ex</code> は文字幅に最も近い利用可能な単位として使用されている。<code>ex </code> という単位は「要素のフォントの x-height を表す」ものである (<a href="https://developer.mozilla.org/ja/docs/Web/CSS/length">MDN の CSS における単位を解説したページ</a>)。これは完璧ではなく、違う文字ではデフォルトの幅も異なる。
                </p>
             </div>
             <section class="example" id="example-1-a-box-sized-with-space-to-allow-for-expansion">
-               <h3>Example 1: A box sized with space to allow for expansion</h3>
-               <p>The containers are sized to a value greater than the default width of the text.</p><pre xml:space="preserve"><code>/* Links are less than 8ex wide, so 10ex width of each li allows for expanded letter and word width*/
+               <h3>事例 1: 拡張できる間隔があるサイズのボックス</h3>
+               <p>コンテナはテキストのデフォルト幅より大きいサイズとなる。</p><pre xml:space="preserve"><code>/* リンクの幅は 8ex より少ないため、10ex の幅である li により、文字や単語の幅を拡張することができる。 */
  nav li { width: 10em; }
 
 &lt;!-- HTML --&gt;
@@ -95,12 +80,11 @@
    &lt;li&gt;&lt;a href="/contact/"&gt;Contact&lt;/a&gt;&lt;/li&gt;
   &lt;ul&gt;
  &lt;/nav&gt;</code>
-</pre><p>If the navigation element used fix-width containers of the same size, the width would
-                  need to allow for text 20% larger than the longest word.
+</pre><p>ナビゲーション要素が同じサイズの固定幅コンテナを使用した場合、その幅は最長の単語より 20 ％大きいテキストを許可する必要がある。
                </p>
             </section>
             <section class="example" id="example-2-a-box-which-expands-with-the-text-size">
-               <h3>Example 2: A box which expands with the text size</h3><pre xml:space="preserve"><code>/* CSS containers are given a display of inline-block. No negative margins set. */
+               <h3>事例 2: テキストサイズで拡大するボックス</h3><pre xml:space="preserve"><code>/* CSS コンテナは、display を inline-block としている。負のマージンはセットしていない。 */
  nav li { display: inline-block; }
 
 &lt;!-- HTML --&gt;
@@ -110,51 +94,47 @@
    &lt;li&gt;&lt;a href="/contact/"&gt;Contact&lt;/a&gt;&lt;/li&gt;
   &lt;ul&gt;
  &lt;/nav&gt;</code>
-</pre><p>In the case of variable-width text containers for each item, the parent item may need
-                  to allow for wrapping of the items.
+</pre><p>各アイテムが可変幅テキストコンテナの場合、親アイテムは各アイテムを折り返しできるようにする必要があってもよい。
                </p>
-               <p class="working-example"><a href="../../working-examples/css-text-spacing/">Working examples of #1 and #2</a> are available.
+               <p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/css-text-spacing/">事例 1 と 事例 2 の実例</a> が利用可能である。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/css/C36">C36: Allowing for text spacing override</a></li>
+               <li><a href="C36">C36: テキスト間隔を上書きできるようにする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For elements which contain text that is not intended to wrap:</p>
+               <h3>手順</h3>
+               <p>折り返しを意図していないテキストを含む要素の場合:</p>
                <ol>
                   
-                  <li>Set zoom level to 100%.</li>
+                  <li>ズームレベルを 100 ％に設定する。</li>
                   
-                  <li>Use a tool or another mechanism to apply the text spacing metrics (line height, and
-                     paragraph, letter, and word spacing), such as the <a href="http://www.html5accessibility.com/tests/tsbookmarklet.html">Text Spacing Bookmarklet</a> or a user-style browser plugin.
+                  <li><a href="http://www.html5accessibility.com/tests/tsbookmarklet.html">Text Spacing Bookmarklet</a> やユーザスタイルを指定するブラウザプラグインなどの、テキスト間隔のメトリック (行高さ、段落、文字、及び単語の間隔) を適用するツール又は別のメカニズムを使用する。
                   </li>
                   
-                  <li>Check that all content and functionality is available e.g., text in containers is
-                     not truncated and does not overlap other content.
+                  <li>全てのコンテンツ及び機能が利用可能であることを確認する。例えば、コンテナ内のテキストが切り取られていないこと、及び他のコンテンツと重なっていないことを確認する。
                   </li>
                   
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>3 の結果が真である。</li>
                   
                </ul>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>Where a page has multiple layouts (e.g. in a responsive design) text spacing should
-                     be tested in each layout. 
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ページに複数のレイアウト (例えばレスポンシブデザイン) がある場合、各レイアウトでテキストの間隔を検証すべきである。
                   </p>
                </div>
             </section>
