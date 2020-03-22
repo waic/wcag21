@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G60: Playing a sound that turns off automatically within three seconds</title>
+      <title>G60: 音声の再生を 3 秒以内に自動的に停止する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,104 +10,90 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G59">Previous Technique: G59</a></li>
-            <li><a href="G61">Next Technique: G61</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G59">前の達成方法: G59</a></li>
+            <li><a href="G61">次の達成方法: G61</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Playing a sound that turns off automatically within three seconds</h1>
+      <h1>音声の再生を 3 秒以内に自動的に停止する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies except those for voice interaction.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/audio-control">Success Criterion 1.4.2: Audio Control</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象) </h2>
+            <p>音声のインタラクション機能があるものを除く全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/audio-control">達成基準 1.4.2: 音声の制御</a> (十分な達成方法) </span>に関連する達成方法である。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to allow authors to play a sound on their
-               Web page but avoid the problem of users not being able to use their screen
-               readers due to interference by the content sound. It also allows the author
-               to avoid putting controls on the Web page to control the sound - and the problem
-               faced by users with screen readers in finding the control (when unable
-               to hear their screen reader).
+            <h2>解説</h2>
+            <p>
+               この達成方法の目的は、コンテンツ制作者がウェブページ上で音声を再生できるようにする一方で、利用者がその音声による干渉のためにスクリーンリーダーを使用できないという問題を回避することである。
+               また、コンテンツ製作者が音声を制御するコントロールをウェブページに配置することを回避し、スクリーンリーダーの利用者が、(スクリーンリーダーの音が聞こえない場合に) そのコントロールを見つける際に直面する問題を回避することもできる。
             </p>
-            <p>The technique is simple. The sound plays for 3 or less seconds and stops
-               automatically.
+            <p>
+               この達成方法はシンプルであり、音声を 3 秒以下で再生し、自動的に停止するようにすればよい。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>Example 1: A Web page opens with a trumpet fanfare and then goes silent</li>
+               <li>事例 1: ウェブページを開くと、トランペットのファンファーレが鳴り、静かになる。</li>
                
-               <li>Example 2: A homepage opens with the chairman saying "Binfor, where quality is our
-                  business."  then going silent.
+               <li>事例 2: ウェブページを開くと、「品質がビジネスでは一番重要です」という社長の声が聞こえ、静かになる。
                </li>
                
-               <li>Example 3: A Web page opens with instructions on how to get started:  "To begin, press
-                  the enter key."
+               <li>事例 3: 「Enter キーを押して始めてください」という始め方の操作説明が流れる。
                </li>
                
-               <li>Example 4: A Web page opens with a warning and then goes silent.</li>
+               <li>事例 4: ウェブページを開くと警告音が鳴り、静かになる。</li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G170">G170: Providing a control near the beginning of the Web page that turns off sounds that
-                     play automatically</a></li>
+               <li><a href="G170">G170: 自動的に再生される音声を停止するコントロールを、ウェブページの先頭付近で提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G171">G171: Playing sounds only on user request</a></li>
+               <li><a href="G171">G171: 利用者の要求に応じてのみ、音声を再生する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Load the Web page</li>
+                  <li>ウェブページをロードする。</li>
                   
-                  <li>Check that all sound that plays automatically stops in 3 seconds
-                     or less
-                  </li>
+                  <li>自動的に再生される全ての音声が 3 秒以下で停止することを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true</li>
+                  <li>2. の結果が真である。</li>
                   
                </ul>
                
