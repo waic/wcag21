@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G210: Ensuring that drag-and-drop actions can be cancelled</title>
+      <title>G210: ドラッグ＆ドロップ操作をキャンセルできるようにする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,127 +10,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G209">Previous Technique: G209</a></li>
-            <li><a href="G211">Next Technique: G211</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G209">前の達成方法: G209</a></li>
+            <li><a href="G211">次の達成方法: G211</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that drag-and-drop actions can be cancelled</h1>
+      <h1>G210: ドラッグ＆ドロップ操作をキャンセルできるようにする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.0 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>The Technique is applicable to any technology that supports pointer input (e.g. supporting
-               any or all of the following: mouse pointer, touch on touch screen or trackpad, stylus
-               input, or laser pointer input).
+            <h2>適用 (対象)</h2>
+            <p>この達成方法は、ポインタ入力をサポートする全ての技術に適用できる (例えば、次のいずれかまたは全てをサポートする: マウスポインタ、タッチスクリーンまたはトラックパッドのタッチ、ペン入力、レーザーポインタ入力)。
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/pointer-cancellation">Success Criterion 2.5.2: Pointer Cancellation</a> (Sufficient)</span>.
+            <p>この達成方法は<span><a href="https://w3c.github.io/wcag/understanding/pointer-cancellation">達成基準 2.5.2: ポインタのキャンセル</a> (十分)</span> に関連する。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that users who use a path-based drag-and-drop
-               action to move an item from the initial location to a drop target can abort the action
-               after picking up the target. This can be done either by releasing the item outside
-               a drop area, or by moving the item back to its original position in a separate action
-               that undoes the first action. A third option is to have a step after the element is
-               dropped onto target, either with a dialog asking for confirmation of the action when
-               the item is dropped, or providing an undo command.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、軌跡ベースのドラッグ＆ドロップ操作を使用して初期位置からドロップターゲットに移動する利用者が、ターゲットを選択した後に操作を中止できるようにすることである。これは、ドロップ領域外でアイテムを離すか、最初の操作を元に戻す別の操作でアイテムを元の位置に戻すことで実行できる。3 番目のオプションは、要素がターゲットにドロップされた後に、アイテムがドロップされた時の操作の確認を尋ねるダイアログか、元に戻すコマンドを提供することである。
             </p>
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>This technique addresses pointer actions where support has been implemented by authors,
-                  not gestures provided by the user agent (such as horizontal swiping to move through
-                  the browser history or vertical swiping to scroll through page content) or the operating
-                  system (e.g., gestures to move between open apps, or call up contextual menus of assistive
-                  technologies when these are enabled).
+               <p>この達成方法は、ユーザエージェントによって提供されるジェスチャ (ブラウザ履歴間を移動する水平方向のスワイプや、ページコンテンツをスクロールする垂直方向のスワイプなど) 又はオペレーティングシステムによって提供されるジェスチャ (例えば、起動中のアプリ間を移動するジェスチャや、支援技術が有効になっているときに支援技術のコンテキストメニューを呼び出すジェスチャ) ではなく、コンテンツ制作者によって実装されているポインタアクションに対応する。
                </p>
             </div>
-            <p>On touch screen devices, author-supplied path-based and multipoint gestures usually
-               do not work when OS level assistive technologies (AT) like a built-in screenreader
-               is turned on. AT generally consumes path-based or multipoint gestures so they would
-               not reach the authored content. For example, a horizontal drag gesture may not move
-               a slider thumb as intended by the author, but move the screen reader focus to the
-               next or previous element. Some gestures may work if the user operates "pass through
-               gestures" which are often unreliable as they may depend on factors of hardware, operating
-               system, operating system "skin", operating system setting, or user agent.
+            <p>タッチスクリーンデバイスでは、組み込みのスクリーンリーダーなどの OS レベルの支援技術 (AT) が有効になっている場合、通常、コンテンツ制作者が提供している軌跡ベース及びマルチポイントジェスチャは機能しない。支援技術は一般的に、軌跡ベース又はマルチポイントジェスチャを使用するため、制作されたコンテンツに到達しない。例えば、水平方向のドラッグジェスチャは、コンテンツ制作者の意図した通りにスライダーのつまみを移動できないが、スクリーンリーダーのフォーカスを次又は前の要素に移動できる。利用者が「パススルージェスチャ」を操作すると、一部のジェスチャは機能する場合がある。パススルージェスチャは、ハードウェア、オペレーティングシステム、オペレーティングシステムの「スキン」、オペレーティングシステムの設定、又はユーザーエージェントの要素に依存する可能性があるため、多くの場合信頼できない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                				
-               <li>A site shows a file directory. Files can be picked up and moved over a trash can icon.
-                  When the picked-up file is released outside this target, it reverts to the old position.
+               <li>サイトはファイルディレクトリを表示している。ファイルは選択しゴミ箱アイコンの上に移動できる。選択されたファイルがこのターゲットの外側で離されると、ファイルは古い位置に戻る。
+               </li>
+
+               <li>サイトにはファイルディレクトリが表示されている。ファイルを選択し、ゴミ箱アイコンの上に移動して削除できる。選択されたファイルがゴミ箱の上で離されると、モーダルダイアログが利用者に削除操作の確認又はキャンセルを尋ねる。
                </li>
                				
-               <li>A site shows a file directory. Files can be picked up and moved over a trash can icon
-                  to delete it. When the picked-up file is released over the trash can, a modal dialog
-                  asks the user to confirm or cancel the delete action.
+               <li>プロジェクト計画サイトのかんばん実装は、アクティビティのフェーズごとに異なる列が表示される。利用者は、計画アイテムを表すアイコンを選択して別の列に移動できる。アイテムが選択されてポインタに追従する場合、アイテムをドロップターゲット (列) の外側に移動してそこでドロップすると、アクションをキャンセルできる。そのとき、アイテムは元の位置に戻る。
                </li>
                				
-               <li>A kanban implementation of a project planning site shows different columns for phases
-                  of an activity. Users can pick up and move icons representing planning items to another
-                  column. When an item has been picked up and now follows the pointer, it can be moved
-                  outside the drop targets (columns) and dropped there to cancel the action. The item
-                  will then jump back to the old position.
-               </li>
-               				
-               <li>A kanban implementation of an issue tracking system shows columns that indicate different
-                  phases in handling issues (such as new / processed / done / closed). There is no screen
-                  space outside the kanban columns. Users can pick up and move icons representing issues
-                  between columns. When an item has been dropped in another column, the action can be
-                  reversed by dragging the icon back to the original column where it will return to
-                  its original position (defined by sorting preferences).
+               <li>課題追跡システムのかんばん実装は、課題の取り扱い (新規 / 処理済み / 完了 / 終了など) での異なるフェーズを示す列を表示している。かんばん列の外側に画面の余白はない。利用者は列の間で課題を表すアイコンを選択し移動できる。アイテムが別の列にドロップされた場合、アイコンを元の列にドラッグして元の位置 (並べ替え設定で定義されている) に戻すことで、操作を元に戻すことができる。
                </li>
                			
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p><a href="https://www.youtube.com/watch?v=DI5ALywD6Qc">Video of canceled drag-and-drop interaction (item released outside drop target) (Youtube)</a></section>
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p><a href="https://www.youtube.com/watch?v=DI5ALywD6Qc">Video of canceled drag-and-drop interaction (item released outside drop target) (Youtube)</a></section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For content that is draggable, check whether the drag-and-drop action can be reversed
-                  by:
+               <h3>手順</h3>
+               <p>ドラッグ可能なコンテンツの場合、次の操作でドラッグ＆ドロップ操作を元に戻すことができるかどうかを確認する:
                </p>
                <ol>				
                   					
-                  <li>releasing the picked-up item outside a drop target</li>
+                  <li>選択したアイテムをドロップターゲットの外に離す</li>
                   					
-                  <li>dragging the picked-up item back to its old position</li>
+                  <li>選択したアイテムを元の位置にドラッグして戻す</li>
                   					
-                  <li>a confirmation dialog or an undo control appears after the item has been dropped</li>
+                  <li>アイテムがドロップされた後、確認ダイアログ又は元に戻すコントロールが表示される</li>
                   				
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>At least one option of #1, #2, #3 is true</li>
+                 <li>1、2、3の少なくとも一つのオプションが真</li>
                   				
                </ul>
             </section>
