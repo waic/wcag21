@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G63: Providing a site map</title>
+      <title>G63: サイトマップを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,161 +10,129 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G62">Previous Technique: G62</a></li>
-            <li><a href="G64">Next Technique: G64</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="目次">Contents</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="イントロダクション">Intro</a></li>
+            <li><a href="G62">前の達成方法: G62</a></li>
+            <li><a href="G64">次の達成方法: G64</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連するリソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a site map</h1>
+      <h1>サイトマップを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/multiple-ways">Success Criterion 2.4.5: Multiple Ways</a> (Sufficient as a way to meet an unwritten technique)
-               </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/location">Success Criterion 2.4.8: Location</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/multiple-ways">達成基準 2.4.5: 複数の手段</a>(書かれていない達成方法を満たす慣習的な達成方法)</li>
+               <li><a href="https://w3c.github.io/wcag/understanding/location">達成基準 2.4.8: 現在位置</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This is one of a series of techniques for locating content that are sufficient for
-               addressing Success Criterion 2.4.5. 
-               A site map is a Web page that provides links to different sections of the site. To
-               make the site map available within the site, at a minimum every page that is listed
-               in the site map contains a link to the site map.
-            </p>
-            <p>The site map serves several purposes.</p>
+            <h2>解説</h2>
+            <p>これは、達成基準 2.4.5 の実装に十分なコンテンツを配置するための一連の達成方法のひとつである。サイトマップは、サイトの異なるセクションへのリンクを提供するウェブページである。サイト内でサイトマップを利用できるよう、最低でもサイトマップに記載されている全てのページに、サイトマップへのリンクを設ける。</p>
+            <p>サイトマップは次のいくつかの目的に役立つ。</p>
             <ul>
-               
-               <li>It provides an overview of the entire site.</li>
-               
-               <li>It helps users understand what the site contains and how the content is organized.</li>
-               
-               <li>It offers an alternative to complex navigation bars that may be different at different
-                  parts of the site.
-               </li>
-               
+
+               <li>サイト全体の概要を提供する。</li>
+
+               <li>利用者が、サイトが何を含んでいて、コンテンツがどのように構成されているか、理解するのを助ける。</li>
+
+               <li>サイトのいろいろな部分によって異なる、複雑なナビゲーションバーの代替物を提供する。</li>
+
             </ul>
-            <p>There are different types of site maps. The simplest and most common kind of site
-               map is an outline that shows links to each section or sub-site. Such outline views
-               do not show more complex relationships within the site, such as links between pages
-               in different sections of the site. The site maps for some large sites use headings
-               that expand to show additional detail about each section.
-            </p>
-            <p>A site map describes the contents and organization of a site. It is important that
-               site maps be updated whenever the site is updated. For example, a Web page is not
-               a valid site map when any one of the following is true:
-            </p>
+            <p>サイトマップには、様々なタイプのものがある。最も単純で最も一般的な種類のサイトマップは、それぞれのセクション又はサブサイトへのリンクを示した概略である。そのような概略は、サイトのいろいろなセクションのページ間のリンクのような、サイト内のより複雑な関係は示さない。大きいサイトへのサイトマップの中には、各セクションに関する追加の詳細を示すために展開する見出しを使用しているものもある。</p>
+            <p>サイトマップはサイトのコンテンツと構成について説明する。サイトを更新するときはいつも、サイトマップを更新することが重要である。例えば、下記の一つでも満たしている時、サイトマップは有効ではない:</p>
             <ol>
-               
-               <li>it does not link to all the sections of a site, or</li>
-               
-               <li>it presents an organization that is different from the site's organization, or</li>
-               
-               <li>it contains links that are no longer valid.</li>
-               
+
+               <li>サイトの全てのセクションにリンクしていない、又は</li>
+
+               <li>サイトの構成とは異なる構成を提供する、又は</li>
+
+               <li>もはや有効ではないリンクを含む</li>
+
             </ol>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The Web Accessibility Initiative provides a
-                  <a href="https://www.w3.org/WAI/sitemap.html">WAI site map</a>
-                  that lists different sections of its Web site. The site map shows the different sections
-                  of the Web site, and shows some of the substructure within those sections.
-               </p>
+               <h3>事例 1</h3>
+               <p>ウェブアクセシビリティイニシアティブは、ウェブサイトのいろいろなセクションを記載した<a href="https://www.w3.org/WAI/sitemap.html">WAI site map</a>を提供している。サイトマップはウェブサイトのいろいろなセクションを示すとともに、それらのセクションの下部構造のいくつかを示している。</p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The site map for an on-line magazine lists all the sections of the magazine and the
-                  subsections in each section. It also include links for Help, How to Contact Us, Privacy
-                  Policy, Employment Opportunities, How to Subscribe, and the home page for the magazine.
-               </p>
+               <h3>事例 2</h3>
+               <p>オンラインマガジンのためのサイトマップには、マガジンの全てのセクションとそれぞれのセクションの小セクションが記載されている。また、ヘルプ、お問い合わせ、個人情報保護方針、採用情報、定期購読、及びマガジンのホームページ、へのリンクを含んでいる。</p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>関連するリソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
-               
+
                <li>
                   <a href="http://www.usabilityfirst.com/glossary/?function=display_term&amp;term_id=193">Usability Glossary: sitemap</a>
-                  
+
                </li>
-               
+
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
-               
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G64">G64: Providing a Table of Contents</a></li>
-               
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G125">G125: Providing links to navigate to related Web pages</a></li>
-               
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G126">G126: Providing a list of links to all other Web pages</a></li>
-               
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G185">G185: Linking to all of the pages on the site from the home page</a></li>
-               
+
+               <li><a href="G64">G64: 目次を提供する</a></li>
+
+               <li><a href="G125">G125: 関連するウェブページへナビゲートするリンクを提供する</a></li>
+
+               <li><a href="G126">G126: 他の全てのウェブページへのリンク一覧を提供する</a></li>
+
+               <li><a href="G185">G185: ホームページからサイト上の全てのウェブページにリンクする</a></li>
+
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
-               
+               <h3>手順</h3>
+
                <ol>
-                  
-                  <li>Check that the site contains a site map.</li>
-                  
-                  <li>Check that the links in the site map lead to the corresponding sections of the site.</li>
-                  
-                  <li>For each link in the site map, check that the target page contains a link to the site
-                     map.
-                  </li>
-                  
-                  <li>For each page in the site, check that the page can be reached by following some set
-                     of links that start at the site map.
-                  </li>
-                  
+
+                  <li>サイトにサイトマップがあることを確認する。</li>
+
+                  <li>サイトマップにあるリンクが、サイトの対応するセクションにつながることを確認する。</li>
+
+                  <li>サイトマップにある各リンクについて、対象のページにサイトマップへのリンクが含まれていることを確認する。</li>
+
+                  <li>サイトの各ページについて、サイトマップから始まる一連のリンクを辿ることでページに達することができることを確認する。</li>
+
                </ol>
-               
+
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
-               
+               <h3>期待される結果</h3>
+
                <ul>
-                  
-                  <li>All of the checks above are true.</li>
-                  
+
+                  <li>上記の全ての結果が真である。</li>
+
                </ul>
-               
+
             </section>
          </section>
       </main>
