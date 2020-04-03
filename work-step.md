@@ -30,9 +30,9 @@ https://services.w3.org/htmldiff?doc1=https%3A%2F%2Fwww.w3.org%2FTR%2FWCAG20-TEC
 
 Techniques for WCAG 2.1の新規文章や、差分を取って変更がある箇所については、新たに翻訳を行う必要があります。任意のツールの力を借りつつ、翻訳を行います。
 
-- [https://github.com/waic/translation_guidelines/blob/master/WAIC-wcag20-trans-guide.md](翻訳ガイドライン)
-- [https://waic.jp/docs/WCAG21/#glossary](WCAG 2.1の用語集)
-- [https://docs.google.com/spreadsheets/d/1V8wX-pxAO-zuYwTSvTSuZ_FtnV47su6Tyy2vM5GEOLw/edit#gid=0](WG4の用語集)
+- [翻訳ガイドライン](https://github.com/waic/translation_guidelines/blob/master/WAIC-wcag20-trans-guide.md)
+- [WCAG 2.1の用語集](https://waic.jp/docs/WCAG21/#glossary)
+- [WG4の用語集](https://docs.google.com/spreadsheets/d/1V8wX-pxAO-zuYwTSvTSuZ_FtnV47su6Tyy2vM5GEOLw/edit#gid=0)
 
 の確認もお忘れなく。
 
