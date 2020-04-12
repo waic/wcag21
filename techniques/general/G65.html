@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G65: Providing a breadcrumb trail</title>
+      <title>G65: パンくずリストを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,118 +10,92 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G64">Previous Technique: G64</a></li>
-            <li><a href="G68">Next Technique: G68</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G64">前の達成方法: G64</a></li>
+            <li><a href="G68">次の達成方法: G68</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a breadcrumb trail</h1>
+      <h1>パンくずリストを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/location">Success Criterion 2.4.8: Location</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/location">達成基準2.4.8: 現在位置</a> (十分な達成方法) </span>に関連する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>A breadcrumb trail helps the user to visualize how content has been structured and
-               how to navigate back to previous Web pages, and may identify the current location
-               within a series of Web pages. A breadcrumb trail either displays locations in the
-               path the user took to reach the Web page, or it displays the location of the current
-               Web page within the organization of the site.
+            <h2>解説</h2>
+            <p>パンくずリストは、コンテンツがどのような構造になっていたのか、及びこれまでにたどってきたウェブページへ戻る方法を、利用者が想起する助けとなり、また一連のウェブページの中で現在位置を特定する。パンくずリストには、利用者がそのウェブページに到達するまでに通ってきた場所、又はサイトの編成における現在のウェブページの位置が表示されている。
             </p>
-            <p>Breadcrumb trails are implemented using links to the Web pages that have been accessed
-               in the process of navigating to the current Web page. They are placed in the same
-               location within each Web page in the set.
+            <p>パンくずリストは、現在のウェブページまでナビゲートする途中にアクセスしたウェブページへのリンクを使って実装される。パンくずリストは、ウェブページ一式の各ウェブページの中で同じ位置に置く。
             </p>
-            <p>It can be helpful to users to separate the items in the breadcrumb trailing with a
-               visible separator. Examples of separators include "&gt;", "|", "/", "::", and "→".
+            <p>目に見える区切り文字でパンくずリストの中の項目を切り離すと、利用者の助けになる。区切り文字の例には「>」、「|」、「/」、「::」、及び「→」がある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A developer searches within the Web site of an authoring tool manufacturer to find
-                  out how to create hyperlinks.  The search results bring him to a Web page with specific
-                  instructions for creating hyperlinks using the authoring tool.  It contains the following
-                  links to create a breadcrumb trail:
+               <h3>事例 1</h3>
+               <p>開発者が、ハイパーリンクを作成する方法を見つけるために、オーサリングツールのメーカーのウェブサイトの中を探している。検索結果を使って、オーサリングツールを使用してハイパーリンクを作成するための詳しい説明があるウェブページへ行く。そのページには、以下のようなリンクでできたパンくずリストがある:
                </p><pre xml:space="preserve">
-              Home :: Developer Center :: How To Center
-            </pre><p>In this example the breadcrumb trail does not contain the title of the current Web
-                  page, "How to create hyperlinks". That information is available as the title of the
-                  Web page.
+              ホーム :: デベロッパーセンター :: 手引き
+            </pre><p>この例では、パンくずリストには現在のウェブページのタイトルである「ハイパーリンクを作成する方法」が含まれていない。その情報はウェブページのタイトルとして入手できる。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A photographer's portfolio Web site has been organized into different galleries and
-                  each gallery has further been divided into categories.   A user who navigates through
-                  the site to a Web page containing a photo of a Gentoo penguin would see the following
-                  breadcrumb trail at the top of the Web page:
+               <h3>事例 2</h3>
+               <p>写真家の作品集のウェブサイトはいろいろなギャラリーに分かれていて、各ギャラリーはさらに分類ごとに分割されている。サイトの中でジェンツーペンギンの写真を含むウェブページに移動する利用者は、ウェブページの冒頭で以下のようなパンくずリストを見る:
                </p><pre xml:space="preserve">
-              Home / Galleries / Antarctica / Penguins / Gentoo Penguin
-            </pre><p>All of the items except "Gentoo Penguin" are implemented as links.  The current location,
-                  Gentoo Penguin, is included in the breadcrumb trail but it is not implemented as a
-                  link.
+              ホーム / ギャラリー / 南極大陸 / ペンギン / ジェンツーペンギン
+            </pre><p>「ジェンツーペンギン」を除くすべての項目がリンクとして実装されている。現在位置 (ジェンツーペンギン) はパンくずリストに含まれているが、リンクとしては実装されていない。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>The information architecture of an ecommerce Web site is categorized from general
-                  to increasingly more specific product subsections.
+               <h3>事例 3</h3>
+               <p>e コマースサイトの情報設計が、一般から特定の製品区分に徐々に分類されている。
                </p>
-               <p>You are here: Acme Company → Electronics → Computers → Laptops</p>
-               <p>The trail begins with "You are here" and ends with the current page. Items in the
-                  trail are clickable or tappable links with the exception of "You are here" and "Laptops."
-                  This example uses a right arrow symbol (→) as a separator.
+               <p>現在位置: Acme Company → 電化製品 → コンピューター → ノートパソコン</p>
+               <p>パンくずリストが「現在位置」で始まり、現在利用者がいるページで終わる。リストに入っている項目は、「現在位置」及び「ノートパソコン」を除いて、クリック又はタップ可能なリンクである。この例は、右向き矢印 (→) を区切り位置として使用している。
                </p>
-               <p>In this example a <code class="el">h2</code> element, a <code class="el">nav</code> element with an <code class="att">aria-label</code> attribute, and an unordered list are used to provide semantics. The markup would
-                  be styled using CSS to display the breadcrumb trail horizontally.
+               <p>この例では、<code class="el">h2</code> 要素、 <code class="att">aria-label</code> 属性を指定した <code class="el">nav</code> 要素、非順序のリストがセマンティクスを提供するために使われている。このマークアップは、CSS によるスタイル指定によって水平のパンくずリストとして表示されるだろう。
                </p>
-               <p>HTML for this example</p><pre xml:space="preserve"> 
+               <p>コード例</p><pre xml:space="preserve"> 
           &lt;nav aria-label="Breadcrumbs"&gt; 
-            &lt;h2&gt;You are here:&lt;/h2&gt; 
+            &lt;h2&gt;現在位置:&lt;/h2&gt; 
             &lt;ul&gt;
               &lt;li&gt;&lt;a href="/"&gt;Acme Company&lt;/a&gt; &amp;#8594;&lt;/li&gt; 
-              &lt;li&gt;&lt;a href="/electronics/"&gt;Electronics&lt;/a&gt; &amp;#8594;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="/electronics/computers/"&gt;Computers&lt;/a&gt; &amp;#8594;&lt;/li&gt;
-              &lt;li&gt;Laptops&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/electronics/"&gt;電化製品&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/electronics/computers/"&gt;コンピューター&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;ノートパソコン&lt;/li&gt;
             &lt;/ul&gt; 
           &lt;/nav&gt;
-      </pre><p>CSS for this example</p><pre xml:space="preserve"> 
+      </pre><p>この例に対する CSS</p><pre xml:space="preserve"> 
       nav, h2, ul, ul li{ display: inline;}
       nav &gt; h2{ font-size: 1em; } 
       ul { padding-left: 0em; }
-      </pre><p class="working-example">Working example: <a href="../../working-examples/breadcrumb-trail/">Breadcrumb example</a></p>
+      </pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html">Breadcrumb example</a></p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -130,45 +104,48 @@
                </li>
                
             </ul>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p></em>「Bread crumb navigation」への正確なリンクは、<a href="https://www.w3.org/TR/html5/common-idioms-without-dedicated-elements.html#bread-crumb-navigation">HTML5.2 4.13.2. Bread crumb navigation</a> となる。また、<a href="https://developers.google.com/search/docs/data-types/breadcrumb">パンくずリスト  |  検索  |  Google Developers</a> 及び <a href="https://www.bing.com/webmaster/help/markup-breadcrumbs-72419f3f">Markup: Breadcrumbs - Bing Webmaster Tools</a> もあわせて参考になる。</p>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G63">G63: Providing a site map</a></li>
+               <li><a href="G63">G63: サイトマップを提供する
+               </a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G128">G128: Indicating current location within navigation bars</a></li>
+               <li><a href="G128">G128: ナビゲーションバー内で現在位置を示す</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>When breadcrumb trails have been implemented in a set of Web pages:</p>
+               <p>ウェブページ一式の中にパンくずリストが実装されているとき:</p>
                
                <ol>
                   
-                  <li>Navigate to a Web page.</li>
+                  <li>あるウェブページに移動する。</li>
                   
-                  <li>Check that a breadcrumb trail is displayed.</li>
+                  <li>パンくずリストが表示されていることを確認する。</li>
                   
-                  <li>Check that the breadcrumb trail displays the correct navigational sequence to reach
-                     the current location or the correct hierarchical path to the current location within
-                     the site structure.
+                  <li>パンくずリストが、現在位置に達する正しいナビゲーションの順序、又はサイト構造内の現在位置までの正しい階層の経路を表示していることを確認する。
                   </li>
                   
                   <li>
                      
-                     <p>For a breadcrumb trail that does
-                        <em>not</em>
-                        include the current location:
+                     <p>現在位置を含んで
+                        <em>いない</em>
+                        パンくずリストの場合:
                      </p>
                      
                      <ol>
                         
-                        <li>Check that all elements in the breadcrumb trail are implemented as links.</li>
+                        <li>パンくずリストのすべての要素がリンクとして実装されていることを確認する。</li>
                         
                      </ol>
                      
@@ -176,39 +153,38 @@
                   
                   <li>
                      
-                     <p>For a breadcrumb trail that does include the current location:</p>
+                     <p>現在位置を含んでいるパンくずリストの場合:</p>
                      
                      <ol>
                         
-                        <li>Check that all elements except for the current location are implemented as links.</li>
+                        <li>現在位置を除くすべての要素がリンクとして実装されていることを確認する。</li>
                         
-                        <li>Check that the current location is not implemented as a link.</li>
+                        <li>現在位置がリンクとして実装されていないことを確認する。</li>
                         
                      </ol>
                      
                   </li>
                   
-                  <li>Check that all links navigate to the correct Web page as specified by the breadcrumb
-                     trail.
+                  <li>すべてのリンクが、パンくずリストによって指定された正しいウェブページへ移動することを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
                   <li>
                      
-                     <p>For all Web pages in the set using breadcrumb trails,</p>
+                     <p>パンくずリストを使用している一連のすべてのウェブページについて:</p>
                      
                      <ul>
                         
-                        <li>Checks #2, #3, and #6 are true.</li>
+                        <li>2.、3.、及び 6.の結果が真である。</li>
                         
-                        <li>Either check #4 or #5 is true.</li>
+                        <li>その上で、4.又は 5.のいずれかが真である。</li>
                         
                      </ul>
                      
