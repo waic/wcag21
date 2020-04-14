@@ -40,30 +40,20 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>All technologies.</p>
+            <p>全てのウェブコンテンツ技術</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/help">Success Criterion 3.3.5: Help</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to provide context sensitive help for users as
-               they enter data in forms by providing at least one link to the help information on
-               each Web page. The link targets a help page with information specific to that Web
-               page. Another approach is to provide a help link for every interactive control. Positioning
-               this link immediately before or after the control allows users to easily tab to it
-               if they have problems in the control. Displaying the help information in a new browser
-               window ensures that any data that has already been entered into the form will not
-               be lost. NOTE: A link is not the only means to provide help.
-            </p>
+            <p>この達成方法の目的は、各ウェブページに少なくとも１つのヘルプ情報へのリンクを用意して、利用者がフォームにデータを入力する際に、状況依存のヘルプを提供することである。リンクは、そのウェブページのための情報があるヘルプページへ遷移する。もう一つの方法は、インタラクティブなコントロールのひとつひとつにヘルプページへのリンクを提供する。このリンクを当該コントロールのすぐ前か後に配置することで、そのコントロールで問題があった場合、利用者が簡単にそのリンクまでタブで移動することができる。そのヘルプ情報をブラウザの新しいウィンドウで表示することで、それまでにフォームに入力されたデータは失われずに済む。注記: リンクがヘルプ情報を提供する唯一の手段ではない。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1">
                <h3>事例 1</h3>
-               <p>The example below shows a label element that includes a help link. Including the help
-                  link within the label element allows screen reader users to have access to the help
-                  link when interacting with the input form control.
-               </p><pre xml:space="preserve">
+               <p>下記の達成方法の例は、ヘルプ情報へのリンクを含んだラベル要素を示している。ラベル要素内にヘルプ情報へのリンクを置く事で、スクリーンリーダーの利用者が入力フォームのコントロールを利用する際にヘルプのリンクにアクセスすることが可能になる。</p>
+               <pre xml:space="preserve">
               &lt;form action="test.html"&gt;
                 &lt;label for="test"&gt;Test control
                 &lt;a href="help.html" target="_blank"&gt;Help&lt;/a&gt;&lt;/label&gt;
@@ -75,10 +65,9 @@
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G184">G184: Providing text instructions at the beginning of a form or set of fields that describes
-                     the necessary input</a></li>
+               <li><a href="G184.html">G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G193">G193: Providing help by an assistant in the Web page</a></li>
+               <li><a href="G193.html">G193: ウェブページでアシスタントによるヘルプを提供する</a></li>
                
             </ul>
          </section>
@@ -89,15 +78,11 @@
                
                <ol>
                   
-                  <li>Identify a Web page that contains forms.</li>
+                  <li>フォームが含まれるウェブページを特定する。</li>
                   
-                  <li>Determine if there is at least one link to help information explaining how to complete
-                     the form on this Web page.
-                  </li>
+                  <li>そのページのフォームの全て記入する方法を説明する情報の役に立つようなリンクが一つ以上存在するかどうかを判断する。</li>
                   
-                  <li>Determine if there are links either before or after each interactive control to  information
-                     specific to that control.
-                  </li>
+                  <li>インタラクティブなコントロールの前、又は後ろに、そのコントロールに特有な情報へのリンクがあるかどうかを判断する。</li>
                   
                </ol>
                
@@ -107,7 +92,7 @@
                
                <ul>
                   
-                  <li>Either #2 or #3 are true.</li>
+                  <li>2. 又は 3. のいずれかの結果が真である。</li>
                   
                </ul>
                
