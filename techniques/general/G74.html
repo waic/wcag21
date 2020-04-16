@@ -40,52 +40,32 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>Applies to all technologies</p>
+            <p>全てのウェブコンテンツ技術</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to provide a long description without
-               requiring the user to jump off to another location for the description. It
-               also allows all users to see the description which may be useful to anyone
-               who might miss some features in the non-text content.
-            </p>
-            <p>With this technique, the long description is provided as part of the
-               standard presentation (i.e., everyone receives it). The description is
-               located near the non-text content but does not have to be the very next
-               item. For example, there may be a caption under a chart with the long
-               description provided in the following paragraph.
-            </p>
-            <p>The location of this long description is then provided within the short text
-               alternative so the user knows where to look for it if they cannot view the
-               non-text content.
-            </p>
+            <p>この達成方法の目的は、利用者を別の場所にジャンプさせることなく長い説明文を提供することである。非テキストコンテンツの内容の一部が失われる恐れがある利用者にとって有益な説明文が、すべての利用者にも見られるようになる。</p>
+            <p>この達成方法によって、長い説明文が標準の提示の一部として提供される (つまり、すべての利用者が受け取ることができる)。説明文は非テキストコンテンツの近くに配置されるが、隣接させる必要はない。例えばグラフの下にキャプションがあり、長い説明文が次の段落で提供されているといった場合である。</p>
+            <p>非テキストコンテンツを閲覧できないときに、どこを探せば良いかわかるように、簡潔なテキストによる代替の中に長い説明文の場所を示す。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-bar-chart">
-               <h3>事例 1: Bar chart</h3>
-               <p>There is a bar chart on a Web page showing the sales for the top
-                  three salespeople.
-               </p>
-               <p>The short text alternative says: "October sales chart for top three
-                  salespeople. Details in text following the chart:"
-               </p>
-               <p>The following is in the paragraph immediately below the chart. "Sales for October
-                  show Mary leading with 400 units. Mike follows closely with 389. Chris rounds out
-                  our top 3 with sales of 350."
-               </p>
+               <h3>事例 1: 棒グラフ</h3>
+               <p>ウェブページ に上位 3 名の販売員の売上げを示した棒グラフがある。</p>
+               <p>簡潔なテキストによる代替では「上位 3 名の販売員の 10 月の売上表。グラフに続いてテキストの詳細」と書かれている。</p>
+               <p>次の説明文が棒グラフの直下の段落にある。「10 月の売上げはメアリーが 400 個でトップ、マイクが 389 個の僅差で続き、クリスが 350 個でトップ 3 の最後となっている。」</p>
             </section>
          </section>
          <section id="related">
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G73">G73: Providing a long description in another location with a link to it that is immediately
-                     adjacent to the non-text content</a></li>
+               <li><a href="G73.html">G73: 非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H45">H45: Using longdesc</a></li>
+               <li><a href="H45.html">H45: longdesc 属性を用いる</a></li>
                
             </ul>
          </section>
@@ -96,17 +76,11 @@
                
                <ol>
                   
-                  <li>check that the short text alternative includes the location of
-                     the long description
-                  </li>
+                  <li>簡潔なテキストによる代替に長い説明文の場所が含まれていることを確認する。</li>
                   
-                  <li>Check that the long description is near the non-text content
-                     both visually and in the linear reading order
-                  </li>
+                  <li>長い説明文が視覚的にも音声読み上げ順序でも非テキストコンテンツの近くにあることを確認する。</li>
                   
-                  <li>check that the long description conveys the same information as
-                     the non-text content
-                  </li>
+                  <li>長い説明文が非テキストコンテンツと同じ情報を伝達していることを確認する。</li>
                   
                </ol>
                
@@ -114,7 +88,7 @@
             <section class="results" id="expected-results">
                <h3>期待される結果</h3>
                
-               <p>All 3 of the above are true</p>
+               <p>上記の三つ全ての結果が真である。</p>
                
             </section>
          </section>
