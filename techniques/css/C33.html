@@ -10,25 +10,25 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C32">Previous Technique: C32</a></li>
-            <li><a href="C34">Next Technique: C34</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="目次">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C32">前の達成方法: C32</a></li>
+            <li><a href="C34">次の達成方法: C34</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>Allowing for Reflow with Long URLs and Strings of Text</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
+         <h2>達成方法に関する重要な情報</h2>
          <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
             they relate to the normative WCAG 2.1 success criteria. The Applicability section
             explains the scope of the technique, and the presence of techniques for a specific
@@ -38,13 +38,13 @@
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象) </h2>
             <p>This technique is applicable to Cascading Style Sheet / HTML technologies.</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>Long sets of characters without a space, such as URLs shown as content, can break
                reflow when the page is zoomed. The objective of this technique is to present URLs
                without introducing a horizontal scroll bar at a width equivalent to 320 CSS pixels
@@ -67,7 +67,7 @@
             <p>Sometimes these are not enough to ensure that long URLs will not overflow the viewport.</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-breaking-long-urls">
                <h3>Example 1: Breaking long URLs</h3>
                <p>Using the following CSS will cause long URLs to break at appropriate places (hyphens,
@@ -89,9 +89,9 @@
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>For strings of text that are wider than 320px check:</p>
                <ol>
                   
@@ -119,8 +119,8 @@
                </div>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
-               <p>#3 and #4 are true.</p>
+               <h3>期待される結果</h3>
+               <p>3. 及び 4. の結果が真である。</p>
             </section>
          </section>
       </main>
