@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>C33: Allowing for Reflow with Long URLs and Strings of Text</title>
+      <title>C33: 長いURL及びテキスト文字列をリフローできるようにする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -26,31 +26,26 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Allowing for Reflow with Long URLs and Strings of Text</h1>
+      <h1>長いURL及びテキスト文字列をリフローできるようにする</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
             <h2>適用 (対象) </h2>
-            <p>This technique is applicable to Cascading Style Sheet / HTML technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Sufficient)</span>.
+            <p>カスケーディング スタイル シート / HTML 技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/reflow">達成基準 1.4.10: リフロー</a> (十分な達成方法) </span>に関連する達成方法である。</p>
             </p>
          </section>
+
          <section id="description">
             <h2>解説</h2>
-            <p>Long sets of characters without a space, such as URLs shown as content, can break
-               reflow when the page is zoomed. The objective of this technique is to present URLs
-               without introducing a horizontal scroll bar at a width equivalent to 320 CSS pixels
-               or a vertical scroll bar at a height equivalent to 256 CSS pixels. This is done by
-               using CSS techniques that adapt to the available viewport space. Note: Using a human
-               readable text link, rather than a long URL, is better for usability and accessibility.
+            <p>
+               空白のない長い文字列、例えばコンテンツとして表示されるURLは、ページがズームされたときにリフローを中断する可能性があります。
+               この達成方法の目的は、320 CSS ピクセルに相当する幅の横スクロールバー、又は256 CSS ピクセルに相当する高さの縦スクロールバーを導入せずに、URLを表示することである。
+               これは、使用可能なビューポート領域に適応するレイアウト手法を使用して行われる。
+               注: ユーザビリティ及びアクセシビリティのために、長いURLではなく、人が読解可能なテキストリンクを使用する方がより良い。
             </p>
             <p>By default most browsers will wrap long URLs at the following characters:</p>
             <ul>
