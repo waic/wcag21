@@ -40,8 +40,8 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>Any technology or combination of technologies that support automatic updates.</p>
-            <p>This technique relates to:</p>
+            <p>自動更新をサポートする全てのウェブコンテンツ技術又はウェブコンテンツ技術の組み合わせ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
                <li><a href="https://w3c.github.io/wcag/understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Sufficient)
                </li>
@@ -51,50 +51,29 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to let the user control if and when
-               content is updated, in order to avoid confusion or disorientation caused by
-               automatic refreshes that cause a change of context. Users of screen readers
-               may find automatic updates confusing because it is not always clear what is
-               happening. When a page is refreshed, the screen reader's “virtual cursor",
-               which marks the user's current location on the page, is moved to the top of
-               the page. People who use screen magnification software and people with
-               reading disabilities may also be disoriented when pages are refreshed
-               automatically.
-            </p>
-            <p>Some content is frequently updated with new data or information. Some
-               developers force automatic updates by inserting code in the content that
-               causes the content to request a new copy of itself from the server. These
-               updates and the frequency of these updates are not always under the user's
-               control. Instead of triggering updates automatically, authors can provide a
-               mechanism that allows the user to request an update of the content as
-               needed.
-            </p>
+            <p>この達成方法の目的は、ページの自動的な再読み込みによって状況が変化し、利用者が混乱したり位置が分からなくなったりすることを避けるために、コンテンツの更新やそのタイミングを利用者がコントロールできるようにすることである。自動更新によって何が起こるのかが明らかになっていないと、スクリーンリーダーの利用者が混乱してしまう恐れがある。ページ上で利用者の現在位置を示すスクリーンリーダーの「バーチャルカーソル」は、ページが再読み込みされるとページの最上部に移動してしまう。また、画面拡大ソフトウェアの利用者や読字障害のある利用者も、ページの自動的な再読み込みによって現在位置が分からなくなってしまう恐れがある。</p>
+            <p>コンテンツの中には、頻繁に新たなデータや情報に更新するものがある。また、開発者は、コンテンツがサーバに自分自身の新しいコピーを要求するコードを挿入し、自動更新を強いることがある。そのような更新やその頻度は、常に利用者のコントロール下にあるわけではない。コンテンツ制作者は、自動更新の仕組みを埋め込むのではなく、利用者が必要な場合にコンテンツを更新できるメカニズムを提供すべきである。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1">
                <h3>事例 1</h3>
-               <p>In HTML, a developer can provide a button or link that
-                  allows the user to update the content. For example, on a
-                  page with news items located at http://www.example.com/news.jsp
-               </p><pre xml:space="preserve">
-              &lt;a href="news.jsp"&gt;Update this page&lt;/a&gt;
+               <p>HTML では、利用者がコンテンツを更新するボタン又はリンクを、開発者が提供できる。例えば、次のコード例のように、ページ上で http://www.example.com/news.jsp にニュース項目があると示すことである。</p>
+               <pre xml:space="preserve">
+               &lt;a href="news.jsp"&gt;Update this page&lt;/a&gt;
             </pre></section>
             <section class="example" id="example-2">
                <h3>事例 2</h3>
-               <p>In a Web interface for e-mail (Webmail), a developer can
-                  provide a button or link to fetch new incoming mails instead
-                  of updating automatically.
-               </p>
+               <p>E メールのウェブインタフェース (ウェブメール) では、自動更新ではなく、新しいメールを確認するボタン又はリンクを、開発者が提供できる。</p>
             </section>
          </section>
          <section id="related">
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G75">G75: Providing a mechanism to postpone any updating of content</a></li>
+               <li><a href="G75">G75: コンテンツの更新を延期するメカニズムを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>
+               <li><a href="../client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
@@ -105,17 +84,11 @@
                
                <ol>
                   
-                  <li>Find mechanisms to update the content (if such a mechanism is
-                     present).
-                  </li>
+                  <li>コンテンツを更新するメカニズムを見つける (そのようなメカニズムが存在する場合)。</li>
                   
-                  <li>For each such mechanism, check if it allows the user to request
-                     an update.
-                  </li>
+                  <li>そのような各メカニズムについて、利用者が更新を要求できるかどうかを確認する。</li>
                   
-                  <li>For each such mechanism, check if it can cause an automatic
-                     update.
-                  </li>
+                  <li>そのような各メカニズムについて、自動更新を引き起こされうるかどうかを確認する。</li>
                   
                </ol>
                
@@ -125,7 +98,7 @@
                
                <ul>
                   
-                  <li>If #2 is true, then #3 is false.</li>
+                  <li>2. の結果が真の場合、3. の結果が偽である。</li>
                   
                </ul>
                
