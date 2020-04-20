@@ -40,28 +40,19 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>Content that automatically updates itself.</p>
+            <p>自動更新するコンテンツ</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this technique is to ensure that users can postpone automatic updates
-               of content, or other non-emergency interruptions. This can be accomplished either
-               through a preference or by alerting users of an imminent update and allowing them
-               to suppress it. If a preference is provided, automatic content update can be disabled
-               by default and users can specify the frequency of automatic content updates if they
-               choose to enable the setting.
-            </p>
+            <p>この達成方法の目的は、利用者がコンテンツの自動更新や他の緊急ではない中断を延期できるようにすることである。設定を通じて、又は更新の直前に警告し、利用者が更新を停止できることによって、このことが実現できる。設定を提供できる場合、コンテンツの自動更新は初期状態では無効にし、利用者が自動更新の頻度を設定できるようにするとよい。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <ul>
                
-               <li>A Web page provides stock quotes and automatically updates from time to time. The
-                  page provides a short form with a field "Refresh data frequency (minutes):" so users
-                  can adjust the frequency of the updating.
-               </li>
+               <li>あるウェブページは株価を提供し、時々自動的に更新される。このページでは、小さなフォームで「データの更新頻度 (分)」というフィールドが提供されており、利用者は更新頻度を調整できる。</li>
                
             </ul>
          </section>
@@ -69,9 +60,9 @@
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G76">G76: Providing a mechanism to request an update of the content instead of updating automatically</a></li>
+               <li><a href="G76">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>
+               <li><a href="../client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
@@ -82,13 +73,11 @@
                
                <ol>
                   
-                  <li>Find pages with content that automatically updates.</li>
+                  <li>自動的に更新するコンテンツのあるページを見つける。</li>
                   
-                  <li>For each automatic update, look for a mechanism to adjust the timing of the updates.</li>
+                  <li>自動更新に対して、自動更新のタイミングを調整するメカニズムを探す。</li>
                   
-                  <li>Check that automatic updating is disabled by default or that the user is warned before
-                     an automatic update occurs and allowed to suppress it.
-                  </li>
+                  <li>自動更新がデフォルトで無効になっている、又は自動更新が発生する前に利用者に警告されて停止できることを確認する。</li>
                   
                </ol>
                
@@ -98,7 +87,7 @@
                
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
