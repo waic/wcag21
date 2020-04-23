@@ -78,3 +78,47 @@ git push origin replace-work
 
 - [work-step.md](work-step.md)に質問への回答があるかもしれません。
 - work-step.mdに質問への回答がない場合、Slackで尋ねてください。
+
+
+## 共通する翻訳例
+### 達成方法に関する重要な情報
+差分が、WCAG 2.0 から 2.1 への変更差分のみの場合は、一括して置換してよい。
+
+例
+```diff
+- <p>See <a href="http://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/understanding-techniques.html">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how they relate to the normative WCAG 2.0 success criteria. The Applicability section explains the scope of the technique, and the presence of techniques for a specific technology does not imply that the technology can be used in all situations to create content that meets WCAG 2.0.</p>
++ <p>See <a href="https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how they relate to the normative WCAG 2.1 success criteria. The Applicability section explains the scope of the technique, and the presence of techniques for a specific technology does not imply that the technology can be used in all situations to create content that meets WCAG 2.1.</p>
+```
+
+```diff
++ <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+```
+
+### 適用 (対象)
+
+
+
+
+
+
+
+
+
+
+### 参考リソース
+2.1で削除されているものは、差分としての報告は不要です。
+例
+```diff
+-<h2 id="G76-resources">Resources</h2>
+-<div class="textbody"><p>No resources available for this technique.</p></div>
++
+```
+
+
+### 検証＞期待される結果の下の注釈
+2.1で削除されているものは、差分としての報告は不要です。
+例
+```diff
+- If this is a sufficient technique for a success criterion, failing this test procedure does not necessarily mean that the success criterion has not been satisfied in some other way, only that this technique has not been successfully implemented and can not be used to claim conformance.
++ 
+```
