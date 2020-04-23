@@ -96,14 +96,29 @@ git push origin replace-work
 
 ### 適用 (対象)
 
+例
+```
+This technique relates to:
+これは、次の達成基準に関連する達成方法である:
+```
 
+例 G9
+```
+(Sufficient using a more specific technique)
+(より具体的な手法を用いる十分な達成方法)
+```
 
+例 G62 'Sufficient as a way to meet'
+```
+Success Criterion 3.1.3: Unusual Words (Sufficient as a way to meet G101: Providing the definition of a word or phrase used in an unusual or restricted way)
+達成基準 3.1.3: 一般的ではない用語 (G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する達成方法として十分)
+```
 
-
-
-
-
-
+例 G63
+```
+(Sufficient as a way to meet an unwritten technique)
+(書かれていない達成方法を満たす慣習的な達成方法)
+```
 
 ### 参考リソース
 2.1で削除されているものは、差分としての報告は不要です。
