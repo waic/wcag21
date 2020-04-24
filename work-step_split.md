@@ -101,6 +101,13 @@ git push origin replace-work
 This technique relates to:
 これは、次の達成基準に関連する達成方法である:
 ```
+
+例 G53
+```
+This technique relates to  Success Criterion X.X.X: Xxxxxx (YYYY) .
+これは達成基準 X.X.X: Xxxxxx (YYYY) に関する達成方法である。
+```
+
 例 G63
 ```
 (Sufficient)
