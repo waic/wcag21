@@ -113,10 +113,10 @@ This technique relates to:
 (十分、GXX: XxxX xxx xxx. とともに)
 ```
 
-例 G62 'Sufficient as a way to meet'
+例 G62
 ```
-Success Criterion 3.1.3: Unusual Words (Sufficient as a way to meet G101: Providing the definition of a word or phrase used in an unusual or restricted way)
-達成基準 3.1.3: 一般的ではない用語 (G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する達成方法として十分)
+(Sufficient as a way to meet GXX: Xxx xxx xxx)
+(GXX: Xxx xxx xxx の達成方法として十分)
 ```
 
 例 G63
