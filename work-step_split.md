@@ -101,16 +101,22 @@ git push origin replace-work
 This technique relates to:
 これは、次の達成基準に関連する達成方法である:
 ```
+例 G63
+```
+(Sufficient)
+(十分な達成方法)
+```
 
 例 G57
 ```
 (Sufficient using a more specific technique)
 (より具体的な手法を用いる十分な達成方法)
 ```
+
 例 G9
 ```
-(Sufficient, together with GXX: Xxxx xxx xxx.)
-(十分、GXX: XxxX xxx xxx. とともに)
+(Sufficient, together with GXX: Xxxx xxx xxx)
+(十分、GXX: XxxX xxx xxx とともに)
 ```
 
 例 G62
