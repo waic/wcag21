@@ -8,7 +8,7 @@
 
 [HTML Diff service](https://services.w3.org/htmldiff)を用いて、差分を取得します。
 
-waic.jpに翻訳が掲載されている[WCAG 2.0 達成方法集](https://waic.jp/docs/WCAG-TECHS/Overview.html)の原文である[Techniques for WCAG 2\.0](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/)と、翻訳作業の対象になっているこのレポジトリの[Techniques for WCAG 2\.1](https://raw.githack.com/waic/wcag21/techniques-20191001/techniques/)とで、差分を取ります。こうすることで、英語で差分のない箇所は日本語をそのままWCAG 2.0 達成方法集からコピーし、差分のある箇所は新たに翻訳すればよい、ということがわかります。
+waic.jpに翻訳が掲載されている[WCAG 2.0 達成方法集](https://waic.github.io/wcag20/Techniques/Overview.html)の原文である[Techniques for WCAG 2\.0](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/)と、翻訳作業の対象になっているこのレポジトリの[Techniques for WCAG 2\.1](https://raw.githack.com/waic/wcag21/techniques-20191001/techniques/)とで、差分を取ります。こうすることで、英語で差分のない箇所は日本語をそのままWCAG 2.0 達成方法集からコピーし、差分のある箇所は新たに翻訳すればよい、ということがわかります。
 
 ### 差分の取得例：FLASH1の場合
 
@@ -16,7 +16,7 @@ URLは自分の作業を行うファイルに読み替えてください。Techn
 
 https://services.w3.org/htmldiff?doc1=https%3A%2F%2Fwww.w3.org%2FTR%2FWCAG20-TECHS%2FFLASH1.html&doc2=https%3A%2F%2Fraw.githack.com%2Fwaic%2Fwcag21%2Ftechniques-20191001%2Ftechniques%2Fflash%2FFLASH1.html
 
-- 2.0日本語訳のURL：https://waic.jp/docs/WCAG-TECHS/FLASH1.html
+- 2.0日本語訳のURL：https://waic.github.io/wcag20/Techniques/FLASH1.html
 - 2.0原文のURL（①）：https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/FLASH1.html
 - 2.1原文（正確には翻訳前の状態）のURL（②）：https://raw.githack.com/waic/wcag21/techniques-20191001/techniques/flash/FLASH1.html
 
