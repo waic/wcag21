@@ -30,7 +30,7 @@
       <h1>パンくずリストを提供する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href=""https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
@@ -42,9 +42,9 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>パンくずリストは、コンテンツがどのような構造になっているのか、及び前のウェブページへ戻る方法を視覚化するのに利用者の助けとなり、かつ一連のウェブページの中で現在位置を特定する。パンくずリストには、利用者がそのウェブページに到達するまでに通ってきたパス、又はサイトの編成における現在のウェブページの位置が表示されている。
+            <p>パンくずリストは、コンテンツがどのような構造になっていたのか、及びこれまでにたどってきたウェブページへ戻る方法を、利用者が想起する助けとなり、また一連のウェブページの中で現在位置を特定する。パンくずリストには、利用者がそのウェブページに到達するまでに通ってきた場所、又はサイトの編成における現在のウェブページの位置が表示されている。
             </p>
-            <p>パンくずリストは、現在のウェブページまでナビゲートする途中にアクセスしたウェブページへのリンクを使って実装される。パンくずリストは、ウェブページ一式の各ウェブページの中で同じ位置に置かれる。
+            <p>パンくずリストは、現在のウェブページまでナビゲートする途中にアクセスしたウェブページへのリンクを使って実装される。パンくずリストは、ウェブページ一式の各ウェブページの中で同じ位置に置く。
             </p>
             <p>目に見える区切り文字でパンくずリストの中の項目を切り離すと、利用者の助けになる。区切り文字の例には「>」、「|」、「/」、「::」、及び「→」がある。
             </p>
@@ -55,42 +55,42 @@
                <h3>事例 1</h3>
                <p>開発者が、ハイパーリンクを作成する方法を見つけるために、オーサリングツールのメーカーのウェブサイトの中を探している。検索結果を使って、オーサリングツールを使用してハイパーリンクを作成するための詳しい説明があるウェブページへ行く。そのページには、以下のようなリンクでできたパンくずリストがある:
                </p><pre xml:space="preserve">
-              Home :: Developer Center :: How To Center
+              ホーム :: デベロッパーセンター :: 手引き
             </pre><p>この例では、パンくずリストには現在のウェブページのタイトルである「ハイパーリンクを作成する方法」が含まれていない。その情報はウェブページのタイトルとして入手できる。
                </p>
             </section>
             <section class="example" id="example-2">
                <h3>事例 2</h3>
-               <p>写真家の作品集のウェブサイトはいろいろなギャラリーに分かれていて、各ギャラリーはさらに分類ごとに分割されている。サイトの中で Gentoo Penguin の写真を含むウェブページに移動する利用者は、ウェブページの冒頭で以下のようなパンくずリストが目に入る:
+               <p>写真家の作品集のウェブサイトはいろいろなギャラリーに分かれていて、各ギャラリーはさらに分類ごとに分割されている。サイトの中でジェンツーペンギンの写真を含むウェブページに移動する利用者は、ウェブページの冒頭で以下のようなパンくずリストを見る:
                </p><pre xml:space="preserve">
-              Home / Galleries / Antarctica / Penguins / Gentoo Penguin
-            </pre><p>"Gentoo Penguin" を除くすべての項目がリンクとして実装されている。現在位置 (Gentoo Penguin) はパンくずリストに含まれているが、リンクとしては実装されていない。
+              ホーム / ギャラリー / 南極大陸 / ペンギン / ジェンツーペンギン
+            </pre><p>「ジェンツーペンギン」を除くすべての項目がリンクとして実装されている。現在位置 (ジェンツーペンギン) はパンくずリストに含まれているが、リンクとしては実装されていない。
                </p>
             </section>
             <section class="example" id="example-3">
                <h3>事例 3</h3>
                <p>e コマースサイトの情報設計が、一般から特定の製品区分に徐々に分類されている。
                </p>
-               <p>You are here: Acme Company → Electronics → Computers → Laptops</p>
-               <p>パンくずリストが "You are here" で始まり、現在利用者がいるページで終わる。リストに入っている項目は、"You are here" 及び "Laptops" を除いて、クリック又はタップ可能なリンクである。この例は、右向き矢印 (→) を区切り位置として使用している。
+               <p>現在位置: Acme Company → 電化製品 → コンピューター → ノートパソコン</p>
+               <p>パンくずリストが「現在位置」で始まり、現在利用者がいるページで終わる。リストに入っている項目は、「現在位置」及び「ノートパソコン」を除いて、クリック又はタップ可能なリンクである。この例は、右向き矢印 (→) を区切り位置として使用している。
                </p>
                <p>この例では、<code class="el">h2</code> 要素、 <code class="att">aria-label</code> 属性を指定した <code class="el">nav</code> 要素、非順序のリストがセマンティクスを提供するために使われている。このマークアップは、CSS によるスタイル指定によって水平のパンくずリストとして表示されるだろう。
                </p>
                <p>コード例</p><pre xml:space="preserve"> 
           &lt;nav aria-label="Breadcrumbs"&gt; 
-          &lt;h2&gt;You are here:&lt;/h2&gt; 
+            &lt;h2&gt;現在位置:&lt;/h2&gt; 
             &lt;ul&gt;
               &lt;li&gt;&lt;a href="/"&gt;Acme Company&lt;/a&gt; &amp;#8594;&lt;/li&gt; 
-              &lt;li&gt;&lt;a href="/electronics/"&gt;Electronics&lt;/a&gt; &amp;#8594;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="/electronics/computers/"&gt;Computers&lt;/a&gt; &amp;#8594;&lt;/li&gt;
-              &lt;li&gt;Laptops&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/electronics/"&gt;電化製品&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/electronics/computers/"&gt;コンピューター&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;ノートパソコン&lt;/li&gt;
             &lt;/ul&gt; 
           &lt;/nav&gt;
       </pre><p>この例に対する CSS</p><pre xml:space="preserve"> 
       nav, h2, ul, ul li{ display: inline;}
       nav &gt; h2{ font-size: 1em; } 
       ul { padding-left: 0em; }
-      </pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/breadcrumb-trail/">Breadcrumb example</a></p>
+      </pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html">Breadcrumb example</a></p>
             </section>
          </section>
          <section id="resources">
@@ -106,14 +106,14 @@
             </ul>
             <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
             <div>
-               <p>パンくずリストについては、<a href="https://developers.google.com/search/docs/data-types/breadcrumb">パンくずリスト  |  検索  |  Google Developers</a> 及び <a href="https://www.bing.com/webmaster/help/markup-breadcrumbs-72419f3f">Markup: Breadcrumbs - Bing Webmaster Tools</a> もあわせて参考になる。</p>
+            <p></em>「Bread crumb navigation」への正確なリンクは、<a href="https://www.w3.org/TR/html5/common-idioms-without-dedicated-elements.html#bread-crumb-navigation">HTML5.2 4.13.2. Bread crumb navigation</a> となる。また、<a href="https://developers.google.com/search/docs/data-types/breadcrumb">パンくずリスト  |  検索  |  Google Developers</a> 及び <a href="https://www.bing.com/webmaster/help/markup-breadcrumbs-72419f3f">Markup: Breadcrumbs - Bing Webmaster Tools</a> もあわせて参考になる。</p>
             </div>
          </section>
          <section id="related">
             <h2>関連する達成方法</h2>
             <ul>
-               <li><a href="G63">G63: サイトマップを提供する
-               </a></li>
+               
+               <li><a href="G63">G63: サイトマップを提供する</a></li>
                
                <li><a href="G128">G128: ナビゲーションバー内で現在位置を示す</a></li>
                
