@@ -96,17 +96,28 @@ git push origin replace-work
 
 ### 適用 (対象)
 
+
+#### 説明文パターン
+
 例
 ```
 This technique relates to:
 これは、次の達成基準に関連する達成方法である:
 ```
 
-例 G53
+例 G53 （※G59と同じ原文だが、訳し方が異なる）
 ```
-This technique relates to  Success Criterion X.X.X: Xxxxxx (YYYY) .
-これは達成基準 X.X.X: Xxxxxx (YYYY) に関する達成方法である。
+This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
+これは<span><a>達成基準 X.X.X: Xxxxxx</a></span>  (YYYY) に関する達成方法である。
 ```
+
+例 G59 （※G53と同じ原文だが、訳し方が異なる）
+```
+This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
+この達成基準は、<span><a>達成基準 X.X.X: Xxxxxx</a></span> (YYYY) に関連する。
+```
+
+#### "(Sufficient)"のバリエーション
 
 例 G63
 ```
@@ -122,20 +133,20 @@ This technique relates to  Success Criterion X.X.X: Xxxxxx (YYYY) .
 
 例 G9
 ```
-(Sufficient, together with GXX: Xxxx xxx xxx)
-(十分、GXX: XxxX xxx xxx とともに)
+(Sufficient, together with <a>GXX: Xxxx xxx xxx</a>)
+(十分、<a>GXX: XxxX xxx xxx</a>とともに)
 ```
 
 例 G9
 ```
-(Sufficient, together with GXX: Xxxx xxx xxx using a more specific technique)
- (十分、より具体的な手法を使用した GXX: XxxX xxx xxx とともに)
+(Sufficient, together with <a>GXX: Xxxx xxx xxx</a> using a more specific technique)
+ (十分、より具体的な手法を使用した <a>GXX: XxxX xxx xxx</a>とともに)
 ```
 
 例 G62
 ```
-(Sufficient as a way to meet GXX: Xxx xxx xxx)
-(GXX: Xxx xxx xxx の達成方法として十分)
+(Sufficient as a way to meet <a>GXX: Xxx xxx xxx</a>)
+(<a>GXX: Xxx xxx xxx</a>の達成方法として十分)
 ```
 
 例 G63
