@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G87: Providing closed captions</title>
+      <title>G87: クローズドキャプションを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,115 +10,89 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G86">Previous Technique: G86</a></li>
-            <li><a href="G88">Next Technique: G88</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G86">前の達成方法: G86</a></li>
+            <li><a href="G88">次の達成方法: G88</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing closed captions</h1>
+      <h1>クローズドキャプションを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any audiovideo technology where there are user agents that support closed
-               captions.
+            <h2>適用 (対象)</h2>
+            <p>ユーザエージェントがクローズドキャプションをサポートしている音声/映像のウェブコンテンツ技術
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/captions-prerecorded">Success Criterion 1.2.2: Captions (Prerecorded)</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/captions-prerecorded">達成基準 1.2.2: キャプション (収録済)</a> (十分な達成方法)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/captions-prerecorded">Success Criterion 1.2.2: Captions (Prerecorded)</a> (Sufficient using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/captions-prerecorded">達成基準 1.2.2: キャプション (収録済)</a> (より具体的な手法を用いる十分な達成方法)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/captions-live">Success Criterion 1.2.4: Captions (Live)</a> (Sufficient, together with <a href="../general/G9">G9: Creating captions for live synchronized media</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/captions-live">達成基準 1.2.4: キャプション (ライブ)</a> (十分、<a href="../general/G9">G9: ライブの同期したメディアに対してキャプションを作成する</a>とともに)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/captions-live">Success Criterion 1.2.4: Captions (Live)</a> (Sufficient, together with <a href="../general/G9">G9: Creating captions for live synchronized media</a> using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/captions-live">達成基準 1.2.4: キャプション (ライブ)</a> (十分、より具体的な手法を使用した <a href="../general/G9">G9: ライブの同期したメディアに対してキャプションを作成する</a>とともに)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a way for people who have
-               hearing impairments or otherwise have trouble hearing the dialogue in
-               synchronized media material to be able to view the material and see the dialogue and
-               sounds - without requiring people who are not deaf to watch the captions.
-               With this technique all of the dialogue and important sounds are embedded as
-               text in a fashion that causes the text not to be visible unless the user
-               requests it. As a result they are visible only when needed. This requires
-               special support for captioning in the user agent.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、聴覚に障害のある利用者、又は同期したメディアの発話の聞き取りに困難のある利用者に対して、コンテンツを目で見て、発話及び音が伝えている情報を読むための方法を提供する一方で、聴覚に障害のない人にはキャプションを見ることを強制しないようにすることである。この達成方法では、発話及び重要な音が伝えている情報を全てテキストに書き起こして、利用者の要求に応じてキャプションとして画面に表示させる。つまり、そのテキストは必要な時にだけ表示されることになる。そのためには、ユーザエージェントがキャプションをサポートしている必要がある。
             </p>
-            <p>NOTE: Captions should not be confused with subtitles. Subtitles provide text
-               of only the dialogue and do not include important sounds.
+            <p>注記: キャプションは、字幕とは異なる。字幕は、発話内容のみをテキストで提供するものであって、重要な音の情報を含まない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In order to ensure that users who are deaf can use their
-                  interactive educational materials, the college provides captions and
-                  instructions for turning on captions for all of their audio
-                  interactive educational programs.
+               <h3>事例 1</h3>
+               <p>耳の聞こえない利用者がインタラクティブな教材を使えるようにするため、大学の音声によるインタラクティブな教材すべてにキャプションが組み込まれ、キャプションをオンにするための手順説明が提供されている。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The online movies at a media outlet all include
-                  captions and are provided in a format that allows embedding of
-                  closed captions.
+               <h3>事例 2</h3>
+               <p>メディア会社のオンライン映画すべてにキャプションが含まれていて、クローズドキャプションを実装できるフォーマットで提供されている。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>Special caption files including synchronization
-                  information are provided for an existing movie. Players are
-                  available that can play the captions in a separate window on screen,
-                  synchronized with the movie window.
+               <h3>事例 3</h3>
+               <p>既存の映画に、同期情報を含む特別なキャプションファイルが提供されている。映画のウィンドウに同期したキャプションを、画面上の別ウィンドウで提供できるプレーヤーが使えるようになっている。
                </p>
             </section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>A video of a local news event has captions provided that
-                  can be played over the video or in a separate window depending on
-                  the player used.
+               <h3>事例 4</h3>
+               <p>ローカルニュースのビデオにキャプションが付けられていて、使用しているプレーヤーに応じて映像上又は別ウィンドウにキャプションを表示することができる。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
-            <p>Guides to Captioning</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <p>キャプションのガイダンス</p>
             <ul>
                
                <li>
-                  <a href="http://www.captioningkey.org/">Captioning Key:
-                     Guidelines and Preferred Techniques</a>
+                  <a href="http://www.captioningkey.org/">Captioning Key: Guidelines and Preferred Techniques</a>
                   
                </li>
                
                <li>
-                  <a href="http://joeclark.org/access/captioning/bpoc/">Best
-                     Practices in Online Captioning</a>
+                  <a href="http://joeclark.org/access/captioning/bpoc/">Best Practices in Online Captioning</a>
                   
                </li>
                
@@ -127,77 +101,71 @@
             <ul>
                
                <li>
-                  <a href="https://www.w3.org/TR/REC-smil/">Synchronized
-                     Multimedia Integration Language (SMIL) 1.0</a>
+                  <a href="https://www.w3.org/TR/REC-smil/">Synchronized Multimedia Integration Language (SMIL) 1.0</a>
                   
                </li>
                
                <li>
-                  <a href="https://www.w3.org/TR/SMIL/">Synchronized Multimedia
-                     Integration Language (SMIL 2.0)</a>
+                  <a href="https://www.w3.org/TR/SMIL/">Synchronized Multimedia Integration Language (SMIL 2.0)</a>
                   
                </li>
                
                <li>
-                  <a href="https://www.w3.org/TR/SMIL-access/">Accessibility
-                     Features of SMIL</a>
+                  <a href="https://www.w3.org/TR/SMIL-access/">Accessibility Features of SMIL</a>
                   
                </li>
                
                <li>
-                  <a href="http://ncam.wgbh.org/invent_build/web_multimedia/accessible-digital-media-guide/guideline-h-multimedia#techH12">NCAM Rich Media Accessibility, Accessible SMIL
-                     Templates</a>
+                  <a href="http://ncam.wgbh.org/invent_build/web_multimedia/accessible-digital-media-guide/guideline-h-multimedia#techH12">NCAM Rich Media Accessibility, Accessible SMIL Templates</a>
                   
                </li>
                
             </ul>
-            <p>Other Captioning</p>
+            <p>その他のキャプション関連</p>
             <ul>
                
                <li>
-                  <a href="http://ncam.wgbh.org/">National Center for Accessible
-                     Media</a>
+                  <a href="http://ncam.wgbh.org/">National Center for Accessible Media</a>
                   
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G93">G93: Providing open (always visible) captions</a></li>
+               <li><a href="G93">G93: オープン (常に見える) キャプションを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/smil/SM11">SM11: Providing captions through synchronized text streams in SMIL 1.0</a></li>
+               <li><a href="../smil/SM11">SM11: SMIL 1.0 で同期したテキストストリームによるキャプションを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/smil/SM12">SM12: Providing captions through synchronized text streams in SMIL 2.0</a></li>
+               <li><a href="../smil/SM12">SM12: SMIL 2.0 で同期したテキストストリームによるキャプションを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Turn on the closed caption feature of the media player</li>
+                  <li>メディアプレーヤーのクロ―ズドキャプション機能をオンにする。</li>
                   
-                  <li>View the synchronized media content</li>
+                  <li>同期したメディアのコンテンツを見る。</li>
                   
-                  <li>Check that captions (of all dialogue and important sounds) are
-                     visible
+                  <li>(発話内容及び音の伝えている情報全ての) キャプションが表示されていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#3 is true</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
