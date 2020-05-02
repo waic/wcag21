@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G89: Providing expected data format and example</title>
+      <title>G89: 期待されるデータ書式及び入力例を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,107 +10,94 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G88">Previous Technique: G88</a></li>
-            <li><a href="G90">Next Technique: G90</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G88">前の達成方法: G88</a></li>
+            <li><a href="G90">次の達成方法: G90</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing expected data format and example</h1>
+      <h1>期待されるデータ書式及び入力例を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that collect information from users, and restrict the format the user can use.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>利用者から情報を集め、利用者が入力できる書式に制約のあるページ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient as a way to meet <a href="../general/G131">G131: Providing descriptive labels</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (<a href="G131">G131:説明的なラベルを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/help">Success Criterion 3.3.5: Help</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/help">達成基準 3.3.5: ヘルプ</a> (Sufficient)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to help the user avoid input errors by informing
-               them about restrictions on the format of data that they must enter. This can be done
-               by describing characteristics of the format or providing a sample of the format the
-               data should have.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が入力しなければならないデータ書式の制約を通知することによって、利用者が入力エラーを回避しやすくすることである。これは、書式の特徴を記述するか、入力データに求められる書式の例を提供することによって対処できる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>For data formats with common variations, such as dates and times, it may be useful
-                     to provide a preference option so users can use the format that is most comfortable
-                     to them.
+                  <p>日付や時刻のように、様々な記述方法があるデータ書式については、利用者にとって最も入力しやすい書式を選択できるオプションを提供するとよい。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following HTML form control for a date indicates in the label that the date must
-                  be in day-month-year format, not month-day-year as many users in the United States
-                  may assume.
+               <h3>事例 1</h3>
+               <p>日付を入力する HTML のフォームコントロールでは、label 要素内において、入力する日付はアメリカ合衆国の多くの利用者が想定する月-日-年の書式ではなく、日-月-年の書式でなければならないことを示している。
                </p><pre xml:space="preserve">
               &lt;label for="date"&gt;Date (dd-mm-yyyy)&lt;/label&gt;
                 &lt;input type="text" name="date" id="date" /&gt;
             </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G184">G184: Providing text instructions at the beginning of a form or set of fields that describes
-                     the necessary input</a></li>
+               <li><a href="G184">G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify form controls that will only accept user input data in a given format.</li>
+                  <li>所定の書式でしか利用者の入力データを受け付けないフォームコントロールを特定する。</li>
                   
-                  <li>Determine if each of the form controls identified in 1 provides information about
-                     the expected format.
+                  <li>1.で特定した各フォームコントロールが、期待される書式情報に関する情報を提供しているかどうかを判断する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true.</li>
+                  <li>2.の結果が真である。</li>
                   
                </ul>
                
