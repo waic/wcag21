@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G90: Providing keyboard-triggered event handlers</title>
+      <title>G90: キーボードがトリガーとなるイベントハンドラを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,100 +10,87 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G89">Previous Technique: G89</a></li>
-            <li><a href="G91">Next Technique: G91</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G89">前の達成方法: G89</a></li>
+            <li><a href="G90">次の達成方法: G90</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing keyboard-triggered event handlers</h1>
+      <h1>キーボードがトリガーとなるイベントハンドラを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies where content includes functionality.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient using a more specific technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>コンテンツに機能性を含んでいるウェブコンテンツ技術すべて</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/keyboard">達成基準 2.1.1: キーボード</a> (より具体的な手法を用いる十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to permit individuals who rely on a keyboard or
-               keyboard interface to access the functionality of the content. To do this, make sure
-               that all event handlers triggered by non-keyboard UI events are also associated with
-               a keyboard-based event, or provide redundant keyboard-based mechanisms to accomplish
-               the functionality provided by other device-specific functions.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、キーボード又はキーボードインターフェースを使用している利用者がコンテンツの機能にアクセスできるようにすることである。そのためには、キーボードではない UI のイベントによって引き起こされるすべてのイベントハンドラは、キーボードベースのイベントとも関連づける、又は、他のデバイス特有の機能によって提供された機能を遂行するために冗長なキーボードベースのメカニズムを提供する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
                <li>
-                  <strong>Example 1: A drag and drop feature</strong>
-                  A photo application includes a "drag" and "drop" feature to allow users to re-order
-                  photographs in an on-line album for presentation as a slide show. It also includes
-                  a feature that allows users to select a photo and 'cut' and 'paste' the items into
-                  the list at the appropriate point using only the keyboard.
+                  <strong>事例 1: ドラッグ＆ドロップ機能</strong>
+                  写真のアプリケーションに、スライドショーのような提示のためにオンラインアルバム内で写真を並び替えることができるように「ドラッグ」及び「ドロップ」の機能がある。また、利用者がキーボードのみを用いて写真を選び、リスト内の適切な場所でアイテムを「切り取り」、「貼り付け」できる機能もある。
                </li>
                
                <li>
-                  <strong>Example 2: A reorder feature</strong>
-                  A Web application that allows users to create surveys by dragging questions into position
-                  includes a list of the questions followed by a text field that allows users to re-order
-                  questions as needed by entering the desired question number.
+                  <strong>事例 2: 並び替え機能</strong>
+                  質問事項をドラッグで動かして調査票を作ることができるウェブアプリケーションには、テキストフィールドの付いた質問リストがあり、利用者が質問番号を入力することによって、必要に応じて質問事項を並び替えることができる。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR2">SCR2: Using redundant keyboard and mouse event handlers</a></li>
+               <li><a href="../client-side-script/SCR2">SCR2: キーボード及びマウスのイベントハンドラを両方とも使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR20">SCR20: Using both keyboard and other device-specific functions</a></li>
+               <li><a href="../client-side-script/SCR20">SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR35">SCR35: Making actions keyboard accessible by using the onclick event of anchors and buttons</a></li>
+               <li><a href="../client-side-script/SCR35">SCR35: アンカー及びボタンの onclick イベントを用いて、アクションをキーボード操作可能にする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>check that all functionality can be accessed using only the keyboard</li>
+                  <li>すべての機能がキーボードだけを使ってアクセスできることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true</li>
+                  <li>1.の結果が真である。</li>
                   
                </ul>
                
