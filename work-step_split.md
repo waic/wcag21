@@ -126,6 +126,12 @@ This technique relates to  Success Criterion X.X.X: Xxxxxx (YYYY) .
 (十分、GXX: XxxX xxx xxx とともに)
 ```
 
+例 G9
+```
+(Sufficient, together with GXX: Xxxx xxx xxx using a more specific technique)
+ (十分、より具体的な手法を使用した GXX: XxxX xxx xxx とともに)
+```
+
 例 G62
 ```
 (Sufficient as a way to meet GXX: Xxx xxx xxx)
