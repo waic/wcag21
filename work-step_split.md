@@ -105,13 +105,13 @@ This technique relates to:
 これは、次の達成基準に関連する達成方法である:
 ```
 
-例 G53 （※G59と同じ原文だが、訳し方が異なる）
+例 G54 （※G59と同じ原文だが、訳し方が異なる）
 ```
 This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
 これは<span><a>達成基準 X.X.X: Xxxxxx</a></span>  (YYYY) に関する達成方法である。
 ```
 
-例 G59 （※G53と同じ原文だが、訳し方が異なる）
+例 G59 （※G54と同じ原文だが、訳し方が異なる）
 ```
 This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
 この達成基準は、<span><a>達成基準 X.X.X: Xxxxxx</a></span> (YYYY) に関連する。
