@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G64: Providing a Table of Contents</title>
+      <title>G64: 目次を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,135 +10,105 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G63">Previous Technique: G63</a></li>
-            <li><a href="G65">Next Technique: G65</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G63">前の達成方法: G63</a></li>
+            <li><a href="G65">次の達成方法: G65</a></li>
          </ul>
-      </nav>
+      </nav>      
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a Table of Contents</h1>
+      <h1>目次を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/multiple-ways">Success Criterion 2.4.5: Multiple Ways</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/multiple-ways">達成基準 2.4.5: 複数の手段</a> (書かれていない達成方法を満たす慣習的な達成方法)に関する達成方法である。</span>
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This is one of a series of techniques for locating content that are sufficient for
-               addressing Success Criterion 2.4.5. 
-               A table of contents provides links to sections and subsections of the same document.
-               The information in the document is usually organized hierarchically, and is intended
-               to be read sequentially. Just as there could be many books in a library, each with
-               its own table of contents, a Web site may contain many documents, each with its own
-               table of contents.
+            <h2>解説</h2>
+            <p>これは、達成基準 2.4.5 の実装に十分なコンテンツを配置するための一連の達成方法の一つである。目次は、同じドキュメントのセクションとサブセクションへのリンクを提供する。ドキュメントにある情報は、通常、階層的に構成され、順を追って読まれることを意図している。まさに図書館にある多くの本にそれぞれ目次があるように、ウェブサイトの多くのドキュメントにも目次がある。
             </p>
-            <p>The table of contents serves two purposes:</p>
+            <p>目次は次の二つの目的がある:</p>
             <ul>
                
-               <li>It gives users an overview of the document's contents and organization.</li>
+               <li>ドキュメントの内容及び構成の概要を利用者に与える。</li>
                
-               <li>It allows readers to go directly to a specific section of an on-line document.</li>
-               
+               <li>読者がオンラインドキュメントの特定のセクションに直接行けるようにする。</li>
+            
             </ul>
-            <p>The table of contents typically includes only major sections of the document, though
-               in some cases an expanded table of contents that provides a more detailed view of
-               a complex document may be desirable.
+            <p>目次はドキュメントの主要なセクションだけを含むことが多いが、場合によっては複雑なドキュメントのより詳細な一覧を提供する展開された目次が望ましいかもしれない。
             </p>
-            <p>The sections of the document could be located on the same Web page or divided into
-               multiple Web pages. A table of contents is particularly useful when a document is
-               divided into multiple Web pages.
+            <p>ドキュメントのセクションは、同じウェブページに配置する、又は複数のウェブページに分割して配置することができる。目次は、ドキュメントが複数のウェブページに分割されるとき、特に役に立つ。
             </p>
-            <p>There is a distinction between a table of contents and other Navigational elements
-               such as a Navigation Bar or Site Map. A table of contents provides links to sections
-               of the same document. Those sections could be located on the same Web page or spread
-               across multiple Web pages. But together, they make a complete idea. To better understand
-               this, consider a hard copy book which has sections. Each section belongs to the book.
-               There could be many books in a library. In this example, the "library" is the entire
-               Web site.
+            <p>目次と、ナビゲーションバーやサイトマップのような他のナビゲーション要素との間には違いがある。目次は同じドキュメントのセクションへのリンクを提供する。それらのセクションは、同じウェブページに配置する、又は複数のウェブページにまたがって配置することができる。しかしいずれでも構想を完成させることができる。このことをさらに理解するために、複数のセクションのあるハードコピーの本を考えてみよう。各セクションは本に属する。図書館には多くの本がある。この例では「図書館」が全体のウェブサイトに相当する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The
-                  <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0</a>
-                  contains a
-                  <a href="https://www.w3.org/TR/WCAG20/#contents">table of contents</a>
-                  that is a hierarchical list of links to the sections and subsections of the document.
-                  The hierarchy of the table of contents reflects the organization of the sections,
-                  and each item in the table of contents is a link that takes the user directly to that
-                  section.
+               <h3>事例 1</h3>
+               <p><a href="https://waic.jp/docs/WCAG21/Overview.html">Web Content Accessibility Guidelines  2.1</a> には、ドキュメントのセクション及びサブセクションへのリンクの階層的なリストである<a href="https://waic.jp/docs/WCAG21/Overview.html#contents">目次</a>がある。目次の階層構造はセクションの構成を反映し、目次の各項目は、利用者をそのセクションに直接連れて行くリンクである。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The table of contents for
-                  	<a href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf">Accessing PDF Documents with Assistive Technology: A Screen Reader User's Guide</a>
-                  begins on the second page.
+               <h3>事例 2</h3>
+               <p><a href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf">Accessing PDF Documents with Assistive Technology: A Screen Reader User's Guide</a> の目次は 2 ページ目から始まっている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G63">G63: Providing a site map</a></li>
+               <li><a href="G63">G63: サイトマップを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G125">G125: Providing links to navigate to related Web pages</a></li>
+               <li><a href="G125">G125: 関連するウェブページへナビゲートするリンクを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G126">G126: Providing a list of links to all other Web pages</a></li>
+               <li><a href="G126">G126: 他の全てのウェブページへのリンク一覧を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that a table of contents or a link to a table of contents exists in the document.</li>
-                  
-                  <li>Check that the values and order of the entries in the table of contents correspond
-                     to the names and order of the sections of the document.
+                  <li>目次、又は目次へのリンクがドキュメントに存在することを確認する。
                   </li>
                   
-                  <li>Check that the entries in the table of contents link to the correct sections of the
-                     document.
+                  <li>目次の項目及び順序が、ドキュメントのセクションの名前及び順序と一致することを確認する。
+                  </li>
+                  
+                  <li>目次の項目が、ドキュメントの各セクションにリンクしていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks above are true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
