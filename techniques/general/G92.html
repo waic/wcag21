@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G92: Providing long description for non-text content that serves the same
-         purpose and presents the same information
+      <title>G92: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,129 +11,104 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G91">Previous Technique: G91</a></li>
-            <li><a href="G93">Next Technique: G93</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G91">前の達成方法: G91</a></li>
+            <li><a href="G93">次の達成方法: G93</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing long description for non-text content that serves the same
-         purpose and presents the same information
+      <h1>非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>この達成基準は、<span><a href="https://w3c.github.io/wcag/understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分な達成方法) </span>に関連する。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a long text alternative that
-               serves the same purpose and presents the same information as the original
-               non-text content when a short text alternative is not sufficient.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、短いテキストによる代替が十分ではないとき、もとの非テキストコンテンツと同じ目的を果たし、同じ情報を提示する長いテキストによる代替を提供することである。
             </p>
-            <p>Combined with the short text alternative, the long description should be
-               able to substitute for the non-text content. The short alternative
-               identifies the non-text content; the long alternative provides the
-               information. If the non-text content were removed from the page and
-               substituted with the short and long descriptions, the page would still
-               provide the same function and information.
+            <p>短いテキストによる代替と組み合わせて、長い説明は非テキストコンテンツの代わりとすることができる。短い代替は非テキストコンテンツを特定し、長い代替が情報を提供する。非テキストコンテンツがページから取り除かれて、短い説明と長い説明に置き換えられたとしても、そのページは同じ機能と情報を提供していることになる。
             </p>
-            <p>In deciding what should be in the text alternatives, the following questions
-               are helpful.
+            <p>テキストによる代替に何を記述するべきかを決める際には、次の質問が参考になる。
             </p>
             <ul>
                
-               <li>Why is this non-text content here?</li>
+               <li>なぜこの非テキストコンテンツがここにあるのか？</li>
                
-               <li>What information is it presenting?</li>
+               <li>どんな情報が提示されているのか？</li>
                
-               <li>What purpose does it fulfill?</li>
+               <li>どんな目的を果たしているのか？</li>
                
-               <li>If I could not use the non-text content, what words would I use to
-                  convey the same function and/or information?
+               <li>もし非テキストコンテンツを使うことができないとき、同じ機能又は情報を伝えるためにどのような言葉を使えばよいか？
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A chart showing sales for October has a short text
-                  alternative of "October sales chart". The long description would
-                  read "Bar Chart showing sales for October. There are 6 salespersons.
-                  Maria is highest with 349 units. Frances is next with 301. Then
-                  comes Juan with 256, Sue with 250, Li with 200 and Max with 195. The
-                  primary use of the chart is to show leaders, so the description is
-                  in sales order."
+               <h3>事例 1</h3>
+               <p>10 月の売り上げを示すグラフには「10 月の売上グラフ」という短いテキストによる代替がついている。長い解説は「棒グラフは 10 月の売上を示している。6 人の営業がいて、マリアは 349 件でもっとも売上が高い。フランシスは次点の 301 件。その次は 256 件のジュアン、250 件のスー、200 件のリー、そして 195 件のマックスである。このチャートの第一使用目的はリーダーたちに見せるためのもので、そのためこの解説は売り上げ順になっている。」とする。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A line graph that shows average winter temperatures from
-                  the past 10 years includes a short text alternative of "Average
-                  winter temperatures 1996-2006." The long description includes the
-                  data table that was used to generate the line graph.
+               <h3>事例 2</h3>
+               <p>過去 10 年の冬の平均気温を示している折れ線グラフには、「1996 年から 2006 年までの冬の平均気温」という短いテキストによる代替がある。長い解説には、折れ線グラフを生成するのに使ったデータデーブルが含まれている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G94">G94: Providing short text alternative for non-text content that serves the same purpose
-                     and presents the same information as the non-text content</a></li>
+               <li><a href="G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、簡潔なテキストによる代替を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H45">H45: Using longdesc</a></li>
+               <li><a href="../html/H45">H45: longdesc 属性を用いる</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Remove, hide, or mask the non-text content</li>
+                  <li>非テキストコンテンツを取り除くか、非表示にするか、覆い隠す。</li>
                   
-                  <li>Display the long description</li>
+                  <li>長い説明を表示する。</li>
                   
-                  <li>Check that the long description conveys the same information
-                     conveyed by the non-text content.
+                  <li>長い説明が非テキストコンテンツによって伝えられた情報と同じ情報を伝えていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>3.の結果が真である。</li>
                   
                </ul>
                
