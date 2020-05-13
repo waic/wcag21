@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G70: Providing a function to search an online dictionary</title>
+      <title>G70: オンライン辞書を検索する機能を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,120 +10,99 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G69">Previous Technique: G69</a></li>
-            <li><a href="G71">Next Technique: G71</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G69">前の達成方法: G69</a></li>
+            <li><a href="G71">次の達成方法: G71</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a function to search an online dictionary</h1>
+      <h1>オンライン辞書を検索する機能を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/unusual-words">Success Criterion 3.1.3: Unusual Words</a> (Sufficient as a way to meet <a href="../general/G101">G101: Providing the definition of a word or phrase used in an unusual or restricted
-                     way</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/unusual-words">達成基準 3.1.3 : 一般的ではない用語</a> (<a href="../general/G101">G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/abbreviations">Success Criterion 3.1.4: Abbreviations</a> (Sufficient as a way to meet <a href="../general/G102">G102: Providing the expansion or explanation of an abbreviation</a>)
+               <li><a href="https://w3c.github.io/wcag/understanding/abbreviations">達成基準 3.1.4: 略語</a> (<a href="../general/G102">G102: 略語の元の語又は説明を提供する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide the definition of words, phrases, jargon,
-               or abbreviation expansions by adding a mechanism to access an on-line dictionary to
-               the Web page. This technique uses existing resources on the Web to provide the definition
-               rather than requiring the author to create a glossary or other mechanism within the
-               site. By providing access from within the Web page, a user can easily locate the desired
-               definition. This technique can only be used if the online dictionary returns the correct
-               definition.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、オンライン辞書にアクセスするメカニズムをウェブページに加えることで、語句、専門用語の定義、又は略語の説明を提供することである。この達成方法では、コンテンツ制作者に対してサイト内に用語集又は他のメカニズムを用意することを求めているのではなく、ウェブにすでに存在するリソースの利用を示している。ウェブページからオンライン辞書へのアクセス手段を提供することで、利用者は求める定義の所在が簡単に分かる。そのオンライン辞書が正しい定義を提供している場合にのみ、この達成方法を用いることができる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A site that describes how a computer works would include a search feature on each
-                  Web page. The search would be performed against an on-line dictionary of computer
-                  terms, acronyms, and abbreviations. Since the dictionary is specialized for computer
-                  terms, the acronym expansion found should be more accurate than with a general dictionary.
+               <h3>事例 1</h3>
+               <p>コンピュータがどのように動作するかを説明したサイトには、各ページに検索機能が含まれている。この検索には、コンピュータ用語、頭字語、及び省略語に関するオンライン辞書を利用している。辞書はコンピュータ用語に特化したものであるため、検索にヒットした頭字語の説明は、一般的な辞書よりも正確であるべきである。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>An online course in English grammar provides a paragraph of text which introduces
-                  new vocabulary words. Each of the vocabulary words is a link to an on-line dictionary
-                  to find the definition of the word. Activating a link will open up a new window to
-                  an online dictionary site with the specific vocabulary word defined.
+               <h3>事例 2</h3>
+               <p>ある英文法のオンライン授業では、新しい単語を紹介するテキストのパラグラフを提供している。各単語はオンライン辞書へのリンクとし、その単語の定義が分かるようにしてある。リンクを動作させるとオンライン辞書が新しいウィンドウで開き、単語とその定義が表示される。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G55">G55: Linking to definitions</a></li>
+               <li><a href="G55">G55: 定義にリンクする</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G62">G62: Providing a glossary</a></li>
+               <li><a href="G62">G62: 用語集を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G112">G112: Using inline definitions</a></li>
+               <li><a href="G112">G112: インラインの定義を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each word, phrase, or abbreviation to be defined:</p>
+               <p>定義される各単語、語句、又は略語について:</p>
                
                <ol>
                   
-                  <li>Check that a mechanism exists within the Web page to search for the word, phrase,
-                     or abbreviation via an on-line dictionary.
+                  <li>単語、語句、又は略語をオンライン辞書で検索するためのメカニズムがウェブページ内に存在することを確認する。
                   </li>
                   
-                  <li>Check that the result of the search of the dictionary for the word, phrase, or abbreviation
-                     is the correct definition.
+                  <li>単語、語句、又は略語の検索結果が正しい定義であることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
-               <p>Note: The definition of abbreviation used in WCAG is: "shortened form of a word, phrase,
-                  or name where the original expansion has not been rejected by the organization that
-                  it refers to and where the abbreviation has not become part of the language."
+               <p>注記: WCAG で使用される略語の定義は: 「単語、語句、又は名称の短縮形で、短縮されていない元来の名称を当該組織が廃止していないもの、及びその略語が言語の一部になっていないもの。」である。
                </p>
                
             </section>
