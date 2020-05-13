@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G69: Providing an alternative for time based media</title>
+      <title>G69: 時間依存メディアに対する代替コンテンツを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,165 +10,132 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G68">Previous Technique: G68</a></li>
-            <li><a href="G70">Next Technique: G70</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G68">前の達成方法: G68</a></li>
+            <li><a href="G70">次の達成方法: G70</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing an alternative for time based media</h1>
+      <h1>時間依存メディアに対する代替コンテンツを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>General technique. Applies to all technologies</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/audio-description-or-media-alternative-prerecorded">Success Criterion 1.2.3: Audio Description or Media Alternative (Prerecorded)</a> (Sufficient using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済)
+               </a> (より具体的な手法を用いる十分な達成方法)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/media-alternative-prerecorded">Success Criterion 1.2.8: Media Alternative (Prerecorded)</a> (Sufficient using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/media-alternative-prerecorded">達成基準 1.2.8: メディアに対する代替 (収録済)
+               </a> (より具体的な手法を用いる十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to provide an accessible alternative way of presenting
-               the information in a synchronized media presentation.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、同期したメディアの提示により情報を提示するアクセシブルな代替方法を提供することである。
             </p>
-            <p>In a synchronized media presentation, information is presented in a variety of ways
-               including:
+            <p>同期したメディアの提示において、情報は次のようにさまざまな方法で提示される。
             </p>
             <ul>
                
-               <li>dialogue,</li>
+               <li>発話 (会話)</li>
                
-               <li>sounds (natural and artificial),</li>
+               <li>音 (自然及び人工)</li>
                
-               <li>the setting and background,</li>
+               <li>場面及び背景</li>
                
-               <li>the actions and expressions of people, animals, etc.,</li>
+               <li>人や動物などの行動及び表情</li>
                
-               <li>text or graphics,</li>
+               <li>テキスト又はグラフィック</li>
                
-               <li>and more.</li>
+               <li>その他</li>
                
             </ul>
-            <p>In order to present the same information in accessible form, this technique involves
-               creating a document that tells the same story and presents the same information as
-               the synchronized media.  Such a document is sometimes called a screenplay. It includes
-               all the important dialogue and actions as well as descriptions of backgrounds etc.
-               that are part of the story.
+            <p>これらと同じ情報をアクセシブルな形式で提示するために、この達成方法には、同期したメディアと同じ話を伝える、及び同じ情報を伝える文書を作成することが含まれている。この種の文書は、脚本と呼ばれることがある。その脚本には、重要な会話や行動のほか、話の一部となっている背景などの説明が全て含まれる。
             </p>
-            <p>If an actual screenplay was used to create the synchronized media in the first place,
-               this can be a good place to start.  In production and editing however, the synchronized
-               media usually changes from the screenplay.  For this technique, the original screenplay
-               would be corrected to match the dialogue and what actually happens in the final edited
-               form of the synchronized media.
+            <p>同期したメディアを最初に作成する際に実際の脚本が使われていた場合、ここから始めるのがよい。ただし、制作及び編集において、同期したメディアは通常、脚本とは異なるものに変更される。この達成方法では、同期したメディアの最終版での実際の会話及び内容に合わせて、オリジナルの脚本を変えることになる。
             </p>
-            <p>In addition, some special types of synchronized media include interaction that has
-               to occur at particular places in the playing of the synchronized media.   Sometimes
-               it may result in an action taking place (e.g., something is purchased, sent, done,
-               etc.). Sometimes it may change the course of the synchronized media (e.g., the synchronized
-               media has multiple paths that are determined by user input).  In those cases links
-               or some other mechanism would be used in the alternative for time-based media to allow
-               people using the alternative to be able to have the same options and abilities as
-               those using the synchronized media.
+            <p>さらに、同期したメディアの特殊なタイプによっては、同期したメディアの再生時に特定の個所で起きるインタラクションが含まれることがある。場合によっては、アクション (何かを購入する、送信する、実行するなど) が起きるなどして、同期したメディアの進行に影響すること (同期したメディアが、利用者の入力によって決まる複数のパスを持っている場合など) もある。このような場合は、時間依存メディアに対する代替コンテンツにもリンク又は何らかのメカニズムを提供して、その代替コンテンツの利用者が、同期したメディアの利用者と同じ選択肢から選べ、同じことができるようにする。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A training film shows employees how to use a new piece of equipment.  It involves
-                  a person talking throughout while they demonstrate the operation.  The screenplay
-                  used to create the training film is used as a starting point. It is then edited and
-                  corrected to match the dialogue etc.  The film and the resulting alternative for time-based
-                  media are then made available on the company Web site. Employees can then use either
-                  or both to learn how to use the machine.
+               <li>新しい機器の使い方を従業員に示す研修フィルムで、1 人の人が使い方を実演しながら、同時に説明している。この研修フィルムの制作に使った脚本が代替コンテンツの出発点として使用されていて、実際の発話内容などに合わせて編集及び変更されている。研修フィルムと、時間依存メディアに対する代替コンテンツは、この会社のウェブサイトで公開されている。従業員は、機器の使い方を学ぶにあたって、このどちらか一方、又は両方を使うことができる。
                </li>
                
-               <li>An interactive shopping environment is created that allows users to steer themselves
-                  around in a virtual store and shop.  An alternative for time-based media allows the
-                  users to access the same shopping in text with links to choose aisles and to purchase
-                  things instead of dragging them into a virtual shopping basket.
+               <li>インタラクティブなショッピング環境で、利用者がバーチャル店舗を操作して買い物できるようになっている。時間依存メディアに対する代替コンテンツでは、利用者がバーチャルショッピングカートに品物をドラッグするのではなく、リンクを含むテキストで提供された同じショッピングのコンテンツにアクセスして、商品陳列棚の列を選び、商品を購入できるようになっている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G8">G8: Providing a movie with extended audio descriptions</a></li>
+               <li><a href="G8">G8: 拡張音声解説が付いたムービーを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G58">G58: Placing a link to the alternative for time-based media immediately next to the non-text
-                     content</a></li>
+               <li><a href="G58">G58: 非テキストコンテンツのすぐ隣に、時間依存メディアの代替へのリンクを配置する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G78">G78: Providing a second, user-selectable, audio track that includes audio descriptions</a></li>
+               <li><a href="G78">G78: 音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G158">G158: Providing an alternative for time-based media for audio-only content</a></li>
+               <li><a href="G158">G158: 音声のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G159">G159: Providing an alternative for time-based media for video-only content</a></li>
+               <li><a href="G159">G159: 映像のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>View the synchronized media presentation while referring to the alternative for time-based
-                     media.
+                  <li>時間依存メディアに対する代替を参照しながら、同期したメディアによる提示を閲覧する。
                   </li>
                   
-                  <li>Check that the dialogue in the alternative for time-based media matches the dialogue
-                     in the synchronized media presentation.
+                  <li>時間依存メディアに対する代替にある発話内容が、同期したメディアによる提示での発話内容と一致していることを確認する。
                   </li>
                   
-                  <li>Check that the alternative for time-based media has descriptions of sounds.</li>
+                  <li>時間依存メディアに対する代替に、音の説明があることを確認する。</li>
                   
-                  <li>Check that the alternative for time-based media has descriptions of setting and setting
-                     changes.
+                  <li>時間依存メディアに対する代替に、舞台及び舞台の変更の説明があることを確認する。
                   </li>
                   
-                  <li>Check that  the alternative for time-based media has descriptions of actions and expressions
-                     of any 'actors' (people, animals etc).
+                  <li>時間依存メディアに対する代替に、(人、動物など) 「登場人物」の行動及び表現の説明があることを確認する。
                   </li>
                   
-                  <li>If the alternate version(s) are on a separate page, check for the availability of
-                     link(s) to allow the user to get to the other versions.
+                  <li>代替版が別のページにある場合、利用者が別の版に到達できるリンクの可用性を確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2, 3, 4, 5 are true.</li>
+                  <li>2.、3.、4. 及び 5. の結果が真である。</li>
                   
                </ul>
                
