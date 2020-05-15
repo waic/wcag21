@@ -105,16 +105,11 @@ This technique relates to:
 これは、次の達成基準に関連する達成方法である:
 ```
 
-例 G54 （※G59と同じ原文だが、訳し方が異なる）
-```
+例 G54
+``` diff
 This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
-これは<span><a>達成基準 X.X.X: Xxxxxx</a></span>  (YYYY) に関する達成方法である。
-```
-
-例 G59 （※G54と同じ原文だが、訳し方が異なる）
-```
-This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (YYYY) .
-この達成基準は、<span><a>達成基準 X.X.X: Xxxxxx</a></span> (YYYY) に関連する。
+- この達成基準は、<span><a>達成基準 X.X.X: Xxxxxx</a></span> (YYYY) に関連する。
++ これは<span><a>達成基準 X.X.X: Xxxxxx</a></span>  (YYYY) に関する達成方法である。
 ```
 
 #### "(Sufficient)"のバリエーション
@@ -140,7 +135,7 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 例 G9
 ```
 (Sufficient, together with <a>GXX: Xxxx xxx xxx</a> using a more specific technique)
- (十分、より具体的な手法を使用した <a>GXX: XxxX xxx xxx</a>とともに)
+(十分、より具体的な手法を使用した <a>GXX: XxxX xxx xxx</a>とともに)
 ```
 
 例 G62
