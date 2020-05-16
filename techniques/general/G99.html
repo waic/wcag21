@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G99: Providing the ability to recover deleted information</title>
+      <title>G99: 削除した情報を復元する機能を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,90 +10,72 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G98">Previous Technique: G98</a></li>
-            <li><a href="G100">Next Technique: G100</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G98">前の達成方法: G98</a></li>
+            <li><a href="G100">次の達成方法: G100</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing the ability to recover deleted information</h1>
+      <h1>削除した情報を復元する機能を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content where user actions cause content to be deleted.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/error-prevention-legal-financial-data">Success Criterion 3.3.4: Error Prevention (Legal, Financial, Data)</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>利用者の操作によって削除されるコンテンツ</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/error-prevention-legal-financial-data">達成方法 3.3.4: エラー回避 (法的、金融、データ)</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When a Web application provides the capability of deleting information, the server
-               can provide a means to recover information that was deleted in error by a user. One
-               approach is to delay deleting the data by merely marking it for deletion or moving
-               it to a holding area (such as a trash can) and waiting some period of time before
-               actually deleting it. During this time period, the user can request that the data
-               be restored or can retrieve it from the holding area. Another approach is to record
-               all delete transactions in such a way that data can be restored if requested by the
-               user, such as in the edit history stored by wikis and source control applications.The
-               retrievable information that is stored should be that which would be needed to correct
-               the transaction.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブアプリケーションで情報を削除できる場合、利用者によって誤って削除された情報を復元する手段をサーバーが提供することである。一つの方法として、削除をするものにマークを付けるだけにする、又は (ゴミ箱のように) 情報を保持する領域に移動させるなど、データの削除に時間差を設けて、実際に削除するまでにしばらくの間待機することが考えられる。この間、利用者はデータを復元したり、一時的な保持領域から取り出したりすることができる。他には、wiki 及びソースコントロールアプリケーションで編集履歴が保持されているように、利用者が必要なときにデータを復元できるように全ての削除操作を記録しておく方法がある。トランザクションの修正が必要となる情報は保存し、利用者が取り出し可能なようにしておくべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A Web application allows users to set up folders and store data within them. Each
-                  folder and data item is accompanied by a checkbox to mark it for action, and two buttons,
-                  one to move and one to delete. If the user selects the delete button by mistake, large
-                  amounts of data could be lost. The application presents the data as deleted to the
-                  user right away, but schedules it for actual deletion in one week. During the week,
-                  the user may go into a "deleted items" folder and request any folder or data item
-                  awaiting actual deletion to be restored.
+               <li>ウェブアプリケーションで、利用者がフォルダを作成してデータをその中に保存しておくことができる。各フォルダとデータ項目には、動作のマークを付けるチェックボックスと、移動するボタンと削除するボタンの二つのボタンが付いている。利用者が削除ボタンを間違って選択した場合は、多量のデータが失われてしまうかもしれない。そのアプリケーションは、利用者にデータが削除されたことをすぐに表示するが、実際の削除は一週間後に設定されている。一週間の間、利用者は「削除されたアイテム」フォルダを開き、実際に削除されるのを待っているフォルダやデータの復元を要求することができる。
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify functionality that allows deleting content</li>
+                  <li>コンテンツを削除する機能を特定する。</li>
                   
-                  <li>Delete content and attempt to recover it.</li>
+                  <li>コンテンツを削除して、復元してみる。</li>
                   
-                  <li>Check if deleted information can be recovered.</li>
+                  <li>削除された情報が復元できるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
