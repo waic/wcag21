@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G107: Using "activate" rather than "focus" as a trigger for changes of context</title>
+      <title>G107: コンテキストの変化に対するトリガーとして、"focus" ではなく、"activate" を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,89 +10,78 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G105">Previous Technique: G105</a></li>
-            <li><a href="G108">Next Technique: G108</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G105">前の達成方法: G105</a></li>
+            <li><a href="G107">次の達成方法: G107</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using "activate" rather than "focus" as a trigger for changes of context</h1>
+      <h1>コンテキストの変化に対するトリガーとして、"focus" ではなく、"activate" を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/on-focus">Success Criterion 3.2.1: On Focus</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術に適用する。</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/on-focus">達成基準 3.2.1: フォーカス時</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a method for activating things that
-               is predictable by the user. Users with cognitive disabilities and people using screen
-               readers or screen magnifiers may be confused by an unexpected event such as automatic
-               form submission or activation of a function that causes a change of context.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が予測できるように、機能を実行する手法を提供することである。認知障害の利用者及びスクリーンリーダーや画面拡大ソフトを使用している利用者は、フォームが自動的に送信されたり、コンテキストの変化を引き起こす機能が実行されたりするなど、予期せぬイベントによって混乱することがある。
             </p>
-            <p>With this technique, all changes of context would be triggered only by a specific
-               action on the part of the user.  Further, that action would be one that usually causes
-               changes in context, such as clicking on a link or pressing a submit button.  Actions
-               that simply move the focus to an element would not cause a change of context.
+            <p>この達成方法を用いることにより、状況の全ての変化は利用者の特定の動作によってのみ引き起こされる。さらに、その動作は通常状況の変化を引き起こすものであり、例えばリンクをクリックしたり送信ボタンを押したりすることが挙げられる。単にフォーカスをある要素に移すだけの動作は、コンテキストの変化を引き起こすものではない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
+               <h3>事例 1</h3>
                <ul>
                   
-                  <li>A page pops up a new window only when the user clicks(or uses spacebar) on a button
-                     rather than using onfocus to pop up a new window.
+                  <li>ページが新しいウィンドウをポップアップ表示するのは、利用者がフォーカスを移動させたときではなく、ボタンをクリックした (又はスペースキーを使った) ときのみとする。
                   </li>
                   
-                  <li>A submit button is used to move on to the next data entry screen rather than having
-                     the next screen appear automatically when the user tabbed onto a 'done' button.
+                  <li>利用者が完了ボタンにタブで移動したときに自動的に次の画面を表示するのではなく、送信ボタンを使用したときに次のデータ入力画面に移動するようにする。
                   </li>
                   
                </ul>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Using a keyboard, cycle focus through all content</li>
+                  <li>キーボードを利用して、全てのコンテンツへフォーカスを移動する。</li>
                   
-                  <li>Check that no changes of context occur when any component receives focus.</li>
+                  <li>どの構成要素がフォーカスを受け取ったときにも、コンテキストの変化が発生しないことを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true</li>
+                  <li>2.の結果が真である。</li>
                   
                </ul>
                
