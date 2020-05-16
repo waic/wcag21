@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G108: Using markup features to expose the name and role, allow user-settable properties
-         to be directly set, and provide notification of changes
+      <title>G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,121 +11,98 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G107">Previous Technique: G107</a></li>
-            <li><a href="G110">Next Technique: G110</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G107">前の達成方法: G107</a></li>
+            <li><a href="G110">次の達成方法: G110</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using markup features to expose the name and role, allow user-settable properties
-         to be directly set, and provide notification of changes
+      <h1>名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Markup technologies where it is possible to expose the name and role, allow
-               user-settable properties to be directly set, and provide notification of
-               changes.
+            <h2>適用 (対象)</h2>
+            <p>名前及び役割を明示すること、利用者が設定可能なプロパティを直接設定可能にすること、及び変化を通知することが可能なマークアップウェブコンテンツ技術
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient using a more specific technique)</span>.
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/name-role-value">達成基準 4.1.2: 名前 (name) ・役割 (role) 及び値 (value)</a> (より具体的な手法を用いる十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to allow assistive technology to
-               understand Web content so that it can convey equivalent information to the
-               user through an alternate user interface and allow them to operate controls
-               through the AT.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、支援技術がウェブコンテンツを理解できるようにすることである。そうすることで、代替のユーザインタフェースを通して利用者に等価の情報を伝えることができ、 また支援技術を通してコントロールを操作することができるようになる。
             </p>
-            <p>This technique involves using standard, documented and supported features to
-               expose these properties to AT. It relies on the fact that these standard
-               controls in standard browsers meet the requirements.
+            <p>この達成方法は、これらのプロパティを支援技術に明示するために、標準で、文書化され、かつサポート された機能を使用することを前提にしている。それは標準的なブラウザにおいてこれら標準的なコントロールは仕様にそっているからである。
             </p>
-            <p>For HTML these assumptions are good. They may also be appropriate for some
-               other technologies.
+            <p>HTML に対してはこれらの条件が当てはまる。他のウェブコンテンツ技術に対しても当てはまるかもしれない。
             </p>
-            <p>Even when the components support accessibility, it is essential that some
-               information be provided by the author. For example, a control may have the
-               ability to provide a name but the author still has to provide the name. The
-               role attribute however may already be provided since it is a standard
-               component with a fixed role.
+            <p>構成要素がアクセシビリティをサポートしている時でさえ、コンテンツ制作者によって提供される情報は必要不可欠である。 例えば、コントロールは名前 (name) を提供する能力を持っているかもしれないが、コンテンツ制作者はそれでも名前を提供しなければならない。また一方、それは固定の役割 (role) のある標準的な構成要素であるため、役割 (role) の属性はすでに提供されているかもしれない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例 </h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Example 1: A Web page written in HTML or XHTML uses standard form
-                  controls, and identifies the form control using the title attribute.
-                  The user agent makes information about these controls, including the
-                  name, available to assistive technology through the DOM and through
-                  a platform-specific Accessibility API.
+               <h3>事例  1</h3>
+               <p>HTML 又は XHTML で書かれたウェブページは標準的なフォームコントロールを使用し、タイトル属性を使用してフォームコントロールを特定している。ユーザエージェントは、これらコントロールに関する情報を、名前を含めて生成する。そして、DOM とプラットフォーム特有のアクセシビリティ API を通して支援技術が利用可能となる。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
                <li><a href="https://w3c.github.io/wcag/techniques/general/G135">G135: Using the accessibility API features of a technology to expose names and notification
                      of changes</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="../html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H88">H88: Using HTML according to spec</a></li>
+               <li><a href="../html/H88">H88: 仕様に準じて HTML を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H91">H91: Using HTML form controls and links</a></li>
+               <li><a href="../html/H91">H91: HTML のフォームコントロール及びリンクを使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR21">SCR21: Using functions of the Document Object Model (DOM) to add content to a page</a></li>
+               <li><a href="../client-side-script/SCR21">SCR21: ページにコンテンツを追加するために、Document Object Model (DOM) の機能を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Visually inspect the markup or use a tool.</li>
+                  <li>マークアップを視覚的に確認する、又はツールを使用する。</li>
                   
-                  <li>Check that proper markup is used such that the name and role,
-                     for each user interface component can be determined.
+                  <li>それぞれのユーザインタフェースコンポーネントに対して、名前 (name) 及び役割 (role) を判断できるように適切なマークアップが使用されていることを確認する。
                   </li>
                   
-                  <li>Check that proper markup is used such that the user interface
-                     components that accept user input can all be operated from AT.
+                  <li>利用者の入力を受け取るユーザインタフェースコンポーネントが全て支援技術から操作できるように適切なマークアップが使用されていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Step #2 and #3 are both true for each user interface component</li>
+                  <li>各ユーザインタフェースコンポーネントにおいて、2. と 3. の両方の結果が真である。</li>
                   
                </ul>
                
