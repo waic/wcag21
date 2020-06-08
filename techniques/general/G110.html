@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G110: Using an instant client-side redirect</title>
+      <title>G110: クライアントサイドの瞬間的なリダイレクトを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,112 +10,88 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G108">Previous Technique: G108</a></li>
-            <li><a href="G111">Next Technique: G111</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G108">前の達成方法: G108</a></li>
+            <li><a href="G111">次の達成方法: G111</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using an instant client-side redirect</h1>
+      <h1>クライアントサイドの瞬間的なリダイレクトを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Sufficient using a more specific technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは <span><a href="https://w3c.github.io/wcag/understanding/change-on-request">達成基準 3.2.5: 要求による変化</a> (より具体的な手法を用いる十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to enable redirects on the client side
-               without confusing the user. Redirects are preferably implemented on the
-               server side (see <a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR1">SVR1: Implementing automatic redirects on the server side instead of on the client side</a>), because a server-side
-               redirect does not cause new content to be displayed before the server sends
-               the content located at the new URI. However, authors do not always have
-               control over server-side technologies; in that case, they can use a
-               client-side redirect. A client-side redirect is implemented by code inside
-               the content that instructs the user agent to retrieve content from a
-               different URI. It is important that the redirecting page or Web page
-               only contains information related to the redirect.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、クライアントサイドで利用可能なリダイレクトを、利用者を混乱させることなく用いることである。リダイレクトはサーバーサイドで実装するほうが望ましい (<a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバサイドで自動リダイレクトを実装する</a>を参照)。なぜなら、サーバーサイドのリダイレクトでは、新たな URI にあるコンテンツをサーバーが送信する前にコンテンツが表示されてしまうことがないからである。しかし、コンテンツ制作者がサーバーサイド技術を管理しているとは限らず、このような場合にはクライアントサイドのリダイレクトを用いることができる。コンテンツを異なる URI から取得すべきことをユーザエージェントに指示するコードを埋め込むことで、クライアントサイドのリダイレクトが実装できる。リダイレクト元のページには、リダイレクトに関する情報のみを含めておくことが重要である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-html&#xA;--------------&#xA;----------------meta&#xA;--------------&#xA;--------------refresh-with-a-uri-and-no-timeout">
-               <h3>Example 1: HTML:
-                  
-                  meta
-                  
-                  Refresh With a URI and No Timeout
+               <h3>事例 1: HTML: meta 要素の refresh で、URI を指定し、タイムアウトを指定しない方法
                </h3>
-               <p>In HTML 4.x and XHTML 1.x, it is possible to implement a client-side
-                  redirect using the
-                  
-                  meta
-                  
-                  element: see
-                  <a href="https://w3c.github.io/wcag/techniques/html/H76">H76: Using meta refresh to create an instant client-side redirect</a>.
+               <p>HTML 4.x と XHTML 1.x では、mata 要素を用いることでクライアントサイドのリダイレクトが実装できる。
+                  <a href="../html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a>を参照のこと。
                </p>
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>HTML 4.x 及び XHTML 1.x は Superseded Recommendation としてマークされ、廃止された仕様である。</p>
+               </div>               
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H76">H76: Using meta refresh to create an instant client-side redirect</a></li>
+               <li><a href="../html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR1">SVR1: Implementing automatic redirects on the server side instead of on the client side</a></li>
+               <li><a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバーサイドで自動リダイレクトを実装する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Find each link or programmatic reference to another page or
-                     Web page.
+                  <li>他のウェブページへの各リンク又はプログラム参照を見つける。
                   </li>
                   
-                  <li>For each link or programmatic reference, check if the referenced
-                     Web page contains code (e.g., meta element or script) that
-                     causes a client-side redirect.
+                  <li>各リンク又はプログラム参照について、参照先のウェブページにクライアントサイドのリダイレクトを引き起こすコード (meta 要素やスクリプトなど) が含まれているかどうかを確認する。
                   </li>
                   
-                  <li>For each link or programmatic reference that causes a
-                     client-side redirect, check if the redirect is implemented
-                     without a time limit or delay and that the page only contains
-                     information related to the redirect.
+                  <li>クライアントサイドのリダイレクトが生じるリンク又はプログラム参照について、リダイレクトが時間制限も遅延もなく実装され、そのページにはリダイレクトに関する情報のみが含まれているかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p>Step 2 is false or step 3 is true.</p>
+               <p>2. の結果が偽、又は 3. の結果が真である。</p>
                
             </section>
          </section>
