@@ -150,6 +150,11 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 (書かれていない達成方法を満たす慣習的な達成方法)
 ```
 
+例 G127 G156 G162 G200 H2 等　対訳未定
+```
+(Advisory)
+```
+
 ### 参考リソース
 2.1で削除されているものは、差分としての報告は不要です。
 例
