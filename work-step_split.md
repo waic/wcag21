@@ -155,6 +155,11 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 (Advisory)
 ```
 
+例 G136 G190 SCR38 SVR3 G209 等　対訳未定
+```
+This technique is not referenced from any Understanding document.
+```
+
 ### 参考リソース
 2.1で削除されているものは、差分としての報告は不要です。
 例
