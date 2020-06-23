@@ -150,7 +150,7 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 (書かれていない達成方法を満たす慣習的な達成方法)
 ```
 
-例 G127 G156 G162 G200 H2 等　対訳未定
+例 G127 G139 G156 G162 G200 H2 等　対訳未定
 ```
 (Advisory)
 ```
