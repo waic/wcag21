@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G142: Using a technology that has commonly-available user agents that support zoom</title>
+      <title>G143: ズーム機能をサポートする一般に入手可能なユーザエージェントのあるウェブコンテンツ技術を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,89 +10,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G141">Previous Technique: G141</a></li>
-            <li><a href="G143">Next Technique: G143</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G141">前の達成方法: G141</a></li>
+            <li><a href="G143">次の達成方法: G143</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a technology that has commonly-available user agents that support zoom</h1>
+      <h1>ズーム機能をサポートする一般に入手可能なユーザエージェントのあるウェブコンテンツ技術を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies with user-agent provided zoom capability.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>ズーム機能を提供するユーザエージェントのある全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure content can be scaled uniformly by using
-               a Web technology supported by user agents that change text size via a Zoom tool.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ズーム機能でテキストサイズを変更するユーザエージェントによってサポートされたウェブ技術を使用することによって、均一にコンテンツを拡大縮小できることを保障することである。
             </p>
-            <p>Content authored in technologies that are supported by user agents that can scale
-               content uniformly (that is, zoom into content) satisfy this Success Criterion. Because
-               this technique relies completely on user agent functionality, it is critical to test
-               with a wide variety of user agents.
+            <p>内容を均一 (すなわち、内容へズームする) に拡大縮小できるユーザエージェントによってサポートされたウェブコンテンツ技術で制作されたコンテンツは、この達成基準を満たす。 この達成方法は、完全にユーザエージェントの機能に依存するため、さまざまなユーザエージェントを用いて検証することは重要である。
             </p>
-            <p>This technique requires that the zoom function preserve all spatial relationships
-               on the page and that all functionality continues to be available.
+            <p>この達成方法では、ズーム機能を用いてもページ上の全ての空間的な関係が保持され、全ての機能が継続して利用可能である必要がある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>Internet Explorer 7 and Opera 9 provide a zoom function that scales HTML/CSS page
-                  content uniformly.
+               <li>Internet Explorer 7 と Opera 9は、HTML/CSS ページコンテンツを均一に拡大縮小するズーム機能を提供している。
                </li>
                
-               <li>To allow users to resize text, Adobe Reader provides a magnification tool that scales
-                  PDF pages uniformly.
+               <li>利用者がテキストのサイズを変更できるように、Adobe Reader は PDF ページを均一に拡大縮小する拡大鏡機能を提供している。
                </li>
                
             </ul>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p>ブラウザのズーム機能については、上記のブラウザだけでなく、ほとんどのモダンブラウザで提供されている。</p>
+            </div>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Display content in a user agent</li>
+                  <li>ユーザエージェントでコンテンツを表示する。</li>
                   
-                  <li>Zoom content to 200%</li>
+                  <li>そのコンテンツを 200% にズームする。</li>
                   
-                  <li>Check whether all content and functionality is available</li>
+                  <li>全てのコンテンツ及び機能が利用可能かどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3 is true.</li>
+                  <li>3.の結果が真である。</li>
                   
                </ul>
                
