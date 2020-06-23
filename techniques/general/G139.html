@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G139: Creating a mechanism that allows users to jump to errors</title>
+      <title>G139: 利用者がエラー箇所に移動できるメカニズムを作成する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,133 +10,104 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G138">Previous Technique: G138</a></li>
-            <li><a href="G140">Next Technique: G140</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G138">前の達成方法: G138</a></li>
+            <li><a href="G140">次の達成方法: G140</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Creating a mechanism that allows users to jump to errors</h1>
+      <h1>利用者がエラー箇所に移動できるメカニズムを作成する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content that accepts user data input, with restrictions on the format, value, and/or
-               type of the input.
+            <h2>適用 (対象)</h2>
+            <p>利用者のデータ入力を受け付け、そのフォーマット、値及び／又は入力の種類に制限があるコンテンツ
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (Advisory)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (Advisory)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to help users find input errors where the information
-               supplied by the user is not accepted. This includes fields with missing required information
-               and fields with incorrect information. When users enter data input that is checked,
-               and input errors are detected, a link to that error is provided so that the user does
-               not have to search for it. One approach is to use server-side validation, and to re-display
-               the form (including any previously entered data), and a text description at the top
-               of the page that indicates the fact that there was an input error, describes the nature
-               of the problem, and provides a link the field(s) with a problem.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者によって提供された情報が受け付けられない場合に、入力エラーの修正を支援することである。これには、必須入力欄が空欄の場合と、入力欄に正しくない情報が入力された場合とが含まれる。利用者による入力データをバリデートした結果、入力エラーが検出された場合に、この入力エラーの内容と場所に関する情報をテキストで提供することによって、利用者は問題のある箇所を特定することができる。一つのアプローチとして、サーバーサイドでのバリデーションを用いて、フォームを再表示し (すでに入力されたデータも含む)、ページの上部にテキストでの説明文を表示して、エラーがあったことを知らせるとともに問題の内容を説明して、利用者が問題のあった項目を簡単に見つけられるような方法を提供することがある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-server-side-error-checking">
-               <h3>Example 1: Server-side error checking</h3>
-               <p>The user inputs invalid data on a form field and submits the form. The server returns
-                  the form, with the user's data still present, and indicates clearly in text at the
-                  top of the page that there were not accepted. The text describes the nature of the
-                  error(s) and provides a link to the field that had the problem so the user can easily
-                  navigate to it to fix the problem.
+               <h3>事例 1: サーバーサイドのエラーチェック</h3>
+               <p>利用者がフォーム項目に無効なデータを入力して、そのフォームを送信すると、サーバーがフォームを利用者に再提示する。利用者の入力したデータはそのまま表示された状態で、ページの上部に入力エラーがあったことをテキストで明確に示している。このテキストは、エラーの内容を説明していて、どの項目に問題があったのかを明確に示しているため、利用者はその項目へ容易に移動し、問題を修正することができる。
                </p>
             </section>
             <section class="example" id="example-2-client-side-error-checking-with-a-popup">
-               <h3>Example 2: Client-side error checking with a popup</h3>
-               <p>The user inputs invalid data on a form field and attempts to submit the form. Client-side
-                  scripting detects the error, cancels the submit, and modifies the document to provide
-                  a text message describing the error, with links to the field(s) with the error. The
-                  script also modifies the labels of the fields with the problems to highlight them.
+               <h3>事例 2: ポップアップを用いたクライアントサイドのエラーチェック</h3>
+               <p>利用者がフォーム項目に無効なデータを入力して、そのフォームを送信しようとする。クライアントサイドのスクリプトがエラーを検出し、送信をキャンセルした上で、そのフォームにエラーを説明するテキストとエラーのある項目へのリンクを表示する。また、このスクリプトは、問題のある項目のラベルを変更して、それを強調する。
                </p>
             </section>
             <section class="example" id="example-3-client-side-error-checking-with-no-popup">
-               <h3>Example 3: Client-side error checking with no popup</h3>
-               <p>When the user submits a form, instead of taking them to a new page, a script automatically
-                  sets focus to a text link that says "Errors have occurred." The link goes to the first
-                  item in an ordered list of descriptive error messages. Each list item is a link to
-                  the control where the error had occurred. And there is a link from the error back
-                  to the ordered list of descriptive error messages. The process is repeated as needed.
+               <h3>事例 3: ポップアップを用いないクライアントサイドのエラーチェック</h3>
+               <p>利用者がフォームを送信しようとした時、新たなページに遷移させる代わりに、スクリプトが自動的に「エラーが発生しました」というテキストにフォーカスする。エラーを説明するメッセージリストにリンクし、一つ一つの項目がエラー箇所にリンクをする。また、エラー箇所からエラーメッセージリストへのリンクも設置されている。このプロセスが必要な限り繰り返される。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G83">G83: Providing text descriptions to identify required fields that were not completed</a></li>
+               <li><a href="G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G85">G85: Providing a text description when user input falls outside the required format or
-                     values</a></li>
+               <li><a href="G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR18">SCR18: Providing client-side validation and alert</a></li>
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Fill out a form, deliberately leaving a required (mandatory) field blank, and make
-                     an input error on another field and submit the form.
+                  <li>フォームに記入し、故意に必須項目を空白にして、他のフィールドに入力エラーを作った状態でフォームを送信する。
                   </li>
                   
-                  <li>Check that a text message is provided that identifies the field that is missing required
-                     data.
+                  <li>必要なデータが欠落しているフィールドを特定するテキストメッセージが提供されていることを確認する。
                   </li>
                   
-                  <li>Check that a text message is provided that identifies the field with the input error.</li>
+                  <li>入力エラーのあるフィールドを特定するテキストメッセージが提供されていることを確認する。</li>
                   
-                  <li>Check that there is a link to each field that is missing required data from the missing
-                     data message
+                  <li>欠落しているデータのメッセージから、必要なデータが欠落している各フィールドへのリンクがあることを確認する。
                   </li>
                   
-                  <li>Check that there is a link to the list of errors from the error message.</li>
+                  <li>エラーメッセージからエラーリストへのリンクがあることを確認する。</li>
                   
                </ol>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Success Criterion 3.3.2 requires that if an input error is detected and suggestions
-                        for correction are known and can be provided without jeopardizing the security or
-                        purpose of the content, the suggestions are provided to the user.
+                     <p>達成基準 3.3.2 では、入力エラーが検知され、修正の示唆が既知であり、セキュリティ又はコンテンツの目的が脅かされることなく提供できる場合、利用者に修正の示唆を提供するよう求めている。
                      </p>
                      
                   </div>
@@ -144,13 +115,13 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If #2 is true, then #4 is true.</li>
+                  <li>2. の結果が真である場合、4. の結果が真である。</li>
                   
-                  <li>If #3 is true, then #5 is true.</li>
+                  <li>3. の結果が真である場合、5. の結果が真である。</li>
                   
                </ul>
                
