@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G153: Making the text easier to read</title>
+      <title>G153: テキストを読みやすくする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,133 +10,118 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G152">Previous Technique: G152</a></li>
-            <li><a href="G155">Next Technique: G155</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G152">前の達成方法: G152</a></li>
+            <li><a href="G155">次の達成方法: G155</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Making the text easier to read</h1>
+      <h1>テキストを読みやすくする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/reading-level">Success Criterion 3.1.5: Reading Level</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/reading-level">達成基準 3.1.5: 読解レベル</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that the text of the Web page is not
-               difficult to read. Users with disabilities that make it difficult to decode words
-               and sentences are likely to have trouble reading and understanding complex text. If
-               the text does not require reading ability more advanced than the lower secondary education
-               level, no supplements or alternative versions are needed.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページ上のテキストを読むのが難しくないようにすることである。単語や文を解読することが困難になるような障害のある利用者は、複雑なテキストを読んで理解するのを苦手とすることが多い。そのテキストが前期中等教育レベルを超えた読解能力を必要としないならば、補足や代替版は必要ない
             </p>
-            <p>In order to reduce the complexity of the text:</p>
+            <p>テキストの複雑さを軽減する方法:</p>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p>以下は英語における留意点であると考えられ、日本語の場合に全てが当てはまるとは限らない。</p>
+            </div>
             <ul>
                
-               <li>Develop a single topic or subtopic per paragraph.</li>
+               <li>段落ごとに一つのトピックまたはサブトピックのみを展開する。</li>
                
-               <li>Use the simplest sentence forms consistent with the purpose of the content. For example,
-                  the simplest sentence-form for English consists of Subject-Verb-Object, as in John
-                  hit the ball or The Web site conforms to WCAG 2.0.
+               <li>コンテンツの目的に矛盾しない範囲でもっとも単純な構文を用いる。たとえば、英語のもっとも単純な構文は「John hit the ball」、「The Web site conforms to WCAG 2.0」のように「主語、動詞、目的語」からなる。
                </li>
                
-               <li>Use sentences that are no longer than the typical accepted length for secondary education.
-                  (Note: In English that is 25 words.)
+               <li>文の長さは、前期中等教育レベルで典型的に許される範囲とする。(注記: 英語では 25 ワードである)
                </li>
                
-               <li>Consider dividing longer sentences into two.</li>
+               <li>長い文は二つに分割することを検討する。</li>
                
-               <li>Use sentences that contain no more than two conjunction.</li>
+               <li>一つの文に三つ以上の接続詞を用いないようにする。</li>
                
-               <li>Indicate logical relationships between phrases, sentences, paragraphs, or sections
-                  of the text.
+               <li>テキスト中のフレーズ、文、段落、セクション間の論理的関係を明確にする。
                </li>
                
-               <li>Avoid professional jargon, slang, and other terms with a specialized meaning that
-                  may not be clear to people.
+               <li>一般の人にとって意味が明らかでないような専門的な職業語や俗語等の言い回しを避ける。
                </li>
                
-               <li>Replace long or unfamiliar words with shorter, more common terms.</li>
+               <li>長い又は馴染みのない言い回しは、より短く一般的なものに置き換える。</li>
                
-               <li>Remove redundant words, that is, words that do not change the meaning of the sentence.</li>
+               <li>取り除いても文章の意味が変わらないような冗長な単語を取り除く。</li>
                
-               <li>Use single nouns or short noun-phrases.</li>
+               <li>単独の名詞または短い名詞句を使用する。</li>
                
-               <li>Remove complex words or phrases that could be replaced with more commonly used words
-                  without changing the meaning of the sentence.
+               <li>文の意味を変えずにより広く使われる言い回しに置き換えられるような単語やフレーズを取り除く。
                </li>
                
-               <li>Use bulleted or numbered lists instead of paragraphs that contain long series of words
-                  or phrases separated by commas.
+               <li>いくつもの単語やフレーズからなる複数の項目を、コンマで区切って一つの段落内に並べることは避け、番号なし/番号付きリストを使用する。
                </li>
                
-               <li>Make clear pronoun references and references to other points in the document.</li>
+               <li>代名詞による参照や文中の他の箇所への参照は明確なものにする。</li>
                
-               <li>Use the active voice for documents written in English and some other Western languages,
-                  unless there is a specific reason for using passive constructions. Sentences in the
-                  active voice are often shorter and easier to understand than those in the passive
-                  voice.
+               <li>英語および他の一部の欧米系言語で書かれる文書では、受動態を使う特別な理由がない限り、能動態を用いる。たいていの場合、能動態の文章は受動態よりも短く、理解しやすい。
                </li>
                
-               <li>Use verb tenses consistently.</li>
+               <li>動詞の時制に一貫性を持たせる。</li>
                
-               <li>Use names and labels consistently.</li>
+               <li>名前やラベルに一貫性を持たせる。</li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>The help pages for a Web application are written in language that is not more advanced
-                  than the lower secondary education level.
+               <li>ウェブアプリケーションのヘルプページは、前期中等教育レベルよりも高度ではない言葉づかいで書かれている。
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Measure the readability of the text.</li>
+                  <li>テキストの読みやすさを測定する。</li>
                   
-                  <li>Check that the text requires reading ability less advanced than the lower secondary
-                     education level.
+                  <li>そのテキストが要求する読解能力が、前期中等教育レベルを超えていない。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>2. の結果が真である。</li>
                   
                </ul>
                
