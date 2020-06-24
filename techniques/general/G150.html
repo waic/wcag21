@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G150: Providing text based alternatives for live audio-only content</title>
+      <title>G150: ライブの音声のみのコンテンツに対して、テキストベースの代替コンテンツを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,98 +10,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G149">Previous Technique: G149</a></li>
-            <li><a href="G151">Next Technique: G151</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G149">前の達成方法: G149</a></li>
+            <li><a href="G151">次の達成方法: G151</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing text based alternatives for live audio-only content</h1>
+      <h1>ライブの音声のみのコンテンツに対して、テキストベースの代替コンテンツを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that present live audio-only information</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/audio-only-live">Success Criterion 1.2.9: Audio-only (Live)</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>ライブの音声しか含まない情報を提示する全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/audio-only-live">達成基準 1.2.9: 音声のみ (ライブ)</a> (十分な達成方法)</span>に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to allow users who cannot hear to be able to access
-               real-time audio broadcasts. It is more difficult to create accurate real-time alternatives
-               because there is little time to correct mistakes, to listen a second time or to consult
-               someone to be sure the words are accurately reproduced. It is also harder to simplify
-               or paraphrase information if it is flowing too quickly.
+            <h2>解説</h2>
+            <p>
+               この達成方法の目的は、耳の聞こえない利用者がリアルタイムの音声の放送にアクセスできるようにすることである。間違いを修正する、聞きなおす、又は言葉が正しく再現できているかを誰かに確認する時間がほとんどないため、リアルタイムの代替物を制作することは困難である。また、音声の放送が非常に速く流れている場合は、情報を簡略化したり、言い換えたりすることも困難である。
             </p>
-            <p>Real-time typing text entry techniques exist using stenographic and rapid typing technologies.
-               Re-voicing speech-to-text (where a person listens to speech and then carefully re-voices
-               it into a computer trained to their speech) is used today for telephone relay services
-               and may be used in the future for captioning. Eventually speech-to-text with correction
-               will be possible.
+            <p>リアルタイムのタイピングによるテキスト入力技術には、速記及び高速タイピングがある。復唱して音声認識入力する方法 (話を聞き取って、注意深く復唱し、復唱する話者の音声認識トレーニングをしたコンピュータで入力する) は、現在では電話伝送サービスに使用されており、将来的にはキャプション制作に使用されるかもしれない。いずれは修正機能付きの音声認識入力も可能になるだろう。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A radio station uses Web based captioning services to provide alternatives for live
-                  sporting events; the output from the service is incorporated in a viewport of the
-                  Web page which also includes a streaming audio control.
+               <li>ラジオ局でライブのスポーツイベントの代替コンテンツとして、ウェブベースのキャプションサービスを用いている。そのサービスでは、代替コンテンツはウェブページのビューポートに組み込まれて表示され、ストリーミング用の音声調節も付いている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G9">G9: Creating captions for live synchronized media</a></li>
+               <li><a href="G9">G9: ライブの同期したメディアに対してキャプションを作成する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that a procedure and policy is in place to ensure that text alternatives are
-                     delivered in real-time.
+                  <li>テキストによる代替がリアルタイムで伝達されるように手順及びポリシーが整っている。
                   </li>
                   
-                  <li>Check that procedure and policy are working by conducting a random sample to see if
-                     text alternatives appear.
+                  <li>テキストによる代替が表示されるかどうかをランダムにチェックすると、手順及びポリシーが機能していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Both #1 and #2 are true.</li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
