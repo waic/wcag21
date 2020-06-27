@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.2.5: 再認証を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="enough-time.html"><abbr title="Guideline">GL</abbr>: 十分な時間</a></li>
+            <li><a href="interruptions.html">Previous <abbr title="Success Criterion">SC</abbr>: 割り込み</a></li>
+            <li><a href="timeouts.html">Next <abbr title="Success Criterion">SC</abbr>: タイムアウト</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.2.5: 再認証を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#re-authenticating" style="font-weight: bold;">2.2.5 Re-authenticating</a> (レベル AAA): 認証済のセッションが切れた場合は、再認証後でもデータを失うことなく利用者が操作を継続できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、処理を完了する途中で利用者をログアウトさせてしまう要因 (何の作業もしていない時の制限時間又はその他の状況) をはらむ、認証済の処理を、すべての利用者が完了できるようにすることである。</p>
+            <p>セキュリティ上の理由により、多くのサイトが、何の作業もせずに一定時間が経過した後の認証の制限時間を設定している。障害のある利用者は作業を完了させるのにより長く時間がかかるので、制限時間は問題を引き起こすかもしれない。</p>
+            <p>その他のサイトでは、利用者が他のコンピュータからそのウェブサイトにログインするか、その利用者がもともとログインした利用者と本当に同じかどうかに疑問を抱くようなその他の行為があった場合には、利用者を認証済のセッションからログアウトさせるだろう。処理中であったとしても利用者がログアウトさせられる際には、再認証を受けることができ、すでに入力済のデータを失うことなくその処理を継続できるようにすることが重要である。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、作業を完了するのに時間の延長を必要とする利用者の役に立つ。認知能力の低下している利用者は、ゆっくり読むので、アンケートを読んで回答するのに時間の延長を必要とすることがある。スクリーンリーダーを使用している利用者は、複雑なフォームを操作して完了させるのに時間の延長を必要とするかもしれない。運動障害のある利用者又は代替入力デバイスで操作する利用者は、フォーム内を操作して入力を完了させるのに、やはり時間の延長を必要とすることがある。</li>
+               
+               
+               <li>手話通訳者がろう者に音声コンテンツを通訳しているような状況では、制限時間を調整できることも重要である。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>ショッピングサイトの支払手続</strong></p>
+                  
+                  
+                  <p>手をほとんど使うことのできない利用者が、ショッピングサイトにログインしている。アプリケーションにクレジットカード情報を入力するのに時間がとてもかかるので、利用者が支払手続をしている間に制限時間が切れる。利用者が支払手続に戻ってフォームを送信するとき、サイトは再認証するためのログイン画面を表示する。利用者がログインした後、支払手続は同じ段階の同じ情報に復元される。セッションが時間切れになってもサーバが一時的に送信を受け付けて保存してくれていたので、利用者はデータを失わずに済み、再認証が完了した後も同じ状態に戻されたのである。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>電子メールプログラムでの認証</strong></p>
+                  
+                  
+                  <p>電子メールプログラムは、30 分後に認証が時間切れになる。そのプログラムは、時間切れの数分前に利用者にプロンプトを表示し、再認証するために新しいウィンドウを開くリンクを提供する。作成中のメールがあった元のウィンドウはそのままで、再認証後に、利用者はそのデータを送信することができる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>制限時間のあるアンケート</strong></p>
+                  
+                  
+                  <p>1 ページのウェブページで提供されている長いアンケートは、ページの冒頭に、15 分経過後にセッションが時間切れになることを知らせる情報がある。アンケートはどの時点でも保存することが可能で、後から完了させることも可能であることも、利用者には知らされている。そのウェブページには、部分的に記入が終わったフォームを保存するためのいくつかのボタンがある。さらに、アクセシビリティ サポーテッドなウェブコンテンツ技術の一覧にある信頼されている JavaScript によって、セッションが時間切れに近づいたらポップアップで通知されるように利用者が選択できる。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><p>次の実装技術の一つを使用することでデータを損うことなく継続することができる選択肢を提供する:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G105">G105: 利用者が再認証した後に利用できるようにデータを保存する</a></li>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G181">G181: 利用者のデータを、再認証したページで非表示データ又は暗号化されたデータとしてエンコーディングする</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p>制限時間について通知を提供することに関連した達成方法のための<a href="timing-adjustable#techniques" class="understanding">達成基準 2.2.1 の取組みのための達成方法</a>を参照のこと。</p>
+                     
+                     
+                  </div>
+               </div>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F12">F12: 達成基準 2.2.5 の失敗例 － 利用者の入力を保存し、再認証時にその情報を再確立するためのメカニズムなしに、セッションの制限時間がある</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

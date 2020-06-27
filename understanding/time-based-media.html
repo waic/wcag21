@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ガイドライン 1.2: 時間依存メディアを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="text-alternatives.html">Previous <abbr title="Guideline">GL</abbr>: テキストによる代替</a></li>
+            <li><a href="audio-only-and-video-only-prerecorded.html">First <abbr title="Success Criterion">SC</abbr>: 音声のみ及び映像のみ (収録済)</a></li>
+            <li><a href="adaptable.html">Next <abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#advisory">参考達成方法</a></li>
+            <li><a href="#success-criteria">達成基準</a></li>
+         </ul>
+      </nav>
+      <h1>ガイドライン 1.2: 時間依存メディアを理解する</h1>
+      <blockquote class="scquote">
+         <p>ガイドライン <a href="https://waic.jp/docs/WCAG21/#time-based-media" style="font-weight: bold;">1.2 時間依存メディア</a>: 時間依存メディアには代替コンテンツを提供すること。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>このガイドラインの目的は、時間の経過に伴って変化する、同期したメディアへのアクセスを提供することである。具体的には、次のようなメディアがある:</p>
+            <ul>
+               
+               
+               <li>音声しか含まない</li>
+               
+               
+               <li>映像しか含まない</li>
+               
+               
+               <li>音声と映像を含む</li>
+               
+               
+               <li>インタラクションを組み合わせた音声と映像、又は音声あるいは映像のどちらかを含む</li>
+               
+               
+            </ul>
+            <p>コンテンツ制作者が、そのコンテンツにはどの達成基準が適用されるのかを素早く容易に判断できるように、各達成基準が適用されるメディアの種類をその簡潔な名前で示している。</p>
+            <p><strong>音声しか含まない</strong>メディア又は<strong>映像しか含まない</strong>メディアに対しては、達成基準の名前に「<strong>音声しか含まない</strong>」又は「<strong>映像しか含まない</strong>」とあるものを適用するだけでよい。そのメディアが、<strong>音声しか含まない</strong>メディア又は<strong>映像しか含まない</strong>メディアではない場合、残りの達成基準すべてが適用される。</p>
+            <p>そして、メディアは、<strong>ライブ</strong>又は<strong>収録済</strong>のどちらかである。その達成基準が<strong>ライブ</strong>又は<strong>収録済</strong>のどちらのメディアに適用されるのかが、各達成基準の簡潔な名前ではっきりと分かるようになっている。</p>
+            <p>同期したメディアは、用語集で次のように定義されている:</p>
+            <p id="copysynchronizedmediadef"></p>
+            <p>インタラクションに付随する音声ファイルは、インタラクションを伴う映像しか含まないファイルと同様に、このガイドラインの対象であることに留意されたい。これらが対象となっているのは、インタラクションが特定のタイミングで発生しなければならないからである。例えば、「より多くの情報を知るためには、今、クリックしてください」というトランスクリプトをつけるのは、全く役に立たない。なぜなら、利用者にはその音声がどのタイミングで「今」と言ったのかが分からないからである。そのため、同期したキャプションが必要となる。</p>
+            <p>時には、音声解説を発話内にある合間にぴったり収めることができないくらい沢山の発話があることがある。同期したメディアの音声解説ではなく、時間の経過に伴って変化するメディアの代替を提供するレベル A での選択肢は、同期したメディアにあるすべての情報へのアクセスを可能にすることである。また、この選択肢は、何らかの理由で音声解説が提供されていないとき、視覚的でない形態での視覚的な情報へのアクセスも可能にする。</p>
+            <p>インタラクションを伴う同期したメディアの場合、時間の経過に伴って変化するメディアの代替の中にインタラクティブな要素（例えば、リンク）を埋め込むことが可能である。</p>
+            <p>また、このガイドラインには、(レベル AAA で) 同期したメディアへの手話通訳というアプローチの他に、拡張した音声解説と呼ばれるアプローチがある。拡張した音声解説では、映像を一時的に停止させて、実際に存在する発話の合間で可能な量よりも多くの音声解説を提供することができる。これは、要件を積み上げていくようにして徐々に強めていくという意図があって、低いレベルの達成基準の上にそれよりも高いレベルの達成基準を設けている一例である。</p>
+         </section>
+         <section id="advisory">
+            <h2>参考達成方法</h2>
+            <p>このガイドラインにある各達成基準を満たすための達成方法は、この後に達成基準ごとに挙げられている。しかし、このガイドラインに対処するための達成方法がどの達成基準にも該当しない場合は、ここで挙げている。そういった達成方法は、どの達成基準を満たす上でも必須ではないし、十分でもないが、ウェブコンテンツの種類によってはより多くの利用者にとってよりアクセシブルにすることができるものである。</p>
+         </section>
+         <section id="success-criteria">
+            <h2>このガイドラインの達成基準</h2>
+            <ul>
+               <li><a href="audio-only-and-video-only-prerecorded.html">1.2.1 音声のみ及び映像のみ (収録済)</a></li>
+               <li><a href="captions-prerecorded.html">1.2.2 キャプション (収録済)</a></li>
+               <li><a href="audio-description-or-media-alternative-prerecorded.html">1.2.3 音声解説、又はメディアに対する代替 (収録済)</a></li>
+               <li><a href="captions-live.html">1.2.4 キャプション (ライブ)</a></li>
+               <li><a href="audio-description-prerecorded.html">1.2.5 音声解説 (収録済)</a></li>
+               <li><a href="sign-language-prerecorded.html">1.2.6 手話 (収録済)</a></li>
+               <li><a href="extended-audio-description-prerecorded.html">1.2.7 拡張音声解説 (収録済)</a></li>
+               <li><a href="media-alternative-prerecorded.html">1.2.8 メディアに対する代替 (収録済)</a></li>
+               <li><a href="audio-only-live.html">1.2.9 音声のみ (ライブ)</a></li>
+            </ul>
+         </section>
+      </main>
+   </body>
+</html>

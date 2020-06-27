@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.9: リンクの目的 (リンクのみ) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="location.html">Previous <abbr title="Success Criterion">SC</abbr>: 現在位置</a></li>
+            <li><a href="section-headings.html">Next <abbr title="Success Criterion">SC</abbr>: セクション見出し</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.9: リンクの目的 (リンクのみ) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#link-purpose-link-only" style="font-weight: bold;">2.4.9 リンクの目的 (リンクのみ)</a> (レベル AAA): それぞれのリンクの目的を、リンクのテキスト単独で特定できる<a href="https://waic.jp/docs/WCAG21/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。ただし、リンクの目的が<a href="https://waic.jp/docs/WCAG21/#dfn-ambiguous-to-users-in-general" target="terms">ほとんどの利用者にとって曖昧</a>な場合は除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者がコンテンツ内にある各リンクの目的を理解するのを手助けすることで、利用者がそのリンクを辿りたいかどうかを判断できるようにすることである。ベストプラクティスは、同じ宛先のリンクは同じ記述になっているが、目的及び宛先が異なるリンクは異なる記述になっていることである (同じ機能を持つコンポーネントの識別に一貫性を求めている<a href="consistent-identification.html" class="guideline">達成基準 3.2.4</a> も併せて参照のこと)。リンクの目的はリンクテキストから特定できるので、ユーザエージェントがページ上にある全てのリンクの一覧を提供する場合など、リンクがコンテキストから切り離されるときに、リンクを理解できる。</p>
+            <p>リンク内のテキストは、リンクの目的を説明するように意図されている。リンクが利用者を文書又はウェブアプリケーションへ導く場合、その文書又はウェブアプリケーションの名前は、リンクの目的 (その文書又はウェブアプリケーションに導くためのもの) を説明するものとして十分であろう。文書又はウェブアプリケーションの名前を使用することが必須ではないことに注意すること。他のものも、リンクの目的を説明することがある。</p>
+            <p><a href="page-titled.html" class="understanding">達成基準 2.4.2</a> は、ページのタイトルを取り扱っている。ここでもまた、ページに表示されている文書又はウェブアプリケーションの名前は、ページの目的を説明するのに十分であろう。リンクとタイトルが一致する又は極めて似ていることは、グッドプラクティスであり、リンクの「クリック」と利用者が着地するウェブページとの間の連続性を提供する。</p>
+            <p>この達成基準には、リンクの目的をウェブページ上にある情報からは判断できないリンクに対して例外が認められている。そのような状況では、障害のある利用者が不利な立場にあるわけではない。リンクの目的を理解するために追加入手可能な文脈が一切ないのである。しかし、この達成基準を満たすためには、そのリンクの目的を解釈するためにそのウェブページ上で利用できる文脈はどんなものであれ、そのリンクテキストで入手可能にしなればならない。</p>
+            <p>単語「メカニズム」は、制作者がデフォルトで全てのリンクをコンテキストから切り離されて完全に理解できるようにするか、このようにするための手段を提供するかのいずれかを可能にするために使用される。これは、ページによっては全てのリンクを自身で明確にすることが、ある利用者に分かりやすくなると同時に、他の利用者には分かりづらくなってしまうからである。(自身で) リンクを明確にしたり、しなかったりする能力を提供することで、障害のある利用者、ない利用者の双方の、ニーズに最も適したフォーマットでページを利用できるようになる。</p>
+            <p>例えば、100 冊の書籍のタイトルが並んでいるページに、それぞれの書籍を HTML、PDF、DOC、TXT、MP3、又は AAC でダウンロードするリンクがある場合、たいていは書籍のタイトルとその後に「HTML 版」と書いてあるようなリンクがある。そして、「次のバージョンも利用可能:」という文が続いていて、「HTML」、「PDF」、「DOC」、「TXT」、「MP3」、そして「AAC」という短いテキストのリンクがある。レベル AAA においては、一部の利用者は、このようにページが見えることを選ぶだろう。それぞれのリンクの中に書籍のタイトルがいちいち含まれていると、かえって分かりづらかったり、使うのに時間がかかってしまったりするからである。他の利用者は、各リンクがそれだけで理解可能であるように、それぞれのリンク中に書籍のタイトルが含まれるようにページが見えることを選ぶだろう。前者及び後者の両グループには、視覚障害や認知障害を持つ人々が含まれ、その障害の種類や度合いに応じて、異なる閲覧手法が用いられる可能性がある。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準により、運動障害のある利用者が、リンク先のコンテンツへ行って、また元へ戻ってくるという無駄なキーストロークなしに、関心のないウェブページをスキップすることができるようになる。</li>
+               
+               
+               <li>認知に制約のある利用者が、余計なナビゲーションによって、必要のないコンテンツへ行ったり来たりして現在位置を見失う、ということがなくなる。</li>
+               
+               
+               <li>視覚障害のある利用者は、元のページに戻ってきたときに、コンテンツの中で居場所が分からなくなる、ということがなくなり恩恵を受ける。スクリーンリーダーのリンク一覧は、リンク先が具体的に記述されることで、情報を探す上でより便利になる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>アイコンとテキストの両方が同じリンク内にある</strong></p>
+                  
+                  
+                  <p>自動投票機のアイコンと「アイルランド政府の電子選挙委員会」というテキストが、一つのリンクになっている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>書籍名のリスト</strong></p>
+                  
+                  
+                  <p>リストにある書籍が、HTML、PDF、そして mp3 (人が本を読み上げているのを録音したもの) の三つのフォーマットで利用可能である。書籍のタイトルの後に、様々なフォーマットへのリンクがある。例えば、描画されるリンクテキストにはフォーマット名しかないが、それぞれのリンクに関連付けられているテキストには、例えば「ガリバー旅行記 MP3 版」というように、書籍のタイトルとフォーマットの両方がある。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.nngroup.com/articles/using-link-titles-to-help-users-predict-where-they-are-going/">Using Link Titles to Help Users Predict Where They Are Going</a></li>
+               
+               
+               <li><a href="http://webaim.org/techniques/hypertext/">WebAIM Techniques for Hypertext Links</a></li>
+               
+               
+               <li><a href="http://www.rnib.org.uk/blogs/expert-series?Name=Hidden%20barriers">Hidden barriers - out of sight</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA8">ARIA8: リンクの目的を示すために aria-label を使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H30">H30: a 要素のリンクの目的を説明するリンクテキストを提供する</a></li>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H24">H24: イメージマップの area 要素にテキストによる代替を提供する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH27">FLASH27: ボタンの目的を説明するラベルを提供する</a></li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、利用者が短めのリンクテキスト又は長めのリンクテキストを選べるようにする:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G189">G189: ウェブページの先頭近くに、リンクテキストを変更するコントロールを提供する</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR30">SCR30: リンクテキストを変更するために、スクリプトを使用する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH7">FLASH7: コントロールのラベルを変更するために、スクリプトを使用する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、リンクの目的を補足説明する:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C7">C7: リンクテキストの一部を非表示にするために、CSS を使用する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、セマンティックにリンクを示す:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF11">PDF11: PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF13">PDF13: PDF 文書内のリンクに対して /Alt エントリを使用して置換テキストを提供する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL18">SL18: Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H33">H33: title 属性を用いて、リンクテキストを補足する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F84">F84: 達成基準 2.4.9 の失敗例 － リンクテキストを具体的なテキストに変更するメカニズムなしで、「ここをクリック」又は「続きを読む」などの不明確なリンクを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F89">F89: 達成基準 2.4.4、達成基準 2.4.9、及び 達成基準 4.1.2 の失敗例 － リンクで唯一のコンテンツである画像にアクセシブルな名前 (accessible name) が提供されていない</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-ambiguous-to-users-in-general">ほとんどの利用者にとって曖昧 (ambiguous to users in general)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">リンク、及びリンクと同時に利用者に提供されているウェブページのどの情報からも、そのリンクの目的を判断できない (すなわち、障害がない閲覧者でも、そのリンクを動作させるまで、そのリンクが何をするのか分からない)。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">「注目すべき輸出品のひとつはグァバです」という文中にある「グァバ」という単語がリンクになっている。そのリンク先は、グァバの定義、グァバの輸出量を挙げる図表、又はグァバを収穫している人々の写真のいずれにもなり得る。リンクを動作させるまで、すべての利用者が確信を持てないため、障害のある人が不利な立場に置かれることはない。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

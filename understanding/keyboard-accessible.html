@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ガイドライン 2.1: キーボード操作可能を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html">Previous <abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="keyboard.html">First <abbr title="Success Criterion">SC</abbr>: キーボード</a></li>
+            <li><a href="enough-time.html">Next <abbr title="Guideline">GL</abbr>: 十分な時間</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#advisory">参考達成方法</a></li>
+            <li><a href="#success-criteria">達成基準</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>ガイドライン 2.1: キーボード操作可能を理解する</h1>
+      <blockquote class="scquote">
+         <p>ガイドライン <a href="https://waic.jp/docs/WCAG21/#keyboard-accessible" style="font-weight: bold;">2.1 キーボード操作可能</a>: すべての機能をキーボードから利用できるようにすること。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>すべての<a href="https://waic.jp/docs/WCAG21/#dfn-functionality" target="terms">機能</a>がキーボードを用いて実現できる場合、キーボードの利用者、(キーボード入力を生成する) 音声入力、(オンスクリーンキーボードを使用する) マウス、及び出力として疑似的なキーストロークを生成する様々な支援技術により、その機能を実現できる。キーボード入力が時間に依存しない限り、この柔軟性がある、又はあまねくサポートされる、及び様々な障害のある人が操作可能な入力形態は他にはない。</p>
+            <p>汎用キーボードの入力を提供することは、他の入力方法をサポートしないほうがよいという意味ではないことに留意すること。最適化された音声入力、最適化されたマウス/ポインタ入力なども好ましい。鍵となるのは、キーボードによる入力及び制御も同時に提供することである。</p>
+            <p>例えば、PDA 又は携帯電話などは、もともとキーボードを搭載していないものもある。しかし、これらの機器にウェブ閲覧機能があれば、テキスト又は「キーストローク」を生成する何らかの手段があるだろう。このガイドラインでは、キーボード、キーボードエミュレータ、又はキーボード入力もしくはテキスト入力を生成するその他のハードウェアもしくはソフトウェアに由来するキーストロークから、ウェブコンテンツが制御されることが望ましいことを認めるために、「<a href="https://waic.jp/docs/WCAG21/#dfn-keyboard-interface" target="terms">キーボードインタフェース</a>」という用語を使用する。</p>
+         </section>
+         <section id="advisory">
+            <h2>参考達成方法</h2>
+            <p>このガイドラインにある各達成基準を満たすための達成方法は、この後に達成基準ごとに挙げられている。しかし、このガイドラインに対処するための達成方法がどの達成基準にも該当しない場合は、ここで挙げている。そういった達成方法は、どの達成基準を満たす上でも必須ではないし、十分でもないが、ウェブコンテンツの種類によってはより多くの利用者にとってよりアクセシブルにすることができるものである。</p>
+         </section>
+         <section id="success-criteria">
+            <h2>このガイドラインの達成基準</h2>
+            <ul>
+               <li><a href="keyboard.html">2.1.1 キーボード</a></li>
+               <li><a href="no-keyboard-trap.html">2.1.2 キーボードトラップなし</a></li>
+               <li><a href="keyboard-no-exception.html">2.1.3 キーボード (例外なし)</a></li>
+               <li><a href="character-key-shortcuts.html">2.1.4 文字キーのショートカット</a></li>
+            </ul>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>及び結果。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-keyboard-interface">キーボードインタフェース (keyboard interface)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">キーストローク入力を取得するためにソフトウェアが用いるインタフェース。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div><p>標準ではキーボードが存在しない技術であっても、キーボードインタフェースによって、利用者がキーストローク入力をプログラムに提供できる。</p>
+                        
+                        
+                        <p class="example">タッチスクリーンを搭載している PDA には、外部キーボードへのコネクタとあわせて、そのオペレーティングシステムに組み込まれたキーボードインタフェースがある。PDA 上のアプリケーションはそのインタフェースを用いて、外部キーボード、あるいは手書き解釈プログラムや「キーボードエミュレーション」機能付きの音声テキスト変換アプリケーションのような擬似キーボード出力を提供する他のアプリケーションのいずれかからキーボード入力を取得することができる。</p>
+                        
+                     </div>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マウスキーのようなキーボード操作によるマウスエミュレータによるアプリケーション (又は、そのアプリケーションの一部) の操作は、キーボードインタフェースからの操作とは見なさない。なぜならば、この場合、プログラムの操作は、キーボードインタフェースからではなく、そのポインティングデバイス インタフェースからの入力によって行われるからである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

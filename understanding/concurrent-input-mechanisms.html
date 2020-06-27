@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.5.6: 入力メカニズム非依存を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-modalities.html"><abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+            <li><a href="target-size.html">Previous <abbr title="Success Criterion">SC</abbr>: ターゲットのサイズ</a></li>
+            <li><a href="language-of-page.html">Next <abbr title="Success Criterion">SC</abbr>: ページの言語</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.5.6: 入力メカニズム非依存を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#concurrent-input-mechanisms" style="font-weight: bold;">2.5.6 入力メカニズム非依存</a> (レベル AAA): プラットフォームで提供されている入力モダリティの使用を、ウェブコンテンツが制限しない。ただし、その制限が<a href="https://waic.jp/docs/WCAG21/#dfn-essential" target="terms">必要不可欠</a>な場合、コンテンツのセキュリティのために必要な場合、又は利用者による設定を尊重するうえで必要な場合は例外とする。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、人々がウェブコンテンツとやりとりするときに、入力の様々なモードを使用したり切り替えたりできるようにすることである。利用者はウェブコンテンツとやりとりするとき、多様な入力メカニズムを使うことができる。これらのメカニズムは、キーボード又はキーボードのようなインターフェース、及び、マウス又はスタイラスペンもしくはタッチスクリーンのようなポインタデバイスの、組み合わせであってもよい。</p>
+            <p>デバイスが主たる入力メカニズムを備えていても、利用者はデバイスとやりとりするときに、代替の入力メカニズムの使用を選択してもよい。例えば、スマートフォン及びタブレットにおける主たる入力メカニズムはタッチスクリーンである。これらのデバイスの利用者は、タッチスクリーンを使用する代わりに、ペアリングされたマウス又は外付けキーボードを使用することを選択してもよい。</p>
+            <p>特定のタスク及びインタラクションが代替の入力メカニズムを使用することでより簡単に遂行できると利用者が判断した場合、利用者はいつでも入力メカニズムを切り替えることができるべきである。コンテンツは、利用者によるインタラクションを、特定の入力メカニズムの使用に限定してはならない。ただし、その制限が必要不可欠である場合、すなわちコンテンツのセキュリティを確保する、又は利用者による設定を尊重する必要がある場合を除く。</p>
+            <p>注記: 利用者がキーボード上でどのようにタッチタイピングするかを教える、及び／又はその習熟度及び速度を測定する、タッチタイピング練習ウェブアプリケーションは、特定の入力メカニズムに対する必要不可欠な制限の例である。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               					
+               <li>利用者は、好みの入力メカニズムを使用してウェブコンテンツとやりとりができる。</li>
+               
+               <li>利用者は、自らの意図又は状況の求めに応じて、入力メカニズムを切り替えることができる。</li>
+               
+               <li>利用者は、オペレーティングシステムがサポートしていれば、任意で入力メカニズムを追加及び削除することができる。</li>
+               				
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>運動障害のある利用者は、マウス及びキーボードを、タッチスクリーン付きスマートフォンにペアリングする。これにより、スマートフォンはそれらの入力デバイスによっても操作することができるようになり、コンテンツはタッチスクリーンを唯一の入力メカニズムとして受け入れなくなる。</li>
+               
+               <li>精度の低いタッチ対応ノートパソコンでは、手の震えや身体運動の細かさの制限などの理由で小さなターゲットを動作させるのが困難な場合でも、キーボード及びトラックパッドを使用してコンテンツとやりとりすることができる。</li>
+               
+               <li>利用者がデスクトップのキーボードを使用してページとのやりとりを開始し、その後、タッチ対応モニターをセカンダリーモニターとして接続する。コンテンツは、この新たに追加された入力メカニズムを使用しても操作することができ、最初に検出された入力メカニズムであるキーボードのみが使用中であるとは想定していない。</li>
+               
+               <li>音声入力の利用者は、音声コマンドを使用して、マウス (及びキーボード) コマンドをシミュレーションするための変換をしてコンテンツをナビゲートする。ただし、同僚と話すときは、利用者は音声認識をオフにし、代わりにマウスを使用する。</li>
+               
+               <li>利用者はマウスでメニューを開き、矢印キーでメニュー項目間を移動する。</li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://w3c.github.io/pointerevents/">W3C Pointer Events - Level 2</a></li>
+               
+               <li><a href="https://hacks.mozilla.org/2013/04/detecting-touch-its-the-why-not-the-how/">Patrick H. Lauke - Detecting touch: it&#39;s the &#39;why&#39;, not the &#39;how&#39;</a></li>
+               				
+               <li><a href="https://www.html5rocks.com/en/mobile/touchandmouse/">Chris Wilson / Paul Kinlan: Touch And Mouse - Together Again For The First Time </a></li>
+               <li><a href="https://w3c.github.io/touch-events/#mouse-events">W3C Touch Events - Level 2: Interaction with Mouse Events and click</a></li>
+               
+               <li><a href="https://www.w3.org/TR/mediaqueries-4/#mf-interaction">W3C CSS Media Queries Level 4: Interaction Media Features</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  
+                  <li>JavaScript において、高レベルの、特定の入力方法に依存しないイベントハンドラ (<code>focus</code>、<code>blur</code>、<code>click</code>) のみを使用する  (オペレーティングシステム／ユーザエージェントは、すべての入力メカニズムに対してこれらのイベントを発火させる)。</li>
+                  
+                  <li>Javascript において、キーボードもしくはキーボードのような入力、及びポインタ入力のためのイベントハンドラを、同時に登録する (<a href="https://w3c.github.io/pointerevents/#examples">Pointer Events Level 2 の EXAMPLE 1</a> を参照のこと)。</li>
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  <li>検出された入力メカニズムの存在に基づいてイベントハンドラを制限する。</li>
+                  
+                  <li>CSS Media Queries Level 4 の Interaction Media Features を使用して、ユーザエージェントが「主たる」入力メカニズムであると見なすものを決定し、他の入力メカニズムが存在しない／追加できない／使用できないと仮定する。</li>
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

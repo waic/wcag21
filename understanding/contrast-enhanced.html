@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.4.6: コントラスト (高度) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html"><abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="images-of-text.html">Previous <abbr title="Success Criterion">SC</abbr>: 文字画像</a></li>
+            <li><a href="low-or-no-background-audio.html">Next <abbr title="Success Criterion">SC</abbr>: 小さな背景音、又は背景音なし</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.4.6: コントラスト (高度) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#contrast-enhanced" style="font-weight: bold;">1.4.6 コントラスト (高度) </a> (レベル AAA): <a href="https://waic.jp/docs/WCAG21/#dfn-text" target="terms">テキスト</a>及び<a href="https://waic.jp/docs/WCAG21/#dfn-image-of-text" target="terms">文字画像</a>の視覚的提示には、少なくとも 7:1 の<a href="https://waic.jp/docs/WCAG21/#dfn-contrast-ratio" target="terms">コントラスト比</a>がある。ただし、次の場合は除く:</p>
+         <dl>
+            
+            
+            <dt>大きな文字</dt>
+            
+            
+            <dd><p><a href="https://waic.jp/docs/WCAG21/#dfn-large-scale" target="terms">サイズの大きな</a>テキスト及びサイズの大きな文字画像に、少なくとも 4.5:1 のコントラスト比がある。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>付随的</dt>
+            
+            
+            <dd><p>テキスト又は文字画像において、次の場合はコントラストの要件はない。アクティブではない<a href="https://waic.jp/docs/WCAG21/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>の一部である、<a href="https://waic.jp/docs/WCAG21/#dfn-pure-decoration" target="terms">純粋な装飾</a>である、誰も視覚的に確認できない、又は重要な他の視覚的なコンテンツを含む写真の一部分である。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>ロゴタイプ</dt>
+            
+            
+            <dd><p>ロゴ又はブランド名の一部である文字には、最低限のコントラストの要件はない。</p>
+               
+               
+            </dd>
+            
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、(コントラストを強化する支援技術を使用していない) 中度のロービジョンの人がテキストを読めるように、テキストとその背景との間に十分なコントラストを提供することである。読解力で評価すると、色覚異常ではない人にとって、色相及び彩度は文字の読みやすさにほとんど又は全く影響がない (Knoblauch et al.,1991)。色覚異常は、輝度コントラストに多少の影響を及ぼす可能性がある。したがって、WCAG 2.0 勧告では、色覚異常の人でもテキストと背景との間の適切なコントラストを持つように、色が主要因とならないような方法でコントラストを算出している。</p>
+            <p>装飾的及び情報を伝えないテキストは除外される。例えば、背景を作成するためにランダムな単語が使用され、かつその単語を意味を変えずに並べ替え又は置換できる場合、これは装飾的であり、この達成基準を満たす必要はない。</p>
+            <p>より大きい及びより広い文字ストロークを持つテキストは、より低いコントラストでも読みやすい。したがって、より大きいテキストに対するコントラスト要件は、より低い。これにより、コンテンツ制作者は、より大きいテキストに対して幅広い色の選択肢を使用することができ、ページ、特にタイトルのデザインに役立つ。18 ポイントのテキスト又は 14 ポイントの太字のテキストは、より低いコントラスト比を要求するのに十分な大きさであると判断される (<a href="#visual-audio-contrast7-resources-head">関連リソース</a>にある &quot;The American Printing House for the Blind Guidelines for Large Printing and The Library of Congress Guidelines for Large Print&quot;を参照のこと)。「18 ポイント」と「太字」の両者は、異なるフォントでは異なる意味合いを持つこともあるが、極めて細い線のフォント又は特異なフォントを除き、十分である。非常に多くの様々なフォントがあるため、ここでは一般的な基準を用いることとして、用語集にて装飾的なフォント又は細い線のフォントに関する注記を付けている。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>この達成基準について評価する時には、文字サイズのポイント数は、ユーザエージェントから取得されるべきであり、又はユーザエージェントが行うフォントの計算基準に基づいて計算するべきである。ポイント数は、<a href="">CSS3 Values</a> で定義されている CSS の pt サイズに基づいている。ポイント数と CSS ピクセルの比は 1pt = 1.333px であり、したがって 14pt と 18pt は約 18.5px と 24px に相当する。</p>
+                  
+                  
+                  <p>フォントの見た目を滑らかにするためにアンチエイリアス処理がされている際は、暗さ又は明るさを損なうことがある。それにより、実際のコントラストが引き下げられる可能性がある。フォントの線幅をより太くすれば、この問題を軽減することになるだろう (細い線のフォントでは文字の端の部分よりもむしろ細い部分を明るくすることができる)。大きめのフォントを用いて、ユーザエージェントのフォントスムージング機能をオンにして読みやすさをテストすることを推奨する。</p>
+                  
+                  
+                  <p>画像編集アプリケーションによってデフォルトとなるピクセル密度が異なるため (例: 72 PPI 又は 96 PPI)、特定のサイズでテキストを提示する場合、画像編集アプリケーション内部からフォントのポイント数を特定することは信頼性に欠ける。サイズの大きな文字画像を作成する場合、コンテンツ制作者は画面に表示される画像の文字が、ブラウザによってレンダリングされる本文のテキストの標準サイズの 1.2em 及び 1.5em 又は 120% 及び 150% におおよそ相当することを確認すべきである。</p>
+                  
+                  
+               </div>
+            </div>
+            <p>前述のテキストに対するコントラストの要件は、達成基準 1.4.5 で述べられているように、文字画像 (ピクセルでレンダリングされ、画像フォーマットで保存された文字) にも適用される。</p>
+            <p>この要件は、文字画像がテキストとして理解されることを意図した状況に適用される。たまたま道路標識が入った写真などの付随的なテキストはこの例外には含まれない。なんらかの理由で、すべての利用者に見えないように設計されているテキストも含まれない。企業のロゴなどの図案化されたテキストは、ページ上の機能の観点から取り扱われるべきであり、これは、テキストによる代替でコンテンツを含むことを保証するかもしれないし、保証しないかもしれない。ロゴ及びロゴタイプの範囲を超える企業の視覚的なガイドラインは含まれない。</p>
+            <p>この達成基準には、「意味のあるその他の視覚的なコンテンツを含む写真の一部分である」という例外がある。この例外は、特定の見た目にするためにテキストを置き換えるための文字画像から、テキストのある写真を区別することを意図している。</p>
+            <p>この達成基準はテキストだけに適用されるが、チャートやグラフ、ダイアグラム、および他の非テキスト情報内のコンテンツにおいても同様の問題は起こる。この様に表示されるコンテンツは、より多くの利用者が情報にアクセスすることを保障するために、十分なコントラストも確保している必要がある。</p>
+            <section id="rationale-for-the-ratios-chosen">
+               
+               
+               <h3>コントラスト比を定めた論理的根拠</h3>
+               
+               
+               
+               <p>3:1 のコントラスト比は、標準的なテキスト及び視力における [ISO-9241-3] 及び [ANSI-HFES-100-1988] によって推奨されている最低限のレベルである。達成基準 1.4.3 で用いられる 4.5:1 のコントラスト比は、中度の弱い視力、先天的又は後天的な色覚異常、あるいは加齢に伴うコントラスト感度の衰えに起因する、コントラスト感度の低下を考慮している。</p>
+               
+               
+               <p>論理的根拠は、a) ANSI 標準規格 (American National Standards Institute: 米国の国家規格) における正常な観察者に対する最低限の許容可能なコントラストとして、コントラスト比 3:1 の採用、及びb）集団内では、20/40 (0.5) の視力は、おおよそ 1.5 のコントラスト感度低下と関連付けられているという経験的事実 [ARDITI-FAYE] に基いている。したがって、視力が 20/40 (0.5) の利用者は、「3 * 1.5 = 4.5:1」のコントラスト比を必要とするであろう。類似した実証的事実及び同じ論理に沿うと、視力が 20/80 (0.25) の利用者は、約 7:1 のコントラスト比を必要とすることになる。</p>
+               
+               
+               <p>色相は、色覚異常 (先天性及び後天性の両方) をもつ利用者によって、通常の目の見える利用者とは異なる色及び相対的な輝度コントラストを結果としてもたらすように、異なって知覚される。このため、有効なコントラスト及び読みやすさは、人々によって異なる。しかし、色覚異常は非常に多様であるため、定量的なデータに基づく (コントラストのための) 有効で一般的な色の組み合わせを規定することは、実現不可能である。十分な輝度コントラストを要求することは、色の知覚から独立したコントラストを要求することによって、これに対応している。幸いにも、輝度の寄与のほとんどは、分光応答で大部分が重なる中波長及び長波長の受容体からのものである。その結果、有効な輝度コントラストが一般的に、特定の色覚異常に関係なく計算できる。ただし、赤色を知覚しにくい 1 型 2 色覚の人の場合、暗い色 (一般に黒に見える) に対して主に長波長の色を用いることは除く (この理由のために、WCAG ワーキンググループは、黒の背景色に赤の前景色を使うことを避ける参考達成方法を提供している)。詳細については、[ARDITI-KNOBLAUCH] [ARDITI-KNOBLAUCH-1996] [ARDITI] を参照のこと。</p>
+               
+               
+               <p>4.5:1 のコントラスト比は、約 20/40 (0.5) の視力に等しい視覚損失をもつ利用者によって通常経験されるコントラスト感度の低下を埋め合わせをするため、レベル AA に対して選択された。20/40 (0.5) は、80 歳前後の高齢者の典型的な視力として、よく報告される視力である。[[GITTINGS-FOZARD]]</p>
+               
+               
+               <p>7:1 のコントラスト比は、約 20/80 (0.25) の視力に等しい視覚損失をもつ利用者によって通常経験されるコントラスト感度の低下を埋め合わせをするため、レベル AAA に対して選択された。この程度の視覚損失を超える人は、通常、コンテンツにアクセスするために支援技術を使用する (そして、支援技術は通常、コントラストの強化と画面の拡大機能が組み込まれている)。したがって、7:1 のレベルは、一般に支援技術を使用していないロービジョンの利用者によって経験されるコントラスト感度の低下に対する補償を提供し、同様に色覚異常の利用者に対してもコントラストの強化を提供する。</p>
+               
+               
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p>[ISO-9241-3] 及び [ANSI-HFES-100-1988] における計算は、本文のテキストのためのものである。それよりもはるかに大きいサイズのテキストに対しては、緩やかなコントラスト比が提供されている。</p>
+                     
+                     
+                  </div>
+               </div>
+               
+               
+            </section>
+            <section id="notes-on-formula">
+               
+               
+               <h3>計算式に関する注記</h3>
+               
+               
+               <p>RGB 値の非線形から線形への変換は、IEC/4WD 61966-2-1 [IEC-4WD] 及び &quot;A Standard Default Color Space for the Internet - sRGB&quot; [sRGB] に基づいている。</p>
+               
+               
+               <p>コントラストの計算式 (L1/L2) は、[ISO-9241-3] 及び [ANSI-HFES-100-1988] 規格に基づいている。</p>
+               
+               
+               <p>ANSI/HFS 100-1988 規格では、L1 及び L2 の計算を含むために、周辺光からの寄与を必要とする。用いている 0.05 という値は、[IEC-4WD] の Typical Viewing Flare 及び M.Stokes et al の論文 [sRGB] に基づいている。</p>
+               
+               
+               <p>この達成基準及びその定義では、ウェブコンテンツが光そのものを放たないという事実を反映するために、「輝度」ではなく、「コントラスト比」及び「相対輝度」という用語を用いている。コントラスト比は、コンテンツが表示されたときに生じる相対輝度の評価基準 (尺度) を与える。(比率なので無次元である)</p>
+               
+               
+               <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div><p>コントラスト比を用いてウェブコンテンツのコントラストを分析するツールの一覧は、<a href="#visual-audio-contrast7-resources-head">関連リソース</a>を参照のこと。</p>
+                     
+                     
+                     <p>キーボードフォーカスを表示するための達成方法については、<a href="focus-visible.html">2.4.7 フォーカスの可視化</a>も参照のこと。</p>
+                     
+                     
+                  </div>
+               </div>
+               
+               
+            </section>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>ロービジョンの人は、背景とのコントラストがないテキストを読むのが困難なことがよくある。これは、コントラストをさらに低下させる色覚異常がある人の場合、深刻となりえる。テキストとその背景との間に最低限のコントラスト比を提供することで、たとえその人があらゆる色を見ることができなくても、テキストをより読みやすくすることができる。また、まれに全く色が見えない人にも有用である。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.paciellogroup.com/resources/contrastanalyser/">Contrast Analyser – Application</a></li>
+               
+               
+               <li><a href="http://juicystudio.com/services/luminositycontrastratio.php">Contrast Ratio Analyser - online service</a></li>
+               
+               
+               <li><a href="http://juicystudio.com/article/colour-contrast-analyser-firefox-extension.php">Colour Contrast Analyser - Firefox Extension</a></li>
+               
+               
+               <li><a href="http://snook.ca/technical/colour_contrast/colour.html">Colour Contrast Check</a></li>
+               
+               
+               <li><a href="http://www.msfw.com/accessibility/tools/contrastratiocalculator.aspx">Contrast Ratio Calculator</a></li>
+               
+               
+               <li><a href="http://trace.wisc.edu/contrast-ratio-examples/">Color Contrast Samples</a></li>
+               
+               
+               <li><a href="https://www.w3.org/Graphics/atypical-color-response">Atypical colour response</a></li>
+               
+               
+               <li><a href="http://www.colorsontheweb.com/colorcontrast.asp">Colors On the Web Color Contrast Analyzer</a></li>
+               
+               
+               <li><a href="http://uxmovement.com/content/6-surprising-bad-practices-that-hurt-dyslexic-users/">6 Surprising Bad Practices That Hurt Dyslexic Users</a></li>
+               
+               
+               <li><a href="http://accessites.org/site/2006/11/designing-for-dyslexics-part-3-of-3">Design for Dyslexics</a></li>
+               
+               
+               <li><a href="http://www.iansyst.co.uk/articles/article/articles/2012/10/18/fonts-for-dyslexia">Typefaces for Dyslexia</a></li>
+               
+               
+               <li><a href="http://www.dyslexia.com/library/webdesign.htm">Web Design for Dyslexia</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="contrast-enhanced-situation-0">
+                  
+                  
+                  <h4>状況 A: 太字でないテキストが 18 ポイント (日本語は 22 ポイント) 未満、太字のテキストが 14 ポイント (日本語は 18 ポイント) 未満の場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G17">G17: テキスト (及び文字画像) とその背景の間に、少なくとも 7:1 のコントラスト比を確保する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G148">G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL13">SL13: Providing A Style Switcher To Switch To High Contrast</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="contrast-enhanced-situation-1">
+                  
+                  
+                  <h4>状況 B: 太字でないテキストが少なくとも 18 ポイント (日本語は 22 ポイント) 以上、太字のテキストが少なくとも 14 ポイント (日本語は 18 ポイント) 以上の場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G18">G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G148">G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL13">SL13: Providing A Style Switcher To Switch To High Contrast</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G156">G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F24">F24: 達成基準 1.4.3、1.4.6 及び 1.4.8 の失敗例 － 背景色を指定せずに前景色を指定する (又は、前景色を指定せずに背景色を指定する)</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F83">F83: 達成基準 1.4.3 及び 1.4.6 の失敗例 － 前景のテキスト (又は文字画像) との十分なコントラストを提供しない背景画像を使用している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-contrast-ratio">コントラスト比 (contrast ratio)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">(L1 + 0.05) / (L2 + 0.05) ここでは、</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>L1 は、明るいほうの色の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance" target="terms">相対輝度</a>である。そして、</li>
+                     
+                     
+                     <li>L2 は、暗いほうの色の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance" target="terms">相対輝度</a>である。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コントラスト比は、1～21 の範囲になりうる (通常は、1:1～21:1 と記述される)。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ制作者は、テキストのレンダリング (例: フォントのスムージングやアンチエイリアス) に関する利用者の設定を制御できないため、アンチエイリアスをオフにした状態でテキストのコントラスト比を評価してもよい。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>達成基準 1.4.3 及び 1.4.6 の目的上、コントラストは通常の使用においてテキストがレンダリングされるときに指定されている背景色に対して測定する。もし背景色の指定がない場合は、背景色には白を想定する。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>背景色は、テキストが通常の使用においてレンダリングされるときに背景となるコンテンツの色として指定された色である。テキストの色は指定されているが背景色が指定されていない場合、利用者のデフォルトの背景色は未知であり、コントラストが十分かどうかを評価することができないため、問題がある。同じ理由で、背景色が指定されているがテキストの色が指定されていない場合も問題がある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>文字の周囲に縁取りがある場合、その縁取りがコントラストを強めることもあり、文字とその背景色におけるコントラストの計算に用いられる。文字の周囲の細い縁取りは文字として扱われる。文字の周囲の太い縁取りが、光彩のようになって、文字の内側の細部を塗りつぶしていれば、背景色として考慮されることになる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>WCAG に適合しているか判断する場合は、典型的な提示において隣接するであろうと制作者が想定するコンテンツで指定された色の組み合わせについて評価しなければならない。制作者は、ユーザエージェントによる色の変更などのように通常とは異なる提示を考慮する必要はない。ただし、それが制作者のコードによって起こる場合は除く。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">特定の視覚的効果を得るために非テキスト形式 (例えば画像) でレンダリングされたテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://waic.jp/docs/WCAG21/#dfn-text" target="terms">テキスト</a>は該当しない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">写真に写っている人の名札にある人名。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-large-scale">large scale</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">少なくとも 18 ポイント、又は 14 ポイントの太字。あるいは、中国語、日本語、及び韓国語 (CJK) のフォントは、それと同等の文字サイズ。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>特別に細い線のフォント、又は文字の形が分かりにくくなるような独特の見た目や特徴のあるフォントは、コントラストが低い場合に特に読みづらい。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでいう文字サイズは、コンテンツが提供される際のサイズであり、利用者によるサイズ変更は含まれない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>利用者が目にする文字の実際のサイズは、コンテンツ制作者が指定したサイズと利用者のディスプレイあるいはユーザエージェントの設定の両方に依存している。多くの主流となっている本文テキストで用いられるフォントにおいて、14 ポイントと 18 ポイントは、1.2em と 1.5em、又は、 (本文フォントが 100％であると仮定して) デフォルトサイズの 120%と 150%に、おおよそ同等である。しかし、制作者は、使用する特定のフォントについて、このことをチェックしておく必要がある。フォントが相対単位で定義されている時、実際に表示される文字サイズのポイント数は、ユーザエージェントによって計算される。この達成基準について評価する時には、文字サイズのポイント数は、ユーザエージェントから取得されるべきであり、又はユーザエージェントが行うフォントの計算基準に基づいて計算するべきである。ロービジョンの利用者については、自分で適切な設定を選択することを想定している。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>フォントサイズを指定せずにテキストを用いる際は、サイズを指定していないテキストに対して主要ブラウザで用いられる最小のフォントサイズをそのテキストのサイズとみなすのが妥当であろう。もし、レベル 1 の見出しが、主要なブラウザで 14 ポイントの太字あるいはそれ以上のサイズでレンダリングされるならば、それは「サイズの大きな」テキストであると考えてよい。相対的な拡大縮小は、同様の方法でそのデフォルトのサイズから算出することが可能である。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>半角の英数字のテキストにおける 18 ポイント及び 14 ポイントのサイズは、拡大印刷の最小サイズ (14 ポイント) と標準的な大きい文字サイズ (18 ポイント) に基づいている。例えば、CJK 言語のようなその他の文字については、「同等な」サイズはその言語での拡大印刷の最小サイズと拡大印刷でその次に大きな標準のサイズとなる。訳注日本語の全角文字の場合は、拡大教科書普及推進会議 第一次報告「第2章 拡大教科書の標準的な規格について」に基づき、22 ポイント又は 18 ポイントの太字を「同等な」サイズとみなすのが妥当である。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-pure-decoration">純粋な装飾 (pure decoration)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">見栄えのためだけのもので、情報は提供せず、機能性も備えていないもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキストが純粋な装飾といえるのは、単語を並べ替え、又は置き換えても意図が変わらないときだけである。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">背景にとても淡い文字で単語がランダムに並んでいる辞書の表紙。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text">テキスト (text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://waic.jp/docs/WCAG21/#dfn-human-language" target="terms">自然言語</a>で何かを表現しているもの。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

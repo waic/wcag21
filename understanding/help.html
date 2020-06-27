@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.3.5: ヘルプを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-assistance.html"><abbr title="Guideline">GL</abbr>: 入力支援</a></li>
+            <li><a href="error-prevention-legal-financial-data.html">Previous <abbr title="Success Criterion">SC</abbr>: エラー回避 (法的、金融、データ)</a></li>
+            <li><a href="error-prevention-all.html">Next <abbr title="Success Criterion">SC</abbr>: エラー回避 (すべて)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.3.5: ヘルプを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#help" style="font-weight: bold;">3.3.5 ヘルプ</a> (レベル AAA): <a href="https://waic.jp/docs/WCAG21/#dfn-context-sensitive-help" target="terms">状況に応じたヘルプ</a>が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者がミスをしないようにすることである。障害のある利用者は、障害のない利用者よりもミスをする可能性が高い。コンテキストに応じたヘルプを提供することによって、利用者は自分が実行していることの手順がわからなくなってしまうことがなく、どう操作すればよいかがわかる。</p>
+            <p>コンテキストに応じたヘルプは、ラベルがすべての機能を説明するのに不十分なときにだけ提供すればよい。コンテキストに応じたヘルプの存在は利用者に明らかにすべきであり、利用者が求めたときにはいつでもそのヘルプを入手できるようにすべきである。</p>
+            <p>コンテンツ制作者はエラーの説明を提供してもよく、又はユーザエージェントは技術固有な、プログラムによる解釈される情報に基づいてエラーの説明を提供してもよい。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>テキスト入力の支援は、フォーム又はテキスト入力を必要とするその他のコンテンツでテキストを書くのが困難なことがよくある、書字障害のある利用者及び読字障害、知的障害のある利用者に役立つ。</li>
+               
+               
+               <li>さらに、これらの種類の援助は、加齢によって、テキスト入力及び／又はマウス操作に同じような困難を伴う利用者にも役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>on-line job application</strong></p>
+                  
+                  
+                  <p>はじめての利用者にとっては分かりにくい質問がいくつかある。各質問の横にあるヘルプのリンクが、その質問の説明を提供している。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="help-situation-0">
+                  
+                  
+                  <h4>状況 A: フォームがテキスト入力を求める場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G71">G71: すべてのウェブページにヘルプへのリンクを提供する</a></li>
+                     
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G193">G193: ウェブページでアシスタントによるヘルプを提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G194">G194: テキスト入力に対するスペルチェック及び修正候補を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G184">G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="help-situation-1">
+                  
+                  
+                  <h4>状況 B: フォームが所定のデータフォーマットでのテキスト入力を求める場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G89">G89: 期待されるデータ書式及び入力例を提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G184">G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H89">H89: コンテキストに応じたヘルプを提供するために、title 属性を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-context-sensitive-help">コンテキストに応じたヘルプ (context-sensitive help)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">そのとき実行されている機能に関する情報を提供するヘルプのテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>明解なラベルは、コンテキストに応じたヘルプとして機能しうる。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

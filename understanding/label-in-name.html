@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.5.3: 名前 (name) のラベルを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-modalities.html"><abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+            <li><a href="pointer-cancellation.html">Previous <abbr title="Success Criterion">SC</abbr>: ポインタのキャンセル</a></li>
+            <li><a href="motion-actuation.html">Next <abbr title="Success Criterion">SC</abbr>: 動きによる起動</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.5.3: 名前 (name) のラベルを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#label-in-name" style="font-weight: bold;">2.5.3 名前 (name) のラベル</a> (レベル A): <a href="https://waic.jp/docs/WCAG21/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a>が<a href="https://waic.jp/docs/WCAG21/#dfn-text" target="terms">テキスト</a>又は<a href="https://waic.jp/docs/WCAG21/#dfn-image-of-text" target="terms">文字画像</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-label" target="terms">ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="https://waic.jp/docs/WCAG21/#dfn-name" target="terms">名前 (name)</a> に含まれている。</p>
+         <p class="note">ベストプラクティスは、ラベルのテキストを名前の最初に使用することである。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、可視ラベルに依存する障害者が、プログラムでもこのラベルを使用できるようにすることである。多くの場合、コントロールには視認できるテキストのラベルが付けられる。コントロールには、加えて、アクセシブルな名前 (<a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name</a>) と呼ばれるプログラムによって利用可能なラベルもある。コントロール上の可視テキストラベルが、アクセシブルな名前 (accessible name) と一致している場合、利用者ははるかにより優れた体験が得られる。</p>
+            <p>音声入力を行う利用者は、画面に表示されるメニュー、リンク、及びボタンのテキストラベルを読み上げることで、ナビゲートすることができる。音声入力を行う利用者が、目にした可視テキストラベルを読み上げながらも、音声入力コマンドとして有効なアクセシブルな名前 (accessible name) がその可視ラベルと一致していないがために音声入力が正常に機能しない場合、利用者は混乱してしまう。</p>
+            <p>さらに、コントロールのアクセシブルな名前 (accessible name) が視覚的に隠されている場合、音声入力を行う利用者がたまたま、この隠されたアクセシブルな名前 (accessible name) に対応した語を発話してしまうと、このコントロールを誤って動作させてしまうことがある。</p>
+            <p>また、テキスト読み上げツールの利用者の場合、聞き取ったテキストが画面に表示されているテキストと一致していることによって、よりよい体験が得られるだろう。</p>
+            <p>コンテンツ制作者は、リンク又は他のコントロールに文脈を付加して、支援技術の利用者にとってよりわかりやすいものにするために、テキストを追加したくなることがあるだろう。この場合は、アクセシブルな名前 (accessible name) が可視ラベルで始まるように、可視ラベルの<strong>後に</strong>そのテキストを追加することが推奨される。検索（search）ボタンであれば、アクセシブルな名前 (accessible name) は "search this site" になり、ホーム（home）へのリンクであれば、テキストは "home - go to start page" という具合である。いずれの場合でも、ラベルの隠された部分は異なる手段、例えば、CSS を介してアクセシブルな形で隠されたテキストとして、又は aria-label もしくは aria-labelledby 属性を使用することによって、提供してもよい。</p>
+            <p>この問題は、音声入力及びテキスト読み上げツールの利用者で、認知の問題も抱える人たちにとって、さらに重要なものとなる。音声入力の利用者にとって、コントロール上に表示される可視ラベルとは異なる音声コマンドを記憶して発話することは、余計な認知負荷となる。また、テキスト読み上げツールの利用者にとって、可視ラベルと一致しない音声出力を吸収して理解することは、余計な認知負荷となる。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               					
+               <li>音声入力の利用者は、意図せずフォーカス位置が変更されてしまうことのない形で、直接、ページ上のコントロールを動作させることができる。</li>
+               					
+               <li>テキスト読み上げツールの利用者は、聞き取ったラベルが画面上で目にした可視テキストラベルと一致するため、よりよい体験が得られる。</li>
+               				
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li><strong>アクセシブルな名前 (accessible name) が可視ラベルと一致する:</strong> アクセシブルな名前 (accessible name) とコントロールの可視ラベルが一致する。</li>
+               				
+               <li><strong><strong>アクセシブルな名前 (accessible name) が可視ラベルで始まる:</strong> "Buy Now (今すぐ購入する)" ボタンのアクセシブルな名前 (accessible name) は、可視ラベルと同じテキストで始まっている。</li>
+               			
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               				
+               <li><a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name and Description Computation</a></li>
+               				
+               <li><a href="https://www.w3.org/TR/html-aam-1.0/#accessible-name-and-description-computation">Accessible Name and Description Computation in HTML Accessibility API Mappings 1.0</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  					
+                  <li><a href="https://w3c.github.io/wcag/techniques/general/G208">G208: "アクセシブルな名前 (accessible name)" が可視テキストを含むようにする</a></li>
+                  					
+                  <li>@@ アクセシブルな名前 (accessible name) が可視ラベルのテキストと一致するようにする</li>
+                  				
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  <li>@@ アイコンに付随するテキストがない場合、アクセシブルな名前 (accessible name) としてそのホバーテキストを用いることを検討する。</li>
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  					
+                  <li><a href="https://w3c.github.io/wcag/techniques/failures/F96">F96: 達成基準 2.5.3 の失敗例 - "アクセシブルな名前 (accessible name)" が可視ラベルのテキストを含んでいない。</a></li>
+                  					
+                  <li>@@ アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいるが、語順が可視ラベルのテキストと同一でない。</li>
+                  					
+                  <li>@@ アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいるが、一つ以上の語がラベルの中に挿入されている。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">特定の視覚的効果を得るために非テキスト形式 (例えば画像) でレンダリングされたテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://waic.jp/docs/WCAG21/#dfn-text" target="terms">テキスト</a>は該当しない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">写真に写っている人の名札にある人名。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-label">ラベル (label)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-text" target="terms">テキスト</a>、又は<a href="https://waic.jp/docs/WCAG21/#dfn-text-alternative" target="terms">テキストによる代替</a>を伴うコンポーネントで、ウェブ<a href="https://waic.jp/docs/WCAG21/#dfn-content" target="terms">コンテンツ</a>内のコンポーネントを識別するために利用者に提示されているもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-name" target="terms">名前 (name)</a> は隠されていて支援技術に対してだけ明らかにされる場合がある一方で、ラベルはすべての利用者に提示される。多くの場合 (すべてではないが)、名前 (name) とラベルは同じである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ラベルという用語は、HTML における label 要素だけに限定されない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-name">名前 (name)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ソフトウェアが、ウェブコンテンツのコンポーネントを利用者に識別させることができるテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-label" target="terms">ラベル</a>はすべての利用者に提示される一方で、名前 (name) は隠されていて、支援技術に対してだけ明らかにされる場合もある。多くの場合 (すべてではないが)、ラベルと名前 (name) は同じである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これは、HTML の name 属性とは関係がない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-text">テキスト (text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://waic.jp/docs/WCAG21/#dfn-human-language" target="terms">自然言語</a>で何かを表現しているもの。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

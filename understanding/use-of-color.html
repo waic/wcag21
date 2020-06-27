@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.4.1: 色の使用を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html"><abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="info-and-relationships.html">Previous <abbr title="Success Criterion">SC</abbr>: </a></li>
+            <li><a href="audio-control.html">Next <abbr title="Success Criterion">SC</abbr>: 音声の制御</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.4.1: 色の使用を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#use-of-color" style="font-weight: bold;">1.4.1 色の使用</a> (レベル A): 色が、情報を伝える、動作を示す、反応を促す、又は視覚的な要素を判別するための唯一の視覚的手段になっていない。</p>
+         <p class="note">この達成基準は、特に色の知覚に関するものである。その他の知覚形態については、色やその他の視覚的提示のコーディングへのプログラムによるアクセスも含めて、<a href="https://waic.jp/docs/WCAG21/#adaptable">ガイドライン 1.3</a> で網羅されている。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、色の違いによって伝えられている情報、言い換えれば、それぞれの色には割り当てられた意味があり、その色を使うことによって伝えている情報に、すべての利用者がアクセスできるようにすることである。画像 (又は、その他の非テキスト形式) で色の違いによって情報を伝えている場合、色覚異常の利用者はその色が分からないかもしれない。この場合、色で伝えている情報を他の視覚的な手段で提供することで、色の分からない利用者もその情報を知覚できる。</p>
+            <p>色は、感覚的な訴求力、ユーザビリティ、そしてアクセシビリティを高めるため、ウェブコンテンツのデザインにおいて重要なものである。しかし、色を知覚しづらい利用者もいる。ロービジョンの人は、色覚に限界を感じることがよくあり、年配の利用者の多くも色がよく見えない。さらに、テキストしか表示しない、色数が制限されている、又はモノクロのディスプレイ及びブラウザを使用している人は、色だけで提示されている情報を知覚できない。</p>
+            <p>色の違いで伝えられている情報の例としては、「必須項目は赤字」、「赤字はエラー」、そして「赤がメアリーの売上、青がトムの売上」などが挙げられる。動作を示している例では、リンクが新しいウィンドウで開くことやデータベースの項目が正常に更新されたことを示すために色を使うことがある。また、利用者の反応を促している例には、必須項目が未入力であることを示すためにフォームの入力フィールドを反転表示することが挙げられる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>この達成基準は、ページ上での色の使用、又は他の視覚的な表示と重複する場合に色分けすることを何ら阻むものではない。【訳注: 日本医学会 医学用語辞典 - 色覚関連用語についても参照のこと。】</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>ロービジョンの利用者が、色覚の限界を感じることがよくある。</li>
+               
+               
+               <li>年配の利用者は、色がよく見えないかもしれない。</li>
+               
+               
+               <li>色覚異常の利用者が、色で伝えられている情報をその他の視覚的な手段で知覚できるようになる。</li>
+               
+               
+               <li>テキストしか表示しない、色数の制限された、又はモノクロのディスプレイを使用している人は、色に依存している情報を知覚できないかもしれない。</li>
+               
+               
+               <li>色の識別に問題を抱える利用者が、テキストの手がかりを見たり、聞いたりすることができる。</li>
+               
+               
+               <li>点字ディスプレイ又は他の触覚インタフェースの人が、タッチすることでテキストキューを検出できる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>必須項目を示すために色とテキストを用いている入力フォーム</strong></p>
+                  
+                  
+                  <p>ある入力フォームには、必須項目と任意項目の両方がある。入力フォームの先頭にある説明文には、必須項目のラベルが赤字になっていて、「必須」というテキストによる代替のあるアイコンも付いている。赤字とアイコンの両方が、フォームのテキストフィールドとプログラム的に関連付けられているので、支援技術の利用者は必須項目を判断できる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>試験</strong></p>
+                  
+                  
+                  <p>学生は、化学化合物の SVG 画像を見て、図に使用されている色や数字に基づいて、存在する化学の要素を識別する。各要素に関連付けられたテキストによる代替は、要素の色に名前を付けて、図で要素の位置を示している。色を知覚できない学生は、クラスメートと同じように、化合物に関する同じ情報を得る。(この達成方法は、<a href="non-text-content.html" class="guideline">ガイドライン 1.1</a> のレベル A も満たす)</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>使用不可になっているフォーム要素</strong></p>
+                  
+                  
+                  <p>マークアップ又はスクリプトによって使用不可になっているフォーム要素は、ユーザエージェントによってグレーアウトされ、使用できない。使用不可の状態では、これらの要素はフォーカスを受け取らない。支援技術は、使用不可の状態になっている要素をプログラムが解釈できる。色の変化及びフォーカスがあたらないことによって、コントロールの状態に関する情報を視覚的に提供している。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.vischeck.com/">Vischeck</a></li>
+               
+               
+               <li><a href="http://colorlab.wickline.org/colorblind/colorlab/">AWARE Color Laboratory</a></li>
+               
+               
+               <li><a href="https://en.wikipedia.org/wiki/Color_blindness">Wikipedia: Color Blindness</a></li>
+               
+               
+               <li><a href="https://msdn.microsoft.com/en-us/library/bb263953.aspx">Microsoft: Can Color-Blind Users See Your Site?</a></li>
+               
+               
+               <li><a href="http://www.webexhibits.org/causesofcolor/2C.html">Causes of Color: How do people inherit colorblindness? How often?: Genetics</a></li>
+               
+               
+               <li><a href="http://jfly.iam.u-tokyo.ac.jp/color/">How to make figures and presentations that are friendly to Colorblind people</a></li>
+               
+               
+               <li><a href="http://www.tomjewett.com/colors/tutor.html">The Color Tutor application</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="use-of-color-situation-0">
+                  
+                  
+                  <h4>状況 A: 特定の語句、背景、又は他のコンテンツの色を用いて情報を示している場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G14">G14: 色の違いで伝えている情報をテキストでも入手可能にする</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G182">G182: 文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="use-of-color-situation-1">
+                  
+                  
+                  <h4>状況 B: 情報を伝える画像の中で色を用いている場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G111">G111: 色とパターンを併用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G14">G14: 色の違いで伝えている情報をテキストでも入手可能にする</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C15">C15: ユーザインタフェースコンポーネントがフォーカスを受けとったときの提示を変更するために、CSS を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F13">F13: 達成基準 1.4.1 の失敗例 － 画像の色の違いで伝られる情報が含まれないテキストによる代替を持っている</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F73">F73: 達成基準 1.4.1 の失敗例 － 色覚なしで視覚的にはっきりと分からないリンクを作成する</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F81">F81: 達成基準 1.4.1 の失敗例 － 色の違いだけで、必須又はエラーフィールドを特定している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

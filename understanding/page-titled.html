@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.2: ページタイトルを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="bypass-blocks.html">Previous <abbr title="Success Criterion">SC</abbr>: ブロックスキップ</a></li>
+            <li><a href="focus-order.html">Next <abbr title="Success Criterion">SC</abbr>: フォーカス順序</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.2: ページタイトルを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#page-titled" style="font-weight: bold;">2.4.2 ページタイトル</a> (レベル A): <a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>には、主題又は目的を説明したタイトルがある。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、各ウェブページにその内容を示すページタイトルを付けることによって、利用者がコンテンツを見つけやすく、自分の現在位置を確認しやすくすることである。タイトルは、ページのコンテンツを読んだり解釈したりすることを利用者に要求することなしに、現在位置を特定する。タイトルがサイトマップ又は検索結果のリストに表示されたときに、利用者は自分の求めているコンテンツをより素早く確認できるようになる。ユーザエージェントは、利用者がそのページを確認できるように、ページのタイトルを容易に見つけられるようにする。例えば、ユーザエージェントは、そのページタイトルをウィンドウのタイトルバーに表示するか、又はそのページを表示しているタブの名前として表示する。</p>
+            <p>ページが文書又はウェブアプリケーションの場合、文書又はウェブアプリケーションの名称はページの目的を説明するのに十分だろう。ここで注意すべきなのは、文書又はウェブアプリケーションの名称を使用することを求められていないことである。他の要素によってページの目的又は主題が説明される場合もあるだろう。</p>
+            <p><a href="link-purpose-in-context.html" class="understanding">達成基準 2.4.4</a> 及び <a href="link-purpose-link-only.html" class="understanding">2.4.9</a> はリンクの目的を取り扱い、その多くはウェブページへのリンクである。ここでも、リンクされた文書又はウェブアプリケーションの名称がリンクの目的を説明するのに十分だろう。リンクとタイトルが一致する又は極めて似ていることは、グッドプラクティスであり、リンクの「クリック」と利用者が着地するウェブページとの間の連続性を提供する。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、そのウェブページにある情報が自分のニーズに関係があるかどうかを、すべての利用者が素早くかつ容易に確認できるようにする。</li>
+               
+               
+               <li>視覚障害のある利用者が、複数のページが開いているとき、コンテンツを区別できるようになる。</li>
+               
+               
+               <li>認知の障害、短期記憶障害、及び読字障害のある利用者も、そのページタイトルでコンテンツを確認できるようになる。</li>
+               
+               
+               <li>この達成基準は、重度の運動障害があり、ウェブページ間を行き来するとき操作モードを音声に依存する利用者にも役立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>HTML のウェブページ</strong></p>
+                  
+                  
+                  <p>HTML で制作したウェブページの内容を示したタイトルが、ユーザエージェントのタイトルバーに表示されるように、&lt;title> 要素でマークアップされている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>文書</strong>【訳注: 以下、英文原文例をそのまま日本語にした。英文では 2005 年の WCAG ドラフト (英語) が参考にされた模様。】</p>
+                  
+                  
+                  <p><a href="./">WCAG 2.1 解説書</a>のページタイトルが、「WCAG 2.1 解説書」となっている。</p>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li>主要なページのページタイトルが、「ガイドライン X を理解する」や「達成基準 X を理解する」となっている。</li>
+                     
+                     
+                     <li>ドキュメントのページタイトルが、「WCAG 2.0 ガイドライン」となっている。</li>
+                     
+                     
+                     <li>附録 A のページタイトルが、「用語集」となっている。</li>
+                     
+                     
+                     <li>附録 B のページタイトルが、「謝辞」となっている。</li>
+                     
+                     
+                     <li>附録 C のページタイトルが、「参考文献」となっている。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>ウェブアプリケーション</strong></p>
+                  
+                  
+                  <p>あるインターネット銀行のアプリケーションは、利用者が自分の銀行口座をチェックしたり、過去の明細を確認したり、振込をしたりすることができる。そのウェブアプリケーションは、例えば、「ジョン スミスさんの口座: XYZ 銀行」、「口座番号 1234-5678 の取引明細 － 2005 年 12 月: XYZ 銀行」のように、ウェブページごとにページタイトルを動的に生成している。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.socialpatterns.com/search-engine-optimization/writing-better-web-page-titles/">Writing Better Web Page Titles</a> How to write titles for Web pages that will enhance search engine effectiveness.</li>
+               
+               
+               <li><a href="http://redish.net/images/stories/PDF/interactions.html">Guidelines for Accessible and Usable Web Sites: Observing Users Who Work With Screen Readers </a>. Theofanos, M.F., and Redish, J. (2003). Interactions, Volume X, Issue 6, November-December 2003, pages 38-51, <a href="http://dl.acm.org/citation.cfm?doid=947226.947227">http://dl.acm.org/citation.cfm?doid=947226.947227</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><p><a class="general" href="https://w3c.github.io/wcag/techniques/general/G88">G88: Providing descriptive titles for Web pages</a> <strong>AND</strong> associating a title with a Web page using one of the following techniques:</p>
+                     
+                     
+                     <ul>
+                        	
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H25">H25: title 要素を用いて、ページタイトルを提供する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF18">PDF18: PDF 文書の文書情報辞書内の Title エントリを使用して文書のタイトルを指定する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G127">G127: あるウェブページと、より大きな一連のウェブページとの関係性を特定する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F25">F25: 達成基準 2.4.2 の失敗例 － コンテンツを特定しないウェブページのタイトル</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

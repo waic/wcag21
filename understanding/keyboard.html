@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.1.1: キーボードを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="keyboard-accessible.html"><abbr title="Guideline">GL</abbr>: キーボード操作可能</a></li>
+            <li><a href="content-on-hover-or-focus.html">Previous <abbr title="Success Criterion">SC</abbr>: ホバー又はフォーカスで表示されるコンテンツ</a></li>
+            <li><a href="no-keyboard-trap.html">Next <abbr title="Success Criterion">SC</abbr>: キーボードトラップなし</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.1.1: キーボードを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#keyboard" style="font-weight: bold;">2.1.1 キーボード</a> (レベル A): コンテンツのすべての<a href="https://waic.jp/docs/WCAG21/#dfn-functionality" target="terms">機能</a>は、個々のキーストロークに特定のタイミングを要することなく、<a href="https://waic.jp/docs/WCAG21/#dfn-keyboard-interface" target="terms">キーボードインタフェース</a>を通じて操作可能である。ただし、その根本的な機能が利用者の動作による始点から終点まで続く一連の軌跡に依存して実現されている場合は除く。</p>
+         <p class="note">上記の例外は、根本的な機能に関するものであり、入力手法に関するものではない。例えば、テキスト入力に手書き入力を用いるのであれば、その入力手法 (手書き) は利用者の動作による軌跡に依存した入力を必要とするが、その根本的な機能 (テキスト入力) は利用者の動作による軌跡に依存した入力を必要とするものではない。</p>
+         <p class="note">これは、キーボード操作に加えて、マウス入力、又はその他の入力手段を提供することを禁ずるものでも妨げるものでもない。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、可能な限り、コンテンツをキーボード又は (代替キーボードが利用できるような) キーボードインタフェースで操作ができるようにすることである。コンテンツがキーボード又は代替キーボードで操作できるとき、(目と手の協調運動を必要とするマウスのようなデバイスを使用できない) 全盲の人にも、代替キーボード又はキーボードエミュレータの機能を果たす入力デバイスを使用しなければならない人にも操作できる。キーボードエミュレータには、音声入力ソフトウェア、息操作ソフトウェア、オンスクリーンキーボード、スキャニングソフトウェア、そして様々な支援技術及び代替キーボードが挙げられる。ロービジョンの人はまた、ポインタを目で追うのが困難なことがあり、キーボードからソフトウェアを操作できる場合、ソフトウェアの使用がはるかに容易になる (又は、単に使えるようになる)。</p>
+            <p>「個々のキーストロークに特定のタイミング」の事例としては、利用者が短時間のうちに複数のキーストロークを繰り返すもしくは実行する必要がある状況、又はキーストロークが記録される前に長い間キーを押し続けなければならない状況が挙げられる。</p>
+            <p>「ただし、その根本的な機能が利用者の動作による始点から終点まで続く一連の軌跡に依存して実現されている場合は除く。」というフレーズは、キーボードから合理的に操作できないものを区別するために含まれている。</p>
+            <p>ポインティングデバイスにより実行される操作のほとんどは、キーボードでも実行可能である (例えば、クリックする、選択する、移動する、サイズ変更するなど)。しかし、過度のキーストローク数を必要としない既知の方法でキーボードから実行できないポインティングデバイスで行われる細かな入力の分類がある。自由な手描き、水彩画、及び障害物コースを通るヘリコプターの飛行は、いずれも軌跡に依存した入力を要する機能の事例である。直線や規則的な幾何学的図形を描く、ウィンドウのサイズを変更する及びある位置へオブジェクトをドラッグすること (その位置への軌跡に関係がない場合) は、軌跡に依存した入力を必要としない。</p>
+            <p>マウスキーの使用は、アプリケーションにとってキーボードに相当しないので、この達成基準を満たさないだろう。これはマウスに相当する (つまり、アプリケーションにはマウスのように見える)。訳注: マウスキーとは、キーボードでマウスの操作を代替することのできるアクセシビリティ機能である。マウスキー - Wikipediaも参照のこと。</p>
+            <p>利用者が入力を行う機能の設計においては、オペレーティングシステムのキーボードアクセシビリティ機能が利用されている可能性を考慮することが期待される。例えば、修飾キーをロックする機能が有効になっているかもしれない。そのような環境でもコンテンツは機能し、修飾キーロックと衝突して予期しない結果を生じるようなイベントを送信しない (ようにすべきである)。訳注: 修飾キーとは、別のキーと組み合わせて使用し、そのキーの意味を一時的に変えるものである。例えば、Shift キーがこれに当たる。修飾キーとは - IT用語辞典も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>(目と手の協調運動を必要とするマウスのようなデバイスを使用できない) 全盲の人</li>
+               
+               
+               <li>(画面上のポインタを見つけたり、目で追ったりするのが困難である) ロービジョンの人</li>
+               
+               
+               <li>マウスを使うのが非常に難しいと感じ、通常はキーボードを使用している手に震えのある人</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>事例 1: 描画プログラム</strong></p>
+                  
+                  
+                  <p>描画プログラムは、利用者がキーボードからオブジェクトの作成、サイズ変更、配置及び回転をするのを可能にする。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 2: ドラッグ＆ドロップ機能</strong></p>
+                  
+                  
+                  <p>ドラッグ＆ドロップを用いるアプリケーションは、オブジェクトを移動させるための「切り取り」及び「貼り付け」又はフォームコントロールもサポートしている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 3: 離れている点の間の移動及び接続</strong></p>
+                  
+                  
+                  <p>点を結ぶプログラムは、利用者が画面上の点間を移動し、スペースキーで現在の点と直前の点を結ぶことを可能にする。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 4: 例外 － お絵描きプログラム</strong></p>
+                  
+                  
+                  <p>水彩画を描くプログラムは、筆の動きが速度及び持続時間によって変化するため、例外の一つとして認められる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 5: 例外 － 模型ヘリコプター飛行訓練シミュレータ</strong></p>
+                  
+                  
+                  <p>ヘリコプター飛行訓練シミュレータは、シミュレータの性質上、模型ヘリコプターの動作をリアルタイムで教えるものであるため、例外の一つとして認められる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>事例 6: オプションのキーボード付き PDA</strong></p>
+                  
+                  
+                  <p>通常スタイラスペンで操作する PDA 機器は、オプションで取り付け可能なキーボードがある。そのキーボードは、標準的な方法で完全なウェブ閲覧を可能にする。キーボードのみのアクセスで動作するように設計されているので、ウェブコンテンツは操作可能である。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G202">G202: すべての機能に対してキーボード制御を確保する</a></li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、キーボードで操作できることを保証する。</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H91">H91: HTML のフォームコントロール及びリンクを使用する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF3">PDF3: PDF 文書で正しいタブ順序と読み上げ順序を確保する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF11">PDF11: PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF23">PDF23: PDF 文書内でインタラクティブなフォームコントロールを提供する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL15">SL15: Providing Keyboard Shortcuts that Work Across the Entire Silverlight Application</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法の一つを用いて、<a class="general" href="https://w3c.github.io/wcag/techniques/general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a>:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR20">SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR35">SCR35: アンカー及びボタンの onclick イベントを用いて、アクションをキーボード操作可能にする</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR2">SCR2: キーボード及びマウスのイベントハンドラを両方とも使用する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL9">SL9: Handling Key Events to Enable Keyboard Functionality in Silverlight</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL14">SL14: Providing Custom Control Key Handling for Keyboard Functionality in Silverlight</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH17">FLASH17: Flash オブジェクトにキーボードアクセスを提供して、キーボードトラップを回避する</a> <strong>AND</strong> using the following techniques as applicable:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH22">FLASH22: キーボードアクセシブルな操作を静的エレメントに追加する</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH16">FLASH16: 標準コンポーネント上のクリックイベントを使用して、操作をキーボード操作可能にする</a></li>
+                        
+                        
+                        <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH14">FLASH14: Flash でキーボード及びマウスのイベントハンドラを両方とも使用する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li>インタラクティブなユーザインタフェースコンポーネントとして静的な要素に再度目的を持たせる場合、XHTML の役割、状態、及び値の属性を使用する (リンク追加予定) 及び <a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR29">SCR29: 静的な HTML 要素にキーボードアクセシブルなアクションを追加する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F54">F54: 達成基準 2.1.1 の失敗例 － ある機能に (ジェスチャを含む) ポインティングデバイス特有のイベントハンドラのみを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F55">F55: 達成基準 2.1.1、達成基準 2.4.7 及び 達成基準 3.2.1 の失敗例 － フォーカスを受け取ったときに、フォーカスを取り除くために、スクリプトを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F42">F42: 達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>及び結果。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-keyboard-interface">キーボードインタフェース (keyboard interface)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">キーストローク入力を取得するためにソフトウェアが用いるインタフェース。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div><p>標準ではキーボードが存在しない技術であっても、キーボードインタフェースによって、利用者がキーストローク入力をプログラムに提供できる。</p>
+                        
+                        
+                        <p class="example">タッチスクリーンを搭載している PDA には、外部キーボードへのコネクタとあわせて、そのオペレーティングシステムに組み込まれたキーボードインタフェースがある。PDA 上のアプリケーションはそのインタフェースを用いて、外部キーボード、あるいは手書き解釈プログラムや「キーボードエミュレーション」機能付きの音声テキスト変換アプリケーションのような擬似キーボード出力を提供する他のアプリケーションのいずれかからキーボード入力を取得することができる。</p>
+                        
+                     </div>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マウスキーのようなキーボード操作によるマウスエミュレータによるアプリケーション (又は、そのアプリケーションの一部) の操作は、キーボードインタフェースからの操作とは見なさない。なぜならば、この場合、プログラムの操作は、キーボードインタフェースからではなく、そのポインティングデバイス インタフェースからの入力によって行われるからである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

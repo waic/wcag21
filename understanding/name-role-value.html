@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="compatible.html"><abbr title="Guideline">GL</abbr>: 互換性</a></li>
+            <li><a href="parsing.html">Previous <abbr title="Success Criterion">SC</abbr>: 構文解析</a></li>
+            <li><a href="status-messages.html">Next <abbr title="Success Criterion">SC</abbr>: ステータスメッセージ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#name-role-value" style="font-weight: bold;">4.1.2 名前 (name)・役割 (role) 及び値 (value) </a> (レベル A): すべての<a href="https://waic.jp/docs/WCAG21/#dfn-user-interface-component" target="terms">ユーザインタフェース コンポーネント</a> (フォームを構成する要素、リンク、スクリプトが生成するコンポーネントなど) では、<a href="https://waic.jp/docs/WCAG21/#dfn-name" target="terms">名前 (name)</a> 及び<a href="https://waic.jp/docs/WCAG21/#dfn-role" target="terms">役割 (role)</a> は、<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能である。又、状態、プロパティ、利用者が設定可能な値は<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-set" target="terms">プログラムによる設定</a>が可能である。そして、<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>が、これらの項目に対する変更通知を利用できる。</p>
+         <p class="note">この達成基準は、主に独自のユーザインタフェース コンポーネントを開発、又はスクリプトで実装するコンテンツ制作者に向けたものである。例えば、標準的な HTML のコントロールを仕様に沿って使用していれば、既にこの達成基準を満たしていることになる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、支援技術がコンテンツにあるユーザインタフェース コントロールの状態に関する情報を収集し、有効化 (又は設定) 及び最新の状態を保つように保証することである。</p>
+            <p>アクセシブルなウェブコンテンツ技術の標準コントロールを使用する場合、このプロセスは簡単である。ユーザインタフェース要素が仕様に準じて使用される場合、この条件に条項は満たされる。(下記の達成基準 4.1.2 の事例を参照のこと)</p>
+            <p>しかし、カスタムコントロールが作成される、又はインタフェース要素が通常とは異なる役割及び／又は機能を持つように (ソースコード又はスクリプトで) プログラミングされている場合、コントロールが支援技術に重要な情報を提供し、支援技術によってコントロールされることを、それら自身ができるように保証する追加の手段を取る必要がある。</p>
+            <p>特に重要なユーザインタフェース コントロールの状態は、フォーカスを持つかどうかである。コントロールのフォーカス状態は、プログラムによる解釈が可能であり、フォーカスの変化に関する通知は、ユーザエージェント及び支援技術に送られる。ユーザインタフェース コントロールのステータスの他の例としては、チェックボックス又はラジオボタンが選択されているかどうか、折り畳み可能なツリーやリストが展開されている又は折り畳まれているかどうかである。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>達成基準 4.1.2 は、すべてのユーザインタフェース コンポーネントに対して、プログラムによる解釈が可能な名前を要求する。名前は、可視であっても、不可視であってもよい。往々にして、名前がラベルとして識別される場合、名前は可視でなければならない。より詳しい情報については、用語集にある名前及びラベルの定義を参照のこと。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>すべてのユーザインタフェース コンポーネントに、役割、状態、及び値の情報を提供することで、例えば、スクリーンリーダー、画面拡大ソフトウェア、及び音声認識ソフトウェアなどの、障害のある利用者が使用する支援技術との互換性を保つことが可能になる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>Accessible APIs </strong></p>
+                  
+                  
+                  <p>Java アプレットは、Java 言語で定義されたアクセシビリティ API を用いている。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/WAI/PF/roadmap/">Dynamic Accessible Web Content Roadmap</a></li>
+               
+               
+               <li><a href="https://www.w3.org/WAI/PF/GUI/">Role Taxonomy for Accessible Adaptable Applications</a></li>
+               
+               
+               <li><a href="https://www.w3.org/WAI/PF/adaptable/">States and Adaptable Properties Module</a></li>
+               
+               
+               <li><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">Microsoft Active Accessibility, Version 2.0</a></li>
+               
+               
+               <li><a href="http://www.adobe.com/accessibility.htmlproducts/flash/best-practices.html">Adobe Flash accessibility design guidelines</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="name-role-value-situation-0">
+                  
+                  
+                  <h4>状況 A: マークアップ言語 (例えば HTML) で標準的なユーザインタフェース コンポーネントを使用している場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA14">ARIA14: 可視ラベルが使用できない場所で不可視ラベルを提供するために、aria-label を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><p><a class="general" href="https://w3c.github.io/wcag/techniques/general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a> using technology-specific techniques below:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H91">H91: HTML のフォームコントロール及びリンクを使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H88">H88: 仕様に準じて HTML を使用する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="name-role-value-situation-1">
+                  
+                  
+                  <h4>状況 B: スクリプト又はコードを用いて、マークアップ言語の標準的なユーザインタフェース コンポーネント再定義する場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p>名前及び役割をユーザエージェントに提供し、利用者が設定可能なプロパティを直接設定可能にし、変化を通知する</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="name-role-value-situation-2">
+                  
+                  
+                  <h4>状況 C: プログラミング技術で標準的なユーザインタフェース コンポーネントを用いる場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p><a class="general" href="https://w3c.github.io/wcag/techniques/general/G135">G135: Using the accessibility API features of a technology to expose names and notification of changes</a> using technology-specific techniques below:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH32">FLASH32: フォームコントロールにテキストラベルを関連付けるために、自動ラベリングを使用する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH29">FLASH29: フォームコンポーネントに label プロパティを設定する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH30">FLASH30: 画像ボタンにアクセシブルな名前 (accessible name) を指定する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF10">PDF10: PDF 文書内のインタラクティブなフォームコントロールにラベルを付ける</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF12">PDF12: PDF 文書内のフォームフィールドの名前 (name)、役割 (role)、値 (value) 情報を提供する</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL26">SL26: Using LabeledBy to Associate Labels and Targets in Silverlight</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL32">SL32: Using Silverlight Text Elements for Appropriate Accessibility Role</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="name-role-value-situation-3">
+                  
+                  
+                  <h4>状況 D: プログラミング言語で独自のインタフェースコンポーネントを作成する場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p><a class="general" href="https://w3c.github.io/wcag/techniques/general/G10">G10: Creating components using a technology that supports the accessibility notification of changes</a> using technology-specific techniques below:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA4">ARIA4: ユーザインターフェース コンポーネントの役割 (role) を明示するために、WAI-ARIA ロールを使用する</a></li>
+                           
+                           
+                           <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA5">ARIA5: ユーザインターフェース コンポーネントの状態 (state) を明示するために、WAI-ARIA ステート及びプロパティ属性を使用する</a></li>
+                           
+                           
+                           <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL6">SL6: Defining a UI Automation Peer for a Custom Silverlight Control</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL18">SL18: Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL20">SL20: Relying on Silverlight AutomationPeer Behavior to Set AutomationProperties.Name</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL30">SL30: Using Silverlight Control Compositing and AutomationProperties.Name</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><p><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F59">F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている</a></p>
+                     
+                     
+                     <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                        <div><p>この失敗例は、将来的に DHTML ロードマップの達成方法を用いて問題が解決されるかもしれない。</p>
+                           
+                           
+                        </div>
+                     </div>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F15">F15: 達成基準 4.1.2 の失敗例 － ウェブコンテンツ技術のアクセシビリティ API を用いていない、又は不完全なカスタムコントロールを実装している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F20">F20: 達成基準 1.1.1 及び 達成基準 4.1.2 の失敗例 － 非テキストコンテンツへの変更が発生するときにテキストによる代替を更新していない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F68">F68: 達成基準 4.1.2 の失敗例 － プログラムによる解釈が可能な名前 (name) を持っていないユーザインタフェース コントロール</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F79">F79: 達成基準 4.1.2 の失敗例 － プログラムによる解釈が可能ではない、又は変更の通知が利用可能ではないようなユーザインタフェース コンポーネントのフォーカス状態</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F86">F86: 達成基準 4.1.2 の失敗例 － アメリカの電話番号など、複数に分けられたテキストフィールドのそれぞれに対して、名前 (name) が提供されていない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F89">F89: 達成基準 2.4.4、達成基準 2.4.9、及び 達成基準 4.1.2 の失敗例 － リンクで唯一のコンテンツである画像にアクセシブルな名前 (accessible name) が提供されていない</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">(この文書で用いられている) 支援技術 (assistive technology (as used in this document))</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害者を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:</p>
+                  
+                  
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。</li>
+                     
+                     
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。</li>
+                     
+                     
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。</li>
+                     
+                     
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+                     
+                     
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。</li>
+                     
+                     
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-name">名前 (name)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ソフトウェアが、ウェブコンテンツのコンポーネントを利用者に識別させることができるテキスト。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-label" target="terms">ラベル</a>はすべての利用者に提示される一方で、名前 (name) は隠されていて、支援技術に対してだけ明らかにされる場合もある。多くの場合 (すべてではないが)、ラベルと名前 (name) は同じである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これは、HTML の name 属性とは関係がない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-set">プログラムによる設定 (programmatically set)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">支援技術を含むユーザエージェントがサポートしている手法を用いて、ソフトウェアによって設定されること。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-role">役割 (role)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツに含まれるコンポーネントの機能を、ソフトウェアが識別するために用いることができるテキストや数字。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">画像の機能が、ハイパーリンク、コマンドボタン、又はチェックボックスのどれなのかを示している数字。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

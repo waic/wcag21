@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>メタデータを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="documenting-accessibility-support.html">ウェブコンテンツ技術の使用法のアクセシビリティサポートを文書化する</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+         </ul>
+      </nav>
+      <h1>メタデータを理解する</h1>
+      <main>
+         		
+         		
+         <p>この節では、WCAG 2.1 の達成基準に適合するために用いることのできるメタデータの達成方法について説明する。メタデータに関するより詳細な情報は、以下にあるリソースを参照のこと。</p>
+         		
+         <p>最も基本的なレベルでは、メタデータは本質的に &#39;データに関するデータ&#39; であり、リソースを説明するため及び探すための両方に用いられる。</p>
+         		
+         <p>メタデータは、ウェブページ及びウェブページのアクセシブルなコンポーネントを説明するためにも、ウェブコンテンツの代替版をお互いに関連付けるためにも用いることのできる強力なツールである。言い換えると、メタデータによる説明によって、利用者が自分の求めている又は好んでいる特定の情報を見つけることができるようになる。</p>
+         		
+         <p>WCAG と併用することで、メタデータは次のような数多くの役割を果たすことができる:</p>
+         		
+         <ol>
+            			
+            <li><p>利用者が自分の使うことのできない不適合のページにやってきたときに、適合している代替版を見つけられるようにするために、メタデータを用いてウェブページの適合している代替版と適合していないウェブページとを関連付けることができる。</p>
+               			
+            </li>
+            			
+            <li><p>制作されたページに複数のバージョンがあるとき、特に代替ページが様々な障害のある利用者に最適化されている場合に、その代替ページの場所を示して説明するために、メタデータを用いることができる。利用者はメタデータを用いて、代替版を見つけることも、そのバージョンの特徴を確認することもできる。それによって、利用者は自分のニーズに最も合うものを探すことができる。</p>
+               			
+            </li>
+            			
+            <li><p>(上記 1.及び 2.のように、) ページ全体に対して用いるのに加えて、ページの一部分の代替版を説明するためにメタデータを用いることができる。さらに、メタデータを用いて、ウェブページのコンポーネントの代替版を探したり、(複数ある場合には) どちらのほうが利用者のニーズに合うのかを判断するために、各代替版の説明を取得したりすることができる。</p>
+               			
+            </li>
+            		
+         </ol>
+         		
+         <section id="understanding-metadata-resources">
+            			
+            <h2>メタデータに関するリソース</h2>
+            			
+            <p>メタデータによる説明は、リソースの題目又はその発行日などのように、定義済みの合意されたボキャブラリの値を提供する。そして、機械的に読み取ることが可能である。用いられているメタデータのスキームを理解しているソフトウェアは、有用なタスクを行うことができる。通常は、メタデータを持つオブジェクトには、そのようなメタデータによる説明が一つ以上ある。</p>
+            			
+            <p>メタデータのよく知られている仕様 (スキーマ) には、次のようなものがある:</p>
+            			
+            <ul>
+               				
+               <li><p><a href="http://www.loc.gov/standards/mets/">Metadata Encoding and Transmission Standard (METS) scheme</a></p>
+                  				
+               </li>
+               				
+               <li><p><a href="http://dublincore.org">Dublin Core Metadata Initiative (DCMI) terms for cross-disciplinary resources</a></p>
+                  				
+               </li>
+               				
+               <li><p><a href="http://www.ieee.org/index.html">IEEE Standards</a></p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>リソースの説明を提供するツールがいくつか入手可能である。あるいは、その説明は人的に提供することが可能である。メタデータの作成及びリソースの作成又は発行時点でのメタデータの収集がもっと容易になればなるほど、プロセスはより効果的になり、より多く使われるようになるはずである。</p>
+            			
+            <p>次のような例がある:</p>
+            			
+            <ul>
+               				
+               <li><p><a href="http://www.ukoln.ac.uk/metadata/dcdot/">DC-dot</a></p>
+                  				
+               </li>
+               			
+            </ul>
+            			
+            <p>アクセシビリティメタデータの実装には、次のようなものがある:</p>
+            			
+            <ul>
+               				
+               <li><p><a href="http://barrierfree.ca/tile/">The Inclusive Learning Exchange (TILE)</a></p>
+                  				
+               </li>
+               			
+            </ul>
+            		
+         </section>
+         	
+      </main>
+   </body>
+</html>

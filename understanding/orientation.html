@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.4 を理解する: 表示の向き</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="sensory-characteristics.html">Previous <abbr title="Success Criterion">SC</abbr>: 感覚的な特徴</a></li>
+            <li><a href="identify-input-purpose.html">Next <abbr title="Success Criterion">SC</abbr>: 入力目的の特定</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.4 を理解する: 表示の向き</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#orientation" style="font-weight: bold;">1.3.4 表示の向き</a> (レベル AA): コンテンツは、その表示及び操作を、縦向き (portrait) 又は横向き (landscape) などの単一の向きに制限しない。ただし、その表示の向きが<a href="https://waic.jp/docs/WCAG21/#dfn-essential" target="terms">必要不可欠</a>な場合は例外とする。</p>
+         <p class="note">単一の表示の向きが必要不可欠な例としては、銀行の小切手、ピアノのアプリケーション、プロジェクタやテレビ向けのスライド、バイナリディスプレイ表示が適用されないバーチャルリアリティのコンテンツなどが挙げられる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、コンテンツがユーザーの好みの向き (縦向き又は横向き) で表示されるようにすることである。ウェブサイトやアプリケーションの中には、自動的に画面を特定の表示方向に制限し利用者がデバイスを適応するように回転させることを期待するものがあり、これにより問題が生じる可能性がある。利用者の中には、 (例えば電動車椅子の腕に) 固定された向きでデバイスを取り付けている。したがって、ウェブサイトやアプリケーションは向きを制限せず両方の向きをサポートする必要がある。ディスプレイのサイズによるコンテンツ又は機能の変更は、向きの制限に焦点を当てているこの達成基準では対象としていない。</p>
+            <p>歴史的に、デバイスは固定の向きのディスプレイを持つ傾向があり、全てのコンテンツはディスプレイの向きに合わせて制作されてきた。今日では、ほとんどの携帯情報端末及びその他多くのデバイス (モニターなど) はセンサー情報に基づいてデフォルトのディスプレイの向きを動的に調整するハードウェアレベルの機能を備えている。この達成基準の目的は、コンテンツ制作者がコンテンツの向きを決して制限しないことで、コンテンツが常にデバイスのディスプレイの向きに一致することを保証することである。</p>
+            <p>コンテンツを特定の向きに制限しないという制作者の責任と、ディスプレイの向きの固定を調整するデバイス固有の設定とを区別することが重要である。</p>
+            <p>多くの携帯情報端末は、利用者がディスプレイを特定の向きに固定することを可能にするために、機械的なスイッチ又はシステム設定 (又はその両方) を提供している。利用者がデバイス全体の向きを固定した場合、全てのアプリケーションはその設定を取得し、向きに応じてコンテンツを表示することが期待される。</p>
+            <p>この達成基準は、デバイスの「向きを固定する」設定を補完するものである。システム設定はユーザーエージェントによって選択されるため、ディスプレイの向きを制限しないウェブページは常にシステムレベルの表示設定をサポートする。あるいは、デバイスレベルの向き固定が設定されていない場合、ユーザーエージェントはデバイスの向き (デフォルト、又は任意のデバイスセンサーによって特定された現在の向きのいずれか) によってページを表示するべきである。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+              <li>固定したデバイスを持つ巧緻性障害の利用者が、自分の決めた向きでコンテンツを利用できる。</li>
+               					
+              <li>ロービジョンの利用者が、横長のコンテンツを見るときにテキストサイズを大きくするなど、自分に最適な向きでコンテンツを見ることができる。</li>
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               <li><strong>事例1: オンライン映像サイト</strong><br />利用者が選択した向きに基づいて、映像が縦向き又は横向きに表示される。</li>
+               				
+               <li><strong>事例2: メッセージングウェブサイト</strong><br />メッセージングウェブサイトは縦向きと横向きの両方でメッセージを表示できる。</li>
+               				
+               <li><strong>事例3: 電子書籍ウェブアプリ</strong><br />電子書籍ウェブアプリは縦向きと横向きの両方で本の内容を表示できる。</li>
+               				
+               <li><strong>事例4: 銀行アプリで預金を確認する</strong><br />向きが必要不可欠な例としては、預金小切手の画像を簡単かつ正確に読み取るために、ランドスケープモードにする必要がある銀行アプリがある。これらの紙の形は、通常高さの約二倍の幅がある。</li>
+
+               <li><strong>事例5: ピアノアプリ</strong><br />向きが必要不可欠な例としては、ピアノの鍵を十分に機能的に使用できるスペースを確保するために、ランドスケープモードにする必要があるピアノアプリがある。ピアノアプリは、鍵の間の物理的な特徴を保持する必要がある物理的なピアノの鍵盤を模しているため、使用できる鍵が少なすぎるか、鍵が狭くなりすぎるかのいずれかになる。</li>
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               				
+               <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation">Managing Screen Orientation</a></li>
+               				
+               <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Using Media Queries</a></li>
+               				
+               <li><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">Media Queries for Standard Devices</a></li>
+               				
+               <li><a href="https://css-tricks.com/snippets/css/orientation-lock/">Orientation Lock</a></li>
+               				
+               <li><a href="https://css-tricks.com/forums/topic/responsive-design-for-landscape-orientation/">Responsive Design for Landscape Orientation</a></li>
+               				
+               <li><a href="https://www.w3.org/TR/css-device-adapt-1/#orientation-desc">The Orientation Descriptor</a></li>
+               				
+               <li><a href="https://www.w3.org/TR/screen-orientation/">The Screen Orientation API</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                 <li>CSS を使用して縦方向と横方向の両方を許可するように向きを設定する。</li>
+
+                 <li>表示・非表示制御を使用し、異なる向きのコンテンツにアクセスできるようにする。</li>
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  					
+                  <li>向きを固定する。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

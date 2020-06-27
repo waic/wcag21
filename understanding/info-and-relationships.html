@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.3.1: 情報及び関係性を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="adaptable.html"><abbr title="Guideline">GL</abbr>: 適応可能</a></li>
+            <li><a href="audio-only-and-video-only-prerecorded.html">Previous <abbr title="Success Criterion">SC</abbr>: </a></li>
+            <li><a href="meaningful-sequence.html">Next <abbr title="Success Criterion">SC</abbr>: 意味のある順序</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.3.1: 情報及び関係性を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#info-and-relationships" style="font-weight: bold;">1.3.1 情報及び関係性</a> (レベル A): 何らかの形で<a href="https://waic.jp/docs/WCAG21/#dfn-presentation" target="terms">提示</a>されている情報、<a href="https://waic.jp/docs/WCAG21/#dfn-structure" target="terms">構造</a>、及び<a href="https://waic.jp/docs/WCAG21/#dfn-relationships" target="terms">関係性</a>は、<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能である、又はテキストで提供されている。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、視覚的又は聴覚的な体裁によって暗に伝えられている情報及び関係性を、その提示形式が変わったときにも保つようにすることである。例えば、コンテンツがスクリーンリーダーによって読み上げられたり、コンテンツ制作者が提供するスタイルシートがユーザスタイルシートに置き換えられたりしたときには、提示形式が変わる。</p>
+            <p>目の見える利用者は、様々な視覚的な手がかりによって構造及び関係性を知覚する。例えば、見出しは多くの場合、改行で段落から切り離された、より大きな太字のフォントである。リスト項目は、中黒が先行しており、おそらく字下げがある。段落は、改行で分離される。共通の特性を持つ項目は、表の行と列で整理される。フォームのフィールドは、テキストラベルを共有するグループとして配置されることがある。異なる背景色を用いて、複数の項目が互いに関係のあることを示していることもある。特別な状態の語句は、フォントファミリーを変える及び／又は、太字、イタリック、下線付きにすることによって示されている。共通の特性を共有する項目は、同じ行又は列を共有するセルの関係性並びに、各セルと行及び／又は列見出しとの関係性を理解するのが不可欠な表に整理されている。などである。これらの構造及び関係性がプログラムによる解釈が可能する、又はテキストで入手可能にすることで、理解に重要な情報がすべての人に知覚されることを保証する。</p>
+            <p>同様に、聴覚的な手がかりを用いることもある。例えば、チャイム音が新しい節の開始位置を示している。声のピッチや発話のスピードを変えて、重要な情報を強調したり、引用されたテキストを示したりしている、など。</p>
+            <p>そういった関係性が、ある利用者にとって知覚可能であれば、その関係性をすべての利用者が知覚できるようにすることが可能である。情報をすべての利用者にきちんと提供できたかどうかを判断する一つの方法は、その情報に様々な感覚モダリティで連続してアクセスしてみることである。</p>
+            <p>用語集にある用語へのリンクを a 要素 (又は、使用している技術特有のリンク要素) を用いて実装して、異なるフォントで示していれば、スクリーンリーダーの利用者は、用語集にある用語のところで、たとえフォントの違いに関する情報は受け取れなかったとしても、それがリンクであることが音声読み上げを聞けば分かるだろう。あるオンラインカタログの価格表示では赤い大きなフォントを使用している。スクリーンリーダーの利用者は赤色の情報は得られないが、価格の前に通貨表示を記載することで情報を得ることができる。</p>
+            <p>ウェブコンテンツ技術の中には、ある種の情報及び関係性をプログラムによる解釈をするための手段を提供していないものがある。そういった場合には、その情報及び関係性を説明するテキストを提供すべきである。例えば、「アスタリスク (*) のある項目はすべて必須項目です。」のように説明テキストを提供する。テキストによる説明は、例えば、その親要素又は隣接する要素内などのように、(そのページを線形化したときに) テキストが説明している情報の近くに置くべきである。</p>
+            <p>場合によっては、関係性をプログラムによる解釈が可能にする又はテキストで提供することが望ましいかどうか、各自の判断に委ねるしかないこともありうる。しかし、技術がプログラムに基づいた関係性をサポートする場合、情報及び関係性をテキストで提供するよりも、プログラムによる解釈することを強く推奨する。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>色の値がプログラムによる解釈が可能であることは要求していない。色によって伝えられる情報は、その値を明らかにするだけでは、十分に提示することができないからである。そのため、色に特有の問題については、達成基準 1.3.1 ではなく、<a href="use-of-color.html" class="guideline">達成基準 1.4.1</a> で対処している。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、ユーザエージェントが個々の利用者のニーズに応じてコンテンツに適応できるようにすることによって、様々な障害のある利用者の役に立つ。</li>
+               
+               
+               <li>全盲の (スクリーンリーダーを使用している) 利用者が、色を用いて伝えられている情報をテキストでも得られるようになる (色を用いて情報を伝えている画像のテキストによる代替を含む)。</li>
+               
+               
+               <li>点字ピンディスプレイを使用している盲ろうの利用者は、色に依存した情報を利用できないことがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>必須項目のある入力フォーム</strong></p>
+                  
+                  
+                  <p>入力フォームに、いくつかの必須項目がある。必須項目のラベルを、赤で表示している。さらに、各ラベルの最後には、アスタリスクの記号文字 (*) が付いている。フォームへの入力に関する説明文には、「すべての必須項目は赤字で示してあり、アスタリスク (*) が付いています。」と書かれていて、例が後に続いている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>必須項目を示すために色とテキストを用いている入力フォーム</strong></p>
+                  
+                  
+                  <p>ある入力フォームには、必須項目と任意項目の両方がある。入力フォームの先頭にある説明文には、必須項目のラベルが赤字になっていて、「必須」というテキストによる代替のあるアイコンも付いている。赤字とアイコンの両方が、フォームのテキストフィールドとプログラム的に関連付けられているので、支援技術の利用者は必須項目を判断できる。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>各セルの見出しをプログラムによる解釈が可能なバスの時刻表テーブル</strong></p>
+                  
+                  
+                  <p>バスの運行スケジュールが、1 列目には縦にバス停の名前が並び、1 行目には横に異なるバスが並んでいる表で示されている。各セルには、バスがそのバス停に到着する時刻が書かれている。支援技術が、各セルにある時刻がどのバスとどのバス停とに関連付けられているのかをプログラムによる解釈が可能であるように、各バス停と各バスのセルは、それぞれの対応する行又は列の見出しとして示されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>チェックボックスのラベルをプログラムによる解釈が可能な入力フォーム</strong></p>
+                  
+                  
+                  <p>あるフォームでは、各チェックボックスに対するラベルが、支援技術によってプログラムによる解釈が可能になっている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>テキスト文書</strong></p>
+                  
+                  
+                  <p>構造をプログラムによる解釈が可能であるように、シンプルなテキスト文書は、タイトルの前に 2 行の空行があり、アスタリスクを使ってリスト項目を示し、その他の標準的な書式の決まりに従ってフォーマットされている。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://webaim.org/techniques/semanticstructure/">WebAIM: Semantic Structure</a></li>
+               
+               
+               <li><a href="http://accessibility.psu.edu/headingshtml/">Heading Tags</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="info-and-relationships-situation-0">
+                  
+                  
+                  <h4>状況 A: ウェブコンテンツ技術が、表現によって伝えている情報及び関係性をプログラムによる解釈が可能になるセマンテックな構造を提供している場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA11">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA12">ARIA12: 見出しを特定するために role=heading を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA13">ARIA13: リージョンとランドマークに名前 (name) を付けるために、aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA17">ARIA17: 関連するフォームコントロールを特定するために、グルーピングロールを使用する</a></li>
+                     
+                     
+                     <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA20">ARIA20: ページのリージョンを特定するために region ロールを使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G115">G115: 構造をマークアップするために、セマンティックな要素を使用する</a>、<strong>及び</strong>、<a class="html" href="https://w3c.github.io/wcag/techniques/html/H49">H49: 強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G117">G117: テキストの提示のバリエーションによって伝えている情報を伝達するために、テキストを使用する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G140">G140: 異なる提示を可能にするために、情報と構造を表現から分離する</a></li>
+                     
+                     
+                     <li><p>次の達成方法を用いて、表現によって伝えられている情報及び関係性をプログラムによる解釈が可能になる:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G138">G138: 色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF6">PDF6: PDF 文書でテーブルのマークアップにテーブル要素を使用する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF20">PDF20: 間違ってタグ付けされているテーブルを修復するために、Adobe Acrobat Pro のテーブルエディタを使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH31">FLASH31: DataGrid の表題を指定する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH23">FLASH23: DataGrid に要約を追加する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H63">H63: データテーブルで見出しセルとデータセルを関連付けるために、scope 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H43">H43: データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH21">FLASH21: 列見出しとデータセルを関連付けるために、DataGrid コンポーネントを使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF10">PDF10: PDF 文書内のインタラクティブなフォームコントロールにラベルを付ける</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF12">PDF12: PDF 文書内のフォームフィールドの名前 (name)、役割 (role)、値 (value) 情報を提供する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH32">FLASH32: フォームコントロールにテキストラベルを関連付けるために、自動ラベリングを使用する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH29">FLASH29: フォームコンポーネントに label プロパティを設定する</a></li>
+                           
+                           
+                           <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH25">FLASH25: アクセシブルな名前 (accessible name) を設定することによって、フォームコントロールにラベルを付ける</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H71">H71: fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL20">SL20: Relying on Silverlight AutomationPeer Behavior to Set AutomationProperties.Name</a></li>
+                           
+                           
+                           <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL26">SL26: Using LabeledBy to Associate Labels and Targets in Silverlight</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H85">H85: select 要素内の option 要素をグループ化するために、optgroup 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H48">H48: リスト又はリンクのグループに、ol 要素、ul 要素、dl 要素を用いる</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF9">PDF9: PDF 文書内のコンテンツを見出しタグでマークアップすることによって見出しを作成する</a></li>
+                           
+                           
+                           <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR21">SCR21: ページにコンテンツを追加するために、Document Object Model (DOM) の機能を使用する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF11">PDF11: PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF17">PDF17: PDF 文書に一貫性のあるページ番号を指定する</a></li>
+                           
+                           
+                           <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF21">PDF21: PDF 文書内のリストにリストタグを使用する</a></li>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H97">H97: nav 要素を使用して、関連したリンクをグループ化する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="info-and-relationships-situation-1">
+                  
+                  
+                  <h4>状況 B: ウェブコンテンツ技術が、表現によって伝えている情報及び関係性をプログラムによる解釈が可能になるセマンテックな構造を提供していない場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G117">G117: テキストの提示のバリエーションによって伝えている情報を伝達するために、テキストを使用する</a></li>
+                     
+                     
+                     <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH8">FLASH8: フォームコントロールのアクセシブルな名前 (accessible name) にグループ名を追加する</a></li>
+                     
+                     
+                     <li><p>表現によって伝えられている情報及び関係性をプログラムによる解釈が可能になる、又は次の達成方法を用いてテキストで入手可能にする:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="text" href="https://w3c.github.io/wcag/techniques/text/T1">T1: 段落に、標準的なテキストの書式の表現法を使用する</a></li>
+                           
+                           
+                           <li><a class="text" href="https://w3c.github.io/wcag/techniques/text/T2">T2: リストに、標準的なテキストの書式の表現法を使用する</a></li>
+                           
+                           
+                           <li><a class="text" href="https://w3c.github.io/wcag/techniques/text/T3">T3: 見出しに、標準的なテキストの書式の表現法を使用する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C22">C22: テキストの視覚的提示を制御するために、CSS を使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a></li>
+                  
+                  
+                  <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA1">ARIA1: ユーザインターフェース コントロールに対する説明ラベルを提供するために、aria-describedby プロパティを使用する</a></li>
+                  
+                  
+                  <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA2">ARIA2: aria-required プロパティによって必須項目を特定する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G141">G141: 見出しを用いてウェブページを構造化する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F2">F2: 達成基準 1.3.1 の失敗例 － 情報を伝えるために、適切なマークアップ又はテキストを用いずに、テキストの提示の変化を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F33">F33: 達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツで複数の段組みを作成するために、空白文字を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F34">F34: 達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツでテーブルの書式を整えるために、空白文字を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F42">F42: 達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F43">F43: 達成基準 1.3.1 の失敗例 － コンテンツにおける関係を表さない方法で、構造的なマークアップを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F46">F46: 達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素、caption 要素、又は空ではない summary 属性を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F48">F48: 達成基準 1.3.1 の失敗例 － 表形式の情報をマークアップするために、pre 要素を使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F87">F87: 達成基準 1.3.1 の失敗例 － CSS の :before 及び :after 疑似要素並びに &#39;content&#39; プロパティを用いて、非装飾のコンテンツを挿入している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F90">F90: 達成基準 1.3.1 の失敗例 － headers 属性及び id 属性によってテーブルの見出しとコンテンツが不正確に関連付けられている</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F91">F91: 達成基準 1.3.1 の失敗例 － テーブルの見出しを正しくマークアップしていない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F92">F92: 達成基準 1.3.1 の失敗例 － セマンティックな情報を伝えるコンテンツに presentation ロールを使用している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-presentation">提示</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者が知覚できる形式で<a href="https://waic.jp/docs/WCAG21/#dfn-content" target="terms">コンテンツ</a>をレンダリングすること。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-relationships">関係性 (relationships)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの異なる部分間における意味のあるつながり。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-structure">構造</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>の各部を相互の関係性によりまとめる方法論。及び、</li>
+                     
+                     
+                     <li>一連の<a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>をまとめる方法論。</li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

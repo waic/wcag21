@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.3.3: インタラクションによるアニメーションを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="seizures-and-physical-reactions.html"><abbr title="Guideline">GL</abbr>: 発作と身体的反応</a></li>
+            <li><a href="three-flashes.html">Previous <abbr title="Success Criterion">SC</abbr>: 3 回の閃光</a></li>
+            <li><a href="bypass-blocks.html">Next <abbr title="Success Criterion">SC</abbr>: ブロックスキップ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.3.3: インタラクションによるアニメーションを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#animation-from-interactions" style="font-weight: bold;">2.3.3 インタラクションによるアニメーション</a> (レベル AAA): アニメーションが、機能又は伝達されている情報に<a href="https://waic.jp/docs/WCAG21/#dfn-essential" target="terms">必要不可欠</a>でない限り、インタラクションによって引き起こされる<a href="https://waic.jp/docs/WCAG21/#dfn-motion-animation" target="terms">モーションアニメーション</a>を無効にできる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、アニメーションがウェブページに表示されるのを利用者が防止できるようにすることである。一部の利用者は、動きのあるコンテンツから、注意散漫又は吐き気を経験することがある。例えば、ページのスクロールによって要素が動く (スクロールに伴う必要不可欠な動きを除く) と、前庭障害が発生する可能性がある。前庭 (内耳) 障害の反応には、めまい、吐き気、頭痛などがある。必要不可欠ではないことが多いアニメーションの一つは、スクロールによるパララックス (視差効果) である。スクロールによるパララックスは、背景が前景とは異なる速度で動くと発生する。この達成基準では、ウェブページの機能や情報に必要不可欠なアニメーションは許容される。</p>
+            <p>「インタラクションによるアニメーション」は、利用者の操作によって必要不可欠でないアニメーションが開始されたときに適用される。一方、<a href="pause-stop-hide.html">達成基準 2.2.2 一時停止、停止、非表示</a>は、ウェブページがアニメーションを開始するときに適用される。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>アニメーションが前庭障害の人に与える影響は非常に深刻なことがある。誘発される反応には吐き気や片頭痛が含まれ、回復のためにベッド上での安静が必要となる。</p>
+            </div>
+            <p><strong>ウェブサイトはどのようにして前庭障害を引き起こす可能性を減らすことができるか？</strong> 次のいずれかの解決策を選択する。不要なアニメーションは使用しない。インタラクションから必要不可欠でないアニメーションを無効にするためのコントロールを利用者に提供する。ユーザエージェント又はオペレーティングシステムのモーション軽減機能を利用する。</p>
+            <p><strong>利用者がページをスクロールすることによって引き起こされる動きについてはどうか？</strong> 新しいコンテンツをビューポート内に移動させることは、スクロールにおける必要不可欠な動きである。利用者は必要不可欠なスクロールの動きを制御しているので、これは許容される。必要不可欠なアニメーションだけを、適切な方法でスクロールのインタラクションに追加すること。不要な動きは、利用者が常に無効にできるようにすること。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               <li><strong>前庭障害</strong><ul>
+                     
+                     <li>前庭障害の人は、インタラクションによって引き起こされる動きをコントロールする必要がある。必要不可欠でない動きは前庭障害の反応を引き起こす可能性がある。前庭 (内耳) 障害の反応には、注意散漫、めまい、頭痛、吐き気などがある。</li>
+                     
+                     <li>ペルソナの心の声:「余計な動きはやめて！めまいがして集中できないわ。もうパソコンを切って横にならないと。」 </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li><strong>不要な動きを全体的に無効化するオプションを備えたパララックス (視差効果) スクロール:</strong><ul>
+                     
+                     <li>あるサイトには、利用者がスクロールすると追加のアニメーションが表示される。必要不可欠なページコンテンツが垂直方向にスクロールされると、装飾要素が水平方向に視界に入ったり出たりする。利用者は、各ページの上部にあるコントロールにより、不要なアニメーションを止めることができる。必要不可欠でないアニメーションを止める機能は、サイト全体に適用される。</li>
+                     
+                  </ul>
+                  
+               </li>
+               				
+               <li><strong>動きの軽減設定をサポートするトランジション効果:</strong><ul>
+                     
+                     <li>あるサイトには、新しいコンテンツを読み込む際に必要不可欠でないトランジション効果が含まれる。このトランジション効果は、ページめくりのアニメーションであり、reduce-motion CSS メディアクエリに従うものである。利用者がモーション軽減設定を有効にすると、ページめくりのアニメーションがオフになる。</li>
+                     
+                  </ul>
+                  
+               </li>
+               				
+               <li><strong>必要不可欠なアニメーション:</strong><ul>
+                     
+                     <li>あるウェブアプリケーションには、アニメーションの順序を作成する機能がある。このツールの一部として、コンテンツ制作者はアニメーションをプレビューする必要がある。</li>
+                     
+                  </ul>
+                  
+               </li>
+               			
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://css-tricks.com/introduction-reduced-motion-media-query/">An Introduction to the Reduced Motion Media Query</a></li>
+               
+               <li><a href="http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity">Designing Safer Web Animations for Motion Sensitivity</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  						
+                  <li><a href="https://w3c.github.io/wcag/techniques/css/C39">C39: Using the CSS reduce-motion query to prevent motion</a></li>
+                  						
+                  <li>Gx: Allowing users to set a preference that prevents animation.</li>
+                  					
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-motion-animation">モーションアニメーション (motion animation)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">動いているような錯覚やスムーズに移動しているように感じさせるために作る、状態と状態の間にステップを加えること。</p>
+                  	        
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">例えば、別の場所に移動したりサイズが変わる要素はアニメーションしていると考えられる。推移せずに即座に表示される要素は、アニメーションを用いていない。モーションアニメーションには、色、ぼかし又は不透明度の変更は含まれない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

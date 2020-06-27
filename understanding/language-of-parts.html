@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.1.2: 一部分の言語を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="readable.html"><abbr title="Guideline">GL</abbr>: 読みやすさ</a></li>
+            <li><a href="language-of-page.html">Previous <abbr title="Success Criterion">SC</abbr>: ページの言語</a></li>
+            <li><a href="unusual-words.html">Next <abbr title="Success Criterion">SC</abbr>: 一般的ではない用語</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.1.2: 一部分の言語を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#language-of-parts" style="font-weight: bold;">3.1.2 一部分の言語</a> (レベル AA): コンテンツの一節、又は語句それぞれの<a href="https://waic.jp/docs/WCAG21/#dfn-human-language" target="terms">自然言語</a>がどの言語であるか、<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能である。ただし、固有名詞、技術用語、言語が不明な語句、及びすぐ前後にあるテキストの言語の一部になっている単語又は語句は除く。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、ユーザエージェントが、複数の言語で書かれているコンテンツを正しく提示できるようにすることである。これにより、その言語の提示規則および発音規則に従ってコンテンツをユーザエージェントおよび支援技術に提示することが可能になる。これは、スクリーンリーダー、点字ディスプレイ及びその他の音声ブラウザだけでなくグラフィカルブラウザも適用される。</p>
+            <p>支援技術及び従来のユーザエージェントはともに、テキストの各節の言語が識別される場合、テキストをより正確にレンダリングできる。スクリーンリーダーは、テキストの言語の発音規則を用いることができる。ビジュアルブラウザは、適切な方法で文字及び書体を表示することができる。これは、左から右に読む言語と右から左に読む言語を切り替えるとき、又はテキストが異なるアルファベットを使用する言語でレンダリングされるときに特に重要である。ウェブページで用いられているすべての言語を理解している障害のある利用者は、各節が適切にレンダリングされたとき、コンテンツをよりよく理解できるようになる。</p>
+            <p>テキストの語句又は節に何も言語が指定されていない場合、そのテキストの自然言語は、ウェブページのデフォルトの自然言語である (達成基準 3.1.1 を参照)。そのため、単一言語の文書にあるすべてのコンテンツの言語は、プログラムによる解釈が可能となる。</p>
+            <p>ある言語の個々の単語又は語句が、その他の言語の一部になることがある。例えば、&quot;rendezvous&quot; は、英語に採用され、英語の辞書に現れ、英語のスクリーンリーダーによって適切に発音される、フランス語の単語である。したがって、英語のテキストの一節に、その自然言語がフランス語であることを示すことなく &quot;rendezvous&quot; という単語が含まれていても、この達成基準を満たしていることになる。しばしば、テキストの自然言語が一つの単語に対して変化するような時、その単語は周囲にテキストの言語の一部となっていることがある。これは、一部の言語では一般的なことなので、言語を意図的に変えていることが明白でない限り、その単語は周囲のテキストの言語の一部とみなすべきである。言語を意図的に変えているかどうかが疑わしい場合は、単語が、隣接する周囲のテキストの言語で同じように発音されるかどうかを考えてみるとよいだろう (ただし、アクセントやイントネーションは除く)。</p>
+            <p>ほとんどの専門的な職業では、外国語からきた技術用語を頻繁に使うことを必要とする。そのような用語は、通常すべての言語に翻訳されていない。技術用語の広く共通な性質は、専門家の間でのコミュニケーションも促進する。</p>
+            <p>技術用語のよくある例としては、次のようなものがある: ホモ サピエンス (Homo sapiens)、アルファケンタウリ (Alpha Centauri)、ヘルツ (hertz)、ヘイビアス コーパス (habeas corpus) など。</p>
+            <p>言語の変化を示すことは、多くの理由から重要である:</p>
+            <ul>
+               
+               
+               <li>点字翻訳ソフトウェアが言語の変化に追従すること、例えば、アクセント記号付き文字の代わりに制御コードを使用すること、及び 2 級点字の略字の誤った作成を防ぐために必要な制御コードを挿入することを可能にする。訳注: 2 級点字はグレード 2 とも呼ばれる。これは、英語の点字において、使用頻度の高い単語又は単語の一部を短縮した特別な点字を用いるものである。詳細については、英語の点字及び日本における英語点字の表記についてを参照のこと。</li>
+               
+               
+               <li>複数の言語をサポートしている合成音声は、適切な発音で適切なアクセントのテキストを話すことができるようになる。言語の変化が示されていない場合、合成音声は、動作するデフォルトの言語として単語を読み上げるのに最善を尽くそうとする。したがって、自動車を表すフランス語の単語 &quot;voiture&quot; は、デフォルトの言語として英語を用いている合成音声では &quot;voyture&quot; と発音されるだろう。</li>
+               
+               
+               <li>言語の変更を示すことは、将来の技術開発に役立つことがあり、例えば、言語の間を行き来して翻訳をすることができない利用者は、機械翻訳を使ってよく知らない言語の翻訳に機械を用いることができるだろう。</li>
+               
+               
+               <li>言語の変更を示すことは、辞書を用いて定義を提供するユーザエージェントを支援することもできるだろう。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <p>この達成基準は、次のような利用者にメリットがある:</p>
+            <ul>
+               
+               
+               <li>スクリーンリーダー又はテキストを合成音声に変換するその他の技術を使用している利用者。</li>
+               
+               
+               <li>例えば、文字及びアルファベットを認識したり、単語を読み取ったりすることのように、流暢かつ正確に書かれたものを読むことが困難な利用者。</li>
+               
+               
+               <li>テキストを音声に変換するソフトウェアを使用している、特定の認知の障害、言語の障害、及び学習障害のある利用者。</li>
+               
+               
+               <li>同期メディアのキャプションを頼りにしている利用者。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ol>
+               
+               
+               <li><p><strong>英語の文章中にあるドイツ語の一節</strong></p>
+                  
+                  
+                  <p>文章中の &quot;He maintained that the DDR (German Democratic Republic) was just a &#39; Treppenwitz der Weltgeschichte&#39;,&quot; は、ドイツ語の一節 &#39;Treppenwitz der Weltgeschichte&#39; がドイツ語であることが示されている。マークアップ言語に応じて、英語は、指定された箇所を除く文書全体の言語として示すこともできるし、段落レベルで示すこともできる。スクリーンリーダーがドイツ語の一節を読み上げる際は、その単語を正確に発音するために、英語からドイツ語に発音規則を変更する。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>代わりの言語へのリンク</strong></p>
+                  
+                  
+                  <p>ある HTML のウェブページには、そのページの他言語版へのリンクがある (例: Deutsch, Français, Nederlands, Castellano など)。それぞれのリンクのテキストは、その言語で言語の名前である。それぞれのリンクの言語は、lang 属性で示されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>フランス語の文章中で使われている &quot;Podcast&quot;</strong></p>
+                  
+                  
+                  <p>&quot;podcast&quot; は、次の引用 &quot;A l&#39;occasion de l&#39;exposition &quot;Energie eternelle. 1500 ans d&#39;art indien&quot;, le Palais des Beaux-Arts de Bruxelles a lancé son premier podcast. Vous pouvez telecharger ce podcast au format M4A et MP3,&quot; の周囲にあるテキストの母国語の一部なので、言語の変更を示す必要はない。</p>
+                  
+                  
+               </li>
+               
+               
+            </ol>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/International/articles/language-tags/Overview.en.php">Language tags in HTML and XML</a> - W3C Internationalization Working Group</li>
+               
+               
+               <li><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a></li>
+               
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H58">H58: 自然言語の変更を指定するために、言語属性を使用する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH13">FLASH13: Flash コンテンツの言語を指定するために、HTML の言語属性を使用する</a></li>
+                  
+                  
+                  <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF19">PDF19: PDF 文書内で Lang エントリを使用して節や句の言語を指定する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL4">SL4: Declaring Discrete Silverlight Objects to Specify Language Parts in the HTML DOM</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL27">SL27: Using Language/Culture Properties as Exposed by Silverlight Applications and Assistive Technologies</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-human-language">自然言語 (human language)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">人間とコミュニケーションをとるための言語で、話される、書かれる、又は (視覚的あるいは触覚的な手段で) 手話にされるもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-sign-language" target="terms">手話</a>も参照。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む様々な<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

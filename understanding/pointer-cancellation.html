@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.5.2: ポインタのキャンセルを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-modalities.html"><abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+            <li><a href="pointer-gestures.html">Previous <abbr title="Success Criterion">SC</abbr>: ポインタのジェスチャ</a></li>
+            <li><a href="label-in-name.html">Next <abbr title="Success Criterion">SC</abbr>: 名前 (name) のラベル</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.5.2: ポインタのキャンセルを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#pointer-cancellation" style="font-weight: bold;">2.5.2 ポインタのキャンセル</a> (レベル A): <a href="https://waic.jp/docs/WCAG21/#dfn-single-pointer" target="terms">シングルポインタ</a>を使って操作できる<a href="https://waic.jp/docs/WCAG21/#dfn-functionality" target="terms">機能</a>は、以下の要件の少なくとも 1 つを満たす。</p>
+         <dl>
+            
+            
+            <dt>ダウンイベントがない</dt>
+            
+            <dd>機能を実行する目的でポインタの<a href="https://waic.jp/docs/WCAG21/#dfn-down-event" target="terms">ダウンイベント</a>を使用していない。</dd>
+            						
+            
+            <dt>中止又は元に戻すことができる</dt>
+            
+            <dd>機能の完了には<a href="https://waic.jp/docs/WCAG21/#dfn-up-event" target="terms">アップイベント</a>を使用し、かつ機能の完了前に中止する、又は機能の完了後に元に戻すための<a href="https://waic.jp/docs/WCAG21/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。</dd>
+            						
+            
+            <dt>アップイベントで反転</dt>
+            
+            <dd>アップイベントによって、先のダウンイベントのすべての結果が反転する。</dd>
+            						
+            
+            <dt>必要不可欠</dt>
+            
+            <dd>ダウンイベントによって機能を完了させることが<a href="https://waic.jp/docs/WCAG21/#dfn-essential" target="terms">必要不可欠</a>である。</dd>
+            						
+            
+         </dl>
+         <p class="note">キーボードまたはテンキーパッドのキープレスをエミュレートする機能は必須と考えられる。</p>
+         <p class="note">この要件は、ポインタの動作を解釈するウェブコンテンツに適用される (ユーザエージェントや支援技術の操作に必要なアクションには適用されない)。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、利用者が偶発的又は誤ったポインタ入力を防止することを容易にすることである。様々な障害者が、意図せずタッチ又はマウスイベントを開始してしまい、望ましくない結果を招くことがある。以下の各サブセクションは、この達成基準の箇条書きとほぼ一致しており、利用者がポインタ操作をキャンセルできる手段を概説している。</p>
+            <section id="up-event-activation-or-completion">
+               			
+               <h3>アップイベントで動作又は完遂させる</h3>
+               			
+               <p>ポインタのキャンセルを組み込む最もアクセシブルな方法は、動作がアップイベントによって発生するようにすることである。</p>
+               
+               
+               <p>アップイベントによる動作とは、ポインタが離されたときにターゲットが動作することである。タッチスクリーンのインタラクションでは、指がターゲットに触れているとき、ターゲット領域内にあった指が持ち上げられた場合にのみ、アップイベントによる動作が発生する。同様にマウスによるインタラクションでは、マウスボタンを押した当初のターゲット設定領域内にカーソルがある間にマウスボタンを放した場合、アップイベントが発生する。</p>
+               
+               <p>コンテンツ制作者は、アップイベントで機能を動作させる一般的なプラットフォームの動作／クリックイベントを使用することによって、利用者が不用意に動作を引き起こしてしまう問題を減らすことができる。例えば JavaScript の <code>click</code> イベントは、マウスの主ボタンが離されたときに引き起こされる、暗黙的なアップイベントの一例である。その名称にもかかわらず、<code>click</code> イベントはデバイス非依存であり、タッチ及びキーボード操作においても機能する。</p>
+               
+               <p>アップイベントの優先度は、達成基準の最初の箇条書きの表現の中で暗黙的に示されている。つまり、<q>機能を実行する目的でポインタのダウンイベントを使用していない</p>ことである。コンテンツ制作者は、アップイベントのみを用いることで、最初の箇条書きを満たすのである。</p> 
+               			
+            </section>
+            <section id="up-event-abort-or-undo">
+               
+               <h3>アップイベントで中止又は元に戻す</h3>
+               
+               <p>インタラクションが単純な「クリック」に相当する場合、アップイベントによる動作には、キャンセルできる機能が組み込まれている。画面に触れたときと指を離したときとでは違いがある。同様に、マウス操作では、マウスボタンを押したときと離したときの違いがある。ポインタが離されたときにのみ動作が発生する場合、利用者にはその動作を中止 (キャンセル) する機会が与えられることになる。マウス又はタッチスクリーンを正確に使用することが困難な利用者は、この基本的な動きから大きなメリットを得ることができる。通常は、アイテムが押下されているときに視覚的なフィードバックを受け取る。間違ったアイテムを選択していることがわかった場合は、ポインタまたは指を離す前に、ターゲットから動かすことで操作をキャンセルすることができる。</p>
+               			
+               
+               <p>ドラッグ アンド ドロップのような、より複雑なインタラクションの場合、ダウンイベント及びアップイベントは、プロセス完遂のための一連のアクションを、開始及び終了する。例えば、ドラッグ アンド ドロップの場合、アイテムは次のようになる。</p>
+               
+               <ol>
+                  
+                  <li>押下 (ダウンイベント) で選択され、</li>
+                  
+                  <li>押下されたままの状態で新しい場所に移動し、そして</li>
+                  
+                  <li>離される (アップイベント) ことでドロップアクションが完了する。</li>
+                  
+               </ol>
+               
+               <p>このような複雑なアクションでは、中止又は元に戻す機能の必要性が高まる。設計者は、確認ダイアログや「元に戻す」ボタンなどを実装することを選択して、完了したプロセスを利用者が元に戻せるようにすることができる。もしくは、上記のステップ 3 の完了前に、選択されたアイテムを利用者が元の場所に戻し、そこでプロセスを終了する場合に、アクションを中止する機能を実装することもできる。画面の他の部分でアイテムの移動を受け入れない箇所がある場合、利用者はそこでドラッグ アンド ドロップを終了することができ、事実上操作を無効にできる。</p> 
+               			
+            </section>
+            <section id="up-reversal">
+               
+               <h3>アップイベントで反転する</h3>
+               
+               <p>別のインタラクションでは、ダウインイベントは、アップイベントが完了したときに反転できる動作をトリガーしてもよい。この例としては、利用者がオブジェクトを押下した (ダウンイベント) ときに一時的なポップアップが表示され (又は動画が再生され)、利用者がポインタを離す (アップイベント) と同時にポップアップ (又は動画) が消えるなどの長押し動作が含まれる。アップイベントが先行するダウンイベントを反転するので、利用者は以前の状態に戻り、事実上操作をキャンセルしている。</p>
+               			
+            </section>
+            <section id="down-event">
+               
+               <h3>ダウンイベント</h3>
+               
+               <p>ダウンイベントによって機能を完了させることは、アップイベントを使用しないことが必要不可欠な場合にのみ許容される。</p>
+               
+               <p>必要不可欠なダウンイベントの動作で最も一般的なものは、キーボードのエミュレーションで発生する。物理キーボードでは、デフォルトではキーがダウンイベントで動作し、キーが押されると文字が表示される。ソフトウェアによるキーボードエミュレーターが、キーを離したときに文字を表示することによって、この期待される動作を上書きしようとした場合、その動きは予期しないものであり、期待されるインタラクションに対して悪影響を与えるであろう。</p>
+               
+               <p>キーボードには、内蔵の Backspace 又は Delete ボタンがあり、これは事実上元に戻すオプションが提供されていることに留意されたい。元に戻せることは、ダウンイベントが必要不可欠な例外において必須要件ではない。しかし、この達成基準の要件ではないとしても、利用者が任意のアクションを元に戻す簡単な方法を提供することは、推奨される実装である (そして機能的に必要かもしれない)。</p>
+               			
+               <p>ある動作のタイミングが必要不可欠であり、かつダウンイベントを必要とする別の例としては、以下が挙げられる:</p>
+               			
+               <ul>
+                  				
+                  <li>オンスクリーンのピアノ鍵盤の演奏時など、物理的な押下トリガーをエミュレートするアクティビティ。アップイベントでの動作は、望ましい動作を大幅に変更するだろう。</li>
+                  				
+                  <li>「アップ」イベントを待つスキートを射撃するプログラムは、動作に必要な正確なタイミングを無効にするだろう。</li>
+                  			
+               </ul>
+               			
+            </section>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               					
+               <li>すべての利用者が、誤ったターゲットをヒットした場合のリカバリーを、容易にできるようにする。</li>
+               					
+               <li>コントロールが誤って動作する、又は予期しない動作が発生する可能性を減らすことで、視覚障害、認知の制約、及び運動障害のある人にとって助けになる。さらには、複雑なコントロールが動作状態にある場合に、元に戻す又は中止する手段を利用できる。</li>
+               					
+               <li>コンテキストの変化に気づくことができない人は、サイトをナビゲートしている間に混乱した状態になりにくい。</li>
+               				
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li>入力としてシングルタップ又は長押しがあるインタフェース要素の場合、その要素内で指を離すときに対応するイベントがトリガーされる。</li>
+               				
+               
+               <li>ドラッグ アンド ドロップのインタフェースは、利用者が、1 枚のカードをポインタで選択して (ダウンイベント) 縦に積み重ねられたカードを並べ替えたり、新しい位置に移動したり、ポインタを離したとき (アップイベント) に新しい位置に挿入したりできるようにする。ドロップできるターゲット領域の外側でポインタを離すと、アクションは反転し、つまり、インタラクションが開始される前の、元の位置にカードが戻る。</li>
+               			
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               				
+               <li>リソース</li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  						
+                  <li>HTML、iOS、及び Android において、アップイベントを用いてコントロールを動作させる</li>
+                  						
+                  <li><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/M029">M029(wiki) Touch events are only triggered when touch is removed from a control</a></li>		
+                  
+               </ul>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  <li><a href="http://w3c.github.io/Mobile-A11y-TF-Note/Techniques/FM001">FM001: 達成基準 2.5.3 の失敗例 － 最終的なタッチ位置ではなく最初のタッチ位置でボタンを動作させる</a></li>         
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-down-event">ダウンイベント (down-event)</dt>
+            <dd><definition xmlns="">
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ポインタのトリガが押された時に生じるプラットフォームイベント。</p>
+                  	        
+                  <p xmlns="http://www.w3.org/1999/xhtml">ダウンイベントは、プラットフォームによっては「タッチスタート」や「マウスダウン」などの異なる名称で呼ばれる場合がある。</p>
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-essential">必要不可欠 (essential)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">もし取り除いてしまうと、コンテンツの情報あるいは機能を根本的に変えてしまい、<strong>かつ</strong>、適合する他の方法では情報及び機能を実現できない。</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>及び結果。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-single-pointer">シングルポインタ (single pointer)</dt>
+            <dd><definition xmlns="">
+                  					
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  	
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">シングルタップやクリック、ダブルタップやクリック、長押し及びパスを基点としたジェスチャを含む、画面と 1 つの接点で動作するポインタ入力</p>
+                  				
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-up-event">アップイベント (up-event)</dt>
+            <dd><definition xmlns="">
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ポインタのトリガ刺激が解除されたときに生じるプラットフォームイベント。</p>
+                  	        
+                  <p xmlns="http://www.w3.org/1999/xhtml">アップイベントは、プラットフォームによっては「タッチエンド」や「マウスアップ」などの異なる名称で呼ばれている場合がある。</p>
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

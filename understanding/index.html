@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+
+   <head>
+
+      <meta charset="UTF-8" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+      <title>WCAG 2.1 解説書</title>
+
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+
+   </head>
+
+   <body>
+<div><p>【注意】 この文書は、W3C エディターズドラフト <a href="https://w3c.github.io/wcag/understanding/">Understanding WCAG 2.1</a> の 2019 年 3 月 6 日版を、<a href="https://waic.jp/">ウェブアクセシビリティ基盤委員会 (WAIC)</a> が翻訳して公開しているものです。この文書の正式版は、W3C のサイトにある英語版です。正確な内容については、W3C が公開している原文 (英語) をご確認ください。この翻訳文書はあくまで参考情報であり、翻訳上の誤りが含まれていることがあります。翻訳上の誤りを見つけられた場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIpvogLx8kGIMewhQ6MzhG2pOCQZ50iIBViGg8pUrRJuslKg/viewform?entry.685195438=https%3A%2F%2Fwaic.jp%2fdocs%2fWCAG21%2fUnderstanding%2f" id="file-issue">翻訳に関するコメント (Google フォーム)</a>からご連絡ください。</p>
+<p>【重要】 原文の Understanding WCAG 2.1 自体、ワーキンググループによって今後も継続的に修正されていくものと思われます。この文書の内容は古くなっていることがあります。あくまでも参考程度にご覧ください。</p></div>
+      <div class="head"><a href="https://www.w3.org/" class="logo"> <img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48" /> </a><h1 id="title" class="title p-name">WCAG 2.1 解説書</h1>
+
+         <h2>Updated 6 March 2019</h2>
+
+
+         <ul id="masthead">
+
+            <li><strong>Authors:</strong> <a href="https://www.w3.org/WAI/GL/">Accessibility Guidelines Working Group</a></li>
+
+            <li><strong>Editors:</strong> <a href="mailto:group-ag-chairs@w3.org">Alastair Campbell, Michael Cooper, Andrew Kirkpatrick</a></li>
+
+            <li><strong>Editors&#39; Draft:</strong> <a href="https://w3c.github.io/wcag/understanding/">https://w3c.github.io/wcag/understanding/</a></li>
+
+            <li><strong>Official Version:</strong> <a href="https://www.w3.org/WAI/WCAG21/Understanding/">https://www.w3.org/WAI/WCAG21/Understanding/</a></li>
+
+            <li><strong>File Issues</strong>: <a href="https://github.com/w3c/wcag/issues/">https://github.com/w3c/wcag/issues/</a></li>
+
+         </ul>
+
+
+         <p class="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2017-2018 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
+
+         <hr title="Separator for header" />
+
+      </div>
+
+      <section id="abstract">
+
+         <h2>概要</h2>
+
+         <p>WCAG 2.1 解説書は、<a href="https://waic.jp/docs/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a> [WCAG21] を理解して実践するための案内書である。WCAG 2.1 の関連文書群の中の一つだが、この文書のコンテンツはガイダンスを提供する参考情報であり、WCAG 2.1 に適合するための要件を定めた規定文書ではないことに留意されたい。WCAG やその関連技術文書、教育用素材などへのイントロダクションは、<a href="https://www.w3.org/WAI/intro/wcag.php">Web Content Accessibility Guidelines (WCAG) Overview</a> を参照のこと。</p>
+
+      </section>
+
+      <section id="sotd">
+
+         <h2>この文書のステータス</h2>
+
+         <p>これは「WCAG 2.1 解説書」の公式版であり、<a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines 2.1</a> から参照されている。このリソースは、ガイドラインを満たすためにガイドの解釈および達成方法の更新に応じてメンテナンスされる。</p>
+
+         <p>コメントするためには、<a href="https://github.com/w3c/wcag/issues/new"><abbr title="World Wide Web Consortium">W3C</abbr> WCAG GitHub リポジトリにイシューを提出していただきたい</a>。この文書で提案されている達成基準は課題管理での議論を参照しているが、ワーキンググループは、パブリックコメントを新しいイシューとして提出するよう要請する。GitHub アカウントを作成してイシューを提出することは自由である。GitHub でイシューの提出が実現できない場合、<a href="mailto:public-agwg-comments@w3.org?subject=WCAG%202.1%20public%20comment">public-agwg-comments@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-agwg-comments/">comment archive</a>) へ電子メールを送付していただきたい。</p>
+
+      </section>
+
+      <section class="informative introductory" id="intro">
+
+         <h2>イントロダクション</h2>
+
+         <p>WCAG 2.1 解説書は、<a href="https://www.w3.org/TR/WCAG21/">WCAG (Web Content Accessibility Guidelines) 2.1</a> [WCAG21] を理解して実践するために不可欠な案内書である。WCAG 2.1 の規定となる定義や要件はすべて WCAG 2.1 自体の文書で読むことができるが、その考え方や条項に馴染みのない方もいるかもしれない。WCAG 2.1 解説書は、読者の皆さんがその意図やどのようにガイドラインと達成基準が連携しているのかをよりよく理解できるように、各ガイドライン、及び、各達成基準について、WCAG 2.1 の規定にはならない詳細な解説を提供している。また、それぞれの達成基準を満たすのに十分であることをワーキンググループが確認した達成方法、及び、達成方法の組合せの事例も紹介している。そして、それぞれの達成方法の詳細にもリンクを提供している。</p>
+
+         <section>
+
+            <h3>WCAG 2.0 解説書との関係</h3>
+
+            <p><a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/Overview.html">WCAG 2.0 解説書</a> [UNDERSTANDING-WCAG20] は、 <a href="https://waic.jp/docs/WCAG20/">Web Content Accessibility Guidelines 2.0</a> [WCAG20] をサポートするための重要なリソースである。WCAG 2.1 解説書は、WCAG 2.1 の新しい達成基準をサポートする並列したリソースである。現時点では、WCAG 2.0 の新機能に関連するコンテンツのみが含まれている。将来のバージョンには、WCAG 2.1 がどのように進化し、最適なサポートを提供するためにどのような構造が決定されているかに応じて、WCAG 2.0 に関連するコンテンツが含まれる<em>可能性がある</em>。</p>
+
+            <p>WCAG 2.0 解説書とは異なり、この文書はテクニカルレポートとして発行されていない。この変更は文書の手続きを減らし、Accessibility Guidelines Working Group の内容を維持し構造を最適化する能力を高める。ワーキンググループは、内容が信頼できるものであると考えている。フィードバックが必要性を示している場合、将来その文書をテクニカルレポートとして発行することができる。</p>
+
+         </section>
+
+         <section>
+
+            <h3>WCAG 2.1 解説書の構造</h3>
+
+            <p> この文書は、入門書ではなく、ガイドラインとその達成基準に関する詳細な技術解説である。WCAG やその関連技術文書、教育用素材などへのイントロダクションは、<a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines (WCAG) Overview</a> を参照のこと。</p>
+
+            <p>WCAG 2.1 解説書は、ガイドラインごとに構成されている。各ガイドラインには、<em>ガイドライン X.X を理解する</em>という節がある。そのガイドラインの意図と、ガイドラインに関係あるが、そのガイドラインの達成基準のいずれにも特に関係のない参考達成方法も同様にそこに列挙されている。</p>
+
+            <p><em>ガイドライン X.X を理解する</em>という節の後には、そのガイドラインの達成基準ごとに、<em>達成基準 X.X.X を理解する</em>という節が続いている。これらの節にはそれぞれ以下の情報が提供されている:</p>
+
+            <ul>
+
+               <li><p>WCAG 2.1 に書かれている達成基準</p>
+
+               </li>
+
+               <li><p>その達成基準の意図</p>
+
+               </li>
+
+               <li><p>メリット (その達成基準が、どのように障害のある利用者の役に立つのか)</p>
+
+               </li>
+
+               <li><p>事例</p>
+
+               </li>
+
+               <li><p>関連リソース</p>
+
+               </li>
+
+               <li><p>その達成基準の十分な達成方法及び達成方法の組合せ</p>
+
+               </li>
+
+               <li><p>この達成基準の失敗例</p>
+
+               </li>
+
+               <li><p>その達成基準を満たすための要求を超えているが、一部のあるいはすべてのコンテンツをさらにアクセシブルにするために用いることのできる参考達成方法。参考達成方法を使用することで、宣言する適合レベルに影響を及ぼすことはない。</p>
+
+               </li>
+
+               <li><p>この達成基準における重要な用語 (WCAG 2.1 の用語集から引用)</p>
+
+               </li>
+
+            </ul>
+
+            <p>WCAG 2.1 文書の各ガイドラインからは、この文書の<em>ガイドライン X.Xを理解する</em>という節に直接リンクしている。同様に、WCAG 2.0 文書の各達成基準からも、この文書の<em>達成基準 X.X.Xを理解する</em>という節に直接リンクしている。</p>
+
+         </section>
+
+         <section>
+
+            <h3>WCAG 2.1 達成方法集</h3>
+
+            <p>WCAG 2.1 に特有の達成方法がWCAG 2.0 の達成方法に追加された、一式である。<a href="../techniques/#changelog">達成方法変更履歴</a>はWCAG 2.1 が発行されてから追加された新しい達成方法を記録する。</p>
+
+         </section>
+
+
+      </section>
+
+      		<nav xmlns="http://www.w3.org/1999/xhtml" id="toc">
+   <h2 class="introductory" id="understanding-pages">Understanding Pages</h2>
+   <ol class="toc">
+      <li class="tocline"><a href="intro.html" class="tocxref"><span class="secno"> </span>WCAG 2.0 解説書のイントロダクション</a></li>
+      <li class="tocline"><a href="understanding-techniques.html" class="tocxref"><span class="secno"> </span>WCAG 達成基準の達成方法を理解する</a></li>
+      <li class="tocline">知覚可能<ol class="toc">
+            <li class="tocline"><a href="text-alternatives.html" class="tocxref"><span class="secno">1.1</span> テキストによる代替</a><ol class="toc">
+                  <li class="tocline"><a href="non-text-content.html" class="tocxref"><span class="secno">1.1.1</span> 非テキストコンテンツ</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="time-based-media.html" class="tocxref"><span class="secno">1.2</span> 時間依存メディア</a><ol class="toc">
+                  <li class="tocline"><a href="audio-only-and-video-only-prerecorded.html" class="tocxref"><span class="secno">1.2.1</span> 音声のみ及び映像のみ (収録済)</a></li>
+                  <li class="tocline"><a href="captions-prerecorded.html" class="tocxref"><span class="secno">1.2.2</span> キャプション (収録済)</a></li>
+                  <li class="tocline"><a href="audio-description-or-media-alternative-prerecorded.html" class="tocxref"><span class="secno">1.2.3</span> 音声解説、又はメディアに対する代替 (収録済)</a></li>
+                  <li class="tocline"><a href="captions-live.html" class="tocxref"><span class="secno">1.2.4</span> キャプション (ライブ)</a></li>
+                  <li class="tocline"><a href="audio-description-prerecorded.html" class="tocxref"><span class="secno">1.2.5</span> 音声解説 (収録済)</a></li>
+                  <li class="tocline"><a href="sign-language-prerecorded.html" class="tocxref"><span class="secno">1.2.6</span> 手話 (収録済)</a></li>
+                  <li class="tocline"><a href="extended-audio-description-prerecorded.html" class="tocxref"><span class="secno">1.2.7</span> 拡張音声解説 (収録済)</a></li>
+                  <li class="tocline"><a href="media-alternative-prerecorded.html" class="tocxref"><span class="secno">1.2.8</span> メディアに対する代替 (収録済)</a></li>
+                  <li class="tocline"><a href="audio-only-live.html" class="tocxref"><span class="secno">1.2.9</span> 音声のみ (ライブ)</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="adaptable.html" class="tocxref"><span class="secno">1.3</span> 適応可能</a><ol class="toc">
+                  <li class="tocline"><a href="info-and-relationships.html" class="tocxref"><span class="secno">1.3.1</span> 情報及び関係性</a></li>
+                  <li class="tocline"><a href="meaningful-sequence.html" class="tocxref"><span class="secno">1.3.2</span> 意味のある順序</a></li>
+                  <li class="tocline"><a href="sensory-characteristics.html" class="tocxref"><span class="secno">1.3.3</span> 感覚的な特徴</a></li>
+                  <li class="tocline"><a href="orientation.html" class="tocxref"><span class="secno">1.3.4</span> 表示の向き</a></li>
+                  <li class="tocline"><a href="identify-input-purpose.html" class="tocxref"><span class="secno">1.3.5</span> 入力目的の特定</a></li>
+                  <li class="tocline"><a href="identify-purpose.html" class="tocxref"><span class="secno">1.3.6</span> 目的の特定</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="distinguishable.html" class="tocxref"><span class="secno">1.4</span> 判別可能</a><ol class="toc">
+                  <li class="tocline"><a href="use-of-color.html" class="tocxref"><span class="secno">1.4.1</span> 色の使用</a></li>
+                  <li class="tocline"><a href="audio-control.html" class="tocxref"><span class="secno">1.4.2</span> 音声の制御</a></li>
+                  <li class="tocline"><a href="contrast-minimum.html" class="tocxref"><span class="secno">1.4.3</span> コントラスト (最低限)</a></li>
+                  <li class="tocline"><a href="resize-text.html" class="tocxref"><span class="secno">1.4.4</span> テキストのサイズ変更</a></li>
+                  <li class="tocline"><a href="images-of-text.html" class="tocxref"><span class="secno">1.4.5</span> 文字画像</a></li>
+                  <li class="tocline"><a href="contrast-enhanced.html" class="tocxref"><span class="secno">1.4.6</span> コントラスト (高度)</a></li>
+                  <li class="tocline"><a href="low-or-no-background-audio.html" class="tocxref"><span class="secno">1.4.7</span> 小さな背景音、又は背景音なし</a></li>
+                  <li class="tocline"><a href="visual-presentation.html" class="tocxref"><span class="secno">1.4.8</span> 視覚的提示</a></li>
+                  <li class="tocline"><a href="images-of-text-no-exception.html" class="tocxref"><span class="secno">1.4.9</span> 文字画像 (例外なし)</a></li>
+                  <li class="tocline"><a href="reflow.html" class="tocxref"><span class="secno">1.4.10</span> リフロー</a></li>
+                  <li class="tocline"><a href="non-text-contrast.html" class="tocxref"><span class="secno">1.4.11</span> 非テキストのコントラスト</a></li>
+                  <li class="tocline"><a href="text-spacing.html" class="tocxref"><span class="secno">1.4.12</span> テキストの間隔</a></li>
+                  <li class="tocline"><a href="content-on-hover-or-focus.html" class="tocxref"><span class="secno">1.4.13</span> ホバー又はフォーカスで表示されるコンテンツ</a></li>
+               </ol>
+            </li>
+         </ol>
+      </li>
+      <li class="tocline">操作可能<ol class="toc">
+            <li class="tocline"><a href="keyboard-accessible.html" class="tocxref"><span class="secno">2.1</span> キーボード操作可能</a><ol class="toc">
+                  <li class="tocline"><a href="keyboard.html" class="tocxref"><span class="secno">2.1.1</span> キーボード</a></li>
+                  <li class="tocline"><a href="no-keyboard-trap.html" class="tocxref"><span class="secno">2.1.2</span> キーボードトラップなし</a></li>
+                  <li class="tocline"><a href="keyboard-no-exception.html" class="tocxref"><span class="secno">2.1.3</span> キーボード (例外なし)</a></li>
+                  <li class="tocline"><a href="character-key-shortcuts.html" class="tocxref"><span class="secno">2.1.4</span> 文字キーのショートカット</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="enough-time.html" class="tocxref"><span class="secno">2.2</span> 十分な時間</a><ol class="toc">
+                  <li class="tocline"><a href="timing-adjustable.html" class="tocxref"><span class="secno">2.2.1</span> タイミング調整可能</a></li>
+                  <li class="tocline"><a href="pause-stop-hide.html" class="tocxref"><span class="secno">2.2.2</span> 一時停止、停止、非表示</a></li>
+                  <li class="tocline"><a href="no-timing.html" class="tocxref"><span class="secno">2.2.3</span> タイミング非依存</a></li>
+                  <li class="tocline"><a href="interruptions.html" class="tocxref"><span class="secno">2.2.4</span> 割り込み</a></li>
+                  <li class="tocline"><a href="re-authenticating.html" class="tocxref"><span class="secno">2.2.5</span> 再認証</a></li>
+                  <li class="tocline"><a href="timeouts.html" class="tocxref"><span class="secno">2.2.6</span> タイムアウト</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="seizures-and-physical-reactions.html" class="tocxref"><span class="secno">2.3</span> 発作と身体的反応</a><ol class="toc">
+                  <li class="tocline"><a href="three-flashes-or-below-threshold.html" class="tocxref"><span class="secno">2.3.1</span> 3 回の閃光、又は閾値以下</a></li>
+                  <li class="tocline"><a href="three-flashes.html" class="tocxref"><span class="secno">2.3.2</span> 3 回の閃光</a></li>
+                  <li class="tocline"><a href="animation-from-interactions.html" class="tocxref"><span class="secno">2.3.3</span> インタラクションによるアニメーション</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="navigable.html" class="tocxref"><span class="secno">2.4</span> ナビゲーション可能</a><ol class="toc">
+                  <li class="tocline"><a href="bypass-blocks.html" class="tocxref"><span class="secno">2.4.1</span> ブロックスキップ</a></li>
+                  <li class="tocline"><a href="page-titled.html" class="tocxref"><span class="secno">2.4.2</span> ページタイトル</a></li>
+                  <li class="tocline"><a href="focus-order.html" class="tocxref"><span class="secno">2.4.3</span> フォーカス順序</a></li>
+                  <li class="tocline"><a href="link-purpose-in-context.html" class="tocxref"><span class="secno">2.4.4</span> リンクの目的 (コンテキスト内)</a></li>
+                  <li class="tocline"><a href="multiple-ways.html" class="tocxref"><span class="secno">2.4.5</span> 複数の手段</a></li>
+                  <li class="tocline"><a href="headings-and-labels.html" class="tocxref"><span class="secno">2.4.6</span> 見出し及びラベル</a></li>
+                  <li class="tocline"><a href="focus-visible.html" class="tocxref"><span class="secno">2.4.7</span> フォーカスの可視化</a></li>
+                  <li class="tocline"><a href="location.html" class="tocxref"><span class="secno">2.4.8</span> 現在位置</a></li>
+                  <li class="tocline"><a href="link-purpose-link-only.html" class="tocxref"><span class="secno">2.4.9</span> リンクの目的 (リンクのみ)</a></li>
+                  <li class="tocline"><a href="section-headings.html" class="tocxref"><span class="secno">2.4.10</span> セクション見出し</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="input-modalities.html" class="tocxref"><span class="secno">2.5</span> 入力モダリティ</a><ol class="toc">
+                  <li class="tocline"><a href="pointer-gestures.html" class="tocxref"><span class="secno">2.5.1</span> ポインタのジェスチャ</a></li>
+                  <li class="tocline"><a href="pointer-cancellation.html" class="tocxref"><span class="secno">2.5.2</span> ポインタのキャンセル</a></li>
+                  <li class="tocline"><a href="label-in-name.html" class="tocxref"><span class="secno">2.5.3</span> 名前 (name) のラベル</a></li>
+                  <li class="tocline"><a href="motion-actuation.html" class="tocxref"><span class="secno">2.5.4</span> 動きによる起動</a></li>
+                  <li class="tocline"><a href="target-size.html" class="tocxref"><span class="secno">2.5.5</span> ターゲットのサイズ</a></li>
+                  <li class="tocline"><a href="concurrent-input-mechanisms.html" class="tocxref"><span class="secno">2.5.6</span> 入力メカニズム非依存</a></li>
+               </ol>
+            </li>
+         </ol>
+      </li>
+      <li class="tocline">理解可能<ol class="toc">
+            <li class="tocline"><a href="readable.html" class="tocxref"><span class="secno">3.1</span> 読みやすさ</a><ol class="toc">
+                  <li class="tocline"><a href="language-of-page.html" class="tocxref"><span class="secno">3.1.1</span> ページの言語</a></li>
+                  <li class="tocline"><a href="language-of-parts.html" class="tocxref"><span class="secno">3.1.2</span> 一部分の言語</a></li>
+                  <li class="tocline"><a href="unusual-words.html" class="tocxref"><span class="secno">3.1.3</span> 一般的ではない用語</a></li>
+                  <li class="tocline"><a href="abbreviations.html" class="tocxref"><span class="secno">3.1.4</span> 略語</a></li>
+                  <li class="tocline"><a href="reading-level.html" class="tocxref"><span class="secno">3.1.5</span> 読解レベル</a></li>
+                  <li class="tocline"><a href="pronunciation.html" class="tocxref"><span class="secno">3.1.6</span> 発音</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="predictable.html" class="tocxref"><span class="secno">3.2</span> 予測可能</a><ol class="toc">
+                  <li class="tocline"><a href="on-focus.html" class="tocxref"><span class="secno">3.2.1</span> フォーカス時</a></li>
+                  <li class="tocline"><a href="on-input.html" class="tocxref"><span class="secno">3.2.2</span> 入力時</a></li>
+                  <li class="tocline"><a href="consistent-navigation.html" class="tocxref"><span class="secno">3.2.3</span> 一貫したナビゲーション</a></li>
+                  <li class="tocline"><a href="consistent-identification.html" class="tocxref"><span class="secno">3.2.4</span> 一貫した識別性</a></li>
+                  <li class="tocline"><a href="change-on-request.html" class="tocxref"><span class="secno">3.2.5</span> 要求による変化</a></li>
+               </ol>
+            </li>
+            <li class="tocline"><a href="input-assistance.html" class="tocxref"><span class="secno">3.3</span> 入力支援</a><ol class="toc">
+                  <li class="tocline"><a href="error-identification.html" class="tocxref"><span class="secno">3.3.1</span> エラーの特定</a></li>
+                  <li class="tocline"><a href="labels-or-instructions.html" class="tocxref"><span class="secno">3.3.2</span> ラベル又は説明</a></li>
+                  <li class="tocline"><a href="error-suggestion.html" class="tocxref"><span class="secno">3.3.3</span> エラー修正の提案</a></li>
+                  <li class="tocline"><a href="error-prevention-legal-financial-data.html" class="tocxref"><span class="secno">3.3.4</span> エラー回避 (法的、金融、データ)</a></li>
+                  <li class="tocline"><a href="help.html" class="tocxref"><span class="secno">3.3.5</span> ヘルプ</a></li>
+                  <li class="tocline"><a href="error-prevention-all.html" class="tocxref"><span class="secno">3.3.6</span> エラー回避 (すべて)</a></li>
+               </ol>
+            </li>
+         </ol>
+      </li>
+      <li class="tocline">堅牢 (robust)<ol class="toc">
+            <li class="tocline"><a href="compatible.html" class="tocxref"><span class="secno">4.1</span> 互換性</a><ol class="toc">
+                  <li class="tocline"><a href="parsing.html" class="tocxref"><span class="secno">4.1.1</span> 構文解析</a></li>
+                  <li class="tocline"><a href="name-role-value.html" class="tocxref"><span class="secno">4.1.2</span> 名前 (name) ・役割 (role) 及び値 (value)</a></li>
+                  <li class="tocline"><a href="status-messages.html" class="tocxref"><span class="secno">4.1.3</span> ステータスメッセージ</a></li>
+               </ol>
+            </li>
+         </ol>
+      </li>
+      <li class="tocline"><a href="conformance.html" class="tocxref"><span class="secno"> </span>適合を理解する</a></li>
+      <li class="tocline"><a href="refer-to-wcag.html" class="tocxref"><span class="secno"> </span>他の文書からの WCAG 2.0 の参照方法</a></li>
+      <li class="tocline"><a href="documenting-accessibility-support.html" class="tocxref"><span class="secno"> </span>ウェブコンテンツ技術の使用法のアクセシビリティサポートを文書化する</a></li>
+      <li class="tocline"><a href="understanding-metadata.html" class="tocxref"><span class="secno"> </span>メタデータを理解する</a></li>
+   </ol>
+</nav>
+
+
+      <section id="changelog">
+
+         <h2>解説書変更履歴</h2>
+
+         <p>WCAG 2.1 が発行されて以降に大幅に更新された解説書の文書一覧:</p>
+
+         <ol>
+
+            <li><time datetime="2019-01-17">2019 年 1 月 18 日</time>: <a href="https://github.com/w3c/wcag/pull/550">Pull request 550</a> からの変更に基づき、<a href="non-text-contrast.html">非テキストのコントラスト</a>を更新。</li>
+
+         </ol>
+
+         <p>参考文書に対する最近の変更の詳細については、<a href="https://github.com/w3c/wcag/commits/master">github の更新</a>を参照のこと。</p>
+
+      </section>
+
+      		<section class="appendix" id="acknowledgments">
+    <h1>謝辞</h1>
+    <p>Accessibility Guidelines Working Group (AG WG) への参加に関する詳細な情報は、<a href="https://www.w3.org/WAI/GL/">ワーキンググループのホームページ</a>を参照。</p>
+
+    <section id="ack_participants-active">
+        <h2>この文書の作成時にアクティブだった AG WG 参加者:</h2>
+        <ul>
+          	<li>Jake Abma (Invited Expert)</li>
+            <li>Shadi Abou-Zahra (W3C)</li>
+        	<li>Chuck Adams (Oracle Corporation)</li>
+        	<li>Amani Ali (Nomensa)</li>
+            <li>Jim Allan (Invited Expert)</li>
+            <li>Paul Adam (Deque Systems, Inc.)</li>
+        	<li>Christopher Auclair (VitalSource | Ingram Content Group)</li>
+            <li>Jon Avila (Level Access)</li>
+            <li>Tom Babinszki (IBM Corporation)</li>
+            <li>Bruce Bailey (U.S. Access Board)</li>
+            <li>Renaldo Bernard (University of Southampton)</li>
+        	<li>Chris Blouch (Level Access)</li>
+        	<li>Denis Boudreau (Deque Systems, Inc.)</li>
+            <li>Judy Brewer (W3C)</li>
+            <li>Shari Butler (Pearson plc)</li>
+            <li>Thaddeus Cambron (Invited Expert)</li>
+            <li>Alastair Campbell (Nomensa)</li>
+            <li>Laura Carlson (Invited Expert)</li>
+            <li>Louis Cheng (Google)</li>
+            <li>Pietro Cirrincione (Invited Expert)</li>
+            <li>Vivienne Conway (Web Key IT Pty Ltd)</li>
+            <li>Michael Cooper (W3C)</li>
+            <li>Romain Deltour (DAISY Consortium)</li>
+            <li>Wayne Dick (Knowbility, Inc)</li>
+            <li>Chaohai Ding (University of Southampton)</li>
+            <li>Kim Dirks (Thompson Reuters)</li>
+            <li>Shwetank Dixit (BarrierBreak Technologies)</li>
+            <li>Anthony Doran (TextHelp)</li>
+            <li>E.A. Draffan (University of Southampton)</li>
+            <li>Eric Eggert (W3C)</li>
+            <li>Michael Elledge (Invited Expert)</li>
+            <li>Wilco Fiers (Deque Systems, Inc.)</li>
+            <li>Detlev Fischer (Invited Expert)</li>
+            <li>John Foliot (Deque Systems, Inc.)</li>
+            <li>Matt Garrish (DAISY Consortium)</li>
+            <li>Alistair Garrison (Level Access)</li>
+            <li>Michael Gower (IBM Corporation)</li>
+            <li>Jon Gunderson</li>
+            <li>Markku Hakkinen (Educational Testing Service)</li>
+            <li>Katie Haritos-Shea (Knowbility, Inc)</li>
+           	<li>Andy Heath (Invited Expert)</li>
+            <li>Shawn Henry (W3C)</li>
+            <li>Thomas Hoffman (Educational Testing Service)</li>
+            <li>Sarah Horton (The Paciello Group, LLC)</li>
+            <li>Stefan Johansson (Invited Expert)</li>
+            <li>Marc Johlic (IBM Corporation)</li>
+            <li>Rick Johnson (VitalSource | Ingram Content Group)</li>
+          	<li>Crystal Jones (Microsoft Corporation)</li>
+            <li>Andrew Kirkpatrick (Adobe)</li>
+            <li>John Kirkwood (Invited Expert)</li>
+            <li>Jason Kiss (Department of Internal Affairs, New Zealand Government)</li>
+            <li>Maureen Kraft (IBM Corporation)</li>
+            <li>JaEun Ku (University of Illinois at Urbana-Champaign)</li>
+            <li>Patrick Lauke (The Paciello Group, LLC)</li>
+            <li>Shawn Lauriat (Google, Inc.)</li>
+            <li>Steve Lee (Invited Expert)</li>
+          	<li>Alex Li (Microsoft Corporation)</li>
+          	<li>Chris Loiselle (Invited Expert)</li>
+            <li>Greg Lowney (Invited Expert)</li>
+            <li>Adam Lund (Thomson Reuters)</li>
+            <li>David MacDonald (Invited Expert)</li>
+            <li>Erich Manser (IBM Corporation)</li>
+        	<li>Kurt Mattes (Deque Systems, Inc.)</li>
+            <li>Scott McCormack (Level Access)</li>
+            <li>Chris McMeeking (Deque Systems, Inc.)</li>
+            <li>Jan McSorley (Pearson plc)</li>
+            <li>Neil Milliken (Unify Software and Solutions)</li>
+            <li>Rachael Montgomery (MITRE Corporation)</li>
+            <li>Mary Jo Mueller (IBM Corporation)</li>
+          	<li>Brooks Newton (Thomson Reuters)</li>
+            <li>James Nurthen (Oracle Corporation)</li>
+            <li>Joshue O Connor (Invited Expert)</li>
+            <li>Sailesh Panchang (Deque Systems, Inc.)</li>
+            <li>Charu Pandhi (IBM Corporation)</li>
+            <li>Kim Patch (Invited Expert)</li>
+        	<li>Melanie Philipp (Deque Systems, Inc.)</li>
+            <li>Mike Pluke (Invited Expert)</li>
+            <li>Ian Pouncey (The Paciello Group, LLC)</li>
+          	<li>Ruoxi Ran (W3C)</li>
+            <li>Stephen Repsher (The Boeing Company)</li>
+            <li>Jan Richards (Invited Expert)</li>
+            <li>John Rochford (Invited Expert)</li>
+            <li>Marla Runyan (Invited Expert)</li>
+        	<li>Stefan Schnabel (SAP SE)</li>
+            <li>Ayelet Seeman (Invited Expert)</li>
+            <li>Lisa Seeman-Kestenbaum (Invited Expert)</li>
+            <li>Glenda Sims (Deque Systems, Inc.)</li>
+          	<li>Avneesh Singh (DAISY Consortium)</li>
+            <li>David Sloan (The Paciello Group, LLC)</li>
+            <li>Alan Smith (Invited Expert)</li>
+            <li>Jim Smith (Unify Software and Solutions)</li>
+            <li>Adam Solomon (Invited Expert)</li>
+            <li>Jaeil Song (National Information Society Agency (NIA))</li>
+            <li>Jeanne Spellman (The Paciello Group, LLC)</li>
+            <li>Makoto Ueki (Invited Expert)</li>
+        	<li>Jatin Vaishnav (Deque Systems, Inc.)</li>
+            <li>Gregg Vanderheiden (Raising the Floor)</li>
+            <li>Evangelos Vlachogiannis (Fraunhofer Gesellschaft)</li>
+            <li>Kathleen Wahlbin (Invited Expert)</li>
+            <li>Can Wang (Zhejiang University)</li>
+            <li>Léonie Watson (The Paciello Group, LLC)</li>
+            <li>Jason White (Educational Testing Service)</li>
+        	<li>Mark Wilcock (Unify Software and Solutions)</li>
+        </ul>
+    </section>
+
+    <section id="ack_participants-previous">
+        <h2>以前に活動していた他の WCAG WG 参加者及び WCAG 2.0、WCAG 2.1、又は関連文書への他の貢献者</h2>
+    	<p>Paul Adam, Jenae Andershonis, Wilhelm Joys Andersen, Andrew Arch, Avi Arditti, Aries Arditi, Mark Barratt, Mike Barta, Sandy Bartell, Kynn Bartlett, Chris Beer, Charles Belov, Marco Bertoni, Harvey Bingham, Chris Blouch, Paul Bohman, Frederick Boland, Denis Boudreau, Patrice Bourlon, Andy Brown, Dick Brown, Doyle Burnett, Raven Calais, Ben Caldwell, Tomas Caspers, Roberto Castaldo, Sofia Celic-Li, Sambhavi Chandrashekar, Mike Cherim, Jonathan Chetwynd, Wendy Chisholm, Alan Chuter, David M Clark, Joe Clark, Darcy Clarke, James Coltham, Earl Cousins, James Craig, Tom Croucher, Pierce Crowell, Nir Dagan, Daniel Dardailler, Geoff Deering, Sébastien Delorme, Pete DeVasto, Iyad Abu Doush, Sylvie Duchateau, Cherie Eckholm, Roberto Ellero, Don Evans, Gavin Evans, Neal Ewers, Steve Faulkner, Bengt Farre, Lainey Feingold, Wilco Fiers, Michel Fitos, Alan J. Flavell, Nikolaos Floratos, Kentarou Fukuda, Miguel Garcia, P.J. Gardner, Alistair Garrison, Greg Gay, Becky Gibson, Al Gilman, Kerstin Goldsmith, Michael Grade, Karl Groves, Loretta Guarino Reid, Jon Gunderson, Emmanuelle Gutiérrez y Restrepo, Brian Hardy, Eric Hansen, Benjamin Hawkes-Lewis, Sean Hayes, Shawn Henry, Hans Hillen, Donovan Hipke, Bjoern Hoehrmann, Allen Hoffman, Chris Hofstader, Yvette Hoitink, Martijn Houtepen, Carlos Iglesias, Richard Ishida, Jonas Jacek, Ian Jacobs, Phill Jenkins, Barry Johnson, Duff Johnson, Jyotsna Kaki, Shilpi Kapoor, Leonard R. Kasday, Kazuhito Kidachi, Ken Kipness, Johannes Koch, Marja-Riitta Koivunen, Preety Kumar, Kristjan Kure, Andrew LaHart, Gez Lemon, Chuck Letourneau, Aurélien Levy, Harry Loots, Scott Luebking, Tim Lacy, Jim Ley, Alex Li, William Loughborough, N Maffeo, Mark Magennis, Kapsi Maria, Luca Mascaro, Matt May, Sheena McCullagh, Liam McGee, Jens Oliver Meiert, Niqui Merret, Jonathan Metz, Alessandro Miele, Steven Miller, Mathew J Mirabella, Matt May, Marti McCuller, Sorcha Moore, Charles F. Munat, Robert Neff, Charles Nevile, Liddy Nevile, Dylan Nicholson, Bruno von Niman, Tim Noonan, Sebastiano Nutarelli, Graham Oliver, Sean B. Palmer, Devarshi Pant, Nigel Peck, Anne Pemberton, David Poehlman, Ian Pouncey, Charles Pritchard, Kerstin Probiesch, W Reagan, Adam Victor Reed, Chris Reeve, Chris Ridpath, Lee Roberts, Mark Rogers, Raph de Rooij, Gregory J. Rosmaita, Matthew Ross, Sharron Rush, Joel Sanda, Janina Sajka, Roberto Scano, Gordon Schantz, Tim van Schie, Wolf Schmidt, Stefan Schnabel, Cynthia Shelly, Glenda Sims, John Slatin, Becky Smith, Jared Smith, Andi Snow-Weaver, Neil Soiffer, Mike Squillace, Michael Stenitzer, Diane Stottlemyer, Christophe Strobbe, Sarah J Swierenga, Jim Thatcher, Terry Thompson, Justin Thorp, David Todd, Mary Utt, Jean Vanderdonckt, Carlos A Velasco, Eric Velleman, Gijs Veyfeyken, Dena Wainwright, Paul Walsch, Daman Wandke, Richard Warren, Elle Waters, Takayuki Watanabe, Gian Wild, David Wooley, Wu Wei, Kenny Zhang, Leona Zumbo.</p>
+    </section>
+
+    <section>
+        <h2>有効な資金提供者</h2>
+        <p> この出版物は、当初は契約番号 ED-OSE-10-C-0067 のもとで、現在は契約番号 HHSP23301500054C のもとで米国保健福祉省・障害者自立生活リハビリテーション研究所 (NIDILRR) の政府資金によって一部賄われている。この出版物の内容は、必ずしも米国保健福祉省又は米国教育省の見解や政策を反映するものではなく、また商品名、商用製品、組織の言及は米国政府による支持を意味するものではない。</p>
+    </section>
+</section>
+
+
+   </body>
+
+</html>

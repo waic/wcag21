@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ガイドライン 2.4: ナビゲーション可能を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="seizures-and-physical-reactions.html">Previous <abbr title="Guideline">GL</abbr>: 発作と身体的反応</a></li>
+            <li><a href="bypass-blocks.html">First <abbr title="Success Criterion">SC</abbr>: ブロックスキップ</a></li>
+            <li><a href="input-modalities.html">Next <abbr title="Guideline">GL</abbr>: 入力モダリティ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#advisory">参考達成方法</a></li>
+            <li><a href="#success-criteria">達成基準</a></li>
+         </ul>
+      </nav>
+      <h1>ガイドライン 2.4: ナビゲーション可能を理解する</h1>
+      <blockquote class="scquote">
+         <p>ガイドライン <a href="https://waic.jp/docs/WCAG21/#navigable" style="font-weight: bold;">2.4 ナビゲーション可能</a>: 利用者がナビゲートしたり、コンテンツを探し出したり、現在位置を確認したりすることを手助けする手段を提供すること。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>このガイドラインの目的は、利用者が必要とするコンテンツを見つけるのを助け、自分の現在位置を把握できるようにすることである。このタスクは、多くの場合障害のある人にとってはより困難である。検索、ナビゲーション及び位置確認のために、利用者が現在位置を知ることができることが重要である。ナビゲーションのために、考えられる行き先に関する情報が利用可能になっている必要がある。スクリーンリーダーは、コンテンツを合成音声に変換する。合成音声は音声であるため、線形順序で提示されなければならない。このガイドラインの達成基準では、スクリーンリーダーの利用者がコンテンツをうまくナビゲートできるようにするために、どの条項に対応する必要があるのかを説明しているものがある。他のものは、利用者がナビゲーションバー及びページの見出しをより容易に認識できるようにし、この繰り返されるコンテンツをスキップできるようにする。見慣れないユーザインタフェースの機能又はふるまいは、認知障害のある人を混乱させることがある。</p>
+            <p><a href="http://www.motive.co.nz/glossary/navigation.php">Motive Web Design Glossary</a> で説明されているように、ナビゲーションには、主に二つの機能がある:</p>
+            <ul>
+               
+               
+               <li>利用者に自分がどこにいるのかを知らせる</li>
+               
+               
+               <li>利用者が他のどこかへ行けるようにする【訳注: 上記リンク Motive Web Design Glossary は 404 Not Found であるが、これは原文ママである。Internet Archive での該当ページを閲覧できる。】</li>
+               
+               
+            </ul>
+            <p>このガイドラインは、<a href="adaptable.html" class="guideline">ガイドライン 1.3</a> と密接に連動しており、コンテンツのあらゆる構造を理解することを保証し、同様にナビゲーションの鍵となる。見出しは、利用者がコンテンツ内での自分の現在位置を確認して、ナビゲートしていく上で、特に重要なメカニズムである。支援技術の利用者の多くは、情報を流し読みするために適切な見出しを頼りにし、コンテンツの様々なセクションを容易に見つける。見出しに関して、<a href="info-and-relationships.html" class="guideline">達成基準 1.3.1</a> に適合することは、同時にガイドライン 2.4 にも部分的に対処していることになる。</p>
+         </section>
+         <section id="advisory">
+            <h2>参考達成方法</h2>
+            <p>このガイドラインにある各達成基準を満たすための達成方法は、この後に達成基準ごとに挙げられている。しかし、このガイドラインに対処するための達成方法がどの達成基準にも該当しない場合は、ここで挙げている。そういった達成方法は、どの達成基準を満たす上でも必須ではないし、十分でもないが、ウェブコンテンツの種類によってはより多くの利用者にとってよりアクセシブルにすることができるものである。</p>
+         </section>
+         <section id="success-criteria">
+            <h2>このガイドラインの達成基準</h2>
+            <ul>
+               <li><a href="bypass-blocks.html">2.4.1 ブロックスキップ</a></li>
+               <li><a href="page-titled.html">2.4.2 ページタイトル</a></li>
+               <li><a href="focus-order.html">2.4.3 フォーカス順序</a></li>
+               <li><a href="link-purpose-in-context.html">2.4.4 リンクの目的 (コンテキスト内)</a></li>
+               <li><a href="multiple-ways.html">2.4.5 複数の手段</a></li>
+               <li><a href="headings-and-labels.html">2.4.6 見出し及びラベル</a></li>
+               <li><a href="focus-visible.html">2.4.7 フォーカスの可視化</a></li>
+               <li><a href="location.html">2.4.8 現在位置</a></li>
+               <li><a href="link-purpose-link-only.html">2.4.9 リンクの目的 (リンクのみ)</a></li>
+               <li><a href="section-headings.html">2.4.10 セクション見出し</a></li>
+            </ul>
+         </section>
+      </main>
+   </body>
+</html>

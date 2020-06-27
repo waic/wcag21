@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.7: フォーカスの可視化を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="headings-and-labels.html">Previous <abbr title="Success Criterion">SC</abbr>: 見出し及びラベル</a></li>
+            <li><a href="location.html">Next <abbr title="Success Criterion">SC</abbr>: 現在位置</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.7: フォーカスの可視化を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#focus-visible" style="font-weight: bold;">2.4.7  フォーカスの可視化</a> (レベル AA): キーボード操作が可能なあらゆるユーザインタフェースには、フォーカスインジケータが見える操作モードがある。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、キーボード フォーカスを持っている要素を利用者が認識しやすくすることである。</p>
+            <p>この達成基準の意図は、複数の要素のうち、どの要素がキーボード フォーカスを持っているか利用者が認識しやすくすることである。スクリーン上にキーボード操作可能な要素が一つだけある場合には、視覚的にはキーボード操作可能な要素を一つだけ提示するため、達成基準が満たされることになる。</p>
+            <p>注記: キーボードのフォーカスインジケータは異なる形態をとることができる点に注意すべきである。一般的な方法の一つとして、テキストフィールドがキーボード フォーカスを持っていることを示すための、テキストフィールド内のキャレット表示がある。別の方法としては、ボタンがキーボード フォーカスを持っていることを示すために、ボタンを視覚的に変化させるといった方法がある。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、キーボード操作でインタラクションするコンポーネントをいずれかの時点で視覚的に判断できるようにすることで、ページの操作をキーボードに頼っているすべての人に役立つ。</li>
+               
+               
+               <li>注意力欠如、短期記憶の制約、又は遂行機能における制限のある利用者が、フォーカスがどこにあるのかを見つけることができるようになる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>テキストフィールドがフォーカスを受け取ると、縦の棒がテキストフィールド内に表示されて、利用者がテキストを挿入入力できることを示す、又は、すべてのテキストがハイライト表示され、利用者がそのテキストを上書きできることを示す。</li>
+               
+               
+               <li>ユーザインタフェースのコントロールがフォーカスを受け取ると、その周りに視覚的に認識できる枠線が表示される。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.456bereastreet.com/archive/200701/styling_form_controls_with_css_revisited/">Styling form controls with CSS, revisited</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G149">G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する</a></li>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C15">C15: ユーザインタフェースコンポーネントがフォーカスを受けとったときの提示を変更するために、CSS を使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G165">G165: 視認性の高いデフォルトのフォーカスインジケータが引き継がれるように、プラットフォームデフォルトのフォーカスインジケータを使用する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G195">G195: コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</a></li>
+                  
+                  
+                  <li>@@@ Using a change of contrast ratio to provide a visible focus indicator</li>
+                  
+                  
+                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR31">SCR31: フォーカスのある要素の背景色又はボーダーを変更するために、スクリプトを使用する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH20">FLASH20: 非常に目立つフォーカス表示を提供するために Flash コンポーネントのスキンを切り替える</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL2">SL2: Changing The Visual Focus Indicator in Silverlight</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL7">SL7: Designing a Focused Visual State for Custom Silverlight Controls</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F55">F55: 達成基準 2.1.1、達成基準 2.4.7 及び 達成基準 3.2.1 の失敗例 － フォーカスを受け取ったときに、フォーカスを取り除くために、スクリプトを使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F78">F78: 達成基準 2.4.7 の失敗例 － 視覚的なフォーカスインジケータを除去する又は不可視にするような方法で、要素のアウトライン及びボーダーをスタイル指定する</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 3.2.5: 要求による変化を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="predictable.html"><abbr title="Guideline">GL</abbr>: 予測可能</a></li>
+            <li><a href="consistent-identification.html">Previous <abbr title="Success Criterion">SC</abbr>: 一貫した識別性</a></li>
+            <li><a href="error-identification.html">Next <abbr title="Success Criterion">SC</abbr>: エラーの特定</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 3.2.5: 要求による変化を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#change-on-request" style="font-weight: bold;">3.2.5 要求による変化:</a> (レベル AAA): <a href="https://waic.jp/docs/WCAG21/#dfn-changes-of-context" target="terms">コンテキストの変化</a>は利用者の要求によってだけ生じるか、又は、そのような変化を止める<a href="https://waic.jp/docs/WCAG21/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、コンテキストの変化を利用者が完全に制御できるようなウェブコンテンツの設計を推奨することである。この達成基準は、自動的に開く新しいウィンドウ、リストから項目を選択すると自動的に送信されるフォームなどのように、予期しないコンテキストの変化によって混乱が引き起こされる可能性を取り除くことを狙いとしている。そのような予期しないコンテキストの変化により、運動障害のある人、ロービジョンの人、全盲の人、及び特定の認知能力の低下している人には困難が生じてしまう恐れがあるからである。</p>
+            <p>コンテキストの変化の中には、利用者を混乱させず、むしろ利用者に前向きな利益をもたらす種類のものもある。例えば、単一のスイッチの利用者は、システムによってアニメートされるコンテキストの変化に依存しているし、ロービジョンの利用者の好みは、一度にどれくらいのコンテンツを見ることができるか、どれくらいのセッション構造が作業記憶に残るかに依存している。スライドショーなどの、一部の種類のコンテンツは、意図したユーザエクスペリエンスを提供するために、コンテキストの変化を必要とする。利用者の設定が許可されている場合にのみ、自動的にコンテキストの変化を開始するコンテンツは、この達成基準に適合することができる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>複数のコンテキストの変化を同時に引き起こすことが可能である。例えば、自動的に新規ウィンドウが開くリンクをクリックするのは、コンテンツの変化に関連するコンテキストの変化であり、表示域（ウィンドウ）の変化に関連するコンテキストの変化でもある、２つに分かれた変化の一例である。この場合のコンテンツの変化は、利用者がリンクをクリックした時、彼らの要求によって開始されるが、新規ウィンドウが開くことに利用者が気づかない限り、コンテキストの変化は利用者が開始したとはみなせない。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li><p>コンテキストの変化を見つけることができない、又は状況が変化したことに気づかない利用者が、サイトをナビゲートしている間に混乱した状態になりにくい。例えば:</p>
+                  
+                  
+                  <ul>
+                     
+                     
+                     <li>全盲の利用者、又はロービジョンの利用者は、新しいウィンドウがポップアップで開くなどのように、視覚的なコンテキストの変化がいつ起こるのかを把握するのが困難なことがある。この場合、前もって利用者にコンテキストの変化が起こることを知らせておくと、利用者が「戻る」ボタンがいつものように動作しないことに気づいたときの混乱を最小限に抑えることができる。</li>
+                     
+                     
+                  </ul>
+                  
+                  
+               </li>
+               
+               
+               <li>ロービジョンの利用者、読字及び知的障害のある利用者、そして視覚的な手がかりを解釈しづらい利用者は、コンテンツ制作者が手がかりを追加することによって、コンテキストの変化に気づくようになる。</li>
+               
+               
+               <li>ブラウザの代わりにウェブサーバーによって自動的なリダイレクトが実行されると、特定の<strong>認知制限</strong>を持つ人が混乱しないですむ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>「今、更新する」ボタン</strong></p>
+                  
+                  
+                  <p>コンテンツを自動的に更新するかわりに、コンテンツ制作者は、コンテンツの更新を要求する「今、更新する」ボタンを提供している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>自動リダイレクト</strong></p>
+                  
+                  
+                  <p>利用者は、リダイレクトが起こったことに絶対気づかない方法で、古いページから新しいページへ自動的にリダイレクトされる。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="https://www.w3.org/QA/Tips/reback">Use standard redirects: don&#39;t break the back button!</a> (W3C QA Tip).</li>
+               
+               
+               <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3">HTTP/1.1 Status Code Definitions: Redirection 3xx</a>. 【訳注: 上記の HTTP/1.1 は RFC 2616 を参照しているが、現在の HTTP ステータスコードは RFC 7231 で更新、定義されている。RFC 7231§6.4.Redirection 3xx も参照のこと。】</li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="change-on-request-situation-0">
+                  
+                  
+                  <h4>状況 A: ウェブページが自動更新を行う場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G76">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="change-on-request-situation-1">
+                  
+                  
+                  <h4>状況 B: 自動リダイレクトが可能な場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="server" href="https://w3c.github.io/wcag/techniques/server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバサイドで自動リダイレクトを実装する</a></li>
+                     
+                     
+                     <li><p>以下のいずれかの方法を用いて <a class="general" href="https://w3c.github.io/wcag/techniques/general/G110">G110: クライアントサイドの瞬間的なリダイレクトを使用する</a>:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="change-on-request-situation-2">
+                  
+                  
+                  <h4>状況 C: ウェブページがポップアップウィンドウを用いる場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><p>次の達成方法の一つを用いてポップアップウィンドウを表示する:</p>
+                        
+                        
+                        <ul>
+                           
+                           
+                           <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H83">H83: 利用者の要求に応じて新しいウィンドウを開くために target 属性を使用して、そのことをリンクテキストで明示する</a></li>
+                           
+                           
+                           <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR24">SCR24: 利用者の要求に応じて新しいウィンドウを開くために、プログレッシブエンハンスメントを使用する</a></li>
+                           
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="change-on-request-situation-3">
+                  
+                  
+                  <h4>状況 D: select 要素上で onchange イベントを用いる場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR19">SCR19: select 要素の onchange イベントは、コンテキストの変化を引き起こすことのないように使用する</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G200">G200: 必要なときにのみリンク先を新しいウィンドウ及びタブで開く</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F60">F60: 達成基準 3.2.5 の失敗例 － 利用者が入力フィールドにテキストを入力したときに新しいウィンドウを開く</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F61">F61: 達成基準 3.2.5 の失敗例 － 利用者がコンテンツの中から無効にできない自動的な更新によってメインコンテンツの変更を完了する</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F9">F9: 達成基準 3.2.5 の失敗例 － 利用者がフォーカスをフォーム要素から移動するときにコンテキストを変化させる</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F22">F22: 達成基準 3.2.5 の失敗例 － 利用者が要求していないウィンドウを開く</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F52">F52: 達成基準 3.2.1 の失敗例 － 新しいページを読み込むのと同時に、新しいウィンドウを開いている</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F41">F41: 達成基準 2.2.1、達成基準 2.2.4、及び 達成基準 3.2.5 の失敗例 － ページを再読み込みするために、meta 要素リフレッシュを使用している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-changes-of-context">コンテキストの変化 (changes of context)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>のコンテンツにおける大きな変化で、利用者が気づかないと、ウェブページ全体を一度に見ることのできない利用者を混乱させる恐れのあるもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">状況の変化には次に挙げるものの変化が含まれる:</p>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a></li>
+                     
+                     
+                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-viewport" target="terms">ビューポート</a></li>
+                     
+                     
+                     <li>フォーカス</li>
+                     
+                     
+                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>の意味を変える<a href="https://waic.jp/docs/WCAG21/#dfn-content" target="terms">コンテンツ</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツの変化が、必ずコンテキストの変化になるとはかぎらない。アウトラインの展開、動的なメニュー、又はタブの切替などのコンテンツの変化は、それが上記のいずれか (例: フォーカス) を変更しないかぎり、状況を変化させるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">新しいウィンドウを開くこと、フォーカスを異なるコンポーネントへ移動させること、新しいウェブページへ移動すること (新しいウェブページへ移動したかのように思わせてしまうことも含む)、又はウェブページの内容を大きく再配置することなどは、コンテキストの変化の事例である。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

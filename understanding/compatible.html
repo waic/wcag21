@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ガイドライン 4.1: 互換性を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="input-assistance.html">Previous <abbr title="Guideline">GL</abbr>: 入力支援</a></li>
+            <li><a href="parsing.html">First <abbr title="Success Criterion">SC</abbr>: 構文解析</a></li>
+            <li><a href="conformance.html">適合を理解する</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#advisory">参考達成方法</a></li>
+            <li><a href="#success-criteria">達成基準</a></li>
+         </ul>
+      </nav>
+      <h1>ガイドライン 4.1: 互換性を理解する</h1>
+      <blockquote class="scquote">
+         <p>ガイドライン <a href="https://waic.jp/docs/WCAG21/#compatible" style="font-weight: bold;">4.1 互換性</a>: 現在及び将来の、支援技術を含むユーザエージェントとの互換性を最大化すること。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>このガイドラインの目的は、現在及び将来のユーザエージェントの互換性、<em>特に</em>支援技術との互換性をサポートすることである。これは、1) コンテンツ制作者が支援技術の機能を損なったり (例: 形式が整えられていないマークアップ)、又は支援技術を回避したり (例: 奇抜なマークアップ又はソースコードを用いる) しないことを保証する、2) 支援技術が認識して情報のやりとりができる標準的な方法でコンテンツにある情報を公開することの両方で達成できる。技術の変化は早く、支援技術の開発者が急速に変化する技術に追従していくことは大きな困難を伴うので、支援技術が容易に新しい技術にも対応していけるように、コンテンツが規則に従っていて API との互換性が確保されていることが重要である。</p>
+         </section>
+         <section id="advisory">
+            <h2>参考達成方法</h2>
+            <p>このガイドラインにある各達成基準を満たすための達成方法は、この後に達成基準ごとに挙げられている。しかし、このガイドラインに対処するための達成方法がどの達成基準にも該当しない場合は、ここで挙げている。そういった達成方法は、どの達成基準を満たす上でも必須ではないし、十分でもないが、ウェブコンテンツの種類によってはより多くの利用者にとってよりアクセシブルにすることができるものである。</p>
+         </section>
+         <section id="success-criteria">
+            <h2>このガイドラインの達成基準</h2>
+            <ul>
+               <li><a href="parsing.html">4.1.1 構文解析</a></li>
+               <li><a href="name-role-value.html">4.1.2 名前 (name) ・役割 (role) 及び値 (value)</a></li>
+               <li><a href="status-messages.html">4.1.3 ステータスメッセージ</a></li>
+            </ul>
+         </section>
+      </main>
+   </body>
+</html>

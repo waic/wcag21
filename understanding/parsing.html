@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 4.1.1: 構文解析を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="compatible.html"><abbr title="Guideline">GL</abbr>: 互換性</a></li>
+            <li><a href="error-prevention-all.html">Previous <abbr title="Success Criterion">SC</abbr>: エラー回避 (すべて)</a></li>
+            <li><a href="name-role-value.html">Next <abbr title="Success Criterion">SC</abbr>: 名前 (name) ・役割 (role) 及び値 (value)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 4.1.1: 構文解析を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#parsing" style="font-weight: bold;">4.1.1 構文解析</a> (レベル A): マークアップ言語を用いて実装されているコンテンツにおいては、要素には完全な開始タグ及び終了タグがあり、要素は仕様に準じて入れ子になっていて、要素には重複した属性がなく、どの ID も一意的である。ただし、仕様で認められているものを除く。</p>
+         <p class="note">開始及び終了タグに重要な記号が欠けている場合、例えば、タグを閉じる山括弧がない、又は属性値の引用符が一致していない場合は、完全とはいえない。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、支援技術を含むユーザエージェントが、コンテンツを正確に解釈して解析できることを確実にするものである。コンテンツをデータ構造に解析できない場合、別のユーザエージェントはそのコンテンツを異なって提示するか、又はコンテンツを全く解析できないかもしれない。ユーザエージェントの中には、不適切なソースコードのコンテンツを描画するために「修復技術」を用いる。</p>
+            <p>修復技術はユーザエージェントの間で異なるため、コンテンツがそのウェブコンテンツ技術の正式な文法で定義される規則に従って制作されない限り、コンテンツ制作者は、コンテンツがデータ構造へ正確に解析されるか、又はコンテンツが支援技術を含む特殊なユーザエージェントによって正しく描画されるものと仮定できない。マークアップ言語では、要素と属性の構文のエラー及び適切にネストされた開始/終了タグを提供できなかった場合、ユーザエージェントがコンテンツを確実に解析するのを妨げるエラーを導く。したがって、この達成基準は、コンテンツが正式な文法の規則のみを用いて解析できることを必要とする。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>「整形式 (well formed)」の概念は、この達成基準で要件としているものに近い。しかし、正確な解析結果の要件は、マークアップ言語によって異なり、そして、ほとんどの非 XML ベースの言語は、整形式であることの要件が明確に定義されていない。したがって、マークアップ言語に対して一般的に適用可能にするためには、達成基準をより明確にする必要があった。用語「整形式 (well formed)」は、XML でのみ定義され、そして、(終了タグは任意の場合もあるため) 妥当 (valid) な HTML は整形式のソースコードを要求しないから、この達成基準では用いていない。</p>
+                  
+                  
+                  <p>一つの達成基準 (<a href="resize-text.html">1.4.4: テキストのサイズ変更</a>、達成基準で指定された効果が支援技術に依存せずに達成されなければならないと具体的に述べている) を除き、支援技術 (又はユーザエージェントにあるアクセス機能) が存在かつ利用者が使用できる場合に、コンテンツ制作者は、利用者が支援技術 (又はユーザエージェントにあるアクセス機能) の使用を想定することで、コンテンツを達成基準に適合できる。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>ウェブページに完全な開始タグ及び終了タグがあり、仕様に準じて入れ子になっていることを確保することで、支援技術がコンテンツを正確かつ衝突することなく解析できるようになる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G134">G134: ウェブページをバリデートする</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G192">G192: 仕様に完全に準拠する</a></li>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H88">H88: 仕様に準じて HTML を使用する</a></li>
+                  
+                  
+                  <li><p>以下のいずれかの方法で、ウェブページが正しく解析できることを確認する:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H74">H74: 開始タグ及び終了タグを仕様に準じて使用していることを確認する</a> <strong>及び</strong> <a class="html" href="https://w3c.github.io/wcag/techniques/html/H93">H93: ウェブページの id 属性値が一意的 (ユニーク) であるようにする</a> <strong>及び</strong> <a class="html" href="https://w3c.github.io/wcag/techniques/html/H94">H94: 要素には重複した属性がないようにする</a></li>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H75">H75: ウェブページが well-formed であることを確認する</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL33">SL33: Using Well-Formed XAML to Define a Silverlight User Interface</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F70">F70: 達成基準 4.1.1 の失敗例 － 開始タグ及び終了タグ、又は属性のマークアップを誤って使用している</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F77">F77: 達成基準 4.1.1 の失敗例 － ID 型の値が重複している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.2.6: タイムアウトを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="enough-time.html"><abbr title="Guideline">GL</abbr>: 十分な時間</a></li>
+            <li><a href="re-authenticating.html">Previous <abbr title="Success Criterion">SC</abbr>: 再認証</a></li>
+            <li><a href="three-flashes-or-below-threshold.html">Next <abbr title="Success Criterion">SC</abbr>: 3 回の閃光、又は閾値以下</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.2.6: タイムアウトを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#timeouts" style="font-weight: bold;">2.2.6 タイムアウト</a> (Level AAA): データの損失を引き起こす恐れのある<a href="https://waic.jp/docs/WCAG21/#dfn-user-inactivity" target="terms">利用者の無操作</a>の残り時間が警告される。ただし、利用者が 20 時間以上何もしなくてもデータが保持される場合は、この限りではない。</p>
+         <p class="note">プライバシー関連の規制により、利用者を認証する前や利用者のデータが保存される前に、利用者の明確な同意が必要になる可能性がある。利用者が未成年の場合、ほとんどの裁判管轄、国又は地域で、利用者からの明示的な同意を要請することができない。この達成基準に適合するためのアプローチとしてデータの保存を検討する場合は、プライバシーの専門家や弁護士に相談するのが望ましい。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、タイムアウトが用いられるときに、どの程度の無操作時間によってページがタイムアウトしてデータが失われるのかを、利用者が確実に把握することである。認知障害のある利用者にとっては、コンテンツを閲覧したり、オンラインフォームを全て記入するなど機能を実行したりするのに時間がかかることがあるため、時間制限のあるイベントの使用は大きな障害となる可能性がある。</p>
+            <p>ホテルの部屋の予約や航空券の購入などのオンラインプロセスを完了するまでの間に、認知障害のある利用者は、プロセスを完了するために必要な長い指示及びデータ入力に圧倒されることがある。利用者は、一度にプロセスを完了することができず、休憩を取る必要がある場合がある。利用者は、プロセス内の現在位置を見失うことなく、かつ、すでに入力された情報を失うことなく、プロセスをそのままにできるようにすべきである。利用者が休憩を取ってから作業内容を確認できない場合、多くの利用者がタスクを正しく完了できなくなる。</p>
+            <p>この達成基準は、達成基準 2.2.1 タイミング調整可能 と連携して機能するが、特に利用者の無操作状態に関連するタイムアウトの通知に重点を置いている。</p>
+            <p>この達成基準に適合するための最善の方法は、利用者が入力したデータを少なくとも 20 時間保持することである。これにより、障害のある利用者や高齢者は、必要に応じて休憩を取りながら、タスクを開始し終了することができる。しかし、利用者が入力したデータを保存することが現実的でない場合、コンテンツ制作者は、タイムアウトに至る無操作状態の残り時間について利用者に警告しなければならない。タイムアウトは、関連するタスク又はプロセスの開始時に 1 回だけ表示し、各ステップでは表示する必要はない。</p>
+            <p>この達成基準は、コンテンツ提供者の関知又は制御の範囲内にあるタイムアウトにのみ適用される。例えば、利用者がウェブブラウザ又はデバイスを閉じて、それまで開いていたページの未送信のコンテンツを失った場合、達成基準に反していることにはならない。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <p>この達成基準は、無操作に起因するタイムアウトが利用者に確実に通知されるようにすることで、利用者を支援する。</p>
+            <p>利用者がタスク実行に許されている残り時間を知っている場合、利用者は必要な休憩を取りつつ作業をやり直すことなく再開できるかどうかを知ることができる。これにより多くの利用者は、そうでなければ完了できなかったタスクをオンラインで完了できる。タイムアウトが必要な状況が存在する場合、タスクの開始時に、タイムアウトが発生する無操作時間の長さに関する警告が表示される。そして利用者は、指定された時間内にこのタスク実行を管理できるかどうか、又はプロセスを開始する前に資料を準備する必要があるかどうかを決定することができる。これにより、タイムアウトによる作業の損失に対するフラストレーションが軽減される。</p>
+            <p>この達成基準は、次のような様々な認知障害を持つ人に役立つ。</p>
+            <ul>
+               				
+               <li>言語に関連する障害</li>
+               				
+               <li>記憶に関連する障害</li>
+               				
+               <li>注意及び集中に関連する障害</li>
+               				
+               <li>物事の実行機能及び意思決定に影響を与える障害</li>
+               			
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li>電子商取引サイトで商品を購入する際、利用者が入力した情報は 20 時間以上保存される。これにより、しばらく作業を中断する必要がある場合でも、戻ってきたときに購入を継続できる可能性が高くなる。</li>
+               				
+               <li>納税申告書の提出を可能にするウェブアプリケーションは、セキュリティ上の理由でアプリケーションがタイムアウトすることを通知する。この通知は、1 時間を超える連続した時間にわたって操作がない場合、タイムアウトプロセスが開始されることを示している。</li>
+               				
+               <li>オンラインの問い合わせフォームには、タイムアウト処理は実装されていない。問い合わせフォームに入力された情報はいつでも送信でき、情報が失われるのは利用者がブラウザウィンドウを閉じた場合のみである。</li>
+               			
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://rawgit.com/w3c/coga/master/gap-analysis/table.html">User Needs Table 3: Entering data, error prevention &amp; recovery</a></li>
+               
+               <li><a href="https://www.ssa.gov/accessibility/bpl/bps/forms/timeout/default.htm">SSA Best Practices Library: Timeouts</a></li>
+               			
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ul>
+                  					
+                  <li>セッションタイムアウトは、無操作状態が少なくとも 20 時間続く場合に発生するように設定する。</li>
+                  					
+                  <li>利用者が入力したデータを 20 時間以上保持する。</li>
+                  					
+                  <li>プロセスの開始時に、利用者の無操作時間についての警告を提示する。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-user-inactivity">利用者の無操作 (user inactivity)</dt>
+            <dd><definition xmlns="">
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">new</p>
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者がいかなる操作も行わない時間が続くこと。</p>
+                  	        
+                  <p xmlns="http://www.w3.org/1999/xhtml">そのトラッキングの方法は、ウェブサイトやアプリケーションによって決定される。</p>
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

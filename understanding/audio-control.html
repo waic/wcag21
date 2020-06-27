@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.4.2: 音声の制御を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="distinguishable.html"><abbr title="Guideline">GL</abbr>: 判別可能</a></li>
+            <li><a href="use-of-color.html">Previous <abbr title="Success Criterion">SC</abbr>: 色の使用</a></li>
+            <li><a href="contrast-minimum.html">Previous <abbr title="Success Criterion">SC</abbr>: コントラスト (最低限)</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.4.2: 音声の制御を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#audio-control" style="font-weight: bold;">1.4.2 音声の制御</a> (レベル A): ウェブページ上にある音声が自動的に再生され、3 秒より長く続く場合、その音声を一時停止又は停止する<a href="https://waic.jp/docs/WCAG21/#dfn-mechanism" target="terms">メカニズム</a>、もしくはシステム全体の音量レベルに影響を与えずに音量レベルを調整できるメカニズムが利用できる。</p>
+         <p class="note">この達成基準を満たさないコンテンツでは、利用者がそのウェブページ全体を使用できない恐れがあるため、ウェブページ上のすべてのコンテンツは他の達成基準を満たすために用いられているか否かにかかわらず、この達成基準を満たさなければならない。<a href="https://waic.jp/docs/WCAG21/#cc5">適合要件 5: 非干渉</a>を参照。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>スクリーンリーダーを使用している人は、同時に他の音声が再生されている場合、スクリーンリーダーによる読み上げ音声が聞き取りづらくなる。スクリーンリーダーの読み上げ音声が、(今日ではほとんどがそうであるように) ソフトウェアをベースにしたもので、システム全体と同じ音量コントロールによって制御されていると、この状況はさらに悪化する。そのため、利用者が背景音の再生をオフにできることが重要である。注記: 音量コントロールには、その音量をゼロまで下げられることを含む。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>利用者があるページを閲覧し始めた時に音声が自動再生されると、スクリーンリーダーの利用者はその音声を停止させるメカニズムを探しづらくなることがある。なぜなら、スクリーンリーダーの利用者は、読み上げ音声を聞きながらナビゲートしており、自動的に開始した音声がそのナビゲーションを邪魔してしまうかもしれないからである。そのため、WCAG ワーキンググループでは、音声を自動的に再生しないことを推奨し (特に、3 秒よりも長く続く場合)、利用者がそのページを閲覧し始めた後、利用者によって音声の再生を<em>停止</em>させるのではなく、利用者の起こしたアクションによって音声が<em>再生</em>されることを勧める。</p>
+                  
+                  
+               </div>
+            </div>
+            <p><a href="low-or-no-background-audio.html">1.4.7 小さな背景音、又は背景音なし</a>も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>スクリーンリーダーを使用している人が、他に再生されている音声に邪魔されることなく、スクリーンリーダーの音声を聞くことができるようになる。これは、難聴の利用者及びシステム全体の音量制御を用いるスクリーンリーダーを使用している人にとって (システム全体の音量を下げて、スクリーンリーダーの音量を上げることができないため) 特に重要である。</li>
+               
+               
+               <li>この達成基準はまた、音声が再生されているとき、(テキストを含む) 視覚的なコンテンツに集中することが困難な人に対しても役に立つ。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>ページを開いたときに、音声ファイルの再生が自動的に開始される。しかし、利用者が、そのページの先頭にある「音を消す」というリンクを選択することで、その音声を停止させることができる。</li>
+               
+               
+               <li>音声を再生する Flash のスプラッシュページがあり、3 秒以内にその音声が停止する。</li>
+               
+               
+               <li>音声を自動的に再生する Flash のスプラッシュページの先頭に、利用者が音声を停止可能にするコントロールがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G60">G60: 音声の再生を 3 秒以内に自動的に停止する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G170">G170: 自動的に再生される音声を停止するコントロールを、ウェブページの先頭付近で提供する</a></li>
+                  
+                  
+                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G171">G171: 利用者の要求に応じてのみ、音声を再生する</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL24">SL24: Using AutoPlay to Keep Silverlight Media from Playing Automatically</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH18">FLASH18: Flash で自動的に再生される音声をオフにするコントロールを提供する</a></li>
+                  
+                  
+                  <li><a class="flash" href="https://w3c.github.io/wcag/techniques/flash/FLASH34">FLASH34: 支援技術が検出された場合に、自動的に再生される音声をオフにする</a></li>
+                  
+                  
+                  <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL3">SL3: Controlling Silverlight MediaElement Audio Volume</a></li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F23">F23: 達成基準 1.4.2 の失敗例 － 3 秒よりも長く音声を再生していて、音声を止めるメカニズムがない</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F93">F93: 達成基準 1.4.2 の失敗例 － 自動再生する HTML5 のメディア要素を一時停止又は停止する方法がない</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

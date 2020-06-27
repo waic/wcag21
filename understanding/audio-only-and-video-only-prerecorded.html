@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 1.2.1: 音声のみ及び映像のみ (収録済) を理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="time-based-media.html"><abbr title="Guideline">GL</abbr>: 時間依存メディア</a></li>
+            <li><a href="non-text-content.html">Previous <abbr title="Success Criterion">SC</abbr>: </a></li>
+            <li><a href="captions-prerecorded.html">Next <abbr title="Success Criterion">SC</abbr>: キャプション (収録済) を理解する</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 1.2.1: 音声のみ及び映像のみ (収録済) を理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#audio-only-and-video-only-prerecorded" style="font-weight: bold;">1.2.1 音声のみ及び映像のみ (収録済)</a> (レベル A): <a href="https://waic.jp/docs/WCAG21/#dfn-prerecorded" target="terms">収録済</a>の<a href="https://waic.jp/docs/WCAG21/#dfn-audio-only" target="terms">音声しか含まない</a>メディア及び収録済の<a href="https://waic.jp/docs/WCAG21/#dfn-video-only" target="terms">映像しか含まない</a>メディアは、次の事項を満たしている。ただし、その音声又は映像が<a href="https://waic.jp/docs/WCAG21/#dfn-media-alternative-for-text" target="terms">メディアによるテキストの代替</a>であって、メディアによる代替であることが明確にラベル付けされている場合は除く:</p>
+         <dl>
+            
+            
+            <dt>収録済の音声しか含まない</dt>
+            
+            
+            <dd><p><a href="https://waic.jp/docs/WCAG21/#dfn-alternative-for-time-based-media" target="terms">時間依存メディアに対する代替コンテンツ</a>によって、収録済の音声しか含まないコンテンツと同等の情報を提供している。</p>
+               
+               
+            </dd>
+            
+            
+            <dt>収録済の映像しか含まない</dt>
+            
+            
+            <dd><p>時間依存メディアに対する代替コンテンツ又は音声トラックによって、収録済の映像しか含まないコンテンツと同等の情報を提供している。</p>
+               
+               
+            </dd>
+            
+            
+         </dl>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、収録済の音声しか含まないコンテンツ及び収録済の映像しか含まないコンテンツの伝える情報を、すべての利用者が入手できるようにすることである。テキストは利用者のニーズに合った、あらゆる感覚モダリティ (例えば、視覚、聴覚、又は触覚) を通じてレンダリング可能であるため、時間依存メディアの代替は、情報をアクセシブルにする。将来的には、テキストを記号、手話、又はその言語のより単純な形態に変えることも可能になるかもしれない。</p>
+            <p>音声情報や利用者のインタラクションを伴わない収録済の映像の例は、無声映画である。書き起こしの目的は、視覚的に提示されるものと同等のものを提供することである。収録済の映像コンテンツの場合、コンテンツ制作者には音声トラックを提供するという選択肢がある。音声による代替の目的は、映像と同等のものになることである。これにより、視覚障害の有無に関係なく、利用者はコンテンツを同時に楽しむことが可能になる。このアプローチはまた、映像と音声の並行した提示を提供するため、認知障害、言語障害、及び学習障害のある利用者がコンテンツを理解しやすくすることができる。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>音声情報がない映像に対し同等として提供されている音声に対しては、テキストによる代替は必要ない。例えば、無声映画の代替として提供されている音声解説にキャプションを付与する必要はない。</p>
+                  
+                  
+               </div>
+            </div>
+            <p><a href="audio-only-live.html">1.2.9: 音声のみ (ライブ)</a>も参照のこと。</p>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準は、視覚的なコンテンツを知覚するのが困難な利用者の役に立つ。支援技術が、テキストによる代替を音声で読み上げる、視覚的に提示する、又は点字に変換することが可能になる。</li>
+               
+               
+               <li>テキストベースの時間依存メディアの代替は、収録済の映像コンテンツの意味を理解するのが困難な利用者の役に立つことがある。</li>
+               
+               
+               <li>ろう、難聴、又は何らかの理由で音声情報を理解するのが困難な人が、テキストによる提示を読むことができる。テキストを手話に自動翻訳する研究が現在進められている。</li>
+               
+               
+               <li>盲ろうの利用者が、テキストを点字で読むことができるようになる。</li>
+               
+               
+               <li>加えて、テキストは、非テキストコンテンツを検索可能なものにし、コンテンツを様々な方法で再利用できるようにする。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li><p><strong>演説を録音した音声</strong></p>
+                  
+                  
+                  <p>「議会での議長の演説」という音声クリップへのリンクがある。そして、音声クリップへのリンクの直後に、テキストの書き起こしへのリンクが提供されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>記者会見を録音した音声</strong></p>
+                  
+                  
+                  <p>ウェブページに、録音音声であることが分かる記者会見の録音音声へのリンクがある。また、そのページには記者会見のテキストによる書き起こしへのリンクもある。テキストによる書き起こしには、話者が発言したすべての逐語的な記録が含まれる。そこには、例えば、喝采、笑い、聴衆からの質問など、その録音の一部であるその他の重要な音声に言及するだけでなく、誰が話しているのかも記されている。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>車のエンジンがどのように動くのかを説明するアニメーション</strong></p>
+                  
+                  
+                  <p>車のエンジンがどのように動くのかを見せているアニメーションがある。音声はなく、そのアニメーションはエンジンがどのように動くかを説明するチュートリアルの一部である。チュートリアルのテキストがすでに完全な説明をしているため、そのアニメーションはテキストの代替物であり、画像はテキストの代替物であり、テキストによる代替はそのアニメーションの簡潔な説明のみを含み、詳細についてはチュートリアルのテキストを参照している。</p>
+                  
+                  
+               </li>
+               
+               
+               <li><p><strong>音声トラック付きの、映像しか含まないファイル</strong></p>
+                  
+                  
+                  <p>無音映画に、映像の動きを説明している音声トラックがある。</p>
+                  
+                  
+               </li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://www.rnib.org.uk/travel-downloads-podcasts-and-apps?List=be9c76d3-7ad0-4e03-a1a0-e6f6953b8178&amp;ID=16">Overcoming the challenge of podcast transcription</a></li>
+               
+               
+               <li><a href="http://www.uiaccess.com/transcripts/transcript_services.html">uiAccess list of transcription services</a></li>
+               
+               
+               <li><a href="http://www.uiaccess.com/transcripts/transcripts_on_the_web.html">Transcripts on the Web: Getting people to your podcasts and videos</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
+               <section class="situation" id="audio-only-and-video-only-prerecorded-situation-0">
+                  
+                  
+                  <h4>状況 A: 収録済の音声しか含まないコンテンツの場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G158">G158: 音声のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL17">SL17: Providing Static Alternative Content for Silverlight Media Playing in a MediaElement</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+               <section class="situation" id="audio-only-and-video-only-prerecorded-situation-1">
+                  
+                  
+                  <h4>状況 B: 収録済の映像しか含まないコンテンツの場合:</h4>
+                  
+                  
+                  <ol>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G159">G159: 映像のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
+                     
+                     
+                     <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G166">G166: 重要な映像コンテンツを説明する音声を提供する</a></li>
+                     
+                     
+                     <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL17">SL17: Providing Static Alternative Content for Silverlight Media Playing in a MediaElement</a></li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </section>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H96">H96: 音声解説を提供するために、track 要素を使用する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+               <ul>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F30">F30: 達成基準 1.1.1 及び 達成基準 1.2.1 の失敗例 － 代替ではないテキストによる代替を使用している (ファイル名、プレースホルダーテキストなど)</a></li>
+                  
+                  
+                  <li><a class="failure" href="https://w3c.github.io/wcag/techniques/failures/F67">F67: 達成基準 1.1.1 及び 達成基準 1.2.1 の失敗例 － 非テキストコンテンツに対して、同じ目的を果たしていない、又は同じ情報を提示していない長い説明を提供している</a></li>
+                  
+                  
+               </ul>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-alternative-for-time-based-media">時間依存メディアに対する代替コンテンツ (alternative for time-based media)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">時間依存の視覚的及び聴覚的情報を正しい順序で説明したテキストを含み、あらゆる時間依存のインタラクションによる結果を得る手段を提供している文書。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>同期したメディアのコンテンツを作るために用いられる脚本は、編集が終了した最終版の同期したメディアを正確に描写した脚本に修正されている場合だけ、この定義を満たす。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-audio-only">音声しか含まない</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-audio" target="terms">音声</a>のみを含んだ、時間に依存する提示 (<a href="https://waic.jp/docs/WCAG21/#dfn-video" target="terms">映像</a>やインタラクションを含まない)。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-media-alternative-for-text">メディアによるテキストの代替 (media alternative for text)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">テキストで (直接又はテキストによる代替によって) 既に提示されている情報以上のものを提示していないメディア。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メディアによるテキストの代替は、テキストを代替する提示の恩恵を受ける人たちのために提供される。テキストの代替メディアになりうるのは、音声しか含まないメディア、映像しか含まない (手話の映像を含む) メディア、又は音声付映像メディアである。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-prerecorded">収録済 (prerecorded)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-live" target="terms">ライブ</a>ではない情報。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-video-only">映像しか含まない</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-video" target="terms">映像</a>のみを含んだ、時間に依存する提示 (<a href="https://waic.jp/docs/WCAG21/#dfn-audio" target="terms">音声</a>やインタラクションを含まない)。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>

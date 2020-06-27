@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>達成基準 2.4.1: ブロックスキップを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="目次">目次</a></li>
+            <li><a href="navigable.html"><abbr title="Guideline">GL</abbr>: ナビゲーション可能</a></li>
+            <li><a href="three-flashes-or-below-threshold.html">Previous <abbr title="Success Criterion">SC</abbr>: 非テキストコンテンツ</a></li>
+            <li><a href="page-titled.html">Next <abbr title="Success Criterion">SC</abbr>: ページタイトル</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#intent">意図</a></li>
+            <li><a href="#benefits">メリット</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
+         </ul>
+      </nav>
+      <h1>達成基準 2.4.1: ブロックスキップを理解する</h1>
+      <blockquote class="scquote">
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#bypass-blocks" style="font-weight: bold;">2.4.1 ブロックスキップ</a> (レベル A): 複数の<a href="https://waic.jp/docs/WCAG21/#dfn-web-page" target="terms">ウェブページ</a>上で繰り返されているコンテンツのブロックをスキップする<a href="https://waic.jp/docs/WCAG21/#dfn-mechanism" target="terms">メカニズム</a>が利用できる。</p>
+      </blockquote>
+      <main>
+         <section id="intent">
+            <h2>意図</h2>
+            <p>この達成基準の意図は、コンテンツを通して順を追ってナビゲートする人に対して、ウェブページの主たるコンテンツへより直接的なアクセスをできるようにすることである。ウェブページ及びウェブアプリケーションには、他のページ又は画面でも現れるコンテンツがしばしばある。コンテンツの中で繰り返されているブロックの例には、ナビゲーションリンク、見出しのグラフィック、及び広告のフレームなどを含むが、これに限定されるものではない。個々の単語、フレーズ、又は単独のリンクなどの小さな繰り返されるセクションは、この達成基準が意図するブロックとはみなされない。</p>
+            <p>これは、目の見える利用者が画面の中央 (通常はメインコンテンツが現れるところ) に注目して繰り返される要素を無視したり、マウスクリック 1 回でリンクを選択したりすることによって、選択したい要素より前にあるリンクもしくはフォームコントロール全てに出会わずに済ませる能力があることとは、対照的なものである。</p>
+            <p>この達成基準の意図は、コンテンツ制作者にユーザエージェントが提供している機能と重複する手段を提供するように求めることではない。ほとんどのウェブブラウザは、利用者がフォーカスをページの先頭に移動するためのキーボードショートカットを提供しているので、ナビゲーションリンク一式をウェブページの下部で提供している場合は、「スキップ」リンクの提供は不要かもしれない。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>この達成基準は、複数のページ上で繰り返されているコンテンツのブロックを扱っているが、単独のページにおいて、達成基準 1.3.1 にあるように、構造をマークアップすることも強く推奨する。</p>
+                  
+                  
+               </div>
+            </div>
+            <p>この達成基準では、「ウェブページ一式において」という用語は使用していないものの、ひとつのまとまりに属するページの考え方が示唆される。相互になんらかの関係がない二つのページにおいて、コンテンツの重複を避けることが期待されるということはないだろう。なぜなら、これらは「共通の目的を共有し、同じコンテンツ制作者、グループ、又は組織により制作されたウェブページの集合」(ウェブページ一式の定義) ではないからである。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div><p>たとえひとつのまとまりに属さないウェブページであっても、ウェブページがページ内で繰り返されるテキストのブロックを持つ場合、そのブロックをスキップするための手段を提供することは (必須ではないが) 有用かもしれない。</p>
+                  
+                  
+               </div>
+            </div>
+         </section>
+         <section id="benefits">
+            <h2>メリット</h2>
+            <ul>
+               
+               
+               <li>この達成基準を満たしていない場合、何らかの障害のある利用者がウェブページのメインコンテンツへ素早くかつ容易に到達するのが困難になることがある。</li>
+               
+               
+               <li>同じサイト上でいくつかのページを訪れるスクリーンリーダーの利用者は、メインコンテンツが読み上げられる前に、ページごとのすべての見出しのグラフィック及び多数のナビゲーションリンクを聞かざるを得ない状態を回避できる。</li>
+               
+               
+               <li>キーボード又はキーボードインタフェースのみを使用している人が、より少ないキーストロークでコンテンツに到達できる。そうでなければ、メインコンテンツ領域にあるリンクに到達する前に多数のキーストロークが必要になってしまうかもしれない。これは長い時間がかかってしまう恐れがあり、利用者にとって深刻な肉体的苦痛を引き起こすことがある。</li>
+               
+               
+               <li>画面拡大ソフトを使用している人は、新しいページに入るたびに、コンテンツが始まる場所を見つけるために、同じ見出し又はその他の情報のブロックの中を探す必要がない。</li>
+               
+               
+               <li>リンクがリストとしてグループ化されていると、認知障害のある人にも、スクリーンリーダーを使用している人にも役立つことがある。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               
+               <li>報道機関のホームページには、ページの中央にメインの記事があり、周囲を広告、検索、その他のサービス向けの多数のブロック及びサイドバーに囲まれている。ページの先頭に、そのメインの記事へジャンプするリンクがある。このリンクを使用しない場合、キーボードの利用者は、メインの記事へ到達するまでに約 40 のリンクを Tab キーで処理する必要がある。スクリーンリーダーの利用者は、200 単語を聞く必要がある。そして、画面拡大ソフトの利用者は、メインの記事の場所を探し回らなければならなくなる。</li>
+               
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               
+               <li><a href="http://webaim.org/techniques/semanticstructure/">WebAIM: Semantic Structure</a></li>
+               
+               
+               <li><a href="http://accessibility.psu.edu/headingshtml/">Heading Tags</a></li>
+               
+               
+            </ul>
+         </section>
+         <section id="techniques">
+            <h2>達成方法</h2>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
+            <section id="sufficient">
+               <h3>十分な達成方法</h3>
+               <ol>
+                  
+                  
+                  <li><p>次の達成方法の中から一つを用いて、繰り返されるブロックをスキップするリンクを作成する:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G1">G1: メインコンテンツエリアへ直接移動するリンクを各ページの先頭に追加する</a></li>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G123">G123: 繰り返しているコンテンツのブロックの先頭に、そのブロックの末尾へのリンクを追加する</a></li>
+                        
+                        
+                        <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G124">G124: ページの先頭に、コンテンツの各エリアへのリンクを追加する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL25">SL25: Using Controls and Programmatic Focus to Bypass Blocks of Content in Silverlight</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+                  <li><p>次の達成方法の中から一つを用いて、スキップ可能な方法で繰り返されるブロックをグループ化する:</p>
+                     
+                     
+                     <ul>
+                        
+                        
+                        <li><a class="aria" href="https://w3c.github.io/wcag/techniques/aria/ARIA11">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a></li>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H69">H69: コンテンツの各セクションの開始位置に見出し要素を提供する</a></li>
+                        
+                        
+                        <li><a class="pdf" href="https://w3c.github.io/wcag/techniques/pdf/PDF9">PDF9: PDF 文書内のコンテンツを見出しタグでマークアップすることによって見出しを作成する</a></li>
+                        
+                        
+                        <li><a class="html" href="https://w3c.github.io/wcag/techniques/html/H70">H70: 繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</a> <strong>及び</strong> <a class="html" href="https://w3c.github.io/wcag/techniques/html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a></li>
+                        
+                        
+                        <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR28">SCR28: コンテンツのブロックをバイパスするために、展開可能及び折り畳み可能なメニューを使用する</a></li>
+                        
+                        
+                        <li><a class="silverlight" href="https://w3c.github.io/wcag/techniques/silverlight/SL29">SL29: Using Silverlight &quot;List&quot; Controls to Define Blocks that can be Bypassed</a></li>
+                        
+                        
+                     </ul>
+                     
+                     
+                  </li>
+                  
+                  
+               </ol>
+            </section>
+            <section id="advisory">
+               <h3>参考達成方法</h3>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <ul>
+                  
+                  
+                  <li><a class="css" href="https://w3c.github.io/wcag/techniques/css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
+                  
+                  
+               </ul>
+            </section>
+            <section id="failure">
+               <h3>失敗例</h3>
+               <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
+            </section>
+         </section>
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="https://waic.jp/docs/WCAG21/#dfn-process" target="terms">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology" target="terms">支援技術</a>を含む<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>で提供されるものに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon" target="terms">依存する</a>こともある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent" target="terms">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
+      </main>
+   </body>
+</html>
