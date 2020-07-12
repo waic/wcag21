@@ -59,35 +59,27 @@
             <h2>事例</h2>
             <section class="example" id="example-1-solid-icon-color-against-the-background">
                <h3>例 1: 背景に対するベタなアイコン色</h3>
-               <p>ベタ色のアイコン例である電話のシンボルは、白背景の上に、オレンジ色を使用している。オレンジ色（<code>#E3660E</code>）を白背景（<code>#FFFFFF</code>）に対して検証したところ、コントラスト比は 3.4:1 である。
+               <p>ベタ色のアイコン例である電話のシンボルは、白背景の上に、オレンジ色を用いている。オレンジ色（<code>#E3660E</code>）を白背景（<code>#FFFFFF</code>）に対して検証したところ、コントラスト比は 3.4:1 である。
                </p>
                <p><img alt="白背景の上にある、オレンジ色のアイコン。" src="img/contrast-phone-icon.png" /></p>
             </section>
             <section class="example" id="example-2-solid-icon-color-against-a-custom-background">
                <h3>例 2: カスタム背景に対するベタなアイコン色</h3>
-               <p>ベタ色のアイコン例である電話のシンボルは、オレンジ色の背景の中で使用されている。オレンジと白の色は例 1 と同じものであるが、この場合、白背景に対するコントラストは問われない。オレンジ色の背景と、その中にある白いアイコンこそが、アイコンの情報を提供するものであり、結果、コントラスト要件を満たすことが求められる。
+               <p>ベタ色のアイコン例である電話のシンボルは、オレンジ色の背景の中で用いられている。オレンジと白の色は例 1 と同じものであるが、この場合、白背景に対するコントラストは問われない。オレンジ色の背景と、その中にある白いアイコンこそが、アイコンの情報を提供するものであり、結果、コントラスト要件を満たすことが求められる。
                </p>
                <p><img alt="オレンジ色の背景の上にある、白いアイコン。" src="https://www.w3.org/WAI/WCAG21/Understanding/img/contrast-phone.png" width="100" /></p>
             </section>
             <section class="example" id="example-3-solid-icon-with-a-gradient-background">
                <h3>例 3: ベタ色のアイコンとグラデーション背景</h3>
-               <p>ベタ色のアイコン例である電話のシンボルは、白から青へのグラデーション背景の上に、濃紺色を使用している。アイコンのコントラスト検証はまず、アイコン色に隣接する最も暗い (コントラストが最も低い) 背景に対して行われるべきである。それが少なくとも 3:1 であれば、達成基準を満たす。
+               <p>ベタ色のアイコン例である電話のシンボルは、白から青へのグラデーション背景の上に、濃紺色を用いている。アイコンのコントラスト検証はまず、アイコン色に隣接する最も暗い (コントラストが最も低い) 背景に対して行われるべきである。それが少なくとも 3:1 であれば、達成基準を満たしている。
                </p>
                <p><img alt="白から青へのグラデーション背景の上にある、濃紺色のアイコン。" src="img/contrast-phone-icon-gradient.png" /></p>
             </section>
             <section class="example" id="example-4-solid-icon-with-gradient-background-overlapping-in-contrast">
                <h3>例 4: ベタ色のアイコンと色が重なるグラデーション背景</h3>
-               <p>A solid icon on a gradient background can overlap in contrast if the graphic is still
-                  understandable where it does not have contrast against all of the background. If you
-                  find the part of the gradient where it does not meet a 3:1 ratio with the graphic
-                  and treat that part as if it was removed, does the icon still convey the appropriate
-                  meaning?
+               <p>グラデーション背景の上にあるベタ色のアイコンは、背景の全てに対して十分なコントラストを持たない箇所があって、それでもグラッフィックが理解できるような場合、コントラストの面で色が重なっている可能性がある。グラフィックとの間で 3:1 のコントラスト比を満たしていない背景部分を見つけて、その部分を取り除いたかのようにみなした場合、それでもアイコンはまた適切な意味を伝えることができるであろうか？
                </p>
-               <p>A method of visualizing this is to remove the non-contrasting area and check that
-                  you can still understand the icon. If so, it is sufficient. The images below shows
-                  an icon on a gradient background, and a second version where it removes the area of
-                  the icon  that does not meet the 3:1 contrast ratio. It is still recognizable as a
-                  phone icon, so passes the success criteria.
+               <p>これを可視化する方法は、コントラストが不十分な領域を削除して、そのうえでまだアイコンが理解可能かどうかをチェックしてみることである。理解可能であれば十分である。下の画像は、グラデーション背景の上にアイコンを表示したもので、2 つめのバージョンでは、コントラスト比が 3:1 を満たさないアイコン部分を削除している。これでも電話のアイコンとして認識できるので、達成基準を満たしていると言える。
                </p>
                <p><img alt="Dark blue icon on white-to-blue background that is dark at the bottom." src="img/contrast-phone-icon-gradient2.png" /> <img alt="Dark blue icon on white-to-blue background." src="img/contrast-phone-icon-gradient3.png" /></p>
             </section>
