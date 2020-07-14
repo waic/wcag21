@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G216: Providing single point activation for a control slider</title>
+      <title>G216: コントロールスライダーのためにアクティブにするシングルポイントを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,103 +12,79 @@
          <ul id="navigation">
             <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
             <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G215">Previous Technique: G215</a></li>
-            <li><a href="G217">Next Technique: G217</a></li>
+            <li><a href="G215">前の達成方法: G215</a></li>
+            <li><a href="G217">次の達成方法: G217</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing single point activation for a control slider</h1>
+      <h1>コントロールスライダーのためにアクティブにするシングルポイントを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology that supports pointer input (e.g. supporting any or all of the following:
-               mouse pointer, touch on touch screen or trackpad, stylus input, or laser pointer input).
+            <h2>適用 (対象)</h2>
+            <p>ポインタ入力をサポートする全ての技術 (例えば、マウスポインタ、タッチスクリーン又はトラックパッド上でのタッチ、スタイラス入力、レーザーポインタ入力のいずれか又は全てをサポートしている)。
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/pointer-gestures">Success Criterion 2.5.1: Pointer Gestures</a> (Sufficient)</span>.
+            <p>この達成方法は、<span><a href="https://w3c.github.io/wcag/understanding/pointer-gestures">達成基準 2.5.1: ポインタのジェスチャ</a> (十分) に関連する達成方法である。</span>
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that users who have difficulties performing
-               path-based gestures can operate a control slider. A control slider is a track with
-               a "thumb" that you move along the track to set a value.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、軌跡ベースのジェスチャを実行することが困難な利用者がコントロールスライダーを確実に操作できるようにすることである。コントロールスライダーとは、「つまみ」がついたトラックで、トラックに沿って移動して値を設定するものである。
             </p>
             <figure id="control-slider">
-               				<img src="img/input-range.png" alt="A horizontal line with a round button halfway along the line, labelled volume." />
+               				<img src="img/input-range.png" alt="水平の線の途中に丸いボタンがあり、ボリュームとラベルに書かれている。" />
                				
-               <figcaption>Figure 1Screenshot of an example control slider showing the thumb in the middle of the track.</figcaption>
+               <figcaption>図 1 トラックの中央にあるつまみを示すコントロールスライダーの例のスクリーンショット。</figcaption>
                			
             </figure>
-            <p>It allows a user to set a value in a certain range, e.g. setting the volume, changing
-               the hue value of a color, putting in the amount of money needed in a loan calculator,
-               or picking a sum to be donated to a charity. A slider that requires path-based gestures
-               would use swiping left or right to change the value, or dragging the thumb of the
-               slider in a specific direction to change the value.
+            <p>例えば、音量を設定する、色の色相を変更する、ローン計算機に必要な金額を入力する、慈善団体に寄付する金額を選ぶなど、利用者はある範囲の値を設定することができる。軌跡ベースのジェスチャを必要とするスライダーは、左右にスワイプして値を変更する、又はスライダーのつまみを特定の方向にドラッグして値を変更するために使う。
             </p>
-            <p>A simple fallback for activation without a path-based gesture is to make the control
-               slider track clickable. This way, a value can be specified using a single tap or click
-               on the track.
+            <p>軌跡ベースのジェスチャを使わずにアクティブにする簡単なフォールバックは、コントロールスライダーのトラックをクリック可能にすることである。この方法では、トラックをシングルタップ又はクリックして使うことで値を指定することができる。
             </p>
-            <p>Providing controls (e.g., arrow buttons) as alternative also allows incrementing or
-               decrementing the value with taps or clicks. This can allow for a more fine-grained
-               setting of the value.
+            <p>コントロール (矢印ボタンなど) を代替として提供することで、タップ又はクリックで値を増減させることも可能になる。これにより、よりきめ細かい値の設定が可能になる。
             </p>
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>On touch screen devices, author-supplied path-based gestures usually do not work when
-                  an OS level Assistive Technology (AT) like a built-in screenreader are turned on.
-                  This is because AT generally consumes path-based gestures so they would not reach
-                  the authored content. When custom controls are built on top of native controls, however,
-                  these may also be operable with AT gestures such as vertical swiping to change the
-                  value (see example 1).
+               <p>タッチスクリーンデバイスでは、内蔵のスクリーンリーダーのような OS レベルの支援技術 (AT) がオンになっている場合、コンテンツ制作者が提供する軌跡ベースのジェスチャは通常機能しない。これは、AT が一般的に軌跡ベースのジェスチャを使い尽くすため、軌跡ベースのジェスチャが作られたコンテンツに到達しないためである。しかし、カスタムコントロールがネイティブコントロールの上に構築されている場合は、値を変更するために垂直スワイプなどの AT ジェスチャで操作可能な場合がある (事例 1 を参照)。
                </p>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
-            <p>A custom control slider built on top of a native slider (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">input type range</a>) allows users to swipe left and right or drag the slider thumb to change the value
-               of the slider. The slider track allows tapping or clicking to set the slider thumb
-               to the activated position. Standard buttons on either side allow for incrementing
-               and decrementing the slider value by tap, click or keyboard activation.
+            <h2>事例</h2>
+            <p>ネイティブスライダー (<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/range">input type range</a>) の上に構築されたカスタムコントロールスライダーによって、利用者はスライダーの値を変えるために、左右にスワイプする又はスライダーのつまみをドラッグすることができる。スライダートラックでは、タップ又はクリックでスライダーのつまみを有効な位置に設定することができる。両側の標準ボタンは、タップ、クリック又はキーボードのアクティブ化によってスライダーの値を増減させることができる。
             </p>
-            <p><a href="../../working-examples/providing-single-point-control-slider/">Working example of custom control slider</a></p>
+            <p><a href="../../working-examples/providing-single-point-control-slider/">カスタムコントロールスライダーの動作する例</a></p>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each control slider that responds to path-based gestures:</p>
+               <h3>手順</h3>
+               <p>軌跡ベースのジェスチャに反応する各コントロールスライダーについて:</p>
                <ol>
-                  		
-                  <li>Check that the value of the control slider (range) can be set with a tap or click
-                     using a pointer.
+
+                  <li>コントロールスライダーの値 (範囲) が、ポインタを使ったタップ又はクリックで設定できることを確認する。
                   </li>
                   		
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   			
-                  <li>Check #1 is true</li>
+                  <li>1 の結果が真である。</li>
                   		
                </ul>
             </section>
