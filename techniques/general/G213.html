@@ -10,119 +10,117 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G212">Previous Technique: G212</a></li>
-            <li><a href="G214">Next Technique: G214</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G212">前：実装方法 G212</a></li>
+            <li><a href="G214">次：実装方法 G214</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用（対象）</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Provide conventional controls and an application setting for motion activated input</h1>
+      <h1>”動き”で操作する入力方法には、従来のコントロールとアプリケーション設定を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>
+            これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.0 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Use this technique on web pages that detect device or user motion such as shaking
-               or tilting and use this motion as a means of input.  If the motion itself is essential
-               to the application's function, then this technique does not apply.
+            <h2>適用（対象）</h2>
+            <p>
+               この実装方法は、デバイスやユーザーのシェイク（振る）やチルト（傾ける）といった動きを検出し、これらの動きを入力方法の1つとして使用するウェブページに適用する。動きそのものがアプリケーションの機能に不可欠な場合、この実装方法は適用しない。
             </p>
             <p>This technique also does not relate to movement of users through space as registered
                by geolocation sensors or beacons, or events observed by the device other than intentional
                gesturing by the user. It also does not cover indirect motion associated with operating
                a keyboard, pointer, or assistive technology.
+               また、この実装方法は、位置センサーまたはビーコンによって登録された空間によるユーザの動き、またはユーザによる意図的なジェスチャー以外の装置によって観察された事象にも関係しない。また、キーボード、ポインタ、または支援技術の操作に関連する間接的な動きについても、扱わない。
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/motion-actuation">Success Criterion 2.5.4: Motion Actuation</a> (Sufficient)</span>.
+            <p>
+               これは、<span><a href="https://w3c.github.io/wcag/understanding/motion-actuation">達成基準 2.5.4 動きによる起動</a></span> に関連する実装方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that:</p>
+            <h2>解説</h2>
+            <p>この実装方法の目的は:</p>
             <ol>
                				
-               <li>People who use mounted devices or who cannot precisely manipulate a device are able
-                  to provide inputs through more conventional user interface components, and
+               <li>
+                  何かに取り付けられたデバイスを使用する人や、デバイスを正確に操作できない人は、より一般的なユーザインタフェース コンポーネントを通じて、様々な入力おこなうことができ、
                </li>
                				
-               <li>People who may accidentally activate sensors due to tremors or other motor impairments
-                  have the ability to turn off motion actuation to prevent such accidental triggering
-                  of functions.
+               <li>
+                  振戦やその他の運動障害のために誤ってセンサーを作動させてしまう可能性のある人は、意図せず機能をアクティブにすることを防ぐため、動きによる起動をオフにすることができます。
                </li>
                			
             </ol>
-            <p>When a device sensor such as an accelerometer or gyroscope is used to gather input:</p>
+            <p>加速度計やジャイロスコープなどのデバイス　センサーを使用した入力を可能とする場合:</p>
             <ol>
                				
-               <li>A button, link, or other conventional control is provided that does not rely on sensor
-                  input, and
+               <li>
+                  センサーを使った入力方法だけにならないように、ボタン、リンクなど、従来のコントロールでの入力を可能とし、
                </li>
                				
-               <li>A setting is provided to allow the user to turn off the sensor data.</li>
+               <li>
+                  センサーのデータをユーザーがオフにできるような設定を提供する。
+               </li>
                			
             </ol>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-shake-to-undo">
-               <h3>Example 1: Shake to undo</h3>
-               <p>After text is entered in a field, shaking a device shows a dialog offering users to
-                  undo the entry. Supporting use of the backspace key and/or providing a clear button
-                  next to the text field offers the same functionality.
+               <h3>事例1:「元に戻す」ためにシェイクする</h3>
+               <p>
+                  入力欄にテキストを入力した後、デバイスを振ると、入力を取り消すダイアログが表示される。バックスペースキーの使用をサポートしたり、テキストフィールドの横にクリアボタンを表示したりすることで、同じ機能を利用できる。
                </p>
-               <p>Shake to undo can be turned off in a settings page.</p>
+               <p>「元に戻す」ためにシェイクする機能は、設定の画面でオフにすることができる。</p>
             </section>
             <section class="example" id="example-2-motion-activated-slider">
-               <h3>Example 2: Motion Activated Slider</h3>
-               <p>A slider can be adjusted by tipping the device to the left and right. There are also
-                  buttons to achieve the same functionality, and a tick-box that prevents the motion
-                  from having an effect.
+               <h3>事例2:”動き”で操作するスライダー</h3>
+               <p>
+                  スライダーは、デバイスを左右に傾けることで調整できる同じ機能を実現するボタンや、左右に傾けても反応しないようにするチェックボックスもある。
                </p>
-               <p>Working example of a <a href="../../working-examples/device-motion-sensor-input/">slider with motion actuation</a>.
+               <p>
+                  <a href="../../working-examples/device-motion-sensor-input/">”動き”で操作するスライダーの例</a>.
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
                				
-               <h3>Procedure</h3>
+               <h3>チェックポイント</h3>
                				
-               <p>For each input that performs a function in response to a motion sensor: </p>
+               <p>モーション センサーに応答して機能する入力ごとに:</p>
                				
                <ol>
                   					
-                  <li>Check that there is a mechanism to perform the same function that does not rely on
-                     a sensor.
+                  <li>
+                     センサを使わなくても同じ機能を実行できる他の操作方法があることを、確認する。
                   </li>
                   					
-                  <li>Check that there is a user setting which disables the motion detection.</li>
+                  <li>”動き”の検出を無効にするユーザ設定があることを確認する。</li>
                   				
                </ol>
                			
             </section>
             <section class="results" id="expected-results">
                
-               <h3>Expected Results</h3>
+               <h3>判定基準</h3>
                			 
                <ul>
                   
-                  <li>Check #1 and #2 are true.</li>
+                  <li>1. 及び 2. を満たしている。</li>
                   
                </ul>
                
