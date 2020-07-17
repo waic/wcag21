@@ -10,21 +10,21 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G211">Previous Technique: G211</a></li>
-            <li><a href="G213">Next Technique: G213</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G211">前の達成方法: G211</a></li>
+            <li><a href="G213">次の達成方法: G213</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>Using native controls to ensure  functionality is triggered on the up-event.</h1>
@@ -39,13 +39,13 @@
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>This technique applies to nearly all technologies.</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/pointer-cancellation">Success Criterion 2.5.2: Pointer Cancellation</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The objective of this technique is to ensure that users who attempt to interact with
                a control do not trigger the action of the event accidentally. This can be accomplished
                most directly by relying on the pointer's up-event (for example, the onclick or mouseup
@@ -66,13 +66,13 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-using-an-native-onclick-event-in-javascript">
-               <h3>Example 1: Using an native onclick event in JavaScript</h3>
+               <h3>例 1: Using an native onclick event in JavaScript</h3>
                <p>In JavaScript native onclick events are triggered on the up-event by default.</p>
             </section>
             <section class="example" id="example-2-using-a-native-button-or-link-in-html">
-               <h3>Example 2: Using a native button or link in HTML</h3>
+               <h3>例 2: Using a native button or link in HTML</h3>
                <p>In HTML native <code>&lt;button&gt;</code> or <code>&lt;a href ....&gt;</code> onclick events are triggered on the up-event by default.
                </p>
                <div class="note">
@@ -83,7 +83,7 @@
                </div>
             </section>
             <section class="example" id="example-3-using-a-native-button-in-ios-or-android">
-               <h3>Example 3: Using a native button in iOS or Android</h3>
+               <h3>例 3: Using a native button in iOS or Android</h3>
                <p>In native buttons in iOS and Android onclick events are triggered on the up-event
                   by default.
                </p>
@@ -96,8 +96,8 @@
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                				
                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">Mozilla web docs for the click event</a></li>
@@ -105,9 +105,9 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>For all clickable controls:</p>
                <ol>
                   					
@@ -124,10 +124,10 @@
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>Check #2 or #3 is true. </li>
+                  <li>2. 又は 3. の結果が真である。</li>
                   				
                </ul>
             </section>
