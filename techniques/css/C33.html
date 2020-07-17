@@ -45,69 +45,63 @@
 			空白のない長い文字列、例えばコンテンツとして表示される URL は、ページがズームされたときにリフローがなされない可能性がある。この達成方法の目的は、320 CSS ピクセルに相当する幅において横スクロールバーを、又は 256 CSS ピクセルに相当する高さにおいて縦スクロールバーを導入することなく、URL を表示することである。これは、CSS の手法を用いることによって、使用可能なビューポート領域に適応する形で行われる。<br>
                注: ユーザビリティ及びアクセシビリティの観点では、長いURLではなく、人が読解可能なテキストリンクを使用する方がより良い。
             </p>
-            <p>By default most browsers will wrap long URLs at the following characters:</p>
+            <p>デフォルトでは、ほとんどのブラウザは長い URL を下記の文字で折り返す:</p>
             <ul>
                
-               <li>"-" Hyphen  </li>
+               <li>"-" ハイフン</li>
                
-               <li>" " Space</li>
+               <li>" " 半角スペース</li>
                
-               <li>"?" Question (IE,  Chrome, Safari) </li>
+               <li>"?" クエスチョンマーク (IE,、Chrome、Safari)</li>
                
-               <li>"&amp;" Ampersand (Firefox only)</li>
+               <li>"&amp;" アンパサンド (Firefox のみ)</li>
                
             </ul>
-            <p>Sometimes these are not enough to ensure that long URLs will not overflow the viewport.</p>
+            <p>これだけでは、長い URL がビューポートをオーバーフローしないようにするには不十分な場合がある。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-breaking-long-urls">
-               <h3>Example 1: Breaking long URLs</h3>
-               <p>Using the following CSS will cause long URLs to break at appropriate places (hyphens,
-                  spaces, etc.) and within words without causing reflow. 
+               <h3>例 1: Breaking long URLs</h3>
+               <p>以下の CSS を使用することで、長い URL は適切な箇所 (ハイフンやスペースなど) 及び単語内で、オーバーフローを起こさずに改行される。
                </p>
-               <p>List of CSS declarations used and why they are used:</p>
+               <p>使用される CSS 宣言の一覧とその理由:</p>
                <ul>
                   
-                  <li><strong>overflow-wrap: break-word</strong>: Allows words to be broken and wrapped within words. 
+                  <li><strong>overflow-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。
                   </li>
                   	    
-                  <li><strong>word-wrap: break-word</strong>: Allows words to be broken and wrapped within. (Microsoft only)
+                  <li><strong>word-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。(Microsoft のみ)
                   </li>
                   
                </ul><pre>    a {overflow-wrap: break-word;}</pre><div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>IE and Edge  only support this declaration when used with the * (wildcard) selector</p>
-               </div><pre>    * { word-wrap: break-word;}</pre><p><a href="../../working-examples/css-reflow-url/">Working Example</a></p>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>* (ワイルドカード) セレクタを用いた場合のこの宣言は、IE 及び Edge のみサポートしている。</p>
+               </div><pre>    * { word-wrap: break-word;}</pre><p><a href="../../working-examples/css-reflow-url/">実装例</a></p>
             </section>
          </section>
          <section id="tests">
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>For strings of text that are wider than 320px check:</p>
+               <p>320 ピクセルよりも幅の広い文字列について、以下を確認する:</p>
                <ol>
                   
-                  <li>Display the web page in a user agent capable of 400% zoom and set the viewport dimensions
-                     (in CSS pixels) to 1280 wide and 1024 high.
+                  <li>400%ズームが可能なユーザエージェントでウェブページを表示し、ビューポートの寸法 (CSSピクセル単位) を幅 1280、高さ 1024 に設定する。
                   </li>
                   
-                  <li>Zoom in by 400%.</li>
+                  <li>400%までズームインさせる。</li>
                   
-                  <li>For content read horizontally, check that all content and functionality is available
-                     without horizontal scrolling.
+                  <li>水平方向に読まれるコンテンツにおいて、横スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
                   </li>
                   
-                  <li>For content read vertically, check that all content and functionality is available
-                     without vertical scrolling.
+                  <li>垂直方向に読まれるコンテンツにおいて、縦スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
                   </li>
                   
                </ol>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>If the browser is not capable of zooming to 400%, you can reduce the width of the
-                     browser proportionally. For example, at 300% zoom the viewport should be sized to
-                     960px wide.
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ブラウザが400%までズームできない場合は、ブラウザ幅を比例して小さくすることによって検証できる。例えば、300%ズームの場合、ビューポートの寸法は 960 ピクセル幅にすべきである。
                   </p>
                </div>
             </section>
