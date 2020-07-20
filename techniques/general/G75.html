@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G75: Providing a mechanism to postpone any updating of content</title>
+      <title>G75: コンテンツの更新を延期するメカニズムを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,95 +10,79 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G74">Previous Technique: G74</a></li>
-            <li><a href="G76">Next Technique: G76</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G74">前の達成方法: G74</a></li>
+            <li><a href="G76">次の達成方法: G76</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a mechanism to postpone any updating of content</h1>
+      <h1>コンテンツの更新を延期するメカニズムを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content that automatically updates itself.</p>
+            <h2>適用 (対象)</h2>
+            <p>自動更新するコンテンツ</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that users can postpone automatic updates
-               of content, or other non-emergency interruptions. This can be accomplished either
-               through a preference or by alerting users of an imminent update and allowing them
-               to suppress it. If a preference is provided, automatic content update can be disabled
-               by default and users can specify the frequency of automatic content updates if they
-               choose to enable the setting.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者がコンテンツの自動更新又は他の緊急ではない中断を延期できるようにすることである。これは、設定を通じて、又は緊急の更新を利用者に通知して利用者が更新を停止できることによって達成できる。設定が提供される場合、コンテンツの自動更新はデフォルトで無効にすることができ、利用者がその設定を有効にした場合に自動更新の頻度を指定できる。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A Web page provides stock quotes and automatically updates from time to time. The
-                  page provides a short form with a field "Refresh data frequency (minutes):" so users
-                  can adjust the frequency of the updating.
-               </li>
+               <li>あるウェブページは株価を提供し、時々自動的に更新される。このページでは、小さなフォームで「データの更新頻度 (分)」というフィールドのある短いフォームが提供されており、利用者は更新頻度を調整できる。</li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G76">G76: Providing a mechanism to request an update of the content instead of updating automatically</a></li>
+               <li><a href="G76">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>
+               <li><a href="../client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Find pages with content that automatically updates.</li>
+                  <li>自動的に更新するコンテンツのあるページを見つける。</li>
                   
-                  <li>For each automatic update, look for a mechanism to adjust the timing of the updates.</li>
+                  <li>自動更新に対して、自動更新のタイミングを調整するメカニズムを探す。</li>
                   
-                  <li>Check that automatic updating is disabled by default or that the user is warned before
-                     an automatic update occurs and allowed to suppress it.
-                  </li>
+                  <li>自動更新がデフォルトで無効になっている、又は自動更新が発生する前に利用者に警告されて停止できることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
