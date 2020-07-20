@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>C33: Allowing for Reflow with Long URLs and Strings of Text</title>
+      <title>C33: 長い URL 及びテキスト文字列をリフローできるようにする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,117 +10,104 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C32">Previous Technique: C32</a></li>
-            <li><a href="C34">Next Technique: C34</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="目次">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C32">前の達成方法: C32</a></li>
+            <li><a href="C34">次の達成方法: C34</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Allowing for Reflow with Long URLs and Strings of Text</h1>
+      <h1>長い URL 及びテキスト文字列をリフローできるようにする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique is applicable to Cascading Style Sheet / HTML technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Sufficient)</span>.
+            <h2>適用 (対象) </h2>
+            <p>この達成方法は、カスケーディングスタイルシート / HTML 技術に適用される。</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/reflow">達成基準 1.4.10: リフロー</a> (十分な達成方法) </span>に関連する達成方法である。</p>
             </p>
          </section>
+
          <section id="description">
-            <h2>Description</h2>
-            <p>Long sets of characters without a space, such as URLs shown as content, can break
-               reflow when the page is zoomed. The objective of this technique is to present URLs
-               without introducing a horizontal scroll bar at a width equivalent to 320 CSS pixels
-               or a vertical scroll bar at a height equivalent to 256 CSS pixels. This is done by
-               using CSS techniques that adapt to the available viewport space. Note: Using a human
-               readable text link, rather than a long URL, is better for usability and accessibility.
+            <h2>解説</h2>
+            <p>
+			例えばコンテンツとして表示される URL など、空白のない長い文字の集合は、ページがズームされたときにリフローがなされない可能性がある。この達成方法の目的は、320 CSS ピクセルに相当する幅において横スクロールバーを、又は 256 CSS ピクセルに相当する高さにおいて縦スクロールバーを導入することなく、URL を表示することである。これは、CSS の手法を用いることによって、使用可能なビューポート領域に適応する形で行われる。<br>
+               注: ユーザビリティ及びアクセシビリティの観点では、長いURLではなく、人が読解可能なテキストリンクを使用する方がより良い。
             </p>
-            <p>By default most browsers will wrap long URLs at the following characters:</p>
+            <p>デフォルトでは、ほとんどのブラウザは長い URL を下記の文字で折り返す:</p>
             <ul>
                
-               <li>"-" Hyphen  </li>
+               <li>"-" ハイフン</li>
                
-               <li>" " Space</li>
+               <li>" " スペース</li>
                
-               <li>"?" Question (IE,  Chrome, Safari) </li>
+               <li>"?" クエスチョンマーク (IE,、Chrome、Safari)</li>
                
-               <li>"&amp;" Ampersand (Firefox only)</li>
+               <li>"&amp;" アンパサンド (Firefox のみ)</li>
                
             </ul>
-            <p>Sometimes these are not enough to ensure that long URLs will not overflow the viewport.</p>
+            <p>これだけでは、長い URL がビューポートをオーバーフローしないようにするには不十分な場合がある。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-breaking-long-urls">
-               <h3>Example 1: Breaking long URLs</h3>
-               <p>Using the following CSS will cause long URLs to break at appropriate places (hyphens,
-                  spaces, etc.) and within words without causing reflow. 
+               <h3>例 1: 長い URL を折り返す</h3>
+               <p>以下の CSS を使用することで、長い URL は適切な箇所 (ハイフンやスペースなど) 及び単語内で、オーバーフローを起こさずに改行される。
                </p>
-               <p>List of CSS declarations used and why they are used:</p>
+               <p>使用される CSS 宣言の一覧とその理由:</p>
                <ul>
                   
-                  <li><strong>overflow-wrap: break-word</strong>: Allows words to be broken and wrapped within words. 
+                  <li><strong>overflow-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。
                   </li>
                   	    
-                  <li><strong>word-wrap: break-word</strong>: Allows words to be broken and wrapped within. (Microsoft only)
+                  <li><strong>word-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。(Microsoft のみ)
                   </li>
                   
                </ul><pre>    a {overflow-wrap: break-word;}</pre><div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>IE and Edge  only support this declaration when used with the * (wildcard) selector</p>
-               </div><pre>    * { word-wrap: break-word;}</pre><p><a href="../../working-examples/css-reflow-url/">Working Example</a></p>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>* (ワイルドカード) セレクタを用いた場合のこの宣言は、IE 及び Edge のみサポートしている。</p>
+               </div><pre>    * { word-wrap: break-word;}</pre><p><a href="https://w3c.github.io/wcag/working-examples/css-reflow-url/">実装例</a></p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For strings of text that are wider than 320px check:</p>
+               <h3>手順</h3>
+               <p>320 ピクセルよりも幅の広い文字列について、以下を確認する:</p>
                <ol>
                   
-                  <li>Display the web page in a user agent capable of 400% zoom and set the viewport dimensions
-                     (in CSS pixels) to 1280 wide and 1024 high.
+                  <li>400% ズームが可能なユーザエージェントでウェブページを表示し、ビューポートの寸法 (CSSピクセル単位) を幅 1280、高さ 1024 に設定する。
                   </li>
                   
-                  <li>Zoom in by 400%.</li>
+                  <li>400% までズームインさせる。</li>
                   
-                  <li>For content read horizontally, check that all content and functionality is available
-                     without horizontal scrolling.
+                  <li>水平方向に読まれるコンテンツにおいて、横スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
                   </li>
                   
-                  <li>For content read vertically, check that all content and functionality is available
-                     without vertical scrolling.
+                  <li>垂直方向に読まれるコンテンツにおいて、縦スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
                   </li>
                   
                </ol>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                  <p>If the browser is not capable of zooming to 400%, you can reduce the width of the
-                     browser proportionally. For example, at 300% zoom the viewport should be sized to
-                     960px wide.
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ブラウザが 400% までズームできない場合は、ブラウザ幅を比例して小さくすることによって検証できる。例えば、300% ズームの場合、ビューポートの寸法は 960 ピクセル幅にすべきである。
                   </p>
                </div>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
-               <p>#3 and #4 are true.</p>
+               <h3>期待される結果</h3>
+               <p>3. 及び 4. の結果が真である。</p>
             </section>
          </section>
       </main>
