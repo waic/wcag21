@@ -2,9 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G76: Providing a mechanism to request an update of the content instead of
-         updating automatically
-      </title>
+      <title>G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,40 +10,33 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G75">Previous Technique: G75</a></li>
-            <li><a href="G78">Next Technique: G78</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G75">前の達成方法: G75</a></li>
+            <li><a href="G78">次の達成方法: G78</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a mechanism to request an update of the content instead of
-         updating automatically
-      </h1>
+      <h1>自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology or combination of technologies that support automatic updates.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>自動更新をサポートする全てのウェブコンテンツ技術又はウェブコンテンツ技術の組み合わせ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
                <li><a href="https://w3c.github.io/wcag/understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Sufficient)
                </li>
@@ -54,82 +45,55 @@
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to let the user control if and when
-               content is updated, in order to avoid confusion or disorientation caused by
-               automatic refreshes that cause a change of context. Users of screen readers
-               may find automatic updates confusing because it is not always clear what is
-               happening. When a page is refreshed, the screen reader's “virtual cursor",
-               which marks the user's current location on the page, is moved to the top of
-               the page. People who use screen magnification software and people with
-               reading disabilities may also be disoriented when pages are refreshed
-               automatically.
-            </p>
-            <p>Some content is frequently updated with new data or information. Some
-               developers force automatic updates by inserting code in the content that
-               causes the content to request a new copy of itself from the server. These
-               updates and the frequency of these updates are not always under the user's
-               control. Instead of triggering updates automatically, authors can provide a
-               mechanism that allows the user to request an update of the content as
-               needed.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、コンテキストの変化を引き起こす自動的な再読み込みによってもたらされる、混乱又は位置が分からなくなることを避けるために、コンテンツを更新するかどうかを利用者がコントロールできるようにすることである。スクリーンリーダーの利用者は、何が起こるのかが必ずしも明確ではないため、自動更新が混乱させているように感じることがある。ページが再読み込みされると、ページ上で利用者の現在位置を示すスクリーンリーダーの「バーチャルカーソル」は、ページの最上部に移動する。また、画面拡大ソフトウェアの利用者及び読字障害のある利用者も、ページが自動的に再読み込みされると、現在位置が分からなくなってしまう恐れがある。</p>
+            <p>コンテンツの中には、頻繁に新たなデータ又は情報に更新するものがある。一部の開発者は、コンテンツがサーバから自分自身の新しいコピーを要求するコードを挿入し、自動更新を強いることがある。この更新及びその頻度は、常に利用者のコントロール下にあるわけではない。コンテンツ制作者は、自動的に更新させる代わりに、利用者が必要な場合にコンテンツの更新を要求できるメカニズムを提供することができる。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In HTML, a developer can provide a button or link that
-                  allows the user to update the content. For example, on a
-                  page with news items located at http://www.example.com/news.jsp
-               </p><pre xml:space="preserve">
-              &lt;a href="news.jsp"&gt;Update this page&lt;/a&gt;
+               <h3>事例 1</h3>
+               <p>HTML では、利用者がコンテンツを更新するボタン又はリンクを、開発者が提供できる。例えば、次のコード例のように、ページ上で http://www.example.com/news.jsp にニュース項目があると示すことである。</p>
+               <pre xml:space="preserve">
+               &lt;a href="news.jsp"&gt;Update this page&lt;/a&gt;
             </pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>In a Web interface for e-mail (Webmail), a developer can
-                  provide a button or link to fetch new incoming mails instead
-                  of updating automatically.
-               </p>
+               <h3>事例 2</h3>
+               <p>E メールのウェブインタフェース (ウェブメール) では、自動更新ではなく、新しいメールを確認するボタン又はリンクを、開発者が提供できる。</p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G75">G75: Providing a mechanism to postpone any updating of content</a></li>
+               <li><a href="G75">G75: コンテンツの更新を延期するメカニズムを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>
+               <li><a href="../client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Find mechanisms to update the content (if such a mechanism is
-                     present).
-                  </li>
+                  <li>コンテンツを更新するメカニズムを見つける (そのようなメカニズムが存在する場合)。</li>
                   
-                  <li>For each such mechanism, check if it allows the user to request
-                     an update.
-                  </li>
+                  <li>そのような各メカニズムについて、利用者が更新を要求できるかどうかを確認する。</li>
                   
-                  <li>For each such mechanism, check if it can cause an automatic
-                     update.
-                  </li>
+                  <li>そのような各メカニズムについて、自動更新を引き起こされうるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If #2 is true, then #3 is false.</li>
+                  <li>2. の結果が真の場合、3. の結果が偽である。</li>
                   
                </ul>
                
