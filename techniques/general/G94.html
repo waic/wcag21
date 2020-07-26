@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G94: Providing short text alternative for non-text content that serves the same purpose
-         and presents the same information as the non-text content
+      <title>G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、短いテキストによる代替を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,186 +11,144 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G93">Previous Technique: G93</a></li>
-            <li><a href="G95">Next Technique: G95</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G93">前の達成方法: G93</a></li>
+            <li><a href="G95">次の達成方法: G95</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing short text alternative for non-text content that serves the same purpose
-         and presents the same information as the non-text content
+      <h1>非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、短いテキストによる代替を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分な達成方法)</span>に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to create a text alternative that serves the same
-               purpose and presents the same information as the original non-text content.  As a
-               result, it is possible to remove the non-text content and replace it with the text
-               alternative and no functionality or information would be lost.   This text alternative
-               should not necessarily describe the non-text content.  It should serve the same purpose
-               and convey the same information.  This may sometimes result in a text alternative
-               that looks like a description of the non-text content.  But this would only be true
-               if that was the best way to serve the same purpose.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、元の非テキストコンテンツと同じ目的を果たし、かつ同じ情報を提示するテキストによる代替を作成することである。その結果、非テキストコンテンツを取り除いてテキストによる代替で置き換えることができ、機能又は情報が失われてしまうことはない。このテキストによる代替は、必ずしも非テキストコンテンツ自体について記述すべきではない。同じ目的を果たし、同じ情報を伝達するべきである。これは、非テキストコンテンツの説明のようになるテキストによる代替をもたらすことがある。しかしながら、このが同じ目的を果たすための最善の方法である場合にのみ当てはまる。
             </p>
-            <p>If possible, the short text alternative should completely convey the purpose and information.
-               If it is not possible to do this in a short phrase or sentence, then the short text
-               alternative should provide a brief overview of the information.  A long text alternative
-               would be used in addition to convey the full information.
+            <p>可能であれば、短いテキストによる代替は目的及び情報を完全に伝達すべきである。短いフレーズ又は文ではそれが不可能な場合は、短いテキストによる代替でその情報の簡潔な概要を提供すべきである。併せて長いテキストによる代替も使って情報の全てを伝達する。
             </p>
-            <p>The text alternative should be able to substitute for the non-text content. If the
-               non-text content were removed from the page and substituted with the text, the page
-               would still provide the same function and information. The text alternative would
-               be brief but as informative as possible.
+            <p>テキストによる代替は、非テキストコンテンツの代わりをすることができるべきである。非テキストコンテンツがページから削除され、そのテキストに置き換えられたとしても、そのページが同じ機能及び情報を提供する。テキストによる代替は簡潔で、できる限り有益な情報とする。
             </p>
-            <p>In deciding what text to include in the alternative, it is often a good idea to consider
-               the following questions:
+            <p>代替テキストにどのようなテキストを入れるか決める場合に、以下のような質問について考えるとよい:
             </p>
             <ul>
                
-               <li>Why is this non-text content here?</li>
+               <li>なぜこの非テキストコンテンツがここにあるのか？</li>
                
-               <li>What information is it presenting?</li>
+               <li>それはどのような情報を示しているのか？</li>
                
-               <li>What purpose does it fulfill?</li>
+               <li>それはどのような目的を果たすのか？</li>
                
-               <li>If I could not use the non-text content, what words would I use to convey the same
-                  function and/or information?
+               <li>非テキストコンテンツを使用することができない場合、どのような言葉を使って同じ機能及び／又は情報を伝達するか？
                </li>
                
             </ul>
-            <p>When non-text content contains words that are important to understanding the content,
-               the alt text should include those words. If the text in the image is more than can
-               fit in a short text alternative then it should be described in the short text alternative
-               and a long text alternative should be provided as well with the complete text.
+            <p>非テキストコンテンツがコンテンツを理解する上で重要な文言を含んでいる場合、代替テキストもその文言を含んでいるべきである。画像内のテキストが短いテキストによる代替では収まらない場合は、短いテキストによる代替で説明し、かつ長いテキストによる代替で完全なテキストを提供すべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A search button uses an image of a magnifying glass.  The text alternative is "search"
-                  and not "magnifying glass".
+               <li>検索ボタンが虫眼鏡の画像を使っている。そのテキストによる代替には「虫眼鏡」ではなく、「検索」である。
                </li>
                
-               <li>A picture shows how a knot is tied including arrows showing how the ropes go to make
-                  the knot.  The text alternative describes how to tie the knot, not what the picture
-                  looks like.
+               <li>ロープに結び目が作られていく様子を矢印で示して、結び目がどのような結び方になっているかを絵で説明している。そのテキストによる代替は結び方を説明すべきで、その絵が何に見えるかではない。
                </li>
                
-               <li>A picture shows what a toy looks like from the front.  The text alternative describes
-                  a front view of the toy.
+               <li>おもちゃを正面から見た絵がある。そのテキストによる代替はおもちゃの正面から見た様子を説明している。
                </li>
                
-               <li>An animation shows how to change a tire. A short text alternative describes what the
-                  animation is about. A long text alternative describes how to change a tire.
+               <li>タイヤの交換方法をアニメーションで示している。短いテキストによる代替はそのアニメーションが何についてであるかを説明している。長いテキストによる代替はタイヤの交換方法を説明している。
                </li>
                
-               <li>A logo of the TechTron company appears next to each product in a list that is made
-                  by that and has a short text alternative that reads, "TechTron."
+               <li>TechTron 社のロゴがリスト中のそれぞれの製品の隣にあり、「TechTron」という短いテキストによる代替により製造元を示している。
                </li>
                
-               <li>A chart showing sales for October has an short text alternative of  "October sales
-                  chart". It also has a long description that provides all of the information on the
-                  chart.
+               <li>10 月の売上げを示しているグラフには「10 月の売上表」という短いテキストによる代替がある。 併せてそのグラフの全ての情報を提供する長い説明もある。
                </li>
                
-               <li>A heading contains a picture of the words, "The History of War" in stylized text.
-                  The alt text for the picture is "The History of War".
+               <li>図案化された文字の「戦争の歴史」という言葉を埋め込んだ画像が見出しにある。その画像に対する代替テキストは「戦争の歴史」である。
                </li>
                
-               <li>An image of a series of books on a shelf contains interactive areas
-                  that provide the navigation means to a Web page about the particular book. The
-                  text alternative "The books available to buy in this section. Select a book for
-                  more details about that book." describes the picture and the interactive
-                  nature.
+               <li>棚の上に並んだ本の画像にはその本に関するウェブページへのナビゲーション手段を提供するインタラクティブなエリアがある。「この区画で購入できる本。本を選択するとその本の詳細がわかります。」というテキストによる代替は画像及びインタラクティブな性質を説明している。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G92">G92: Providing long description for non-text content that serves the same purpose and presents
-                     the same information</a></li>
+               <li><a href="G92">G92: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G95">G95: Providing short text alternatives that provide a brief description of the non-text
-                     content</a></li>
+               <li><a href="G95">G95: 非テキストコンテンツの簡単な説明を提供する、短いテキストによる代替を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G196">G196: Using a text alternative on one item within a group of images that describes all items
-                     in the group</a></li>
+               <li><a href="G196">G196: 画像のグループにある一つの画像に、そのグループのすべての画像を説明するテキストによる代替を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H2">H2: Combining adjacent image and text links for the same resource</a></li>
+               <li><a href="../html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H24">H24:  Providing text alternatives for the area elements of image maps </a></li>
+               <li><a href="../html/H24">H24: イメージマップの area 要素にテキストによる代替を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H36">H36: Using alt attributes on images used as submit buttons</a></li>
+               <li><a href="../html/H36">H36: 送信ボタンとして用いる画像の alt 属性を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H35">H35:  Providing text alternatives on applet elements </a></li>
+               <li><a href="../html/H35">H35: applet 要素にテキストによる代替を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H37">H37: Using alt attributes on img elements</a></li>
+               <li><a href="../html/H37">H37: img 要素の alt 属性を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H53">H53: Using the body of the object element</a></li>
+               <li><a href="../html/H53">H53: object 要素のボディを使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H86">H86: Providing text alternatives for ASCII art, emoticons, and leetspeak</a></li>
+               <li><a href="../html/H86">H86: ASCII アート、顔文字、及びリート語にテキストによる代替を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Remove, hide, or mask the non-text content</li>
+                  <li>非テキストコンテンツを削除する、非表示にする、又は隠す。</li>
                   
-                  <li>Replace it with the text alternative</li>
+                  <li>テキストによる代替で置き換える。</li>
                   
-                  <li>Check that nothing is lost (the purpose of the non-text content is met by the text
-                     alternative)
+                  <li>何も情報が失われていないことを確認する (非テキストコンテンツの目的がテキストによる代替によって満たされている)。
                   </li>
                   
-                  <li>If the non-text content contains words that are important to understanding the content,
-                     the words are included in the text alternative
+                  <li>非テキストコンテンツがコンテンツを理解する上で重要な単語を含む場合、その単語をテキストによる代替に含めている。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3 is true. If the non-text content contains words that are important to understanding
-                     the content, check #4 is also true
+                  <li>3.の結果が真である。非テキストコンテンツにコンテンツを理解するために必要な単語が含まれている場合は、4.の結果も真であることを確認する。
                   </li>
                   
                </ul>
