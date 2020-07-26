@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G88: Providing descriptive titles for Web pages</title>
+      <title>G88: ウェブページに説明的なタイトルを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,136 +10,115 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G87">Previous Technique: G87</a></li>
-            <li><a href="G89">Next Technique: G89</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G87">前の達成方法: G87</a></li>
+            <li><a href="G89">次の達成方法: G89</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing descriptive titles for Web pages</h1>
+      <h1>ウェブページに説明的なタイトルを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/page-titled">Success Criterion 2.4.2: Page Titled</a> (Sufficient using a more specific technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、<span><a href="https://w3c.github.io/wcag/understanding/page-titled">達成方法 2.4.2: ページタイトル</a></span> (より具体的な手法を用いる十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to give each Web page a descriptive title. Descriptive
-               titles help users find content, orient themselves within it, and navigate through
-               it. A descriptive title allows a user to easily identify what Web page they are using
-               and to tell when the Web page has changed. The title can be used to identify the Web
-               page without requiring users to read or interpret page content. Users can more quickly
-               identify the content they need when accurate, descriptive titles appear in site maps
-               or lists of search results. When descriptive titles are used within link text, they
-               help users navigate more precisely to the content they are interested in.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、各ウェブページに説明的なタイトルをつけることである。説明的なタイトルは、利用者がコンテンツを見つけ、その中で現在位置を確認し、ナビゲートするのに役立つ。説明的なタイトルによって、利用者はどのウェブページを利用してるのかを容易に特定することができ、ウェブページがいつ変更されたかを知ることができる。タイトルにより、利用者はコンテンツを読む、又は解釈することなくウェブページを特定することができる。サイトマップ又は検索結果のリストに正確で説明的なタイトルが表示されると、利用者は必要とするコンテンツをより速く特定することができる。説明的なタイトルがリンクテキストに使用される場合、利用者は興味のあるコンテンツに、より正確にナビゲートできる。
             </p>
-            <p>The title of each Web page  should:</p>
+            <p>各ウェブページのタイトルは次の要件を満たすべきである:</p>
             <ul>
                
-               <li>Identify the subject of the Web page</li>
+               <li>そのウェブページの主題を特定している。</li>
                
-               <li>Make sense when read out of context, for example by a screen reader or in a site map
-                  or list of search results
+               <li>例えば、スクリーンリーダー、サイトマップ、検索結果一覧など、コンテキストから外れた読み方をしても意味をなす。
                </li>
                
-               <li>Be short</li>
+               <li>簡潔である。</li>
                
             </ul>
-            <p>It may also be helpful for the title to</p>
+            <p>次のようなページタイトルはさらに有益である。</p>
             <ul>
                
-               <li>Identify the site or other resource to which the Web page belongs</li>
+               <li>ウェブページが属するサイト又はその他のリソースを特定している</li>
                
-               <li>Be unique within the site or other resource to which the Web page belongs</li>
+               <li>ウェブページが属するサイト又はその他のリソースの中で、ユニークである</li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-title-that-lists-the-most-important-identifying-information-first">
-               <h3>Example 1: A title that lists the most important identifying information first</h3>
-               <p>A Web page is published by a group within a larger organization. The title of the
-                  Web page first identifies the topic of the page, then shows the group name followed
-                  by the name of the parent organization.
+               <h3>事例 1: 最も重要な識別情報を初めに記載するページタイトル</h3>
+               <p>大きな組織内のグループによって公開されているウェブページがある。ウェブページのタイトルでは、最初にページの話題を特定し、次にそのグループ名の後に親組織の名前を示している。
                </p><pre xml:space="preserve">
               &lt;title&gt;Working with us: The Small Group: The Big Organization&lt;/title&gt;
             </pre></section>
             <section class="example" id="example-2-a-synchronized-media-presentation-with-a-descriptive-title">
-               <h3>Example 2: A synchronized media presentation with a descriptive title</h3>
-               <p>A synchronized media presentation about the 2004 South Asian tsunami is titled “The
-                  Tsunami of 2004."
+               <h3>事例 2: 説明的なタイトルの付いた同期したメディアによる提示</h3>
+               <p>2004 年の南アジアで発生した津波に関する同期したメディアの提示には、「2004 年の津波」というタイトルがつけられている。
                </p>
             </section>
             <section class="example" id="example-3-a-web-page-with-a-descriptive-title-in-three-parts">
-               <h3>Example 3: A Web page with a descriptive title in three parts</h3>
-               <p>A Web page provides guidelines and suggestions for creating closed captions. The Web
-                  page is part of a “sub-site" within a larger site. The title is separated into three
-                  parts by dashes. The first part of the title identifies the organization. The second
-                  part identifies the sub-site to which the Web page belongs. The third part identifies
-                  the Web page itself. (For a working example, see
-                  <a href="http://main.wgbh.org/wgbh/pages/mag/services/captioning/faq/sugg-styles-conv-faq.html">WGBH – Media Access Group – Captioning FAQ</a>.)
+               <h3>事例 3: 三つの部分から成る、説明的なタイトルが付与されたウェブページ</h3>
+               <p>ウェブページでは、クローズドキャプションを作成するためのガイドライン及び提案を提供している。そのウェブページは、大きいサイトの中の「サブサイト」の一部である。ページタイトルはダッシュで三つの部分に分かれている。タイトルの最初の部分は組織名、二つ目はウェブページが属するサブサイト名、そして三つ目はウェブページ自体を特定している (具体例としては、
+                  <a href="http://main.wgbh.org/wgbh/pages/mag/services/captioning/faq/sugg-styles-conv-faq.html">WGBH – Media Access Group – Captioning FAQ</a> を参照。)
                </p>
             </section>
             <section class="example" id="example-4-a-newspaper-web-page">
-               <h3>Example 4: A newspaper Web page</h3>
-               <p>A Web site that only permits viewing of the current edition titles its Web page "National
-                  News, Front Page". A Web site that permits editions from different dates to be viewed
-                  titles its Web page, "National News, Front Page, Oct 17, 2005".
+               <h3>事例 4: 新聞のウェブページ</h3>
+               <p>最新版のみを閲覧できるウェブサイトでは、そのウェブページに「全国のニュース、第一面」というタイトルがつけられている。異なる日の版を閲覧することできるウェブサイトでは、そのページタイトルを「全国のニュース、第一面、2005 年 10 月 17 日」としている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H25">H25: Providing a title using the title element</a></li>
+               <li><a href="../html/H25">H25: title 要素を用いて、ページタイトルを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the Web page has a title</li>
+                  <li>ウェブページにページタイトルがあることを確認する。</li>
                   
-                  <li>Check that the title is relevant to the content of the Web page.</li>
+                  <li>そのページタイトルが、ウェブページのコンテンツに関連していることを確認する。</li>
                   
-                  <li>Check that the Web page can be identified using the title.</li>
+                  <li>そのページタイトルによって、ウェブページを特定できることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks above are true.</li>
+                  <li>上記全ての結果が真である。</li>
                   
                </ul>
                
