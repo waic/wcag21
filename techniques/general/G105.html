@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G105: Saving data so that it can be used after a user re-authenticates</title>
+      <title>G105: 利用者が再認証した後に利用できるようにデータを保存する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,114 +10,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G103">Previous Technique: G103</a></li>
-            <li><a href="G107">Next Technique: G107</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G103">前の達成方法: G103</a></li>
+            <li><a href="G107">次の達成方法: G107</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Saving data so that it can be used after a user re-authenticates</h1>
+      <h1>利用者が再認証した後に利用できるようにデータを保存する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Web pages that require user authentication and limit the time available for submitting
-               data.
+            <h2>適用 (対象)</h2>
+            <p>データを送信するのに、利用者認証を求め制限時間のあるウェブページ
             </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/re-authenticating">Success Criterion 2.2.5: Re-authenticating</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/re-authenticating">達成基準 2.2.5: 再認証</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Web servers that require user authentication often terminate the session after a set
-               period of time if there is no activity from the user. If the user is unable to input
-               the data quickly enough and the session times out before they submit, the server will
-               require re-authentication before proceeding. When this happens, the server stores
-               the data in a temporary cache while the user logs in, and when the user has re-authenticated,
-               the data is made available from the cache and the form is processed as if there had
-               never been a session time-out. The server does not keep the cache indefinitely, merely
-               long enough to ensure success after re-authentication in a single user session, such
-               as one day.
+            <h2>解説</h2>
+            <p>利用者に認証を求めるウェブサーバーは、一定時間、利用者の操作がない場合、セッションを終了することがよくある。利用者が素早くデータを入力できず、送信前にセッションがタイムアウトになった場合、プロセスの続行前にサーバーから再認証が求められるだろう。この場合、利用者がログインしている間、サーバーは一時キャッシュの中にデータを保存し、利用者が再認証されると、データがキャッシュから利用可能になり、まるでセッションのタイムアウトがなかったかのようにフォームを処理する。サーバーはキャッシュを無期限に保持するのではなく、例えば 1 日など、利用者の単一セッション中の再認証後の成功を保証するのに十分な長さだけキャッシュを保持する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A user logs in to use a forum and replies to a post. The time taken to write the reply
-                  is longer than the time allowed by the server for a session of inactivity. The user
-                  submits the reply and is informed of the time out and prompted to log in again to
-                  submit the response. The user's post reply is retained by the server and if the user
-                  log-in is successful the reply  is processed as normal. If the log-in cannot be successfully
-                  completed the reply is discarded.
+               <li>あるフォーラムを利用するために利用者がログインし、投稿に回答する。回答の書き込みにかかる時間は、サーバーから許可されている不操作セッション時間よりも長いとする。利用者は回答を送信すると、セッションのタイムアウトが通知され、回答の送信のために再度ログインするよう促された。利用者の回答はサーバーに保存されており、ログインが成功する場合に通常通り回答が処理される。ログインが正常に完了できない場合、回答は破棄される。
                </li>
                
-               <li>A user logs in to a secure area and fills out a form. The session times out for security
-                  reasons. The form data is retained by the server and the user is informed of the time
-                  out and is prompted to log-in again. If the user logs in correctly, the form is presented
-                  to the user with all of the data previously entered and user can submit the form.
-                  If the log-in cannot be successfully completed the form data is discarded.
+               <li>セキュリティが保護されたエリアに利用者がログインし、フォームに入力している。セキュリティ上の理由のため、セッションがタイムアウトになった。フォームデータはサーバーに保存され、利用者にはタイムアウトが通知され、再ログインが促される。利用者が正しくログインする場合、全てのデータが以前に入力された状態でフォームが表示される。ログインが正常に完了できない場合、フォームデータは破棄される。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G181">G181: Encoding user data as hidden or encrypted data in a re-authorization page</a></li>
+               <li><a href="G181">G181: 利用者のデータを、再認証したページで非表示データ又は暗号化されたデータとしてエンコーディングする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>On a site that requires user login to submit data,</p>
+               <p>データの送信にあたって利用者にログインを求めるサイトについて:</p>
                
                <ol>
                   
-                  <li>Log in and begin the timed activity.</li>
+                  <li>ログインし、制限時間のある操作を始める。</li>
                   
-                  <li>Allow the session to time out.</li>
+                  <li>セッションをタイムアウトさせる。</li>
                   
-                  <li>Submit the data.</li>
+                  <li>データを送信する。</li>
                   
-                  <li>Re-authenticate.</li>
+                  <li>再認証する。</li>
                   
-                  <li>Check that the process can continue and be completed without loss of data, including
-                     the original data and any changes made after re-authentication.
+                  <li>元のデータ及び再認証後の変更内容を含めた、データの損失なしに、プロセスが継続可能して完了できることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#5 is true.</li>
+                  <li>5. の結果が真である。</li>
                   
                </ul>
                
