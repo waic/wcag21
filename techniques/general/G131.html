@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G131: Providing descriptive labels</title>
+      <title>G131: 説明的なラベルを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,110 +10,95 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G130">Previous Technique: G130</a></li>
-            <li><a href="G133">Next Technique: G133</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G130">前の達成方法: G130</a></li>
+            <li><a href="G133">次の達成方法: G133</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing descriptive labels</h1>
+      <h1>説明的なラベルを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/headings-and-labels">Success Criterion 2.4.6: Headings and Labels</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/headings-and-labels">達成基準 2.4.6: 見出し及びラベル</a> (十分な達成方法)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (より具体的な手法を用いる十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that the label for any interactive component
-               within Web content makes the component's purpose clear. Using the appropriate technology-specific
-               techniques for technologies for associating labels with interactive controls allows
-               assistive technology to recognize the label and present it to the user, therefore
-               allowing the user to identify the purpose of the control.The label may also be used
-               to include text or a text symbol indicating that input is required.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブコンテンツ内のあらゆるインタラクティブなコンポーネントに対するラベルにより、コンポーネントの目的を明確にすることである。ラベルとインタラクティブなコントロールを関連付けるための適切なウェブコンテンツ技術固有の達成方法によって、支援技術はラベルを認識し利用者に提示できるようになるため、利用者はコントロールの目的を認識することができる。ラベルは、入力が要求されるテキスト又はテキストシンボルに使用されてもよい。
                
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-online-maps-with-controls-for-zooming-in-and-out">
-               <h3>Example 1: Online maps with controls for zooming in and out</h3>
-               <p>A Web application presents maps of a city. Users can “zoom in" to view part of the
-                  map in greater detail, and can “zoom out" to make it show a larger part of the city.
-                  The controls can be operated using either a mouse or a keyboard. The controls are
-                  labeled “Zoom in (Ctrl + Shift + L)" And “Zoom out (Ctrl + Shift + R)."
+               <h3>事例 1: ズームイン及びズームアウトのコントロールのあるオンライン地図</h3>
+               <p>ある都市の地図をウェブアプリケーションで提供している。利用者は「ズームイン」を使ってより詳細な地図が見られ、「ズームアウト」で都市の広い地域を見ることができる。マウスかキーボードのいずれでも操作することができる。コントロールには「ズームイン (Ctrl + Shift + L)」と「ズームアウト (Ctrl + Shift + R)」というラベルが提供されている。
                </p>
             </section>
             <section class="example" id="example-2-a-form-asking-the-name-of-the-user">
-               <h3>Example 2: A form asking the name of the user</h3>
-               <p>A form asks the name of the user. It consists of two input fields to ask for the first
-                  and last name. The first field is labeled "First name", the second is labeled "Last
-                  name".
+               <h3>事例 2: 利用者の名前を入力させるフォーム</h3>
+               <p>利用者の名前を入力させるフォームがある。そのフォームには、姓と名を入力するために二つのフィールドがある。一つめのフィールドには「姓」というラベルがあり、二つめには「名」というラベルがある。
                </p>
             </section>
             <section class="example" id="example-3-a-form-with-required-fields">
-               <h3>Example 3: A form with required fields</h3>
-               <p>A purchasing form includes several fields that are required. In addition to identifying
-                  the field, the label for each required field includes the word “required" in parentheses.
+               <h3>事例 3: 必須入力のあるフォーム</h3>
+               <p>必須の入力項目がいくつかある購入フォームがある。フィールドを特定することに加えて、入力必須の各フィールドのラベルには、括弧内に単語「必須」が含まれている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H90">H90: Indicating required form controls using label or legend</a></li>
+               <li><a href="../html/H90">H90: label 要素又は legend 要素を使用して、必須のフォームコントロールを明示する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each interface component with a label:</p>
+               <p>コンテンツ中の各インタフェースコンポーネントに対して:</p>
                
                <ol>
                   
-                  <li>Identify the purpose of the interface component.</li>
+                  <li>インタフェースコンポーネントの目的を特定する。</li>
                   
-                  <li>Check that each label makes the component's purpose clear.</li>
+                  <li>各ラベルがコンポーネントの目的を明確に示していることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 is true.</li>
+                  <li>2 の結果が真である。</li>
                   
                </ul>
                
