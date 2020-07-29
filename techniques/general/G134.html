@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G134: Validating Web pages</title>
+      <title>G134: ウェブページをバリデートする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,97 +10,58 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G133">Previous Technique: G133</a></li>
-            <li><a href="G135">Next Technique: G135</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G133">前の達成方法: G133</a></li>
+            <li><a href="G135">次の達成方法: G135</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Validating Web pages</h1>
+      <h1>ウェブページをバリデートする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any markup languages and many other technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/parsing">Success Criterion 4.1.1: Parsing</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのマークアップ言語及びその他の多くのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/parsing">達成基準 4.1.1: 構文解析</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to avoid ambiguities in Web pages
-               that often result from code that does not validate against formal
-               specifications. Each technology's mechanism to specify the technology and
-               technology version is used, and the Web page is validated against the
-               formal specification of that technology. If a validator for that technology
-               is available, the developer can use it.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、正式な仕様に則ってバリデートされていないコードにしばしば起因するウェブページの曖昧さをなくすことである。ウェブコンテンツ技術及びそのバージョンを特定するそれぞれのウェブコンテンツ技術のメカニズムが用いられ、そのウェブコンテンツ技術の正式な仕様に照らし合わせてウェブページをバリデートする。対象となるウェブコンテンツ技術にバリデータがある場合、開発者はそのバリデータを使うことができる。
             </p>
-            <p>Validation will usually eliminate ambiguities (and more) because an
-               essential step in validation is to check for proper use of that technology's
-               markup (in a markup language) or code (in other technologies). Validation
-               does not necessarily check for full conformance with a specification but it
-               is the best means for automatically checking content against its
-               specification.
+            <p>通常は、バリデーションによって曖昧さ (及びその他の問題点) を排除する。これは、バリデーションに必要不可欠なステップの一つが、そのウェブコンテンツ技術のマークアップ (マークアップ言語) 又はコード (他のウェブコンテンツ技術) が適正に使用されているかどうかをチェックすることだからである。バリデーションは、必ずしも仕様への完全な準拠をチェックするものではないが、コンテンツを仕様に照らし合わせて自動的にチェックするには最適な手段である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-validating-html">
-               <h3>Example 1: Validating HTML</h3>
-               <p>HTML pages include a document type declaration (sometimes referred
-                  to as
-                  
-                  !DOCTYPE
-                  
-                  statement) and are valid according to
-                  the HTML version specified by the document type declaration. The
-                  developer can use off-line or online validators (see Resources
-                  below) to check the validity of the HTML pages.
+               <h3>事例 1: HTML のバリデーション</h3>
+               <p>HTML ページに文書型宣言 (!DOCTYPE として記述されることが多い) があり、その文書型宣言で指定された HTML のバージョンに対して妥当 (Valid) である。開発者は、オフライン又はオンラインのバリデータ (下記「参考リソース」を参照) を使用して、この HTML ページの妥当性をチェックできる。
                </p>
             </section>
             <section class="example" id="example-2-validating-xml">
-               <h3>Example 2: Validating XML</h3>
-               <p>XHTML, SVG, SMIL and other XML-based documents reference a Document
-                  Type Definition (DTD) or other type of XML schema. The developer can
-                  use online or off-line validators (including validation tools built
-                  into editors) to check the validity of the XML documents.
+               <h3>事例 2: XML のバリデーション</h3>
+               <p>XHTML、SVG、SMIL 及びその他の XML をベースしたドキュメントが、文書型定義 (DTD) 又はその他のタイプの XML スキーマを参照している。開発者は、オンライン又はオフラインのバリデータ (エディタに内蔵されている検証ツールを含む) を使用して、この XML ドキュメントの妥当性をチェックできる。
                </p>
             </section>
             <section class="example" id="example-3-batch-validation-with-ant">
-               <h3>Example 3: Batch validation with Ant</h3>
-               <p>The
-                  
-                  xmlvalidate
-                  
-                  task of Apache Ant can be used for
-                  batch validation of XML files. The following Apache Ant target is a
-                  simple example for the validation of files with the extension
-                  
-                  .xml
-                  
-                  in the directory
-                  
-                  dev\\Web
-                  
-                  (relative to the Ant build file).
+               <h3>事例  3: Ant のバッチによるバリデーション</h3>
+               <p>XML ファイルのバリデーションをバッチで行う際には Apache Ant の xmlvalidate タスクを使用することができる。次の Apache Ant ターゲットは、(Ant のビルドファイルに相対する) ディレクトリ dev\\Web 内にある拡張子 .xml のファイルをバリデートするシンプルな例である。
                </p><pre xml:space="preserve">
               
               &lt;target name="validate-xml"&gt; 
@@ -111,8 +72,14 @@
             </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>以下に示される参考リソースは、W3C HTML5 勧告以前に作成されたものが多数であり、その多くは HTML5 への対応がなされていないと考えられる。そのため、WAIC では翻訳を行っていない。</p>
+               </div>
+            </div>
             <ul>
                
                <li>
@@ -136,7 +103,7 @@
                </li>
                
             </ul>
-            <p>Validating HTML and XHTML</p>
+            <p>HTML 及び XHTML のバリデーション</p>
             <ul>
                
                <li>
@@ -352,33 +319,32 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For HTML, SGML-based and XML-based technologies:</p>
+               <p>HTML、SGML ベース及び XML ベースのウェブコンテンツ技術に対して::</p>
                
                <ol>
                   
-                  <li>Load each page or document into a validating parser.</li>
+                  <li>それぞれのページ又はドキュメントをバリデーションを行うパーサーで読み込む。</li>
                   
-                  <li>Check that no validation errors are found.</li>
+                  <li>バリデーションエラーがないことを確認する。</li>
                   
                </ol>
                
-               <p>For other technologies:</p>
+               <p>その他のウェブコンテンツ技術に対して:</p>
                
-               <p>Follow the validation procedure defined for the technology in use, if any
-                  exists.
+               <p>用いているウェブコンテンツ技術に対してバリデーションの手順が存在する場合は、それに従う。
                </p>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p>For HTML, SGML-based and XML-based technologies:</p>
+               <p>HTML、SGML ベース、及び XML ベースのウェブコンテンツ技術に対して:</p>
                
-               <p>Step 2 is true.</p>
+               <p>2. の結果が真である。</p>
                
             </section>
          </section>
