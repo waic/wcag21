@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G144: Ensuring that the Web Page contains another CAPTCHA serving the same purpose using
-         a different modality
+      <title>G144: 異なるモダリティを用いて同じ目的を果たす、もう一つの CAPTCHA がウェブページに含まれていることを確認する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,99 +11,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G143">Previous Technique: G143</a></li>
-            <li><a href="G145">Next Technique: G145</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G143">前の達成方法: G143</a></li>
+            <li><a href="G145">次の達成方法: G145</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that the Web Page contains another CAPTCHA serving the same purpose using
-         a different modality
+      <h1>異なるモダリティを用いて同じ目的を果たす、もう一つの CAPTCHA がウェブページに含まれていることを確認する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all technologies.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient, together with <a href="../general/G143">G143: Providing a text alternative that describes the purpose of the CAPTCHA</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分、<a href="G143">G143: CAPTCHA の目的を説明するために、テキストによる代替を提供する</a>)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to reduce occasions in which a user with a disability
-               cannot complete a CAPTCHA task. Because there are alternate CAPTCHA tasks that use
-               different modalities, a user is more likely to be able to complete one of the tasks
-               successfully.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、障害のある利用者が CAPTCHA のタスクを完了できないという事態を減らすことである。異なるモダリティを用いた代替の CAPTCHA を提供することによって、利用者がいずれかの CAPTCHA によりタスクを完了できる可能性が高まる。
             </p>
          </section>
          <section id="examples">
             <h2>Examples</h2>
             <ul>
                
-               <li>A Web page that includes a CAPTCHA test that must be completed successfully before
-                  the user can advance to the next step in a process. The page includes both a visual
-                  task, such as typing words displayed in a image, and an audio task, such as typing
-                  letters spoken in an audio file. A user with hearing disabilities who cannot pass
-                  the audio CAPTCHA may be able to pass the visual CAPTCHA.
+               <li>あるプロセスで利用者が次のステップに進む前に完了しなければならない CAPTCHA のテストを含んだウェブページがある。ウェブページには、画像に表示されている言葉を入力するなどの視覚的なタスクと、音声ファイルで読み上げられる文字を入力するなどの音声によるタスクの両方が含まれる。聴覚に障害のある利用者は、音声 CAPTCHA をパスすることはできないが、視覚的な CAPTCHA であればパスすることが可能になる。
                </li>
                
-               <li>A blog comment form includes a visual CAPTCHA that must be completed before a user
-                  can submit comments. In addition to the visual CAPTCHA, it includes a CAPTCHA with
-                  a form field that asks, "What is two plus seven?" with a text entry field that allows
-                  users to enter the correct answer.
+               <li>ブログのコメントフォームに視覚的な CAPTCHA が含まれていて、利用者がコメントを送信する前に、この CAPTCHA をクリアしなければならない。視覚的な CAPTCHA に加えて、「2＋7 の答えは」と問うフォームフィールドで、利用者が解答を記入するためのテキスト入力フィールドが用意された CAPTCHA もある。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G143">G143: Providing a text alternative that describes the purpose of the CAPTCHA</a></li>
+               <li><a href="G143">G143: CAPTCHA の目的を説明するために、テキストによる代替を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each CAPTCHA in a Web page</p>
+               <p>ウェブページにある各 CAPTCHA に対して:</p>
                
                <ol>
                   
-                  <li>Check that the Web page contains another CAPTCHA for the same purpose but using a
-                     different modality.
+                  <li>ウェブページに、同じ目的を果たす、異なる感覚モダリティを用いたもう一つの CAPTCHA が含まれていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
                
