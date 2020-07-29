@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G208: Including the text of the visible label as part of the accessible name</title>
+      <title>G208: アクセシブルな名前 (accessible name)の一部として表示ラベルのテキストを含める</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -17,46 +17,34 @@
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Including the text of the visible label as part of the accessible name</h1>
+      <h1>アクセシブルな名前 (accessible name) の一部として表示ラベルのテキストを含める</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This Technique applies to all web technologies that include interactive controls (such
-               as links or form inputs)
-            </p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/label-in-name">Success Criterion 2.5.3: Label in Name</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象)</h2>
+            <p>この達成方法は、(リンクやフォーム入力などの) インタラクティブなコントロールを含むすべてのウェブ技術に適用される。</p>
+            <p>これは、<span><a href="https://w3c.github.io/wcag/understanding/label-in-name">達成基準 2.5.3 名前 (name) のラベル</a> (十分)</span> に関連する達成方法である。</p>
+         </section>
+
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that speech input users can operate web
-               content reliably.
-            </p>
-            <p>When speech input users interact with a web page, they usually speak a command followed
-               by the reference to some visible label (like text in a button, the link text, or the
-               text labelling input fields). For example, they may speak "click search" to activate
-               a search button.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、音声入力の利用者がウェブコンテンツを確実に操作できるようにすることである。</p>
+            <p>音声入力の利用者がウェブページを操作する場合、通常は表示ラベル (ボタン内のテキスト、リンクテキスト、入力欄にラベル付けされたテキストなど) を参照してからコマンドを読み上げる。例えば、「検索をクリック」と発声することで検索ボタンをアクティブにすることができる。</p>
             <p>When speech recognition software processes speech input and looks for matches, it
                uses the "accessible name" of controls, which can be different from the visible label.
                For example, a  button following a search input field may contain the text "go" but
@@ -82,7 +70,7 @@
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-link-text-matches-the-beginning-of-the-accessible-name">
                <h3>Example 1: Link text matches the beginning of the accessible name</h3>
                <p>A link contains visible text and hidden link text. Both together make up the link's
@@ -124,7 +112,7 @@
                </p><code>&lt;button&gt;Send &lt;span class="accessibly-hidden"&gt; Mail&lt;/span&gt;&lt;/button&gt;</code></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
+            <h2>関連リソース</h2>
             <p>Resources are for information purposes only, no endorsement implied.</p>
             <ul>
                				
@@ -135,7 +123,7 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                				
                <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA7">ARIA7: Using aria-labelledby for link purpose</a></li>
@@ -151,9 +139,9 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>For all controls with a visible label, check that:</p>
                <ol>
                   					
@@ -164,7 +152,7 @@
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
                   <li>Check #1 true.</li>
