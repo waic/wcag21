@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G127: Identifying a Web page's relationship to a larger collection of Web pages</title>
+      <title>G127: あるウェブページと、より大きな一連のウェブページとの関係性を特定する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,118 +10,96 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G126">Previous Technique: G126</a></li>
-            <li><a href="G128">Next Technique: G128</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G126">前の達成方法: G126</a></li>
+            <li><a href="G128">次の達成方法: G128</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Identifying a Web page's relationship to a larger collection of Web pages</h1>
+      <h1>あるウェブページと、より大きな一連のウェブページとの関係性を特定する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/page-titled">Success Criterion 2.4.2: Page Titled</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/page-titled">達成基準 2.4.2: ページタイトル</a> (Advisory)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/location">Success Criterion 2.4.8: Location</a> (Sufficient using a more specific technique)
+               <li><a href="https://w3c.github.io/wcag/understanding/location">達成基準 2.4.8: 現在位置</a> (より具体的な手法を用いる十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to enable users to identify the relationship between
-               the current Web page and other Web pages in the same collection (e.g., on the same
-               Web site). In some cases this can be done programmatically—for example by using the
-               
-               rel
-               
-               attribute of the
-               
-               link
-               
-               element in HTML. In other cases the information is provided by including the relevant
-               information in the title of the Web page.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が現在のウェブページと同じコレクション (例: 同じウェブサイト) にある他のウェブページとの関係性を特定できるようにすることである。場合によっては、プログラム的に行うことが可能である。例えば、HTML では、link 要素の rel 属性を用いることができる。別の場合では、ウェブページのタイトルに関連する情報を含めることによって、関係性を示す情報を提供する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-the-title-of-a-web-page-includes-the-name-of-the-sub-site">
-               <h3>Example 1: The title of a Web page includes the name of the sub-site</h3>
-               <p>A large Web site includes tutorials and reference materials for numerous technologies.
-                  The title of each Web page includes the name of the sub-site as well as the organization
-                  that produces the site.
+               <h3>事例 : サブサイト名を含んだウェブページのタイトル</h3>
+               <p>ある大規模なウェブサイトに、数々のウェブコンテンツ技術に関するチュートリアルとリファレンスがある。各ウェブページのタイトルには、そのサイトを提供している組織名とサブサイト名とがある。
                </p>
             </section>
             <section class="example" id="example-2-including-identifying-information-in-metadata">
-               <h3>Example 2: Including identifying information in metadata</h3>
-               <p>A Web page includes metadata that identifies it as the table of contents for a collection
-                  of documents. The metadata for each document in the collection identifies the document's
-                  position in the collection and provides a reference to the table of contents.
+               <h3>事例 2: 特定できる情報を含んだメタデータ</h3>
+               <p>あるウェブページには、それが文書のコレクションの目次であることを示すメタデータがある。その文書のコレクションにある各文書のメタデータは、コレクションにおけるその文書の位置付けを特定しており、目次への参照を提供している。
                </p>
             </section>
             <section class="example" id="example-3-chapters-in-an-online-textbook">
-               <h3>Example 3: Chapters in an online textbook</h3>
-               <p>An online textbook is divided into chapters. The title of each Web page includes the
-                  number and title of the chapter as well as the title of the textbook.
+               <h3>事例 3: オンライン教科書の各章</h3>
+               <p>あるオンライン教科書がいくつかの章に分けられている。各ウェブページのタイトルには、教科書のタイトルに加えて、その章の章番号とタイトルがある。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G65">G65: Providing a breadcrumb trail</a></li>
+               <li><a href="G65">G65: パンくずリストを提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G88">G88: Providing descriptive titles for Web pages</a></li>
+               <li><a href="G88">G88: ウェブページに説明的なタイトルを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check if the title of the Web page describes the Web page's relationship to the collection
-                     to which it belongs.
+                  <li>ウェブページのタイトルが、そのウェブページの属するコレクションとの関係性を示しているかどうかを確認する。
                   </li>
                   
-                  <li>Check if the Web page includes metadata identifying the Web page's relationship to
-                     the collection to which it belongs.
+                  <li>ウェブページに、そのウェブページの属するコレクションとの関係性を特定するメタデータが含まれているかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 or check #2 is true.</li>
+                  <li>1. 又は 2. の結果が真である。</li>
                   
                </ul>
                
