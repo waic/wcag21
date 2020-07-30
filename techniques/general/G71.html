@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G71: Providing a help link on every Web page</title>
+      <title>G71: すべてのウェブページにヘルプへのリンクを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,60 +10,45 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G70">Previous Technique: G70</a></li>
-            <li><a href="G73">Next Technique: G73</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G70">前の達成方法: G70</a></li>
+            <li><a href="G73">次の達成方法: G73</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a help link on every Web page</h1>
+      <h1>すべてのウェブページにヘルプへのリンクを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
             <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/help">Success Criterion 3.3.5: Help</a> (Sufficient)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide context sensitive help for users as
-               they enter data in forms by providing at least one link to the help information on
-               each Web page. The link targets a help page with information specific to that Web
-               page. Another approach is to provide a help link for every interactive control. Positioning
-               this link immediately before or after the control allows users to easily tab to it
-               if they have problems in the control. Displaying the help information in a new browser
-               window ensures that any data that has already been entered into the form will not
-               be lost. NOTE: A link is not the only means to provide help.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、各ウェブページに少なくとも一つのヘルプ情報へのリンクを用意して、利用者がフォームにデータを入力する際に、コンテキスト依存のヘルプを提供することである。このリンクは、そのウェブページ固有の情報があるヘルプページに向ける。もう一つの方法は、インタラクティブなコントロールのひとつひとつにヘルプページへのリンクを提供するものである。このリンクを当該コントロールの直前又は直後に配置することで、そのコントロールで問題があった場合、利用者が簡単にそのリンクまでタブで移動することができる。そのヘルプ情報をブラウザの新しいウィンドウで表示することで、それまでにフォームに入力されたデータは失われることはない。注記: リンクがヘルプ情報を提供する唯一の手段ではない。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The example below shows a label element that includes a help link. Including the help
-                  link within the label element allows screen reader users to have access to the help
-                  link when interacting with the input form control.
-               </p><pre xml:space="preserve">
+               <h3>事例 1</h3>
+               <p>下記の例は、ヘルプのリンクを含んだラベル要素を示している。ラベル要素内にヘルプ情報へのリンクを置く事で、スクリーンリーダーの利用者が入力フォームのコントロールを利用する際にヘルプのリンクにアクセスすることが可能になる。</p>
+               <pre xml:space="preserve">
               &lt;form action="test.html"&gt;
                 &lt;label for="test"&gt;Test control
                 &lt;a href="help.html" target="_blank"&gt;Help&lt;/a&gt;&lt;/label&gt;
@@ -72,42 +57,37 @@
             </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G184">G184: Providing text instructions at the beginning of a form or set of fields that describes
-                     the necessary input</a></li>
+               <li><a href="G184.html">G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G193">G193: Providing help by an assistant in the Web page</a></li>
+               <li><a href="G193.html">G193: ウェブページでアシスタントによるヘルプを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify a Web page that contains forms.</li>
+                  <li>フォームが含まれるウェブページを特定する。</li>
                   
-                  <li>Determine if there is at least one link to help information explaining how to complete
-                     the form on this Web page.
-                  </li>
+                  <li>そのページのフォームの全て記入する方法を説明するヘルプ情報へのリンクが一つ以上存在するかどうかを判断する。</li>
                   
-                  <li>Determine if there are links either before or after each interactive control to  information
-                     specific to that control.
-                  </li>
+                  <li>各インタラクティブなコントロールの前又は後ろに、そのコントロールに特有な情報へのリンクがあるかどうかを判断する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Either #2 or #3 are true.</li>
+                  <li>2. 又は 3. のいずれかの結果が真である。</li>
                   
                </ul>
                
