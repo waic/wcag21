@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G149: Using user interface components that are highlighted by the user agent when they receive
-         focus
+      <title>G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,68 +11,56 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G148">Previous Technique: G148</a></li>
-            <li><a href="G150">Next Technique: G150</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G148">前の達成方法: G148</a></li>
+            <li><a href="G150">次の達成方法: G150</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using user interface components that are highlighted by the user agent when they receive
-         focus
+      <h1>フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies with user-agent provided focus highlighting.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/focus-visible">Success Criterion 2.4.7: Focus Visible</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>ユーザエージェントによって提供されるフォーカスのハイライトを用いる全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化</a> (十分な達成方法)</span>に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that the focused component can be visually
-               identified by the user by relying on user agent support. It is common for user agents
-               to highlight standard controls in some way when they receive focus. UAAG-conformant
-               user agents do so when they satisfy checkpoint 10.2 "Highlight selection, content
-               focus, enabled elements, visited links". When authors use standard controls for which
-               the user agent provides this support, users are informed of the focus location in
-               a standard, predictable way.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ユーザエージェントのサポートに頼ることにより、利用者がフォーカスされたコンポーネントを視覚的に識別できるようにすることである。フォーカスを受け取ったときに、何らかの方法で標準的なコントロールを強調することはユーザエージェントでは一般的である。UAAG に適合したユーザエージェントは、<a href="http://www.w3.org/TR/WAI-USERAGENT/guidelines.html#tech-interaction-highlight">チェックポイント 10.2 "Highlight selection, content focus, enabled elements, visited links"</a> を満たす場合、標準的なコントロールを強調する。ユーザエージェントがこのサポートを提供する標準的なコントロールをウェブ制作者が使用するとき、利用者は、フォーカスの置かれている場所を標準的で予測可能な方法で通知される。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>When html text input fields receive focus, browsers display a blinking vertical bar
-                  at the insertion point in the text field.
+               <li>HTML のテキスト入力フィールドがフォーカスを受け取ったとき、ブラウザーはテキストフィールドの中の入力箇所に点滅する縦棒を表示する。
                </li>
                
-               <li>When html links receive focus, they are surrounded by a dotted focus highlight rectangle.</li>
+               <li>HTML のリンクがフォーカスを受け取ったとき、そのリンクは点線で長方形のフォーカスハイライトで囲まれる。</li>
                
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -85,27 +72,27 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each focusable component in the Web page:</p>
+               <p>ウェブページ上のフォーカス可能な各コンポーネントに対して:</p>
                
                <ol>
                   
-                  <li>Set focus to the control</li>
+                  <li>そのコントロールにフォーカスを設定する。</li>
                   
-                  <li>Check whether the user agent has highlighted the control in some way</li>
+                  <li>何らかの方法でユーザエージェントがコントロールを強調しているかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true</li>
+                  <li>2. の結果が真である。</li>
                   
                </ul>
                
