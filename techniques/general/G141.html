@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G141: Organizing a page using headings</title>
+      <title>G141: 見出しを用いてウェブページを構造化する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,66 +10,59 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G140">Previous Technique: G140</a></li>
-            <li><a href="G142">Next Technique: G142</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G140">前の達成方法: G140</a></li>
+            <li><a href="G142">次の達成方法: G142</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Organizing a page using headings</h1>
+      <h1>見出しを用いてウェブページを構造化する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
             <h2>Applicability</h2>
-            <p>Pages with content organized into sections.</p>
-            <p>This technique relates to:</p>
+            <p>セクションで構成されたコンテンツのあるウェブページ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (Advisory)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/section-headings">Success Criterion 2.4.10: Section Headings</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/section-headings">達成基準 2.4.10: セクション見出し</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that sections have headings that identify
-               them. Success Criterion 1.3.1 requires that the headings be marked such that they
-               can be programmatically identified.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、それぞれのセクションにそのセクションを特定する見出しがあることを確実にすることである。達成基準 1.3.1 では見出しがプログラムによる特定可能な方法でマークアップされていることを要求している。
             </p>
-            <p>In HTML, this could be done using the HTML heading elements (h1, h2, h3, h4, h5, and
-               h6). These allow user agents to automatically identify section headings. Other technologies
-               use other techniques for identifying headers. To facilitate navigation and understanding
-               of overall document structure, authors should use headings that are properly nested
-               (e.g., h1 followed by h2, h2 followed by h2 or h3, h3 followed by h3 or h4, etc.).
+            <p>HTML においては、これは見出し要素 (h1, h2, h3, h4, h5, h6) によって実現されうる。これによりユーザエージェントは自動的にセクションの見出しを特定できる。他のウェブコンテンツ技術では、異なる方法で見出しを特定する。文書の全体的構造のナビゲーション及び理解を助けるには、コンテンツ制作者は適切に入れ子にした見出しを使用すべきである (たとえば h1 には h2 が続き、h2 には h2 か h3 が続き、h3 には h3 または h4 が続き……といったように)。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements#Accessibility_concerns" rel="nofollow">MDN の &lt;h1&gt;–&lt;h6&gt;: HTML の見出し要素 - アクセシビリティへの配慮</a>で言及されているように、見出しレベルを飛ばしてページを作成する (例えば、<code>h1</code> 要素の次に <code>h3</code> 要素を置く) と、スクリーンリーダーの利用者がそのページの見出しをナビゲートするときに、ページには存在しない <code>h2</code> 要素を誤って飛ばしてしまったのではないかと誤解する恐れがあることに注意する。</p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-headings-used-to-organize-an-html-page">
-               <h3>Example 1: Headings used to organize an HTML page</h3>
-               <p>A page on cooking techniques uses a h1 element for the overall title, and h2 elements
-                  for major sections on cooking with oil vs cooking with butter, and h3 elements for
-                  sub-sections on oil-cooking techniques.
+               <h3>事例 1: HTML のページを構造化するために用いられた見出し</h3>
+               <p>ある調理法を紹介するページでは、h1 要素により全体のタイトルを示し、h2 要素で大項目としてサラダ油による調理とバターによる調理を示し、h3 要素で油による調理の詳細なサブセクションを示している。
                </p><pre xml:space="preserve">
               &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
                 &lt;head&gt;
@@ -90,8 +83,8 @@
             </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -107,37 +100,37 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/aria/ARIA12">ARIA12: Using role=heading to identify headings</a></li>
+               <li><a href="../aria/ARIA12">ARIA12: 見出しを特定するために role=heading を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H42">H42: Using h1-h6 to identify headings</a></li>
+               <li><a href="../html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H69">H69: Providing heading elements at the beginning of each section of content</a></li>
+               <li><a href="../html/H69">H69: コンテンツの各セクションの開始位置に見出し要素を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine a page with content organized into sections.</li>
+                  <li>セクションで構成されたコンテンツのあるページを調べる。</li>
                   
-                  <li>Check that a heading for each section exists.</li>
+                  <li>それぞれのセクションに見出しがあることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>2. の結果が真である。</li>
                   
                </ul>
                
