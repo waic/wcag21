@@ -29,7 +29,7 @@
       </nav>
       <h1>達成基準 2.4.4: リンクの目的 (コンテキスト内) を理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#link-purpose-in-context" style="font-weight: bold;">2.4.4 リンクの目的 (コンテキスト内)</a> (レベル A): <a href="https://waic.jp/docs/WCAG21/#dfn-link-purpose" target="terms">それぞれのリンクの目的</a>が、リンクのテキスト単独で、又はリンクのテキストと<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined-link-context" target="terms">プログラムによる解釈が可能なリンクのコンテキスト</a>から判断できる。ただし、リンクの目的が<a href="https://waic.jp/docs/WCAG21/#dfn-ambiguous-to-users-in-general" target="terms">ほとんどの利用者にとって曖昧</a>な場合は除く。</p>
+         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#link-purpose-in-context" style="font-weight: bold;">2.4.4 リンクの目的 (コンテキスト内)</a> (レベル A): <a href="#dfn-link-purpose" target="terms">それぞれのリンクの目的</a>が、リンクのテキスト単独で、又はリンクのテキストと<a href="#dfn-programmatically-determined-link-context" target="terms">プログラムによる解釈が可能なリンクのコンテキスト</a>から判断できる。ただし、リンクの目的が<a href="#dfn-ambiguous-to-users-in-general" target="terms">ほとんどの利用者にとって曖昧</a>な場合は除く。</p>
       </blockquote>
       <main>
          <section id="intent">
@@ -40,7 +40,7 @@
             <p>場合によっては、コンテンツ制作者は、リンクのコンテキストを提供する論理的に関係のあるテキストの中でリンクの説明の一部を提供したいことがある。この場合、利用者は、リンクからフォーカスを移動させずに、そのリンクの目的を特定できることが望ましい。言い換えれば、利用者はあるリンクに到達でき、その位置を失うことなく、リンクに関してさらに調べることができる。これは、リンク自体と直接関連付けられているため、リンクと同じ文、段落、リスト項目、又はテーブルのセル、又はデータテーブル内にあるリンクのテーブル見出しセル、リンクの説明を配置することで達成可能である。あるいは、コンテンツ制作者は、ARIA技術を用いてページ上の追加テキストをリンクに関連付けてもよい。</p>
             <p>このコンテキストは、リンクの前にある場合に、最も有用だろう (例えば、曖昧なリンクテキストを使わなければならない場合、その曖昧なリンクテキストを文の初めに置くよりも、リンク先を説明する文の最後に置くほうがよい)。説明がリンクの後に続く場合、ページを (上から下へ) 順に読んでいるスクリーンリーダーの利用者に対して混乱及び困難が存在する可能性がある。</p>
             <p>同じ宛先のリンクには一貫したテキストがあることがベストプラクティスとなる（そしてこれは、一式内のページに対して<a href="consistent-identification.html" class="guideline">達成基準 3.2.4</a> により要件となる）。さまざまな目的や宛先を持つリンクが異なるテキストを持つこともベストプラクティスとなる。</p>
-            <p><a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>へのリンクにおけるベストプラクティスは、その適合している代替版へのリンクテキストが、リンク先のページがよりアクセシブルなバージョンであることをリンクテキストの中で示すことである。リンクの目的が何であるかをエンドユーザが確実に理解できるようにすることがゴールなので、この情報はテキストで提供されることもある。</p>
+            <p><a href="#dfn-conforming-alternate-version">適合している代替版</a>へのリンクにおけるベストプラクティスは、その適合している代替版へのリンクテキストが、リンク先のページがよりアクセシブルなバージョンであることをリンクテキストの中で示すことである。リンクの目的が何であるかをエンドユーザが確実に理解できるようにすることがゴールなので、この情報はテキストで提供されることもある。</p>
             <p>この達成基準には、リンクの目的をウェブページ上にある情報からは判断できないリンクに対して例外が認められている。そのような状況では、障害のある利用者が不利な立場にあるわけではない。リンクの目的を理解するために追加入手可能な文脈が一切ないのである。しかし、リンクの目的を解釈するために使用できるウェブページ上で利用可能ないかなるコンテキストの量であっても、達成基準を満たすためのリンクテキストで利用可能にされる、又はリンクとプログラム的に関連付けられなければならない。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div><p>リンクの目的が不明又は曖昧になることが想定できる状況もありえる。例えば、ゲームにはドア 1、ドア 2、そしてドア 3 としてのみ識別されるリンクがあるかもしれない。リンクの目的がすべての利用者に対するサスペンスを引き起こすことにあるので、このリンクテキストは十分である。</p>
@@ -309,7 +309,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">リンクとの<a href="https://waic.jp/docs/WCAG21/#dfn-relationships" target="terms">関係性</a>から<a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能であり、リンクテキストと結びつけることができ、様々な感覚モダリティで利用者に提示することができる付加的情報。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">リンクとの<a href="#dfn-relationships" target="terms">関係性</a>から<a href="#dfn-programmatically-determined" target="terms">プログラムによる解釈</a>が可能であり、リンクテキストと結びつけることができ、様々な感覚モダリティで利用者に提示することができる付加的情報。</p>
                   
                   
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">HTML では、英語で記述されたリンクからプログラムによる解釈が可能な情報には、そのリンクと同じ段落、リスト、又はテーブルのセルにあるテキスト、あるいはリンクのあるテーブルのセルと関連付けられたテーブルの見出しセルにあるテキストなどがある。</p>
