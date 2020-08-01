@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G138: Using semantic markup whenever color cues are used</title>
+      <title>G138: 色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,70 +10,69 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G136">Previous Technique: G136</a></li>
-            <li><a href="G139">Next Technique: G139</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G136">前の達成方法: G136</a></li>
+            <li><a href="G139">次の達成方法: G139</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using semantic markup whenever color cues are used</h1>
+      <h1>色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support color and text.</p>
-            <p>This technique relates to <span><a href="https://w3c.github.io/wcag/understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>色及びテキストをサポートするウェブコンテンツ技術すべて。</p>
+            <p>これは<span><a href="https://w3c.github.io/wcag/understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to combine color and semantic markup to convey
-               information. Most users can quickly scan the content to locate information conveyed
-               by using color. For users who cannot see color, semantic markup can provide a different
-               type of cue. User agents can then make this type of structure perceivable to the user,
-               for example using a different visual presentation for different types of structures
-               or by using a different voice or pitch in an auditory presentation.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、色とセマンティックなマークアップを組み合わせて、情報を伝達することである。ほとんどの利用者はコンテンツをすばやく読み取り、色を用いて伝達された情報をコンテンツから見つけることができる。色を見ることができない利用者に対しては、セマンティックなマークアップによって異なるタイプの手がかりを提供することができる。それによって、ユーザエージェントは、例えば、異なるタイプの構造に対しては異なる視覚的提示を用いる、又は聴覚的提示において異なる音声もしくは音の高さを用いることによって、このタイプの構造を利用者に対して知覚可能にすることができる。
             </p>
-            <p>Most user agents will visually distinguish text that has been identified using semantic
-               markup. Some assistive technologies provide a mechanism for determining the characteristics
-               of content that has been created using proper semantic markup.
+            <p>ほとんどのユーザエージェントは、セマンティックなマークアップを用いて指定されたテキストを視覚的に区別する。支援技術の中には、適切でセマンティックなマークアップを用いて制作されたコンテンツの特徴を定めるメカニズムを提供しているものもある。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>WAIC では G138 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G138.html">アクセシビリティ・サポーテッド（AS）情報: G138</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-color-and-strong-emphasis-for-required-form-fields">
-               <h3>Example 1: Color and strong emphasis for required form fields</h3>
-               <p>An HTML form contains several required fields. The labels for the required fields
-                  are displayed in red. In addition, the text of each label is marked up with the STRONG
-                  element for stronger emphasis. The instructions for 
-                  completing the form indicate that "all required fields are displayed in red and are
-                  emphasized", followed by an example.
+               <h3>事例 1: 必須のフォームフィールドに対して、色と強調を用いる</h3>
+               <p>HTML のフォームにいくつかの必須フィールドがある。必須フィールドのラベルは赤で表示されている。加えて、各ラベルのテキストはより強い強調を示すために strong 要素でマークアップされている。フォーム入力の説明文には、「すべての必須項目は赤で表示されており、強調されている」とあり、例が添えられている。
                </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                  <div>
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong#%3Cem%3E_vs._%3Cstrong%3E">MDN の strong 要素</a>で示されているように、古い HTML では <code>strong</code> 要素を単により強い強調としていたが、現在の HTML では <code>strong</code> を重要性を表すものと定義している。</p>
+                  </div>
+               </div>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -94,35 +93,35 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G205">G205: Including a text cue for colored form control labels</a></li>
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/html/H49">H49: Using semantic markup to mark emphasized or special text</a></li>
+               <li><a href="../html/H49">H49:強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For any content where color differences are used to convey information:</p>
+               <p>情報を伝達するために色の違いが使用されているコンテンツに対して:</p>
                
                <ol>
                   
-                  <li>Check that the same information is available through semantic markup.</li>
+                  <li>セマンティックなマークアップを通して同じ情報が入手可能であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li>1.の結果が真である。</li>
                   
                </ul>
                
