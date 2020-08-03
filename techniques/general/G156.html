@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G156: Using a technology that has commonly-available user agents that can change the foreground
-         and background of blocks of text
+      <title>G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,112 +11,92 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G155">Previous Technique: G155</a></li>
-            <li><a href="G157">Next Technique: G157</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G155">前の達成方法: G155</a></li>
+            <li><a href="G157">次の達成方法: G157</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a technology that has commonly-available user agents that can change the foreground
-         and background of blocks of text
+      <h1>テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://w3c.github.io/wcag/understanding/contrast-minimum">Success Criterion 1.4.3: Contrast (Minimum)</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (参考)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/contrast-enhanced">Success Criterion 1.4.6: Contrast (Enhanced)</a> (Advisory)
+               <li><a href="https://w3c.github.io/wcag/understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (参考)
                </li>
-               <li><a href="https://w3c.github.io/wcag/understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient)
+               <li><a href="https://w3c.github.io/wcag/understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Some people with cognitive disabilities require specific color combinations of foreground
-               text and background to help them successfully understand the contents of the Web page.
-               Most popular browsers provide the option to change colors settings globally within
-               the browser. In this case the colors selected by the user override the foreground
-               and background colors specified by the Web author.
+            <h2>解説</h2>
+            <p>認知障害のある利用者は、ウェブページのコンテンツをうまく理解するために、前景のテキストと背景を特定の色の組み合わせを必要としていることがある。一般に利用されるブラウザの大部分が、ブラウザ内部の機能として、色設定を変更するオプションを提供している。この機能によって、コンテンツ制作者が指定した前景色や背景色を、利用者が選択した色で上書きできる。
             </p>
-            <p>In order to meet this success criteria, the Web author would design the page so that
-               it works with browsers that have these controls, and the author does not override
-               these controls.
+            <p>この達成基準を満たすためには、コンテンツ制作者はこのようなコントロールを備えるブラウザでウェブページが利用できるようにデザインし、この機能を無効にするような実装を行なってはならない。
             </p>
-            <p>Note that overriding the foreground and background colors of all text on a page may
-               hide visual clues to the grouping and organization of the Web page, making it much
-               more difficult to understand and use. This technique may not be appropriate when background
-               colors are used to delineate areas of the page. This technique may be appropriate
-               for technologies and user agents that do not alter border colors when background colors
-               are overridden. If background colors are used to delineate areas of the page, "<a href="https://w3c.github.io/wcag/techniques/css/C23">C23: Specifying text and background colors of secondary content such as banners, features
-                  and navigation in CSS while not specifying text and background colors of the main
-                  content</a>" may be used to permit the user to control the colors of the main text while retaining
-               the visual structure of the Web page.
+            <p>ページ上の全てのテキストの前景色と背景色を上書きすると、ページのグループ化や組織化に関する視覚的な手がかりが失われ、かえって理解や利用が困難になる恐れがある。ページ上の各領域の境界を示すのに背景色を用いている場合、この達成方法が適切ではない可能性がある。背景色をページ上の各領域の境界を示すのに用いているならば、「<a href="https://waic.jp/docs/WCAG-TECHS/C23" class="tech-ref">C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する</a>  (CSS)
+               」に基づき、ページの視覚的な構造は保ちつつ、利用者が主要なテキストの色をコントロールできるようにするとよい。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A Web page is designed using HTML and CSS to specify the foreground and background
-                  colors. The user sets their own colors in Internet Explorer 7 and they can view the
-                  content with their chosen foreground and background colors.
+               <li>前景色と背景色の指定のために、HTML と CSS を用いてデザインしているウェブページがある。利用者は Internet Explorer 7 で自分の望む色に設定し、選択した前景色と背景色でコンテンツを見ることができる。
                </li>
                
-               <li>A Web page is designed using HTML and CSS. There is a link on the page to instructions
-                  on how to set colors in various browsers.
+               <li>HTML と CSS を用いてデザインしているウェブページがある。さまざまなブラウザでどのように色を設定するかを説明したページへのリンクを設置している。
                </li>
                
             </ul>
-         </section>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p>Firefox 及び Chrome では、例えば Stylus という拡張機能を追加することで、ユーザスタイルシートにより好みの前景色と背景色を指定できる。</p>
+            </div>         </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Open the Web page in a browser that allows users to change colors of HTML content.</li>
+                  <li>HTML コンテンツの色を利用者が変更できるブラウザで、ウェブページを開く。</li>
                   
-                  <li>Change the foreground and background colors in the browser settings so they are different
-                     than those specified in the content.
+                  <li>ブラウザ設定で、コンテンツに指定された色とは異なる前景色及び背景色に変更する。
                   </li>
                   
-                  <li>Return to the page and check that the new specified foreground text and background
-                     colors in the browser override the colors specified in the content.
+                  <li>ページに戻ると、ブラウザで設定した別の前景色及び背景色が、コンテンツに指定された色を上書きしていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3 is true.</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
