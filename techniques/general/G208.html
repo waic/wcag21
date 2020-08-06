@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
    <head>
       <meta charset="UTF-8" />
-      <title>G208: アクセシブルな名前 (accessible name)の一部として表示ラベルのテキストを含める</title>
+      <title>G208: アクセシブルな名前 (accessible name) の一部として可視ラベルのテキストを含める</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,10 +10,10 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G207">Previous Technique: G207</a></li>
-            <li><a href="G209">Next Technique: G209</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G207">前の達成方法: G207</a></li>
+            <li><a href="G209">次の達成方法: G209</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
@@ -28,7 +28,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>アクセシブルな名前 (accessible name) の一部として表示ラベルのテキストを含める</h1>
+      <h1>アクセシブルな名前 (accessible name) の一部として可視ラベルのテキストを含める</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
@@ -43,77 +43,52 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法の目的は、音声入力の利用者がウェブコンテンツを確実に操作できるようにすることである。</p>
-            <p>音声入力の利用者がウェブページを操作する場合、通常は表示ラベル (ボタン内のテキスト、リンクテキスト、入力欄にラベル付けされたテキストなど) を参照してからコマンドを読み上げる。例えば、「検索をクリック」と発声することで検索ボタンをアクティブにすることができる。</p>
-            <p>When speech recognition software processes speech input and looks for matches, it
-               uses the "accessible name" of controls, which can be different from the visible label.
-               For example, a  button following a search input field may contain the text "go" but
-               uses an invisible <code>aria-label</code> attribute with the value "search". Since aria-label takes precedence over the text
-               included in the button, the accessible name of this button will be "search", not "go".
-               The <a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a> defines how the accessible name is constructed.
-            </p>
-            <p>In situations where the visible label is considered inadequate as the accessible name,
-               it is possible to supplement text in the accessible name. However, in order to meet
-               2.5.3 Label in Name, the text string that makes up the visible label must occur in
-               its entirety in the accessible name. In most situations, where it is felt that additional
-               context is needed, it is recommended that the visible text should precede the additional
-               text. When authors make sure that the visible label of a control is included, intact,
-               in the accessible name of that control, speech input users can be confident that their
-               input will be correctly interpreted.
-            </p>
+            <p>この達成方法の目的は、音声入力を行う利用者がウェブコンテンツを確実に操作できるようにすることである。</p>
+            <p>音声入力を行う利用者がウェブページを操作する場合、通常は可視ラベル (ボタン内のテキスト、リンクテキスト、入力欄にラベル付けされたテキストなど) を参照してからコマンドを読み上げる。例えば、「検索をクリック」と発声することで検索ボタンをアクティブにすることができる。</p>
+            <p>音声認識ソフトウェアが音声入力を処理して一致するものを探すとき、可視ラベルとは異なるコントロールの "アクセシブルな名前 (accessible name)" を使用することがある。例えば、検索の入力欄に続くボタンには "go" というテキストが含まれているかもしれないが、値が "search" の非表示の <code>aria-label</code> 属性を使用している。aria-label はボタンに含まれるテキストよりも優先されるため、このボタンのアクセシブルな名前 (accessible name) は "go" ではなく "search" になる。<a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a> ではアクセシブルな名前 (accessible name) の設定方法を定義している。</p>
+            <p>可視ラベルがアクセシブルな名前 (accessible name) として不適切であると見なされる状況においては、アクセシブルな名前 (accessible name) のテキストを補足することが可能である。ただし、2.5.3 名前 (name) のラベルを満たすためには、可視ラベルを構成するテキスト文字列全体がアクセシブルな名前 (accessible name) に含まれている必要がある。追加のコンテキストが必要とされるほとんどの状況では、可視テキストを追加のテキストの前に置くことを推奨する。コンテンツ制作者がコントロールの可視ラベルがそのままそのコントロールのアクセシブルな名前 (accessible name) に含まれるようにすれば、音声入力を行う利用者は入力が正しく解釈されると確信できる。</p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>Additional context may be more appropriately included using the Accessible Description
-                  (including through use of <code>aria-describedby</code>). This has the signficant benefit of improving context for some users of assistive
-                  technology without altering the accessible name.
-               </p>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>(<code>aria-describedby</code> の使用を含む) アクセシブルな説明 (the Accessible Description) によって、追加のコンテキストをより適切に取り入れることができる。これには、一部の支援技術の利用者にとって、アクセシブルな名前 (accessible name) を変更せずに、コンテキストを改善するという大きな利点がある。</p>
             </div>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-link-text-matches-the-beginning-of-the-accessible-name">
-               <h3>Example 1: Link text matches the beginning of the accessible name</h3>
-               <p>A link contains visible text and hidden link text. Both together make up the link's
-                  accessible name. The visible text comes first. The idea is to make the link more descriptive
-                  for users of assistive technologies. 
+               <h3>事例 1: リンクテキストがアクセシブルな名前 (accessible name) の先頭に一致する</h3>
+               <p>リンクには可視テキストと不可視のリンクテキストが含まれている。どちらもリンクのアクセシブルな名前 (accessible name) を構成している。この目的は、支援技術の利用者に対してリンクをより説明的にすることである。
                </p><code>&lt;p&gt;Go to &lt;a href="code-of-conduct.html"&gt;Code of conduct &lt;span class="hidden_accessibly"&gt;
                   of ACME Corporation&lt;/span&gt;&lt;/a&gt;&lt;p&gt;</code></section>
             <section class="example" id="example-2-generic-link-text-concatenated-with-heading">
-               <h3>Example 2: Generic link text concatenated with heading</h3>
-               <p>A generic link is combined with the heading of the paragraph to give context. It is
-                  a variation on the first example, this time using <code>aria-labelledby</code>. The advantage of this implementation is that it uses existing visible text on the
-                  page, and so is more likely to be properly translated during any localization transformations.
-               </p><code>
+               <h3>事例 2: 見出しと紐づく一般的なリンクテキスト</h3>
+               <p>一般的なリンクは、段落の見出しと組み合わせてコンテキストを提供する。これは最初の事例のバリエーションであり、今回は <code>aria-labelledby</code> を使用している。この実装の利点は、ページ上にある可視テキストを使用するため、ローカリゼーション (現地語化) の変換中に適切に翻訳される可能性が高くなることである。</p><code>
                   					&lt;h4 id="poor"&gt;Insufficient Link Names Invade Community&lt;/h4&gt;<br />
                   &lt;p&gt;Citizens are reeling from the growing invasion of useless "read more" links appearing
                   in their online resources. &lt;a href="poor.html" aria-labelledby="generic poor"&gt;&lt;span
                   id="generic"&gt;More...&lt;/span&gt;&lt;/a&gt;
                   </code><section id="insufficient-link-names-invade-community">
                   		
-                  <h4>Insufficient Link Names Invade Community</h4>
+                  <h4>不十分なリンク名が社会にはびこる</h4>
                   
-                  <p>[The following link opens nothing] Citizens are reeling from the growing invasion
-                     of useless "read more" links appearing in their online resources. <a href="#poor" target="_blank" aria-labelledby="generic poor"><span id="generic">More...</span></a></p>
+                  <p>[次のリンクは何も開かない] オンラインのリソースに表示される無駄な ”続きを読む” リンクの増加に世間はうんざりしている。 <a href="#poor" target="_blank" aria-labelledby="generic poor"><span id="generic">More...</span></a></p>
                   		
                </section>
             </section>
             <section class="example" id="example-3-link-text-included-in-aria-label">
-               <h3>Example 3: Link text included in <code>aria-label</code></h3>
-               <p>Where two strings cannot be grammatically or seamlessly combined using <code>aria-labelledby</code>, <code>aria-label</code> can be used to make a new name which includes the visible label.
+               <h3>事例 3: <code>aria-label</code> に含まれるリンクテキスト</h3>
+               <p><code>aria-labelledby</code> を使用して2つの文字列を文法的又はシームレスに組み合わせることができない場合、<code>aria-label</code> を使用して、可視ラベルを含む新しい名前 (name) を作成することができる。
                </p><code>
                   			...end of news story. &lt;a href="poor.html" aria-label="Read more about Insufficient
                   link names"&gt;Read more&lt;/a&gt;
                   		</code></section>
             <section class="example" id="example-4-the-visible-button-text-matches-the-beginning-of-the-accessible-name">
-               <h3>Example 4: The visible button text matches the beginning of the accessible name</h3>
-               <p>The visible text inside a <code>button</code> element matches the beginning of accessible name, which also includes hidden text.
-                  The idea of the hidden text is to make the button more descriptive for users of assistive
-                  technologies.
+               <h3>事例 4: ボタンの可視テキストが、アクセシブルな名前 (accessible name) の先頭に一致する</h3>
+               <p><code>button</code> 要素内の可視テキストは、アクセシブルな名前 (accessible name) の先頭に一致し、<code>button</code> 要素は不可視テキストも含んでいる。不可視テキストの目的は、支援技術の利用者に対してリンクをより説明的にすることである。
                </p><code>&lt;button&gt;Send &lt;span class="accessibly-hidden"&gt; Mail&lt;/span&gt;&lt;/button&gt;</code></section>
          </section>
          <section id="resources">
             <h2>関連リソース</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
                				
                <li><a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation 1.1</a></li>        
@@ -126,15 +101,15 @@
             <h2>関連する達成方法</h2>
             <ul>
                				
-               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA7">ARIA7: Using aria-labelledby for link purpose</a></li>
+               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA7">ARIA7: リンクの目的を示すために aria-labelledby を使用する</a></li>
                				
-               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA8">ARIA8: Using aria-label for link purpose</a></li>
+               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA8">ARIA8: リンクの目的を示すために aria-label を使用する</a></li>
                				
-               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA9">ARIA9: Using aria-labelledby to concatenate a label from several text nodes</a></li>
+               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA9">ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</a></li>
                				
-               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA16">ARIA16: Using aria-labelledby to provide a name for user interface controls</a></li>
+               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/aria#ARIA16">ARIA16: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
                				
-               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/SCR30.html">SCR30: Using scripts to change the link text</a></li>
+               <li><a href="https://www.w3.org/TR/WCAG20-TECHS/SCR30.html">SCR30: リンクテキストを変更するために、スクリプトを使用する</a></li>
                			
             </ul>
          </section>
@@ -142,12 +117,10 @@
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>For all controls with a visible label, check that:</p>
+               <p>可視ラベルのあるすべてのコントロールについて、次のことを確認する:</p>
                <ol>
                   					
-                  <li>The accessible name of the control contains the same letters in the same order as
-                     the visible label.
-                  </li>
+                  <li>コントロールのアクセシブルな名前 (accessible name) には、可視ラベルと同じ順序で同じ文字が含まれている。</li>
                   
                </ol>
             </section>
@@ -155,14 +128,10 @@
                <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>Check #1 true.</li>
+                  <li>1 の結果が真である。</li>
                   				
                </ul>
-               <p>If this is a sufficient technique for a success criterion, failing this test procedure
-                  does not necessarily mean that the success criterion has not been satisfied in some
-                  other way, only that this technique has not been successfully implemented and can
-                  not be used to claim conformance.
-               </p>
+               <p>達成基準にとって十分な技術である場合、この試験の手順で失敗したとしても、必ずしも他の方法で達成基準が満たされていないことを意味するわけではなく、この技術が正しく実装されておらず、適合を主張するために使用できないということを意味するだけである。</p>
             </section>
          </section>
       </main>
