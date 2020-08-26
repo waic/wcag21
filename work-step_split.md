@@ -158,6 +158,7 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 例 G136 G190 SCR38 SVR3 G209 等　対訳未定
 ```
 This technique is not referenced from any Understanding document.
+(この達成方法は、解説書から参照されていない。)
 ```
 
 ### 参考リソース
