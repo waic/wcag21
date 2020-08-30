@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G57: コンテンツを意味のある順序で並べる</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G56">前の達成方法: G56</a></li>
+            <li><a href="G58">次の達成方法: G58</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>コンテンツを意味のある順序で並べる</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/#meaningful-sequence">達成基準 1.3.2 意味のある順序</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/#meaningful-sequence">達成基準 1.3.2 意味のある順序</a> (より具体的な手法を用いる十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、支援技術に提示されるコンテンツの順序によって、利用者がコンテンツを理解可能にすることを保証することである。技術の中には、たとえコンテンツが元のソースファイルでエンコードされている順序とは異なるとしても、視覚的にコンテンツを意味のある順序でレンダリングすることを可能にするものがある。
+            </p>
+            <p>例えば、HTML で異なる表記方向を持つ言語を混在させる場合、双方向アルゴリズムは視覚的レンダリングの誤った位置に句読点を置くことがある。視覚的レンダリングの問題は、コンテンツストリームにおける句読点を移動することで、双方向アルゴリズムが要望通りに配置するように修正できるが、これは間違ったコンテンツ順序を支援技術に公開する。コンテンツは、双方向アルゴリズムを上書きするためのマークアップを使用することによって、正しい順序で視覚的にレンダリングされ、正しい順序で支援技術に公開される。
+            </p>
+            <p>視覚的にレンダリングしたとき、スペース又はタブのような空白文字列は、コンテンツの一部としては見えない。しかし、見た目を整えるためにコンテンツに挿入すると、それによってコンテンツの意味に干渉することがある。
+            </p>
+            <p>より大きな粒度では、レイアウトテーブルを用いて HTML 文書のコンテンツのブロックの配置を制御することによって、見た目には関連する情報を並べて表示することができるが、コンテンツの流れとしては分離されるレンダリングを生成することがある。スクリーンリーダーでは、レイアウトテーブルを行から行へと読み上げるので、イラストのキャプションがイラストに続く行に配置された場合、キャプションとそのイラストの画像とを関連付けられないことがある。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>美術館の展示に関するウェブページに、リンクのリストを含んだナビゲーションバーがある。また、そのページには、展示品のうちのある一つの絵の画像、表題、及び詳しい説明がある。ナビゲーションバーのリンクは意味のある順序となっていて、表題、画像、及び説明のテキストもまた意味のある順序となっている。これらの要素をページに配置するのには、CSS が用いられている。
+               </p>
+               <p>マークアップ:</p><pre xml:space="preserve">
+  &lt;h1&gt;My Museum Page&lt;/h1&gt;
+  &lt;ul id="nav"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+    ...
+    &lt;li&gt;&lt;a href="#"&gt;Link 10&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="description"&gt;
+    &lt;h2&gt;Mona Lisa&lt;/h2&gt;
+    &lt;p&gt;
+    &lt;img src="img.png" alt="Mona Lisa"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;...detailed description of the picture...&lt;/p&gt;
+  &lt;/div&gt;
+          </pre><p>CSS:</p><pre xml:space="preserve">
+  ul#nav {
+    float: left;
+    width: 9em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #063;
+  }
+  ul#nav a {
+   display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    background-color: #063;
+  }
+  div#description {
+    margin-left: 11em;
+  }
+        </pre></section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G59">G59: コンテンツ内の順番及び関係に従った順序で、インタラクティブな要素を配置する</a></li>
+               
+               <li><a href="../css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
+               
+               <li><a href="../css/C27">C27: DOM の順序を表示順序と一致させる</a></li>
+               
+               <li><a href="../failures/F1">F1: 達成基準 1.3.2 の失敗例 － CSS で情報を配置することにより、コンテンツの意味を変えている</a></li>
+               
+               <li><a href="../failures/F49">F49:  達成基準 1.3.2 の失敗例 － 線形化したときに、意味を成さない HTML のレイアウトテーブルを使用している</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>(例えば、レイアウトスタイルを削除したり、線形化するツールを用いるなど、) ウェブコンテンツ技術の標準的アプローチを使用し、コンテンツを線形化する。</li>
+                  
+                  <li>コンテンツの順序が、オリジナルと同じ意味を持つかどうかを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

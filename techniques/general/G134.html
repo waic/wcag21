@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G134: ウェブページをバリデートする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G133">前の達成方法: G133</a></li>
+            <li><a href="G135">次の達成方法: G135</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ウェブページをバリデートする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのマークアップ言語及びその他の多くのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">達成基準 4.1.1: 構文解析</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、正式な仕様に則ってバリデートされていないコードにしばしば起因するウェブページの曖昧さをなくすことである。ウェブコンテンツ技術及びそのバージョンを特定するそれぞれのウェブコンテンツ技術のメカニズムが用いられ、そのウェブコンテンツ技術の正式な仕様に照らし合わせてウェブページをバリデートする。対象となるウェブコンテンツ技術にバリデータがある場合、開発者はそのバリデータを使うことができる。
+            </p>
+            <p>通常は、バリデーションによって曖昧さ (及びその他の問題点) を排除する。これは、バリデーションに必要不可欠なステップの一つが、そのウェブコンテンツ技術のマークアップ (マークアップ言語) 又はコード (他のウェブコンテンツ技術) が適正に使用されているかどうかをチェックすることだからである。バリデーションは、必ずしも仕様への完全な準拠をチェックするものではないが、コンテンツを仕様に照らし合わせて自動的にチェックするには最適な手段である。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-validating-html">
+               <h3>事例 1: HTML のバリデーション</h3>
+               <p>HTML ページに文書型宣言 (!DOCTYPE として記述されることが多い) があり、その文書型宣言で指定された HTML のバージョンに対して妥当 (Valid) である。開発者は、オフライン又はオンラインのバリデータ (下記「参考リソース」を参照) を使用して、この HTML ページの妥当性をチェックできる。
+               </p>
+            </section>
+            <section class="example" id="example-2-validating-xml">
+               <h3>事例 2: XML のバリデーション</h3>
+               <p>XHTML、SVG、SMIL 及びその他の XML をベースしたドキュメントが、文書型定義 (DTD) 又はその他のタイプの XML スキーマを参照している。開発者は、オンライン又はオフラインのバリデータ (エディタに内蔵されている検証ツールを含む) を使用して、この XML ドキュメントの妥当性をチェックできる。
+               </p>
+            </section>
+            <section class="example" id="example-3-batch-validation-with-ant">
+               <h3>事例  3: Ant のバッチによるバリデーション</h3>
+               <p>XML ファイルのバリデーションをバッチで行う際には Apache Ant の xmlvalidate タスクを使用することができる。次の Apache Ant ターゲットは、(Ant のビルドファイルに相対する) ディレクトリ dev\\Web 内にある拡張子 .xml のファイルをバリデートするシンプルな例である。
+               </p><pre xml:space="preserve">
+              
+              &lt;target name="validate-xml"&gt; 
+                &lt;xmlvalidate lenient="no"&gt; 
+                &lt;fileset dir="dev/web" includes="*.xml" /&gt; 
+                &lt;/xmlvalidate&gt; 
+              &lt;/target&gt;
+            </pre></section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>以下に示される参考リソースは、W3C HTML5 勧告以前に作成されたものが多数であり、その多くは HTML5 への対応がなされていないと考えられる。そのため、WAIC では翻訳を行っていない。</p>
+               </div>
+            </div>
+            <ul>
+               
+               <li>
+                  <a href="https://www.w3.org/QA/Tips/Doctype">Do not forget to
+                     add a doctype</a>
+                  by the W3C Quality Assurance Initiative
+                  explains what doctypes are and why you should use them.
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended DTDs to use in your Web document</a>
+                  by the
+                  W3C Quality Assurance Initiative is a list of commonly used
+                  declarations.
+               </li>
+               
+               <li>
+                  <a href="http://www.chami.com/html-kit/faq/pages/validate_tools.html">How do I validate my code or check for possible errors?</a>
+                  describes the tools in the free editor HTML-Kit for
+                  checking HTML, CSS and XML.
+               </li>
+               
+            </ul>
+            <p>HTML 及び XHTML のバリデーション</p>
+            <ul>
+               
+               <li>
+                  <a href="http://validator.w3.org/">The W3C Markup Validation
+                     Service</a>
+                  by the World Wide Web Consortium allows you
+                  to validate HTML and XHTML files by URI, by file upload and by
+                  direct input of complete HTML or XHTML documents. There are also
+                  separate pages with an extended interface for file upload and
+                  for validating by URI (advanced options such as encodings and
+                  document types).
+               </li>
+               
+               <li>
+                  <a href="http://validator.w3.org/docs/install.html">Installation Documentation for the W3C Markup Validation
+                     Service</a>
+                  explains how to install this service (for
+                  example for use on an intranet).
+               </li>
+               
+               <li>
+                  <a href="http://www.htmlhelp.com/tools/validator/">WDG HTML
+                     Validator</a>
+                  by the Web Design Group allows you to enter
+                  a URI to validate single pages or entire sites. There are also
+                  versions to validate Web pages in batch mode (by specifying one
+                  or more URIs of HTML documents to validate), by file upload and
+                  by direct input of HTML code.
+               </li>
+               
+               <li>
+                  <a href="http://www.htmlhelp.com/tools/validator/offline/index.html.en">Offline HTMLHelp.com Validator</a>
+                  is a tool for Unix
+                  users; it is the off-line version of the online WDG HTML
+                  Validator.
+               </li>
+               
+               <li>
+                  <a href="http://people.tuke.sk/igor.podlubny/ov.html">Off-line HTML
+                     Validator – A clipbook for NoteTab</a>
+                  by Professor Igor
+                  Podlubny is an extension for the programming editor NoteTab. It
+                  uses
+                  <a href="http://www.jclark.com/sp/">James Clark's
+                     open-source SGML parser</a>, which is also used by the
+                  W3C Markup Validation Service.
+               </li>
+               
+               <li>
+                  <a href="http://ktmatu.com/info/do-it-yourself-offline-html-validator/">Do-it-yourself Offline HTML Validator</a>
+                  by Matti
+                  Tukiainen explains how you can create a simple validator with
+                  James Clark's SGML parser on Windows.
+               </li>
+               
+               <li>
+                  <a href="http://www.standards-schmandards.com/2005/massvalidate/">Validating an entire site</a>
+                  by Peter Kranz explains
+                  how you can install a modified version of the W3C Markup
+                  Validation Service that outputs validation results as XML on Mac
+                  OS. Source code (in Perl and Python) is available.
+               </li>
+               
+               
+               <li>
+                  <a href="http://www.chami.com/html-kit/faq/pages/w3c_markup_validator.html">Can I use the W3C MarkUp Validation Service to validate
+                     HTML?</a>
+                  explains how you can validate HTML from within
+                  the free editor HTML-Kit.
+               </li>
+               
+               <li>
+                  <a href="http://validator.aborla.net/">HTML/XML Validator</a>
+                  is an online repair tool for HTML and XHTML based on Tidy
+                  and PHP 5. It is available in several languages but it is not a
+                  real validator.
+               </li>
+               
+               <li>
+                  	<a href="http://alistapart.com/article/doctype">Fix Your
+                     Site With the Right DOCTYPE!</a>
+                  by Jeffrey Zeldman
+                  explains what HTML and XHTML doctypes work and what their effect
+                  is on the rendering mode of a few browsers.
+               </li>
+               
+               <li>
+                  	<a href="http://alistapart.com/article/dreamweaver">Modifying Dreamweaver to Produce Valid XHTML</a>
+                  by
+                  Carrie Bickner.
+               </li>
+               
+               <li>
+                  <a href="http://schneegans.de/frontpage/xhtml-schema/">XHTML-Schemata für FrontPage 2003 und Visual Studio .NET</a>
+                  by Christoph Schneegans is a German article that explains
+                  how the W3C XML Schemas for XHTML 1.0 can be used in FrontPage
+                  2003 and Visual Studio .NET to create valid code.
+               </li>
+               
+               <li>
+                  <a href="http://www.nvu.com/">Nvu</a>
+                  is a free
+                  and open-source Web authoring tool for Windows, Macintosh and
+                  Linux that can call the W3C HTML Validation Service.
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/Amaya/">Amaya</a>
+                  by the World
+                  Wide Web Consortium is a free and open-source Web authoring tool
+                  with support for HTML, XHTML, CSS, SVG and MathML that alerts
+                  you to validity errors when you save a document.
+               </li>
+               
+               <li>
+                  <a href="http://chrispederick.com/work/web-developer/">Web
+                     Developer Extension</a>
+                  is an extension for Mozilla,
+                  Firefox and Flock by Chris Pedrick that allows you to use the
+                  W3C Validation Services for HTML and CSS.
+               </li>
+               
+            </ul>
+            <p>Validating XML</p>
+            <ul>
+               
+               <li>
+                  <a href="http://www.javaview.de/validator/">XML Validator - A
+                     Document Validation Service</a>
+                  by JavaView allows you to
+                  check wellformedness and validity of XML files, by file upload
+                  or by direct input of XML code.
+               </li>
+               
+               <li>Apache Ant's
+                  <a href="http://ant.apache.org/manual/Tasks/xmlvalidate.html">XMLValidate Task</a>
+                  can be used to validate XML-based
+                  documents. This tool can be used to validate entire directories
+                  (and subdirectories) of XML files.
+               </li>
+               
+               
+               <li>
+                  <a href="http://schneegans.de/sv/">XML Schema Validator</a>
+                  by Christoph Schneegans is an online tool that allows you to
+                  validate XML (and XHTML) files by URI, by file upload, by
+                  direct input of complete XML documents, and by direct input of
+                  XML code fragments. A bookmarklet that allows you to validate
+                  the page currently displayed in your browser is also available.
+                  This validator claims to be more accurate than the W3C
+                  validator.
+               </li>
+               
+               <li>
+                  	<a href="http://www.corefiling.com/opensource/schemaValidate.html">XML Schema Validator</a>
+                  by CoreFiling is an online
+                  tool that allows you to validate an XML file against a W3C XML
+                  Schema, both of which can be uploaded.
+               </li>
+               
+               <li>
+                  <a href="http://www.xmlforasp.net/SchemaValidator.aspx">Schema Validator</a>: this is a validator that allows you to paste XML and W3C XML Schema code into text
+                  boxes to validate XML code.
+               </li>
+               
+            </ul>
+            <p>Note that many programming editors, XML editors and integrated
+               development environments (IDEs) can validate XML files. These include
+               the following free and/or open-source tools:
+            </p>
+            <ul>
+               
+               <li>the programming editor
+                  <a href="http://www.jedit.org/">JEdit</a>
+                  with the XML and SideKick plugins, which supports DTDs
+                  and W3C XML Schemas,
+               </li>
+               
+               <li>the “workbench"
+                  <a href="http://www.eclipse.org/">Eclipse</a>
+                  with the
+                  <a href="http://download.eclipse.org/webtools/downloads/">Web
+                     Tools Platform</a>,
+               </li>
+               
+               <li>the Web authoring tool
+                  <a href="http://www.screem.org/">SCREEM</a>
+                  for the Gnome desktop environment, which supports DTDs,
+               </li>
+               
+               <li>the XML editor
+                  <a href="http://jaxe.sourceforge.net/">Jaxe</a>, which validates XML files with Apache Xerces,
+               </li>
+               
+               <li>the XML editor
+                  <a href="http://www.xerlin.org/">Xerlin</a>,
+                  which supports DTDs and to some extent W3C XML schema,
+               </li>
+               
+               <li>the XML editor
+                  <a href="http://www.xmloperator.net/">xmloperator</a>, which supports DTDs and RELAX NG
+                  schemas,
+               </li>
+               
+               <li>Emacs in nXML mode (see the <a href="https://groups.yahoo.com/neo/groups/emacs-nxml-mode/info">YahooGroup Emacs nXML Mode</a>),
+               </li>
+               
+               <li>the XML editor
+                  <a href="http://pollo.sourceforge.net/">Pollo</a>, which supports DTDs, W3C XML Schemas and RELAX NG
+                  schemas, and is best suited for tree-like XML files.
+               </li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>HTML、SGML ベース及び XML ベースのウェブコンテンツ技術に対して::</p>
+               
+               <ol>
+                  
+                  <li>それぞれのページ又はドキュメントをバリデーションを行うパーサーで読み込む。</li>
+                  
+                  <li>バリデーションエラーがないことを確認する。</li>
+                  
+               </ol>
+               
+               <p>その他のウェブコンテンツ技術に対して:</p>
+               
+               <p>用いているウェブコンテンツ技術に対してバリデーションの手順が存在する場合は、それに従う。
+               </p>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <p>HTML、SGML ベース、及び XML ベースのウェブコンテンツ技術に対して:</p>
+               
+               <p>2. の結果が真である。</p>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

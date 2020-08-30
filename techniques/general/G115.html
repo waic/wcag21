@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G115: 構造をマークアップするために、セマンティックな要素を使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G112">前の達成方法: G112</a></li>
+            <li><a href="G117">次の達成方法: G117</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>構造をマークアップするために、セマンティックな要素を使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>HTML 4.01 及び XHTML 1.x を含むマークアップ言語</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (十分、より具体的な手法を使用した  <a href="../html/H49">H49: 強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a>とともに)</span>に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、適切なセマンティックな要素を用いてウェブコンテンツの構造をマークアップすることである。つまり、要素を、視覚的な見えかたではなく、その意味に基づいて用いることである。
+            </p>
+            <p>適切なセマンティックな要素を用いることで、ユーザエージェントが構造を確実に利用できるようにする。この中には、コンテンツの意味を理解する上でさまざまな構成単位が持っている役割 (role) を明示することも含まれる。段落、見出し、強調されたテキスト、テーブルなどのコンテンツの一部の性質は、このようにして示すことができる。場合によっては、見出しと小見出しの間、テーブルとセルの間といったコンテンツの単位間の関係も示されるべきである。そうすることで、ユーザエージェントは、例えば、異なる種類の構造に対して異なる視覚的提示にする、又は聴覚的提示において異なる声もしくは声の高さを用いることによって、利用者に構造を知覚可能にすることができる。
+            </p>
+            <p>例えば、HTML においては、em、abbr、cite といった語句レベルの要素は、それぞれ、強調させるために並びに略語及び引用であることを示すためにテキストをマークすることで、文の中でセマンティックな情報を付加する。 数学における構造と提示の重要な区別を保つために設計されたマークアップ言語である MathML には、数学的な概念を表すために用いられる複雑な記号のための特別な「提示」のマークアップも、数学的な概念自体のための「コンテンツ」 (セマンティック) マークアップも含まれている。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>段落には別のページへのハイパーリンクがある。ハイパーリンクは a 要素を用いてマークアップされている。
+               </p><pre xml:space="preserve">
+              &lt;p&gt;Do you want to try our new tool yourself? A free 
+                demonstration version is available in our 
+                &lt;a href="download.html"&gt;download section&lt;/a&gt;&lt;/p&gt;
+            </pre></section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>結婚の歴史についてのページには、ジェーン オースティンの小説「Pride and Prejudice」からの引用が事例として用いられている。本への参照は、cite 要素を用いてマークアップされ、引用部分自体は blockquote 要素を用いてマークアップされている。
+               </p><pre xml:space="preserve">
+              &lt;p&gt;Marriage was considered a logical step for a bachelor, 
+                as can be seen in the first chapter of the novel 
+                &lt;cite&gt;Pride and Prejudice&lt;/cite&gt;:&lt;/p&gt;
+                &lt;blockquote&gt;
+                &lt;p&gt;It is a truth universally acknowledged, that a single man in
+                possession of a good fortune, must be in want of a wife.&lt;/p&gt;
+                &lt;p&gt;However little known the feelings or views of such a man may
+                be on his first entering a neighbourhood, this truth is so well
+                fixed in the minds of the surrounding families, that he is considered
+                the rightful property of some one or other of their daughters.&lt;/p&gt;
+                &lt;/blockquote&gt;
+            </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>WAIC では G115-2 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G115-2.html">アクセシビリティ・サポーテッド（AS）情報: G115-2</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
+            </section>
+            <section class="example" id="example-3">
+               <h3>事例 3</h3>
+               <p>車の取扱説明書にエンジンのかけ方の説明がある。説明書きには、ギアがニュートラルになっていることを確かめるようにとの警告がある。筆者は、その警告は非常に重要で強調されるべきであると考えていたため、警告は strong 要素を用いてマークアップされている。
+               </p><pre xml:space="preserve">
+              &lt;h1&gt;How to start the engine&lt;/h1&gt;
+                &lt;p&gt;Before starting the engine, &lt;strong&gt;make sure the gear 
+                is in neutral&lt;/strong&gt;. Next, turn the key in the ignition. 
+                The engine should start.&lt;/p&gt;
+            </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>WAIC では G115-3 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G115-3.html">アクセシビリティ・サポーテッド（AS）情報: G115-3</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
+            </section>
+            <section class="example" id="example-4">
+               <h3>事例 4</h3>
+               <p>この事例では、テキストを強調するために em 及び strong 要素をどのように用いたらよいかを示している。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+                  <div>
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong#%3Cem%3E_vs._%3Cstrong%3E">MDN の strong 要素</a>で示されているように、古い HTML では <code>strong</code> 要素を単により強い強調としていたが、現在の HTML では <code>strong</code> 要素を重要性を表すものと定義している。</p>
+                  </div>
+               </div>
+               <pre xml:space="preserve">
+              &lt;p&gt;What she &lt;em&gt;really&lt;/em&gt; meant to say was, 
+                "This is not ok, it is &lt;strong&gt;excellent&lt;/strong&gt;!"&lt;/p&gt;
+            </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>WAIC では G115-4 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G115-4.html">アクセシビリティ・サポーテッド（AS）情報: G115-4</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
+            </section>
+            <section class="example" id="example-5-using-highlighting-and-background-color-to-visually-and-semantically-identify-important-information.">
+               <h3>事例 5: 強調及び背景色を用いて重要な情報を視覚的かつセマンティックに特定する。
+               </h3><pre xml:space="preserve">
+              &lt;style type="text/css"&gt;
+                .vocab {
+                background-color:cyan;
+                font-style:normal;
+                }
+                &lt;/style&gt;
+                ...
+                &lt;p&gt;New vocabulary words are emphasized and highlighted 
+                with a cyan background&lt;/p&gt;
+                &lt;p&gt;The &lt;em class="vocab"&gt;scathing&lt;/em&gt; review of the play 
+                seemed a bit too harsh... &lt;/p&gt;
+            </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>WAIC では G115-5 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G115-5.html">アクセシビリティ・サポーテッド（AS）情報: G115-5</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/html4/">HTML 4.01 specification</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/html4/struct/text.html#h-9.2">HTML 4.01 specification, using phrase elements</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/MathML3/">Mathematical Markup Language (MathML) Version 3.0 2nd Edition</a>
+                  
+               </li>
+               
+               <li>Jeffrey Zeldman's book
+                  <a href="https://en.wikipedia.org/wiki/Designing_with_Web_Standards">"Designing with Web standards"</a>
+                  
+               </li>
+               
+               <li>Web Design Group's article
+                  <a href="http://www.htmlhelp.com/design/style/docstyle-tags.html">"Document style: Use the right tag for the job"</a>
+                  
+               </li>
+               
+            </ul>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、<a href="https://www.w3.org/TR/html52/textlevel-semantics.html#textlevel-semantics">HTML 5.2: 4.5. Text-level semantics</a> を代わりに参照できる。</p>
+            </div>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../html/H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
+               
+               <li><a href="../html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
+               
+               <li><a href="../html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
+               
+               <li><a href="../html/H48">H48: リスト又はリンクのグループに、ol 要素、ul 要素、dl 要素を用いる</a></li>
+               
+               <li><a href="../html/H49">H49: 強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
+               
+               <li><a href="../html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
+               
+               <li><a href="../html/H71">H71: fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する
+                  検証
+                     </a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>セマンティックな機能を有するコンテンツの部分があるかどうかを確認する。</li>
+                  
+                  <li>セマンティックな機能がある部分について、対応するセマンティックなマークアップがウェブコンテンツ技術に存在する場合、コンテンツがそのセマンティックなマークアップを用いてマークアップされていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2 の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

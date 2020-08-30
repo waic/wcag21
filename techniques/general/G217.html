@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G217: 利用者が文字キーのショートカットを再割り当て又は無効にできるメカニズムを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G216">前の達成方法: G216</a></li>
+            <li><a href="../html/H2">次の達成方法: H2</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連する参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>利用者が文字キーのショートカットを再割り当て又は無効にできるメカニズムを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>あらゆる技術で実装されたコンテンツ。</p>
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/character-key-shortcuts">達成基準 2.1.4: 文字キーのショートカット</a> (十分な達成方法) </span>に関連する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>一部のコンテンツ制作者は、利用者の操作を高速化するために、アプリケーションにショートカットを提供している。ただし、そのようなショートカットが修飾なしの文字キー (文字、数字、句読点または記号文字) のみの場合、音声入力の利用者だけでなく、正確に入力することが困難な一部のキーボードの利用者にも課題となる。
+            </p>
+            <p>偶発的な動作を防ぐために、コンテンツ制作者は、利用者が文字キーのみで構成されるショートカットをオフにしたり再設定できるようにしなければならない。ショートカットの再設定には、Ctrl などの修飾キーを追加する機能が含まれてもよい。また、コンテンツ制作者は、修飾キーの追加に加えて、割り当てられた文字キーの変更を利用者に許可してもよい。ショートカットをオフにするか再割り当てするメカニズムを提供することで、より多くの利用者がアプリケーションとうまく対話できるようになる。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>特定のユーザインターフェースコンポーネントにフォーカスがあるときにのみキーボードショートカットが有効になっている場合、コンテンツ制作者は上書きするメカニズムを提供する必要はない。例えば、<code>select</code> 要素では、文字キーを押すと、その文字で始まる select 要素内の次のアイテムに移動することが予想される。このショートカットは、select 要素にフォーカスがある場合にのみトリガされるため、利用者がページの残りの部分と対話する機能を妨げることはない。
+               </p>
+            </div>
+            <p>テスタに​​とっての最初の課題は、コンテンツ制作者が作成したショートカットが存在するかどうかを特定し、既存のショートカットが修飾なしの文字キーによってトリガされるかどうかを判断することである。テスタが開発チームにアクセスできる場合、ショートカットキーの存在及び性質は、多くの場合、関係するデザイナや開発者に尋ねるだけで判断できる。コンテンツ制作者からの信頼できる情報が利用できない場合、ショートカットの存在はコードをチェックすることでおそらく識別できる (例えば、javascript で、<code>keydown</code>、<code>keyup</code>、及び <code>keypress</code> リスナーの存在)。ショートカットを識別するもう一つの方法は、文書を確認することである。これらの方法のいずれもキーボードショートカットの存在に関する情報を提供しない場合、文字キーショートカットの存在を探すために手動テストを完了する必要がある。テスト手順については、<a href="../failures/F99">F99: Failure of Success Criterion 2.1.4 due to implementing character key shortcuts that cannot be turned off or remapped</a> を確認。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-author-provides-a-simple-mechanism-to-disable-shortcuts-in-a-web-based-email-client">
+               <h3>事例 1: コンテンツ制作者は、ウェブベースの電子メールクライアントでショートカットを無効にする簡単なメカニズムを提供する</h3>
+               <p>電子メールクライアントには 1 文字のショートカットが含まれているため、キーボード利用者はより迅速にアプリケーションと対話できる。 (例えば、R キーは受信トレイ内の現在のアイテムに返信し、D キーは削除し、S キーはスターを付ける)。これらのキーは、利用者がメールを作成している間は適用されない。しかし、利用者はキーボードフォーカスが作成ペイン又は受信トレイのどちらにあるか混乱することがあり、かつ、受信トレイにいる間に、文字 D を含む単語を作成しようとして誤ってメッセージを削除することがある。この問題を克服するために、コンテンツ制作者はショートカット用のトグルボタンを提供し、利用者が簡単に有効又は無効にできるようにする。
+               </p>
+            </section>
+            <section class="example" id="example-2-author-provides-a-menu-option-where-users-can-remap-shortcuts">
+               <h3>事例 2: コンテンツ制作者は、利用者がショートカットを再割り当てできるオプションメニューを提供する</h3>
+               <p>ウェブベースのアプリケーションには、利用者がローカルにインストールされたソフトウェアアプリケーションで定期的に使用する機能とは異なる機能の 1 文字のショートカットがある。コンテンツ制作者は、利用者がショートカットキーと修飾キーの両方を再割り当てできるメニューを提供しているため、利用者は使い慣れた組み合わせにショートカットを再割り当てできる。
+               </p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>関連する参考リソース</h2>
+            <p>参考リソースは情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               				
+               <li>リンク</li>
+               			
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>各文字キーのショートカット:</p>
+               <ol>
+                  					
+                  <li>利用者が、ショートカットを無効にする、又はショートカットを一つ以上の修飾キーを含む組み合わせに再割り当てするかどうかを判断する。</li>
+                  				
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  					
+                  <li>1. の結果が真である。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

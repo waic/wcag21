@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G98: 送信する前に、利用者が回答を確認及び修正できるようにする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G97">前の達成方法: G97</a></li>
+            <li><a href="G99">次の達成方法: G99</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>送信する前に、利用者が回答を確認及び修正できるようにする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>試験のデータのように、送信された時点に特定され、ひとたび送信されると変更不可能なデータを利用者から収集するサイト
+            </p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">達成基準 3.3.4: エラー回避 (法的、金融、データ)</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、取消不可能なトランザクションが完了する前に、利用者に入力が正しく行われていることを確認するための手段を提供することである。テスト、金銭的取引及び法的義務の生じるものは、「取消不可能」なトランザクションが発生することを許可する。したがって、トランザクションが確定してしまうと利用者が間違いを修正する機会がなくなるので、データの送信時に間違いがないことが重要となる。
+            </p>
+            <p>簡潔な 1 ページのフォームでは、送信前に利用者がフォームの内容を見直すことができるため、これは容易である。しかし、複数のウェブページにまたがるフォームでは、トランザクションが確定する前に複数のステップで利用者からデータを取得している。トランザクションを確定する以前のステップで入力したデータの全てを利用者が覚えているわけではない。
+            </p>
+            <p>一つの方法としては、個々のステップの結果をキャッシュし、利用者が思い通りに戻ったり、先に行ったりして入力したデータを見直せるようにすることである。別の方法としては、トランザクションの最終確定の前に利用者が見直しを行えるようにするために、全てのステップで収集した全てのデータの要約を提供する。
+            </p>
+            <p>トランザクションを確定する最終ステップの前に、入力したデータを見直して確認することを利用者に促す指示を提供する。利用者が確認を行うと、トランザクションが完了する。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>
+                  
+                  <p>オンライン銀行のアプリケーションにおいて、口座間の資金移動を行う際に次のような複数のステップを設けている:
+                  </p>
+                  
+                  <ol>
+                     
+                     <li>送金元の口座を選択する。</li>
+                     
+                     <li>送金先の口座を選択する。</li>
+                     
+                     <li>送金する金額を入力する。</li>
+                     
+                  </ol>
+                  
+                  <p>送金元と送金先の口座及び送金する金額を示した、送金手続きの一覧が提供される。利用者はトランザクションを完了させるかキャンセルするかのいずれかのボタンを選択することができる。
+                  </p>
+                  
+               </li>
+               
+               <li>試験のアプリケーションにおいて、複数のページにわたって問題が掲載されている。利用者はいつでも、前に答えを入力し終えた場所の答案を見直したり変更したりできる。さらに最終ページには、試験の答案を送信する、又は見直すためのボタンが提供されている。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G155">G155: 送信ボタンに加えてチェックボックスを提供する</a></li>
+               
+               <li><a href="G168">G168: 選択されたアクションを続行するために確認を求める</a></li>
+               
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>試験のアプリケーションの場合、又は金融、法律上のトランザクションが発生し、複数のステップで利用者からデータを収集する場合:
+               </p>
+               
+               <ol>
+                  
+                  <li>利用者に入力内容を確認するように促している。</li>
+                  
+                  <li>利用者のデータが複数のステップで収集される場合、利用者が前のステップに戻ってデータを見直し及び変更できる。
+                  </li>
+                  
+                  <li>トランザクションが確定する前に、利用者が入力した全てのデータの一覧が提供され、必要に応じて間違いを修正する方法が提供されているかどうかを判断する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 又は 3. のいずれかの結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

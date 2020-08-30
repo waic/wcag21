@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G82">前の達成方法: G82</a></li>
+            <li><a href="G84">次の達成方法: G84</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>入力が完了していない必須項目を特定するために、テキストの説明を提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>Applicability</h2>
+            <p>利用者の入力が必須の項目があるコンテンツ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (<a href="G131">G131: 説明的なラベルを提供する</a>の達成方法として十分)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージを理解する</a> (<a href="../aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a> の達成方法として十分)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、入力しなければならないフィールドが未入力である場合に利用者に通知することである。利用者が必須のフォームフィールドへの入力に失敗した場合、どのフィールドを入力し忘れたのかを利用者に特定できるように、情報をテキストで提供する。一つのアプローチとして、クライアントサイドでのバリデーションを用いて、入力し忘れた必須フィールドを特定するアラートダイアログボックスを提供する方法がある。もう一つのアプローチとしては、サーバーサイドでのバリデーションを用いて、入力し忘れた必須フィールドの場所にテキストでの説明を入れるか、テキストでの説明文によって入力し忘れたフィールドを特定するかのいずれかで、フォーム (すでに入力されたデータも含む) を再表示する方法がある。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>
+                  
+                  <p>エラーが起きたことに気づかぬまま、フォームが正常に機能していないと仮定する利用者もいるので、メッセージ又はアラートを含めるのがベストプラクティスである。また、ページタイトル (<code class="el">title</code>要素) にエラーを含めるのも、ベストプラクティスである。なぜならスクリーンリーダーの利用者は、ページが正常に送信されたと考え、そのページのメインコンテンツ領域を再度読むのではなく、新しいページが返ってくるとすぐに別のページにナビゲートし続ける可能性が高いためである。
+                  </p>
+                  
+               </div>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>利用者がフォームを送信しようとするが、一つ以上の必須フィールドで入力を提供する又は選択肢を選択し忘れている。クライアントサイドでのバリデーションを使用して、この入力漏れが検出されると、必須フィールドが未入力であることを利用者に通知するアラートダイアログが表示される。この問題のあるフィールドのラベルは、問題のあるフィールドを特定するために変更され、送信ボタンの後にその問題のあるフィールドへのリンクが文書内に挿入されるので、利用者はアラートを閉じた後にその問題のあるフィールドへ移動できる。
+               </li>
+               
+               <li>利用者がフォームを送信しようとするが、一つ以上の必須フィールドで入力を提供する又は選択肢を選択し忘れている。サーバーサイドのバリデーションを使用して、この入力漏れが検出されると、どの必須フィールドが漏れたかを通知するテキストの説明が上部に表示され、フォームが再表示される。入力が漏れた各必須フィールドはまたテキストラベルを使用して特定されるため、利用者は入力が漏れたフィールドを見つけるためにフォームの上部にあるリストに戻る必要はない。
+               </li>
+               
+               <li>
+                  
+                  <p>利用者が、必須フィールドのあるフォームを記入している。フィールドのラベルは、必須かどうかを示している。利用者が必須フィールドへタブ移動し、データ入力や選択をせずにそのフィールドからタブ移動する。クライアントサイドのスクリプトは、フィールドのラベル部分を変更して、そのフィールドを空白のままにしておくことがエラーであることを示す。
+                  </p>
+                  
+                  <div class="note">
+                     <div role="heading" class="note-title marker" aria-level="3">注記</div>
+                     <div>
+                        
+                        <p>スクリーンリーダーの中には、ラベルの変更に気付かず、変更を通知しないものがあるため、スクリーンリーダーの利用者はエラーに気がつかないことがある。
+                        </p>
+                        
+                     </div>
+                  </div>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
+               
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+               
+               <li>ページタイトルにエラーを通知する情報を含める (リンク追加予定)</li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>一つ以上の必須フィールドへの入力を意図的に空白のままにして、フォームを記入して送信する。
+                  </li>
+                  
+                  <li>未入力のままになっている必須フィールドを特定するテキストによる説明が提供されていることを確認する。
+                  </li>
+                  
+                  <li>再表示のためにデータを保持することが不適切なセキュリティに関連するフィールドにデータ (例: パスワード) がない限り、利用者によって入力済みの他のデータが再表示されていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 3.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

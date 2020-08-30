@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G152:  (5 秒以内の) 数回のループ後に点滅を停止するように、アニメーション GIF を設定する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G151">前の達成方法: G151</a></li>
+            <li><a href="G153">次の達成方法: G153</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>(5 秒以内の) 数回のループ後に点滅を停止するように、アニメーション GIF を設定する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>アニメーション GIF (GIF89a) をサポートするあらゆるウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">達成基準 2.2.2: 一時停止、停止、非表示</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、アニメーション GIF 画像が 5 秒以内に点滅を停止するようにすることである。アニメーション GIF 画像の設計には三つの側面があり、それらが連携して画像が点滅する (又はアニメーションする) 時間を決定している:
+            </p>
+            <ul>
+               
+               <li>アニメーション画像に含まれる<strong>フレーム</strong>数: これらは連続するアニメーションの中では別々の画像である
+               </li>
+               
+               <li>
+                  <strong>フレームレート</strong>: それぞれの画像を表示する時間
+               </li>
+               
+               <li>
+                  <strong>繰り返し</strong>の回数: アニメーション全体を再生させる回数
+               </li>
+               
+            </ul>
+            <p>一番単純な場合では、アニメーションの再生時間は、フレーム数×フレームレート×繰り返し回数である。例えば、2 フレームでフレームレートが 0.5 秒、繰り返しが 3 回の単純な点滅する画像では、再生時間は (2×0.5×3) 秒、すなわち、ちょうど 3 秒である。
+            </p>
+            <p>多くのアニメーション GIF 画像のフレームレートは一定である。すなわち、個々のフレームが表示される時間は同じである。しかし、フレームに対して異なるフレームレートを設定することもでき、特定のフレームのみ他より長く表示させることが可能である。この場合、アニメーションの再生時間は、フレームレートの合計×繰り返し回数である。例えば、2 フレームで、1 枚目が 0.75 秒表示、2 枚目が 0.25 秒表示され、繰り返しが 3 回の単純な画像では、再生時間は ((0.75+0.25)×3) 秒、同様にちょうど 3 秒となる。
+            </p>
+            <p>5 秒以内に画像の点滅を停止させるためには、三つの変数のうちのいずれかを調整しなければならない。最も一般的には、繰り返しの回数を 5 秒÷フレーム数×フレームレート (又は 5 秒÷フレームレートの合計) に設定する。5 秒以内に画像を停止させるために、最も近い整数になるようにこの数字の端数を切り捨てる。一つ上の整数に切り上げてはならない。
+            </p>
+            <p>繰り返しが 1 回で 5 秒を超える場合は、別の要素のうちの一つを調整しなければならない。画像の中のフレーム数を減らす、又はフレームレートを増やす。フレームレートを増やす場合は、変更後の画像が一般閃光閾値又は赤色閃光閾値を超えないという要求事項に不合格にならないように留意すること。これは大きな画像では特に重要であるので注意すること。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>
+                  <strong>単純な点滅する画像:</strong>
+                  フレーム数が 2、フレームレートが 0.5 秒で繰り返しが 3 回の画像がある。アニメーションの再生時間は (2×0.5×3) 秒、すなわち 3 秒ちょうどとなり、したがって達成基準の要件を満たす。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>アニメーション GIF 及びそのアニメーションの再生時間をを表示する。</li>
+                  
+                  <li>別の方法として、画像編集ソフトを使用してフレーム数、フレームレート及び繰り返し回数を確認する。フレーム数×フレームレート×繰り返し回数を計算する。フレームレートが一定でない場合、フレームレートの合計×繰り返し回数を計算する。
+                  </li>
+                  
+                  <li>いずれの方法を用いても、アニメーションの再生時間が 5 秒以内となるべきである。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

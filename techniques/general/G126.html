@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G126: 他の全てのウェブページへのリンク一覧を提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G125">前の達成方法: G125</a></li>
+            <li><a href="G127">次の達成方法: G127</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>他の全てのウェブページへのリンク一覧を提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>リンクを含む全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/multiple-ways">達成基準 2.4.5: 複数の手段</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、個々のウェブページを一組として全てのウェブページへのリンク一覧を提供することである。それは、達成基準 2.4.5 に対処するのに十分なコンテンツを配置するための一連の達成方法の一つである。この達成方法は、小規模なウェブページに対してのみ効果がある。リンク一覧がウェブページ内の残りのコンテンツより長い場合、利用者がウェブページを理解して使うことをより困難にするかもしれない。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>
+                  
+                  <p>達成基準 2.4.1 は、このリンクの一覧をスキップするための達成方法を要求している。</p>
+                  
+               </div>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>家族のウェブサイトには、家族の構成員全てのホームページがある。個々のページには、他の家族構成員のホームページへのリンク一覧がある。
+               </p>
+            </section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>電子書籍では、各章が別々のウェブページに分けられている。個々のウェブページは、本の中の全ての章へのリンクを含む小さな目次で始まる。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G1">G1: メインコンテンツエリアへ直接移動するリンクを各ページの先頭に追加する</a></li>
+               
+               <li><a href="G63">G63: サイトマップを提供する</a></li>
+               
+               <li><a href="G64">G64: 目次を提供する</a></li>
+               
+               <li><a href="G123">G123: 繰り返しているコンテンツのブロックの先頭に、そのブロックの末尾へのリンクを追加する</a></li>
+               
+               <li><a href="G124">G124: 関連するウェブページへナビゲートするリンクを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>個々のウェブページに、サイト内の他のウェブページへのリンクの一覧が含まれていることを確認する。</li>
+                  
+                  <li>一覧内のリンクが対応するウェブページにつながっていることを確認する。</li>
+                  
+                  <li>一覧には、サイト内の全てのウェブページに対するリンクが含まれていることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>上記全ての結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

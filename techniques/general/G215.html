@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G215: 軌跡ベース又はマルチポイントのジェスチャと同等の結果を得られるコントロールを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G214">前の達成方法: G214</a></li>
+            <li><a href="G216">次の達成方法: G216</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>軌跡ベース又はマルチポイントのジェスチャと同等の結果を得られるコントロールを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ポインタ入力をサポートするウェブコンテンツ技術全て (例えば、次のいずれか又は全てをサポートする: マウスポインタ、タッチスクリーン又はトラックパッドのタッチ、スタイラスペンでの入力、レーザーポインタでの入力)。
+            </p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pointer-gestures">達成基準 2.5.1: ポインタのジェスチャ</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、軌跡ベースのジェスチャを行うことが困難な利用者がシングルポインタ (例えば、タッチスクリーンのシングルタップ又はマウスのシングルクリック) によってコンテンツスライダーを操作できるようにすることである。コンテンツスライダーでは、コンテンツのチャンク (塊) が一列に並んでいる。通常、コンテンツの複数のチャンクは非表示になっており、どの時点でも一つのチャンクだけが表示される。スライダーの表示部分を左右に水平スワイプすると、隣接する非表示だったコンテンツのチャンクが表示される。入力の代替手段としてコントロール (例えば、矢印ボタン) を提供することによって、シングルポインタによる入力でスライダーを進めることができる。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>タッチスクリーンデバイスでは、ビルトインのスクリーンリーダーなど OS レベルの支援技術が有効になっている場合、通常は、コンテンツ制作者が提供する軌跡ベースのジェスチャは機能しない。これは、支援技術が一般に軌跡ベースのジェスチャを使い切っており、制作されたコンテンツまでジェスチャが及ばないためである。例えば、コンテンツスライダー上で水平方向にスワイプするジェスチャは、コンテンツ制作者が意図したようには機能せず、スクリーンリーダーのフォーカスを次又は前の要素に移動させるものである。一部のジェスチャは、利用者が「パススルージェスチャ」の操作を行うことで機能する場合があるが、ハードウェア、オペレーティングシステム (OS) の種類、OS のスキン、OS の設定、又はユーザエージェントといった要因に依存するため、信頼性が低いことが多い。
+               </p>
+            </div>
+			 <div class="note">
+				<div role="heading" class="note-title marker" aria-level="3">訳注</div>
+				<p>スキンとは、ソフトウェアなどでユーザインタフェースの外観表示を変更できる機能をいう。</p>
+			</div>
+			
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>この達成方法は、コンテンツ制作者によって実装されているジェスチャを対象とするものであり、ユーザエージェントが提供するジェスチャ (例えば、水平スワイプによるブラウザ履歴間の移動や、垂直スワイプによるページコンテンツのスクロールなど) 又はオペレーティングシステムが提供するジェスチャ (例えば、開いているアプリ間の移動や、利用可能な支援技術のコンテキストメニューの呼び出しなど) は対象外である。
+               </p>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               				
+               <li>コンテンツスライダーで、利用者は左右にスワイプして隣接するコンテンツのチャンクを表示することができる。利用者がコンテンツの次又は前のチャンクに進むことができる、次へ及び前へボタンもある。
+               </li>
+               			
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>軌跡ベースのジェスチャに対応しているコンテンツスライダーにおいて:</p>
+               <ol>
+                  		
+                  <li>シングルポインタによる操作が可能なコントロールが、当該コンテンツスライダーの上又はすぐ近くに存在しており、隣接するコンテンツのチャンクに進むことができることを確認する。
+                  </li>
+                  		
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  			
+                  <li>1.の結果が偽である。</li>
+                  		
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

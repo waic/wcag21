@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G214: 別の方法で制限されている、異なる向きのコンテンツへのアクセスを許可するコントロールを使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G213">前の達成方法: G213</a></li>
+            <li><a href="G215">次の達成方法: G215</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>別の方法で制限されている、異なる向きのコンテンツへのアクセスを許可するコントロールを使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ページの向きが固定されている場合、利用者が向きを変更できるようにボタンを用意する。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/orientation">達成基準 1.3.4: 方向</a> (十分) に関連する達成方法である。</span>.
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が好む方法でコンテンツにアクセスできるようにすることである。コンテンツプロバイダは、ほとんどの利用者が特定のデバイスの向きを使用してコンテンツを表示することを想定していたり、利用者がデバイス内で元の表示を維持したいと思っていることを想定していたりすることがある。その結果、プロバイダはコンテンツが回転できないようにする。利用者がコンテンツを回転できるようにコントロールを提供することで、特定の向きを使用する必要がある利用者は、コンテンツを快適に表示できる。例えば、デバイスを持つことができず、それを車いすやベッドに取り付けてもらっている人など。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>多くの利用者は、OS レベルの設定を使用して向きが変更されないようにすることを期待する。その結果、コンテンツの向きの変化に適応する機能を制限せず、必要に応じて利用者が OS によるの向きのロックを使用できるようにすることによってこの達成基準を満たすことが通常好ましい。
+               </p>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-an-e-reader-application">
+               <h3>事例 1: 電子書籍リーダーアプリ</h3>
+               <p>電子書籍リーダーのウェブアプリケーション利用者は、横になって読むことがある。この状態では、デバイスが重力に関して横向きになっているにもかかわらず、利用者はデバイスを縦向きに見ていることになる。開発者は、この読書動作を可能にするために、コンテンツを縦向きに固定するだけでなく、特定の向きにデバイスを取り付けた利用者が望む表示の向きを達成できるようにするための制御も提供する。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               <li><a href="../failures/F97.html">F97: Failure due to locking the orientation to landscape or portrait view</a></li>
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>端末を回転させても向きが変わらないコンテンツの場合:</p>
+               <ol>
+                  <li>ユーザインタフェース内にコンテンツの向きを変更するためのコントロールがあることを確認する。</li>
+                  <li>コントロールを操作すると、コンテンツの向きが変わることを確認する。</li>
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  <li>1.と2.の結果が真である。</li>
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

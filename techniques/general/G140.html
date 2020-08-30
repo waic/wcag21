@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G140: 異なる提示を可能にするために、情報と構造を表現から分離する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G139">前の達成方法: G139</a></li>
+            <li><a href="G141">次の達成方法: G141</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>異なる提示を可能にするために、情報と構造を表現から分離する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術。</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">達成基準 1.4.5: 文字画像</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">達成基準 1.4.9:  文字画像 (例外なし)</a> (十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、表現的なエンコーディングからコンテンツの構造的なエンコーディングを論理的に分離することによって、支援技術のコンテンツとのインタラクションを容易にすることである。構造的なエンコーディングとは、見出し、段落、リスト、テーブルなどの要素を指定することであり、その目的のために用意されたウェブコンテンツ技術の機能を使用することによって行われる。一方、表現的なエンコーディングとは、書体、色、サイズ、位置、ボーダーのような書式効果の指定であり、ウェブコンテンツ技術の機能によってもサポートされている。
+            </p>
+            <p>表現的な特性は視覚的に構造を暗示する、つまり利用者は用いられている書式設定の慣例から、見出し、段落、リストなどを判断できる。その一方で、これらの特性は、支援技術によるそのページとの効果的なインタラクションに十分なほど曖昧さのないように構造をエンコードしているわけではない。独立した構造、機能、及び提示レイヤーを提供することにより、書式設定によって暗示されたセマンティクスが、構造レイヤーを通してプログラムによる解釈が可能になる。
+            </p>
+            <p>この達成方法を用いることによって、ユーザエージェントでは次のことが可能になる:</p>
+            <ul>
+               
+               <li>セクションの並び替え、セクションのリスト、リンクのリストの生成など、コンテンツの既存の構造に基づいて意味ある構造の変換を実行する。
+               </li>
+               
+               <li>表現的な情報のみに基づいて支援技術が決定できない、構造上の特徴に基づいたコンテンツとのインタラクションをサポートする。たとえば、リスト項目の数を示す、又はリストの終了位置までスキップすることによって、リストとの特別なインタラクションを提供することは望ましいかもしれないが、これが可能なのはリストの構造がリストの表現に加えてコード化されている場合のみである。
+               </li>
+               
+               <li>構造の特性に付随した代替の表現規則を代用することによって、コンテンツの表現を修正する。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-html-with-css">
+               <h3>事例 1: CSS 付きの HTML</h3>
+               <p>HTML ドキュメントは、段落、リスト、見出しなど HTML の構造特性を用いて、書体の変更、レイアウトのヒントなどの表現的な特性を避けている。CSS は、構造的なプロパティに基づいてドキュメントをフォーマットするために使用されている。HTML において精巧に作成された "class" 属性は、必要に応じて構造的なマークアップのセマンティクスを拡張し、より柔軟なフォーマットを CSS によって可能にする。支援技術は、CSS を代用もしくは拡張して表現を変更する、又は CSS を無視して構造的なエンコーディングと直接やりとりをする。
+               </p>
+            </section>
+            <section class="example" id="example-2-tagged-pdf">
+               <h3>事例 2: タグ付き PDF</h3>
+               <p>PDF ドキュメントは、書式設定情報が組み込まれているコンテンツでほとんど成り立っている。構造に関する情報は、XML のようなタグを用いてドキュメントの別セクションの中で提供されており、これは「タグ付き PDF」と呼ばれている。それらのタグの中にある情報は、支援技術が意味のある構造の変換を実行する (例えば、セクションのリストを生成する) ため、又は構造的な特徴に基づいたコンテンツとのインタラクションをサポートする (例えば、フォームの先頭にジャンプする) ために使用可能である。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>ドキュメントのエンコーディングを調べる。</li>
+                  
+                  <li>構造情報と機能が明示的に提供され、表現的な情報から論理的に分離されていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

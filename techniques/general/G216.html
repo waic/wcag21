@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G216: コントロールスライダーのためにアクティブにするシングルポイントを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
+            <li><a href="G215">前の達成方法: G215</a></li>
+            <li><a href="G217">次の達成方法: G217</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>On this page:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>コントロールスライダーのためにアクティブにするシングルポイントを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ポインタ入力をサポートする全ての技術 (例えば、マウスポインタ、タッチスクリーン又はトラックパッド上でのタッチ、スタイラス入力、レーザーポインタ入力のいずれか又は全てをサポートしている)。
+            </p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/pointer-gestures">達成基準 2.5.1: ポインタのジェスチャ</a> (十分) に関連する達成方法である。</span>
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、軌跡ベースのジェスチャを実行することが困難な利用者がコントロールスライダーを確実に操作できるようにすることである。コントロールスライダーとは、「つまみ」がついたトラックで、トラックに沿って移動して値を設定するものである。
+            </p>
+            <figure id="control-slider">
+               				<img src="img/input-range.png" alt="水平の線の途中に丸いボタンがあり、ボリュームとラベルに書かれている。" />
+               				
+               <figcaption>図 1 トラックの中央にあるつまみを示すコントロールスライダーの例のスクリーンショット。</figcaption>
+               			
+            </figure>
+            <p>例えば、音量を設定する、色の色相を変更する、ローン計算機に必要な金額を入力する、慈善団体に寄付する金額を選ぶなど、利用者はある範囲の値を設定することができる。軌跡ベースのジェスチャを必要とするスライダーは、左右にスワイプして値を変更する、又はスライダーのつまみを特定の方向にドラッグして値を変更するために使う。
+            </p>
+            <p>軌跡ベースのジェスチャを使わずにアクティブにする簡単なフォールバックは、コントロールスライダーのトラックをクリック可能にすることである。この方法では、トラックをシングルタップ又はクリックして使うことで値を指定することができる。
+            </p>
+            <p>コントロール (矢印ボタンなど) を代替として提供することで、タップ又はクリックで値を増減させることも可能になる。これにより、よりきめ細かい値の設定が可能になる。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <p>タッチスクリーンデバイスでは、内蔵のスクリーンリーダーのような OS レベルの支援技術 (AT) がオンになっている場合、コンテンツ制作者が提供する軌跡ベースのジェスチャは通常機能しない。これは、AT が一般的に軌跡ベースのジェスチャを使い尽くすため、軌跡ベースのジェスチャが作られたコンテンツに到達しないためである。しかし、カスタムコントロールがネイティブコントロールの上に構築されている場合は、値を変更するために垂直スワイプなどの AT ジェスチャで操作可能な場合がある (事例 1 を参照)。
+               </p>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <p>ネイティブスライダー (<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/range">input type range</a>) の上に構築されたカスタムコントロールスライダーによって、利用者はスライダーの値を変えるために、左右にスワイプする又はスライダーのつまみをドラッグすることができる。スライダートラックでは、タップ又はクリックでスライダーのつまみを有効な位置に設定することができる。両側の標準ボタンは、タップ、クリック又はキーボードのアクティブ化によってスライダーの値を増減させることができる。
+            </p>
+            <p><a href="../../working-examples/providing-single-point-control-slider/">カスタムコントロールスライダーの動作する例</a></p>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>軌跡ベースのジェスチャに反応する各コントロールスライダーについて:</p>
+               <ol>
+
+                  <li>コントロールスライダーの値 (範囲) が、ポインタを使ったタップ又はクリックで設定できることを確認する。
+                  </li>
+                  		
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  			
+                  <li>1 の結果が真である。</li>
+                  		
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

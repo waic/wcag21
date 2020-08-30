@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G144: 異なるモダリティを用いて同じ目的を果たす、もう一つの CAPTCHA がウェブページに含まれていることを確認する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G143">前の達成方法: G143</a></li>
+            <li><a href="G145">次の達成方法: G145</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>異なるモダリティを用いて同じ目的を果たす、もう一つの CAPTCHA がウェブページに含まれていることを確認する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分、<a href="G143">G143: CAPTCHA の目的を説明するために、テキストによる代替を提供する</a>)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、障害のある利用者が CAPTCHA のタスクを完了できないという事態を減らすことである。異なるモダリティを用いた代替の CAPTCHA を提供することによって、利用者がいずれかの CAPTCHA によりタスクを完了できる可能性が高まる。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>Examples</h2>
+            <ul>
+               
+               <li>あるプロセスで利用者が次のステップに進む前に完了しなければならない CAPTCHA のテストを含んだウェブページがある。ウェブページには、画像に表示されている言葉を入力するなどの視覚的なタスクと、音声ファイルで読み上げられる文字を入力するなどの音声によるタスクの両方が含まれる。聴覚に障害のある利用者は、音声 CAPTCHA をパスすることはできないが、視覚的な CAPTCHA であればパスすることが可能になる。
+               </li>
+               
+               <li>ブログのコメントフォームに視覚的な CAPTCHA が含まれていて、利用者がコメントを送信する前に、この CAPTCHA をクリアしなければならない。視覚的な CAPTCHA に加えて、「2＋7 の答えは」と問うフォームフィールドで、利用者が解答を記入するためのテキスト入力フィールドが用意された CAPTCHA もある。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G143">G143: CAPTCHA の目的を説明するために、テキストによる代替を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>ウェブページにある各 CAPTCHA に対して:</p>
+               
+               <ol>
+                  
+                  <li>ウェブページに、同じ目的を果たす、異なる感覚モダリティを用いたもう一つの CAPTCHA が含まれていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

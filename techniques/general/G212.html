@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G212: ネイティブコントロールを使用して、アップイベントで機能がトリガーされるようにする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G211">前の達成方法: G211</a></li>
+            <li><a href="G213">次の達成方法: G213</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ネイティブコントロールを使用して、アップイベントで機能がトリガーされるようにする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>この達成方法は、ほぼ全ての技術に適用される。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pointer-cancellation">達成基準 2.5.2: ポインタのキャンセル</a> (十分な達成方法) </span>に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、あるコントロールとインタラクションしようとする利用者が、イベントの動作を誤ってトリガーしないようにすることである。これは、ポインタのアップイベント (例えば、onclick 又は mouseup イベント) に頼ることで最も直接的に達成できる。
+            </p>
+            <p>この成功基準を満たす最も簡単な方法は、コントロールのデフォルトの動作を使用し、明示的なダウンイベントのトリガーによってその動作を上書きしないことである。アップイベントは、ほとんどすべてのコントロール及び、あらゆるプログラミング言語又はマークアップ言語の、デフォルトの動作である。
+            </p>
+            <p>ネイティブ言語では、ダウンイベントでコントロールが発火するのは、通常は正当な理由があり、かつ簡単に回復することができる。例えば、HTML の input 要素では、「ポインタダウン」イベントによってカーソルが編集可能な領域に入るようにすることができる。というのも、その動作は容易に可逆的であり、ポインタのキャンセルの達成基準の要件を満たすからである。なぜならこれは、利用者がコントロールを押下した後にミスをしたことに気付いた場合、ポインタを押下したままポインタをヒット領域から遠ざけるだけで、ポインタを離してもイベントがトリガーされないためである。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-using-an-native-onclick-event-in-javascript">
+               <h3>例 1: JavaScript でネイティブの onclick イベントを使用する</h3>
+               <p>JavaScript で、ネイティブの onclick イベントは、デフォルトでアップイベントによってトリガーされる。</p>
+            </section>
+            <section class="example" id="example-2-using-a-native-button-or-link-in-html">
+               <h3>例 2: HTML でネイティブのボタン又はリンクを使用する</h3>
+               <p>HTML ネイティブの <code>&lt;button&gt;</code> 又は <code>&lt;a href ....&gt;</code> では、onclick イベントはデフォルトでアップイベントによってトリガーされる。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p><code>&lt;button&gt;</code> 要素は、それ自身では何も行わない (<code>&lt;form&gt;</code> の一部で、かつ <code>type="button"</code> ではない、つまりフォームを送信する場合は除く)。その場合コンテンツ制作者は、入力に依存しないクリックハンドラに頼るべきである。
+                  </p>
+               </div>
+            </section>
+            <section class="example" id="example-3-using-a-native-button-in-ios-or-android">
+               <h3>例 3: iOS 又は Android でネイティブのボタンを使用する</h3>
+               <p>iOS 及び Android のネイティブのボタンでは、onclick イベントはデフォルトでアップイベントによってトリガーされる。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                    <p>WCAG 自体は <a href="https://waic.jp/docs/WCAG21/#dfn-web-page-s">単一の URL のあるウェブページ</a>に適用されるものであり、この例はネイティブアプリケーションにおいて <a href="https://www.w3.org/WAI/standards-guidelines/wcag/non-web-ict/">WCAG2ICT</a> を実装しようとしている人に役立つ補足的なアドバイスとして提供されている。
+                    </p>
+               </div>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Element/click_event">Element: click イベント (MDN web docs)</a></li>
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>全てのクリック可能なコントロールにおいて:</p>
+               <ol>
+                 
+                  <li>ダウンイベントを発動させた後、アップイベントをトリガーさせる前にポインタをターゲットの外に移動させ、その後ポインタを離してアップイベントをトリガーさせる。
+                  </li> 
+                 
+                  <li>ターゲットのヒット領域外でポインタが離されたとき、動作がトリガーされないことを確認する。
+                  </li>
+                  
+                  <li>動作がトリガーされる場合は、その動作が反転可能であることを確認する。</li>	
+                  
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  
+                  <li>2. 又は 3. の結果が真である。</li>
+                  
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

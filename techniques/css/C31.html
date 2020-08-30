@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>C31: コンテンツをリフローするために CSS Flexbox を使う</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
+            <li><a href="C30">前の達成方法: C30</a></li>
+            <li><a href="C32">次の達成方法: C32</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>On this page:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連するリソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>コンテンツをリフローするために CSS Flexbox を使う</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/CSS/">カスケーディングスタイルシート (CSS)</a> をサポートする技術を利用したコンテンツ。</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a>に関連する。（十分な達成方法）</span>.</p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、320 CSS ピクセルに相当する幅の水平スクロールバー、又は水平スクロールするテキストの 256 CSS ピクセルに相当する高さの垂直スクロールバーを導入せずにコンテンツを表示できるようにすることである。これには、使用可能なビューポートの空間に適応するレイアウト手法が使用される。</p>
+            <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout">Flexbox レイアウト</a>は、画面に領域を表示するために必要に応じてリフローするレイアウト領域を定義する。したがって、リフローが適切に行われた場合、厳密なレイアウトは異なるが、要素の関係と読み取り順序は同じままである。これは、さまざまなデバイス及びさまざまなズーム設定を持つ利用者に適したデザインを作成するための効果的な方法である。</p>
+            <p>Flexbox レイアウトの基本原則は以下のとおり:</p>
+            <ol>
+
+               <li>Flexbox プロパティ及びメディアクエリを使用して特定のビューポートサイズのためにレイアウト領域のサイズを定義し、利用可能なスペースで拡大、縮小、または折り返して、ズームレベルに対応する。</li>
+
+               <li>Flexbox コンテナ内のレイアウト領域を、隣接する Flexbox アイテムの行として配置する。これは、段落の折り返しの単語とほぼ同じ方法で、必要に応じて新しい行に折り返すことができる。</li>
+
+            </ol>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>Flexbox では、order プロパティと reverse プロパティを使うことでキーボードナビゲーションの分断を引き起こす可能性がある。不正なソースの順序付けを引き起こし不適合なコンテンツロジックの順序変更を、<a href="https://www.w3.org/TR/css-flexbox-1/#order-accessibility">CSS Flexible Box Layout モジュールは警告する</a>。</p>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-example-1-medium-complex-flexbox-layout-in-html-and-css">
+               <h3>事例 1: HTML 及び CSS での中程度の複雑な flexbox レイアウト</h3>
+               <p>以下の中程度の複雑な例は、HTML 及び CSS を使用して flexbox レイアウトを作成する。ビューポートが調整されると、レイアウト領域のサイズが調整される。ビューポートの合計幅がメディアクエリで定義された幅と一致する場合、横に並べたり逆にしたりするのではなく、下に配置するように列を折り返す。</p>
+               <p>複数の方向にスクロールする必要なく、ズームレベルを 400％に上げることができる。特にこの事例では、"flex-basis" プロパティを使用してフレックスアイテムのパーセントサイズを使用し、ソース順にレイアウトしている。</p><pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Using CSS Flexbox for Reflow&lt;/title&gt;
+    &lt;style&gt;
+
+    /* Reflow Styling */
+
+    .row {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .row-nested {
+      width: calc(100% + 2rem);
+      margin: 0 -1rem 1rem -1rem;
+    }
+
+    .col {
+      padding: 1rem;
+      flex: 0 1 100%;
+    }
+
+    @media all and (min-width: 576px) {
+      .col-panel {
+        flex: 0 1 50%;
+        padding-bottom: 0.25rem;
+      }
+    }
+
+    @media all and (min-width: 992px) {
+      main[role="main"] {
+        flex: 0 1 66.333333%;
+      }
+      aside[role="complementary"] {
+        flex: 0 1 33.333333%;
+        margin-top: 0;
+      }
+    }
+
+    &lt;/style&gt;
+
+    &lt;/head&gt;
+
+    &lt;body class="row"&gt;
+
+      &lt;header role="banner" class="col"&gt;
+        ...
+      &lt;/header&gt;
+
+      &lt;main role="main" class="col"&gt;
+        ...
+        ...
+        &lt;div class="row row-nested"&gt;
+          &lt;div class="col col-panel"&gt;
+            ...
+          &lt;/div&gt;
+          &lt;div class="col col-panel"&gt;
+            ...
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+
+      &lt;aside role="complementary" class="col"&gt;
+        ...
+      &lt;/aside&gt;
+
+      &lt;footer role="contentinfo" class="col"&gt;
+        ...
+      &lt;/footer&gt;
+
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre><p class="working-example">Working example: <a href="../../working-examples/css-flexbox/">Using CSS Flexbox for Reflow</a></p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+
+               <li><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></li>
+
+               <li><a href="https://developer.mozilla.org/ja-JP/docs/Web/CSS/CSS_Flexible_Box_Layout"><abbr title="Mozilla Development Network">MDN</abbr> CSS フレックスボックスレイアウト</a></li>
+
+               <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS Tricks Guide to Flexbox</a></li>
+
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+
+               <li><a href="C32">Grid reflow technique</a></li>
+
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <ol>
+
+                  <li>400％ズーム可能なユーザエージェントでウェブページを表示し、ビューポートのサイズ (CSS ピクセル単位) を幅 1280、高さ 1024 に設定する。</li>
+
+                  <li>400％に拡大する。</li>
+
+                  <li>コンテンツを横に読む場合、全てのコンテンツ及び機能が横スクロールなしで利用できることを確認する。</li>
+
+                  <li>コンテンツを縦に読む場合、全てのコンテンツ及び機能が縦スクロールなしで利用できることを確認する。</li>
+
+               </ol>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ブラウザが 400％にズームできない場合、ブラウザの幅をそれに比例して縮小できる。例えば、300％のズームでは、ビューポートの幅を 960px にすべきである。</p>
+               </div>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <p>3. 及び 4. の結果が真である。</p>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

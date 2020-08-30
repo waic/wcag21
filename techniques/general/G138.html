@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G138: 色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G136">前の達成方法: G136</a></li>
+            <li><a href="G139">次の達成方法: G139</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>色及びテキストをサポートするウェブコンテンツ技術すべて。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、色とセマンティックなマークアップを組み合わせて、情報を伝達することである。ほとんどの利用者はコンテンツをすばやく読み取り、色を用いて伝達された情報をコンテンツから見つけることができる。色を見ることができない利用者に対しては、セマンティックなマークアップによって異なるタイプの手がかりを提供することができる。それによって、ユーザエージェントは、例えば、異なるタイプの構造に対しては異なる視覚的提示を用いる、又は聴覚的提示において異なる音声もしくは音の高さを用いることによって、このタイプの構造を利用者に対して知覚可能にすることができる。
+            </p>
+            <p>ほとんどのユーザエージェントは、セマンティックなマークアップを用いて指定されたテキストを視覚的に区別する。支援技術の中には、適切でセマンティックなマークアップを用いて制作されたコンテンツの特徴を定めるメカニズムを提供しているものもある。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>WAIC では G138 に関するアクセシビリティ・サポーテッド（AS）情報を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/G138.html">アクセシビリティ・サポーテッド（AS）情報: G138</a>
+                  では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+               </p>
+               </div>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-color-and-strong-emphasis-for-required-form-fields">
+               <h3>事例 1: 必須のフォームフィールドに対して、色と強調を用いる</h3>
+               <p>HTML のフォームにいくつかの必須フィールドがある。必須フィールドのラベルは赤で表示されている。加えて、各ラベルのテキストはより強い強調を示すために strong 要素でマークアップされている。フォーム入力の説明文には、「すべての必須項目は赤で表示されており、強調されている」とあり、例が添えられている。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                  <div>
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong#%3Cem%3E_vs._%3Cstrong%3E">MDN の strong 要素</a>で示されているように、古い HTML では <code>strong</code> 要素を単により強い強調としていたが、現在の HTML では <code>strong</code> を重要性を表すものと定義している。</p>
+                  </div>
+               </div>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  	<a href="https://www.paciellogroup.com/blog/2008/02/screen-readers-lack-emphasis/">Screen Readers lack emphasis</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/1999/REC-html401-19991224/struct/text.html#h-9.2.1">Phrase elements: EM, STRONG, DFN, CODE, SAMP, KBD, VAR, CITE, ABBR, and ACRONYM</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/html5/text-level-semantics.html#the-em-element">HTML 5.0: 4.5.2 The em element</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
+               
+               <li><a href="../html/H49">H49:強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>情報を伝達するために色の違いが使用されているコンテンツに対して:</p>
+               
+               <ol>
+                  
+                  <li>セマンティックなマークアップを通して同じ情報が入手可能であることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

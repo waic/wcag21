@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G95: 非テキストコンテンツの簡単な説明を提供する、簡潔なテキストによる代替を提供する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G94">前の達成方法: G94</a></li>
+            <li><a href="G96">次の達成方法: G96</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>非テキストコンテンツの簡単な説明を提供する、簡潔なテキストによる代替を提供する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法は、元の非テキストコンテンツと同じ目的を果たし、同じ情報を提示するために必要なテキストが長くなりすぎてしまう場合、又はテキストのみではこの目的を達成できない場合に用いられる。そのような場合、非テキストコンテンツを簡潔に説明する短いテキストによる代替を提供するために、この達成方法は用いられる。(その後、組み合わせによって元の非テキストコンテンツと同じ目的を果たし、かつ同じ情報を提示するような、別の達成方法を用いて、長いテキストによる代替が提供される。)
+            </p>
+            <p>テキストにどのようなテキストを含めればよいかを決める際は、以下の質問について考えてみるとよい:
+            </p>
+            <ul>
+               
+               <li>なぜこの非テキストコンテンツがここにあるのか？</li>
+               
+               <li>それはどのような情報を示しているのか？</li>
+               
+               <li>それはどのような目的を果たすのか？</li>
+               
+               <li>非テキストコンテンツを使用することができない場合、どのような言葉を使って同じ機能及び／又は情報を伝達するか？
+               </li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>10 月の売上げを示している図表には「10 月の売上表」という短いテキストによる代替がある。 その図表の全ての情報を提供する長い説明もある。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G74">G74: 短い説明の中で長い説明のある場所を示して、非テキストコンテンツの近くにあるテキストで長い説明を提供する</a></li>
+               
+               <li><a href="G73">G73: 非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する</a></li>
+               
+               <li><a href="G92">G92: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する</a></li>
+               
+               <li><a href="G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、簡潔なテキストによる代替を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>非テキストコンテンツの簡潔な説明を提供している簡単なテキストによる代替があることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

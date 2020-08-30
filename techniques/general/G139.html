@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G139: 利用者がエラー箇所に移動できるメカニズムを作成する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G138">前の達成方法: G138</a></li>
+            <li><a href="G140">次の達成方法: G140</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>利用者がエラー箇所に移動できるメカニズムを作成する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>利用者のデータ入力を受け付け、そのフォーマット、値及び／又は入力の種類に制限があるコンテンツ
+            </p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (Advisory)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (Advisory)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者によって提供された情報が受け付けられない場合に、入力エラーの修正を支援することである。これには、必須の情報が欠落しているフィールドと、正しくない情報のあるフィールドが含まれる。利用者がチェック対象のデータ入力を入力し、入力エラーが検出された場合、利用者がそのエラーを探す必要がないように、エラーへのリンクを提供する。一つのアプローチとして、サーバーサイドでのバリデーションを用いて、フォームを再表示し (すでに入力されたデータも含む)、ページの上部にテキストでの説明文を表示して、問題の性質を説明し、問題のあったフィールドへのリンクを提供する。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-server-side-error-checking">
+               <h3>事例 1: サーバーサイドのエラーチェック</h3>
+               <p>利用者がフォームフィールドに無効なデータを入力して、そのフォームを送信する。サーバーは、利用者の入力したデータはそのまま表示された状態でフォームを返し、ページの上部に受け入れられなかったことをテキストで明確に示している。このテキストは、エラーの性質を説明し、問題があったフィールドへのリンクを提供しているため、利用者はそのフィールドへ容易にナビゲートし、問題を修正することができる。
+               </p>
+            </section>
+            <section class="example" id="example-2-client-side-error-checking-with-a-popup">
+               <h3>事例 2: ポップアップを用いたクライアントサイドのエラーチェック</h3>
+               <p>利用者がフォームフィールドに無効なデータを入力して、そのフォームを送信しようとする。クライアントサイドのスクリプトがエラーを検出し、送信をキャンセルした上で、エラーを説明するテキストメッセージとエラーのあるフィールドへのリンクを提供するように文書を変更する。また、このスクリプトは、問題のあるフィールドのラベルを変更して、そのフィールドを強調する。
+               </p>
+            </section>
+            <section class="example" id="example-3-client-side-error-checking-with-no-popup">
+               <h3>事例 3: ポップアップを用いないクライアントサイドのエラーチェック</h3>
+               <p>利用者がフォームを送信しようとした時、新たなページに遷移させる代わりに、スクリプトが自動的に「エラーが発生しました」というテキストリンクにフォーカスする。リンクは、説明的なエラーメッセージの順序付きリストの最初の項目に移動する。各リストの項目は、エラーが発生したコントロールへのリンクとなる。また、エラー箇所から説明的なエラーメッセージの順序付きリストへのリンクも設置されている。このプロセスが必要な限り繰り返される。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
+               
+               <li><a href="G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
+               
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>フォームに記入し、故意に必須項目を空白にして、他のフィールドに入力エラーを作った状態でフォームを送信する。
+                  </li>
+                  
+                  <li>必要なデータが欠落しているフィールドを特定するテキストメッセージが提供されていることを確認する。
+                  </li>
+                  
+                  <li>入力エラーのあるフィールドを特定するテキストメッセージが提供されていることを確認する。</li>
+                  
+                  <li>欠落しているデータのメッセージから、必要なデータが欠落している各フィールドへのリンクがあることを確認する。
+                  </li>
+                  
+                  <li>エラーメッセージからエラーリストへのリンクがあることを確認する。</li>
+                  
+               </ol>
+               
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div>
+                     
+                     <p>達成基準 3.3.2 では、入力エラーが検知され、修正の示唆が既知であり、セキュリティ又はコンテンツの目的が脅かされることなく提供できる場合、利用者に修正の示唆を提供するよう求めている。
+                     </p>
+                     
+                  </div>
+               </div>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である場合、4. の結果が真である。</li>
+                  
+                  <li>3. の結果が真である場合、5. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

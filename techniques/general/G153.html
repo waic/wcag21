@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G153: テキストを読みやすくする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G152">前の達成方法: G152</a></li>
+            <li><a href="G155">次の達成方法: G155</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>テキストを読みやすくする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/reading-level">達成基準 3.1.5: 読解レベル</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページ上のテキストを読むのが難しくないようにすることである。単語及び文を解読することが困難になるような障害のある利用者は、複雑なテキストを読んで理解するのを苦手とすることが多い。そのテキストが前期中等教育レベルを超えた読解能力を必要としない場合、補足又は代替版は必要ない。
+            </p>
+            <p>テキストの複雑さを軽減する方法:</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>以下は英語における留意点であると考えられ、日本語の場合に全てが当てはまるとは限らない。</p>
+               </div>
+            </div>
+            <ul>
+               
+               <li>段落ごとに一つのトピック又はサブトピックのみを展開する。</li>
+               
+               <li>コンテンツの目的に矛盾しない範囲でもっとも単純な構文を用いる。たとえば、英語のもっとも単純な構文は「John hit the ball」、「The Web site conforms to WCAG 2.0」のように「主語、動詞、目的語」からなる。
+               </li>
+               
+               <li>文の長さは、前期中等教育レベルで典型的に許される範囲とする。(注記: 英語では 25 ワードである)
+               </li>
+               
+               <li>長い文は二つに分割することを検討する。</li>
+               
+               <li>一つの文に三つ以上の接続詞を用いないようにする。</li>
+               
+               <li>テキスト中のフレーズ、文、段落、セクション間の論理的関係を明確にする。
+               </li>
+               
+               <li>一般の人にとって意味が明らかでないような専門的な業界用語や俗語等の言い回しを避ける。
+               </li>
+               
+               <li>長い又は馴染みのない言い回しは、より短く一般的なものに置き換える。</li>
+               
+               <li>冗長な単語、つまり、文の意味が変わらないように単語を取り除く。</li>
+               
+               <li>単独の名詞又は短い名詞句を使用する。</li>
+               
+               <li>文の意味を変えずにより広く使われる言い回しに置き換えられるような複雑な単語又はフレーズを取り除く。
+               </li>
+               
+               <li>コンマで区切られた一連の長い単語又はフレーズを含む段落の代わりに、箇条書き又は番号付きリストを使用する。
+               </li>
+               
+               <li>代名詞による参照及び文中の他の箇所への参照は明確なものにする。</li>
+               
+               <li>英語及び他の一部の欧米系言語で書かれる文書では、受動態を使う特別な理由がない限り、能動態を用いる。たいていの場合、能動態の文章は受動態よりも短く、理解しやすい。
+               </li>
+               
+               <li>動詞の時制に一貫性を持たせる。</li>
+               
+               <li>名前やラベルに一貫性を持たせる。</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>ウェブアプリケーションのヘルプページは、前期中等教育レベルよりも高度ではない言葉づかいで書かれている。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>テキストの読みやすさを測定する。</li>
+                  
+                  <li>そのテキストが要求する読解能力が、前期中等教育レベルを超えていないことを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G75: コンテンツの更新を延期するメカニズムを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G74">前の達成方法: G74</a></li>
+            <li><a href="G76">次の達成方法: G76</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>コンテンツの更新を延期するメカニズムを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>自動更新するコンテンツ</p>
+            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Sufficient)</span>.
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者がコンテンツの自動更新又は他の緊急ではない中断を延期できるようにすることである。これは、設定を通じて、又は緊急の更新を利用者に通知して利用者が更新を停止できることによって達成できる。設定が提供される場合、コンテンツの自動更新はデフォルトで無効にすることができ、利用者がその設定を有効にした場合に自動更新の頻度を指定できる。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>あるウェブページは株価を提供し、時々自動的に更新される。このページでは、小さなフォームで「データの更新頻度 (分)」というフィールドのある短いフォームが提供されており、利用者は更新頻度を調整できる。</li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G76">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
+               
+               <li><a href="../client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>自動的に更新するコンテンツのあるページを見つける。</li>
+                  
+                  <li>自動更新に対して、自動更新のタイミングを調整するメカニズムを探す。</li>
+                  
+                  <li>自動更新がデフォルトで無効になっている、又は自動更新が発生する前に利用者に警告されて停止できることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

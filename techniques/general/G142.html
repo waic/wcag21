@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G142: ズーム機能をサポートする一般に入手可能なユーザエージェントのあるウェブコンテンツ技術を使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G141">前の達成方法: G141</a></li>
+            <li><a href="G143">次の達成方法: G143</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ズーム機能をサポートする一般に入手可能なユーザエージェントのあるウェブコンテンツ技術を使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ズーム機能を提供するユーザエージェントのある全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ズーム機能でテキストサイズを変更するユーザエージェントによってサポートされたウェブ技術を使用することによって、均一にコンテンツを拡大縮小できることを保障することである。
+            </p>
+            <p>コンテンツを均一に拡大縮小できる (すなわち、コンテンツにズームインできる) ユーザエージェントによってサポートされたウェブコンテンツ技術で制作されたコンテンツは、この達成基準を満たす。 この達成方法は、完全にユーザエージェントの機能に依存するため、さまざまなユーザエージェントを用いて検証することが重要である。
+            </p>
+            <p>この達成方法では、ズーム機能を用いてもページ上の全ての空間的な関係が保持され、全ての機能が継続して利用可能である必要がある。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>Internet Explorer 7 と Opera 9は、HTML/CSS ページコンテンツを均一に拡大縮小するズーム機能を提供している。
+               </li>
+               
+               <li>利用者がテキストのサイズを変更できるように、Adobe Reader は PDF ページを均一に拡大縮小する拡大鏡機能を提供している。
+               </li>
+               
+            </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>ブラウザのズーム機能については、上記のブラウザだけでなく、ほとんどのモダンブラウザで提供されている。</p>
+               </div>
+            </div>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>ユーザエージェントでコンテンツを表示する。</li>
+                  
+                  <li>そのコンテンツを 200% にズームする。</li>
+                  
+                  <li>全てのコンテンツ及び機能が利用可能かどうかを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>3.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

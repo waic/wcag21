@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G148">前の達成方法: G148</a></li>
+            <li><a href="G150">次の達成方法: G150</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ユーザエージェントによって提供されるフォーカスのハイライトを用いる全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化</a> (十分な達成方法)</span>に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ユーザエージェントのサポートに頼ることにより、利用者がフォーカスされたコンポーネントを視覚的に識別できるようにすることである。フォーカスを受け取ったときに、何らかの方法で標準的なコントロールを強調することはユーザエージェントでは一般的である。UAAG に適合したユーザエージェントは、<a href="http://www.w3.org/TR/WAI-USERAGENT/guidelines.html#tech-interaction-highlight">チェックポイント 10.2 "Highlight selection, content focus, enabled elements, visited links"</a> を満たす場合、標準的なコントロールを強調する。ユーザエージェントがこのサポートを提供する標準的なコントロールをウェブ制作者が使用するとき、利用者は、フォーカスの置かれている場所を標準的で予測可能な方法で通知される。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>HTML のテキスト入力フィールドがフォーカスを受け取ったとき、ブラウザーはテキストフィールドの中の入力箇所に点滅する縦棒を表示する。
+               </li>
+               
+               <li>HTML のリンクがフォーカスを受け取ったとき、そのリンクは点線で長方形のフォーカスハイライトで囲まれる。</li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/UAAG10/guidelines.html#tech-interaction-highlight">User Agent Accessibility Guidelines 10.2: Highlight selection, content focus, enabled
+                     elements, visited links</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>ウェブページ上のフォーカス可能な各コンポーネントに対して:</p>
+               
+               <ol>
+                  
+                  <li>そのコントロールにフォーカスを設定する。</li>
+                  
+                  <li>何らかの方法でユーザエージェントがコントロールを強調しているかどうかを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

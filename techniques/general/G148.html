@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G146">前の達成方法: G146</a></li>
+            <li><a href="G149">次の達成方法: G149</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>テキストと背景の色が別々に指定されている、及びブラウザが初期設定の色を制御できるあらゆるウェブコンテンツ技術
+            </p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が背景上に提示されたテキストを確実に読めるようにすることである。この達成方法では、コンテンツ制作者は単純に背景色及び文字色を指定しないことで、コントラストに関する処置を行う必要がないようにする。その結果、両方の色はユーザエージェントによって完全に決定される。
+            </p>
+            <p>視覚障害を持つ人々の中には、彼らが見づらい特定の色を上書きするようにユーザエージェントを設定している人がいる。この達成方法は、ユーザエージェントとウェブサイトが前景色及び／又は背景色をめぐって互いに競合し、その結果、文字色及び背景色が同じ色になり、ブラウザ又は支援技術で独自の色設定をしている利用者にとって不可視の状態になる、という状況を避けるのに役立つ。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>コンテンツ制作者は文字色も背景も指定も設定せず、CSS も使用していない。その結果、利用者はブラウザのデフォルトを設定し、適切に機能する色及びコントラストを提供することができる。
+               </p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="https://www.paciellogroup.com/resources/contrastanalyser/">Contrast Analyser – Application</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://juicystudio.com/services/luminositycontrastratio.php">Contrast Ratio Analyser - online service</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://juicystudio.com/article/colour-contrast-analyser-firefox-extension.php">Colour Contrast Analyser - Firefox Extension</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://trace.wisc.edu/contrast-ratio-examples/">Color Contrast Samples</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/Graphics/atypical-color-response">Atypical colour response</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://www.colorsontheweb.com/colorcontrast.asp">Colors On the Web Color Contrast Analyzer</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://www.vischeck.com/daltonize/runDaltonize.php">Tool to convert images based on color loss so that contrast is restored as luminance
+                     contrast when there was only color contrast (that was lost due to color deficiency)</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://www.456bereastreet.com/archive/200709/10_colour_contrast_checking_tools_to_improve_the_accessibility_of_your_design/">List of color contrast tools</a>
+                  
+               </li>
+               
+            </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>「Colour Contrast Analyser」は 2018 年現在、Firefox Add-ons から入手できない状態にある。</p>
+               </div>
+            </div>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G18">G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する</a></li>
+               
+               <li><a href="G156">G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>テキストの色を指定できる箇所全てを見る。</li>
+                  
+                  <li>テキストの色が指定されていないことを確認する。</li>
+                  
+                  <li>背景として用いられている背景色又は画像が指定されている箇所全てを見る。
+                  </li>
+                  
+                  <li>背景として用いられている背景色又は画像が指定されていないことを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 4. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

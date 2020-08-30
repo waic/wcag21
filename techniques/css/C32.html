@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>C32: メディアクエリとグリッド CSS を使用して列をリフローする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="目次">目次</a></li>
+            <li><a href="../#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C31">前の達成方法: C31</a></li>
+            <li><a href="C33">次の達成方法: C33</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>メディアクエリとグリッド CSS を使用して列をリフローする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/CSS/">カスケーディングスタイルシート (CSS)</a> をサポートしているウェブコンテンツ技術。
+            </p>
+            <p>この達成基準は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a> (十分) </span>に関連する。</span>
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、320 CSS ピクセルに相当する幅の横スクロールバー、又は水平にスクロールするテキストに対して 256 CSS ピクセルに相当する高さの縦スクロールバーを導入せずにコンテンツを表示できるようにすることである。これは、使用可能なビューポートに適応するレイアウト手法を使用して行われる。
+            </p>
+            <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout">グリッドレイアウト</a>は、必要に応じリフローして領域を画面に表示するためのレイアウトを定義する。したがって、厳密なレイアウトは異なるが、正しく指定された場合の要素の関係と読み取り順序は同じままである。これは、異なるコンテンツサイズ設定のある、さまざまなデバイス上で及び利用者に対して適切に提示するデザインを作成するための効果的な方法である。
+            </p>
+            <p>グリッドレイアウトの基本原則は次のとおり:</p>
+            <ol>
+
+               <li>特定のビューポートサイズにおいて、グリッドプロパティ及びメディアクエリを使用してレイアウト領域のサイズを定義し、利用可能なスペースで拡大、縮小又は内包し、ズームレベルに応答する。
+               </li>
+
+               <li>グリッドコンテナ内のレイアウト領域を隣接するグリッドアイテムの行として配置する。これは段落の折り返しの単語とほぼ同じ方法で、必要に応じて新しい行に折り返してよい。
+               </li>
+
+            </ol>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>グリッドレイアウト CSS を使用すると、視覚的なレイアウトとソースコードの順序が異なることで、キーボードナビゲーションの分断が生じる場合がある。キーボード利用者及びその他利用者に不正確なフォーカス順序をもたらすため、 <a href="https://www.w3.org/TR/css-grid-1/#placement-a11y">CSS Grid Layout Module Level 1</a> ではグリッドアイテム配置によるコンテンツの並べ替えについて警告している。
+               </p>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-example-1-grid-layout-in-html-and-css---medium-complexity">
+               <h3>事例 1: HTML 及び CSS でのグリッドレイアウト - 中程度の複雑さ</h3>
+               <p>次の中程度の複雑さの例では、 HTML 及び CSS を使用してグリッドレイアウトを作成する。ビューポートが調整されると、レイアウト領域のサイズも調整される。ビューポートの合計幅がメディアクエリで定義された幅と一致する場合、列は折り返され、互いに隣接するのではなく下に配置される。
+               </p>
+               <p>複数の方向にスクロールする必要なく、ズームレベルを 400 ％に上げられる。特にこの例では "grid-template-columns" プロパティを使用し、グリッドアイテムのグリッドコンテナにおける空き領域の比率として fr 単位を用い、ソース順にレイアウトする。
+               </p><pre><code>
+  &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;CSS: Using media queries and grid CSS to reflow columns&lt;/title&gt;
+        &lt;style&gt;
+
+        /* Reflow Styling */
+        header[role="banner"]       { grid-area: header; }
+        main[role="main"]           { grid-area: main; }
+        aside[role="complementary"] { grid-area: aside; }
+        footer[role="contentinfo"]  { grid-area: footer; }
+
+        .grid,
+        .subgrid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .grid {
+          grid-template-areas:
+          'header'
+          'main'
+          'aside'
+          'footer';
+          width: 100%;
+        }
+
+        .subgrid {
+          width: calc(100% + 2rem);
+          margin: 0 -1rem;
+        }
+
+        .grid-item,
+        .subgrid-item {
+          padding: 1rem;
+        }
+
+        @media all and (min-width: 576px) {
+          .subgrid {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            margin-bottom: 1rem;
+          }
+          .subgrid-item {
+            padding-bottom: 0.25rem;
+          }
+        }
+
+        @media all and (min-width: 992px) { 
+          .grid {
+            grid-template-areas:
+              'header header header'
+              'main main aside'
+              'footer footer footer';
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+          }
+        }
+
+        &lt;/style&gt;
+
+      &lt;/head&gt;
+
+      &lt;body class="grid"&gt;
+
+        &lt;header role="banner" class="grid-item"&gt;
+          ...
+        &lt;/header&gt;
+
+        &lt;main role="main" class="grid-item"&gt;        
+          ...
+          ...
+          &lt;div class="subgrid"&gt;
+            &lt;div class="subgrid-item"&gt;
+              ...
+            &lt;/div&gt;
+            &lt;div class="subgrid-item"&gt;
+              ...
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/main&gt;
+
+        &lt;aside role="complementary" class="grid-item"&gt;
+          ...
+        &lt;/aside&gt;
+
+        &lt;footer role="contentinfo" class="grid-item"&gt;
+          ...
+        &lt;/footer&gt;
+
+      &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre><p class="working-example">実施例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/css-grid/">Using media queries and grid CSS to reflow columns</a></p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout module level 1</a></li>
+               
+               <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"><abbr title="Mozilla Development Network">MDN</abbr> grid layout index</a></li>
+               
+               <li><a href="http://gridbyexample.com/">Grid by example</a></li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="C31.html">C31: CSS フレックスボックスを使用してコンテンツをリフローする</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <ol>
+                  
+                  <li>400 ％のズームが可能なユーザエージェントでウェブページを表示し、ビューポートサイズ (CSS ピクセル単位) を幅 1280、高さ 1024 に設定する。
+                  </li>
+                  
+                  <li>400 ％にズームする。</li>
+                  
+                  <li>水平方向に読むコンテンツの場合、すべてのコンテンツと機能が横スクロールせずに利用できることを確認する。
+                  </li>
+                  
+                  <li>垂直方向に読むコンテンツの場合、すべてのコンテンツと機能が縦スクロールせずに利用できることを確認する。
+                  </li>
+                  
+               </ol>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ブラウザで 400 ％にズームできない場合、比例的にブラウザ幅又は高さを減らせる。例えば 300 ％にズームする場合、ビューポートサイズを 960 px 幅にすべきである。
+                  </p>
+               </div>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <p>3.及び 4.の結果が真である。</p>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

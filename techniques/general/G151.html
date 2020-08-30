@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G151: 台本に従う場合に、準備された声明又は台本のテキストトランスクリプトへのリンクを提供する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G150">前の達成方法: G150</a></li>
+            <li><a href="G152">次の達成方法: G152</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>台本に従う場合に、準備された声明又は台本のテキストトランスクリプトへのリンクを提供する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>ライブの音声しか含まない情報を提示する全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/audio-only-live">達成基準 1.2.9: 音声のみ (ライブ)</a> (十分な達成方法)</span>
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、トランスクリプト (書き起こしたテキスト) 又はライブの音声コンテンツが予め用意された台本に従っている場合は台本を提供することである。台本は予め用意されているので、ライブの書き起こしより正確で完全である。台本は音声の再生には同期しないこともあるが、この達成方法を用いるには、ライブの音声は台本から逸脱するべきではない。
+            </p>
+            <p>この達成方法では、トランスクリプト又は台本へのリンクが提供され、WCAG 2.0 に適合する。そのトランスクリプト又は台本は、同じウェブページ上にあってもよいし、別の URI にあってもよい。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>フリンジシアター (小劇場) のグループによるライブのラジオ劇がウェブで放送されている。俳優は用意された台本に概ね従っており、演目のための予算も少ないので、プロデューサーは (劇作家の承諾を得て) HTML でその劇の台本へのリンクを設けた。
+               </li>
+               
+               <li>政府の一人がウェブ上で重要な政策のスピーチを行う。スピーチが始まると、スピーチのトランスクリプトがウェブサイト上から入手できるようになる。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="http://www.uiaccess.com/transcripts/transcript_services.html">uiAccess list of transcription services</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://www.uiaccess.com/transcripts/transcripts_on_the_web.html">Transcripts on the Web: Getting people to your podcasts and videos</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G150">G150: ライブの音声のみのコンテンツに対して、テキストベースの代替コンテンツを提供する</a></li>
+               
+               <li><a href="G58">G58: 非テキストコンテンツのすぐ隣に、時間依存メディアの代替へのリンクを配置する</a></li>
+               
+               <li><a href="G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a></li>
+               
+               <li><a href="G157">G157: ライブの音声キャプションサービスをウェブページに組み込む</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>台本又はトランスクリプトに直接遷移するリンクが存在するかどうかを確認する。</li>
+                  
+                  <li>ライブの音声が台本に従っていることを確認する。</li>
+                  
+                  <li>代替版が別のページにある場合、利用者がその版にアクセスできるリンクが設けられていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>上記全ての結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

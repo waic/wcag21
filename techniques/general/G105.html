@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G105: 利用者が再認証した後に利用できるようにデータを保存する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G103">前の達成方法: G103</a></li>
+            <li><a href="G107">次の達成方法: G107</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>利用者が再認証した後に利用できるようにデータを保存する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>データを送信するのに、利用者認証を求め制限時間のあるウェブページ
+            </p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/re-authenticating">達成基準 2.2.5: 再認証</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>利用者に認証を求めるウェブサーバーは、一定時間、利用者の操作がない場合、セッションを終了することがよくある。利用者が素早くデータを入力できず、送信前にセッションがタイムアウトになった場合、プロセスの続行前にサーバーから再認証が求められるだろう。この場合、利用者がログインしている間、サーバーは一時キャッシュの中にデータを保存し、利用者が再認証されると、データがキャッシュから利用可能になり、まるでセッションのタイムアウトがなかったかのようにフォームを処理する。サーバーはキャッシュを無期限に保持するのではなく、例えば 1 日など、利用者の単一セッション中の再認証後の成功を保証するのに十分な長さだけキャッシュを保持する。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>あるフォーラムを利用するために利用者がログインし、投稿に回答する。回答の書き込みにかかる時間は、サーバーから許可されている不操作セッション時間よりも長いとする。利用者は回答を送信すると、セッションのタイムアウトが通知され、回答の送信のために再度ログインするよう促された。利用者の回答はサーバーに保存されており、ログインが成功する場合に通常通り回答が処理される。ログインが正常に完了できない場合、回答は破棄される。
+               </li>
+               
+               <li>セキュリティが保護されたエリアに利用者がログインし、フォームに入力している。セキュリティ上の理由のため、セッションがタイムアウトになった。フォームデータはサーバーに保存され、利用者にはタイムアウトが通知され、再ログインが促される。利用者が正しくログインする場合、全てのデータが以前に入力された状態でフォームが表示される。ログインが正常に完了できない場合、フォームデータは破棄される。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G181">G181: 利用者のデータを、再認証したページで非表示データ又は暗号化されたデータとしてエンコーディングする</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>データの送信にあたって利用者にログインを求めるサイトについて:</p>
+               
+               <ol>
+                  
+                  <li>ログインし、制限時間のある操作を始める。</li>
+                  
+                  <li>セッションをタイムアウトさせる。</li>
+                  
+                  <li>データを送信する。</li>
+                  
+                  <li>再認証する。</li>
+                  
+                  <li>元のデータ及び再認証後の変更内容を含めた、データの損失なしに、プロセスが継続可能して完了できることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>5. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

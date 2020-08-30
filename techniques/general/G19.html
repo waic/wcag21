@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G18">前の達成方法: G18</a></li>
+            <li><a href="G21">次の達成方法: G21</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、WCAG 達成基準の達成方法を理解するを参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes-or-below-threshold">達成基準 2.3.1 (3 回の閃光、又は閾値以下)</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes">達成基準 2.3.2 (3 回の閃光)</a> (十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、明るく、その面積が大きいと発作を起こすといわれている速度で閃光を放つことを防ぐことである。画面を拡大して見ている利用者もいるので、この達成方法ではコンテンツのサイズの大きさに関係なく、1 秒間に 3 回より少ない閃光に制限している。</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>
+                  
+                  <p>この達成方法は、レベル A の達成基準よりも厳格だが、検証はより容易であり、レベル A の達成基準を満たすために使用することができる。なぜなら、レベル A の達成基準の全ての失敗例の閾値は、1 秒以内に 3.5 回以上の閃光があるからである。ほとんどのコンテンツには閃光を放つものはなく、点滅があるコンテンツでも稀な場合を除いてこれほど速く点滅しない。したがって、達成基準で規定されているより複雑な検証を実行しなくても済むようにするためには、この達成方法にあるようにコンテンツが 1 秒間に 1、2 回、又は最大でも 3 回までしか閃光を放つだけであることを確認する。
+                  </p>
+                  
+                  <p>3.5 回の閃光について: 明暗が 7 回変化した場合、3.5 回の閃光となり、これは許容される 3 回の閃光 (6 回変化) よりも多い。</p>
+                  
+               </div>
+            </div>
+            <p>
+               <strong>3.5 回の閃光又は 7 回の遷移の事例:</strong>
+               
+            </p>
+            <ul>
+               
+               <li>始まりが暗い色－明るい色－暗い色－明るい色－暗い色－明るい色－暗い色－明るい色、又は</li>
+               
+               <li>始まりが明るい色－暗い色－明るい色－暗い色－明るい色－暗い色－明るい色－暗い色</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>コンテンツに閃光を放つものがある。コンテンツは、続けて 2 回又は 3 回しか光らないように設計されている。コンテンツに閃光を放つものがある。コンテンツは、続けて 2 回又は 3 回しか光らないように設計されている。</li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="http://trace.wisc.edu/peat/">Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G15">G15: コンテンツが一般閃光閾値及び赤色閃光閾値を越えていないことを確認するためにツールを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>どの 1 秒間においても 3 回よりも多い閃光がないことを確認する。</li>
+                  
+                  <li>3 回の閃光がある場合、1 秒間の最後の明／暗の状態が開始時と同じであることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. と 2. の両方の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

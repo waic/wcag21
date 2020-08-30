@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G78: 音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G76">前の達成方法: G76</a></li>
+            <li><a href="G79">次の達成方法: G79</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>音声トラック及び視覚的なコンテンツのあるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済)</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済)</a> (十分、<a href="../silverlight/SL1">SL1: Accessing Alternate Audio Tracks in Silverlight Media</a>とともに)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">達成基準 1.2.5: 音声解説 (収録済)</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">達成基準 1.2.5: 音声解説 (収録済)</a>  (十分、<a href="../silverlight/SL1">SL1: Accessing Alternate Audio Tracks in Silverlight Media</a>とともに)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、視覚的に提供される音声 (話し言葉) バージョンの情報を提供することで、目で見ることのできない利用者が視聴覚資料を理解できるようにすることである。
+            </p>
+            <p>今日のユーザエージェントのほとんどは複数の音声トラックを一つにまとめることができないため、この達成方法では、付加的な音声解説が追加されたオリジナルの音声トラックの新しいコピーに置き換える選択肢を利用者に提供することによって、追加の音声情報を同期したメディアに追加する。この追加された情報は、コンテンツを理解するにあたって重要な行動、登場人物、場面の変化、及び画面上のテキスト (キャプションではない) に焦点を当てたものである。
+            </p>
+            <p>この新しい情報がオリジナルの音声トラックの重要な音声情報を不明瞭にしてしまう (又は大きな効果音によって新しい情報が不明瞭になってしまう) のでは役に立たないため、新しい情報は会話及び効果音の合間に追加される。このため、コンテンツに追加できる補足情報の量は限られることになる。
+            </p>
+            <p>(視覚情報の) 音声解説を提供する音声トラックは、利用者が選択できる代替の音声トラックとするか、又は全ての利用者が聞く標準の音声トラックとすることができる。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>北東部地域の旅行ビデオで、会話の合間に追加された音声解説があり、全盲の利用者が登場人物の話していることを随時理解できるようになっている。
+               </li>
+               
+               <li>キツツキが木をつついて巣を作る様子を示した映像がある。利用者がコンテンツ内のボタンを押すと、音声解説を提供するトラックのオン又はオフを切り替えられるようになっている。
+               </li>
+               
+               <li>講義の映像で、講師が「<em>これが</em>最も重要です」などの表現をした個所すべてに、音声解説が付加されている。この音声解説により、映像を見ることができない聞き手にも、「これ」が何を指すのかが分かるようになっている。
+               </li>
+               
+               <li>映画のファイルに二つの音声トラックがあり、片方に音声解説が含まれている。利用者は、メディアプレーヤーでトラックを選択することにより、この映画を観賞する際の音声トラックを選ぶことができる。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/REC-smil/">Synchronized Multimedia Integration Language (SMIL) 1.0</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/SMIL/">Synchronized Multimedia Integration Language (SMIL 2.0)</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://www.w3.org/TR/SMIL-access/">Accessibility Features of SMIL</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://ncam.wgbh.org/invent_build/web_multimedia/accessible-digital-media-guide/guideline-h-multimedia#techH12">NCAM Rich Media Accessibility, Accessible SMIL Templates</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="https://msdn.microsoft.com/en-us/library/ms971327.aspx">SAMI 1.0</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a></li>
+               
+               <li><a href="../smil/SM6">SMIL 1.0 で音声解説を提供する</a></li>
+               
+               <li><a href="../smil/SM7">SMIL 2.0 で音声解説を提供する</a></li>
+               
+               <li><a href="G173">映像の音声解説付きバージョンを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>音声解説を含む音声トラックをオンにする機能が存在することを確認する。例えば、コンテンツ自体にあるコントロールを用いることによって、又はメディアプレーヤーもしくは OS でのコントロールもしくは設定によってなど。
+                  </li>
+                  
+                  <li>同期したメディアの音声を聞く。</li>
+                  
+                  <li>発話の合間が視覚的なコンテンツに関する重要な情報を伝えるために使用されているかどうかを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. 及び 3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

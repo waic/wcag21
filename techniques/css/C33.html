@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>C33: 長い URL 及びテキスト文字列をリフローできるようにする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="目次">目次</a></li>
+            <li><a href="../#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C32">前の達成方法: C32</a></li>
+            <li><a href="C34">次の達成方法: C34</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>長い URL 及びテキスト文字列をリフローできるようにする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象) </h2>
+            <p>この達成方法は、カスケーディングスタイルシート / HTML 技術に適用される。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a> (十分な達成方法) </span>に関連する達成方法である。</p>
+            </p>
+         </section>
+
+         <section id="description">
+            <h2>解説</h2>
+            <p>
+			例えばコンテンツとして表示される URL など、空白のない長い文字の集合は、ページがズームされたときにリフローがなされない可能性がある。この達成方法の目的は、320 CSS ピクセルに相当する幅において横スクロールバーを、又は 256 CSS ピクセルに相当する高さにおいて縦スクロールバーを導入することなく、URL を表示することである。これは、CSS の手法を用いることによって、使用可能なビューポート領域に適応する形で行われる。<br>
+               注: ユーザビリティ及びアクセシビリティの観点では、長いURLではなく、人が読解可能なテキストリンクを使用する方がより良い。
+            </p>
+            <p>デフォルトでは、ほとんどのブラウザは長い URL を下記の文字で折り返す:</p>
+            <ul>
+               
+               <li>"-" ハイフン</li>
+               
+               <li>" " スペース</li>
+               
+               <li>"?" クエスチョンマーク (IE,、Chrome、Safari)</li>
+               
+               <li>"&amp;" アンパサンド (Firefox のみ)</li>
+               
+            </ul>
+            <p>これだけでは、長い URL がビューポートをオーバーフローしないようにするには不十分な場合がある。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-breaking-long-urls">
+               <h3>例 1: 長い URL を折り返す</h3>
+               <p>以下の CSS を使用することで、長い URL は適切な箇所 (ハイフンやスペースなど) 及び単語内で、オーバーフローを起こさずに改行される。
+               </p>
+               <p>使用される CSS 宣言の一覧とその理由:</p>
+               <ul>
+                  
+                  <li><strong>overflow-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。
+                  </li>
+                  	    
+                  <li><strong>word-wrap: break-word</strong>: 単語を区切り、領域内に収まるようにする。(Microsoft のみ)
+                  </li>
+                  
+               </ul><pre>    a {overflow-wrap: break-word;}</pre><div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>* (ワイルドカード) セレクタを用いた場合のこの宣言は、IE 及び Edge のみサポートしている。</p>
+               </div><pre>    * { word-wrap: break-word;}</pre><p><a href="https://w3c.github.io/wcag/working-examples/css-reflow-url/">実装例</a></p>
+            </section>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>320 ピクセルよりも幅の広い文字列について、以下を確認する:</p>
+               <ol>
+                  
+                  <li>400% ズームが可能なユーザエージェントでウェブページを表示し、ビューポートの寸法 (CSSピクセル単位) を幅 1280、高さ 1024 に設定する。
+                  </li>
+                  
+                  <li>400% までズームインさせる。</li>
+                  
+                  <li>水平方向に読まれるコンテンツにおいて、横スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
+                  </li>
+                  
+                  <li>垂直方向に読まれるコンテンツにおいて、縦スクロールしなくても全てのコンテンツや機能が利用可能であることを確認する。
+                  </li>
+                  
+               </ol>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ブラウザが 400% までズームできない場合は、ブラウザ幅を比例して小さくすることによって検証できる。例えば、300% ズームの場合、ビューポートの寸法は 960 ピクセル幅にすべきである。
+                  </p>
+               </div>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <p>3. 及び 4. の結果が真である。</p>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

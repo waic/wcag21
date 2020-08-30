@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G110: クライアントサイドの瞬間的なリダイレクトを使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G108">前の達成方法: G108</a></li>
+            <li><a href="G111">次の達成方法: G111</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>クライアントサイドの瞬間的なリダイレクトを使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは <span><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">達成基準 3.2.5: 要求による変化</a> (より具体的な手法を用いる十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者を混乱させることなく、クライアントサイドでリダイレクトを利用可能にすることである。リダイレクトはサーバーサイドで実装するほうが望ましい (<a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバサイドで自動リダイレクトを実装する</a>を参照)。なぜなら、サーバーサイドのリダイレクトでは、新たな URI にあるコンテンツをサーバーが送信する前に新しいコンテンツが表示されてないためである。しかし、コンテンツ制作者がサーバーサイド技術を常に管理しているとは限らず、このような場合にはクライアントサイドのリダイレクトを用いることができる。コンテンツを異なる URI から取得するようにユーザエージェントに指示するコードによって、クライアントサイドのリダイレクトは実装できる。リダイレクト元のページには、リダイレクトに関する情報のみを含めておくことが重要である。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-html&#xA;--------------&#xA;----------------meta&#xA;--------------&#xA;--------------refresh-with-a-uri-and-no-timeout">
+               <h3>事例 1: HTML: meta 要素の refresh で、URI を指定し、タイムアウトを指定しない方法
+               </h3>
+               <p>HTML 4.x 及び XHTML 1.x では、mata 要素を用いることでクライアントサイドのリダイレクトが実装できる。
+                  <a href="../html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a>を参照のこと。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">訳注:</>
+                  <div>
+                  <p>HTML 4.x 及び XHTML 1.x は Superseded Recommendation としてマークされ、廃止された仕様である。</p>
+                  </div>
+               </div>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a></li>
+               
+               <li><a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバーサイドで自動リダイレクトを実装する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>他のウェブページへの各リンク又はプログラム参照を見つける。
+                  </li>
+                  
+                  <li>各リンク又はプログラム参照について、参照先のウェブページにクライアントサイドのリダイレクトを引き起こすコード (meta 要素やスクリプトなど) が含まれているかどうかを確認する。
+                  </li>
+                  
+                  <li>クライアントサイドのリダイレクトが生じるリンク又はプログラム参照について、リダイレクトが時間制限も遅延もなく実装され、そのページにはリダイレクトに関する情報のみが含まれているかどうかを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <p>2. の結果が偽、又は 3. の結果が真である。</p>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

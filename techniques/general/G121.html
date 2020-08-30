@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G121: 発音 (読み) にリンクする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G120">前の達成方法: G120</a></li>
+            <li><a href="G123">次の達成方法: G123</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>発音 (読み) にリンクする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>リンクを含む全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pronunciation">達成基準 3.1.6: 発音</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、単語の発音に関する情報を同じウェブページ又は異なるウェブページ上のいずれかで提供して、対象となる単語とその発音の間にリンクを確立することにより、単語の発音を入手可能にすることである。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例 </h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>単語が発音情報を含む辞書の見出し語にリンクされている。</p>
+            </section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>単語が発音を話す音声ファイルにリンクされている。</p>
+            </section>
+            <section class="example" id="example-3">
+               <h3>事例 3</h3>
+               <p>単語が発音辞書のその単語の見出し語にリンクされている。</p>
+            </section>
+            <section class="example" id="example-4">
+               <h3>事例 4</h3>
+               <p>単語がその発音の国際音声記号 (IPA) 表現にリンクされている。
+               </p>
+            </section>
+            <section class="example" id="example-5">
+               <h3>事例 5</h3>
+               <p>単語が発音の曖昧性のない表音式のスペリングにリンクされている。</p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G62">G62: 用語集を提供する</a></li>
+               
+               <li><a href="G120">G120: 単語の直後に発音 (読み) を提供する</a></li>
+               
+               <li><a href="G163">G163: オフにすることが可能な標準的な発音区別符号を使用する</a></li>
+               
+               <li><a href="../html/H62">H62: ruby 要素を使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>発音情報を必要とする単語の全てについて:</p>
+               
+               <ol>
+                  
+                  <li>少なくともその項目の最初の箇所がリンクであることを確認する。</li>
+                  
+                  <li>各リンクが項目の発音に関する情報にナビゲートすることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>上記全ての結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

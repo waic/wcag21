@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G211: アクセシブルな名前 (accessible name) を視覚的なラベルと一致させる</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G210">前の達成方法: G210</a></li>
+            <li><a href="G212">次の達成方法: G212</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>アクセシブルな名前 (accessible name) を視覚的なラベルと一致させる</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>あらゆる技術で実装されたコンテンツ。</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/label-in-name">達成基準 2.5.3 名前 (name) のラベル</a> (十分)</span> に関連する。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>音声入力を行う利用者がウェブページを操作するとき、通常利用者はコマンドを発話し、続いていくつかの可視ラベルを参照する (入力欄の隣又はボタンもしくはリンクの中にあるテキストなど)。例えば、利用者は検索とラベル付けされたボタンを実行するために「クリック　検索」と発話するかもしれない。音声認識ソフトウェアが音声入力を処理して一致する内容を探すとき、音声認識ソフトウェアはコントロールの<a href="https://www.w3.org/TR/accname/">アクセシブルな名前 (accessible name)</a> を使用する。ラベルのテキストとアクセシブルな名前 (accessible name) のテキストとの間に不一致があると、利用者に問題を引き起こすことがある。音声入力の利用者を使用可能にし、2.5.3 名前 (name) のラベルを満たす最も簡単な方法は、アクセシブルな名前 (accessible name) が可視のテキストラベルとの一致を確実にすることである。
+            </p>
+            <p>時には、ラベル候補と見なされうる複数のテキスト文字列がコントロール付近に配置されることがある。例えば、それぞれ独自のラベルを持った一連の入力の前に見出し、説明又はグループラベル (HTML の legend/fieldset、ARIA group、radiogroup など) もあるかもしれない。「グループラベル」という用語は、プログラム上及び 2.5.3 名前 (name) のラベルに関した両方において「ラベル」とは異なる意味を持つことに注意すること。
+            </p>
+            <p><a href="https://waic.jp/docs/WCAG21/Understanding/label-in-name">2.5.3 名前 (name) のラベルの解説書</a>は、2.5.3 を満たす目的としてコントロールのラベルを評価する場合、入力に隣接又は近接したテキスト文字列のみがラベルとして扱われるべきことを推奨している (「コンポーネントのラベルテキストを特定する」セクションを参照すること)。このように入力のラベルの指定を制限する実質的かつ技術的な理由がある。技術的な理由は、解説書の Accessible Name and Description Computation 仕様というセクションで議論されている。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <p>可視ラベルのアクセシブルな名前 (accessible name) へのマッピングは、ネイティブセマンティクスを正しく使用し <a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships.html">1.3.1 情報及び関係性</a>を満たすことで、多くの技術で達成できる。多くのコントロールは正しい要素の入れ子からアクセシブルな名前 (accessible name) を得る一方、他の要素はアクセシブルな名前 (accessible name) を参照する又は提供する有効な方法である特定の属性を持つ。
+            </p>
+            <p>アクセシブルな名前は、可能な場合、ネイティブ要素やセマンティクスで割り当てられるべきである。それにより、可視ラベルと名前が完全に一致することを保証する助けになる。
+            </p>
+            <section class="example" id="example-1-anchor-text-provides-both-the-link's-label-and-its-accessible-name">
+               <h3>例 1: アンカーテキストがリンクのラベルとそのアクセシブルな名前 (accessible name) の両方を提供している</h3>
+               <p id="linksample">標準の HTML を使用し、<code>a</code> 要素のタグ間のテキストが「Code of conduct」というリンクの可視テキストとアクセシブルな名前 (accessible name) の両方を提供している：
+               </p><code>&lt;p&gt;Go to our &lt;a href="url-to-page-about-code.html"&gt;Code of conduct&lt;/a&gt;&lt;/p&gt;</code><section id="non-working-sample-of-anchor">
+                  			
+                  <h4>アンカーの動作しないサンプル</h4>
+                  			
+                  <p>Go to our <a href="#linksample">Code of conduct</a></p>
+                  				
+               </section>
+            </section>
+            <section class="example" id="example-2-text-in-label-element-provides-name-for-input-via-for-attribute">
+               <h3>例 2: <code>label</code> 要素内のテキストは <code>for</code> 属性を通じて入力の名前を提供している
+               </h3>
+               <p><code>label</code> タグ間のテキストは、<code>for</code> 属性を使用し、<code>input</code> の <code>id</code> を参照することでチェックボックス入力のアクセシブルな名前 (accessible name)「Notify me of delays」としても機能する。
+               </p><code>
+                  			&lt;input type="checkbox" id="notification" name="notify" value="delays"&gt;<br />
+                  		&lt;label for="notification"&gt;Notify me of delays&lt;/label&gt;
+                  	</code><section id="working-sample-of-input">
+                  	
+                  <h4>入力の動作するサンプル</h4>
+                  	<input type="checkbox" id="notification" name="notify" value="delays" />
+                  <label for="notification">Notify me of delays</label>
+                  					
+               </section>
+            </section>
+            <section class="example" id="example-3-the-button-text-provides-the-accessible-name">
+               <h3>例 3: ボタンテキストがアクセシブルな名前 (accessible name) を提供している</h3>
+               <p><code>button</code> 要素内のテキストは可視ラベルとそのアクセシブルな名前 (accessible name) の両方になる:
+               </p><code>&lt;button&gt;Send&lt;/button&gt;</code><br /><section id="non-working-sample-of-button">
+                  		
+                  <h4>ボタンの動作しないサンプル</h4>
+                  		<button>Send</button>
+                  			
+               </section>
+            </section>
+            <section class="example" id="example-4-simple-radio-button-group">
+               <h3>例 4: シンプルなラジオボタンのグループ</h3>
+               <p>通常、ラジオボタンはグループで表示される。各ボタンはラベル付けされ、ボタングループの前には、グループを説明又はカテゴライズする情報が置かれる。
+               </p>
+               <figure id="figure-call-me-radio-button-group">
+                  					<img src="img/call-me-radio-button-group.png" alt="Call me when balance exceeds $10,000, Yes No" />
+                  					
+                  <figcaption>図 1 Yes 及び No という選択肢の Call me when balance exceeds $10,000 ラジオグループ</figcaption>
+                  				
+               </figure>
+               <p>各コンポーネントのラベルは "Yes" 及び "No" に制限すべきである。<a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">1.3.1 情報及び関係性</a>及び <a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions.html">3.3.2 ラベル又は説明</a>を満たすには、"Call me-" と書かれたテキストは支援技術に関係性を伝えるためにコーディングでき、この例では <code>fieldset</code> 及び <code>legend</code> を用いている。
+               </p>
+               <p>ラベルがラジオボタンに隣接している文字列に制限されていない場合、何がラベルを構成するかという複数の解釈は、より統一されていない機能をもたらす。"Yes" だけが最初のラジオボタンのラベルではない場合、"Call me when balance exceeds $10,000" がそうだろうか？もしくは、テキスト文字列の組み合わせだろうか？その場合、順序は "Call me when balance exceeds $10,000 Yes" 又は "Yes, Call me when balance exceeds $10,000" だろうか？テキスト文字列を組み合わせる選択は、連結の順序が意味に影響するため、スクリーンリーダーの利用者に悪影響を与えることがある。この例では、"No, call me when balance exceeds $10,000" はスクリーン・リーダーの利用者にとってとても
+わかりにくい可能性がある。
+               </p><code>
+                  					&lt;fieldset&gt;<br />
+                  					&lt;legend&gt;Call me when balance exceeds $10,000?&lt;/legend&gt;&lt;br /&gt;<br />
+                  					&lt;input type="radio" id="yes" name="callme" value="yes"&gt;<br />
+                  					&lt;label for="yes"&gt;Yes&lt;/label&gt;<br />
+                  					&lt;input type="radio" id="no" name="callme" value="no"&gt;<br />
+                  					&lt;label for="no"&gt;No&lt;/label&gt;<br />
+                  				&lt;/fieldset&gt;<br />
+                  			</code><p class="working-example"><a href="../../working-examples/label-in-name-general/example1.html" target="_blank">シンプルなラジオボタングループの動作する例</a></p>
+            </section>
+            <section class="example" id="example-5-checkbox-groupings">
+               <h3>例 5: チェックボックスのグループ化</h3>
+               <p>チェックボックスのグループ化では、単に直近のチェックボックスラベル以上のものをアクセシブルな名前 (accessible name) に組みこもうとする実装も、隣接したテキスト文字列に切り離されていない限り、問題になる可能性がある。
+               </p>
+               <figure id="figure-value-checkbox">
+                  					<img src="img/value-checkbox.png" alt="What do you value in our service? (Check all that apply) Courtesy, Promptness, Store Hours, Knowledge" />
+                  					
+                  <figcaption>図 2 四つの選択肢がある What do you value in our service? チェックボックスグループ。</figcaption>
+                  				
+               </figure>
+               <p>図 2 内には、グループラベルと指示を組み合わせた長いテキスト文字列 "What do you value in our service (check all that apply)?" がある。各チェックボックスにはそれ自身の一語又は二語のラベルも持っている。2.5.3 に関して、コンポーネントのラベルは "Courtesy"、"Promptness"、"Store Hours" 及び "Knowledge" に限られるべきである。
+               </p>
+               <p>前述のテキストをアクセシブルな名前 (accessible name) の一部に含めようとすると、発話入力の利用者に発話コマンドでコントロールを分離することをより難しくさせる可能性がある。そのような構造はまた、スクリーンリーダーの利用者に対して、(入力状態の前に各入力の組み合わされたテキスト文字列が読み上げられ) 好ましくない冗長性を増やす。もっとも単純な解決方法は、標準的なラジオボタングループと同様のテクニックを使用し、チェックボックスのすぐ隣にあるテキストのみにアクセシブルな名前 (accessible name) を制限することである。
+               </p>
+            </section>
+            <section class="example" id="example-6-stacked-labels">
+               <h3>例 6: 積み重ねられたラベル</h3>
+               <p>コンボボックス、ドロップダウンリスト、テキスト入力、及び他のウィジェットのラベルは通常コンポーネントのすぐ左に配置されるが、入力の上にラベルが積み重ねられる場合に、左端でそろえられることが代替の確立された慣例となっている。
+                  				
+               </p>
+               <figure id="figure-stacked-label">
+                  					<img src="img/stacked-label.png" alt="Email 及び Password とラベル付けされた二つの入力" />
+                  					
+                  <figcaption>図 3 上部及び左に配置されたラベルを持つ二つの入力</figcaption>
+                  				
+               </figure>
+               <p>図 3 では、入力が積み重ねられて左揃えにされており、ラベルもまた各入力の直前で左揃えになっている。ラベルが関連したテキスト入力と最も近くなるよう、ラベルとその前の入力の間には追加の空白がある。横方向の余白が限られているモバイルデザインでは、積み重ねられたラベルは比較的一般的である。
+               </p>
+               <p>図 4 はヒント及び助言がラベルと入力の間に含まれた、積み重ねられたラベルの変化形を表している。このデザインでは、隣接したラベルを提供していない。ただし、"New Password" というラベルは、特により小さくコントラストの低い助言テキストに比べて、そのサイズ及び太さを考慮すると、依然として十分近接していると考えられる。この関連づけは、<code>aria-describedby</code> というロールがヒントテキストに与えられ、かつ入力がラベルと適切に関連づけられている場合、プログラムにより強化される。
+               </p>
+               <figure id="figure-new-password">
+                  					<img src="img/new-password.png" alt="New Password. Passwords must be 10 or more characters, and contain at least one capital, numeric and non-alphanumeric.'" />
+                  					
+                  <figcaption>図 4 New Password というラベルが入力の上に配置され、パスワード要件についてのサイズの小さいテキスト文字列は大きいラベルと入力の間に配置されている。
+                  </figcaption>
+                  				
+               </figure>
+               <p>より長いヒントが入力からラベルを分離する場合、アクセシビリティの問題が発生する可能性があるため、そのような実装のヒントテキストは可能であれば一行にとどめるべきである。図 4 は、「隣接しているテキスト」という概念はラベル解釈の助言であることを説明するが、常に厳格なルールとして機能するわけではない。
+               </p><code>
+                  				&lt;form&gt;<br />
+                  			&lt;label class="label" for="example-2"&gt;<br />
+                  				Password<br />
+                  			&lt;/label&gt;<br />
+                  			&lt;span id="example-2-hint" class="hint"&gt;<br />
+                  				Passwords must be 10 or more characters, and contain at least one capital, numeric
+                  and non-alphanumeric.<br />
+                  			&lt;/span&gt;<br />
+                  			&lt;input class="input" id="example-2" name="example-2" type="text" aria-describedby="example-2-hint"&gt;<br />
+                  		&lt;/form&gt;<br />
+                  	</code><p class="working-example"><a href="../../working-examples/label-in-name-general/example2.html" target="_blank">積み重ねられたラベルの動作する例</a></p>
+            </section>
+            <section class="example" id="example-7-range-of-inputs-with-few-labels">
+               <h3>例 7: 範囲の入力及びわずかなラベル</h3>
+               <p>ラベルと入力との間のあまり一般的ではない不均衡は、ラジオボタンのグループが範囲にわたった選択を引き出すよう設定されている場合に発生することがある。ラベルは範囲の両端に配置されるかもしれない、又は範囲のさまざまな場所に散っているかもしれない。
+               </p>
+               <figure id="figure-rate-response">
+                  					<img src="img/rate-response.png" alt="Rate your response, Hated it, Loved it" />
+                  					
+                  <figcaption>図 5 Hated it と Loved it というラベルが両端にある五つのラジオボタンの行</figcaption>
+                  				
+               </figure>
+               <p>"Hated it" 及び "Loved it" の二つのラベルは、最初及び最後のラジオボタンに隣接しており、かつそれらのアクセシブルな名前 (accessible name) であるべきである。音声入力の利用者はこれらのいずれかのラベルを発話することでラジオボタンを選択し、矢印操作を使用して選択を変更できる (例「右矢印を押す」)。"Rate your response" はウィジェット全体を説明するテキストであり、(ここで <code>legend</code> を使用することで) グループラベルとして関連付けられる。三つの中央のラジオボタンは可視のラベルを持たない。コード例では、3.3.2 ラベル又は説明を満たすために "Disliked"、"So-so" 及び "Liked" という title 属性を与えられている。
+               </p>
+               <p>
+                  					<code>
+                     						&lt;fieldset&gt;<br />&lt;legend&gt;Rate your response&lt;/legend&gt;<br />
+                     &lt;label for="hated"&gt;Hated it&lt;/label&gt; <br />
+                     &lt;input type="radio" name="meal" id="hated" value="hated"&gt;<br />
+                     &lt;input type="radio" name="meal" id="poor" value="poor" title="Disliked"&gt;<br />
+                     &lt;input type="radio" name="meal" id="neutral" value="neutral" title="So-so"&gt;<br />
+                     &lt;input type="radio" name="meal" id="okay" value="okay" title="Liked"&gt;<br />
+                     &lt;input type="radio" name="meal" id="loved" value="loved"&gt;<br />
+                     &lt;label for="loved"&gt;Loved it&lt;/label&gt;<br />
+                     &lt;/fieldset&gt;<br />
+                     </code>
+                  
+               </p>
+               <p class="working-example"><a href="../../working-examples/label-in-name-general/example4.html" target="_blank">範囲の入力の動作する例</a></p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               				
+               <li><a href="https://www.w3.org/TR/accname-aam-1.1/"> Accessible Name and Description Computation</a></li>
+               
+               <li><a href="https://www.w3.org/TR/html-aam-1.0/#accessible-name-and-description-computation"> Accessible Name and Description Computation in HTML Accessibility API Mappings 1.0</a></li>
+               			
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               				
+               <li><a href="../html/H44"> H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
+               
+               <li><a href="../html/H71"> H71: fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する</a></li>
+               
+               <li><a href="../html/H85"> H85: select 要素内の option 要素をグループ化するために、optgroup 要素を使用する</a></li>
+               
+               <li><a href="../aria/ARIA17"> ARIA17: 関連するフォームコントロールを特定するために、グルーピングロールを使用する</a> 
+                  
+               </li>
+               			
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <ol>
+                  					
+                  <li>入力コントロール対して、ラベルとして機能する隣接テキストを持つ各入力を調べる
+                  </li>
+                  					
+                  <li>各入力に対して、アクセシブルな名前 (accessible name) の計算に基づき、(文字のケース及び句読点を無視した) テキストの文字列全体が入力のアクセシブルな名前 (accessible name) に一致することを確認する
+                  </li>
+                  			
+                  <li>ボタン、リンク、メニュー及びその他の非入力コントロールに対して、そのラベルとして機能するテキストを含む各コントロールを調べる
+                  </li>
+                  						
+                  <li>各非入力コントロールに対して、(文字のケース及び句読点を無視した) テキストの文字列全体が入力のアクセシブルな名前 (accessible name) に一致することを確認する
+                  </li>
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  					
+                  <li>2. 及び 4. の結果が真である。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

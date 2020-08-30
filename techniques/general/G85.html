@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G84">前の達成方法: G84</a></li>
+            <li><a href="G86">次の達成方法: G86</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>利用者のデータ入力を受け付ける、入力のフォーマット、値及び／又は種類に制限があるコンテンツ。
+            </p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージを理解する</a> (<a href="../aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a>の達成方法として十分)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者によって提供された情報が受け付けられない場合に、入力エラーの修正を支援することである。利用者がバリデート済みのデータ入力を行い、入力エラーが検出された場合、利用者が問題を特定できるようにするために、この入力エラーの性質及び場所に関する情報がテキストで提供される。一つのアプローチとして、クライアントサイドでのバリデーションを用いて、利用者が無効なデータをフィールドに入力すると、即座にエラーを説明するアラートダイアログボックスを提示する方法がある。もう一つのアプローチとして、サーバーサイドでのバリデーションを用いて、フォームを再表示し (すでに入力されたデータも含む)、エラーがあった事実を示し、問題の性質を説明し、そして問題のあったフィールドを簡単に見つけられる方法を提供するページの上部にテキストの説明を表示することである。
+            </p>
+            <p>ただし、テキストでの説明が提供されるとしても、利用者を支援するために、次のいずれかを行うべきである:
+            </p>
+            <ul>
+               
+               <li>そのフィールドの正しいデータ入力の例を提供する</li>
+               
+               <li>そのフィールドの正しいデータ入力を説明する</li>
+               
+               <li>利用者のデータ入力に類似した正しいデータ入力の値を表示し、利用者が選択した場合にこれらの正しい値の一つを入力する方法について利用者に指示する。</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>利用者が、フォームフィールドに無効なデータを入力している。利用者がそのフィールドから出ると、エラーの性質を説明するアラートダイアログが表示され、利用者はエラーを修正することができる。
+               </li>
+               
+               <li>利用者がフォームフィールドに無効なデータを入力して、そのフォームを送信する。サーバーは、利用者の入力データが残ったままのフォームを返し、ページの上部に入力エラーがあったことをテキストで明確に示している。このテキストは、エラーの性質を説明していて、どのフィールドに問題があったのかを明確に示しているため、利用者は問題を修正するためにそのフィールドへ簡単に移動できる。
+               </li>
+               
+               <li>利用者がフォームフィールドに無効なデータを入力して、そのフォームを送信しようとする。クライアントサイドのスクリプトがエラーを検出し、送信をキャンセルし、送信ボタンの後にエラーを説明するテキスト説明とエラーのあるフィールドへのリンクを提供するように文書を修正する。このスクリプトはまた、問題のあるフィールドのラベルを強調するように変更する。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>フォームに記入し、要求されているフォーマット又は値以外の失敗する入力を故意に行う。
+                  </li>
+                  
+                  <li>エラーになった項目を特定して、無効な入力の種類及びその修正方法に関する情報を提供する説明がテキストで提供されていることを確認する。
+                  </li>
+                  
+                  <li>再表示のためにデータを保持することが不適切なセキュリティに関連するフィールド (例: パスワード) にデータがない限り、利用者によって入力済みの他のデータが再表示されていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

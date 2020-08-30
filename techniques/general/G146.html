@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G146: リキッドレイアウトを使用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G145">前の達成方法: G145</a></li>
+            <li><a href="G148">次の達成方法: G148</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>リキッドレイアウトを使用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (書かれていない達成方法を満たす慣習的な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (より具体的な手法を用いる十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用可能な水平方向のスペースに適合するレイアウト技術を使用することで水平方向のスクロールバーを導入することなくコンテンツの提示を可能にすることである。リキッドレイアウトは、テキストのサイズを変更するとともに、画面上にその領域を表示するために必要なリフローを行うようなレイアウト領域を定義する。したがって、厳格なレイアウトは異なるが、要素と読み上げ順序の関係は同じままである。これは、さまざまなデバイスやフォントサイズの好みの異なる利用者に適したデザインを作成するための効果的な方法である。
+            </p>
+            <p>リキッドレイアウトの基本原則は次のとおりである:</p>
+            <ol>
+               
+               <li>レイアウト領域を、テキストに応じてサイズが変わる単位を利用して定義する。つまり、テキストの拡大縮小と同じように、レイアウト領域が広まったり狭まったりする。
+               </li>
+               
+               <li>レイアウト領域を、フローティングボックスを隣り合わせで横に並べたように配置する。これは、段落の中の各単語とほぼ同じような方法で、必要に応じて行送りされる。
+               </li>
+               
+            </ol>
+            <p>複雑なリキッドレイアウトの実現には、入れ子にしたレイアウト領域、つまり大きな領域の中に部分ごとの複数の領域を入れ込む方法を利用する場合がある。単純なリキッドレイアウトであっても、テキストサイズの違いに関わらず見た目のよさを損なわないようにデザインを工夫する必要があるとはいえ、よくデザインされたリキッドレイアウトは最も効果的なページデザインとなるだろう。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-simple-liquid-layout-in-html-and-css">
+               <h3>事例 1: HTML と CSS での単純なリキッドレイアウト</h3>
+               <p>以下は、リキッドレイアウトの実現に HTML と CSS を利用した、かなり単純な事例である。三つの列はテキストサイズが変わるのと同じようにサイズ調整される。横幅の合計が、各列で利用できる幅を超える場合、最後の列は前の列の横ではなく、下に送られる。一つの列の中で最も長い単語が列の幅に収まっている限り、切り取り又は横スクロールバーのいずれかの導入なしにフォントサイズを大きくすることができる。この例では列の幅指定にパーセントを利用しており、"float"プロパティを利用して列を浮動領域として定義している。
+               </p><pre xml:space="preserve">
+              &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+                &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+                &lt;head&gt;
+                &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+                &lt;title&gt;Example of Basic Liquid Layout&lt;/title&gt;
+                &lt;style type="text/css"&gt;
+                .column
+                {
+                border-left: 1px solid green;
+                padding-left:1%;
+                float: left;
+                width: 32%;
+                }
+                #footer
+                {
+                border-top: 1px solid green;
+                clear: both;
+                }
+                &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;h1&gt;WCAG Example&lt;/h1&gt;
+                &lt;h2&gt;Text in Three Columns&lt;/h2&gt;
+                &lt;div title="column one" class="column"&gt;
+                &lt;h3&gt;Block 1&lt;/h3&gt;
+                &lt;p&gt; The objective of this technique is to be able to present content 
+                without introducing horizontal scroll bars by using layout 
+                techniques that adapt to the available horizontal space.
+                &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div title="column two" class="column"&gt;
+                &lt;h3&gt;Block 2&lt;/h3&gt;
+                &lt;p&gt; This is a very simple example of a page layout that adapts as the
+                text size changes.
+                &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div title="column three" class="column"&gt;
+                &lt;h3&gt;Block 3&lt;/h3&gt;
+                &lt;p&gt; For techniques that support more complex page layouts, see the
+                Resources listed below.
+                &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;p id="footer"&gt;Footer text&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </pre></section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  	<a href="http://webreference.com/authoring/style/sheets/css_mastery2/index-2.html">CSS Mastery: Fixed-Width, Liquid, and Elastic Layouts and Faux Columns</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../css/C12">C12: フォントサイズにパーセントを使用する</a></li>
+               
+               <li><a href="../css/C13">C13: 名前付きフォントサイズを使用する</a></li>
+               
+               <li><a href="../css/C14">C14: フォントサイズに em 単位を使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>ユーザエージェントでコンテンツを表示する。</li>
+                  
+                  <li>テキストサイズを 200% に拡大する。</li>
+                  
+                  <li>水平方向のスクロールなしに、全てのコンテンツ及び機能が利用できるかどうかを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

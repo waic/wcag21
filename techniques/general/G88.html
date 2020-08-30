@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G88: ウェブページに説明的なタイトルを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G87">前の達成方法: G87</a></li>
+            <li><a href="G89">次の達成方法: G89</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ウェブページに説明的なタイトルを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/page-titled">達成方法 2.4.2: ページタイトル</a></span> (より具体的な手法を用いる十分な達成方法) に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、各ウェブページに説明的なタイトルをつけることである。説明的なタイトルは、利用者がコンテンツを見つけ、その中で現在位置を確認し、ナビゲートするのに役立つ。説明的なタイトルによって、利用者はどのウェブページを利用してるのかを容易に特定することができ、ウェブページがいつ変更されたかを知ることができる。タイトルにより、利用者はコンテンツを読む、又は解釈することなくウェブページを特定することができる。サイトマップ又は検索結果のリストに正確で説明的なタイトルが表示されると、利用者は必要とするコンテンツをより速く特定することができる。説明的なタイトルがリンクテキストに使用される場合、利用者は興味のあるコンテンツに、より正確にナビゲートできる。
+            </p>
+            <p>各ウェブページのタイトルは次の要件を満たすべきである:</p>
+            <ul>
+               
+               <li>そのウェブページの主題を特定している。</li>
+               
+               <li>例えば、スクリーンリーダー、サイトマップ、検索結果一覧など、コンテキストから外れた読み方をしても意味をなす。
+               </li>
+               
+               <li>簡潔である。</li>
+               
+            </ul>
+            <p>次のようなページタイトルはさらに有益である。</p>
+            <ul>
+               
+               <li>ウェブページが属するサイト又はその他のリソースを特定している</li>
+               
+               <li>ウェブページが属するサイト又はその他のリソースの中で、ユニークである</li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-a-title-that-lists-the-most-important-identifying-information-first">
+               <h3>事例 1: 最も重要な識別情報を初めに記載するページタイトル</h3>
+               <p>大きな組織内のグループによって公開されているウェブページがある。ウェブページのタイトルでは、最初にページの話題を特定し、次にそのグループ名の後に親組織の名前を示している。
+               </p><pre xml:space="preserve">
+              &lt;title&gt;Working with us: The Small Group: The Big Organization&lt;/title&gt;
+            </pre></section>
+            <section class="example" id="example-2-a-synchronized-media-presentation-with-a-descriptive-title">
+               <h3>事例 2: 説明的なタイトルの付いた同期したメディアによる提示</h3>
+               <p>2004 年の南アジアで発生した津波に関する同期したメディアの提示には、「2004 年の津波」というタイトルがつけられている。
+               </p>
+            </section>
+            <section class="example" id="example-3-a-web-page-with-a-descriptive-title-in-three-parts">
+               <h3>事例 3: 三つの部分から成る、説明的なタイトルが付与されたウェブページ</h3>
+               <p>ウェブページでは、クローズドキャプションを作成するためのガイドライン及び提案を提供している。そのウェブページは、大きいサイトの中の「サブサイト」の一部である。ページタイトルはダッシュで三つの部分に分かれている。タイトルの最初の部分は組織名、二つ目はウェブページが属するサブサイト名、そして三つ目はウェブページ自体を特定している (具体例としては、
+                  <a href="http://main.wgbh.org/wgbh/pages/mag/services/captioning/faq/sugg-styles-conv-faq.html">WGBH – Media Access Group – Captioning FAQ</a> を参照。)
+               </p>
+            </section>
+            <section class="example" id="example-4-a-newspaper-web-page">
+               <h3>事例 4: 新聞のウェブページ</h3>
+               <p>最新版のみを閲覧できるウェブサイトでは、そのウェブページに「全国のニュース、第一面」というタイトルがつけられている。異なる日の版を閲覧することできるウェブサイトでは、そのページタイトルを「全国のニュース、第一面、2005 年 10 月 17 日」としている。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../html/H25">H25: title 要素を用いて、ページタイトルを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>ウェブページにページタイトルがあることを確認する。</li>
+                  
+                  <li>そのページタイトルが、ウェブページのコンテンツに関連していることを確認する。</li>
+                  
+                  <li>そのページタイトルによって、ウェブページを特定できることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>上記全ての結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

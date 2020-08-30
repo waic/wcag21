@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G123: 繰り返しているコンテンツのブロックの先頭に、そのブロックの末尾へのリンクを追加する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G121">前の達成方法: G121</a></li>
+            <li><a href="G124">次の達成方法: G124</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>繰り返しているコンテンツのブロックの先頭に、そのブロックの末尾へのリンクを追加する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>リンクを実装できる全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">達成基準 2.4.1: ブロックスキップ</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ブロックの終わりまでスキップすることで、構成要素のブロックを回避するメカニズムを提供することである。ブロックの最初のリンク又はブロックの直前にあるリンクによって、フォーカスをそのブロックの直後にあるコンテンツに遷移させる。リンクを選択することでキーボードフォーカスはブロックをスキップする。複数のブロックを飛び越す場合は、利用者はこれらのリンクを使ってブロックを一つずつ飛ばして進んでいく。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-skip-navigation-links">
+               <h3>事例 1: ナビゲーションリンクをスキップする</h3>
+               <p>ある組織のウェブサイトのページには、サイトの主なセクション、サイトマップ、組織についての情報、及び組織との連絡方法へのリンクを含むナビゲーションバー又はメインメニューがある。このエリアの最初のリンクは「ナビゲーションリンクをスキップする」で、利用者はそのリンクを選択してこれらのリンクをスキップする。
+               </p>
+            </section>
+            <section class="example" id="example-2-a-book-index">
+               <h3>事例 2: 本の索引</h3>
+               <p>本の中に何ページかのセットになって区分されている索引がある。索引のそれぞれのページの冒頭にあるコンテンツの中には、アルファベットのそれぞれの文字に対するリンクがあり、その文字で始まる記載内容の索引にリンクしている。そのセットの中の最初のリンクは「リンクをスキップして索引へ」である。利用者は、このリンクを選択して他のリンクをスキップする。
+               </p>
+            </section>
+            <section class="example" id="example-3-several-sets-of-links">
+               <h3>事例 3: 複数のリンクの集合</h3>
+               <p>ウェブサイト内の全てのページにはサイトマップ、組織に関する情報、及び組織との連絡方法へのリンクが含まれているセクションがある。サイトにある各セクションの全てのページには、同様にそのサブセクションへのリンクの集合がある。1 番目のブロックの最初のリンクは「ナビゲーションリンクをスキップ」で、最初のリンクの集合をスキップする。2 番目のブロックの最初のリンクは「セクションのリンクをスキップ」で、そのサブセクションのリンクをスキップする。
+               </p>
+            </section>
+            <section class="example" id="example-4-html-page-with-several-blocks-of-navigation-links">
+               <h3>事例 4: ナビゲーションリンクのブロックが複数ある HTML ページ</h3>
+               <p>この事例では、各セクションの開始位置に見出し要素を提供する (H69) ものと、各セクションの最後にスキップするリンクを使用する両方を示している。これにより、ユーザエージェントの能力に応じて、キーボードナビゲーション又は見出しナビゲーションを用いて、繰り返されるコンテンツのブロックをスキップすることができる。コンテンツのいくつかのセクションは、Internet Explorer の制限を回避するために
+                  <code class="el">div</code>
+                  要素で包まれていることに注意すること (コンテンツのブロックをスキップするための HTML リンクを作成するユーザエージェントノートを参照 (リンク追加予定))。
+               </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+                  <div>
+                  <p>コード例の <code>&lt;div class="iekbfix"&gt;</code> については、<code>hasLayout</code> と呼ばれる、Internet Explorer (IE) 独自のプロパティを利用した、IE6 上でのキーボード操作に対するハックである (なお、IE6 は既にサポートが終了しているブラウザである)。IE11 及びモダンブラウザでは、このようなハックが必要ないことに注意されたい。</p>
+                  </div>
+               </div>
+               <pre xml:space="preserve">
+              &lt;p&gt;&lt;a href="#content"&gt;Content title&lt;/a&gt;&lt;/p&gt;
+                &lt;h2&gt;Main Navigation&lt;/h2&gt;
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#subnav"&gt;Sub Navigation&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/a/"&gt;Link A&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/b/"&gt;Link B&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/c/"&gt;Link C&lt;/a&gt;&lt;/li&gt;
+                ...
+                &lt;li&gt;&lt;a href="/j/"&gt;Link J&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;div class="iekbfix"&gt;
+                &lt;h2 id="subnav"&gt;Sub Navigation&lt;/h2&gt;
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#ultranav"&gt;Ultra Sub Navigation&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/suba/"&gt;Sub A&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/subb/"&gt;Sub B&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/subc/"&gt;Sub C&lt;/a&gt;&lt;/li&gt;
+                ...
+                &lt;li&gt;&lt;a href="/subj/"&gt;Sub J&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="iekbfix"&gt;
+                &lt;h2 id="ultranav"&gt;Ultra Sub Navigation&lt;/h2&gt;
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#content"&gt;Content title&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/ultraa/"&gt;Ultra A&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/ultrab/"&gt;Ultra B&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/ultrac/"&gt;Ultra C&lt;/a&gt;&lt;/li&gt;
+                ...
+                &lt;li&gt;&lt;a href="/ultraj/"&gt;Ultra J&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                &lt;h2 id="content"&gt;Content title&lt;/h2&gt;
+                &lt;p&gt;Now that I have your attention...&lt;/p&gt;
+                &lt;/div&gt;
+            </pre><p>CSS:</p><pre xml:space="preserve">
+              div.iekbfix {
+                width: 100%;
+                }
+            </pre></section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="http://www.jimthatcher.com/skipnav.htm">Skip Navigation Links</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G1">G1: メインコンテンツエリアへ直接移動するリンクを各ページの先頭に追加する</a></li>
+               
+               <li><a href="G124">G124: ページの先頭に、コンテンツの各エリアへのリンクを追加する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>繰り返されるコンテンツのブロック、又はブロック内の最初のリンクの前に、リンクが最後のフォーカス可能なコントロールであることを確認する。
+                  </li>
+                  
+                  <li>リンクの説明がブロックをスキップすることを伝えることを確認する。</li>
+                  
+                  <li>リンクが常に表示されている、又はキーボードフォーカスを受け取ったときに表示されることを確認する。</li>
+                  
+                  <li>リンクをアクティブにした後、キーボードのフォーカスがそのブロックの直後のコンテンツに移動することを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>上記の全ての結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G73: 非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G71">前の達成方法: G71</a></li>
+            <li><a href="G74">次の達成方法: G74</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>非テキストコンテンツのすぐ隣に別の場所へのリンクを置き、その別の場所で長い説明を提供する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、長い説明機能が直接組み込まれていない (例: longdesc)、又は機能がサポートされないことが確認されているウェブコンテンツ技術において、離れた場所にある長い説明へのリンクを提供することである。</p>
+            <p>この達成方法によって、長い説明が非テキストコンテンツとは別の場所に提供される。同じ URI の中の異なる場所、又は別の URI の場合もある。長い説明文へのリンクが非テキストコンテンツに近接して提供される。そのリンクは非テキストコンテンツの直前又は直後に提供できる。説明が他のテキストと一緒に配置されている場合、最後に「説明の終わり」と入れることで、いつ読み終えてメインコンテンツに戻るかがわかるようにする。「戻る」ボタンでジャンプしてきた場所に戻れない場合は、その非テキストコンテンツに戻るためのリンクを提供する。</p>
+            <p>この達成方法は、'longdesc’ が仕様に加えられる前に HTML で一般的に使用されていた。HTML では、通常、画像の隣に D を配置して、長い説明へのリンクとして実装していたため D リンクと呼ばれていた。この達成方法は技術に依存していないため、リンクをサポートするあらゆるウェブコンテンツ技術で利用できる。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-bar-chart">
+               <h3>事例 1: 棒グラフ</h3>
+               <p>ウェブページ に上位 3 名の販売員の売上げを示した棒グラフがある。</p>
+               <p>それには簡潔なテキストによる代替があり、「上位 3 名の販売員の 10 月の売上げ表」と書かれている。</p>
+               <p>非テキストコンテンツの直後には長い説明文を示唆する小さな画像がある。その画像に対する代替テキストには「グラフの詳細な説明」と書かれている。画像は「このページのグラフの説明」という表題がつけられたページ下部のセクションへのリンクになっている。リンクは次のような具体的な説明を指している:「10 月の売上げはメアリーが 400 個でトップ、マイクが 389 個の僅差で続いており、クリスが 350 個でトップ 3 の最後となっている。[説明の終わり]」</p>
+            </section>
+            <section class="example" id="example-2-bar-chart---in-non-html-technology-where-user-agent-&#34;back&#34;&#xA;--------------is-not-supported-for-security-reasons.">
+               <h3>事例 2: 棒グラフ -ユーザエージェントの「戻る」がセキュリティ上の理由からサポートされていない非 HTML 技術の場合</h3>
+               <p>ウェブページ上に上位 3 名の販売員を表示した棒グラフがある。</p>
+               <p>それには簡潔なテキストによる代替があり、「上位 3 名の販売員の 10 月の売上げ表」と書かれている。</p>
+               <p>非テキストコンテンツの直後には長い説明文を示唆する小さな画像がある。その画像に対する代替テキストには「グラフの詳細な説明」と書かれている。その画像は「10 月の売上げ報告にあるグラフの説明」というタイトルの別のページへリンクとなっている。その説明へのリンクは次のような具体的な説明を指している:「10 月の売上げはメアリーが 400 個でトップ、マイクが 389 個の僅差で続いており、クリスが 350 個でトップ 3 の最後となっている。説明の終わり。<code>&lt;link&gt;</code> 売上げグラフに戻る<code>&lt;/link&gt;</code>」</p>
+            </section>
+            <section class="example" id="example-3-caption-used-as-link">
+               <h3>事例 3: リンクとして使用されるキャプション</h3>
+               <p>グラフがある。グラフの直下にある図表のキャプションが詳細な説明へのリンクとなっている。リンクの title 属性により、詳細な説明へのリンクであることが明確になっている。</p>
+            </section>
+            <section class="example" id="example-4-transcript-of-an-audio-only-file">
+               <h3>事例 4: 音声しか含まないファイルのトランスクリプト</h3>
+               <p>マーチン ルーサー キングのスピーチの録音記録がある。音声ファイルへのリンクとその内容をテキストに書き起こしたトランスクリプトへのリンクが隣同士にある。</p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G74.html">G74: 短い説明の中で長い説明のある場所を示して、非テキストコンテンツの近くにあるテキストで長い説明を提供する</a></li>
+               
+               <li><a href="H45.html">H45: longdesc 属性を用いる</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>c非テキストコンテンツの直前又は直後のリンクの存在を確認する。</li>
+                  
+                  <li>この特定の非テキストコンテンツの長い説明を直接指し示す有効なリンクであることを確認する。</li>
+                  
+                  <li>長い説明が非テキストコンテンツと同じ情報を伝達していることを確認する。</li>
+                  
+                  <li>利用者が非テキストコンテンツの元の場所に戻るためのリンク又は「戻る」機能の可用性を確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <p>上記の四つ全ての結果が真である。</p>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

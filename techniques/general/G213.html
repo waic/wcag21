@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G213: 動きで作動させる入力のために、従来のコントロール及びアプリケーション設定を提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G212">前の達成方法: G212</a></li>
+            <li><a href="G214">次の達成方法: G214</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>動きで作動させる入力のために、従来のコントロール及びアプリケーション設定を提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用（対象）</h2>
+            <p>この達成方法は、振ることや傾けることといったデバイス又は利用者の動きを検出し、これらの動きを入力方法として使用するウェブページに適用する。動きそのものがアプリケーションの機能に必要不可欠である場合、この達成方法は適用しない。
+            </p>
+            <p>この達成方法は、地理的位置センサー、もしくはビーコンによって登録された空間による利用者の動き、又は利用者による意図的なジェスチャ以外の装置によって観察されたイベントにも関係しない。また、キーボード、ポインタ、又は支援技術の操作に関連する間接的な動きについても扱わない。            </p>
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/motion-actuation">達成基準 2.5.4 動きによる起動</a></span> (十分) に関連する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、以下を保証することである:</p>
+            <ol>
+               				
+               <li>
+                  何かに取り付けられたデバイスを使用する人、又はデバイスを正確に操作できない人は、従来のユーザインタフェース コンポーネントを通じて、様々な入力を提供することができること、及び、
+               </li>
+               				
+               <li>
+                  振戦、又はその他の運動障害のために誤ってセンサーを作動させてしまう可能性のある人は、意図せず機能を動作させることを防ぐため、動きによる起動をオフにすることができること。
+               </li>
+               			
+            </ol>
+            <p>加速度計やジャイロスコープなどのデバイスセンサーを使用した入力を収集する場合: </p>
+            <ol>
+               				
+               <li>
+                  センサー入力に依存しない、ボタン、リンク、又は従来のコントロールが提供されること、及び、
+               </li>
+               				
+               <li>
+                  センサーのデータをユーザーがオフにできる設定を提供すること。
+               </li>
+               			
+            </ol>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-shake-to-undo">
+               <h3>例 1: 元に戻すためにシェイクする</h3>
+               <p>フィールドにテキストを入力した後、デバイスを振ると、入力を元に戻すためのダイアログが表示される。バックスペースキーの使用をサポートすること、及び／又はテキストフィールドの横にクリアボタンを提供することで、同じ機能を表す。
+               </p>
+               <p>元に戻すためにシェイクする機能は、設定の画面でオフにすることができる。</p>
+            </section>
+            <section class="example" id="example-2-motion-activated-slider">
+               <h3>例 2: 動きで操作するスライダー</h3>
+               <p>スライダーは、デバイスを左右に傾けることで調整できる。同じ機能を実現するためのボタン、及び動きが効果を発揮しないようにするチェックボックスもある。
+               </p>
+               <p><a href="https://www.w3.org/WAI/WCAG21/working-examples/device-motion-sensor-input/">動きで操作するスライダーの例</a>。</p>
+            </section>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               				
+               <h3>手順</h3>
+               				
+               <p>モーションセンサーに応答して機能する入力ごとに: </p>
+               				
+               <ol>
+                  					
+                  <li>
+                     センサーに依存しない同じ機能を実行するメカニズムがあることを確認する。
+                  </li>
+                  					
+                  <li>動きの検出を無効にする利用者の設定があることを確認する。</li>
+                  				
+               </ol>
+               			
+            </section>
+            <section class="results" id="expected-results">
+               
+               <h3>期待される結果</h3>
+               			 
+               <ul>
+                  
+                  <li>1. 及び 2. を満たしている。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G90: キーボードがトリガーとなるイベントハンドラを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G89">前の達成方法: G89</a></li>
+            <li><a href="G90">次の達成方法: G90</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>キーボードがトリガーとなるイベントハンドラを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>コンテンツに機能性が含まれる全てのウェブコンテンツに適用される。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (より具体的な手法を用いる十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、キーボード又はキーボードインタフェースに依存している人がコンテンツの機能にアクセスできるようにすることである。そのためには、非キーボードの UI イベントによって引き起こされるすべてのイベントハンドラが、キーボードベースのイベントとも関連付けられることを確認する、又は他のデバイス特有の機能によって提供された機能を達成するために冗長なキーボードベースのメカニズムを提供する。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>
+                  <strong>事例 1: ドラッグ＆ドロップ機能</strong>
+                  写真のアプリケーションに、スライドショーのような提示のためにオンラインアルバム内で写真を並び替えることができるように「ドラッグ」及び「ドロップ」の機能がある。また、利用者がキーボードのみを用いて写真を選び、リスト内の適切な場所でアイテムを「切り取り」及び「貼り付け」できる機能もある。
+               </li>
+               
+               <li>
+                  <strong>事例 2: 並び替え機能</strong>
+                  質問事項をドラッグで動かして調査票を作ることができるウェブアプリケーションには、テキストフィールドの付いた質問リストがあり、利用者が質問番号を入力することによって、必要に応じて質問事項を並び替えることができる。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../client-side-script/SCR2">SCR2: キーボード及びマウスのイベントハンドラを両方とも使用する</a></li>
+               
+               <li><a href="../client-side-script/SCR20">SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</a></li>
+               
+               <li><a href="../client-side-script/SCR35">SCR35: アンカー及びボタンの onclick イベントを用いて、アクションをキーボード操作可能にする</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>すべての機能がキーボードだけを使ってアクセスできることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

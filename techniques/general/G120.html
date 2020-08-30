@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G120: 単語の直後に発音 (読み) を提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G117">前の達成方法: G117</a></li>
+            <li><a href="G121">次の達成方法: G121</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>単語の直後に発音 (読み) を提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pronunciation">達成基準 3.1.6: 発音</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、単語がウェブページの中で少なくとも最初に現れたとき、単語の後ろに読みを提供することにより単語の読み方が分かるようにすることである。
+            </p>
+            <p>同じつづりでも異なる発音の単語がウェブページにあるとき、その単語が現れるごとに読みが提供されない限り、この達成方法は適切ではない。
+            </p>
+            <p>この達成方法はウェブページで略語の初出時に適用される。複数のリソースを一つのウェブページに結合するとき、それぞれのリソースの冒頭で略語の元の語を示す。しかしながら、この場合、元の語を提供するための異なる達成方法を用いる方がより適切であるかもしれない。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>以下の日本語のテキストの例では、漢字の読みを与える情報は、テキストの直後の丸括弧の中にレンダリングされる。
+               </p><pre xml:space="preserve">
+              &lt;p&gt; 慶應大学 (けいおうだいがく) &lt;/p&gt;
+            </pre></section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G121">G121: 発音 (読み) にリンクする</a></li>
+               
+               <li><a href="G163">G163: オフにすることが可能な標準的な発音区別符号を使用する</a></li>
+               
+               <li><a href="../html/H62">H62: ruby 要素を使用する
+                  検証</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>読みを必要とする単語それぞれに:</p>
+               
+               <ol>
+                  
+                  <li>ウェブページのなかで、その単語の最初の使用箇所を探す。</li>
+                  
+                  <li>最初の使用箇所の直後にその単語の読みがあることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

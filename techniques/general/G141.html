@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G141: 見出しを用いてウェブページを構造化する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G140">前の達成方法: G140</a></li>
+            <li><a href="G142">次の達成方法: G142</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>見出しを用いてウェブページを構造化する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>Applicability</h2>
+            <p>セクションで構成されたコンテンツのあるウェブページ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (Advisory)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/section-headings">達成基準 2.4.10: セクション見出し</a> (十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、それぞれのセクションにそのセクションを特定する見出しがあることを確実にすることである。達成基準 1.3.1 では見出しがプログラムによる特定可能な方法でマークアップされていることを要求している。
+            </p>
+            <p>HTML においては、これは見出し要素 (h1, h2, h3, h4, h5, h6) によって実現されうる。これによりユーザエージェントは自動的にセクションの見出しを特定できる。他のウェブコンテンツ技術では、異なる方法で見出しを特定する。文書の全体的構造のナビゲーション及び理解を助けるには、コンテンツ制作者は適切に入れ子にした見出しを使用すべきである (たとえば h1 には h2 が続き、h2 には h2 か h3 が続き、h3 には h3 または h4 が続き……といったように)。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements#Accessibility_concerns" rel="nofollow">MDN の &lt;h1&gt;–&lt;h6&gt;: HTML の見出し要素 - アクセシビリティへの配慮</a>で言及されているように、見出しレベルを飛ばしてページを作成する (例えば、<code>h1</code> 要素の次に <code>h3</code> 要素を置く) と、スクリーンリーダーの利用者がそのページの見出しをナビゲートするときに、ページには存在しない <code>h2</code> 要素を誤って飛ばしてしまったのではないかと誤解する恐れがあることに注意する。</p>
+               </div>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-headings-used-to-organize-an-html-page">
+               <h3>事例 1: HTML のページを構造化するために用いられた見出し</h3>
+               <p>ある調理法を紹介するページでは、h1 要素により全体のタイトルを示し、h2 要素で大項目としてサラダ油による調理とバターによる調理を示し、h3 要素で油による調理の詳細なサブセクションを示している。
+               </p><pre xml:space="preserve">
+              &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+                &lt;head&gt;
+                &lt;title&gt;Cooking techniques&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;h1&gt;Cooking techniques&lt;/h1&gt;
+                ... some text here ...
+                &lt;h2&gt;Cooking with oil&lt;/h2&gt;
+                ... text of the section ...
+                &lt;h3&gt;Sautéeing&lt;/h3&gt;
+                ...
+                &lt;h3&gt;Deep frying&lt;/h3&gt;
+                &lt;h2&gt;Cooking with butter&lt;/h2&gt;
+                ... text of the section ...
+                &lt;/body&gt;
+              &lt;/html&gt;
+            </pre></section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="http://webaim.org/techniques/semanticstructure/">WebAIM: Semantic Structure</a>
+                  
+               </li>
+               
+               <li>
+                  <a href="http://accessibility.psu.edu/headingshtml/">Heading Tags</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../aria/ARIA12">ARIA12: 見出しを特定するために role=heading を使用する</a></li>
+               
+               <li><a href="../html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
+               
+               <li><a href="../html/H69">H69: コンテンツの各セクションの開始位置に見出し要素を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>セクションで構成されたコンテンツのあるページを調べる。</li>
+                  
+                  <li>それぞれのセクションに見出しがあることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

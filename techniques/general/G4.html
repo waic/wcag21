@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G1">前の達成方法: G1</a></li>
+            <li><a href="G5">次の達成方法: G5</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>            
+         </ul>
+      </nav>
+      <h1>コンテンツを一時停止させて、一時停止させたところから再開できるようにする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+                  
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>動きやスクロールのあるコンテンツのあるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/index.html#timing-adjustable">達成基準 2.2.1 (タイミング調整可能)</a> (十分な達成方法) 
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/index.html#pause-stop-hide">達成基準 2.2.2 (一時停止、停止、非表示)</a> (十分な達成方法) 
+               </li>
+            </ul>
+
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、コンテンツの動きやスクロールの一時停止方法を提供することである。利用者が、動きを一時停止させる、注意をそらすものを減らす、又は読む時間を作る必要があるのであれば、そうすることができ、さらに必要に応じて動きやスクロールを再開できるようにする。このメカニズムは、WCAG に準拠したインタラクティブなコントロール又はキーボードショートカットを介して提供できる。もしキーボードショートカットを用いるのであれば、ウェブページで利用者に説明する。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>ウェブページの上部に、スクロールするニュースのバナーが表示されている。これを読むのにより多くの時間が必要な利用者は、Esc キーを押すと、スクロールを一時停止できる。そして、Esc キーをもう一度押すと、スクロールが再開する。
+               </li>
+               
+               <li>ウェブページには、Flash アニメーションにリンクする「靴紐の結び方」というリンクがある。リンクの直前のテキストは、スペースキーを押すとアニメーションを一時停止し、もう一度押すと再開することを利用者に知らせる。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G75.html">G75: コンテンツの更新を延期するメカニズムを提供する</a></li>
+               
+               <li><a href="G76.html">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
+               
+               <li><a href="G186.html">G186: 動きのあるコンテンツ、点滅するコンテンツ、又は自動更新するコンテンツを停止させるコントロールを使用する</a></li>
+               
+               <li><a href="../../techniques/client-side-script/SCR33.html">SCR33: コンテンツをスクロールし、かつそれを一時停止するメカニズムを提供するためにスクリプトを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>動き又はスクロールのあるコンテンツがあるウェブページ上で:</p>
+               
+               <ol>
+                  
+                  <li>ウェブページで、又はユーザエージェントによって提供されているメカニズムを用いて、コンテンツの動き又はスクロールを一時停止させる。
+                  </li>
+                  
+                  <li>その動き又はスクロールが停止し、勝手に再開しないことを確認する。</li>
+                  
+                  <li>提供されているメカニズムを用いて、コンテンツの動きを再開する。</li>
+                  
+                  <li>動き又はスクロールが、停止したところから再開することを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 4. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

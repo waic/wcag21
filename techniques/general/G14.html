@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G14: 色の違いで伝えている情報をテキストでも入手可能にする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G13">前の達成方法: G13</a></li>
+            <li><a href="G15">次の達成方法: G15</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>On this page:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>色の違いで伝えている情報をテキストでも入手可能にする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>すべての色やテキストをサポートするウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">達成基準 1.4.1 (色の使用)</a> (十分な達成方法) </span>に関連する達成方法である。</p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、フォームの必須項目のように、情報を伝えるために色の違いを用いるとき、色の違いによって伝えている情報をテキストも用いて明示することである。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-a-color-coded-schedule">
+               <h3>事例 1: 色でコード化されたスケジュール</h3>
+               <p>技術会議のセッションスケジュールが三つのトラックで構成されている。トラック 1 のセッションが青い背景色で、トラック 2 のセッションが黄色い背景で、トラック 3 のセッションが緑色の背景で示されている。トラック 1 は T1、トラック 2 は T2、トラック 3 は T3 のように、各セッション名に続きテキストでも示されている。</p>
+            </section>
+            <section class="example" id="example-2-a-color-coded-schedule-with-icons">
+               <h3>事例 2: 色のアイコンでコード化されたスケジュール</h3>
+               <p>技術会議のセッションスケジュールが三つのトラックで構成されている。各セッションのタイトルの隣には、セッションのトラックを示す番号が中央に付いた色を用いたアイコンがあり、青はトラック 1、黄はトラック 2、緑はトラック 3 であることを示している。それぞれのアイコンには、トラック 1、トラック 2、トラック 3 と適切なテキストによる代替が提供されている。</p>
+            </section>
+            <section class="example" id="example-3-a-form-with-required-fields">
+               <h3>事例 3: 必須項目のあるフォーム</h3>
+               <p>フォームにいくつかの必須項目がある。必須項目のラベルは赤で示されている。それに加えて、各ラベルの末尾に * (アスタリスク) がある。フォーム入力の説明文では、入力例に続いて、「赤字で * (アスタリスク) の付いた項目は必須項目です。」と示されている。</p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <div>
+                     
+                     <p>アスタリスクは、スクリーンリーダー (読み上げモード) によっては読み上げられないことがあり、そしてデフォルトの文字サイズよりも小さいサイズでリンダリングされるため、ロービジョンの利用者にとっては見づらいかもしれない。コンテンツ制作者としては、アスタリスクが用いられていることをテキストで示すとともに、表示されるアスタリスクの文字サイズを大きくすることが重要である。</p>
+                     
+                  </div>
+               </div>
+            </section>
+            <section class="example" id="example-4-a-form-with-a-green-submit-button">
+               <h3>事例 4: 緑色の送信ボタンのあるフォーム</h3>
+               <p>オンラインのローン申し込みにおいて、緑色のボタンでプロセスを進め、赤色のボタンでプロセスをキャンセルできると説明がある。このとき、フォームは、緑色のボタンにはテキストで「<em>Go</em>」と書かれていて、「緑色の[<em>Go</em>]ボタンを押して結果を送信し、次のステップに進んでください」と指示がある。</p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
+               
+               <li><a href="G138">G138: 色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</a></li>
+               
+               <li><a href="G182">G182: 文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する</a></li>
+               
+               <li><a href="G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>情報を伝えるのに色の違いが用いられている各項目に対して:</p>
+               
+               <ol>
+                  
+                  <li>伝えられている情報がテキストでも利用可能であり、そのテキストが条件付きコンテンツでないことを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1.の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

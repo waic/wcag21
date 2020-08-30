@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G128: ナビゲーションバー内で現在位置を示す</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G127">前の達成方法: G127</a></li>
+            <li><a href="G130">次の達成方法: G130</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ナビゲーションバー内で現在位置を示す</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/location">達成基準 2.4.8: 現在位置</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ナビゲーションに関するユーザインタフェースを通じて、現在位置の情報を提供することによって、利用者が現在位置を確認しやすくすることである。この達成方法は、順序立てて処理すべきタスクを、複数のウェブページで段階的に説明している場合に特に役立つ。このような表示の提供は、利用者が一連の文書の中で自分の位置を正しく把握するのに役立つ。アイコンもしくはテキストを追加する、又はその項目の状態を変化させることで、位置を示すことができる。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>あるウェブページはタブパネル型のナビゲーションを実装している。タブのリストは横並びに表示されている。現在のコンテンツはタブの下のパネルに表示される。利用者が特定のタブにナビゲートして選択すると、パネルのコンテンツが更新され、選択したタブのトピックが反映される。さらに、パネルを開いたことを示すために、選択したタブの背景色は初期状態とは異なる色に変化し、テキストの横にチェックマークアイコンが表示される。チェックマークアイコンには、適切なテキストによる代替を指定してある。
+               </p>
+            </section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>あるウェブページのレイアウトに、フレームセットと複数のフレームを用いている。フレームの一つをナビゲーションのためのフレームとし、もう一方のフレームにはウェブサイトのコンテンツを表示させている。利用者がナビゲーションフレーム内のリンクを選択したら、そのリンクに合った情報がコンテンツフレームに表示される。ナビゲーションフレーム内で選択した項目には、それが選択したトピックであることを示すためにアスタリスクが追加される。
+               </p>
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>フレームを実現するための <code>frame</code> 及び <code>frameset</code> 要素は <a href="https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features:frame">HTML Standard</a> では廃止されていることに注意する。</p>
+               </div>
+               </section>
+            <section class="example" id="example-3">
+               <h3>事例 3</h3>
+               <p>あるウェブサイトのナビゲーションバーは、複数のリンクのリストとして設置されている。ナビゲーションバーは、ウェブページのコレクション内の全てのウェブページに表示される。利用者がナビゲーションバー内の特定のリンクにフォーカスする又はマウスオーバーすると、リンクの背景色が変化する。マウスオーバー又はフォーカス時のこのスタイリングの変更は、ウェブページのカスケーディングスタイルシートで指定する。リンクからフォーカスが外れたら、通常のリンクのスタイルに戻る。ページのコンテンツを変更するためにリンクをアクティブにした場合、ナビゲーションバー内の選択したリンクは無効になる。このリンクをたどった結果として、現にそのページが表示されているからである。背景色の変更は、選択したリンクであるという視覚的な通知を目の見える利用者に与える。リンクを無効にすると、そのリンクが現在選択しているトピックであるという情報を全ての利用者に提供する。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G14">G14: 色の違いで伝えている情報をテキストでも入手可能にする</a></li>
+               
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
+               
+               <li><a href="G182">G182: 文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する</a></li>
+               
+               <li><a href="G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>ウェブページ一式にナビゲーションコンポーネントが繰り返さている場合:</p>
+               
+               <ol>
+                  
+                  <li>ナビゲーションユニット内で、現在選択されている項目の指示が利用者に与えられていることを確認する。
+                  </li>
+                  
+                  <li>選択されている項目が表示されているコンテンツと一致することを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. 及び 2. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

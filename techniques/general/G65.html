@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G65: パンくずリストを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G64">前の達成方法: G64</a></li>
+            <li><a href="G68">次の達成方法: G68</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>パンくずリストを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href=""https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/location">達成基準2.4.8: 現在位置</a> (十分な達成方法) </span>に関連する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>パンくずリストは、コンテンツがどのような構造になっているのか、及び前のウェブページへ戻る方法を視覚化するのに利用者の助けとなり、かつ一連のウェブページの中で現在位置を特定する。パンくずリストには、利用者がそのウェブページに到達するまでに通ってきたパス、又はサイトの編成における現在のウェブページの位置が表示されている。
+            </p>
+            <p>パンくずリストは、現在のウェブページまでナビゲートする途中にアクセスしたウェブページへのリンクを使って実装される。パンくずリストは、ウェブページ一式の各ウェブページの中で同じ位置に置かれる。
+            </p>
+            <p>目に見える区切り文字でパンくずリストの中の項目を切り離すと、利用者の助けになる。区切り文字の例には「>」、「|」、「/」、「::」、及び「→」がある。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>開発者が、ハイパーリンクを作成する方法を見つけるために、オーサリングツールのメーカーのウェブサイトの中を探している。検索結果を使って、オーサリングツールを使用してハイパーリンクを作成するための詳しい説明があるウェブページへ行く。そのページには、以下のようなリンクでできたパンくずリストがある:
+               </p><pre xml:space="preserve">
+              Home :: Developer Center :: How To Center
+            </pre><p>この例では、パンくずリストには現在のウェブページのタイトルである「ハイパーリンクを作成する方法」が含まれていない。その情報はウェブページのタイトルとして入手できる。
+               </p>
+            </section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>写真家の作品集のウェブサイトはいろいろなギャラリーに分かれていて、各ギャラリーはさらに分類ごとに分割されている。サイトの中で Gentoo Penguin の写真を含むウェブページに移動する利用者は、ウェブページの冒頭で以下のようなパンくずリストが目に入る:
+               </p><pre xml:space="preserve">
+              Home / Galleries / Antarctica / Penguins / Gentoo Penguin
+            </pre><p>"Gentoo Penguin" を除くすべての項目がリンクとして実装されている。現在位置 (Gentoo Penguin) はパンくずリストに含まれているが、リンクとしては実装されていない。
+               </p>
+            </section>
+            <section class="example" id="example-3">
+               <h3>事例 3</h3>
+               <p>e コマースサイトの情報設計が、一般から特定の製品区分に徐々に分類されている。
+               </p>
+               <p>You are here: Acme Company → Electronics → Computers → Laptops</p>
+               <p>パンくずリストが "You are here" で始まり、現在利用者がいるページで終わる。リストに入っている項目は、"You are here" 及び "Laptops" を除いて、クリック又はタップ可能なリンクである。この例は、右向き矢印 (→) を区切り位置として使用している。
+               </p>
+               <p>この例では、<code class="el">h2</code> 要素、 <code class="att">aria-label</code> 属性を指定した <code class="el">nav</code> 要素、非順序のリストがセマンティクスを提供するために使われている。このマークアップは、CSS によるスタイル指定によって水平のパンくずリストとして表示されるだろう。
+               </p>
+               <p>コード例</p><pre xml:space="preserve"> 
+          &lt;nav aria-label="Breadcrumbs"&gt; 
+          &lt;h2&gt;You are here:&lt;/h2&gt; 
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="/"&gt;Acme Company&lt;/a&gt; &amp;#8594;&lt;/li&gt; 
+              &lt;li&gt;&lt;a href="/electronics/"&gt;Electronics&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/electronics/computers/"&gt;Computers&lt;/a&gt; &amp;#8594;&lt;/li&gt;
+              &lt;li&gt;Laptops&lt;/li&gt;
+            &lt;/ul&gt; 
+          &lt;/nav&gt;
+      </pre><p>この例に対する CSS</p><pre xml:space="preserve"> 
+      nav, h2, ul, ul li{ display: inline;}
+      nav &gt; h2{ font-size: 1em; } 
+      ul { padding-left: 0em; }
+      </pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/breadcrumb-trail/">Breadcrumb example</a></p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  									         <a href="https://www.w3.org/TR/html5/common-idioms.html#rel-up">HTML5 Bread crumb navigation</a>
+                  								       
+               </li>
+               
+            </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+                  <p>パンくずリストについては、<a href="https://developers.google.com/search/docs/data-types/breadcrumb">パンくずリスト  |  検索  |  Google Developers</a> 及び <a href="https://www.bing.com/webmaster/help/markup-breadcrumbs-72419f3f">Markup: Breadcrumbs - Bing Webmaster Tools</a> もあわせて参考になる。</p>
+               </div>
+            </div>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+
+               <li><a href="G63">G63: サイトマップを提供する</a></li>
+               
+               <li><a href="G128">G128: ナビゲーションバー内で現在位置を示す</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>ウェブページ一式の中にパンくずリストが実装されているとき:</p>
+               
+               <ol>
+                  
+                  <li>あるウェブページに移動する。</li>
+                  
+                  <li>パンくずリストが表示されていることを確認する。</li>
+                  
+                  <li>パンくずリストが、現在位置に達する正しいナビゲーションの順序、又はサイト構造内の現在位置までの正しい階層の経路を表示していることを確認する。
+                  </li>
+                  
+                  <li>
+                     
+                     <p>現在位置を含んで
+                        <em>いない</em>
+                        パンくずリストの場合:
+                     </p>
+                     
+                     <ol>
+                        
+                        <li>パンくずリストのすべての要素がリンクとして実装されていることを確認する。</li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+                  <li>
+                     
+                     <p>現在位置を含んでいるパンくずリストの場合:</p>
+                     
+                     <ol>
+                        
+                        <li>現在位置を除くすべての要素がリンクとして実装されていることを確認する。</li>
+                        
+                        <li>現在位置がリンクとして実装されていないことを確認する。</li>
+                        
+                     </ol>
+                     
+                  </li>
+                  
+                  <li>すべてのリンクが、パンくずリストによって指定された正しいウェブページへ移動することを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>
+                     
+                     <p>パンくずリストを使用している一連のすべてのウェブページについて:</p>
+                     
+                     <ul>
+                        
+                        <li>2.、3.、及び 6.の結果が真である。</li>
+                        
+                        <li>その上で、4.又は 5.のいずれかが真である。</li>
+                        
+                     </ul>
+                     
+                  </li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

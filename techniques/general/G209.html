@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G209: 隣り合う色の境界に十分なコントラストを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G208">前の達成方法: G208</a></li>
+            <li><a href="G210">次の達成方法: G210</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>隣り合う色の境界に十分なコントラストを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>互いに隣接し合う複数の色を使用したグラフィックスの場合。</p>
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">達成基準 1.4.11 非テキストのコントラスト</a> (十分)</span> に関連する達成方法である。</p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、中程度のロービジョンの人が、隣り合う色の区分間にある境界を確実に識別できることである。
+            </p>
+            <p>非コントラストの達成基準では、小さく単純なグラフィックと、より大きく複雑なグラフィックの一部を含んだ“グラフィカルオブジェクト”という用語を使用している。この達成方法では、色の境界が意味を伝える単色の区分に注目している。</p>
+            <p>複数の色を使用するグラフィックの色を選択するときは、隣り合う色を検討し、コントラスト比が 3:1 以上であることを検証する。隣り合う色のコントラスト比が 3:1 未満の場合は、3:1 以上の色のコントラストを持った境界線を各色に追加する。</p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-pie-chart-with-alternative-light/dark-colors">
+               <h3>事例 1: 明るい色/暗い色の両方を持つ円グラフ</h3>
+               <figure id="figure-pie-adjoining-segments">
+                  <img src="img/pie-chart-contrast-segments.png" alt="テキストラベルや対照的な区分を含む、お気に入りのキャンディの味の円グラフ" />
+                  
+                  <figcaption>図 1 円グラフの隣り合う区分間のコントラストは 5.8 から 9.4 の範囲である。</figcaption>
+                  
+               </figure>
+            </section>
+            <section class="example" id="example-2-pie-chart-with-borders-between-segments">
+               <h3>事例 2: 区分間に境界線がある円グラフ</h3>
+               <figure id="figure-pie-contrasting-segments">
+                  <img src="img/pie-chart-contrast-borders.png" alt="テキストラベルや区分間の対比的な境界線を含む、お気に入りのキャンディの味の円グラフ" />
+                  
+                  <figcaption>図 2 円グラフの区分間のコントラストは 1.1 から 1.8 の範囲である。区分を識別するため、3:1 以上のコントラスト比の色を持った線が追加されている。</figcaption>
+                  
+               </figure>
+            </section>
+            <section class="example" id="example-3-map-with-border-boundaries">
+               <h3>事例 3: 境界線がある地図</h3>
+               <figure id="figure-map-border-boundaries">
+                  <img src="img/map-with-borders.png" alt="暗い背景色の領域間に明るい境界線を持つ単純な領域を示すマップ" />
+                  
+                  <figcaption>図 3 地図内の領域の色のコントラストは 1.3 と 1.8 の範囲の間である。境界線は領域の色に対して 3:1 以上の色のコントラスト比で追加される。</figcaption>
+                  
+               </figure>
+            </section>
+            <section class="example" id="example-4-pie-chart-with-black-and-white-borders">
+               <h3>事例 4: 黒と白の線がある円グラフ</h3>
+               <figure id="figure-pie-black-white">
+                  <img src="img/pie-chart-contrast-two-color-borders.png" alt="テキストラベルや黒と白の区分間の境界線を含む、お気に入りのキャンディの味の円グラフ" />
+                  
+                  <figcaption>図 4 グラフの色付きの領域には、暗いものと明るいものの両方がある。明るい色と暗い色の両方の間に十分なコントラストを確保するため、黒と白の境界線が追加される。</figcaption>
+                  
+               </figure>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>関連リソース</h2>
+            <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
+            <ul>
+               
+               <li><a href="../../understanding/contrast-minimum.html#resources">達成基準 1.4.3: コントラスト (最低限) を理解する</a>はカラーコントラストツールの一覧がある。</li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               				
+               <li><a href="G207.html">G207.html</a></li>
+               			
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>理解が必要な各グラフィカルオブジェクトについて、カラーコントラストツールを使用して次のことを行う:
+               </p>
+               <ol>
+                  
+                  <li>隣り合う色又は境界線 (存在する場合) と比較した各色のコントラスト比を測定する。</li>
+                  
+                  <li>隣り合う各色又は境界線 (存在する場合) のコントラスト比が 3:1 以上であることを確認する。</li>
+                  				
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  					
+                  <li>2 の結果が真である。</li>
+                  				
+               </ul>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

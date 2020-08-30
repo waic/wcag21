@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G5: 利用者が制限時間なしで操作を完了できるようにする</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G4">前の達成方法: G4</a></li>
+            <li><a href="G8">次の達成方法: G8</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>利用者が制限時間なしで操作を完了できるようにする</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>この達成方法は、機能性のための制限時間付きインタラクションを求めない操作の実装をサポートする、あらゆる技術又は手法に適用される。
+            </p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/no-timing">達成基準 2.2.3: タイミング非依存</a> (十分な達成方法) </span>に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が操作の完了に必要な時間を、利用者に提供することである。この達成方法は、制限時間付きインタラクションを必要としない特定の操作を提供することを含む。利用者には、操作に必要なだけの時間が認められる。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>ある授業のインタラクティブな試験には、一つのページに全ての問題を載せている。利用者には全ての問題を解き終えるのに必要なだけの時間が与えられている。
+               </li>
+               
+               <li>あるインタラクティブなゲームで、利用者は制限時間内に移動を完了しなければならない代わりに、自分のターン上で好きなだけ時間がかけられる。
+               </li>
+               
+               <li>あるオンラインオークションで、入札者は時間をずらして複数回の競争入札を提出するのではなく、一つの値段だけを提出できる。入札は丸一日開かれており、簡単な入札フォームへの入力を完了するのに十分な時間が、誰にでも与えられる。入札が終了すると、最高入札が勝利する。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  <a href="https://www.nngroup.com/articles/top-ten-web-design-mistakes-of-2005/">Top Ten Web Design Mistakes of 2005</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G75">G75: コンテンツの更新を延期するメカニズムを提供する</a></li>
+               
+               <li><a href="G76">G76: 自動的に更新する代わりに、利用者がコンテンツの更新を要求するメカニズムを提供する</a></li>
+               
+               <li><a href="G80">G80: コンテキストの変化を開始する送信ボタンを提供する</a></li>
+               
+               <li><a href="G198">G198: 利用者が制限時間を解除するための手段を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>制限時間付きのインタラクションがあるかどうかを判断する (クライアントサイド及び／又はサーバーサイド)。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. の結果が偽である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

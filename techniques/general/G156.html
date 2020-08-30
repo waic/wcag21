@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G155">前の達成方法: G155</a></li>
+            <li><a href="G157">次の達成方法: G157</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (参考)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (参考)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>認知障害のある人は、ウェブページのコンテンツをうまく理解するために、前景のテキストと背景を特定の色の組み合わせを必要としていることがある。一般に利用されるブラウザの大部分は、ブラウザ内部の機能として、色設定を変更するオプションを提供している。この場合、ウェブコンテンツ制作者が指定した前景色及び背景色を、利用者が選択した色で上書きできる。
+            </p>
+            <p>この達成基準を満たすために、ウェブコンテンツ制作者はこのようなコントロールを備えるブラウザで動作するようにウェブページをデザインし、このコントロールを上書きしないようにする。
+            </p>
+            <p>ページ上の全てのテキストの前景色及び背景色を上書きすると、ページのグループ化及び組織化に関する視覚的な手がかりが隠れてしまい、理解及び利用がはるかに困難になる恐れがあることに注意する。この達成方法は、背景色が上書きされる場合にボーダーの色を変更しない技術及びユーザエージェントに適することがある。背景色を用いてページの領域の区切る場合、「<a href="../css/C23" class="tech-ref">C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する</a>  (CSS)
+               」を用いて、ウェブページの視覚的な構造を保ちつつ、利用者が主要なテキストの色をコントロールできるようにするとよい。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>前景色及び背景色の指定のために、HTML と CSS を用いてデザインしているウェブページがある。利用者は Internet Explorer 7 で自分の望む色に設定し、選択した前景色及び背景色でコンテンツを見ることができる。
+               </li>
+               
+               <li>HTML と CSS を用いてデザインしているウェブページがある。さまざまなブラウザでどのように色を設定するかを説明したページへのリンクを設置している。
+               </li>
+               
+            </ul>
+            <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+            <div>
+            <p>Firefox 及び Chrome では、例えば Stylus という拡張機能を追加することで、ユーザスタイルシートにより好みの前景色と背景色を指定できる。</p>
+            </div>         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>HTML コンテンツの色を利用者が変更できるブラウザで、ウェブページを開く。</li>
+                  
+                  <li>ブラウザ設定で、コンテンツに指定された色とは異なる前景色及び背景色に変更する。
+                  </li>
+                  
+                  <li>ページに戻ると、ブラウザで設定した別の前景色及び背景色が、コンテンツに指定された色を上書きしていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

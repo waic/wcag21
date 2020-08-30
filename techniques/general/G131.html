@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G131: 説明的なラベルを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G130">前の達成方法: G130</a></li>
+            <li><a href="G133">次の達成方法: G133</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>説明的なラベルを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/headings-and-labels">達成基準 2.4.6: 見出し及びラベル</a> (十分な達成方法)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (より具体的な手法を用いる十分な達成方法)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブコンテンツ内のあらゆるインタラクティブなコンポーネントに対するラベルにより、コンポーネントの目的を明確にすることである。ラベルとインタラクティブなコントロールを関連付けるための適切なウェブコンテンツ技術固有の達成方法によって、支援技術はラベルを認識し利用者に提示できるようになるため、利用者はコントロールの目的を認識することができる。ラベルは、入力が要求されるテキスト又はテキストシンボルに使用されてもよい。
+               
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-online-maps-with-controls-for-zooming-in-and-out">
+               <h3>事例 1: ズームイン及びズームアウトのコントロールのあるオンライン地図</h3>
+               <p>ある都市の地図をウェブアプリケーションで提供している。利用者は「ズームイン」を使ってより詳細な地図が見られ、「ズームアウト」で都市の広い地域を見ることができる。マウスかキーボードのいずれでも操作することができる。コントロールには「ズームイン (Ctrl + Shift + L)」と「ズームアウト (Ctrl + Shift + R)」というラベルが提供されている。
+               </p>
+            </section>
+            <section class="example" id="example-2-a-form-asking-the-name-of-the-user">
+               <h3>事例 2: 利用者の名前を入力させるフォーム</h3>
+               <p>利用者の名前を入力させるフォームがある。そのフォームには、姓と名を入力するために二つのフィールドがある。一つめのフィールドには「姓」というラベルがあり、二つめには「名」というラベルがある。
+               </p>
+            </section>
+            <section class="example" id="example-3-a-form-with-required-fields">
+               <h3>事例 3: 必須入力のあるフォーム</h3>
+               <p>必須の入力項目がいくつかある購入フォームがある。フィールドを特定することに加えて、入力必須の各フィールドのラベルには、括弧内に単語「必須」が含まれている。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="../html/H90">H90: label 要素又は legend 要素を使用して、必須のフォームコントロールを明示する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>コンテンツ中の各インタフェースコンポーネントに対して:</p>
+               
+               <ol>
+                  
+                  <li>インタフェースコンポーネントの目的を特定する。</li>
+                  
+                  <li>各ラベルがコンポーネントの目的を明確に示していることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2 の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

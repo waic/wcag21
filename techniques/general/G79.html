@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G79: テキストの音声バージョンを提供する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G78">前の達成方法: G78</a></li>
+            <li><a href="G80">次の達成方法: G80</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>テキストの音声バージョンを提供する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>音声フォーマットへのリンクをサポートするウェブコンテンツ技術</p>
+            <p>これは達成基準 <span><a href="https://waic.jp/docs/WCAG21/Understanding/reading-level">達成基準 3.1.5: 読解レベル</a> (十分な達成方法)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>書かれたテキストの言葉を発音する (デコードする) のが難しい利用者の中には、テキストの音読を聞くのが非常に役立つことがある。このサービスは、録音した人間の音声又は合成音声を用いて簡単に提供できるようになった。例えば、コンテンツ制作者がテキストを合成音声に変換し、その音声バージョンを音声ファイルとして保存できる製品が多数ある。音声バージョンへのリンクは、コンテンツ内で提供できる。制作コストは、使用する声の品質や、テキストを頻繁に変更するかどうかによって異なる。
+            </p>
+            <ul>
+               
+               <li>
+                  
+                  <p>短いテキスト及び静的なテキストコンテンツの音声バージョン</p>
+                  
+                  <p>この方法は、量の少ないテキスト及び、めったに変更しない文書に効果的である。
+                  </p>
+                  
+                  <ol>
+                     
+                     <li>誰かがテキストを読み上げたものを録音する、又は個々の文書もしくは一部の段落を合成音声に変換するツールを利用する。できれば、最も聞き取りやすく、魅力的な声を採用するのがよい。
+                     </li>
+                     
+                     <li>音声バージョンを音声ファイルとして保存する。広く利用されていて、多くのメディアプレーヤーがサポートしている音声フォーマットを用いる。
+                     </li>
+                     
+                     <li>音声バージョンへのリンクを提供する。</li>
+                     
+                     <li>音声フォーマットを明記する (例えば、.MP3、.WAV、.AU など)。</li>
+                     
+                     <li>そのフォーマットをサポートしているメディアプレーヤーへのリンクを提供する。</li>
+                     
+                  </ol>
+                  
+               </li>
+               
+               <li>
+                  
+                  <p>よく変更するテキストの音声バージョン</p>
+                  
+                  <p>ページをよく変更する場合や、利用者の選択によってテキストコンテンツが変わる場合は、サーバベースの方法が最もよいだろう。サーバベースのツールの中には、利用者が興味のあるテキストを選択し、聞くことができるものがある。通常は、利用者がテキストから音声への変換を開始するボタンを押せば読み上げられる。
+                  </p>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-a-web-site-for-a-government-agency">
+               <h3>事例 1: 政府機関のウェブサイト</h3>
+               <p>ある公営住宅機構のウェブサイトには、全てのページに「このページを読み上げる」というボタンがある。利用者がボタンを選択すると、そのページが合成音声で読み上げられる。
+               </p>
+            </section>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>コンテンツの音声版が利用できるかどうかを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

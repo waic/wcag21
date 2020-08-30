@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G58: 非テキストコンテンツのすぐ隣に、時間依存メディアの代替へのリンクを配置する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G57">前の達成方法: G57</a></li>
+            <li><a href="G59">次の達成方法: G59</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>非テキストコンテンツのすぐ隣に、時間依存メディアの代替へのリンクを配置する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>特定のウェブコンテンツ技術に依存しない。リンクをサポートする全てのウェブコンテンツ技術。
+            </p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済)</a> (<a href="../general/G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a>の達成方法として十分)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">達成基準: 1.2.8 (メディアに対する代替 (収録済)</a> (<a href="../general/G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a>の達成方法として十分)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法によって、キャプションと音声解説からなる対応したドキュメントへのリンクが提供できる。対応したドキュメントは同じウェブページ内の別の場所、又は別の URI に存在するかもしれない。対応したドキュメントへのリンクは非テキストコンテンツに隣接する。そのリンクは同期したメディアコンテンツの直前、又は直後に配置される。対応したドキュメントが同一のウェブページに異なるコンテンツとして存在する場合、「文章の終わり」と最後に記述し、利用者がいつそれを読むのを終え、元の場所に戻るかを知らせることができる。もし、「戻る」ボタンによって利用者が移動してきた元の場所に戻れない場合は非テキストコンテンツの場所へ戻るリンクが提供される。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-an-.mov-document-in-an-html-document">
+               <h3>事例 1: HTML ドキュメント内の .MOV ドキュメント</h3>
+               <p>「Olympic_Sports.htm」という名のページ内のコード</p><pre xml:space="preserve">
+  &lt;a name="Olympic_Wrestling"&gt;&lt;/a&gt;
+  &lt;p&gt;&lt;a href="http://www.example.com/movies/olympic_wrestling.mov"&gt;Olympic Wrestling movie&lt;/a&gt;, 
+  &lt;a href="http://www.example.com/transcripts/olympic_wrestling_transcript.htm"&gt;Olympic 
+  Wrestling collated Transcript&lt;/a&gt;&lt;/p&gt;
+            </pre></section>
+            <section class="example" id="example-2-the-link-back-to-the-.mov-document-in-an-html-document">
+               <h3>事例 2: HTML ドキュメント内の .MOV ドキュメントへ戻る</h3>
+               <p>olympic_wrestling_transcript.htm のページ内のコード</p><pre xml:space="preserve">
+  &lt;p&gt;Sports announcer 1: This is a great battle tonight between England's "Will Johnson" and 
+  "Theodore Derringo" from Argentina&lt;/p&gt;
+  &lt;p&gt;Scenery: There is a mat set out in the middle of the stadium with 500 people in the 
+  stands...&lt;/p&gt;
+  &lt;p&gt; ...more dialogue...&lt;p&gt;
+  &lt;p&gt; ...more scenery...&lt;/p&gt;
+  &lt;p&gt; ...etc...&lt;/p&gt;
+  &lt;p&gt;Sports announcer 2: And that is all for tonight, thank you for joining us tonight where 
+  Will Johnson is the new Gold Medalist. 
+  &lt;a href="../movies/Olympic_Sports.htm#Olympic_Wrestling&gt;Return to Movie page&lt;/a&gt; &lt;/p&gt;
+            </pre></section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a></li>
+               
+               <li><a href="G159">G159: 映像のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
+               
+               <li><a href="../html/H46">H46: embed 要素と一緒に noembed 要素を用いる</a></li>
+               
+               <li><a href="../html/H53">H53: object 要素のボディを使用する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>非テキストコンテンツの直前又は直後にリンクが存在するかどうかを確認する。</li>
+                  
+                  <li>そのリンクがこの固有の同期したメディアの対応したドキュメントを直接指す有効なリンクであることを確認する。
+                  </li>
+                  
+                  <li>その同期したメディアコンテンツの元の場所に利用者が戻るためのリンク又は逆行機能の可用性を確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>１.から 3.の結果全てが真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

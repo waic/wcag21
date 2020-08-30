@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G97: 略語の初出時、その直前又は直後に元の語を提供する
+      </title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G96">前の達成方法: G96</a></li>
+            <li><a href="G98">次の達成方法: G98</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>略語の初出時、その直前又は直後に元の語を提供する
+      </h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>テキストを提供する全てのウェブコンテンツ技術</p>
+            <p>この達成方法は、 <span><a href="https://waic.jp/docs/WCAG21/Understanding/abbreviations">達成基準 3.1.4: 略語</a> (<a href="G102">G102: 略語の元の語又は説明を提供する</a>の達成方法として十分)</span> に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページの中で略語が最初に現れたとき、元の語を略語に関連付けることで、略語の元の語を分かるようにすることである。ウェブページで最初の使用箇所を探すことで、すべての略語の元の語を見つけることができる。
+            </p>
+            <p>英語では、単語、句または名前を、略語、頭文字語、頭字語、又は他の短縮表記によって短くするときは、省略された表記を提供する前に完全な表記を提供するのがよい。こうすることで、テキストが読みやすくなり、多くのスタイルガイドでも勧められている。その他の言語では異なる慣習があることもある。
+            </p>
+            <p>略語の中には、元の語ではなく説明を必要とするものがあることに注意する。そのような略語には、この達成方法は適切ではない。
+            </p>
+            <p>この達成方法はウェブページで略語の初出時に適用される。複数のリソースを一つのウェブページに結合するとき、それぞれのリソースの冒頭で略語の元の語が示される。しかしながら、この場合、元の語を提供するための異なる達成方法を使うことが、より適切であるかもしれない。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>「国際連合難民高等弁務官事務所 (UNHCR) は、1950 年に難民の保護と支援を提供するために設立された。」
+               </p>
+               <p>「WAI (Web Accessibility Initiative) は、W3C のアクセシビリティへの取り組みを示している。」</p>
+            </section>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  	<a href="http://www.chicagomanualofstyle.org/qanda/data/faq/topics/Abbreviations.html?old=Abbreviations_questions01.html">Chicago Manual of Style - Q&amp;A - Abbreviations</a>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G55">G55: 定義にリンクする</a></li>
+               
+               <li><a href="G102">G102: 略語の元の語又は説明を提供する</a></li>
+               
+               <li><a href="../html/H28">H28: abbr 要素を用いて、略語の定義を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <p>コンテンツにある略語それぞれに対して:</p>
+               
+               <ol>
+                  
+                  <li>作成されたコンポーネントでその略語の最初の使用箇所を探す。</li>
+                  
+                  <li>最初の使用箇所の直前又は直後に、略語の元の語があることを確認する。
+                  </li>
+                  
+                  <li>その元の語が、略語の使用として正しい元の語であることを確認する。</li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

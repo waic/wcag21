@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G9: ライブの同期したメディアに対してキャプションを作成する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G8">前の達成方法: G8</a></li>
+            <li><a href="G10">次の達成方法: G10</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>On this page:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>ライブの同期したメディアに対してキャプションを作成する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>視聴覚の情報を提示する全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
+            <ul>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/captions-live">達成基準 1.2.4 (キャプション (ライブ) )</a> (十分、<a href="G93">G93: オープン (常に見える) キャプションを提供する</a> とともに)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/captions-live">達成基準 1.2.4 (キャプション (ライブ) )</a> (十分、<a href="G87">G87: クローズドキャプションを提供する</a> とともに)
+               </li>
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/captions-live">達成基準 1.2.4 (キャプション (ライブ) )</a> (十分、より具体的な手法を使用した <a href="G87">G87: クローズドキャプションを提供する</a> とともに)
+               </li>
+            </ul>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、音声を聞くことができない利用者がリアルタイムに同期したメディア放送にアクセスできるようにすることである。間違いを訂正する又は、二度聞きもしくは単語が正確に再現されていることを確認するために誰かの意見を聞く時間はほとんどないので、正確なリアルタイムのキャプションを作成することはより困難である。情報があまりに速く流れている時は、簡略化又は言い換えもさらに困難である。
+            </p>
+            <p>リアルタイムのタイピングテキスト入力技術には、速記及び高速タイピング技術を使用するものが存在する。復唱による音声テキスト変換 (人が音声を聞き、彼らの音声を覚えこませたコンピューターへ慎重に復唱する) は、今日の電話リレーサービスで使用されており、将来的にはキャプション作成に使用されるかもしれない。ゆくゆくは補正機能を持つ音声テキスト変換が可能になるだろう。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1">
+               <h3>事例 1</h3>
+               <p>テレビスタジオでは、オンラインのイブニングニュースのキャプションを作成するために、リアルタイムのキャプションサービスを利用している。
+               </p>
+            </section>
+            <section class="example" id="example-2">
+               <h3>事例 2</h3>
+               <p>利用者がオンラインセミナーを、Communication Access Real-time Translation (CART) の使用を通したキャプションが提供された上で、モバイルデバイスで視聴している。そのキャプションは、キャプションを必要とし、自分のデバイスで情報を表示できる対面の参加者にも利益を提供している。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G87">G87: クローズドキャプションを提供する</a></li>
+               
+               <li><a href="G93">G93: オープン (常に見える) キャプションを提供する</a></li>
+               
+               <li><a href="G157">G157: ライブの音声キャプションサービスをウェブページに組み込む</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>キャプションがリアルタイムに配信されることを保証するため、手順及びポリシーが所定の位置にあることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>1．の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

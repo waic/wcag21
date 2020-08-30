@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>C35: 折り返しのないテキストの間隔を見込む</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C34">前の達成方法: C34</a></li>
+            <li><a href="C36">次の達成方法: C36</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>折り返しのないテキストの間隔を見込む</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/CSS/">Cascading Style Sheets (CSS)</a> をサポートするウェブコンテンツ技術を使用したコンテンツ
+            </p>
+            <p>これは、 <span><a href="https://waic.jp/docs/WCAG21/Understanding/text-spacing">達成基準 1.4.12: テキストの間隔を理解する</a> (十分) </span> に関連する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者がユーザスタイルシート、ブックマークレット、拡張機能、又はアプリケーションを介してテキスト間隔を上書きできるようにすることである。段落、行、単語、及び文字の間隔を広げることは、ロービジョン又はは認知障害のある人に役立つ。コンテンツは、テキストを含む要素を必要に応じて拡大できるようにすることで、コンテンツ又は機能を損なうことなく間隔を変更できる必要がある。
+            </p>
+            <p><strong>テキストが折り返しを意図していない場合</strong>、コンテンツ制作者は以下のいずれかを行うべきである:
+            </p>
+            <ul>
+               
+               <li>コンテナのサイズをテキストのデフォルト幅よりも大きい値にする、又は</li>
+               
+               <li>コンテナをテキストの方向に拡張できるようにする。</li>
+               
+            </ul>
+            <p>文字及び単語の間隔を設定するときに、単語又はフレーズが大きくなる幅にはある程度のばらつきがある。要素で固定幅を使用しなければならない場合、安全な値はデフォルトの最大幅より 20 ％広くなる。例えば、小さなテキストコンテナで 20 文字を見込む場合、24 文字の十分な幅を考慮することでテキスト間隔を適用するのに十分なスペースを割り当てるべきである。
+            </p>
+            <p>テキストで拡大できるボックスの場合、コンテンツ制作者は、CSS display プロパティの inline-block 値を利用し、負のマージンを設定しないことで、テキスト間隔を上書きすることができる。
+            </p>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <p>利用者がページを調整してテキストの間隔を広げると、テキストはその包含ボックスの境界内に収まる。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p><code>ex</code> は文字幅に最も近い利用可能な単位として使用されている。<code>ex </code> という単位は「要素のフォントの x-height を表す」ものである (<a href="https://developer.mozilla.org/ja/docs/Web/CSS/length">MDN の CSS における単位を解説したページ</a>)。これは完璧ではなく、違う文字ではデフォルトの幅も異なる。
+               </p>
+            </div>
+            <section class="example" id="example-1-a-box-sized-with-space-to-allow-for-expansion">
+               <h3>事例 1: 拡張できる間隔があるサイズのボックス</h3>
+               <p>コンテナはテキストのデフォルト幅より大きいサイズとなる。</p><pre xml:space="preserve"><code>/* リンクの幅は 8ex より少ないため、10ex の幅である li により、文字や単語の幅を拡張することができる。 */
+ nav li { width: 10em; }
+
+&lt;!-- HTML --&gt;
+ &lt;nav&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="/contact/"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;ul&gt;
+ &lt;/nav&gt;</code>
+</pre><p>ナビゲーション要素が同じサイズの固定幅コンテナを使用した場合、その幅は最長の単語より 20 ％大きいテキストを許可する必要がある。
+               </p>
+            </section>
+            <section class="example" id="example-2-a-box-which-expands-with-the-text-size">
+               <h3>事例 2: テキストサイズで拡大するボックス</h3><pre xml:space="preserve"><code>/* CSS コンテナは、display を inline-block としている。負のマージンはセットしていない。 */
+ nav li { display: inline-block; }
+
+&lt;!-- HTML --&gt;
+ &lt;nav&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="/contact/"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;ul&gt;
+ &lt;/nav&gt;</code>
+</pre><p>各アイテムが可変幅テキストコンテナの場合、親アイテムは各アイテムを折り返しできるようにする必要があってもよい。
+               </p>
+               <p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/css-text-spacing/">事例 1 と 事例 2 の実例</a> が利用可能である。
+               </p>
+            </section>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="C36">C36: テキスト間隔を上書きできるようにする</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <p>折り返しを意図していないテキストを含む要素の場合:</p>
+               <ol>
+                  
+                  <li>ズームレベルを 100 ％に設定する。</li>
+                  
+                  <li><a href="http://www.html5accessibility.com/tests/tsbookmarklet.html">Text Spacing Bookmarklet</a> やユーザスタイルを指定するブラウザプラグインなどの、テキスト間隔のメトリック (行高さ、段落、文字、及び単語の間隔) を適用するツール又は別のメカニズムを使用する。
+                  </li>
+                  
+                  <li>全てのコンテンツ及び機能が利用可能であることを確認する。例えば、コンテナ内のテキストが切り取られていないこと、及び他のコンテンツと重なっていないことを確認する。
+                  </li>
+                  
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  
+                  <li>3 の結果が真である。</li>
+                  
+               </ul>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>ページに複数のレイアウト (例えばレスポンシブデザイン) がある場合、各レイアウトでテキストの間隔を検証すべきである。
+                  </p>
+               </div>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

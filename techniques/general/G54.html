@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>G54: 映像ストリームに手話通訳を含める</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G53">前の達成方法: G53</a></li>
+            <li><a href="G55">次の達成方法: G55</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
+         </ul>
+      </nav>
+      <h1>映像ストリームに手話通訳を含める</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         </p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象)</h2>
+            <p>同期したメディア情報を提示する全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/sign-language-prerecorded">達成基準 1.2.6: 手話 (収録済)</a> (十分な達成方法) </span>に関する達成方法である。
+            </p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、耳の聞こえない又は、テキストを速く読むことができない利用者が同期したメディア情報にアクセスできるようにすることである。
+            </p>
+            <p>主に手話でコミュニケーションをする利用者にとって、キャプションで提示されている速度ではテキストを読んで理解するのが難しかったり、場合によっては不可能であったりする。後者の人については、音声情報の手話による提示を提供することが重要である。
+            </p>
+            <p>キャプションと手話とを両立できる一般的な方法は、単純に映像ストリームに手話通訳の映像を含めることである。ただし、この方法には、映像全体を拡大する以外には容易に拡大できない低解像度の映像になってしまうという欠点がある。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>
+                  
+                  <p>映像ストリームが小さすぎる場合は、手話通訳が認識できなくなる。手話通訳の映像を含む映像ストリームを制作する場合は、映像ストリームをアクセシビリティ サポーテッドなウェブコンテンツ技術でフルスクリーンで再生するメカニズムがあることを確認する。そうでない場合は、映像の手話通訳の部分が、映像ストリームがフルスクリーンになった場合のサイズに調節可能にであることを確認する。
+                  </p>
+                  
+                  <p>一般に、手話は墨字の手話版ではないため、コンテンツ制作者はどの手話を含めるかを決めなければならない。通常は主な読者が使用している手話を用いる。さまざまな読者を想定する場合は、複数の手話を用いる。複数の手話のための推奨達成方法を参照のこと。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>複数の手話のための推奨達成方法はまだ文書化されていない。</p>
+               </div>
+            </div>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <ul>
+               
+               <li>事例 1: あるテレビ局が、オンラインニュース映像の角の方、又は傍らで手話通訳を提供している。
+               </li>
+               
+            </ul>
+         </section>
+         <section id="resources">
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>
+               
+               <li>
+                  
+                  <p>手話を作成するための指針</p>
+                  
+                  <ul>
+                     
+                     <li>
+                        <a href="http://www.sign-lang.uni-hamburg.de/signingbooks/deliver/d31/deliv_31_part3-2.html#3.2.2.6">"Sign Language presentation"</a> では、手話通訳者を撮影する際の留意点の概要を知ることができる。元の素材が書き言葉の場合と話し言葉の場合の両方についての議論も含まれている。
+                     </li>
+                     
+                     <li>撮影のテクニックについては 
+                        <a href="http://www.sign-lang.uni-hamburg.de/signingbooks/sbrc/grid/d71/guide12.htm">chapter 12, “Filming the Signer(s)"</a> で考察されている。
+                     </li>
+                     
+                     <li>
+                        
+                        <p>オリジナルの同期したメディアコンテンツに関連して手話通訳を表示させる方法についての有益な情報は 
+                           <a href="http://www.sign-lang.uni-hamburg.de/signingbooks/sbrc/grid/d71/guide13.htm">Chapter 13, "Editing"</a> で提供されている。
+                           
+                        </p>
+                        
+                        <div class="note">
+                           <div role="heading" class="note-title marker" aria-level="3">注記</div>
+                           <div>
+                              
+                              <p>これらの達成方法はウェブベースの提示にも適用される必要がある。</p>
+                              
+                           </div>
+                        </div>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+         </section>
+         <section id="related">
+            <h2>関連する達成方法</h2>
+            <ul>
+               
+               <li><a href="G81">G81: プレーヤーによって別のビューポートに表示する、又は画像上に重ねることのできる、手話通訳の同期した映像を提供する</a></li>
+               
+               <li><a href="../smil/SM13">SM13: SMIL 1.0 で、同期した映像ストリームを通じて手話通訳を提供する</a></li>
+               
+               <li><a href="../smil/SM14">SM14: SMIL 2.0 で、同期した映像ストリームを通じて手話通訳を提供する</a></li>
+               
+            </ul>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="procedure" id="procedure">
+               <h3>手順</h3>
+               
+               <ol>
+                  
+                  <li>耳が聞こえて、使用されている手話に精通した人に映像を見せる。
+                  </li>
+                  
+                  <li>手話通訳が画面上に表示されているかどうかを確認する。</li>
+                  
+                  <li>会話及び重要な音が、画面上の手話通訳によって伝達されていることを確認する。
+                  </li>
+                  
+               </ol>
+               
+            </section>
+            <section class="results" id="expected-results">
+               <h3>期待される結果</h3>
+               
+               <ul>
+                  
+                  <li>2. 及び 3. の結果が真である。</li>
+                  
+               </ul>
+               
+            </section>
+         </section>
+      </main>
+   </body>
+</html>

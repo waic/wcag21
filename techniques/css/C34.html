@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>C34: 固定されていないスティッキーヘッダー/フッターに、メディアクエリーを利用する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="../techniques.css" />
+      <link rel="stylesheet" type="text/css" href="../slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C33">前の達成方法: C33</a></li>
+            <li><a href="C35">次の達成方法: C35</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページのコンテンツ:</p>
+         <ul id="navbar">
+            <li><a href="#important-information">達成方法に関する重要な方法</a></li>
+            <li><a href="#applicability">適用 (対象) </a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">テスト</a></li>
+         </ul>
+      </nav>
+      <h1>固定されていないスティッキーヘッダー/フッターに、メディアクエリーを利用する</h1>
+      <section id="important-information">
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
+      <main>
+         <section id="applicability">
+            <h2>適用 (対象) </h2>
+            <p>この達成方法は、カスケーディング スタイル シート／HTML の技術に、適用される。</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a> (参考) </span>に関連する。</p>
+         </section>
+         <section id="description">
+            <h2>解説</h2>
+            <p>この達成方法の目的は、十分なスペースがあるとき、コンテンツをスティッキーヘッダー及びフッターで表示できるようにすることである。これは、ビューポートの使用可能なスペースに適応する、<code>min-height</code>、<code>max-height</code>、及び <code>min-width</code> メディアクエリー技術を使用することで行われる。</p>
+            <p>スティッキー領域は常にビューポートに表示されたままになるが、他のコンテンツはスクロール時にその下に消える。コンテンツの視認性の点では、これはデスクトップ及び縦向きのモバイルデバイスでは問題にならないことが多い。ただし、モバイルデバイスを横向きで使用している場合、又は、デスクトップでズームインしている場合は、スティッキー領域が画面の大部分を遮ることがある。つまり、スティッキー領域の高さのために、ページの内容を表示するための画面の一部分だけが残る場合がある。</p>
+            <p>無効化、つまりスティッキー領域の固定解除は、利用者が異なる読書及びズームの設定を好む場合、又はランドスケープモードを使用する場合、十分な利用可能なスペースを確保するための効果的な方法である。
+            </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>スティッキー領域は、キーボード利用者にとって不利になる可能性があるため、慎重に使用する必要があることに注意する。固定ヘッダーのあるページをタブで移動するキーボード利用者にとっての問題は、ページがスクロールを開始した後に、ページの上方にあるインタラクティブ要素に到達するために逆方向でタブ移動すると、多くの場合、フォーカスがスティッキーヘッダーの背後に移動した時点で見えなくなることである。そのため、利用者は、フォーカスを見るために上にスクロールしなければならないが、これは必ずしも意識して行っているわけではないだろう。同様に、目に見えるフォーカスはスティッキーフッターの後ろに消えてしまうので、利用者はフォーカスの位置を見るために下にスクロールする必要があり、これは非常に面倒である。</p>
+            </div>
+            <p>固定されていないヘッダー/フッターの基本的な使い方は、次のとおりである:</p>
+            <ol>
+               <li>メディアクエリーの <code>min-height</code> プロパティを使用して、最初のスティッキー領域を定義する。これにより、使用可能なスペースに応じて固定又は非固定にする。</li>
+               <li>特定のビューポートサイズのメディアクエリー <code>min-width</code> 及び <code>max-height</code> プロパティを使用して他のスティッキー領域を定義する。これにより、例えばタブレットの場合、デバイスの縦向き又は横向きの位置の使用可能なスペースに応じて固定又は非固定にする。</li>
+            </ol>
+         </section>
+         <section id="examples">
+            <h2>事例</h2>
+            <section class="example" id="example-1-un-fix-sticky-headers-/-footers-in-html-and-css">
+               <h3>例 1: HTML 及び CSS でスティッキーヘッダー/フッターを固定しない</h3>
+               <p>次の例では、HTML 及び CSS を使用して、スティッキーヘッダー/フッターの固定を解除している。ビューポートの高さが制限される又は方向が変更されると、スティッキー領域は固定されなくなる。<code>min-height</code> プロパティがメディアクエリーによって定義されたビューポートのスペースに一致する場合、スティッキーでない領域は固定され、その逆も同様となる。この例では、CSS の <code>min-height</code>、<code>max-height</code>、及び <code>min-width</code> メディアクエリープロパティーを使用する。</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Using media queries to un-fix sticky headers / footers&lt;/title&gt;
+    &lt;style&gt;
+
+    /* Sticky Styling */
+
+    header { min-height: 130px; }
+
+    @media (min-height: 480px) {
+      header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    @media (min-device-width: 576px) and (max-device-width: 1024px) and (orientation: landscape) {
+      header {
+        position: static;
+      }
+    }
+
+    footer { min-height: 130px; }
+
+    @media (min-height: 480px) {
+      footer {
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+      }
+    }
+
+    @media (min-device-width: 576px) and (max-device-width: 1024px) and (orientation: landscape)  {
+      footer {
+        position: static;
+      }
+    }
+
+    &lt;/style&gt;
+
+  &lt;/head&gt;
+
+  &lt;body class="grid"&gt;
+
+    &lt;header role="banner" class="grid-item"&gt;
+      ...
+    &lt;/header&gt;
+
+    &lt;main role="main" class="grid-item"&gt;        
+      ...
+    &lt;/main&gt;
+
+    &lt;aside role="complementary" class="grid-item"&gt;
+      ...
+    &lt;/aside&gt;
+
+    &lt;footer role="contentinfo" class="grid-item"&gt;
+      ...
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+               <p class="working-example">作業例:<a href="../../working-examples/css-sticky/">CSSフレックスボックスを使用したリフロー</a></p>
+            </section>
+         </section>
+         <section id="tests">
+            <h2>検証</h2>
+            <section class="test-procedure">
+               <h3>手順</h3>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                  <p>実際のモード又はサイズは、テストする環境によって異なる。</p>
+               </div>
+               <ol>
+                  <li>デバイス/ユーザー エージェント上のコンテンツを縦向きモードで表示する。</li>
+                  <li>方向を横向きに変更する。</li>
+                  <li>既存のメディアクエリーの設定に応じて、スティッキーヘッダー及びスティッキーフッターが固定解除されるかどうかを確認する。</li>
+                  <li>開始時のビューポートの幅を 1280x1024 CSS ピクセルとし、デスクトップ/ユーザーエージェントにコンテンツを表示する。</li>
+                  <li>ビューポートの幅と高さを変更する、又はブラウザのズーム機能を使用する。</li>
+                  <li>既存のメディアクエリーの設定に応じて、スティッキーヘッダー及びフッターが、特定のサイズで固定解除されるかどうかを確認する。</li>
+               </ol>
+            </section>
+            <section class="test-results">
+               <h3>期待される結果</h3>
+               <ul>
+                  <li>上記3と6の結果が真である。</li>
+               </ul>
+               <p>この達成方法が「十分な達成方法」の一つである場合、この手順や期待される結果を満たしていなければ、それはこの達成方法が正しく用いられていないことを意味するが、必ずしも達成基準を満たしていないことにはならない。場合によっては、別の達成方法によってその達成基準が満たされていることもありうる。</p>
+            </section>
+         </section>
+      </main>
+   </body>
+</html>
