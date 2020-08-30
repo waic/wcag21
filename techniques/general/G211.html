@@ -47,12 +47,12 @@
             </p>
             <p>時には、ラベル候補と見なされうる複数のテキスト文字列がコントロール付近に配置されることがある。例えば、それぞれ独自のラベルを持った一連の入力の前に見出し、説明又はグループラベル (HTML の legend/fieldset、ARIA group、radiogroup など) もあるかもしれない。「グループラベル」という用語は、プログラム上及び 2.5.3 名前 (name) のラベルに関した両方において「ラベル」とは異なる意味を持つことに注意すること。
             </p>
-            <p><a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name">2.5.3 名前 (name) のラベルの解説書</a>は、2.5.3 を満たす目的としてコントロールのラベルを評価する場合、入力に隣接又は近接したテキスト文字列のみがラベルとして扱われるべきことを推奨している (「コンポーネントのラベルテキストを特定する」セクションを参照すること)。このように入力のラベルの指定を制限する実質的かつ技術的な理由がある。技術的な理由は、解説書の Accessible Name and Description Computation 仕様というセクションで議論されている。
+            <p><a href="https://waic.jp/docs/WCAG21/Understanding/label-in-name">2.5.3 名前 (name) のラベルの解説書</a>は、2.5.3 を満たす目的としてコントロールのラベルを評価する場合、入力に隣接又は近接したテキスト文字列のみがラベルとして扱われるべきことを推奨している (「コンポーネントのラベルテキストを特定する」セクションを参照すること)。このように入力のラベルの指定を制限する実質的かつ技術的な理由がある。技術的な理由は、解説書の Accessible Name and Description Computation 仕様というセクションで議論されている。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
-            <p>可視ラベルのアクセシブルな名前 (accessible name) へのマッピングは、ネイティブセマンティクスを正しく使用し <a href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html">1.3.1 情報及び関係性</a>を満たすことで、多くの技術で達成できる。多くのコントロールは正しい要素の入れ子からアクセシブルな名前 (accessible name) を得る一方、他の要素はアクセシブルな名前 (accessible name) を参照する又は提供する有効な方法である特定の属性を持つ。
+            <p>可視ラベルのアクセシブルな名前 (accessible name) へのマッピングは、ネイティブセマンティクスを正しく使用し <a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships.html">1.3.1 情報及び関係性</a>を満たすことで、多くの技術で達成できる。多くのコントロールは正しい要素の入れ子からアクセシブルな名前 (accessible name) を得る一方、他の要素はアクセシブルな名前 (accessible name) を参照する又は提供する有効な方法である特定の属性を持つ。
             </p>
             <p>アクセシブルな名前は、可能な場合、ネイティブ要素やセマンティクスで割り当てられるべきである。それにより、可視ラベルと名前が完全に一致することを保証する助けになる。
             </p>
@@ -102,7 +102,7 @@
                   <figcaption>図 1 Yes 及び No という選択肢の Call me when balance exceeds $10,000 ラジオグループ</figcaption>
                   				
                </figure>
-               <p>各コンポーネントのラベルは "Yes" 及び "No" に制限すべきである。<a href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships">1.3.1 情報及び関係性</a>及び <a href="https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html">3.3.2 ラベル又は説明</a>を満たすには、"Call me-" と書かれたテキストは支援技術に関係性を伝えるためにコーディングでき、この例では <code>fieldset</code> 及び <code>legend</code> を用いている。
+               <p>各コンポーネントのラベルは "Yes" 及び "No" に制限すべきである。<a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">1.3.1 情報及び関係性</a>及び <a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions.html">3.3.2 ラベル又は説明</a>を満たすには、"Call me-" と書かれたテキストは支援技術に関係性を伝えるためにコーディングでき、この例では <code>fieldset</code> 及び <code>legend</code> を用いている。
                </p>
                <p>ラベルがラジオボタンに隣接している文字列に制限されていない場合、何がラベルを構成するかという複数の解釈は、より統一されていない機能をもたらす。"Yes" だけが最初のラジオボタンのラベルではない場合、"Call me when balance exceeds $10,000" がそうだろうか？もしくは、テキスト文字列の組み合わせだろうか？その場合、順序は "Call me when balance exceeds $10,000 Yes" 又は "Yes, Call me when balance exceeds $10,000" だろうか？テキスト文字列を組み合わせる選択は、連結の順序が意味に影響するため、スクリーンリーダーの利用者に悪影響を与えることがある。この例では、"No, call me when balance exceeds $10,000" はスクリーン・リーダーの利用者にとってとても
 わかりにくい可能性がある。
