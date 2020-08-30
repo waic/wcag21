@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="ja">
    <head>
       <meta charset="UTF-8" />
       <title>SVR3: Using HTTP referer to ensure that the only way to access non-conforming content is
@@ -12,8 +12,8 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">Intro</a></li>
+            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
             <li><a href="SVR2">Previous Technique: SVR2</a></li>
             <li><a href="SVR4">Next Technique: SVR4</a></li>
          </ul>
@@ -34,7 +34,7 @@
       </h1>
       <section id="important-information">
          <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://w3c.github.io/wcag/understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
+         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
             they relate to the normative WCAG 2.1 success criteria. The Applicability section
             explains the scope of the technique, and the presence of techniques for a specific
             technology does not imply that the technology can be used in all situations to create
@@ -55,7 +55,7 @@
                of content where both non-conforming and conforming versions are provided.
             </p>
             <p>
-               <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#conf-req1">Conformance Requirement 1</a> allows non-conforming pages to be included within the scope of conformance as long
+               <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">Conformance Requirement 1</a> allows non-conforming pages to be included within the scope of conformance as long
                as they have a "<a href="https://www.w3.org/TR/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a>". It is not always possible for authors to include accessibility supported links
                to conforming content from within non-conforming content. Therefore, authors may need
                to rely on the use of Server Side Scripting technologies (ex. PHP, ASP, JSP) to ensure
@@ -145,18 +145,18 @@ header("Location: conforming.php");
             <h2>Related Techniques</h2>
             <ul>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
+               <li><a href="../general/G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
                      alternate version</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/general/G190">G190: Providing a link adjacent to or associated with a non-conforming object that links
+               <li><a href="../general/G190">G190: Providing a link adjacent to or associated with a non-conforming object that links
                      to a conforming alternate version</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR2">SVR2: Using .htaccess to ensure that the only way to access non-conforming content is from
+               <li><a href="SVR2">SVR2: Using .htaccess to ensure that the only way to access non-conforming content is from
                      conforming content</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR4">SVR4: Allowing users to provide preferences for the display of conforming alternate versions</a></li>
+               <li><a href="SVR4">SVR4: Allowing users to provide preferences for the display of conforming alternate versions</a></li>
                
-               <li><a href="https://w3c.github.io/wcag/techniques/css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
                
             </ul>
          </section>
