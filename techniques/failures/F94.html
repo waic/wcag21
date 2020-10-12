@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F94: Failure of Success Criterion 1.4.4 due to incorrect use of viewport units to resize
+      <title>F94: 達成基準 1.4.4 の失敗例 － サイズ変更のためのビューポートの単位を誤って使用している
          text
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
@@ -12,29 +12,28 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F93">Previous Technique: F93</a></li>
-            <li><a href="F95">Next Technique: F95</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F93">前の達成方法: F93</a></li>
+            <li><a href="F95">次の達成方法: F95</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.4.4 due to incorrect use of viewport units to resize
-         text
+      <h1>達成基準 1.4.4 の失敗例 － サイズ変更のためのビューポートの単位を誤って使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
+         <h2>達成方法に関する重要な情報</h2>
          <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
             they relate to the normative WCAG 2.1 success criteria. The Applicability section
             explains the scope of the technique, and the presence of techniques for a specific
@@ -44,12 +43,12 @@
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Failure)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The objective of this technique is to document the failure of text to re-scale when
                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">viewport units</a> are used on text. As these units are relative to the viewport, it means they cannot
                be resized by zooming or adjusting text-size.
@@ -72,7 +71,7 @@
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-failure-example-1">
                <h3>Example 1: Failure example 1</h3>
                <p>The following CSS and HTML snippet uses VW units to size the text.</p><pre><code>/* CSS */
@@ -86,7 +85,7 @@
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
+            <h2>参考リソース</h2>
             <p>Resources are for information purposes only, no endorsement implied.</p>
             <ul>
                					
@@ -99,7 +98,7 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
                <li><a href="../general/G179">G179: Ensuring that there is no loss of content or functionality when the text resizes and
@@ -114,9 +113,9 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>In a desktop browser with a resizable window:</p>
                <ol>
                   					
@@ -147,7 +146,7 @@
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
                   <li>If step #5 is false, then this failure condition applies and the content fails Success
