@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F103: Failure of Success Criterion 4.1.3 due to providing status messages that cannot be
-         programmatically determined through role or properties
+      <title>F103: 達成基準 4.1.3 の失敗例 － 役割 (role) 又はプロパティを通してプログラムによる解釈が可能でないステータスメッセージを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,68 +11,54 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F102">Previous Technique: F102</a></li>
-            <li><a href="F104">Next Technique: F104</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F102">前の達成方法: F102</a></li>
+            <li><a href="F104">次の達成方法: F104</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページの内容:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 4.1.3 due to providing status messages that cannot be
-         programmatically determined through role or properties
+      <h1>役割 (role) 又はプロパティを通してプログラムによる解釈が可能でないステータスメッセージを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>.
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートする技術。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">Success Criterion 4.1.3: Status Messages</a> (Failure)</span>.
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (失敗)</span> に関連する。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe a failure where status messages are
-               used in content but are not communicated to the user due to a lack of appropriate
-               roles or properties.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ステータスメッセージがコンテンツで使用されているが、適切な役割 (role) 又はプロパティがないために利用者に伝達されない失敗を説明することである。
             </p>
-            <p>The initial step in confirming a failure of Status Messages is to check that new dynamic
-               content meets the definition of a status message. There are two criteria that determine
-               if changed content on a page represents a status message:
+            <p>ステータスメッセージの失敗を確認する最初のステップは、新しい動的コンテンツがステータスメッセージの定義を満たしていることを確認することである。ページ上の変更されたコンテンツがステータスメッセージを表すかどうかを決定する二つの基準がある:
                				
                <ol>
                   					
-                  <li>the new content does not take focus (does not change context);</li>
+                  <li>新しいコンテンツがフォーカスされない (コンテキストを変更しない)。</li>
                   					
-                  <li>the new content provides information to the user on the outcome of an action, the
-                     state of an application, the progress of a process, or the existence of errors.
+                  <li>新しいコンテンツが、動作の結果、アプリケーションの状態、プロセスの進行状況、又はエラーの存在に関する情報を利用者に提供する。
                   </li>
                   				
                </ol>
-               			 Where updated content does not conform to the <a href="https://www.w3.org/TR/WCAG21/#dfn-status-messages">definition of status message</a>, a failure of 4.1.3 has not taken place.
+               			 更新されたコンテンツが<a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージの定義</a>に適合していない場合、4.1.3 の失敗は発生しない。
             </p>
-            <p>The second step in this failure technique involves examining code.  Where dynamic
-               content meets the definition of a status message, its container can be examined for
-               an appropriate WAI-ARIA role or property which allows it to be programmatically determinable
-               as a status message. Currently there are only a small number of techniques available
-               to indicate status messages to assistive technologies. They are:
+            <p>この失敗例の 2 番目のステップでは、コードの検査を行う。動的コンテンツがステータスメッセージの定義を満たしている場合、そのコンテナは、ステータスメッセージとしてプログラムによる解釈が可能となる、適切な WAI-ARIA の役割 (role) 又はプロパティを調べることができる。現在、支援技術にステータスメッセージを示すために利用できる技術はごくわずかである。それらは以下のとおり:
                					
                <ul>
                   						
@@ -81,7 +66,7 @@
                   						
                   <li><code>role="alert"</code></li>
                   						
-                  <li>the use of an <code>aria-live</code> attribute on an element, set to either "polite" or "assertive"
+                  <li>要素に <code>aria-live</code> 属性を使用し、"polite" か "assertive" のいずれかを設定する
                   </li>
                   						
                   <li><code>role="log"</code></li>
@@ -89,67 +74,55 @@
                   <li><code>role="progressbar"</code></li>
                   						
                </ul>
-               				The absence of all of these techniques predicts a failure for the status message
-               be announced to the user. Additionally, if the role or property is not set <em>before</em> the dynamic content is added, this also predicts a failure.
+               これらの技術のすべてが存在しない場合、ステータスメッセージが利用者に通知されないことが予測される。さらに、動的コンテンツが追加される<em>前に</em>役割 (role) 又はプロパティが設定されていない場合、これも失敗を予測する。
             </p>
-            <p>Since additional techniques may exist to alert an assistive technology, the final
-               step of this failure technique is confirming whether an assistive technology (such
-               as a screen reader) detects the dynamic content and exposes the information to users.
-               Where a status message exists but is not surfaced by assistive technology, it is confirmation
-               that a failure has taken place.
+            <p>支援技術に警告するための追加の技術が存在することがあるため、この失敗例の最後のステップは、支援技術 (スクリーンリーダーなど) が動的コンテンツを検出し、利用者に情報を公開しているかどうかを確認することである。ステータスメッセージが存在するが支援技術によって表示されない場合、失敗が発生したことの確認となる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-including-a-search-results-message-without-a-status-role">
-               <h3>Example 1: Including a search results message without a status role</h3>
-               <p>When a user carries out a search by pressing a Search button, the page content is
-                  updated with the results of the search, displayed in a section below the Search button.
-                  Since the search has no results, the change to content conveys the status message
-                  "0 results returned". This text is not given an appropriate role for a status message,
-                  and so a screen reader will not announce "Zero results returned" unless the user repositions
-                  to that text. Since the status message is not automatically presented to the user
-                  (i.e., instead, it must be manually discovered by the individual), it fails 4.1.3.
+               <h3>事例 1: status の役割 (role) のない検索結果メッセージを含める</h3>
+               <p>利用者が検索ボタンを押して検索を実行するとき、ページのコンテンツは検索結果で更新され、検索ボタンの下のセクションに表示される。検索結果がないため、コンテンツを変更すると「0 件の結果が返されました」というステータスメッセージが表示される。このテキストはステータスメッセージの適切な役割 (role) が与えられていないため、利用者がそのテキストに再びフォーカスしない限り、スクリーンリーダーは「0 件の結果が返されました」とアナウンスしない。ステータスメッセージは利用者に自動的に表示されないため（つまり、人間が手動で検出しなければならない）、4.1.3 の達成に失敗する。
                </p>
-               <p class="working-example"><a href="../../working-examples/failure-status-message/">Working example: search results message without appropriate role</a></p>
+               <p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/failure-status-message/">動作例: 適切な役割 (role) のない検索結果メッセージ</a></p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For content that is dynamically added to the page:</p>
+               <h3>手順</h3>
+               <p>ページに動的に追加されるコンテンツの場合:</p>
                <ol>
                   					
-                  <li>Check that the element containing the updated content does not take focus</li>
+                  <li>更新されたコンテンツを含む要素がフォーカスを持たないことを確認する</li>
                   					
-                  <li>Check that the new content provides information to the user on one of the following:</li>
+                  <li>新しいコンテンツが次のいずれかの情報を利用者に提供していることを確認する:</li>
                   						
                   <ul>
                      							
-                     <li>the success or result of an action</li>
+                     <li>動作の成功又は結果</li>
                      							
-                     <li>the waiting state of an application</li>
+                     <li>アプリケーションの待機状態</li>
                      							
-                     <li>the progress of a process</li>
+                     <li>プロセスの進行状況</li>
                      							
-                     <li>the existence of errors</li>
+                     <li>エラーの存在</li>
                      						
                   </ul>
                   					
-                  <li>Check that the element containing the new content does not have a pre-existing aria
-                     role of <code>status</code>, <code>alert</code>, <code>log</code>, or <code>progressbar</code>, or an <code>aria-live</code> attribute
+                  <li>新しいコンテンツを含む要素に、<code>status</code>、<code>alert</code>、<code>log</code>、もしくは <code>progressbar</code> という既存の ARIA の役割 (role)、又は <code>aria-live</code> 属性がないことを確認する
                   </li>
                   					
-                  <li>Check that the status message is not surfaced (i.e., announced) by assistive technology</li>
+                  <li>支援技術によってステータスメッセージが表示されていない (つまり、アナウンスされていない) ことを確認する</li>
                   				
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>If #1 through #4 are all true, then content fails the Success Criterion.</li>
+                  <li>1. から 4. がすべて真である場合、コンテンツは達成基準に失敗する。</li>
                   				
                </ul>
             </section>
