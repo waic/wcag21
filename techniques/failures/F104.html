@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F104: 達成基準 1.4.12 の失敗例 － テキストの間隔を調整したときにコンテンツが切り取られたり重なったりする
+      <title>F104: 達成基準 1.4.12 の失敗例 － テキストの間隔を調整したときにコンテンツが切り取られる又は重なる
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -39,36 +39,27 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>この達成方法は、テキストスタイルのプロパティをサポートするマークアップ言語で作成されたテキストコンテンツに適用される。
+            <p>この達成方法は、テキストスタイルプロパティをサポートするマークアップ言語で作成されたテキストコンテンツに適用される。
             </p>
             <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/text-spacing">達成基準 1.4.12: テキストの間隔</a> (失敗例)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The purpose of this technique is to identify and test a failure condition where part
-               of the content clips and is unreadable when the user overrides the spacing of the
-               text within the boundaries set out in the Text Spacing success criterion. In general,
-               this failure occurs when text is presented in a size-constrained block which does
-               not expand if the size of the content increases. Some of the ways in which this can
-               occur include:
+            <p>この達成方法の目的は、テキストの間隔の達成基準で設定された範囲内で、利用者がテキストの間隔を上書きした場合に、コンテンツの一部が切り取られて読めなくなるという失敗条件を特定しテストすることにある。一般的に、この失敗は、コンテンツのサイズが大きくなっても拡大しないサイズ制約のあるブロックでテキストが提示されたときに発生する。これを発生させ得る方法としては、以下のようなものがある。
             </p>
             <ul>
                			  
                <li>
-                  			   Setting the overflow property of the enclosing element to hidden
-                  		      
+                  囲む要素の oveflow プロパティを非表示に設定する
                </li>
                			  
                <li>
-                  			   Using absolutely positioned content
-                  		      
+                  絶対位置で配置されたコンテンツを使用する
                </li>
                			  
                <li>
-                  			    Creating borders that are not large enough for the content when using the new
-                  font spacing
-                  		      
+                  新しいフォント間隔を使用する際に、コンテンツに対して十分な大きさではない境界線を作成する
                </li>
                		  
             </ul>
@@ -76,11 +67,9 @@
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-text-inside-a-box-overflows-and-overlaps-text-below-it-when-text-spacing-is-implemented.">
-               <h3>例 1: Text inside a box overflows and overlaps text below it when text spacing
-                  is implemented.
+               <h3>例 1: テキストの間隔が実装されている場合、ボックス内のテキストがオーバーフローし、その下のテキストと重なる。
                </h3>
-               <p>The code below is what is implemented in the DOM <em><strong>before</strong></em> the user implements any CSS test spacing overrides. The text renders correctly in
-                  the box and doesn't interfere with the next paragraph.
+               <p>以下のコードは、利用者が CSS でテキストの間隔を上書き実装する<em><strong>前に</strong></em> DOM に実装されているものである。テキストはボックス内に正しく表示され、次の段落に干渉しない。
                </p>
                <p><code>&lt;div style="font-size:100%; width:130px; height:95px; border: thin solid gray;"&gt;
                      			    Now is the time for all good men to come to the aid of their country.
@@ -93,8 +82,7 @@
                   </div>
                </p>
                <p>Now is the time for all good men to come to the aid of their country.</p>
-               <p>Here is the  view AFTER the text spacing has been overridden by the user with the
-                  text spacing in the success criteria. The text overlaps the paragraph below it.
+               <p>これは、達成基準が定めるテキストの間隔にて、利用者がテキストの間隔を上書した後のビューである。テキストはその下の段落と重なっている。
                </p>
                <p>
                   <div style="font-size:100%; width:130px; height:95px;  border: thin solid gray; line-height: 1.5; margin-bottom: 2em; letter-spacing: 0.12em; word-spacing: 0.16em;">
@@ -105,15 +93,13 @@
                <p>Now is the time for all good men to come to the aid of their country.</p>
             </section>
             <section class="example" id="example-2-text-inside-a-box-is-clipped-when-text-spacing-is-implemented.">
-               <h3>例 2: Text inside a box is clipped when text spacing is implemented.</h3>
-               <p>The code below is what is implemented in the DOM <em><strong>before</strong></em> the user implements any CSS test spacing overrides. The text renders correctly in
-                  the box and doesn't interfere with the next paragraph.
+               <h3>例 2: テキストの間隔が実装されている場合、ボックス内のテキストが切り取られる。</h3>
+               <p>以下のコードは、利用者が CSS でテキストの間隔を上書き実装する<em><strong>前に</strong></em> DOM に実装されているものである。テキストはボックス内に正しく表示され、次の段落に干渉しない。
                </p>
                <p><code>&lt;div style="font-size:100%; width:130px; height:95px; overflow: hidden; border: thin
                      solid gray;"&gt;  Now is the time for all good men to come to the aid of their country.
                      &lt;/div&gt; &lt;p&gt;Now is the time for all good men to come to the aid of their country.&lt;/p&gt;</code></p>
-               <p>Here is the default view before the text spacing has been overridden by the user,
-                  The text renders properly in the box
+               <p>これは、テキストの間隔が利用者によって上書きされる前のデフォルトのビューである。テキストはボックス内で適切に表示されている。
                </p>
                <p>
                   <div style="font-size:100%; width:130px; height:95px; overflow: hidden; border: thin solid gray;">
@@ -122,8 +108,7 @@
                   </div>
                </p>
                <p>Now is the time for all good men to come to the aid of their country.</p>
-               <p>Here is the  view AFTER the text spacing has been overridden by the user with the
-                  maximum text spacing in the success criteria,  the text is clipped.
+               <p>これは、達成基準が定める最大のテキストの間隔にて、利用者がテキストの間隔を上書きした後のビューであり、テキストは切り取られている。
                </p>
                <p>
                   <div style="font-size:100%; width:130px; height:95px; overflow: hidden; border: thin solid gray; line-height: 1.5; margin-bottom: 2em; letter-spacing: 0.12em; word-spacing: 0.16em;">
@@ -139,9 +124,9 @@
             <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                				
-               <li><a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en">Stylus Extension for Chrome</a></li>
+               <li><a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en">Stylus (Chrome 拡張機能)</a></li>
                				
-               <li><a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/">Stylus Extension for Firefox</a></li>
+               <li><a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/">Stylus (Firefox 拡張機能)</a></li>
                			
             </ul>
          </section>
@@ -149,8 +134,7 @@
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="F69">F69: Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200
-                     percent causes the text, image or controls to be clipped, truncated or obscured</a></li>
+               <li><a href="F69">F69: 達成基準 1.4.4 の失敗例 － 視覚的にレンダリングされたテキストを 200% まで拡大するときに、テキスト、画像又はコントロールが、切り取られたり、端が欠けたり、又は覆い隠されたりする</a></li>
                			
             </ul>
          </section>
@@ -160,31 +144,30 @@
                <h3>手順</h3>
                <ol>
                   					
-                  <li>Open the page and review the available content.</li>
+                  <li>ページを開き、利用可能なコンテンツを確認する。</li>
                   
-                  <li>Override the CSS on the page using a user stylesheet, bookmarklet, extension, or application
-                     with the values listed in the success criteria:
+                  <li>ユーザースタイルシート、ブックマークレット、拡張機能、又はアプリケーションを用いて、達成基準にリストされた値で、そのページの CSS を上書きする。
                      		  			
                      <ol type="a">
                         
-                        <li>Line height to at least 1.5 times the font size;</li>
+                        <li>行の間隔をフォントサイズの少なくとも 1.5 倍に設定する</li>
                         		  	  		
-                        <li>Spacing following paragraphs to at least 2 times the font size;</li>
+                        <li>段落に続く間隔をフォントサイズの少なくとも 2 倍に設定する</li>
                         		  		  	
-                        <li>Letter spacing (tracking) to at least 0.12 times the font size;</li>
+                        <li>文字の間隔 (字送り) をフォントサイズの少なくとも 0.12 倍に設定する</li>
                         		  			  
-                        <li>Word spacing to  0.16 times the font size.</li>
+                        <li>単語の間隔をフォントサイズの少なくとも 0.16 倍に設定する</li>
                         					  
                      </ol>
                      
                   </li>
                   					
-                  <li>Check if any content is clipped, obscured, or lost due to the new text spacing.</li>
+                  <li>テキストの間隔が新しく変更されたことにより、コンテンツが切り取られたり、隠されたり、又は失われたりしていないかどうかを確認する。</li>
                   				
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   			    
                   <li>手順 #3 が真である場合、この失敗条件が適用され、コンテンツは達成基準を満たさないことになる。
