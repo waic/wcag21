@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F96: 達成基準 2.5.3 の失敗例 - "アクセシブルな名前 (accessible name)" が可視ラベルのテキストを含んでいない。</title>
+      <title>F96: 達成基準 2.5.3 の失敗例 - アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいない。</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -27,7 +27,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>F96: 達成基準 2.5.3 の失敗例 - "アクセシブルな名前 (accessible name)" が可視ラベルのテキストを含んでいない。</h1>
+      <h1>F96: 達成基準 2.5.3 の失敗例 - アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいない。</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>
@@ -37,35 +37,35 @@
       <main>
          <section id="applicability">
             <h2>適用（対象）</h2>
-            <p>インタラクティブなコントロール (リンクやフォーム入力など) を含むすべてのテクノロジー。</p>
-            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/label-in-name">達成基準 2.5.3: 名前 (name) のラベル (不適合) </span>に関連する。</p>
+            <p>インタラクティブなコントロール (リンクやフォーム入力など) を含むすべての技術。</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/label-in-name">達成基準 2.5.3: 名前 (name) のラベル (失敗) </span>に関連する。</p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この失敗例の目的は、コントロールの名前と、目に見えるラベルが異なっているために、音声入力のユーザーがコントロールの名前を正しく話せないという状況を説明することである。</p>
-            <p>音声入力のユーザは、Webページを操作するとき、通常はコマンドの後に何らかの表示ラベル(ボタンやリンクの中のテキストや、入力欄にラベリングしてあるテキスト)への参照を続けて話す。（永野注: 日本語でも”コマンド→対象”の順で話すのかな？）表示されるラベルが、コントロールのアクセシブルな名前と一致しない場合、音声を使うユーザーは、そのコントロールを直接アクティブにできないことがある。</p>
-            <p>要素のラベルテキストを可視化するのではなく、それを超える方法がある。これは、視覚的な文脈を利用できない支援技術の利用者に、より多くの文脈を提供するためのアイデアである。たとえば、非表示でもアクセス可能なテキスト(例: 表示領域以外に配置したテキスト)の使用や、ラベルテキストを上書きするaria-label属性の使用、または、ページ上の1つ以上の文字列からラベルテキストを作成するaria-labeledby属性の使用があります。</p>
-            <p>これらの方法を使用した結果、表示されているラベルの正確な文字列が、アクセシブルな名前に含まれない場合、音声を使うユーザはそのコントロールをアクティブにできない可能性があります。コントロールのアクセシブルな名前を計算する際の優先順位を決定するには、 <a href="https://www.w3.org/TR/accname/">「アクセス可能な名前と説明の計算」</a>アルゴリズムを参照してください。</p>
+            <p>この失敗例の目的は、コントロールの名前と、目に見えるラベルが異なっているために、音声入力の利用者がコントロールの名前を正しく話せないという状況を説明することである。</p>
+            <p>音声入力の利用者は、Webページを操作するとき、通常はコマンドの後に何らかの表示ラベル(ボタンやリンクの中のテキストや、入力欄にラベリングしてあるテキスト)への参照を続けて話す。表示されるラベルが、コントロールのアクセシブルな名前 (accessible name) と一致しない場合、音声を使うユーザーは、そのコントロールを直接アクティブにできないことがある。</p>
+            <p>要素の可視ラベルテキストを超える達成方法がある。これは、視覚的なコンテキストを利用できない支援技術の利用者に、より多くのコンテキストを提供するためのアイデアである。例としては、非表示でもアクセス可能なテキスト(例: 表示領域以外に配置したテキスト)の使用、ラベルテキストを上書きするaria-label属性の使用、又はページ上の一つ以上の文字列からラベルテキストを作成するaria-labeledby属性の使用がある。</p>
+            <p>これらの達成方法を使用した結果、表示されているラベルの正確な文字列が、アクセシブルな名前 (accessible name) に含まれない場合、音声を使う利用者はそのコントロールをアクティブにできない可能性がある。コントロールのアクセシブルな名前 (accessible name) を計算する際の優先順位を決定するには、 <a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a> アルゴリズムを参照のこと。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-mismatch-of-visible-button-text-and-accessible-name-supplied-via-aria-label">
-               <h3>失敗例1: 表示されているボタンのテキストと、aria-labelで指定されたアクセシブルな名前が一致しない</h3>
-               <p>検索ボタンのテキストは「OK」ですが、aria-label属性で提供されるアクセシブルな名前は、「このサイトで検索」です。</p>
-               <pre><code>&lt;button id="sitesearch" aria-label="このサイトで検索"&gt;OK&lt;/button&gt;</code></pre>
+               <h3>失敗例1: 表示されているボタンのテキストと、aria-labelで指定されたアクセシブルな名前 (accessible name) が一致しない</h3>
+               <p>検索ボタンのテキストは「Go」であるが、aria-label属性で提供されるアクセシブルな名前 (accessible name) は、「find in this site」です。</p>
+               <pre><code>&lt;button id="sitesearch" aria-label="Find in this site"&gt;Go&lt;/button&gt;</code></pre>
             </section>
             <section class="example" id="example-2-invisible-link-text-disrupts-visible-label-text-string-in-accessible-name">
-               <h3>失敗例2: 目に見えないリンクテキストにより、目に見えるアクセシブルな名前のテキストラベルの文字列が分断される</h3>
-               <p>ダウンロードリンクは「ダウンロード設定」と表示されますが、非表示のリンクテキストがあるため、そのリンクのアクセシブルな名前 は「ダウンロード 機器 設定」になる。表示されているテキストラベルは、アクセシブルな名前に含まれていますが、文字列は一致しないため、音声入力ではリンクがアクティブにならない場合がある。</p>
+               <h3>失敗例2: 目に見えないリンクテキストにより、アクセシブルな名前 (accessible name) の可視ラベルテキストの文字列が分断される</h3>
+               <p>ダウンロードリンクは「Download specification」と表示されるが、非表示のリンクテキストがあるため、そのリンクのアクセシブルな名前 (accessible name) は「Download gizmo specification」になる。表示されているテキストラベルは、アクセシブルな名前 (accessible name) に含まれているが、文字列は一致しないため、音声入力ではリンクがアクティブにならない場合がある。</p>
                <pre><code>
-        &lt;a href="#"&gt;ダウンロード &lt;span class="accessibly-hidden"&gt;機器&lt;/span&gt; 設定&lt;/a&gt;
+        &lt;a href="#"&gt;Download &lt;span class="accessibly-hidden"&gt;gizmo&lt;/span&gt; specification&lt;/a&gt;
         </code></pre></section>
             <section class="example" id="example-3-input-with-a-hidden-label-carrying-text-that-differs-from-the-input's-value-attribute">
                <h3>失敗例3: value属性と異なるテキストを含む非表示のラベルを持つ入力コントロール</h3>
-               <p>type="submit"でvalue="検索"となっている入力コントロールが、ラベルが見える状態で公開されており、aria-labeledbyが参照する「このサイトで探す」というテキストを含むラベルが、プログラム的にリンクされ、アクセス可能な非表示になっている。aria-labeledbyは入力コントロールの値より優先されるため、ほとんどのブラウザーとスクリーン・リーダーの組み合わせでは、入力コントロールのアクセシブルな名前 (accessible name)は「このサイトで探す」になる。音声を使用するユーザーが「検索をクリック」というコマンドを話しても、この入力コントロールをアクティブにできない。（永野注: 日本語で「検索をクリック」で良いか？）</p>
+               <p>type="submit"でvalue="search"となっている入力コントロールが、ラベルが見える状態で公開されており、aria-labeledbyが参照する「Find in this site」というテキストを含むラベルが、プログラム的にリンクされ、アクセス可能な非表示になっている。aria-labeledbyは入力コントロールの値より優先されるため、ほとんどのブラウザーとスクリーン・リーダーの組み合わせでは、入力コントロールのアクセシブルな名前 (accessible name)は「Find in this site」になる。音声を使用する利用者が「Click search」というコマンドを話しても、この入力コントロールをアクティブにできない。</p>
                <pre><code>
-        &lt;div id="hidden-label"&gt;このサイトで探す&lt;/div&gt;
-        &lt;input type="submit" aria-labelledby="hidden-label" value="検索"&gt;
+        &lt;div id="hidden-label"&gt;Find in this site&lt;/div&gt;
+        &lt;input type="submit" aria-labelledby="hidden-label" value="search"&gt;
         </code></pre></section>
          </section>
          <section id="related">
@@ -92,12 +92,12 @@
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>ラベルが表示されているすべてのコントロール (例えば、リンク テキスト、ボタン テキスト、プログラムでリンクされたラベル、テキストとリンクされた画像) について、次のことを確認します。</p>
+               <p>ラベルが表示されているすべてのコントロール (例えば、リンク テキスト、ボタン テキスト、プログラムによりリンクされたラベル、テキストとをもつリンクされた画像) について、次のことを確認します。</p>
                <ol>
                   					
-                  <li>アクセシブルな名前が表示されているラベルと同じである。</li>
+                  <li>アクセシブルな名前 (accessible name) が表示されているラベルと同じである。</li>
                   
-                  <li>アクセシブルな名前に表示されているラベルと同じ文字列が含まれている。</li>
+                  <li>アクセシブルな名前 (accessible name) に表示されているラベルと同じ文字列が含まれている。</li>
                   				
                </ol>
             </section>
