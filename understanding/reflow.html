@@ -88,7 +88,7 @@
                
                <p>利用や意味の理解のために 2 次元レイアウトを必須とするコンテンツは、意味を失うことなくリフローすることはできない。したがって、この達成基準の範囲外となる。例えば、画像及び動画は性質上 2 次元である。画像を切り取って縦に並べるとコンテンツは使用できなくなるため、範囲外となる。ただし、ズームレベルを 400 ％にすると、これらの要素をビューポートの境界内に収めることができる。(Advisory Techniquesを参照)。</p>
                
-               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。This Success Criterion therefore does not apply to whole data tables. However, cells within data tables should fit within the size requirement unless the cell contains types of content that also requires two-dimensional layout for usage or meaning.</p>
+               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブル全体には適用されない。 ただし、セルが用法又は意味のために2次元レイアウトも必要とする種類のコンテンツを含まない限り、データテーブル内のセルはサイズ要件内に収まるべきである。</p>
                
                <p>コンテンツを編集するためのツールバーのあるインタフェースは、ビューポートにコンテンツとツールバーの両方を表示する必要がある。ツールバーのボタン数に応じて、ツールバーはテキストの方向にスクロールする必要があるかもしれない (例えば、縦スクロールするページで横方向に)。したがって、この達成基準はツールバーのあるインタフェースには適用されない。</p>
                	
@@ -113,18 +113,18 @@
                
                <h3>リフローと達成基準 1.4.4 テキストのサイズ変更の関係</h3>
                
-               <p>リフローの達成基準の焦点は、利用者が 2 方向にスクロールしなくてもズームインできるようにすることである。<a href="resize-text.html" class="sc">達成基準 1.4.4 テキストのサイズ変更</a>も適用することで、リフローの要件を同時に満たしながら、全てのテキストのサイズを少なくとも 200 ％に拡大することができる。For most implementations, the text is expected to continue to enlarge as the magnification increases, so that users can magnify text up to (and beyond) 400%. In an implementation where text does not consistently increase its size as people zoom in (such as when it is tranformed based on a media query to adapt to small-screen usage), it must still be possible to get to 200% enlargement in order to satisfy the Resize Text criterion.</p>
+               <p>リフローの達成基準の焦点は、利用者が 2 方向にスクロールしなくてもズームインできるようにすることである。<a href="resize-text.html" class="sc">達成基準 1.4.4 テキストのサイズ変更</a>も適用することで、リフローの要件を同時に満たしながら、全てのテキストのサイズを少なくとも 200 ％に拡大することができる。ほとんどの実装では、テキストは拡大率が上がるにつれて拡大し続けることが予想されるため、利用者はテキストを最大400 ％まで  (そしてそれ以上) に拡大することができる。人々がズームインするときにテキストのサイズが一貫して増加しない実装 (小さな画面の用途に適応するためにメディアクエリに基づいてテキストが変換される場合など) では、テキストのサイズ変更の基準を満たすために、依然として 200％ の拡大することが可能でなければならない。</p>
                
-               <p>For example, if at the default browser setting of 100% zoom, text is set at 20px when the window is 1280px wide, the same 20px at 200% zoom would mean a text size of 200%. At 400% zoom, the author may decide to set the text size to 10px: the text would now still be enlarged to 200% compared to the default browser setting of 100% zoom. It is not required to achieve 200% text enlargement at every breakpoint, but it should be possible to get 200% text enlargement in some way.</p>
+               <p>例えば、デフォルトのブラウザ設定である100 ％ズームで、ウィンドウの幅が 1280px のときにテキストが20pxに設定されている場合、200 ％ズームで同じ 20px は、200 ％のテキストサイズを意味する。400 ％ズームでは、コンテンツ制作者はテキストサイズを 10px に設定することを決定してもよい。テキストは、デフォルトのブラウザ設定である 100 ％ズームと比較して、200 ％に拡大される。全てのブレークポイントで200％のテキスト拡大を達成する必要はないが、何らかの方法で 200 ％のテキスト拡大を実現できるべきである。</p>
                
             </section>
             <section id="browsers-on-mobile-operating-systems">
                
                <h3>モバイルオペレーティングシステムのブラウザ</h3>
                
-               <p>Most browsers on mobile operating systems do not combine reflow and zoom in the same way as on desktop browsers. These mobile browsers normally support reflow when changing the orientation of the device -- content will be adjusted to the new viewport width. However, these mobile browsers can only magnify content to achieve 1.4.4. Resize Text in manners which do not constrain reflow to a single dimension, for example by using a pinch gesture to scale up content or a double tap on a particular column to make it fill the viewport width. This means that zoomed content in most mobile browsers involves two-dimensional scrolling regardless of what an author does.</p>
+               <p>モバイルオペレーティングシステムのほとんどのブラウザは、デスクトップブラウザと同じようにリフローとズームを組み合わせていない。これらのモバイルブラウザは通常、デバイスの向きを変更するときにリフローをサポートする。コンテンツは新しいビューポート幅に調整される。しかし、これらのモバイルブラウザは、1.4.4 を達成するためにコンテンツを拡大することしかできない。ピンチジェスチャを使用してコンテンツを拡大したり、特定の列をダブルタップしてビューポートの幅を埋めたりするなど、リフローを単一の次元に制限しない方法でテキストのサイズを変更する。つまり、ほとんどのモバイルブラウザでズームされたコンテンツには、コンテンツ制作者が何をするかにかかわらず、2 次元のスクロールを伴うことを意味する。</p>
                
-               <p>Mobile user agents <em>can</em> offer reflow when users zoom into content, as evidenced by the Dolphin browser for Android. The lack of magnified reflow support in browsers on mobile operating systems can therefore be regarded as a user agent support issue.</p>
+               <p>Android 用のドルフィンブラウザで証明されているように、モバイルユーザエージェントは、利用者がコンテンツをズームインしたときにリフローを提供することが<em>できる</em>。したがって、モバイルオペレーティングシステムのブラウザにおける拡大されたリフローサポートの不足は、ユーザエージェントサポートの問題と見なすことができる。</p>
                
             </section>
          </section>
@@ -193,7 +193,7 @@
             </section>
             <section id="advisory">
                <h3>参考達成方法</h3>
-               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、全ての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
+               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、全ての状況において、全ての達成方法が使用可能、又は効果的であるとは限らない。</p>
                <ul>
                   
                   <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C34">C34: 固定されていないスティッキーヘッダー/フッターに、メディアクエリーを利用する</a></li>
