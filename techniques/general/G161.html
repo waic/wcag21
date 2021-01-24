@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G161: Providing a search function to help users find content</title>
+      <title>G161: コンテンツを利用するために理解が不可欠な情報、アイデア及びプロセスの手話バージョンを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,97 +10,68 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G160">Previous Technique: G160</a></li>
-            <li><a href="G162">Next Technique: G162</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G160">前の達成方法: G160</a></li>
+            <li><a href="G162">次の達成方法: G162</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>Providing a search function to help users find content</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that include forms.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/multiple-ways">Success Criterion 2.4.5: Multiple Ways</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>フォームを含む全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/multiple-ways">達成基準 2.4.5: 複数の手段を理解する</a> (書かれていない達成方法を満たす慣習的な達成方法) </span>に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Providing a search function that searches your Web pages is a design strategy that
-               offers users a way to find content. Users can locate content by searching for specific
-               words or phrases, without needing to understand or navigate through the structure
-               of the Web site. This can be a quicker or easier way to find content, particularly
-               on large sites.
+            <h2>解説</h2>
+            <p>あなたのウェブページを探す検索機能を提供するのは、コンテンツを見つける方法を利用者に提供するデザインの戦略である。利用者は、ウェブサイトの構造を理解したり、サイト内を見て回ったりする必要なく、特定の単語又は句で検索することでコンテンツの場所を特定することができる。 これは、特に大きいサイトで、より迅速に又はより簡単にコンテンツを見つける方法である。
             </p>
-            <p>Some search companies offer sites free access to their search applications. Search
-               engines are available that can be installed on your own server. Some web hosting companies
-               offer search scripts that customers can include on their web pages. Most services
-               also offer paid versions of their tools with more advanced features.
+            <p>いくつかの検索企業は、彼らの検索アプリケーションの無償利用をサイトに提供している。検索エンジンはあなた自身のサーバーにインストールして利用できる。いくつかのウェブホスティング企業は、顧客がウェブページに含めることができる検索スクリプトを提供している。また、ほとんどのサービスが、より高度な特徴を持つそれらツールの有償バージョンを提供している。
             </p>
-            <p>Implementing a search function that will spell-check the terms, include different
-               endings for the terms (stemming), and allow for the use of different terminology (synonyms)
-               will further increase the accessibility of the search function.
+            <p>用語をスペルチェックし、用語の異なった語尾を含み (ステミング)、異なった用語の使用 (同義語) を考慮する検索機能を実装すると、検索機能のアクセシビリティはさらに増すだろう。
             </p>
-            <p>The search functionality is added by either including a simple form on the Web page,
-               usually a text field for the search term and a button to trigger the search or by
-               adding a link to a page that includes a search form. The search form itself must be
-               accessible, of course.
+            <p>検索の機能性は、普通は検索ワードのためのテキストフィールド及び検索を開始するためのボタンを含むウェブページの単純なフォーム、又は検索フォームを含むページへのリンクを追加することによって、高めることができる。もちろん、検索フォーム自体もアクセシブルでなければならない。
             </p>
-            <p>Techniques that are used to optimize search engine results for external searches also
-               support internal search engines and make them more effective: use keywords,
-               
-               META
-               
-               tags, and an accessible navigation structure. Search sites provide guidance on how
-               to create content that is optimized for search, for instance
+            <p>外部検索の検索エンジンの結果を最適化するのに使用され、また内部検索エンジンもサポートしており、それらをより効果的にする達成方法: キーワード、META タグ、およびアクセシブルなナビゲーション構造を使用する。検索サイトは、検索のために最適化されたコンテンツをどう作成するかのガイダンスを提供している。例えば、
                
                	<a href="https://support.google.com/webmasters/answer/35769">Google Webmaster Guidelines</a>, and
-               	<a href="https://help.yahoo.com/kb/search/SLN2245.html?impressions=true">Yahoo! Search Content Quality Guidelines</a>.
+               	<a href="https://help.yahoo.com/kb/search/SLN2245.html?impressions=true">Yahoo! Search Content Quality Guidelines</a> である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-shopping-site">
-               <h3>Example 1: A Shopping Site</h3>
-               <p>A shopping site organizes its products into different categories, such as women's
-                  clothes, men's clothes, and children's clothes. These have subcategories, such as
-                  tops, pants, shoes, and accessories. Each page also contains a search form. Users
-                  can type the product number or product description into the search field and go directly
-                  to that product, rather than needing to navigate the product categories to find it.
+               <h3>事例 1: ショッピングサイト</h3>
+               <p>あるショッピングサイトは、商品を、婦人服、紳士服、こども服といったいろいろなカテゴリーに分かれて構成されている。これらには、上着、ズボン、靴、アクセサリーといった小分類がある。また、各ページは検索フォームを含んでいて、利用者は、商品を見つけるために商品分類をたどって見ていくよりもむしろ、商品番号又は商品の特徴を検索フィールドに入力することにより、その商品に直接行くことができる。
                </p>
             </section>
             <section class="example" id="example-2-a-help-center">
-               <h3>Example 2: A Help Center</h3>
-               <p>A Help Center contains thousands of pages of Help information about a company's products.
-                  A search form allows users to search just the Help Center pages to find articles that
-                  contain the search terms.
+               <h3>事例 2: ヘルプセンター</h3>
+               <p>あるヘルプセンターは会社の商品に関する何千ページものヘルプ情報を含んでいる。検索フォームにより、利用者は検索ワードを含む記事を見つけるためにヘルプセンターのページを検索できる。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -127,47 +98,46 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G63">G63: Providing a site map</a></li>
+               <li><a href="G63">G63: サイトマップを提供する</a></li>
                
-               <li><a href="G64">G64: Providing a Table of Contents</a></li>
+               <li><a href="G64">G64: 目次を提供する</a></li>
                
-               <li><a href="G125">G125: Providing links to navigate to related Web pages</a></li>
+               <li><a href="G125">G125: 関連するウェブページへナビゲートするリンクを提供する</a></li>
                
-               <li><a href="G126">G126: Providing a list of links to all other Web pages</a></li>
+               <li><a href="G126">G126: 他の全てのウェブページへのリンク一覧を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the Web page contains a search form or a link to a search page</li>
+                  <li>ウェブページに検索フォーム又は検索ページへのリンクがあることを確認する。</li>
                   
-                  <li>Type text into the search form that occurs in the set of Web pages</li>
+                  <li>一連のウェブページにある検索フォームにテキストを入力する。</li>
                   
-                  <li>Activate the search</li>
+                  <li>検索を実行する。</li>
                   
-                  <li>Check that the user is taken to a page that contains the search term</li>
+                  <li>利用者が検索ワードを含むページに辿り着くことを確認する。</li>
                   
-                  <li>Check that the user is taken to a page that contains a list of links to pages containing
-                     the search term
+                  <li>利用者が検索ワードを含むページへのリンクのリストを含むページに辿り着くことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true, and either Check #4 or Check #5 is true.</li>
+                  <li>1.の結果が真であり、4.又は 5.のいずれかの結果が真である。</li>
                   
                </ul>
                
