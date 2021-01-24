@@ -150,12 +150,12 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 (書かれていない達成方法を満たす慣習的な達成方法)
 ```
 
-例 G127 G139 G141 G156 G162 G200 H2 等　対訳未定
+例 G127 G139 G141 G156 G162 G200 H2 等　
 ```
-(Advisory)
+(参考)
 ```
 
-例 G136 G190 SCR38 SVR3 G209 等　対訳未定
+例 G136 G190 SCR38 SVR3 G209 等
 ```
 This technique is not referenced from any Understanding document.
 (この達成方法は、解説書から参照されていない。)
