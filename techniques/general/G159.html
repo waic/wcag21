@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G159: Providing an alternative for time-based media for video-only content</title>
+      <title>G159: 映像のみの時間依存メディアに対する代替コンテンツを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,140 +10,114 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G158">Previous Technique: G158</a></li>
-            <li><a href="G160">Next Technique: G160</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="https://w3c.github.io/wcag/techniques/#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G158">前の達成方法: G158</a></li>
+            <li><a href="G160">次の達成方法: G160</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing an alternative for time-based media for video-only content</h1>
+      <h1>映像のみの時間依存メディアに対する代替コンテンツを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>General technique. Applies to all technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術。</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-only-and-video-only-prerecorded">Success Criterion 1.2.1: Audio-only and Video-only (Prerecorded)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-only-and-video-only-prerecorded">達成基準 1.2.1: 音声のみ及び映像のみ (収録済) を理解する</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">Success Criterion 1.2.8: Media Alternative (Prerecorded)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">達成基準 1.2.8: メディアに対する代替 (収録済) を理解する</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to provide an accessible alternative way of presenting
-               the information in a video-only presentation.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、映像しか含まない提示で提示する情報に対して、アクセシブルな代替コンテンツを提供することである。
             </p>
-            <p>In a video-only presentation, information is presented in a variety of ways including
-               animation, text or graphics, the setting and background, the actions and expressions
-               of people, animals, etc. In order to present the same information in accessible form,
-               this technique involves creating a document that tells the same story and presents
-               the same information as the prerecorded video-only content. In this technique, the
-               document serves as a long description for the content and includes all of the important
-               information as well as descriptions of scenery, actions, expressions, etc. that are
-               part of the presentation.
+            <p>映像しか含まない提示においては、アニメーション、テキスト又はグラフィック、また状況及び背景、人物や動物の動き及び表情などを含め、情報はさまざまな方法で提示される。同じ情報をアクセシブルな形式で提示するために、この達成方法では、収録済の映像しか含まないコンテンツと同じストーリーを伝えて同じ情報を提示するドキュメントを作成する。この達成方法において、そのドキュメントはコンテンツの長い説明としての役割を果たし、重要な情報のすべてと提示の一部である風景、動き、表情などの説明を含んでいる。
             </p>
-            <p>If a screenplay for the video-only content was used to create the content in the first
-               place, this can be a good place to start. In production and editing however, the final
-               version often varies somewhat from the screenplay. To use the screenplay, it would
-               need to be corrected to match the final edited form of the video-only presentation.
+            <p>映像しか含まないコンテンツを制作する初めの段階で台本を用いている場合には、それを手始めにすることができる。しかし、制作及び編集過程において、コンテンツの内容が台本からいくぶん変わってしまうことがよくある。この達成方法で台本を用いる際は、もともとの台本を映像しか含まないプレゼンテーションの最終版の内容に合わせて修正する必要がある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An animation shows how to assemble a woodworking project. There is no audio, but the
-                  animation includes a series of numbers to represent each step in the process as well
-                  as arrows and picture-in-picture highlights illustrating how the assembly is completed.
-                  It also includes short outtake animations illustrating what will happen if assembly
-                  is done incorrectly. A text alternative that identifies the video-only content reads,
-                  "Breadbox assembly video (text description follows)," and the text description of
-                  the video includes a full text description of each step in the video.
+               <li>木工品の組み立て方を紹介するアニメーションがある。音声はないが、アニメーションにはプロセス中の各ステップの順番を示す番号があり、矢印と該当箇所の拡大図によってどのように組み立てていくのかが示されている。あわせて、正しく組み立てなかった場合にはどうなるのかを示す短いアニメーションも提供されている。映像しか含まないコンテンツを特定するテキストによる代替には、「パン入れの組み立て方の映像 (テキストによる説明あり)」と書かれていて、映像のテキストによる説明では、その映像にある各ステップの完全なテキストによる説明が提供されている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G69">G69: Providing an alternative for time based media</a></li>
+               <li><a href="G69">G69: 時間依存メディアに対する代替コンテンツを提供する</a></li>
                
-               <li><a href="G158">G158: Providing an alternative for time-based media for audio-only content</a></li>
+               <li><a href="G158">G158:音声のみの時間依存メディアに対する代替コンテンツを提供する</a></li>
                
-               <li><a href="G78">G78: Providing a second, user-selectable, audio track that includes audio descriptions</a></li>
+               <li><a href="G78">G78:音声解説を含んだ、利用者が選択可能な副音声トラックを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>View the video-only content while referring to the alternative for time-based media.</li>
+                  <li>時間依存メディアに対する代替コンテンツを参照しながら、映像しか含まないコンテンツを閲覧する。</li>
                   
-                  <li>Check that the information in the transcript includes the same information that is
-                     in the video-only presentation.
+                  <li>トランスクリプト内の情報によって、映像しか含まない提示と同じ情報が含まれていることを確認する。
                   </li>
                   
-                  <li>If the video includes multiple people or characters, check that the transcript identifies
-                     which person or character is associated with each action described.
+                  <li>映像に複数の登場人物がいる場合、トランスクリプトで説明されているそれぞれの動きに関連付けられるものが、どの登場人物によるものかが特定されることを確認する。
                   </li>
                   
                   <li>
                      
-                     <p>Check that at least one of the following is true:</p>
+                     <p>次のうち少なくとも一つが真である:</p>
                      
                      <ol>
                         
-                        <li>The transcript itself can be programmatically determined from the text alternative
-                           for the video-only content
+                        <li>トランスクリプト自体が、映像しか含まないコンテンツに対するテキストによる代替からプログラムによる解釈が可能である。
                         </li>
                         
-                        <li>The transcript is referred to from the programmatically determined text alternative
-                           for the video-only content
+                        <li>トランスクリプトが、映像しか含まないコンテンツに対するプログラムによる解釈がされるテキストによる代替から参照されている。
                         </li>
                         
                      </ol>
                      
                   </li>
                   
-                  <li>If the alternate version(s) are on a separate page, check for the availability of
-                     link(s) to allow the user to get to the other versions.
+                  <li>代替版が別ページにある場合、利用者が他の版にアクセスできるリンクが利用可能できることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the above checks are true.</li>
+                  <li>上記の手順全ての結果が真である。</li>
                   
                </ul>
                
