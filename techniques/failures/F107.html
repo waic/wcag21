@@ -31,7 +31,7 @@
       <h1>達成基準 1.3.5 の失敗例 － 誤った autocomplete 属性値</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
@@ -43,14 +43,14 @@
             <h2>解説</h2>
             <p></p>
             <p>この達成方法の目的は、フォームの利用者に関する情報を要求する入力フィールドにおいて、入力フィールドが正しい autocomplete 属性値を持っていないという失敗条件を特定することにある。</p>
-            <p>達成基準 1.3.5 で <a href="https://www.w3.org/TR/WCAG21/#input-purposes">Input Purposes for User Interface Components</a> の（HTML 5.2 の <code>autocomplete</code> 属性のトークン値の固定リストに基づく）トークンの固定リストを用いるのは、トークン値（メタデータ）をプログラム的に関連づけることで、入力ラベルを異なるモダリティで表現する等の機械的な処理を可能にするためである。</p>
+            <p>達成基準 1.3.5 で (HTML 5.2 の <code>autocomplete</code> 属性のトークン値の固定リストに基づく) <a href="https://waic.jp/docs/WCAG21/#input-purposes">ユーザインタフェース コンポーネントの入力目的</a> のトークンの固定リストを使用する。これは、トークン値（メタデータ）をプログラム的に関連づけることで、入力ラベルを異なるモダリティで表現する等の機械的な処理を可能にするためである。</p>
             <p>この達成基準においてもう一つの重要なのが、トークン値が<strong>プライマリエンドユーザーに直接スコープされた</strong>入力フィールドに関連付けられる点である。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-incorrect-attribute">
                <h3>例 1: 誤った属性</h3>
-               <p>利用者の名前と誕生日を収集するためのオンラインフォームで、誤った autocomplete 属性が使用されている。この例では、一つ目のコントロールの正しい属性値は <code>name</code> であり、二つ目のコントロールでは <code>bday</code> の代わりに <code>birthday</code> が使用されています。</p>
+               <p>利用者の名前と誕生日を収集するためのオンラインフォームで、誤った autocomplete 属性が使用されている。この例では、一つ目のコントロールの正しい属性値は <code>name</code> であり、二つ目のコントロールでは <code>bday</code> の代わりに <code>birthday</code> が使用されている。</p>
                <pre>
 &lt;h2&gt;Your details:&lt;/h2&gt;
 &lt;label for="name1"&gt;Name:&lt;/label&gt;
@@ -62,8 +62,8 @@
             <h2>関連リソース</h2>
             <p>リソースは情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
-               <li>WCAG 2.1 - Input Purposes for User Interface Components:
-                  <a href="https://www.w3.org/TR/WCAG21/#input-purposes">https://www.w3.org/TR/WCAG21/#input-purposes</a>
+               <li>WCAG 2.1 - ユーザインタフェース コンポーネントの入力目的:
+                  <a href="https://waic.jp/docs/WCAG21/#input-purposes">https://waic.jp/docs/WCAG21/#input-purposes</a>
                </li>
                <li>HTML5 <code>autocomplete</code> 属性:
                   <a href="https://www.w3.org/TR/html52/sec-forms.html#sec-autofill">https://www.w3.org/TR/html52/sec-forms.html#sec-autofill</a>
@@ -80,7 +80,7 @@
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>フォーム利用者に関する情報を集める入力フィールドそれぞれに対して：</p>
+               <p>フォーム利用者に関する情報を集める入力フィールドそれぞれに対して:</p>
                <ol>
                   <li>フォームフィールドに入力の目的と一致しない autocomplete 属性と値の対があることを確認する。</li>
                   <li>入力の目的が他の手法でプログラム的に伝達されていないことを確認する。</li>
