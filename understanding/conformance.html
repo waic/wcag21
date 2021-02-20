@@ -4,6 +4,7 @@
       <meta charset="UTF-8" />
       <title>適合を理解する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="base.css" />
       <link rel="stylesheet" type="text/css" href="understanding.css" />
       <link rel="stylesheet" type="text/css" href="slicenav.css" />
    </head>
@@ -19,7 +20,16 @@
       <nav class="navtoc">
          <p>このページの内容:</p>
          <ul id="navbar">
-            <li><a href="#intent">意図</a></li>
+            <li><a href="#conformance-whatis">適合とは何を意味するのか？</a></li>
+            <li><a href="#conformance-requirements">適合要件を理解する</a></li>
+            <li><a href="#conformance-claims">適合宣言を理解する</a></li>
+            <li><a href="#levels">適合レベルを理解する</a></li>
+            <li><a href="#accessibility-support">アクセシビリティサポートを理解する</a></li>
+            <li><a href="#programmatically-determined">「プログラムによる解釈」を理解する</a></li>
+            <li><a href="#conforming-alt-versions">適合している代替版を理解する</a></li>
+            <li><a href="#web-page">「ウェブページ」を理解する</a></li>
+            <li><a href="#text-alternatives">「テキストによる代替」を理解する</a></li>
+            <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
       <h1>適合を理解する</h1>
@@ -72,10 +82,33 @@
                <h3>適合要件 1 を理解する</h3>
                
                
-               <p id="cc1"></p>
+               <blockquote class="scquote" id="cc1">
+                  	
+                  <p><strong>適合レベル</strong>: 以下に挙げる適合レベルの一つを完全に満たしていること。</p>
+                  	
+                  <ul>
+                     		
+                     <li>レベル A (適合の最低レベル) で適合するには、<a href="#dfn-web-page">ウェブページ</a>がレベル A 達成基準のすべてを<a href="#dfn-satisfies-a-success-criterion">満たす</a>か、又は<a href="#dfn-conforming-alternate-version">適合している代替版</a>を提供する。</li>
+                     		
+                     <li>レベル AA で適合するには、ウェブページはレベル A 及びレベル AA 達成基準のすべてを満たすか、又はレベル AA に適合している代替版を提供する。</li>
+                     		
+                     <li>レベル AAA で適合するには、ウェブページがレベル A、レベル AA、及びレベル AAA 達成基準のすべてを満たすか、又はレベル AAA に適合している代替版を提供する。</li>
+                     	
+                  </ul>
+                  	
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>ウェブページは、記載したレベルでのみ WCAG 2.1 に適合できるが、コンテンツ制作者は、その適合レベルよりも高いレベルの達成基準の達成状況を (表明の中で) 示すことを推奨される。</p>
+                  </div>
+                  	
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>コンテンツの中には、レベル AAA 達成基準のすべてを満たすことのできないものもあるため、サイト全体の一般的な方針としてレベル AAA での適合を要件とすることは推奨されない。</p>
+                  </div>
+                  	
+                  
+               </blockquote>
                
                
-               <p>最初の要件は、適合レベルに関するものである。基本的には、ページ上のすべての情報が適合している、もしくは、そのページから利用可能な<a href="https://www.w3.org/TR/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>があるということである。また、この要件は、少なくともレベル A の達成基準すべてを満たさなければどのレベルでも適合することはできないということも説明している。</p>
+               <p>最初の要件は、適合レベルに関するものである。基本的には、ページ上のすべての情報が適合している、もしくは、そのページから利用可能な<a href="#dfn-conforming-alternate-version">適合している代替版</a>があるということである。また、この要件は、少なくともレベル A の達成基準すべてを満たさなければどのレベルでも適合することはできないということも説明している。</p>
                
                
                <p>注記が指摘しているのは、特定のレベルでの適合に留まらずに、より高いレベルの適合に向けても取り組み、もし自分たちが望むのであればその進捗状況を報告することをコンテンツ制作者に推奨するということである。</p>
@@ -93,7 +126,23 @@
                <h3>適合要件 2 を理解する</h3>
                
                
-               <p id="cc2"></p>
+               <blockquote class="scquote" id="cc2">
+                  	
+                  <p><strong>ウェブページ全体</strong>: <a href="#dfn-conformance">適合</a> (及び適合レベル) は<a href="#dfn-web-page">ウェブページ</a>全体に対するもののみであり、ウェブページの一部が除外されている場合には適合にならない。</p>
+                  	
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>適合の判断をするときに、例えば、詳細な説明又は映像の代替の提示のように、代替となるものがそのページから直接得られる場合は、ページのコンテンツの一部に対する代替コンテンツはそのページの一部であるとみなされる。</p>
+                  </div>
+                  	
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>コンテンツ制作者が制御できないコンテンツがあるために適合できないウェブページについては、<a href="#conformance-partial">部分適合に関する記述</a>を行うことを検討するとよい。</p>
+                  </div>
+                  	
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>ウェブページ全体には、さまざまな画面サイズ向けに自動的に提示される個々のウェブページのバリエーションを含む (例: レスポンジブウェブページのバリエーション)。ウェブページ全体が適合するためには、個々のバリエーションが適合するか、適合する代替バージョンが必要である。</p>
+                  </div>
+                  
+               </blockquote>
                
                
                <p>この要件は、ページ全体が適合することを単に求めている。「ページの一部が適合している」という適合宣言をすることはできないのである。</p>
@@ -122,7 +171,13 @@
                <h3>適合要件 3 を理解する</h3>
                
                
-               <p id="cc3"></p>
+               <blockquote class="scquote" id="cc3">
+                  	
+                  <p><strong>プロセス全体</strong>: <a href="#dfn-web-page">ウェブページ</a>が<a href="https://waic.jp/docs/WCAG21/#dfn-processes">プロセス</a>を提示する一連の流れのウェブページ群 (つまり、ある目的を達成するために完了させる必要のある一連の手順) に含まれる場合、そのプロセス中のすべてのウェブページが指定したレベル又はそれ以上のレベルで適合している (もし、プロセス中のウェブページが一つでも特定のレベル又はそれ以上のレベルに適合していない場合、そのレベルに適合できない)。</p>
+                  	
+                  <p class="example">あるオンラインストアには、製品を選択して購入するための一連のウェブページがある。このプロセスに含まれるあるウェブページが適合するためには、最初から最後 (支払い) までのすべてのウェブページが適合していなければならない。</p>
+                  
+               </blockquote>
                
                
                <p>この要件では、プロセス全体が適合していない場合、そのプロセスの一部であるウェブページは適合しているとはみなされないことを述べている。例えば、ショッピングサイトでは、支払あるいはショッピング及び購入プロセスの一部であるその他のサイトの機能が適合していなかったとしたら、そのショッピングサイトは適合していることにならないということである。</p>
@@ -136,8 +191,11 @@
                
                <h3>適合要件 4 を理解する</h3>
                
-               
-               <p id="cc4"></p>
+               	
+               <blockquote class="scquote" id="cc4">
+                  		
+                  <p><strong>技術のアクセシビリティ サポーテッドな使用方法だけ</strong>: 達成基準を満たすために、用いる<a href="#dfn-technology">技術</a>の<a href="#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>な使用方法だけに<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon">依存している</a>。アクセシビリティ サポーテッドではない方法で提供されている情報又は機能は、アクセシビリティ サポーテッドな方法でも利用できる (<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#accessibility-support">Understanding accessibility support</a> を参照)。</p>
+               </blockquote>
                
                
                <p>この適合要件は、後述の<a href="#accessibility-support">アクセシビリティサポートを理解する</a>で説明されている。</p>
@@ -151,8 +209,40 @@
                
                <h3>適合要件 5 を理解する</h3>
                
-               
-               <p id="cc5"></p>
+               	
+               <blockquote class="scquote" id="cc5">
+                  		
+                  <p><strong>非干渉</strong>: <a href="#">技術</a>が<a href="#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>ではない方法で用いられている場合、又は適合しない方法で用いられている場合、利用者がウェブページの他の部分へアクセスすることを妨げていない。加えて、全体として<a href="#dfn-web-page">ウェブページ</a>は、以下のそれぞれの条件の下で適合要件を満たしていること:</p>
+                  		
+                  <ol>
+                     			
+                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon">依存</a>していない技術がユーザエージェントで有効になっているとき</li>
+                     			
+                     <li>依存していない技術がユーザエージェントで無効になっているとき、及び</li>
+                     			
+                     <li>依存していない技術がユーザエージェントでサポートされていないとき</li>
+                     		
+                  </ol>
+                  		
+                  <p>さらに、適合するために依存していないコンテンツも含めて、ページ上のすべてのコンテンツには以下の達成基準が適用される。なぜならば、これらを満たしていないことにより、ページの利用を妨げる可能性があるためである。</p>
+                  		
+                  <ul>
+                     			
+                     <li><strong>1.4.2 - 音声制御</strong>、</li>
+                     			
+                     <li><strong>2.1.2 - キーボードトラップなし</strong>、</li>
+                     			
+                     <li><strong>2.3.1 - 3回の閃光、又は閾値以下</strong>、及び</li>
+                     			
+                     <li><strong>2.2.2 - 一時停止、停止、非表示</strong></li>
+                     		
+                  </ul>
+                  		
+                  <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
+                     <p>もし、あるページが適合できないならば (例えば、適合のテストページや事例のページの場合)、そのページを適合の範囲、あるいは、適合表明の範囲に含めることはできない。</p>
+                  </div>
+                  	
+               </blockquote>
                
                
                <p>この要件は、基本的に、すべての情報が<strong>アクセシビリティ サポーテッドである</strong>ウェブコンテンツ技術を用いても利用可能である限り、なおかつ、<strong>アクセシビリティ サポーテッドではない</strong>コンテンツが妨げとなっていない限り、<strong>アクセシビリティ サポーテッドではない</strong>ウェブコンテンツ技術を用いることができるということを述べている。</p>
@@ -164,7 +254,7 @@
                <p>特にページ利用の妨げとなる問題に対処する四つの達成基準がある。これら四つの達成基準は、注記に示されている。各達成基準の注記では、アクセシビリティ サポーテッドではないウェブコンテンツ技術を用いて制作したコンテンツを含むすべてのコンテンツが、これらの達成基準を満たさなければならないことを示している。</p>
                
                
-               <div class="example"><p>あるウェブページが &quot;ZAP&quot; というインタラクティブなグラフィックの新技術を組み込んでいたとする。ZAP はアクセシビリティ サポーテッドではあるが、ZAP を用いて提示されている情報が、HTML のページでも提示されている。そのため、ZAP には依存していないことになる。その場合、このページは適合要件 1 を満たしている。しかし、もし利用者が ZAP のコンテンツを Tab キーで移動しようとして、フォーカスが ZAP のオブジェクトの中に入るとそこから抜け出せなくなる。一度中に入ると、利用者はフォーカスを外に出すことができなくなってしまう。そうすると、キーボード利用者は、ページの残り半分を利用することができない。また、ZAP のコンテンツは、様々な速度で明るく閃光を放ち続けていて、静止しない。それにより、注意力欠如 (発達障害) のある利用者は気が散ってしまい、光感受性発作疾患のある利用者は発作を起こしてしまう可能性がある。適合要件 5 は、適合しているページ上でこういった状況が起こらないようにするためのものである。</p>
+               <div class="example"><p>あるウェブページが "ZAP" というインタラクティブなグラフィックの新技術を組み込んでいたとする。ZAP はアクセシビリティ サポーテッドではないが、ZAP を用いて提示されている情報が、HTML のページでも提示されている。そのため、ZAP には依存していないことになる。その場合、このページは適合要件 1 を満たしている。しかし、もし利用者が ZAP のコンテンツを Tab キーで移動しようとして、フォーカスが ZAP のオブジェクトの中に入るとそこから抜け出せなくなる。一度中に入ると、利用者はフォーカスを外に出すことができなくなってしまう。そうすると、キーボード利用者は、ページの残り半分を利用することができない。また、ZAP のコンテンツは、様々な速度で明るく閃光を放ち続けていて、静止しない。それにより、注意力欠如 (発達障害) のある利用者は気が散ってしまい、光感受性発作疾患のある利用者は発作を起こしてしまう可能性がある。適合要件 5 は、適合しているページ上でこういった状況が起こらないようにするためのものである。</p>
                   
                   
                </div>
@@ -184,25 +274,25 @@
             
             <p>適合する上では、適合宣言をすることは必須ではない。しかし、宣言する場合は、適合宣言に必要なすべての情報を提供しなければならない。この情報を提供する方法はいくつか存在する。</p>
             
-            <p>Schema.org は、ウェブページ内に開示メタデータを含めるためのそのような選択肢の1つを提供する。記述的なアクセシビリティプロパティの集合は、CreativeWork タイプで利用できる。これは、とりわけ、ページの全体的なアクセシビリティの概要を含める機能 (WCAG 適合宣言など) を提供し、コンテンツのアクセシビリティ機能を説明する機能 (例えば、代替テキスト、拡張解説、キャプションの入手可能性） を説明し、潜在的な危険性 (閃光など) を利用者に警告する。この情報は、RDFa、JSON、及び microdata のいずれかを使用してページに埋め込むことができる。これらのプロパティ及びその期待される値に関する詳細情報は、Web Schemas wiki でも入手できる。</p>
+            <p>Schema.org は、ウェブページ内に開示メタデータを含めるためのそのような選択肢の一つを提供する。記述的なアクセシビリティプロパティの集合は、CreativeWork タイプで利用できる。これは、とりわけ、ページの全体的なアクセシビリティの概要を含める機能 (WCAG 適合宣言など) を提供し、コンテンツのアクセシビリティ機能を説明する機能 (例えば、代替テキスト、拡張解説、キャプションの入手可能性） を説明し、潜在的な危険性 (閃光など) を利用者に警告する。この情報は、RDFa、JSON、及び microdata のいずれかを使用してページに埋め込むことができる。これらのプロパティ及びその期待される値に関する詳細情報は、Web Schemas wiki でも入手できる。</p>
             
             
             <p>schema.org メタデータで強化された宣言は次のとおり:</p>
             
             <pre>
-&lt;div typeof=&quot;WebPage&quot; vocab=&quot;http://schema.org/&quot;>
-    &lt;p property=&quot;accessibilitySummary&quot;>On 23 March 2009, all content available on
+&lt;div typeof="WebPage" vocab="http://schema.org/">
+    &lt;p property="accessibilitySummary">On 23 March 2009, all content available on
        the server at &lt;a
-         href=&quot;http://www.wondercall.example.com&quot;>http://www.wondercall.example.com&lt;/a>
+         href="http://www.wondercall.example.com">http://www.wondercall.example.com&lt;/a>
        conforms to Web Content Accessibility Guidelines 2.0 at &lt;a
-         href=&quot;https://www.w3.org/TR/2008/REC-WCAG20-20081211/&quot;
+         href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/"
          >https://www.w3.org/TR/2008/REC-WCAG20-20081211/&lt;/a>.
        Single-A conformance.&lt;/p>
     &lt;ul>
-        &lt;li>The technology that this content &quot;&lt;a>relies upon&lt;/a>&quot; is:
+        &lt;li>The technology that this content "&lt;a>relies upon&lt;/a>" is:
             HTML 4.01.&lt;/li>
-        &lt;li>The technologies that this content &quot;&lt;strong>uses but does not rely
-            upon&lt;/strong>&quot; are: CSS2, and gif.&lt;/li>
+        &lt;li>The technologies that this content "&lt;strong>uses but does not rely
+            upon&lt;/strong>" are: CSS2, and gif.&lt;/li>
         &lt;li>This content was tested using the following user agents and assistive
             technologies: Firefox 1.5 on Windows Vista with Screenreader X 4.0,
             Firefox 1.5 on Windows XP SP 2 with Screenreader X 3.5, IE 6.0 on Windows
@@ -210,11 +300,11 @@
             Screenreader Z 2.0, and Firefox 1.5 on Windows XP SP2 with Screenreader
             X 4.0, Safari 2.0 with OS X 10.4.&lt;/li>
     &lt;/ul>
-    &lt;p>This page includes both &lt;span property=&quot;accessMode&quot; content=&quot;textual&quot;>text&lt;/span>
-       and &lt;span property=&quot;accessMode&quot; content=&quot;visual&quot;>images&lt;/span>.
-       &lt;span property=&quot;accessibilityFeature&quot; content=&quot;alternativeText&quot;>Alternative
+    &lt;p>This page includes both &lt;span property="accessMode" content="textual">text&lt;/span>
+       and &lt;span property="accessMode" content="visual">images&lt;/span>.
+       &lt;span property="accessibilityFeature" content="alternativeText">Alternative
        text&lt;/span> is included for all image content and &lt;span
-         property=&quot;accessibilityFeature&quot; content=&quot;longDescription&quot;>long
+         property="accessibilityFeature" content="longDescription">long
          descriptions&lt;/span> are also provided for images that require more
        than simple alternate text. All content is available in text, which
        can be accessed by assistive technology.&lt;/p>
@@ -283,127 +373,35 @@
             </section>
             
             
-            <section id="examples">
-               <h2>事例</h2>
-               <section id="examples-of-required-components-of-conformance-claims-">
-                  
-                  
-                  <h4>適合宣言の必須要素の例</h4>
-                  
-                  
-                  <div class="example"><p>2009 年 3 月 23 日時点で、http://www.wondercall.example.comにあるサーバー上で利用可能なすべてのコンテンツは、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル A で適合しています。Level A conformance.</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>この適合宣言において<strong>依存している</strong>、アクセシビリティ サポーテッドなコンテンツ技術の文書化された一式は、http://ISA.example.gov/AsCTsets/AS2-2008にある ISA- AsCTset#1-2008 の一部である。</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                     <p>(正規表現を用いて) 2009 年 8 月 12 日時点で、http://www.example.com/(marketing|sales|contact)/* は、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル AA で適合しています。</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>このコンテンツが「<strong>依存</strong>」している技術: XHTML 1.0 Transitional、CSS 2.0、及び JavaScript 1.2。</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                     <p>(ブール論理を用いて) 2009 年 1 月 6 日時点で、(http://example.com/archive/又は http://example.com/publications/archive/を除く) http://example.com/は、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル AA で適合しています。</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>この適合宣言において<strong>依存</strong>している、アクセシビリティ サポーテッドなコンテンツ技術の文書化された一式には、http://ISA.example.gov/AsCTsets/AS2-2008にある ISA- AsCTset#1-2008 の XHTML 1.0 及び SMIL があります。</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                  </div>
-                  
-                  
-               </section>
-               <section id="examples-of-conformance-claims-including-optional-components">
-                  
-                  
-                  <h4>任意要素を含めた適合宣言の例</h4>
-                  
-                  
-                  <div class="example"><p>2009 年 5 月 5 日時点で、「G7: イントロダクション」のページ (http://telcor.example.com/nav/G7/intro.html)は、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル AA で適合しています。</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>次の達成基準も追加で満たしています: 1.1.2、1.2.5、及び 1.4.3。</li>
-                        
-                        
-                        <li>この適合宣言において依存している、アクセシビリティ サポーテッドなコンテンツ技術の文書化された一式は、http://UDLabs.org/AsCTset#1-2006.htmlにある AsCTset#1-2006 です。</li>
-                        
-                        
-                        <li>このコンテンツが「<strong>依存</strong>」している技術: XHTML 1.0 (Strict) 及び Real Video。</li>
-                        
-                        
-                        <li>このコンテンツが「<strong>使用しているが依存はしていない</strong>」技術: JavaScript 1.2、CSS2。</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                     <p>2009 年 6 月 21 日時点で、http://example.com/nav及び http://example.com/docsという URI で始まるすべてのコンテンツは、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル AAA で適合しています。</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>この適合宣言において依存している、アクセシビリティ サポーテッドなコンテンツ技術の文書化された一式は、http://smithreports.example.com/AsCTsets/AS2-2008にある SMITH- AsCTset#2-2008 です。</li>
-                        
-                        
-                        <li>このコンテンツが「<strong>依存</strong>」している技術: XHTML 1.0 (Strict)、CSS2、JavaScript 1.2、JPEG、PNG。</li>
-                        
-                        
-                        <li>このコンテンツを検証したユーザエージェント (支援技術を含む) は、http://example.com/docs/WCAG20/test/technologies.htmlで確認することができます。</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                     <p>2009 年 3 月 23 日時点で、http://www.wondercall.example.comにあるサーバー上で利用可能なすべてのコンテンツは、http://www.w3.org/TR/2008/REC-WCAG20-20081211/にある WCAG 2.0 にレベル A で適合しています。</p>
-                     
-                     
-                     <ul>
-                        
-                        
-                        <li>このコンテンツが「<strong>依存</strong>」している技術: HTML 4.01。</li>
-                        
-                        
-                        <li>このコンテンツが「<strong>使用しているが依存はしていない</strong>」技術: CSS2 及び gif。</li>
-                        
-                        
-                        <li>このコンテンツは、次のユーザエージェント及び支援技術を用いて検証しました: Windows Vista 上の Firefox 1.5 及びスクリーンリーダー X 4.0、Windows XP SP2 上の Firefox 1.5 及びスクリーンリーダー X 3.5、Windows 2000 SP4 上の IE 6.0 及びスクリーンリーダー Y 5.0、Windows 2000 SP4 上の IE 6.0 及びスクリーンリーダー Z 2.0、Windows XP SP2 上の Firefox 1.5 及びスクリーンリーダー X 4.0、OS X 10.44 上の Safari 2.0</li>
-                        
-                        
-                     </ul>
-                     
-                     
-                  </div>
-                  
-                  
-               </section>
-            </section>
             
             
             <section id="conformance-claims-techniques">
                	
                <h3>適合宣言のための達成方法</h3>
+               
+               <section id="conformance-claims-sufficient">
+                  	
+                  <ul>
+                     
+                     <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR38">SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</a></li>         
+                     
+                     <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR2">SVR2: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、.htaccess を使用する</a></li>         
+                     
+                     <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR3">SVR3: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する</a></li>         
+                     
+                     <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR4">SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</a></li>         
+                     
+                     <li><a class="css" href="https://waic.jp/docs/WCAG21/Techniques/css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>         
+                     
+                     <li><a class="failure" href="https://waic.jp/docs/WCAG21/Techniques/failures/F19">F19: 適合要件 1 の失敗例 － 利用者に対して、不適合なウェブページの適合している代替版を見つける手段を提供していない</a></li>         
+                     
+                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>         
+                     
+                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G190">G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する</a></li>         
+                     
+                  </ul>
+                  
+               </section>
                
                
                <section id="conformance-claims-advisory">
@@ -604,10 +602,71 @@
                <h3>「アクセシビリティサポート」の技術的な定義</h3>
                
                
-               <p>基本的に、ウェブコンテンツ技術は、利用者の使用している支援技術が対応していて、<strong>かつ</strong>、主流なユーザエージェントのアクセシビリティ機能が対応していれば、&quot;アクセシビリティ サポーテッド&quot; である。具体的に言うと、アクセシビリティ サポーテッドな技術であるとみなすには、その技術において次のことが当てはまらなければならない:</p>
+               <p>基本的に、ウェブコンテンツ技術は、利用者の使用している支援技術が対応していて、<strong>かつ</strong>、主流なユーザエージェントのアクセシビリティ機能が対応していれば、"アクセシビリティ サポーテッド" である。具体的に言うと、アクセシビリティ サポーテッドな技術であるとみなすには、その技術において次のことが当てはまらなければならない:</p>
                
                	
-               <blockquote class="scquote" data-include="../../terms/20/accessibility-supported.html">アクセシビリティ サポーテッド (accessibility supported)</blockquote>
+               <blockquote class="scquote"><dt><dfn data-lt="accessibility-supported|accessibility support">アクセシビリティ サポーテッド (accessibility supported)</dfn></dt>
+<dd><p>利用者の<a>支援技術</a>と、ブラウザ及びその他の<a>ユーザエージェント</a>にあるアクセシビリティ機能でサポートされていること。</p>
+   
+   <p>あるウェブコンテンツ技術 (あるいは、ある技術の機能) の使用方法がアクセシビリティ サポーテッドであると認められるためには、そのウェブコンテンツ技術 (あるいは、機能) について、次の 1.と2.の両方が満たされていなければならない:</p>
+   
+   <ol>
+      
+      <li><p><strong>その<a>ウェブコンテンツ技術</a>の使用方法が、利用者の支援技術によりサポートされていなければならない。</strong>これは、その技術の使用方法が、そのコンテンツの<a>自然言語</a>における利用者の支援技術との相互運用性について検証されていることを意味する。</p>
+         
+         <p><strong>かつ</strong></p>
+         
+      </li>
+      
+      <li><p><strong>そのウェブコンテンツ技術には、アクセシビリティ サポーテッドで、利用者が利用できるユーザエージェントがなければならない。</strong>これは、少なくとも次の 4 つのうち一つを満たしていることを意味する:</p>
+         
+         <ol>
+            
+            <li><p>その技術が (HTML や CSS のように)、広く配布されているアクセシビリティ サポーテッドなユーザエージェントに標準でサポートされている。</p>
+               
+               <p><strong>又は、</strong></p>
+            </li>
+            
+            <li><p>その技術が、広く配布されているアクセシビリティ サポーテッドなプラグインでサポートされている。</p>
+               
+               <p><strong>又は、</strong></p>
+            </li>
+            
+            <li><p>そのコンテンツが、大学あるいは企業内ネットワークのような閉じた環境で利用できるものであり、その技術に必要とされていて、その組織で使用されているユーザエージェントがアクセシビリティ サポーテッドである。</p>
+               
+               <p><strong>又は、</strong></p>
+            </li>
+            
+            <li><p>その技術をサポートするユーザエージェントが、アクセシビリティ サポーテッドであって、次のようにダウンロードあるいは購入できる:</p>
+               
+               <ul>
+                  
+                  <li>障害のある人に障害のない人よりも時間や労力がかかるようなことはなく、<strong>かつ</strong>、</li>
+                  
+                  <li>障害のある人も障害のない人と同じくらい容易に探して入手することができる。</li>
+                  
+               </ul>
+               
+            </li>
+            
+         </ol>
+         
+      </li>
+      
+   </ol>
+   
+   <p class="note">Accessibility Guidelines Working Group ならびに W3C は、あるウェブ技術のある特定の使用方法がアクセシビリティ サポーテッドであると分類するために、そのウェブ技術の特定の使用方法に対して、どの支援技術によるどれだけのサポートが必要なのかを定めない(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level">Level of Assistive Technology Support Needed for "Accessibility Support"</a> を参照)。</p>
+   
+   <p class="note">そのウェブ技術に<a>依存して</a>おらず、<a href="#cc4">適合要件 4</a> 及び<a href="#cc5">適合要件 5</a> が満たしている場合は、そのウェブ技術をアクセシビリティ サポーテッドではない方法で用いることができる。</p>
+   
+   <p class="note"><a>ウェブ技術</a>がアクセシビリティ サポーテッドな方法で用いられている場合、その技術全体、又はその技術の使用方法すべてがアクセシビリティ サポーテッドであるということを暗に示すわけではない。ほとんどの技術は、HTML を含めてアクセシビリティ サポーテッドではない機能、又は使用方法が少なくとも一つある。ウェブページが WCAG に適合するのは、依存する技術のアクセシビリティ サポーテッドな使用方法を用いて WCAG の要件を満たしている場合だけである。</p>
+   
+   <p class="note">複数のバージョンを有するウェブコンテンツ技術を挙げる際は、アクセシビリティ サポーテッドなバージョンを特定すべきである。</p>
+   
+   <p class="note">コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#documented-lists">Understanding Accessibility-Supported Web Technology Uses</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしていなければならない。</p>
+   
+</dd>
+</blockquote>
                
                
             </section>
@@ -673,7 +732,7 @@
             <p>いくつかの達成基準で、コンテンツ (又は、コンテンツの特定の部分) が「プログラムによる解釈」が可能であることを要件としている。これは、コンテンツが、支援技術を含むユーザエージェントがその情報にアクセスできるような方法で制作されていることを意味する。</p>
             
             
-            <p>ウェブコンテンツ技術 (例えば、HTML、CSS、PDF、GIF、MPEG、Flash など) を用いて制作されたコンテンツが、様々なタイプの障害のある利用者にとってアクセシブルであるためには、用いられているウェブコンテンツ技術が、支援技術を含むユーザエージェント及びその他のユーザエージェントのアクセシビリティ機能と連携することが必要不可欠である。コンテンツを「プログラムによる解釈」であることを要件としている達成基準に適合するためには、支援技術をサポートしているウェブコンテンツ技術を用いてコンテンツを実装する必要がある。</p>
+            <p>ウェブコンテンツ技術 (例えば、HTML、CSS、PDF、GIF、MPEG など) を用いて制作されたコンテンツが、様々なタイプの障害のある利用者にとってアクセシブルであるためには、用いられているウェブコンテンツ技術が、支援技術を含むユーザエージェント及びその他のユーザエージェントのアクセシビリティ機能と連携することが必要不可欠である。コンテンツを「プログラムによる解釈」であることを要件としている達成基準に適合するためには、支援技術をサポートしているウェブコンテンツ技術を用いてコンテンツを実装する必要がある。</p>
             
             
             <p>「プログラムによる解釈」が可能であるコンテンツは、(支援技術を含むユーザエージェントによって、) 個々の利用者が必要とする様々な感覚 (例: 視覚、聴覚) のフォーマット又はプレゼンテーションのスタイルに変換することが可能である。既存の支援技術が変換できない場合には、その情報はプログラムによる解釈が可能であるとはいえない。</p>
@@ -712,7 +771,51 @@
             <p>適合要件 1 は、適合している代替版がある限り、適合していないページを適合の範囲内に含めることを許容している。適合している代替版は、次のように定義されている:</p>
             
             	
-            <blockquote class="scquote" data-include="../../terms/20/conforming-alternate-version.html">適合している代替版 (conforming alternate version)</blockquote>
+            <blockquote class="scquote"><dt><dfn data-lt="conforming alternate versions">適合している代替版 (conforming alternate version)</dfn></dt>
+<dd><p>以下の事項を満たす版のことを指す:</p>
+   
+   <ol>
+      
+      <li>指定されたレベルで適合しており、かつ</li>
+      
+      <li>同じ情報及び<a>機能</a>のすべてを同一の<a>自然言語</a>で提供しており、かつ</li>
+      
+      <li>不適合コンテンツと同時に更新されていて、かつ</li>
+      
+      <li><p>以下に挙げる事項のうち少なくとも一つを満たしていること:</p>
+         
+         <ol>
+            
+            <li><a>アクセシビリティ サポーテッドな</a> <a>メカニズム</a>を用いて、 不適合ページから適合版へ到達できる。もしくは、</li>
+            
+            <li>不適合版に到達できるのは、適合版からのみである。</li>
+            
+            <li>不適合版に到達できるのは、適合版に到達するメカニズムも提供している適合ページからのみである。</li>
+            
+         </ol>
+         
+      </li>
+      
+   </ol>
+   
+   <p class="note">この定義において、「到達できるのは……からのみ」とは、利用者が適合版から来ていない限り、不適合ページに「到達する」 (読み込む) のを防ぐ条件付きリダイレクトのような何らかのメカニズムがある、ということを意味する。</p>
+   
+   <p class="note">代替版は、元のページと一対一で対応している必要はない (例えば、適合している代替版は複数のページであってもよい)。</p>
+   
+   <p class="note">複数の言語版が利用できる場合、各言語版に対して、適合している代替版を提供する必要がある。</p>
+   
+   <p class="note">代替版は異なる技術環境やユーザー層に適応するよう提供される。この場合、各版は可能なかぎり適合したものでなければならず、<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。</p>
+   
+   <p class="note">不適合版と同じように自由に利用可能であるかぎり、適合している代替版は、適合宣言の範囲に含まれている必要はなく、同一のウェブサイト上で提供されている必要もない。</p>
+   
+   <p class="note">代替版は、元のページを補助して理解を高める<a>補足コンテンツ</a>と混同されないようにすべきである。</p>
+   
+   <p class="note">コンテンツ内で利用者が設定を行うことで適合版が作り出される仕組みは、その利用者の設定に用いられている手法がアクセシビリティ サポーテッドであるかぎり、代替版への到達メカニズムとして条件を満たしているといえる。</p>
+   
+   <p><a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a> を参照。</p>
+   
+</dd>
+</blockquote>
             
             
             <p>これにより、適合宣言の範囲内にあるページ上のすべての情報及びすべての機能は、適合しているウェブページ上で利用可能になる。</p>
@@ -795,31 +898,31 @@
                   <h4>ウェブページの適合している代替版を提供する適合要件を満たすことができる達成方法</h4>
                   
                   
-                  <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。他の達成方法の利用については、具体的には<a href="understanding-techniques.html#other-techniques">その他の達成方法</a>のセクションを参照のこと。</p>
+                  <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
                   
                   
                   <ol>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/general/G190">G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G190">G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/client-side-script/SCR38">SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR38">SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR2">SVR2: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、.htaccess を使用する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR2">SVR2: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、.htaccess を使用する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR3">SVR3: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR3">SVR3: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する</a></li>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/server-side-script/SVR4">SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/server-side-script/SVR4">SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</a></li>
                      
                      
                   </ol>
@@ -836,7 +939,7 @@
                   <ul>
                      
                      
-                     <li><a href="https://w3c.github.io/wcag/techniques/failures/F19">F19: 適合要件 1 の失敗例 － 利用者に対して、不適合なウェブページの適合している代替版を見つける手段を提供していない</a></li>
+                     <li><a href="https://waic.jp/docs/WCAG21/Techniques/failures/F19">F19: 適合要件 1 の失敗例 － 利用者に対して、不適合なウェブページの適合している代替版を見つける手段を提供していない</a></li>
                      
                      
                   </ul>
@@ -921,10 +1024,26 @@
             <p>ウェブページの定義は、次の通りである:</p>
             
             	
-            <blockquote class="scquote" data-include="../../terms/20/web-page.html">ウェブページ (Web page)</blockquote>
+            <blockquote class="scquote"><dt><dfn data-lt="web page(s)|web pages">ウェブページ (Web page)</dfn></dt>
+<dd><p>単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a>ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+   
+   <p class="note">どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+   
+   <p class="note">このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+   
+   <p class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+   
+   <p class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+   
+   <p class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+   
+   <p class="example">ブラウザで"http://shopping.example.com/"へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+   
+</dd>
+</blockquote>
             
             
-            <p>WCAG では、「ウェブページ」という言葉が、静的な HTML ページよりもずっと多くのものを含むものを指していることに注意することが重要である。このガイドラインで用いられている「ウェブページ」という用語によって、ガイドラインがより理解可能なものになる。しかし、この用語の意味は、ウェブコンテンツ技術の進化とともに拡大し、完全に &#39;ページのようなもの&#39; ではないものが多い、広範囲に及ぶウェブコンテンツ技術を包含するようになってきている。バーチャルでインタラクティブなコミュニティ全体を提示することのできる「ページ」を包含しながら、ウェブ上に登場してますます増えている動的なウェブページも含んでいる。例えば、「ウェブページ」という用語には、単一の URI で提供される、実体験のようにインタラクティブな映画のような体験も含まれている。</p>
+            <p>WCAG では、「ウェブページ」という言葉が、静的な HTML ページよりもずっと多くのものを含むものを指していることに注意することが重要である。このガイドラインで用いられている「ウェブページ」という用語によって、ガイドラインがより理解可能なものになる。しかし、この用語の意味は、ウェブコンテンツ技術の進化とともに拡大し、完全に 'ページのようなもの' ではないものが多い、広範囲に及ぶウェブコンテンツ技術を包含するようになってきている。バーチャルでインタラクティブなコミュニティ全体を提示することのできる「ページ」を包含しながら、ウェブ上に登場してますます増えている動的なウェブページも含んでいる。例えば、「ウェブページ」という用語には、単一の URI で提供される、実体験のようにインタラクティブな映画のような体験も含まれている。</p>
             
             
          </section>
@@ -949,6 +1068,295 @@
          
          
          
+         <section id="key-terms">
+            <h2>重要な用語</h2>
+            <dt id="dfn-accessibility-supported">アクセシビリティ サポーテッド (accessibility supported)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の<a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology">支援技術</a>と、ブラウザ及びその他の<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent">ユーザエージェント</a>にあるアクセシビリティ機能でサポートされていること。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">あるウェブコンテンツ技術 (あるいは、ある技術の機能) の使用方法がアクセシビリティ サポーテッドであると認められるためには、そのウェブコンテンツ技術 (あるいは、機能) について、次の 1.と2.の両方が満たされていなければならない:</p>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><p><strong>その<a href="#dfn-technology">ウェブコンテンツ技術</a>の使用方法が、利用者の支援技術によりサポートされていなければならない。</strong>これは、その技術の使用方法が、そのコンテンツの<a href="#dfn-human-language">自然言語</a>における利用者の支援技術との相互運用性について検証されていることを意味する。</p>
+                        
+                        
+                        <p><strong>かつ</strong></p>
+                        
+                        
+                     </li>
+                     
+                     
+                     <li><p><strong>そのウェブコンテンツ技術には、アクセシビリティ サポーテッドで、利用者が利用できるユーザエージェントがなければならない。</strong>これは、少なくとも次の 4 つのうち一つを満たしていることを意味する:</p>
+                        
+                        
+                        <ol>
+                           
+                           
+                           <li><p>その技術が (HTML や CSS のように)、広く配布されているアクセシビリティ サポーテッドなユーザエージェントに標準でサポートされている。</p>
+                              
+                              
+                              <p><strong>又は、</strong></p>
+                              
+                           </li>
+                           
+                           
+                           <li><p>その技術が、広く配布されているアクセシビリティ サポーテッドなプラグインでサポートされている。</p>
+                              
+                              
+                              <p><strong>又は、</strong></p>
+                              
+                           </li>
+                           
+                           
+                           <li><p>そのコンテンツが、大学あるいは企業内ネットワークのような閉じた環境で利用できるものであり、その技術に必要とされていて、その組織で使用されているユーザエージェントがアクセシビリティ サポーテッドである。</p>
+                              
+                              
+                              <p><strong>又は、</strong></p>
+                              
+                           </li>
+                           
+                           
+                           <li><p>その技術をサポートするユーザエージェントが、アクセシビリティ サポーテッドであって、次のようにダウンロードあるいは購入できる:</p>
+                              
+                              
+                              <ul>
+                                 
+                                 
+                                 <li>障害のある人に障害のない人よりも時間や労力がかかるようなことはなく、<strong>かつ</strong>、</li>
+                                 
+                                 
+                                 <li>障害のある人も障害のない人と同じくらい容易に探して入手することができる。</li>
+                                 
+                                 
+                              </ul>
+                              
+                              
+                           </li>
+                           
+                           
+                        </ol>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>Accessibility Guidelines Working Group ならびに W3C は、あるウェブ技術のある特定の使用方法がアクセシビリティ サポーテッドであると分類するために、そのウェブ技術の特定の使用方法に対して、どの支援技術によるどれだけのサポートが必要なのかを定めない(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level">Level of Assistive Technology Support Needed for "Accessibility Support"</a> を参照)。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>そのウェブ技術に<a href="https://waic.jp/docs/WCAG21/#dfn-relied-upon">依存して</a>おらず、<a href="#cc4">適合要件 4</a> 及び<a href="#cc5">適合要件 5</a> が満たしている場合は、そのウェブ技術をアクセシビリティ サポーテッドではない方法で用いることができる。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-technology">ウェブ技術</a>がアクセシビリティ サポーテッドな方法で用いられている場合、その技術全体、又はその技術の使用方法すべてがアクセシビリティ サポーテッドであるということを暗に示すわけではない。ほとんどの技術は、HTML を含めてアクセシビリティ サポーテッドではない機能、又は使用方法が少なくとも一つある。ウェブページが WCAG に適合するのは、依存する技術のアクセシビリティ サポーテッドな使用方法を用いて WCAG の要件を満たしている場合だけである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のバージョンを有するウェブコンテンツ技術を挙げる際は、アクセシビリティ サポーテッドなバージョンを特定すべきである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#documented-lists">Understanding Accessibility-Supported Web Technology Uses</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしていなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-conformance">適合 (conformance)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">与えられた規格、ガイドライン、あるいは仕様のすべての要件を満たすこと。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-conforming-alternate-version">適合している代替版 (conforming alternate version)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">以下の事項を満たす版のことを指す:</p>
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li>指定されたレベルで適合しており、かつ</li>
+                     
+                     
+                     <li>同じ情報及び<a href="#dfn-functionality">機能</a>のすべてを同一の<a href="#dfn-human-language">自然言語</a>で提供しており、かつ</li>
+                     
+                     
+                     <li>不適合コンテンツと同時に更新されていて、かつ</li>
+                     
+                     
+                     <li><p>以下に挙げる事項のうち少なくとも一つを満たしていること:</p>
+                        
+                        
+                        <ol>
+                           
+                           
+                           <li><a href="#dfn-accessibility-supported">アクセシビリティ サポーテッドな</a> <a href="#dfn-mechanism">メカニズム</a>を用いて、 不適合ページから適合版へ到達できる。もしくは、</li>
+                           
+                           
+                           <li>不適合版に到達できるのは、適合版からのみである。</li>
+                           
+                           
+                           <li>不適合版に到達できるのは、適合版に到達するメカニズムも提供している適合ページからのみである。</li>
+                           
+                           
+                        </ol>
+                        
+                        
+                     </li>
+                     
+                     
+                  </ol>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この定義において、「到達できるのは……からのみ」とは、利用者が適合版から来ていない限り、不適合ページに「到達する」 (読み込む) のを防ぐ条件付きリダイレクトのような何らかのメカニズムがある、ということを意味する。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページと一対一で対応している必要はない (例えば、適合している代替版は複数のページであってもよい)。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数の言語版が利用できる場合、各言語版に対して、適合している代替版を提供する必要がある。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は異なる技術環境やユーザー層に適応するよう提供される。この場合、各版は可能なかぎり適合したものでなければならず、<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>不適合版と同じように自由に利用可能であるかぎり、適合している代替版は、適合宣言の範囲に含まれている必要はなく、同一のウェブサイト上で提供されている必要もない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページを補助して理解を高める<a href="#dfn-supplemental-content">補足コンテンツ</a>と混同されないようにすべきである。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ内で利用者が設定を行うことで適合版が作り出される仕組みは、その利用者の設定に用いられている手法がアクセシビリティ サポーテッドであるかぎり、代替版への到達メカニズムとして条件を満たしているといえる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a> を参照。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-process">プロセス (process)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ある活動を完了させるために必要な利用者の一連の動作。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ショッピングサイト上の一連のウェブページで目的を果たすためには、利用者が選択肢となりうる製品、価格及び内容を閲覧した後、製品を選択して注文し、配送先情報及び支払情報を入力する必要がある。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アカウント登録ページでは、登録フォームにアクセスする前にチューリングテストに成功する必要がある。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-relied-upon">依存されている (技術) (relied upon (technologies that are))</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">その<a href="#dfn-technology">技術</a>が無効になっている場合、又はサポートされていない場合に、コンテンツが<a href="#dfn-conformance">適合</a>できないこと。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-satisfies-a-success-criterion">達成基準を満たす (satisfies a success criterion)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">ページに適用した際、その達成基準が 'false' と判定されないこと。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-technology">(ウェブコンテンツ) 技術 (technology (Web content)) </dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-user-agent">ユーザエージェント</a>がどのようにレンダリング、再生、又は実行するかを符号化する<a href="#dfn-mechanism">メカニズム</a>。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインで用いられている「ウェブ技術」及び (単独で用いられている) 「技術」という用語は、どちらもウェブコンテンツ技術を指す。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ウェブコンテンツ技術には、マークアップ言語、データ形式、及びプログラム言語などがあり、これらをコンテンツ制作者が単独で、又は組み合わせて用いることによって、静的なウェブページや同期したメディアによる提示、さらには動的なウェブアプリケーションに至るまでの様々なエンドユーザ体験を作ることができる。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブコンテンツ技術のよくある事例としては、HTML、CSS、SVG、PNG、PDF、Flash、 JavaScript などがある。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://waic.jp/docs/WCAG21/#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで"http://shopping.example.com/"へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
+         </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</div>
    </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA24: Semantically identifying a font icon with role="img"</title>
+      <title>ARIA24: アイコンフォントを意味的に識別するために role="img" を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,56 +10,47 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA23">Previous Technique: ARIA23</a></li>
-            <li><a href="../client-side-script/SCR1">Next Technique: SCR1</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA23">前の達成方法: ARIA23</a></li>
+            <li><a href="../client-side-script/SCR1">次の達成方法: SCR1</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Semantically identifying a font icon with <code>role="img"</code></h1>
+      <h1>アイコンフォントを意味的に識別するために <code>role="img"</code> を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content using <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>.
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>を用いたコンテンツ。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準  1.3.1: 情報及び関係性を理解する</a></span> (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to show how to semantically identify an element
-               that uses a font file for icons. When a user  overrides font-family these icons typically
-               disappear unless there is a means to identify them. The point is to provide a technique
-               to differentiate icon fonts from general font (text) usage.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、アイコンにフォントファイルが使用されている要素を、意味的に識別する方法を示すことである。利用者がフォントファミリーを上書きすると、識別する手段がない限りそのアイコンは消える。つまり、アイコンフォントを一般的なフォント（テキスト）の使用法と区別する手段を提供する。
             </p>
-            <p>Some low vision users need user stylesheets, scripts, or extensions to override the
-               fonts on a page to perceive text content. However, they need to be able to perceive
-               icon fonts that are meaningful, such as a star signifying a favorite, or an email
-               icon in a link.
+            <p>一部のロービジョンの利用者は、テキストコンテンツを認識するためにユーザスタイルシート、スクリプト、又は拡張機能を使いページ上のフォントを上書きする必要がある。しかし、お気に入りを示す星やリンク内のメールアイコンなど、意味のあるアイコンフォントは認識できる必要がある。
             </p>
-            <p>The key is for the author to semantically markup icon fonts with <code>role="img"</code>. Then the user's font replacement selector can hook into that semantic and exclude
-               <code>role="img"</code>. This results in those icon fonts being shown.
+            <p>重要なのは、コンテンツ製作者が <code>role="img"</code> を使用してアイコンフォントを意味的にマークアップすることである。これにより利用者のフォント置換セレクターはそのセマンティックにフックして <code>role="img"</code> を除外できる。この結果、アイコンフォントは表示されたままとなる。
             </p>
-            <p>The first step is used for adding a font face with icons via the CSS file.</p><pre>
+            <p>まず最初に、 CSS ファイルでアイコンのフォントを追加する。
+            </p><pre>
             <code>
 /* specify font-family name for icons */
 @font-face { font-family: 'IconFontRoleImg';/ }
@@ -72,8 +63,7 @@
 /* specific class for icon */
 .icon-star-bg:before { content: "\e982"; }
             </code>
-         </pre><p>The second step adds classes, the role="img" attribute for semantics and an accessible
-               name.
+         </pre><p>次に、クラス、意味的な属性である role="img"、そしてアクセシブルな名前 (accessible name) を追加する。
             </p><pre>
             <code>            
 &lt;!-- Icon via class names, role="img" and a text alternative --&gt;
@@ -81,8 +71,7 @@
    &lt;span class="icon icon-star-bg" role="img" aria-label="Favorite"&gt;&lt;/span&gt;
 &lt;/p&gt;
             </code>
-         </pre><p>The third step uses the ":not selector" in combination with the "[attribute] selector"
-               to only replace font faces for regular text.
+         </pre><p>最後に、 ":not セレクター" と "[属性] セレクター" を組み合わせて使用​​し、通常のテキストのフォントを置き換える。
             </p><pre>
             <code>
 /* Replaces font faces but excludes all elements with attribute role=""img" */
@@ -90,15 +79,14 @@
          </code>
       </pre></section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-star-icon-font-used-as-an-indicator-not-interactive">
-               <h3>Example 1: Star Icon Font used as an indicator (not interactive)</h3>
-               <p>In this example a star icon is used to indicate a favorite. It is not interactive
-                  and does not disappear if the user overrides the font family via CSS.
+               <h3>事例 1: 指標として使われる星のアイコン (インタラクティブではない)</h3>
+               <p>この例では星のアイコンがお気に入りを示すものとして使われる。インタラクティブではなく、かつ、利用者がCSSでフォントファミリーを上書きしても消えることはない。
                </p>
                <section id="author-css">
                   
-                  <h4>Author CSS</h4>
+                  <h4>コンテンツ製作者の CSS</h4>
                   <pre>
                <code>
 /* default class for fonts-face with icons */
@@ -115,7 +103,7 @@
                   			
                   <section id="--instead-of...--">
                      
-                     <h5><strong>- Instead of... -</strong></h5>
+                     <h5><strong>- 以下ではなく... -</strong></h5>
                      <pre>
                <code>
 &lt;p&gt;
@@ -127,7 +115,7 @@
                   	
                   <section id="--do...--">
                      
-                     <h5><strong>- Do... -</strong></h5>
+                     <h5><strong>- 以下とする... -</strong></h5>
                      <pre>
                <code>
 &lt;p&gt;
@@ -140,7 +128,7 @@
                </section>
                <section id="user-css">
                   
-                  <h4>User CSS</h4>
+                  <h4>利用者の CSS</h4>
                   <pre>
                <code>
 *:not([role="img"]) { font-family: Verdana, sans-serif !important; }
@@ -149,25 +137,22 @@
                   	</section>
                <section id="working-example">
                   
-                  <h4>Working example:</h4>
+                  <h4>実例:</h4>
                   
                   <p>
-                     <a href="../../working-examples/aria-icon-font-img-role/#example1">Star Icon Font used as an indicator (not interactive)</a>
+                     <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-icon-font-img-role/#example1">指標として使われる星のアイコン (インタラクティブではない)</a>
                      
                   </p>
                   	
                </section>
             </section>
             <section class="example" id="example-2-two-colored-/-stacked-star-icon-font-used-as-an-indicator">
-               <h3>Example 2: Two colored / stacked star Icon Font used as an indicator</h3>
-               <p>In this example a two colored star icon is created by stacking two fonts with different
-                  colors on top of each other. This way it's possible to mimic only half the star is
-                  filled. It is not interactive and does not disappear if the user overrides the font
-                  family via CSS.
+               <h3>事例 2: 2 色を重ねた星のアイコンフォント</h3>
+               <p>この例では、異なる色のフォントを重ね合わせて 2 色の星のアイコンを作成する。このようにすると、星の半分までを示しているように見せることができる。これはインタラクティブではなく、利用者が CSS を介してフォントファミリーを上書きしても消えない。
                </p>
                <section id="author-css">
                   
-                  <h4>Author CSS</h4>
+                  <h4>コンテンツ製作者の CSS</h4>
                   <pre>
                <code>
 /* default class for fonts-face with icons */
@@ -185,7 +170,7 @@
                   			
                   <section id="--instead-of...--">
                      
-                     <h5><strong>- Instead of... -</strong></h5>
+                     <h5><strong>- 以下ではなく... -</strong></h5>
                      <pre>
                <code>
 &lt;span class="icon-stacked"&gt;
@@ -198,7 +183,7 @@
                   	
                   <section id="--do...--">
                      
-                     <h5><strong>- Do... -</strong></h5>
+                     <h5><strong>- 以下とする... -</strong></h5>
                      <pre>
                <code>
 &lt;span class="icon-stacked" role="img" aria-label="Favorite star half filled"&gt;
@@ -212,7 +197,7 @@
                </section>
                <section id="user-css">
                   
-                  <h4>User CSS</h4>
+                  <h4>利用者の CSS</h4>
                   <pre>
                <code>
 *:not([role="img"]) { font-family: Verdana, sans-serif !important; }
@@ -221,24 +206,22 @@
                   	</section>
                <section id="working-example">
                   
-                  <h4>Working example:</h4>
+                  <h4>実例:</h4>
                   
                   <p>
-                     <a href="../../working-examples/aria-icon-font-img-role/#example2">Two colored / stacked star Icon Font used as an indicator</a>
+                     <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-icon-font-img-role/#example2">2色を重ねた星のアイコンフォント</a>
                      
                   </p>
                   	
                </section>
             </section>
             <section class="example" id="example-3-email-icon-font-in-a-link-without-visible-text">
-               <h3>Example 3: Email Icon Font in a link WITHOUT visible text</h3>
-               <p>In this example an email icon is in a link with no visible text. It does not disappear
-                  if a user overrides font family. The icon font is identified by assistive technology
-                  as a "link image" and the name "Email" (keyboard or mouse).
+               <h3>事例 3: 表示テキストのない、リンク付きメールのアイコンフォント</h3>
+               <p>この例では、メールのアイコンがリンク内にあり、テキストは表示されていない。利用者がフォントファミリーを上書きしても消えない。アイコンフォントは、支援技術（キーボード又はマウス）によって "リンク付き画像" および "電子メール" として識別される。
                </p>
                <section id="author-css">
                   
-                  <h4>Author CSS</h4>
+                  <h4>コンテンツ製作者の CSS</h4>
                   <pre>
                <code>
 /* default class for fonts-face with icons */
@@ -255,7 +238,7 @@
                   			
                   <section id="--instead-of...--">
                      
-                     <h5><strong>- Instead of... -</strong></h5>
+                     <h5><strong>- 以下ではなく... -</strong></h5>
                      <pre>
                <code>
 &lt;a href="email.html"&gt;
@@ -267,7 +250,7 @@
                   	
                   <section id="--do...--">
                      
-                     <h5><strong>- Do... -</strong></h5>
+                     <h5><strong>- 以下とする... -</strong></h5>
                      <pre>
                <code>
 &lt;a href="email.html"&gt;
@@ -280,7 +263,7 @@
                </section>
                <section id="user-css">
                   
-                  <h4>User CSS</h4>
+                  <h4>利用者の CSS</h4>
                   <pre>
                <code>
 *:not([role="img"]) { font-family: Verdana, sans-serif !important; }
@@ -289,25 +272,22 @@
                   	</section>
                <section id="working-example">
                   
-                  <h4>Working example:</h4>
+                  <h4>実例:</h4>
                   
                   <p>
-                     <a href="../../working-examples/aria-icon-font-img-role/#example3">Email Icon Font in a link WITHOUT visible text</a>
+                     <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-icon-font-img-role/#example3">表示テキストのない、リンク付きメールのアイコンフォント</a>
                      
                   </p>
                   	
                </section>
             </section>
             <section class="example" id="example-4-multiple-icon-fonts-as-part-of-another-sematic-element-with-visible-text">
-               <h3>Example 4: Multiple Icon Fonts as part of another sematic element WITH visible text</h3>
-               <p>This example already has a visible text label in the link to be used as an accessible
-                  name, the mail and chevron font icons must stay visible when the font family is changed.
-                  This can be done by ensuring the icons are contained in their own element and the
-                  attribute <code>aria-hidden="true"</code> is used so the font icons will be ignored by assistive technologies.
+               <h3>実例 4: 表示テキストのあるセマンティック要素の一部としての複数のアイコンフォント</h3>
+               <p>この例では、アクセシブルな名前 (accessible name)として使用するために、リンクにテキストラベルが既に表示されている。フォントファミリーが変更されても、メールとシェブロンのフォントアイコンは表示されていなければならない。これは、アイコンがそれぞれの要素に含まれ、かつ、支援技術によってフォントアイコンが無視されるように属性 <code>aria-hidden="true"</code>  が使用されることで実現できる。
                </p>
                <section id="author-css">
                   
-                  <h4>Author CSS</h4>
+                  <h4>コンテンツ製作者の CSS</h4>
                   <pre>
                <code>
 /* default class for fonts-face with icons */
@@ -325,7 +305,7 @@
                   			
                   <section id="--instead-of...--">
                      
-                     <h5><strong>- Instead of... -</strong></h5>
+                     <h5><strong>- 以下ではなく... -</strong></h5>
                      <pre>
                <code>
 &lt;style&gt;
@@ -342,7 +322,7 @@
                   	
                   <section id="--do...--">
                      
-                     <h5><strong>- Do... -</strong></h5>
+                     <h5><strong>- 以下とする... -</strong></h5>
                      <pre>
                <code>
 &lt;style&gt;
@@ -364,7 +344,7 @@
                </section>
                <section id="user-css">
                   
-                  <h4>User CSS</h4>
+                  <h4>利用者の CSS</h4>
                   <pre>
                <code>
 *:not([role="img"]) { font-family: Verdana, sans-serif !important; }
@@ -373,10 +353,10 @@
                   	</section>
                <section id="working-example">
                   
-                  <h4>Working example:</h4>
+                  <h4>実例:</h4>
                   
                   <p>
-                     <a href="../../working-examples/aria-icon-font-img-role/#example4">Multiple Icon Fonts as part of another sematic element WITH visible text</a>
+                     <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-icon-font-img-role/#example4">表示テキストのあるセマンティック要素の一部としての複数のアイコンフォント</a>
                      
                   </p>
                   	
@@ -384,22 +364,20 @@
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each font icon check that:</p>
+               <h3>手順</h3>
+               <p>それぞれのフォントアイコンに対して以下を確認する:</p>
                <ol>
-                  
-                  <li>The element providing the font icon has <code>role="img"</code>.
-                  </li>
+                  <li>フォントアイコンのある要素に <code>role="img"</code> が使われている。</li>
                   
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   
-                  <li>#1 is true.</li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
             </section>

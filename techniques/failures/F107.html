@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F107: Failure of Success Criterion 1.3.5 due to incorrect autocomplete attribute values</title>
+      <title>F107: 達成基準 1.3.5 の失敗例 － 誤った autocomplete 属性値</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,117 +10,86 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F106">Previous Technique: F106</a></li>
-            <li><a href="../flash/FLASH1">Next Technique: FLASH1</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F106">前の達成方法: F106</a></li>
+            <li><a href="../flash/FLASH1">次の達成方法: FLASH1</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連するリソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.5 due to incorrect autocomplete attribute values</h1>
+      <h1>達成基準 1.3.5 の失敗例 － 誤った autocomplete 属性値</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique applies to <em>form inputs</em> created in HTML which collect information about the user of the form.
-            </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/identify-input-purpose">Success Criterion 1.3.5: Identify Input Purpose</a> (Failure)</span>.
-            </p>
+            <h2>適用 (対象)</h2>
+            <p>この達成方法は、フォーム利用者の情報を集める HTML で作られた<em>入力フィールド</em>に適応される。</p>
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/identify-input-purpose">達成基準 1.3.5: 入力目的の特定</a>（十分）</span>に関連する達成方法である。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to identify a failure condition where form inputs
-               do not have the correct autocomplete attribute values for inputs that request information
-               about the user of the form.
-            </p>
-            <p>Success Criteria 1.3.5 uses a fixed list of tokens in <a href="https://www.w3.org/TR/WCAG21/#input-purposes">Input Purposes for User Interface Components</a> (based on the HTML 5.2 <code>autocomplete</code> attribute’s fixed list of token values) because the programmatic association of specified
-               token values (metadata) allows for other machine processing, such as expressing the
-               input label in different modalities.
-            </p>
-            <p>Another important part of this Success Criterion is that the token values are associated
-               with inputs that are <strong>scoped directly to the primary end user</strong>.
-            </p>
+            <h2>解説</h2>
+            <p></p>
+            <p>この達成方法の目的は、フォームの利用者に関する情報を要求する入力フィールドにおいて、入力フィールドが正しい autocomplete 属性値を持っていないという失敗条件を特定することにある。</p>
+            <p>達成基準 1.3.5 で (HTML 5.2 の <code>autocomplete</code> 属性のトークン値の固定リストに基づく) <a href="https://waic.jp/docs/WCAG21/#input-purposes">ユーザインタフェース コンポーネントの入力目的</a> のトークンの固定リストを使用する。これは、トークン値（メタデータ）をプログラム的に関連づけることで、入力ラベルを異なるモダリティで表現する等の機械的な処理を可能にするためである。</p>
+            <p>この達成基準においてもう一つの重要なのが、トークン値が<strong>プライマリエンドユーザーに直接スコープされた</strong>入力フィールドに関連付けられる点である。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-incorrect-attribute">
-               <h3>Example 1: Incorrect attribute</h3>
-               <p>An online form used to collect the user's name and birthday which uses incorrect autocomplete
-                  attributes.  The correct attribute value for the first control is <code>name</code> and for the second control the made-up attribute value <code>birthday</code> was used instead of <code>bday</code> for this example.
-               </p><pre>
+               <h3>例 1: 誤った属性</h3>
+               <p>利用者の名前と誕生日を収集するためのオンラインフォームで、誤った autocomplete 属性が使用されている。この例では、一つ目のコントロールの正しい属性値は <code>name</code> であり、二つ目のコントロールでは <code>bday</code> の代わりに <code>birthday</code> が使用されている。</p>
+               <pre>
 &lt;h2&gt;Your details:&lt;/h2&gt;
 &lt;label for="name1"&gt;Name:&lt;/label&gt;
-&lt;input type="text" name="field1a" <span style="background:yellow; font-weight:bold;">autocomplete="email"</span> id="name1"&gt; 
+&lt;input type="text" name="field1a" <span style="background:yellow; font-weight:bold;">autocomplete="email"</span> id="name1"&gt;
 &lt;label for="birthday1"&gt;Birthday:&lt;/label&gt;
 &lt;input type="text" name="field1b" <span style="background:yellow; font-weight:bold;">autocomplete="birthday"</span> id="birthday1&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>関連リソース</h2>
+            <p>リソースは情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
-               
-               <li>WCAG 2.1 - Input Purposes for User Interface Components: 
-                  <a href="https://www.w3.org/TR/WCAG21/#input-purposes">https://www.w3.org/TR/WCAG21/#input-purposes</a></li>
-               
-               <li>The HTML5 <code>autocomplete</code> attribute:
-                  <a href="https://www.w3.org/TR/html52/sec-forms.html#sec-autofill">https://www.w3.org/TR/html52/sec-forms.html#sec-autofill</a>
-                  
+               <li>WCAG 2.1 - ユーザインタフェース コンポーネントの入力目的:
+                  <a href="https://waic.jp/docs/WCAG21/#input-purposes">https://waic.jp/docs/WCAG21/#input-purposes</a>
                </li>
-               
+               <li>HTML5 <code>autocomplete</code> 属性:
+                  <a href="https://www.w3.org/TR/html52/sec-forms.html#sec-autofill">https://www.w3.org/TR/html52/sec-forms.html#sec-autofill</a>
+               </li>
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
-               
-               <li><a href="../html/H98">H98: Using HTML 5.2 autocomplete attributes</a></li>
-               
+               <li><a href="../html/H98">H98: HTML 5.2 autocomplete 属性を使用する</a></li>
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each form field which collects information about the user of the form:</p>
+               <h3>手順</h3>
+               <p>フォーム利用者に関する情報を集める入力フィールドそれぞれに対して:</p>
                <ol>
-                  
-                  <li>Check that the form field has an autocomplete attribute and value pair that does not
-                     match the purpose of the input.
-                  </li>
-                  
-                  <li>Check that the input purpose is not communicated programmatically through any other
-                     method.
-                  </li>
-                  
+                  <li>フォームフィールドに入力の目的と一致しない autocomplete 属性と値の対があることを確認する。</li>
+                  <li>入力の目的が他の手法でプログラム的に伝達されていないことを確認する。</li>
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
-                  
-                  <li>If checks #1-2 are true, then the failure condition applies, and the content fails
-                     the Success Criterion.
-                  </li>
-                  
+                  <li>手順 #1-2 が真である場合、失敗条件が適用され、コンテンツは達成基準を満たさないことになる。</li>
                </ul>
             </section>
          </section>

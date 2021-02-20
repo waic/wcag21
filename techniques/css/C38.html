@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C38: Using CSS width, max-width and flexbox to fit labels and inputs</title>
+      <title>C38: CSS width、max-width、及び flexbox を用いたラベルと入力欄の配置</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,89 +10,52 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C37">Previous Technique: C37</a></li>
-            <li><a href="C39">Next Technique: C39</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C37">前の達成方法: C37</a></li>
+            <li><a href="C39">次の達成方法: C39</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using <code>CSS width</code>, <code>max-width</code> and <code>flexbox</code> to fit labels and inputs
-      </h1>
+      <h1><code>CSS width</code>、<code>max-width</code>、及び <code>flexbox</code> を用いたラベルと入力欄の配置</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique is applicable to Cascading Style Sheet / HTML technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象) </h2>
+            <p>この達成方法は、カスケーディング スタイル シート／HTML の技術に、適用される。</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a> (十分) </span>に関連する。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to be able to present labels and inputs without
-               introducing a horizontal scroll bar at a width equivalent to 320 CSS pixels for content
-               intended to scroll vertically. When space is limited in the viewport for the label
-               and input to sit next to each other horizontally, they will be changed to a vertical
-               alignment. This is done by using CSS properties for <code>width</code>, <code>max-width</code> and <code>flexbox</code> that adapt to the available space.
-            </p>
-            <p>Responsive layouts can add or remove columns or layout blocks, and each part of the
-               layout can be wider or smaller at different points. This technique ensures labels
-               and inputs do not break out of their layout area, including in one-column layouts
-               where it would cause horizontal scrolling.
-            </p>
-            <p>The basic approach for fitting labels and inputs is to:</p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、垂直方向のスクロールを意図したコンテンツにおいて、320 CSS ピクセル相当の幅での表示時に、ラベルと入力欄を水平のスクロールバーを要さず表示できるようにすることである。ビューポート中のスペースが限られ、ラベルと入力欄を水平方向に並べて表示するのが困難な場合は、垂直方向に並ぶように切り替わる。これは、ビューポートの使用可能なスペースに適応する、<code>width</code>、<code>max-width</code>、及び <code>flexbox</code> CSS プロパティを使うことで実現される。</p>
+            <p>レスポンシブなレイアウトはカラム又はレイアウトブロックを追加又は削除ができ、また、レイアウトの各構成要素のある時点での幅を広く又は狭く調整することができる。これにより、水平方向のスクロールが通常発生する単一カラムのレイアウトにおいても、ラベルと入力欄がそのレイアウト領域からはみ出ないことを保証する。</p>
+            <p>ラベルと入力欄をフィッティングするための基本的なアプローチは次のとおり:</p>
             <ol>
-               
-               <li>Define the size of layout regions using flexbox properties and media queries for specific
-                  viewport sizes, so they enlarge, shrink or wrap in the available space and respond
-                  to zoom levels;
-               </li>       
-               
-               <li>Position the layout regions in the flexbox container as a row of adjacent flexbox
-                  items, which may wrap to new rows as needed in much the same way as words in a paragraph
-                  wrap.
-               </li>
-               
-               <li>Define the width and max-width property for labels and inputs so they enlarge or shrink
-                  in the available space and respond to zoom levels.
-               </li>
-               
+                <li>flexbox プロパティ及び特定のビューポートサイズに対応するメディアクエリを用いてレイアウト領域のサイズを定義することで、使用可能なスペース内で拡大、縮小又は折り返し、及びズームレベルに応答する。</li>
+                <li>flexbox コンテナ内のレイアウト領域を隣接する flexbox ボックスアイテムの行として配置する。これは、段落中の単語とほぼ同様に、適宜新しい行に折り返してもよい。</li>
+                <li>ラベルと入力欄それぞれの width と max-width プロパティを定義することで、使用可能なスペース内で拡大又は縮小する、及びズームレベルに応答するようする。</li>
             </ol>
-            <p>All labels and inputs require design finesse by making sure the original size fits
-               the biggest size of the available spaces to achieve good-looking results at a wide
-               range of viewport sizes and zoom levels. For help on flexbox please see the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">MDN article on Flexbox</a>.
-            </p>
+            <p>幅広いビューポートサイズとズームレベルで見た目の良い結果を得るには、全てのラベルと入力欄の元のサイズが利用可能なスペースの中で最大のサイズに収まるようなデザインの精巧さを必要とする。flexbox の詳細については、<a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Flexbox">MDN の Flexbox についてのページ</a>を参照のこと。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-fitting-labels-inputs-and-flexbox-layout-with-html-and-css.">
-               <h3>Example 1: Fitting labels, inputs and flexbox layout with HTML and CSS.</h3>
-               <p>The following example uses HTML and CSS to fit labels and inputs within various width
-                  containers, including the viewport. The layout regions adjust their size as the viewport
-                  is adjusted. The labels and inputs subsequently adjust their size to fit within the
-                  layout region containers.
-               </p>
-               <p>The zoom level can be increased to 400% without requiring horizontal scrolling. This
-                  particular example uses a percent size for the <code>width</code> and <code>max-width</code> for the labels and inputs. The <code>max-width</code> is applied in order to fix elements spilling out of the grid in a cross-browser way,
-                  as replaced elements such as the <code>select</code> have intrinsic sizing.
-               </p><pre>
+                <h3>事例 1: HTML と CSS を使用した、ラベル、入力欄、及び flexbox レイアウトの配置</h3>
+                <p>次の事例では、HTML と CSS を用いて、ビューポートを含む可変幅のコンテナの中にラベルと入力欄を配置する。レイアウト領域は、ビューポートの調整に合わせてサイズが調整される。その後、ラベルと入力欄は、レイアウト領域のコンテナ内に収まるようにサイズが調整される。</p>
+                <p>水平方向のスクロールを必要とすることなくズームレベルを 400% に上げることができる。この事例ではラベルと入力欄の <code>width</code> と <code>max-width</code> にパーセントサイズを使用している。また、<code>select</code> のような置換要素は内在寸法を持つため、要素がグリッドからはみ出るのをクロスブラウザ的に防ぐため <code>max-width</code> を指定している。</p>
+                <pre>
 <code>
 
 &lt;style&gt;
@@ -178,34 +141,23 @@ select {
   &lt;/div&gt;
 &lt;/div&gt;
 </code>
-</pre><p class="working-examples">Working example: <a href="../../working-examples/css-fit-labels-inputs/">Using Adjustable Labels and Inputs for Reflow</a></p>
+</pre><p class="working-examples">動作例: <a href="../../working-examples/css-fit-labels-inputs/">Using Adjustable Labels and Inputs for Reflow</a></p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <ol>
-                  
-                  <li>Display the web page in a user agent capable of 400% zoom and set the viewport dimensions
-                     (in CSS pixels) to 1280 wide and 1024 high.
-                  </li>
-                  
-                  <li>Zoom in by 400%.</li>
-                  
-                  <li>For vertically scrolling content, all labels and inputs fit in their available space
-                     without horizontal scrolling.
-                  </li>
-                  
+                  <li>コンテンツを 400% ズームが可能なユーザエージェント上で、ビューポートサイズを 1280x1024 CSS ピクセルに設定してウェブページを表示する。</li>
+                  <li>400% ズームする。</li>
+                  <li>垂直方向にスクロールするコンテンツにおいては、全てのラベルと入力欄が水平方向にスクロールを要さず表示可能スペースに収まること。</li>
                </ol>
-               <p>NB: If the browser is not capable of zooming to 400%, you can reduce the width of
-                  the browser proportionally. For example, at 300% zoom the viewport should be sized
-                  to 960px wide.
-               </p>
+               <p>注意: ブラウザが 400% までズームが可能でない場合、ブラウザの幅を相対的に狭めることも可能である。例えば、300% ズーム時はビューポートの幅を 960px にする。</p>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
-               <p>Check #3 is true.</p>
+               <h3>期待される結果</h3>
+               <p>上記3の結果が真である。</p>
             </section>
          </section>
       </main>

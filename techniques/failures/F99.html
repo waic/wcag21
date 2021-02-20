@@ -2,10 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F99: Failure of Success Criterion 2.1.4 due to implementing character key shortcuts that
-         cannot be turned off or
-         remapped
-      </title>
+      <title>F99: 達成基準 2.1.4 の失敗例－停止又は再割り当て不可能な文字キーショートカットが実装されている</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -13,122 +10,70 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F98">Previous Technique: F98</a></li>
-            <li><a href="F100">Next Technique: F100</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F98">前の達成方法: F98</a></li>
+            <li><a href="F100">次の達成方法: F100</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.1.4 due to implementing character key shortcuts that
-         cannot be turned off or
-         remapped
-      </h1>
+      <h1>F99: 達成基準 2.1.4 の失敗例－停止又は再割り当て不可能な文字キーショートカットが実装されている</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する場合、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This failure applies to web content that can be interacted with using a physical keyboard
-               as input mechanism.
-            </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/character-key-shortcuts">Success Criterion 2.1.4: Character Key Shortcuts</a> (Failure)</span>.
-            </p>
+            <h2>適用 (対象)</h2>
+            <p>この失敗例は、入力メカニズムとして物理的なキーボードの使用に影響するウェブコンテンツへ適用される。</p>
+            <p>この達成方法は達成基準 <a href="https://waic.jp/docs/WCAG21/Understanding/character-key-shortcuts">2.1.4: 文字キーのショートカットを理解する</a> (失敗例) に関連している。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When keyboard shortcuts using only character keys are implemented, voice commands
-               can inadvertently trigger functionality. Character key shortcuts use a single key
-               such as a letter key (including upper- and lower-case letters),
-               punctuation, number, or symbol characters.
-            </p>
-            <p>Content must either not implement single character key shortcuts, or offer settings
-               to either turn off these
-               shortcuts or to map them to keyboard shortcuts that employ an additional modifier
-               key, such <kbd>Alt</kbd> or
-               <kbd>Ctrl</kbd>.
-            </p>
+            <h2>解説</h2>
+            <p>文字キーのみを使用するキーボードショートカットが実装されている場合、音声コマンドが誤って機能を動作させる可能性がある。文字キーによるショートカットは、アルファベットキー (大文字及び小文字を含む)、句読点、数字、又は記号文字などの単一のキーを使用する。</p>
+            <p>コンテンツは単一文字キーのショートカットを実装しないか、又はそれらのショートカットを停止する、もしくはそれらを <kbd>Alt</kbd> もしくは <kbd>Ctrl</kbd> などの、追加の修飾キーを用いるキーボードショートカットにマッピングする設定のどちらかを提供しなければならない。</p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>The use of a single key keyboard shortcut is not a failure if the shortcut is only
-                  active when a particular interface element has focus. For example, when a select element
-                  or a custom listbox has focus, the input of single character keys to navigate the
-                  list is a useful feature.
-               </p>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>特定のインターフェース要素がフォーカス持つ場合にのみショートカットがアクティブであるとき、単一キーのキーボードショートカットの使用は失敗ではない。例えば、select 要素又はカスタムリストボックスがフォーカスを持つ場合、リストをナビゲートするための単一の文字キーの入力は便利な機能である。</p>
             </div>
-            <p>The test procedure suggests asking the author (often the developer of the site) whether
-               keyboard shortcuts are used. If that information is trusted then the procedure can
-               be simpler than pressing all the keys.
-            </p>
-            <p>The success criterion does not apply when single key shortcuts are only active when
-               interface elements have the focus, for example, a <code>select</code> element. Here, pressing a letter key is used for fast navigation within the select
-               options.
-            </p>
-            <p>Viewing page scripts and searching for typical keyboard event handlers like <code>document.addEventListener('keydown' ...) </code> or the presence of the <code>.keycode</code> attribute
-               may establish the presence of scripts that intercept keyboard shortcuts without modification
-               keys like ALT or
-               STR being held down at the same time. As there are several ways of implementing character
-               key events, this
-               method is not considered reliable.
-            </p>
-            <p>Some browsers employ single key shortcuts with <kbd>Shift</kbd>. For example, Firefox opens a page search when pressing
-               <kbd>Shift</kbd> + <kbd>/</kbd> and a search in page links when pressing <kbd>Shift</kbd> + <kbd>'</kbd>. In these cases, it will be necessary to press <kbd>Esc</kbd> or click an empty part of the page to remove the focus from the browser input.
-            </p>
+            <p>この試験方法はキーボードショートカットが使用されているかどうかをコンテンツ制作者 (しばしばサイトの開発者) へ尋ねることを提案している。 その情報が信頼に足る場合、すべてのキーを押下するより手順は簡略化するはずである。</p>
+            <p>例えば、<code>select</code> 要素のようなインタフェース要素がフォーカスを持つ場合、単一キーのショートカットが有効なとき、達成基準は適用されない。この場合、アルファベットキーの押下が、選択オプション内での高速なナビゲーションのために利用される。</p>
+            <p>ページスクリプトの表示、及び <code>document.addEventListener('keydown' ...)</code> のような典型的なキーボードイベントハンドラ又は <code>.keycode</code> 属性の有無の検索により、Alt 又は Ctrl のような同時に押下される装飾キーなしにキーボードショートカットを妨害するスクリプトの存在を証明してもよい。文字キーのイベントを実装する方法は複数あるため、この方法は信頼性が低いと考えられている。</p>
+            <p>いくつかのブラウザは <kbd>Shift</kbd> を併用した単一キーショートカットを採用している。例えば、Firefox は <kbd>Shift</kbd> + <kbd>/</kbd> を押下した場合はページ検索を開き、<kbd>Shift</kbd> + <kbd>'</kbd> を押下した場合はページリンクを検索する。いずれの場合でも、ブラウザの入力からフォーカスを外すためには、Esc を押下する又はページの空である部分をクリックする必要があるはずである。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
-            <p>An application uses the single key shortcut <kbd>S</kbd> to bring up a search popup. There is no setting available to turn off or modify the
-               shortcut.
-            </p>
+            <h2>事例</h2>
+            <p>アプリケーションは検索ポップアップを表示するために単一キーショートカットの <kbd>S</kbd> を使用する。このショートカットを停止又は変更を行う設定が存在しない。</p>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>If the site does <em>not</em> provide settings to disable or remap keyboard shortcuts:
-               </p>
+               <h3>手順</h3>
+               <p>サイトがキーボードショートカットの無効化又は再割り当てのための設定を提供<em>しない</em>場合:</p>
                <ol>
                   
-                  <li>If loading the page sets focus to an input, click on an empty part of the page to
-                     ensure that
-                     no inputs are in focus.
-                  </li>
+                  <li>読み込み中のページが入力にフォーカスを設定する場合、ページの空の部分をクリックし、どの入力もフォーカスされていないことを確認する。</li>
                   
-                  <li>Press keys identified by the author as shortcut keys, or if this information is not
-                     available, press all printing characters (i.e., all number, letter, sign and punctuation
-                     keys). Do not press non-printing
-                     modifier and control keys such as <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Esc</kbd>, Arrow keys and (where present) the function keys <kbd>F1</kbd>-<kbd>F12</kbd>. Also
-                     exempt are <kbd>Space</kbd>, <kbd>Enter</kbd>, <kbd>Return</kbd>, <kbd>Tab</kbd>, and the <kbd>Delete</kbd> key.
-                  </li>
+                  <li>コンテンツ制作者がショートカットキーとして指定したキーを押下する、又はこの情報が利用不可能な場合、全ての印刷文字 (すなわち、全ての数字、アルファベット、記号及び句読点キー) を押下する。<kbd>Ctrl</kbd>、<kbd>Alt</kbd>、<kbd>Esc</kbd>、矢印キー及び (存在する場合) <kbd>F1</kbd>-<kbd>F12</kbd> ファンクションキーなどの非印刷の修飾キー及びコントロールキーは押下しない。<kbd>スペース</kbd>、<kbd>Enter</kbd>、<kbd>Return</kbd>、<kbd>Tab</kbd> 及び <kbd>Delete</kbd> キーも免除される。</li>
                   
-                  <li>Hold the <kbd>Shift</kbd> key and press the same keys again.
-                  </li>
+                  <li><kbd>Shift</kbd> キーを押下したまま、同じキーを再度押下する。</li>
                   
-                  <li>Check whether a function has been triggered by pressing the keys</li>
+                  <li>キーを押下したことにより、機能が実行されたかを確認する。</li>
                   
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
-               <p>If step #4 is false then this failure condition applies and the content fails the
-                  Success Criterion.
-               </p>
+               <h3>期待される結果</h3>
+               <p>手順 #4 が偽である場合、この失敗例の条件は適用される、及びコンテンツは達成基準の失敗となる。</p>
             </section>
          </section>
       </main>

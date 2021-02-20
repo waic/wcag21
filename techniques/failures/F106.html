@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F106: Failure due to inability to deactivate motion actuation</title>
+      <title>F106: 達成基準 2.5.4 の失敗例 － 動きによる起動を解除することができない</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,94 +12,81 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F105">Previous Technique: F105</a></li>
-            <li><a href="F107">Next Technique: F107</a></li>
+            <li><a href="F105">前の達成方法: F105</a></li>
+            <li><a href="F107">次の達成方法: F107</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure due to inability to deactivate motion actuation</h1>
+      <h1>達成基準 2.5.4 の失敗例 － 動きによる起動を解除することができない</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content using technologies that can support the detection of device or user motion
-               such as shaking or tilting and use these motions as a means of input.
+            <h2>適用 (対象)</h2>
+            <p>揺れや傾きなど、デバイス又は利用者の動きの検出をサポートし、これらの動きを入力手段として利用できる技術を利用したコンテンツ。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/motion-actuation">Success Criterion 2.5.4: Motion Actuation</a> (Failure)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/motion-actuation">達成基準 2.5.4: 動きによる起動</a> (失敗例)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This describes the failure condition that results when motion actuation can not be
-               deactivated.  People who may accidentally activate sensors due to tremors or other
-               motor impairments need the ability to turn off motion actuation to prevent such accidental
-               triggering of functions.  
+            <h2>解説</h2>
+            <p>これは、動きによる起動を解除できない場合に陥る失敗条件を記述する。震え又はその他の運動障害により、予期せずセンサーを作動させてしまう可能性のある利用者は、そのような、機能の予期せぬトリガーを防ぐために、動きによる起動をオフにすることができる必要がある。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>The type of motion covered by the <a href="../../guidelines/sc/21/motion-actuation.html">Motion Actuation Success Criterion</a> does not relate to the movement of users through space as registered by geolocation
-                  sensors or beacons, or events observed by the device other than intentional gesturing
-                  by the user. It also does not cover indirect motion associated with operating a keyboard,
-                  pointer, or assistive technology.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p><a href="../../guidelines/sc/21/motion-actuation.html">動きによる起動の達成基準</a>の対象となる動きの種類は、ジオロケーションセンサー又はビーコンによって登録された空間を通る利用者の動き、もしくは利用者による意図的なジェスチャ以外のデバイスによって観測されたイベントは含まない。また、キーボード、ポインタ、又は支援技術の操作に関連した間接的な動きも対象としない。
                </p>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-motion-activated-slider">
-               <h3>Example 1: Motion Activated Slider</h3>
-               <p>A slider which uses tilting motion to increase or decrease the value of an input,
-                  with no mechanism to deactivate the motion detection.
+               <h3>例 1: 動きによって起動するスライダー</h3>
+               <p>傾きによる動作を利用して入力値を増減させるスライダーで、動作の検出を無効にするメカニズムがない。
                </p>
-               <p class="working-example"><a href="../../working-examples/device-motion-sensor-input-failure/">Working example of a motion activated slider that can not be deactivated</a></p>
+               <p class="working-example"><a href="../../working-examples/device-motion-sensor-input-failure/">動きによる起動を無効化できないスライダーの実装例</a></p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                				
-               <li><a href="../general/G213">G213: Provide conventional controls and an application setting for motion activated input</a></li>
+               <li><a href="../general/G213">G213: 動きで作動させる入力のために、従来のコントロール及びアプリケーション設定を提供する</a></li>
                			
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each function that is triggered by a motion sensor:</p>
+               <h3>手順</h3>
+               <p>動きによるセンサーでトリガーされる各機能について:</p>
                <ol>
                   					
-                  <li>Check if the use of a motion sensor is essential or required to make the function
-                     accessibility supported.
+                  <li>動作によるセンサーの利用が必要不可欠であるか、又は当該機能をアクセシビリティ サポーテッドにすることが必須であるかを確認する。
                   </li>
                   					
-                  <li>Check if there is a user setting which disables the motion detection.</li>
+                  <li>動きの検知を無効にする利用者設定があるかを確認する。</li>
                   				
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>If #1 and 2 are false then the control fails this success criteria. </li>
+                  <li>手順 #1 及び #2 が偽である場合、そのコントロールは達成基準を満たさないことになる。</li>
                   				
                </ul>
             </section>

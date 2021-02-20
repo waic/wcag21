@@ -4,6 +4,7 @@
       <meta charset="UTF-8" />
       <title>達成基準 1.4.10: リフローを理解する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="base.css" />
       <link rel="stylesheet" type="text/css" href="understanding.css" />
       <link rel="stylesheet" type="text/css" href="slicenav.css" />
    </head>
@@ -32,20 +33,20 @@
          <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#reflow" style="font-weight: bold;">1.4.10 リフロー</a> (レベル AA): コンテンツは、情報又は機能を損なうことなく、かつ、以下において 2 次元スクロールを必要とせずに提示できる:</p>
          <ul>
             
-            <li>320 <a href="#dfn-css-pixel" >CSS ピクセル</a>に相当する幅の縦スクロールのコンテンツ。</li>
+            <li>320 <a href="#dfn-css-pixel">CSS ピクセル</a>に相当する幅の縦スクロールのコンテンツ。</li>
             
-            <li>256 <a href="#dfn-css-pixel" >CSS ピクセル</a>に相当する高さの横スクロールのコンテンツ。</li>
+            <li>256 <a href="#dfn-css-pixel">CSS ピクセル</a>に相当する高さの横スクロールのコンテンツ。</li>
             
          </ul>
          <p>利用や意味の理解に 2 次元のレイアウトが必須である一部のコンテンツを除く。</p>
-         <p class="note">320 CSS ピクセルは、1280 CSS ピクセル幅を 400 ％ズームで見た場合の最初の表示幅に相当する。横スクロールになるように設計されたウェブコンテンツ (例えば、縦書きのテキスト) では、256 CSS ピクセルは、高さ 1024px を 400 ％ズームで見た場合の最初の表示の高さに相当する。</p>
+         <p class="note">320 CSS ピクセルは、1280 CSS ピクセル幅を 400 ％ ズームで見た場合の最初の表示幅に相当する。横スクロールになるように設計されたウェブコンテンツ (例えば、縦書きのテキスト) では、256 CSS ピクセルは、高さ 1024px を 400 ％ズームで見た場合の最初の表示の高さに相当する。</p>
          <p class="note">2 次元のレイアウトを必要とするコンテンツの例としては、画像、マップ、図解、ビデオ、ゲーム、プレゼンテーション、データテーブル、及びコンテンツを操作している間にツールバーを表示しておく必要のあるインタフェースが挙げられる。</p>
       </blockquote>
       <main>
          <section id="intent">
             <h2>意図</h2>
             <p>この達成基準の意図は、テキストを拡大して 1 カラムにまとめて読む必要があるロービジョンの人を支援することである。ブラウザのズーム機能を利用してコンテンツを 400 ％に拡大するとリフローされる。それにより、1 カラムで表示されるため、複数の方向にスクロールする必要はない。</p>
-            <p>ロービジョンの人は、リフローとともに拡大されたテキストを読むことができる。拡大によって文字が知覚できるようになり、リフローによってトラッキングができるようになる。トラッキングは、1 行の終わりから次の行の始めまでを含む、テキストの行に沿って行われる。</p>
+            <p>ロービジョンの人は、リフローとともに拡大されたテキストを読むことができる。これは非常に重要なことである。拡大によって文字が知覚できるようになり、リフローによってトラッキングができるようになる。トラッキングは、1 行の終わりから次の行の始めまでを含む、テキストの行に沿って行われる。</p>
             <p>ビューポートによって切り取られた行を表示するために、読み方向にスクロールする必要性を回避することは重要である。そのようなスクロールは読むために必要な労力を著しく増加させるからである。また、コンテンツが画面外に隠れないようにすることも重要である。例えば、縦方向にスクロールするページを拡大することで、コンテンツが片側に隠れるべきではない。</p>
             <section id="how-reflow-works">
                
@@ -64,7 +65,7 @@
                
                <p>320 CSS ピクセルの値は、コンテンツ制作者が実現可能である合理的な最小サイズとして挙げられている。この値は、一般的なモバイルデバイスの小型ディスプレイのビューポート幅と一致している。320 CSS ピクセルは 1280 ピクセルの幅に設定され、400 ％に拡大されたデスクトップブラウザウィンドウの幅に相当する。400 ％は領域ではなく次元に適用されることに注意すべきである。つまり、デフォルトの幅の 4 倍、デフォルトの高さの 4 倍を意味する。</p> 
                
-               <figure><img src="img/css-pixel-by-device.png" width="462" height="198" alt="小さいスクリーンのデバイスは近づけ、大きなスクリーンのデバイスは遠ざけて、網膜上に同じ像を映すための視距離によって必要とされる文字の大きさを示す図。" /><figcaption>図 1: 異なる解像度の異なるディスプレイ上の同じ CSS ピクセルサイズの文字</figcaption>
+               <figure id="figure-CSS-pixel-letter-4x"><img src="img/css-pixel-by-device.png" width="462" height="198" alt="小さいスクリーンのデバイスは近づけ、大きなスクリーンのデバイスは遠ざけて、網膜上に同じ像を映すための視距離によって必要とされる文字の大きさを示す図。" /><figcaption>図 1A 異なる解像度の異なるディスプレイ上の同じ CSS ピクセルサイズの文字</figcaption>
                   
                </figure>
                
@@ -75,8 +76,9 @@
                
                <h3>コンテンツの可視性と可用性</h3> 
                
-               <p>どの程度の量のコンテンツが表示されるかは、縮尺によって異なる。例えば、デスクトップレイアウトで完全に表示されるナビゲーションメニューは、画面のスペースが少なくて済むため、少数の項目、又は 1 つのメニューボタン (「ハンバーガー」アイコンのパターン) にまとめられて表示されることがある。</p>
-               <p>全てのコンテンツと機能が直接、又はアクセス可能なコントロールを介して、又は直接リンクのいずれかを介して完全に利用可能である限り、達成基準は満たされる。</p>
+               <p>どの程度の量のコンテンツが表示されるかは、縮尺によって異なる。例えば、デスクトップレイアウトで完全に表示されるナビゲーションメニューは、画面のスペースが少なくて済むため、少数の項目、又は 1 つのメニューボタン (「ハンバーガー」アイコンのパターン) にまとめられて表示されることがある。 </p>
+               
+               <p>全てのコンテンツと機能が直接、又はアクセス可能なコントロールを介して、又は直接リンクのいずれかを介して完全に利用可能である限り、達成基準は満たされる。 </p>
                	
             </section>
             <section id="content-exceptions-for-reflow">
@@ -86,25 +88,16 @@
                
                <p>利用や意味の理解のために 2 次元レイアウトを必須とするコンテンツは、意味を失うことなくリフローすることはできない。したがって、この達成基準の範囲外となる。例えば、画像及び動画は性質上 2 次元である。画像を切り取って縦に並べるとコンテンツは使用できなくなるため、範囲外となる。ただし、ズームレベルを 400 ％にすると、これらの要素をビューポートの境界内に収めることができる。(Advisory Techniquesを参照)。</p>
                
-               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブルには適用されない。</p>
+               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブル全体には適用されない。ただし、データテーブル内のセルは、用法又は意味のために 2 次元レイアウトを必要とする種類のコンテンツを含まない限り、サイズ要件内に収まるべきである。</p>
                
                <p>コンテンツを編集するためのツールバーのあるインタフェースは、ビューポートにコンテンツとツールバーの両方を表示する必要がある。ツールバーのボタン数に応じて、ツールバーはテキストの方向にスクロールする必要があるかもしれない (例えば、縦スクロールするページで横方向に)。したがって、この達成基準はツールバーのあるインタフェースには適用されない。</p>
                	
-            </section>
-            <section id="browsers-in-mobile-operating-systems">
-               
-               <h3>モバイルオペレーティングシステムのブラウザ</h3>
-               
-               <p>モバイルオペレーティングシステムにおける最も一般的なブラウザのレイアウト方法は、デスクトップブラウザの場合と同じようにはリフローを提供しない。これらのブラウザでは、ピンチジェスチャを使用してコンテンツを拡大したり、特定の列をダブルタップしてビューポートの幅いっぱいに表示するなど、さまざまな方法でコンテンツを拡大できる。つまり、モバイルブラウザは通常、コンテンツ制作者の意図に関係なく横スクロールを示すことを意味する。</p>
-               
-               <p>原則として、Android のドルフィンブラウザで証明されているように、モバイルユーザエージェントは、利用者がコンテンツにズームインしたときにも同様にリフローを提供できる。したがって、モバイルオペレーティングシステムにおいてリフローへの対応不足であることは、ユーザエージェント対応の問題と見なすことができる。</p>
-               
             </section>
             <section id="responsive-web-design-and-other-ways-to-meet-this-success-criterion">
                
                <h3>レスポンシブウェブデザイン及びこの達成基準を満たすその他の方法</h3>
                
-               <p>レスポンシブウェブデザインの手法を取り入れることは、利用者が 400 ％にズームインできるようにするという目的を達成するための最も効果的な方法である。同じ URL である (CSS ブレークポイントによる) ページのバリエーションは適合している必要がある (<a href="https://www.w3.org/TR/WCAG21/#h-note-27">WCAG 2.1 の適合性</a>を比較）。</p>
+               <p>レスポンシブウェブデザインの手法を取り入れることは、利用者が 400 ％にズームインできるようにするという目的を達成するための最も効果的な方法である。同じ URL である (CSS ブレークポイントによる) ページのバリエーションは適合している必要がある (<a href="https://waic.jp/docs/WCAG21/#h-note-27">WCAG 2.1 の適合性</a>を比較）。</p>
                
                <p>旧来のシステムを使用しているか、何らかの理由でレイアウト方法を更新できない組織の場合、代替の適合バージョンは、320px 幅の固定レイアウトを持つモバイルサイトである。利用者はデフォルトのウェブサイトからそのバージョンを見つけることができるようにすべきである。</p>
                	
@@ -120,14 +113,18 @@
                
                <h3>リフローと達成基準 1.4.4 テキストのサイズ変更の関係</h3>
                
-               <p>リフローの達成基準の焦点は、利用者が 2 方向にスクロールしなくてもズームインできるようにすることである。<a href="resize-text.html" class="sc">達成基準 1.4.4 テキストのサイズ変更</a>も適用することで、リフローの要件を同時に満たしながら、全てのテキストのサイズを少なくとも 200 ％に拡大することができる。利用者がズームインしたとき (又は小さなスクリーンで利用しているとき) にテキストのサイズが縮小された場合でも、200% の拡大率を得ることは可能であるべきである。例えば、ウィンドウの幅が1280px のときにテキストが 20px に設定されている場合、200 ％ズームでは最低 20px (デフォルトサイズの 200 ％) になるが、400 ％ズームでは (デフォルトの 100 ％表示の まだ 200 ％であるので) 10px に設定できる。全てのブレークポイントで 200 ％の拡大を可能にする必要はないが、何かしらの方法で 200 ％の拡大を可能にすべきである。</p>
-
-               <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">訳注</div>
-                  <div>
-                     <p>「リフローと達成基準 1.4.4 テキストのサイズ変更の関係」の説明には不明瞭な箇所があるが、この箇所の翻訳は原文に忠実な形で行った。なお、最新の原文の該当箇所は大幅に加筆されている。Understanding WCAG 2.1 <a href="https://w3c.github.io/wcag/understanding/reflow.html#the-relation-of-reflow-to-the-success-criterion-1.4.4-resize-text">The relation of Reflow to the Success Criterion 1.4.4 Resize Text</a> もあわせて参照のこと。</p>
-                  </div>
-               </div>
+               <p>リフローの達成基準の焦点は、利用者が 2 方向にスクロールしなくてもズームインできるようにすることである。<a href="resize-text.html" class="sc">達成基準 1.4.4 テキストのサイズ変更</a>も適用することで、リフローの要件を同時に満たしながら、全てのテキストのサイズを少なくとも 200 ％に拡大することができる。ほとんどの実装では、テキストは拡大率が上がるにつれて拡大し続けることが予想されるため、利用者はテキストを 400 ％まで  (そしてそれ以上) に拡大することができる。人々がズームインするときにテキストのサイズが一貫して増加しない実装 (小さな画面の用途に適応するためにメディアクエリに基づいてテキストが変換される場合など) では、テキストのサイズ変更の基準を満たすために、依然として 200％ の拡大することが可能でなければならない。</p>
+               
+               <p>例えば、デフォルトのブラウザ設定である 100 ％ズームで、ウィンドウの幅が 1280px のときにテキストが20pxに設定されている場合、200 ％ズームで同じ 20px は、200 ％のテキストサイズを意味する。400 ％ズームでは、コンテンツ制作者はテキストサイズを 10px に設定することを決定してもよい。テキストは、デフォルトのブラウザ設定である 100 ％ズームと比較して、200 ％に拡大される。全てのブレークポイントで 200 ％のテキスト拡大を達成する必要はないが、何らかの方法で 200 ％のテキスト拡大を実現できるべきである。</p>
+               
+            </section>
+            <section id="browsers-on-mobile-operating-systems">
+               
+               <h3>モバイルオペレーティングシステムのブラウザ</h3>
+               
+               <p>モバイルオペレーティングシステムのほとんどのブラウザは、デスクトップブラウザと同じようにリフローとズームを組み合わせていない。これらのモバイルブラウザは通常、デバイスの向きを変更するときにリフローをサポートし、コンテンツは新しいビューポート幅に調整される。しかし、これらのモバイルブラウザは、ピンチジェスチャを使用してコンテンツを拡大したり、特定のカラムをダブルタップしてビューポートの幅を埋めたりするなど、リフローを単一の次元に制限しない方法でしか 1.4.4 テキストのサイズ変更を達成するためにコンテンツを拡大することができない。つまり、ほとんどのモバイルブラウザでズームされたコンテンツには、コンテンツ制作者が何をするかにかかわらず、2 次元のスクロールを伴うことを意味する。</p>
+               
+               <p>Android 用のドルフィンブラウザで証明されているように、モバイルユーザエージェントは、利用者がコンテンツをズームインしたときにリフローを提供することが<em>可能である</em>。したがって、モバイルオペレーティングシステムのブラウザにおける拡大されたリフローサポートの不足は、ユーザエージェントサポートの問題と見なすことができる。</p>
                
             </section>
          </section>
@@ -148,8 +145,8 @@
                <h3>例1: レスポンシブデザイン</h3>
                
                <p><video controls="controls">
-                     <source src="https://alastairc.ac/w3c/reflow-example-1-BBC.mp4" type="video/mp4"></source>
-                     <source src="https://alastairc.ac/w3c/reflow-example-1-BBC.ogv" type="video/ogg"></source>Animation of zooming in on a responsive site. The content reflows to fit the screen.</video>
+                     <source src="https://alastairc.uk/w3c/reflow-example-1-BBC.mp4" type="video/mp4"></source>
+                     <source src="https://alastairc.uk/w3c/reflow-example-1-BBC.ogv" type="video/ogg"></source>Animation of zooming in on a responsive site. The content reflows to fit the screen.</video>
                </p>
                
                <p>ズーム率があがると、ナビゲーションが最初に変更されて 「More」 ドロップダウンメニューの背後にあるオプションが非表示になることに注意する。ズームを続けると、ほとんどのナビゲーションオプションは 「ハンバーガー」 メニューボタンの後ろになる。全ての情報及び機能はまだこのウェブページで利用可能である。横スクロールもない。</p>
@@ -173,22 +170,22 @@
          </section>
          <section id="techniques">
             <h2>達成方法</h2>
-            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の 「その他の達成方法」 を参照のこと。</p>
+            <p>この節にある番号付きの各項目は、WCAG ワーキンググループがこの達成基準を満たすのに十分であると判断する達成方法、又は複数の達成方法の組み合わせを表している。しかしながら、必ずしもこれらの達成方法を用いる必要はない。その他の達成方法についての詳細は、<a href="understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>の「その他の達成方法」を参照のこと。</p>
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <ul>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C32">C32: Using media queries and grid CSS to reflow columns</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C32">C32: メディアクエリとグリッド CSS を使用して列をリフローする</a></li>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C31">C31: Using CSS Flexbox to reflow content</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C31">C31: コンテンツをリフローするために CSS Flexbox を使う</a></li>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C33">C33: Allowing for Reflow with Long URLs and Strings of Text</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C33">C33: 長い URL 及びテキスト文字列をリフローできるようにする</a></li>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C38">C38: Using CSS width, max-width and flexbox to fit labels and inputs</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C38">C38: Using CSS width, max-width and flexbox to fit labels and inputs</a></li>
                   
-                  <li><a class="script" href="https://w3c.github.io/wcag/techniques/client-side-script/SCR34">SCR34: テキストサイズに応じて拡大縮小するように、サイズ及びポジションを定める</a></li>
+                  <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR34">SCR34: テキストサイズに応じて拡大縮小するように、サイズ及びポジションを定める</a></li>
                   
-                  <li><a class="general" href="https://w3c.github.io/wcag/techniques/general/G206">G206: 利用者が横スクロールをしなくてもテキストの行を読めるようにするような、レイアウトを切り替えるオプションをコンテンツの中で提供する</a></li>
+                  <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G206">G206: 利用者が横スクロールをしなくてもテキストの行を読めるようにするような、レイアウトを切り替えるオプションをコンテンツの中で提供する</a></li>
                   
                   <li>@@ New: Using PDF/UA when creating PDFs.</li>
                   
@@ -199,9 +196,9 @@
                <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、全ての状況において、全ての達成方法が使用可能、又は効果的であるとは限らない。</p>
                <ul>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C34">C34: Using media queries to un-fixing sticky headers / footers</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C34">C34: 固定されていないスティッキーヘッダー/フッターに、メディアクエリーを利用する</a></li>
                   
-                  <li><a href="https://w3c.github.io/wcag/techniques/css/C37">C37: Using CSS max-width and height to fit images</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C37">C37: Using CSS max-width and height to fit images</a></li>
                   
                   <li>@@ CSS, Reflowing simple data tables.</li>
                   
@@ -216,11 +213,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   
-                  <li>@@ Using fixed sized containers and fixed position content (CSS)</li>
-                  
-                  <li>@@ &quot;Interfering with a user agent&#39;s ability to zoom&quot; i.e., author using: maximum-scale or minimum-scale or user-scalable=no or user-scalable=0 in the meta element ?? @@ Note: In <a href="https://lists.w3.org/Archives/Public/w3c-wai-gl/2016AprJun/0502.html"> Pinch zoom thread on the WCAG list</a> people did not seem to be in favor of this as a failure.</li>
-                  
-                  <li>@@ (HTML) Using preformatted text or excluding preformatting text as an exception to no two dimensional scrolling.</li>
+                  <li><a class="failure" href="https://waic.jp/docs/WCAG21/Techniques/failures/F102">F102: Failure of Success Criterion 1.4.10 due to content disappearing and not being available when content has reflowed</a></li>
                   
                </ul>
             </section>
@@ -229,9 +222,6 @@
             <h2>重要な用語</h2>
             <dt id="dfn-css-pixel">CSS ピクセル (CSS pixel)</dt>
             <dd><definition xmlns="">
-                  					
-                  
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
                   					
                   
                   <p xmlns="http://www.w3.org/1999/xhtml">約 0.0213 度の視野角。</p>
@@ -244,5 +234,8 @@
             </dd>
          </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p>
+      </div>
    </body>
 </html>
