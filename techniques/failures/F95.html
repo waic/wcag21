@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F95: Failure of Success Criterion 1.4.13 due to content shown on hover not being hoverable</title>
+      <title>F95: 達成基準 1.4.13 の失敗例 － ホバーによって表示されるコンテンツがホバーできない</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,41 +10,37 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F94">Previous Technique: F94</a></li>
-            <li><a href="F96">Next Technique: F96</a></li>
+            <li><a href="F94">前の達成方法: F94</a></li>
+            <li><a href="F96">次の達成方法: F96</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.4.13 due to content shown on hover not being hoverable</h1>
+      <h1>達成基準 1.4.13 の失敗例 － ホバーによって表示されるコンテンツがホバーできない</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>Any technology that supports the display of additional content on pointer hover.</p>
             <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/content-on-hover-or-focus">Success Criterion 1.4.13: Content on Hover or Focus</a> (Failure)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The objective of this failure is to describe a situation where users find it difficult
                or impossible to move the pointer over additional content that appears on hover. For
                users of screen magnification software, the new content is often not fully visible
@@ -55,7 +51,7 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                				
                <li>A pop-up opens on pointer hover. Due to the chosen screen magnification, the content
@@ -73,9 +69,9 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>For each area of additional content that appears on pointer hover:</p>
                <ol>
                   					
@@ -88,10 +84,10 @@
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>If #1 and #2 are false, then content fails the Success Criterion.</li>
+                  <li>手順 #1 及び #2 が偽である場合、コンテンツは達成基準を満たさないことになる。</li>
                   				
                </ul>
             </section>
