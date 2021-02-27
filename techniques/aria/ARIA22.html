@@ -47,69 +47,46 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>
-               				This technique uses the <code>status</code> role from the ARIA specification to notify Assistive Technologies (AT) when content
-               has been updated with information about the user's or application's status. This is
-               done by adding <code>role="status"</code> to the element that contains the <a href="https://www.w3.org/TR/WCAG21/#dfn-status-messages">status message</a>. The aria live region role of <code>status</code> has an implicit <code>aria-live</code> value of <code>polite</code>, which allows a user to be notified via AT (such as a screen reader) when status
-               messages are added. The role of <code>status</code> also has a default <code>aria-atomic</code> value of <code>true</code>, so that updates to the container marked with a role of <code>status</code> will result in the AT presenting the entire contents of the container to the user,
-               including any author-defined labels (or additional nested elements). Such additional
-               context can be critical where the status message text alone will not provide an equivalent
-               to the visual experience. The content of the aria-live container is automatically
-               read by the AT, without the AT having to focus on the place where the text is displayed.
-               See <a href="https://www.w3.org/TR/wai-aria-1.1/#status">WAI-ARIA 1.1 status (role)</a> for more details.
-               
-               
+            <p>この達成方法は、ARIA 仕様の <code>status</code> ロールを用いて、コンテンツが利用者又はアプリケーションの状態についての情報を更新した際に、支援技術に通知するものである。これは、<a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージ（status message）</a>を含む要素に <code>role="status"</code> を追加することで行われる。<code>status</code> ロールの ARIA ライブライブリージョンは、暗黙的に <code>aria-live</code> の属性値 <code>polite</code> を持っており、ステータスメッセージが追加されたときに、利用者は支援技術（スクリーンリーダーなど）を介して通知を受けることが可能になる。<code>status</code> ロールはまた、<code>aria-atomic</code> のデフォルト属性値 <code>true</code> を持っており、そのため <code>status</code> ロールでマークされたコンテナへの更新は、コンテンツ制作者が定義したラベル（又は追加のネストされた要素）を含むコンテナの内容全体が、支援技術によって利用者に提示される結果になる。このような追加のコンテキストは、ステータスメッセージのテキストだけでは視覚的な体験と同等のものを提供できない場合に、重要になり得る。aria-live コンテナのコンテンツは、テキストが表示されている箇所にフォーカスが当たっていなくても、支援技術が自動的に読み上げる。詳細は <a href="https://www.w3.org/TR/wai-aria-1.1/#status">WAI-ARIA 1.1 status (role)</a> を参照のこと。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-including-a-search-results-message">
-               <h3>例 1: Including a search results message</h3>
-               <p>After a user presses a Search button, the page content is updated to include the results
-                  of the search, which are displayed in a section below the Search button. The change
-                  to content also includes the message "5 results returned" near the top of this new
-                  content. This text is given an appropriate role for a status message. A screen reader
-                  will announce "Five results returned".
+               <h3>例 1: 検索結果のメッセージを含む</h3>
+               <p>利用者が検索ボタンを押すと、ページのコンテンツが検索結果を含むように更新され、検索ボタンの下の部分に表示される。このコンテンツ変更は又、新しいコンテンツの上部近くに「5件の検索結果」というメッセージを含む。このテキストには、ステータスメッセージとして適切なロールが与えられる。スクリーンリーダーは「5件の結果」と読み上げる。
                </p><pre xml:space="preserve">
 <code>
-	&lt;div role="status"&gt;5 results returned.&lt;/div&gt;
+	&lt;div role="status"&gt;5 件の検索結果&lt;/div&gt;
 </code>
-					</pre><p class="working-example"><a href="../../working-examples/aria-role-status-searchresults/">Working example: role=status on search results</a></p>
+					</pre><p class="working-example"><a href="../../working-examples/aria-role-status-searchresults/">実装例: 検索結果における role="status"</a></p>
             </section>
             <section class="example" id="example-2-updating-the-shopping-cart-status">
-               <h3>例 2: Updating the shopping cart status</h3>
-               <p>After a user presses an Add to Shopping Cart button, content near the Shopping Cart
-                  icon updates to read "1 items". The container for this text (in this case a <code>&lt;p&gt;</code>) is marked with the role of <code>status</code>. Because it adds visual context, the shopping cart image -- with succinct and accurate
-                  ALT text -- is also placed in the container. Due to the default <code>aria-atomic</code> value, a screen reader will announce "Shopping cart, six items".
+               <h3>例 2: ショッピングカートの状態を更新する</h3>
+               <p>利用者がショッピングカートへの追加ボタンを押すと、ショッピングカートのアイコンの近くにあるコンテンツが「1個のアイテム」と読めるように更新される。このテキストのコンテナ（この場合は <code>&lt;p&gt;</code>）は <code>status</code> ロールでマークされている。これは視覚的なコンテキストを追加するので、ショッピングカートの画像 -- 簡潔で正確な ALT テキストを伴う -- もコンテナに配置される。<code>aria-atomic</code> のデフォルトの属性値のため、スクリーンリーダーは「ショッピングカート、6個のアイテム」と読み上げる。
                </p><pre xml:space="preserve">
 <code>
 	&lt;p role="status" &gt;
-		&lt;img src="shopping-cart.png" alt="Shopping Cart"&gt;
+		&lt;img src="shopping-cart.png" alt="ショッピングカート"&gt;
 		&lt;br&gt;
-		&lt;span id="cart"&gt;0&lt;/span&gt; items
+		&lt;span id="cart"&gt;0&lt;/span&gt; 個のアイテム
 	&lt;/p&gt;
 </code>
-</pre><p class="working-example"><a href="../../working-examples/aria-role-status-shoppingcart/">Working example: role=status on a shopping cart</a></p>
+</pre><p class="working-example"><a href="../../working-examples/aria-role-status-shoppingcart/">実装例: ショッピングカートにおける role="status"</a></p>
             </section>
          </section>
          <section id="tests">
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>For each <a href="https://www.w3.org/TR/WCAG21/#dfn-status-messages">status message</a>:
+               <p>それぞれの <a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージ（status message）</a>に対して以下を確認する。
                </p>
                <ol>
-                  					
-                  <li>Check that the container destined to hold the status message has a <code>role</code> attribute with a value of <code>status</code> <em>before</em> the status message occurs.
+                  <li>ステータスメッセージを持つことになるコンテナが、そのステータスメッセージが出現する<em>前に</em>、<code>role</code> 属性とその値 <code>status</code> を持つこと。
                   </li>
-                  					
-                  <li>Check that when the status message is triggered, it is inside the container.</li>
-                  					
-                  <li>Check that elements or attributes that provide information equivalent to the visual
-                     experience for the status message (such as a shopping cart image with proper ALT text)
-                     also reside in the container.
+                  <li>ステータスメッセージが出現したとき、そのメッセージがコンテナの中に内包されていること。</li>
+                  <li>ステータスメッセージによる視覚的な体験と同等の情報を提供する要素又は属性（適切な ALT テキストを持つショッピングカート画像など）もコンテナの中に存在すること。
                   </li>
-                  				
                </ol>
             </section>
             <section class="test-results">
