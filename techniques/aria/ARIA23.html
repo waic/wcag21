@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA23: Using role=log to identify sequential information updates</title>
+      <title>ARIA23: 逐次的な情報更新を識別するために role="log" を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,41 +12,36 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA22">Previous Technique: ARIA22</a></li>
-            <li><a href="ARIA24">Next Technique: ARIA24</a></li>
+            <li><a href="ARIA22">前の達成方法: ARIA22</a></li>
+            <li><a href="ARIA24">次の達成方法: ARIA24</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using <code>role=log</code> to identify sequential information updates
-      </h1>
+      <h1>逐次的な情報更新を識別するために <code>role="log"</code> を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content using <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>.
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> を用いたコンテンツ。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">Success Criterion 4.1.3: Status Messages</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>
                				The purpose of this technique is to notify Assistive Technologies (AT) when content
                has been appended to sequential information concerning the application's history or
@@ -58,9 +53,9 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-updating-the-contents-of-a-chat-conversation">
-               <h3>Example 1: Updating the contents of a chat conversation</h3>
+               <h3>例 1: Updating the contents of a chat conversation</h3>
                <section class="description" id="">
                   					
                   <p>Comments that users type into a chat input field are appended to the end of the chat
@@ -77,10 +72,10 @@
 		&lt;/ul&gt;
 	&lt;/div&gt;
 </code>
-</pre><p class="working-example">Working example: <a href="../../working-examples/aria-role-log/chatlog.html">chatlog.html</a></p>
+</pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/chatlog.html">chatlog.html</a></p>
             </section>
             <section class="example" id="example-2-updating-the-log-of-a-server">
-               <h3>Example 2: Updating the log of a server</h3>
+               <h3>例 2: Updating the log of a server</h3>
                <p>An application log records time-stamped activities. The log is exposed in the app
                   as a view, with the region marked with the role of <code>log</code> so that the new additions are announced by the ATs. (The default value for the <code>aria-relevant</code> attribute is "additions", so the removal of the old top entries due to log size limitations
                   will not be announced.)  When each new log entry is added, a screen reader announces
@@ -94,13 +89,13 @@
 		&lt;/ul&gt;
 	&lt;/div&gt;
 </code>
-</pre><p class="working-example">Working example: <a href="../../working-examples/aria-role-log/serverlog.html">serverlog.html</a></p>
+</pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/serverlog.html">serverlog.html</a></p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>On a page that contains sequentially updating information:</p>
                <ol>
                   					
@@ -110,10 +105,10 @@
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>#1 is true.</li>
+                  <li>1. の結果が真である。</li>
                   				
                </ul>
             </section>
