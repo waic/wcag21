@@ -46,102 +46,80 @@
             </p>
             <p>ウェブコンテンツには、利用者のデバイスがタッチスクリーンを有するかどうかを判定するための様々な方法やヒューリスティックがある。しかし、タッチスクリーンが存在する場合であっても、他の入力モダリティが利用者に利用可能な場合がある。利用者はタッチスクリーンを (専ら) 使用して、ウェブコンテンツとやり取りするとは限らないのである。
             </p>
-            <p>タッチスクリーンが検知されたとき、ウェブコンテンツがタッチのみで操作されるように設計されている場合、これらの利用者は、他の (好ましいと思われる) 入力メカニズムを使用してコンテンツを操作することができなくなる。
+            <p>タッチスクリーンが検知されたときに、ウェブコンテンツがタッチのみで操作されるように設計されている場合は、これらの利用者は他の (好ましいと思われる) 入力メカニズムを使用してコンテンツを操作することができなくなる。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-only-using-touch-specific-javascript-event-listeners-when-a-touchscreen-is-detected">
-               <h3>例 1: Only using touch-specific JavaScript event listeners when a touchscreen
-                  is detected
+               <h3>例 1: タッチスクリーンが検知されたとき、タッチに特化した JavaScript のイベントリスナーのみを使用している。
                </h3>
-               <p>These types of approaches have historically been popular for "mobile" specific development,
-                  to ensure that touchscreen interactions are more responsive and immediate (due to
-                  the way that touch interactions used to add a delay of approximately 300ms between
-                  a "tap" interaction and the generic <code>click</code> event being fired).
+               <p>これらのタイプのアプローチは、歴史的に「モバイル」特化の開発でよく使われており、タッチスクリーンのインタラクションをより反応よく、即時性の高いものにしている (タッチインタラクションがかつて、「タップ」のインタラクションと一般的な <code>click</code> イベントの発火との間に、約 300 ミリ秒の遅延を追加的に設けていたことによる）。
                </p><pre><code>
-/* inferring the presence of a touchscreen based on
-   support for the Touch Events API */
+/* Touch Events API のサポートに基づいて、タッチスクリーンの存在を検知する */
 
 if (window.TouchEvent || ('ontouchstart' in window)) {
-  /* set up event listeners for touch */
+  /* タッチ用のイベントリスナーを設定する */
   target.addEventListener('touchend', ...);
   ...
 } else {
-  /* set up event listeners for mouse/keyboard */
+  /* マウス／キーボード用のイベントリスナーを設定する */
   target.addEventListener('click', ...);
   ...
 }
 				</code></pre><pre><code>
-/* inferring the presence of a touchscreen based on
-   the CSS Media Queries 4 Interaction Media Features
-   match for a "coarse" primary input mechanism */
+/* CSS Media Queries Level 4 の Interaction Media Features の、
+主要な入力メカニズム "coarse" との一致に基づいて、タッチスクリーンの存在を検知する */
 
 if (window.matchMedia &amp;&amp; window.matchMedia("(pointer:coarse)").matches) {
-  /* set up event listeners for touch */
+  /* タッチ用のイベントリスナーを設定する */
   target.addEventListener('touchend', ...);
   ...
 } else {
-  /* set up event listeners for mouse/keyboard */
+  /* マウス／キーボード用のイベントリスナーを設定する */
   target.addEventListener('click', ...);
   ...
 }
-				</code></pre><p>Similarly, web content that omits relevant/necessary keyboard event listeners (e.g.
-                  for the correct keyboard interaction with a complex widget, such as a tab interface)
-                  when a touchscreen is detected - under the assumption that on a touch device, keyboard
-                  support won't be necessary.
+				</code></pre><p>同様に、タッチスクリーンが検知されたときに、関連する／必要なキーボードのイベントリスナー (例えば、タブインターフェースなど複雑なウィジェットに対して正しくキーボードインタラクションを行うためのもの) を省略するウェブコンテンツは、タッチデバイスという前提のもとでは、キーボードのサポートは必要ないであろう。
                </p><pre><code>
-/* inferring the presence of a touchscreen based on
-   the navigator.maxTouchPoints property defined in
-   the Pointer Events API */
+/* Pointer Events API で定義されている navigator.maxTouchPoints プロパティに基づいて、
+タッチスクリーンの存在を検知する */
 
 if (window.PointerEvent &amp;&amp; ('maxTouchPoints' in navigator) &amp;&amp;
     (navigator.maxTouchPoints &gt; 0)) {
-	/* no need to listen to keyboard - there's a touchscreen... */
+	/* キーボード用のイベントリスナーは必要ない。 タッチスクリーンがあるので... */
 	...
 } else {
-	/* set up event listeners for keyboard interactions */
+	/* キーボードインタラクション用のイベントリスナーを設定する */
   target.addEventListener('keyup', ...);
   ...
 }
 				</code></pre><div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
-                  <p>Generally, these approaches will <em>also</em> result in a failure of Success Criterion 2.1.1 Keyboard - but only in situations
-                     where a touchscreen interface was also detected.
+                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボード <em>も併せて</em>満たさないことになるが、それはタッチスクリーンインターフェースも検知された状況でのみ、該当する。
                   </p>
                </div>
             </section>
             <section class="example" id="example-2-hiding/omitting-controls-for-mouse-and-keyboard-users-when-a-touchscreen-is-detected">
-               <h3>例 2: Hiding/omitting controls for mouse and keyboard users when a touchscreen
-                  is detected
+               <h3>例 2: タッチスクリーンが検知されたときに、マウス及びキーボードの利用者のためのコントロールを、非表示／省略している。
                </h3>
-               <p>Web content containing interactive widgets such as content carousels, with visible
-                  buttons to operate the widget (such as previous/next buttons, or a visible scrollbar/slider).
-                  These visible controls are hidden/omitted when a touchscreen is detected, under the
-                  assumption that users will simply use touch gestures to operate the widgets, and no
-                  other alternatives are then provided for keyboard or mouse users.
+               <p>コンテンツのカルーセルなど、インタラクティブなウィジェットを含むウェブコンテンツで、ウィジェットを操作するための可視ボタン (前へ／次へボタン、又は可視スクロールバー／スライダー、など) を持つものがある。これらの可視コントロールは、タッチスクリーンが検知されたとき、利用者が単にタッチジェスチャを用いてウィジェットを操作するという想定のもと、非表示／省略され、キーボード又はマウスの利用者には他の代替手段が提供されない。
                </p><pre><code>
-/* using CSS Media Queries 4 Interaction Media Features
-   to hide particular elements in the page (such as a container
-   with visible controls) when a "coarse" primary input is present */
+/* CSS Media Queries Level 4 の Interaction Media Features を用いて、
+主要な入力メカニズム "coarse" が存在する場合、ページ内の特定の要素
+ (可視コントロールを持つコンテナなど) を非表示にする */
 
 @media (pointer: coarse) {
   #widget .controls { display: none; }
 }
-				</code></pre><p>Depending on the specific implementation, authors may allow mouse interactions with
-                  widgets that mirror touch gestures - for instance, allowing mouse users to also drag/swipe
-                  carousels, rather than just relying on clickable previous/next controls or scrollbars.
-                  In these cases, hiding controls when a touchscreen is detected will still allow users
-                  to operate the widget with the mouse (unless this interaction has also been suppressed/omitted
-                  when the touchscreen was detected, as per the previous example). However, if the only
-                  keyboard-operable controls for the widget were hidden, and no alternative for keyboard
-                  users was provided (such as allowing cursor key operation), this situation would still
-                  fail Success Criterion 2.5.6.
+				</code></pre><p>特定の実装によっては、タッチジェスチャを反映したウィジェットに対して、コンテンツ制作者はマウスによるインタラクションを可能にすることができる。例えば、マウス利用者が、クリック可能な前へ／次へのコントロール又はスクロールバーだけでなく、カルーセルのドラッグ／スワイプもできるようにするなどである。
+					
+					
+					このような場合、タッチスクリーンが検知されたときにコントロールを非表示しても、利用者はマウスでウィジェットを操作することができる (タッチスクリーンが検知されたときに、前掲の例のようにこのインタラクションが抑制／省略されていない限りは)。しかし、そのウィジェットに対してキーボードでのみ操作可能なコントロールが隠されていて、かつキーボード利用者のための代替手段 (カーソルキー操作を可能にするなど) が提供されていない場合、この状況は達成基準 2.5.6 を満たさないことになる。
                </p>
                <div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
-                  <p>Generally, these approaches will <em>also</em> result in a failure of Success Criterion 2.1.1 Keyboard <em>and</em> (depending on the touch gesture that the user is expected to perform) Success Criterion
-                     2.5.1 Pointer Gestures.
+                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボード及び (利用者が行うことが期待されるタッチジェスチャによっては) 達成基準 2.5.1 ポインタのジェスチャー<em>も併せて</em>満たさないことになる。
                   </p>
                </div>
             </section>
@@ -152,19 +130,13 @@ if (window.PointerEvent &amp;&amp; ('maxTouchPoints' in navigator) &amp;&amp;
                <h3>手順</h3>
                <ol>
                   					
-                  <li>Open the content on a device with a touchscreen and at least one additional input
-                     modality - this includes touch-enabled laptops and touchscreen devices (smartphones
-                     or tablets) with a paired external keyboard and mouse.
+                  <li>タッチスクリーン及び少なくとも 1 つの追加的な入力モダリティを備えたデバイスで、コンテンツを開く。これには、タッチ対応のラップトップパソコンや、タッチスクリーンのデバイス (スマートフォン又はタブレット) で外部キーボード及びマウスとペアリングされているものを含む。
                   </li>
                   					
-                  <li>Check that all interactive controls can be operated using not only the touchscreen,
-                     but also the additional input mechanisms (keyboard and mouse)
+                  <li>全てのインタラクティブなコントロールが、タッチスクリーンだけでなく、追加の入力メカニズム (キーボード及びマウス) も用いて操作可能であることを確認する。
                   </li>
                   					
-                  <li>If the presence of the touchscreen caused interactive controls not to be displayed
-                     (compared to the same content when viewed on a device without a touchscreen), check
-                     that there are alternative controls/ways for users of other additional input mechanisms
-                     to operate the content
+                  <li>タッチスクリーンが存在することでインタラクティブなコントロールが表示されない場合 (タッチスクリーンのないデバイスで見たときに同じコンテンツと比較して)、他の追加入力メカニズムの利用者がコンテンツを操作するための代替コントロール／手段があることを確認する。
                   </li>
                   				
                </ol>
