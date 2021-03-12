@@ -37,53 +37,34 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
-            <ul>
-               
-               <li>Success Criterion 1.4.10: Reflow (Failure)</li>
-               
-            </ul>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Failure)</span>.
+            <p>全てのウェブコンテンツ技術</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成方法 1.4.10: リフロー</a> (失敗)</span> に関連する。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>This document describes a failure that occurs when a change of the viewport width
-               to 320px makes content disappear that was available at wider viewport widths. Some
-               content available at wider widths may not be shown in the same way or at the same
-               position at the viewport width of 320px, simply because there is less space (screen
-               'real estate') to display it. This content, however, should still be available after
-               reflow to 320px viewport width, either by being repositioned in a single column view,
-               or through some interaction offering the information in some other way, for example,
-               in a disclosure area, a dialog, or via a link to another view.
+            <p>この文書は、ビューポート幅を 320 ピクセルに変更したときに生じる、より広いビューポート幅で利用可能だったコンテンツが表示されなくなる不具合について記述するものである。より広いビューポート幅で利用可能なコンテンツの中には、ビューポート幅が 320 ピクセルになると、単純に表示できるスペース (画面上の「土地」) が少なくなるため、同じような形で又は同じ位置で表示されないものがある。しかし、このようなコンテンツは、320 ピクセルのビューポート幅にリフローされた後であっても、単一のカラムビューに再配置されること、あるいは、情報展開エリア、ダイアログ、又は他のビューへのリンクなど他の方法で情報を提供する何らかのインタラクションによって、利用可能であるべきである。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
-            <p>The following examples demonstrate the failure to make content visible at a wider
-               viewport width also available after a reflow to 320px:
+            <p>以下の例は、より広いビューポート幅で見ることができるコンテンツが、320 ピクセルにリフローされた後も利用可能である、ということを満たさないことを示している。
             </p>
             <ul>
                
-               <li>A block of blog entry links in a side column disappears entirely after reflow (i.e.,
-                  it is not available further down in the single column view).
+               <li>サイドカラムにある、ブログのエントリーへのリンクのブロックが、リフロー後に完全に消えてしまう (つまり、シングルカラム表示において、下の方に提示されない)。
                </li>
                
-               <li>Labels above text inputs are hidden and replaced by placeholder text after reflow,
-                  without a technique showing dedicated labels when focusing the fields.
+               <li>テキスト入力の上にあるラベルが、リフロー後に隠されてプレースホルダーのテキストに置き換えられ、フィールドにフォーカスしたときにそのフィールド用のラベルを表示する技術が用いられていない。
                </li>
                
-               <li>Sections of content text disappear after reflow, without being available via some
-                  disclosure widget.
+               <li>リフロー後にコンテンツテキストのセクションが消えてしまい、展開ウィジェットを介して利用することもできない。
                </li>
                
-               <li>Information-carrying images disappear after reflow, without link or the availability
-                  of an equivalent alternative.
+               <li>情報の入った画像がリフロー後に消えてしまい、リンク又は利用可能な同等の代替手段もない。
                </li>
                
-               <li>A global search field disappears after reflow, without an icon or menu option to reveal
-                  a search function or reach an equivalent search page.
+               <li>グローバル検索フィールドがリフロー後に消えてしまい、検索機能を展開する、あるいは同等の検索ページにたどり着くためのアイコン又はメニューオプションもない。
                </li>
                
             </ul>
@@ -94,16 +75,12 @@
                <h3>手順</h3>
                <ol>
                   					
-                  <li>Check visible content elements at a desktop viewport width such as 1280px</li>
+                  <li>1280 ピクセルなど、デスクトップのビューポート幅で、コンテンツの要素が見えることを確認する。</li>
                   
-                  <li>Set the viewport width to 320px by narrowing the browser window, or by zooming in
-                     so that the viewport width is now 320px (when starting with a 1280px viewport width
-                     at 100% browser zoom, this can be done by zooming in to 400%)
+                  <li>ブラウザのウィンドウを狭める、又はビューポート幅が320 ピクセルになるようにズームインすることで、ビューポート幅を320pxに設定する (ブラウザのズーム率が 100 %で、ビューポート幅が 1280 ピクセルの場合は、400 %にズームインすることによって設定できる)。
                   </li>
                   
-                  <li>For each content element that is not provided at the viewport width of 320px, check
-                     that there is a way to reach the same or equivalent content via discolure widgets,
-                     pop-ups, or links to other views
+                  <li>ビューポート幅 320 ピクセルで提供されない各コンテンツ要素について、同じ又は同等のコンテンツにたどり着くための方法が、展開ウィジェット、ポップアップ、あるいは他のビューへのリンクを介して存在するかどうかを確認する。
                   </li>
                   				
                </ol>
