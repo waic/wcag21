@@ -41,59 +41,46 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The objective of this Failure is to describe situations where:</p>
+            <p>この失敗例の目的は、以下のような状況を解説することである。</p>
             <ol> 
                					
-               <li>Controls are set to activate functionality on the down-event of a pointer;</li>
+               <li>コントロールは、ポインタのダウンイベントで機能が動作するように設定されている。</li>
                					
-               <li>No further mechanism to abort or undo is available;</li>
+               <li>それ以上の、中止又は元に戻すメカニズムがない。</li>
                					
-               <li>The up-event does not reverse the outcome of the activation;</li>
+               <li>アップイベントによって、動作の結果が反転しない。</li>
                					
-               <li>It is not essential for the functionality to execute and complete on the down-event.</li>
+               <li>ダウンイベントによって機能が実行され完了することが、必要不可欠でない。</li>
                				
             </ol>
-            <p>Rather than taking advantage of the <code>click</code> event, authors may use down-events such as <code>mousedown</code>, <code>touchstart</code> or <code>pointerdown</code>. As a result, functionality will be executed as soon as a mouse button is pressed
-               (but not released yet), or a finger or stylus makes contact with a touchscreen.
+            <p>コンテンツ制作者は、<code>click</code> イベントを利用する代わりに、<code>mousedown</code>、<code>touchstart</code>、<code>pointerdown</code>といったダウンイベントを使用することができる。その結果、マウスボタンが押される (ただしまだ離されていない)、あるいは、指又はスタイラスがタッチスクリーンに接触することで、即座に機能が実行されるようになる。
             </p>
-            <p>It is possible to use the down event and mitigate potential issues to avoid failing
-               the Success Criterion. For example, provide a method to easily undo or abort the functionality,
-               or reverse the outcome on the up-event (when the mouse button is released, or when
-               the finger or stylus are lifted from the touchscreen). And note that some uses of
-               the down-event are essential for the functionality (e.g., where the control simulates
-               the operation of a musical instrument like a set of piano keys, or when the control
-               is used as an on-screen control for a game where a fast and immediate response is
-               required), in which case they would not fail this Success Criterion.
+            <p>ダウンイベントを使用しつつ、潜在的な問題を軽減することで、達成基準を満たさないことを回避することは可能である。例えば、機能を容易に元に戻す又は中止する、あるいはアップイベント (マウスボタンが離されたとき、又はタッチスクリーンから指やスタイラスが離されたとき) によって結果を反転させる、という方法を提供することができる。
+				
+				また、ダウンイベントの使用が、機能にとって必要不可欠なものもあり (例えば、コントロールがピアノ鍵盤のような楽器の操作をシミュレートする、あるいはコントロールが、迅速かつ即時の反応が必要なゲームの画面制御として使用される、など)、その場合は、この達成基準を満たさないことにはならないことに注意されたい。
             </p>
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">注記</div>
-               <p>The test procedure outlined below could be supplemented with automated or semi-automated
-                  tests to scan for JavaScript that registers event listeners such as <code>mousedown</code>, <code>touchstart</code>, or <code>pointerdown</code>. The automated test would not be sufficient to make a pass/fail determination, but
-                  it can help narrow down the number of potentially problematic controls.
+               <p>以下に概説する検証の手順は、<code>mousedown</code>、<code>touchstart</code>、<code>pointerdown</code>といったイベントリスナーを登録する JavaScript をスキャンする自動化又は半自動化された検証によって補うことができる。自動化された検証は、合否判定には十分ではないが、潜在的に問題のあるコントロールの数を絞り込むのに役立つ。
                </p>
             </div>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-a-close-button-that-triggers-on-down-events">
-               <h3>例 1: A close button that triggers on down-events</h3>
-               <p>A modal dialog contains a lengthy form that a user needs to complete. The modal provides
-                  a simple "Close" control that closes the dialog and loses all information the user
-                  may already have entered in the form. However, instead of simply listening to the
-                  <code>click</code> event - which in most user agents is triggered on the up-event - the author decided
-                  to close the dialog on the down-event. This may lead to the user accidentally closing
-                  the dialog and losing all the data they entered into the form up to that point.
+               <h3>例 1: ダウンイベントによってトリガーされる「閉じる」ボタン</h3>
+               <p>あるモーダルダイアログには、利用者が入力しなければならない長いフォームが含まれている。そのモーダルダイアログには、ダイアログを閉じ、かつ利用者がフォームに入力したすべての情報を失う、シンプルな「閉じる」コントロールが提供されている。しかしコンテンツ制作者は、単純に <code>click</code> イベント (ほとんどのユーザエージェントではアップイベントによって引き起こされる) をリスニングする代わりに、ダウンイベントによってダイアログを閉じることにしてしまった。これにより、利用者が誤ってダイアログを閉じてしまい、それまでにフォームに入力したすべてのデータを失う可能性がある。
                </p><pre><code>
 
                      <!-- modal dialog with a form -->
 ...
-&lt;button id="close"&gt;Close&lt;/button&gt;
+&lt;button id="close"&gt;閉じる&lt;/button&gt;
 ...
 </code></pre><pre><code>
 const trigger = document.getElementById("close");
 
 function closeDialog() {
-  /* close the modal dialog */
+  /* モーダルダイアログを閉じる */
   ...
 }
 
@@ -106,23 +93,17 @@ trigger.addEventListener('pointerdown', closeDialog);
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>Open the content on a device with pointer inputs (mouse, touchscreen, stylus) and
-                  for all available controls (buttons, links, complex widgets):
+               <p>利用可能なすべてのコントロール (ボタン、リンク、複雑なウィジェット) に対して、ポインタによる入力 (マウス、タッチスクリーン、スタイラス) を備えたデバイスで、コンテンツを開く。
                </p>
                <ol>
                   					
-                  <li>Trigger down-events (e.g. by pressing but not releasing the mouse button, or placing
-                     a finger or stylus on the touchscreen) and check if functionality is executed prior
-                     to the up-event (e.g. releasing the mouse button or lifting the finger/stylus)
+                  <li>ダウンイベント (例えば、マウスボタンを押して離さない、あるいはタッチスクリーン上に指又はスタイラスを置く) をトリガーし、アップイベント (例えば、マウスボタンを離す、あるいは指又はスタイラスを持ち上げる) の前に機能が実行されるかどうかを確認する。
                   </li>
                   
-                  <li>If functionality was executed on the down-event, check if triggering the up-event
-                     (releasing the pressed mouse button, or lifing the finger or stylus from the touchscreen)
-                     reverses the outcome
+                  <li>ダウンイベントで機能が実行された場合、アップイベントのトリガー (押したマウスボタンを離す、あるいはタッチスクリーンから指又はスタイラスを持ち上げる) によって結果が反転するかどうかを確認する。
                   </li>
                   
-                  <li>Evaluate if it could be deemed essential for the controls to execute and complete
-                     functionality on the down-event
+                  <li>そのコントロールにとって、ダウンイベントによる実行及び機能の完了が、必要不可欠であると考えられるかどうかを評価する。
                   </li>
                   				
                </ol>
