@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F101: Failure of Success Criterion 2.5.2 due to activating a control on the down-event</title>
+      <title>F101: 達成基準 2.5.2 の失敗例 － ダウンイベントでコントロールを動作させる</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,41 +10,37 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F100">Previous Technique: F100</a></li>
-            <li><a href="F102">Next Technique: F102</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F100">前の達成方法: F100</a></li>
+            <li><a href="F102">次の達成方法: F102</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.5.2 due to activating a control on the down-event</h1>
+      <h1>達成基準 2.5.2 の失敗例 － ダウンイベントでコントロールを動作させる</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that include interactive controls that can be triggered using a pointer.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/pointer-cancellation">Success Criterion 2.5.2: Pointer Cancellation</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>ポインタを使ってトリガーできるインタラクティブなコントロールを含むすべてのウェブコンテンツ技術</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/pointer-cancellation">達成基準 2.5.2: ポインタのキャンセル</a> (失敗)</span> に関連する。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The objective of this Failure is to describe situations where:</p>
             <ol> 
                					
@@ -70,7 +66,7 @@
                required), in which case they would not fail this Success Criterion.
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <p>The test procedure outlined below could be supplemented with automated or semi-automated
                   tests to scan for JavaScript that registers event listeners such as <code>mousedown</code>, <code>touchstart</code>, or <code>pointerdown</code>. The automated test would not be sufficient to make a pass/fail determination, but
                   it can help narrow down the number of potentially problematic controls.
@@ -78,9 +74,9 @@
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-close-button-that-triggers-on-down-events">
-               <h3>Example 1: A close button that triggers on down-events</h3>
+               <h3>例 1: A close button that triggers on down-events</h3>
                <p>A modal dialog contains a lengthy form that a user needs to complete. The modal provides
                   a simple "Close" control that closes the dialog and loses all information the user
                   may already have entered in the form. However, instead of simply listening to the
@@ -107,9 +103,9 @@ trigger.addEventListener('pointerdown', closeDialog);
 </code></pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                <p>Open the content on a device with pointer inputs (mouse, touchscreen, stylus) and
                   for all available controls (buttons, links, complex widgets):
                </p>
@@ -132,10 +128,10 @@ trigger.addEventListener('pointerdown', closeDialog);
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
                   					
-                  <li>If #1 is true, and #2 and #3 are false then the content fails the Success Criterion.</li>
+                  <li>手順 #1 が真であり、かつ手順 #2 及び #3 が偽である場合、コンテンツは達成基準を満たさないことになる。</li>
                   				
                </ul>
             </section>
