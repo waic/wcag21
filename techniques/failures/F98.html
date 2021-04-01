@@ -52,51 +52,54 @@
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-only-using-touch-specific-javascript-event-listeners-when-a-touchscreen-is-detected">
-               <h3>例 1: タッチスクリーンが検知されたとき、タッチ固有の JavaScript のイベントリスナーのみを使用している。
+               <h3>例 1: タッチスクリーンが検知されたとき、タッチ固有の JavaScript のイベントリスナーのみを使用している
                </h3>
-               <p>これらのタイプのアプローチは、歴史的に「モバイル」特化の開発でよく使われており、タッチスクリーンのインタラクションをより反応よく、即時性の高いものにしている (タッチインタラクションがかつて、「タップ」のインタラクションと一般的な <code>click</code> イベントの発火との間に、約 300 ミリ秒の遅延を追加的に設けていたことによる）。
+               <p>これらのタイプのアプローチは、歴史的に「モバイル」固有の開発でよく使われており、タッチスクリーンのインタラクションをより反応よく、即時性の高いものにしている (タッチインタラクションがかつて、「タップ」のインタラクションと一般的な <code>click</code> イベントの発火との間に、約 300 ミリ秒の遅延を追加的に設けていたことによる）。
                </p><pre><code>
-/* Touch Events API のサポートに基づいて、タッチスクリーンの存在を検知する */
+/* inferring the presence of a touchscreen based on
+   support for the Touch Events API  */
 
 if (window.TouchEvent || ('ontouchstart' in window)) {
-  /* タッチ用のイベントリスナーを設定する */
+  /* set up event listeners for touch */
   target.addEventListener('touchend', ...);
   ...
 } else {
-  /* マウス／キーボード用のイベントリスナーを設定する */
+  /* set up event listeners for mouse/keyboard */
   target.addEventListener('click', ...);
   ...
 }
 				</code></pre><pre><code>
-/* CSS Media Queries Level 4 の Interaction Media Features の、
-主要な入力メカニズム "coarse" との一致に基づいて、タッチスクリーンの存在を検知する */
+/* inferring the presence of a touchscreen based on
+   the CSS Media Queries 4 Interaction Media Features
+   match for a "coarse" primary input mechanism */
 
 if (window.matchMedia &amp;&amp; window.matchMedia("(pointer:coarse)").matches) {
-  /* タッチ用のイベントリスナーを設定する */
+  /* set up event listeners for touch */
   target.addEventListener('touchend', ...);
   ...
 } else {
-  /* マウス／キーボード用のイベントリスナーを設定する */
+  /* set up event listeners for mouse/keyboard */
   target.addEventListener('click', ...);
   ...
 }
 				</code></pre><p>同様に、タッチスクリーンが検知されたときに、関連する／必要なキーボードのイベントリスナー (例えば、タブインターフェースなど複雑なウィジェットに対して正しくキーボードインタラクションを行うためのもの) を省略するウェブコンテンツは、タッチデバイスという前提のもとでは、キーボードのサポートは必要ないであろう。
                </p><pre><code>
-/* Pointer Events API で定義されている navigator.maxTouchPoints プロパティに基づいて、
-タッチスクリーンの存在を検知する */
+/* inferring the presence of a touchscreen based on
+   the navigator.maxTouchPoints property defined in
+   the Pointer Events API */
 
 if (window.PointerEvent &amp;&amp; ('maxTouchPoints' in navigator) &amp;&amp;
     (navigator.maxTouchPoints &gt; 0)) {
-	/* キーボード用のイベントリスナーは必要ない。 タッチスクリーンがあるので... */
+	/* no need to listen to keyboard - there's a touchscreen... */
 	...
 } else {
-	/* キーボードインタラクション用のイベントリスナーを設定する */
+	/* set up event listeners for keyboard interactions */
   target.addEventListener('keyup', ...);
   ...
 }
 				</code></pre><div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
-                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボード <em>も併せて</em>満たさないことになるが、それはタッチスクリーンインターフェースも検知された状況でのみ、該当する。
+                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボードの失敗<em>も併せて</em>もたらすが、それはタッチスクリーンインターフェースも検知された状況でのみ、該当する。
                   </p>
                </div>
             </section>
@@ -105,17 +108,14 @@ if (window.PointerEvent &amp;&amp; ('maxTouchPoints' in navigator) &amp;&amp;
                </h3>
                <p>コンテンツのカルーセルなど、インタラクティブなウィジェットを含むウェブコンテンツで、ウィジェットを操作するための可視ボタン (前へ／次へボタンや、可視スクロールバー／スライダーなど) を持つものがある。これらの可視コントロールは、利用者が単にタッチジェスチャを用いてウィジェットを操作するという仮定のもと、タッチスクリーンが検知されたときに非表示／省略され、キーボード又はマウスの利用者には他の代替手段が提供されない。
                </p><pre><code>
-/* CSS Media Queries Level 4 の Interaction Media Features を用いて、
-主要な入力メカニズム "coarse" が存在する場合、ページ内の特定の要素
- (可視コントロールを持つコンテナなど) を非表示にする */
+/* using CSS Media Queries 4 Interaction Media Features
+   to hide particular elements in the page (such as a container
+   with visible controls) when a "coarse" primary input is present */
 
 @media (pointer: coarse) {
   #widget .controls { display: none; }
 }
-				</code></pre><p>特定の実装によっては、タッチジェスチャを反映したウィジェットに対して、コンテンツ制作者はマウスによるインタラクションを可能にすることができる。例えば、マウス利用者が、クリック可能な前へ／次へのコントロール又はスクロールバーだけでなく、カルーセルのドラッグ／スワイプもできるようにするなどである。
-					
-					
-					このような場合、タッチスクリーンが検知されたときにコントロールを非表示しても、利用者はマウスでウィジェットを操作することができる (タッチスクリーンが検知されたときに、前掲の例のようにこのインタラクションが抑制／省略されていない限りは)。しかし、そのウィジェットに対してキーボードでのみ操作可能なコントロールが隠されていて、かつキーボード利用者のための代替手段 (カーソルキー操作を可能にするなど) が提供されていない場合、この状況は達成基準 2.5.6 を満たさないことになる。
+				</code></pre><p>特定の実装によっては、タッチジェスチャを反映したウィジェットに対して、コンテンツ制作者はマウスによるインタラクションを可能にすることができる。例えば、マウス利用者が、クリック可能な前へ／次へのコントロール又はスクロールバーだけでなく、カルーセルのドラッグ／スワイプもできるようにするなどである。このような場合、タッチスクリーンが検知されたときにコントロールを非表示しても、利用者はマウスでウィジェットを操作することができる (タッチスクリーンが検知されたときに、前掲の例のようにこのインタラクションが抑制／省略されていない限りは)。しかし、そのウィジェットに対してキーボードでのみ操作可能なコントロールが隠されていて、かつキーボード利用者のための代替手段 (カーソルキー操作を可能にするなど) が提供されていない場合、この状況は達成基準 2.5.6 を満たさないことになる。
                </p>
                <div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
