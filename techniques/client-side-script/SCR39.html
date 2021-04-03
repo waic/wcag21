@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR39: Making content on focus or hover hoverable, dismissible, and persistent</title>
+      <title>SCR39: フォーカス又はホバー時のコンテンツをホバー可能、非表示可能及び表示が継続されるようにする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,8 +12,8 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">目次</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
-            <li><a href="SCR38">前: 達成方法 SCR38</a></li>
-            <li><a href="../css/C6">次: 達成方法 C6</a></li>
+            <li><a href="SCR38">前の達成方法: SCR38</a></li>
+            <li><a href="../css/C6">次の達成方法: C6</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
@@ -26,7 +26,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Making content on focus or hover hoverable, dismissible, and persistent</h1>
+      <h1>フォーカス又はホバー時のコンテンツをホバー可能、非表示可能及び表示が継続されるようにする</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
@@ -34,45 +34,27 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>The Technique is applicable to any technology that supports the display of additional
-               content on pointer hover.
-               
+            <p>この達成方法は、ポインタホバーでの追加コンテンツの表示をサポートするすべての技術に適用できる。 
             </p>
-            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/content-on-hover-or-focus">達成基準 1.4.13: ホバー又はフォーカスで表示されるコンテンツを理解する</a>に関連する達成方法である。(十分)</span>.
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/content-on-hover-or-focus">達成基準 1.4.13: ホバー又はフォーカスで表示されるコンテンツを理解する</a>に関連する達成方法である。(十分)</span>
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>Additional content that is displayed when a user moves the pointer over a trigger
-               or moves the keyboard focus to the trigger (for example, a pop-up) must remain visible
-               to allow users time to read and interact with the content and must allow the user
-               to move the pointer over the additional content.
+            <p>利用者がトリガーにポインタを移動する、又はキーボードフォーカスを移動するときに表示される追加コンテンツ (例えばポップアップ) は、利用者がコンテンツを読んで操作する時間を確保するために、表示されたままにしておかなければならず、かつ、利用者が追加コンテンツにポインタを移動させることができなければならない。
             </p>
-            <p>Low vision users who magnify their screens often see only a small part of the screen
-               at a time (their viewport).
-               This means that the additional content may not be fully visible in the current viewport
-               and users may need to move
-               their mouse over the additional content to read it. Web authors should therefore ensue
-               that additional content stays visible
-               when the pointer moves away from the trigger to the (mostly adjacent) additional content.
-               additional content should also be
-               dismissible without moving the focus, so that users can read content covered by the
-               additional content.
+            <p>画面を拡大するロービジョンの利用者は、一度に画面のごく一部 (ビューポート) しか見られないことがよくある。これは、追加コンテンツが現在のビューポートに完全に表示されず、利用者がその追加コンテンツの上にマウスを移動させないと読むことができない可能性があることを意味する。したがって、ウェブコンテンツ制作者は、ポインタがトリガーから離れて (ほとんど隣接した) 追加コンテンツに移動したときに、追加コンテンツが表示されたままになるようにすべきである。追加コンテンツはまた、フォーカスを移動することなく非表示にできるようにすべきである。その結果、利用者が追加コンテンツに覆われたコンテンツを読むことができる。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-example-1-content-preview-for-links">
-               <h3>事例 1: Content preview for links</h3>
-               <p>When hovering over or focusing on a link, a content preview for the link appears just
-                  above or below that link.
-                  			Users can move the pointer over the additional content (pop-up) so that they can
-                  fully read the additional content. Pressing the Esc
-                  			key dismisses (closes) the additional content.
+               <h3>例 1: リンクのコンテンツプレビュー</h3>
+               <p>リンクにホバー又はフォーカスするとき、リンクのコンテンツプレビューがそのリンクのすぐ上又は下に表示される。利用者は、追加コンテンツ (ポップアップ) の上にポインタを移動して、追加コンテンツを完全に読むことができる。Esc キーを押すと、追加コンテンツが非表示になる (閉じる)。 
                </p>
                <section id="html-of-example-1">
                   			
-                  <h4>事例 1のHTML</h4>
+                  <h4>例 1 の HTML</h4>
                   			<pre><code>&lt;p&gt;This is the &lt;a class="a-and-tooltip" id="parent" href="index.html"&gt;trigger
 &lt;span id="popup" role="tooltip"&gt;And this additional text 
 gives additional context on the trigger term&lt;/span&gt;&lt;/a&gt;.
@@ -82,7 +64,7 @@ Text and popup are &lt;strong&gt;in one link (a)&lt;/strong&gt; element.&lt;/p&g
                </section>
                <section id="css-of-example-1">
                   			
-                  <h4>事例 1のCSS</h4>
+                  <h4>例 1 の CSS</h4>
                   			<pre><code>[role="tooltip"] {
     display: none;
     padding: 0.5em;
@@ -106,7 +88,7 @@ Text and popup are &lt;strong&gt;in one link (a)&lt;/strong&gt; element.&lt;/p&g
                </section>
                <section id="javascript-of-example-1">
                   			
-                  <h4>事例 1のJavaScript</h4>
+                  <h4>例 1 の JavaScript</h4>
                   			<pre><code>// trigger and popup inside the same link
 
 var parent = document.getElementById('parent');
@@ -134,7 +116,7 @@ document.addEventListener('keydown', (e) =&gt; {
        document.getElementById('popup').style.display = 'none';
 });</code></pre>
                   		</section>
-               <p class="working-example"><a href="../../working-examples/script-hoverable/">ホバーまたはフォーカスで表示されるコンテンツの実装サンプル</a></p>
+               <p class="working-example"><a href="../../working-examples/script-hoverable/">ホバー又はフォーカスで表示されるコンテンツの実装例</a></p>
             </section>
          </section>
       </main>
