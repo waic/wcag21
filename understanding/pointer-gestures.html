@@ -49,14 +49,14 @@
                <p>ポインタの動きは、正確な動きを実行できない人にとって、使用が困難又は不可能である可能性があるため、代替の形式のインタラクションが常に推奨される。この達成基準は、自由形式の軌跡の代替を提供することが困難又は不可能な場合があるため、軌跡ベースのジェスチャに限定される。</p>
             </div>
             <p><strong>マルチポイント</strong>ジェスチャの例には、2 本指のピンチズーム、1 本目の指を画面上に置いて 2 本目の指をタップするスプリットタップ、2 本指もしくは 3 本指のタップ又はスワイプが含まれる。利用者は、単一の指又は棒でタイプ又はポイントする場合、これらを達成することが困難又は不可能であると感じることがある。</p>
-            <p>コンテンツ制作者は、マルチポイント又は軌跡ペースのジェスチャなしにコンテンツを操作できることを保証しなければならない。Multipoint or path-based gestures can be used so long as the functionality can also be operated by another method, such as a tap, click, double tap, double click, long press, or click &amp; hold.</p>
-            <p>This Success Criterion applies to gestures in the author-provided content, not gestures defined by the operating system, user agent, or assistive technology. Examples of operating system gestures would be swiping down to see system notifications and gestures for built-in assistive technologies (AT). ユーザエージェントが実装するジェスチャの例としては、ページ履歴内を移動するためにブラウザが実装する水平方向のスワイプや、ページのコンテンツをスクロールするために用いられる垂直方向のスワイプなどがある。</p>
-            <p>There are times when a component requires a path-based gesture for touch screen devices but not with a mouse. Taking an example of a generic slider:</p>
+            <p>コンテンツ制作者は、マルチポイント又は軌跡ペースのジェスチャなしにコンテンツを操作できることを保証しなければならない。タップ、クリック、ダブルタップ、ダブルクリック、長押し、クリック＆ホールドなどの別の方法でも機能を操作できる限りにおいて、マルチポイント又は軌跡ベースのジェスチャを使用することができる。</p>
+            <p>この達成基準は、オペレーティングシステム、ユーザエージェント、又は支援技術によって定義されたジェスチャではなく、コンテンツ制作者が提供したコンテンツのジェスチャに適用される。 オペレーティングシステムのジェスチャの例としては、システム通知を表示するための下にスワイプ、及び組み込みの支援技術 (AT) ためのジェスチャがある。ユーザエージェントが実装するジェスチャの例としては、ページ履歴内を移動するためにブラウザが実装する水平方向のスワイプや、ページのコンテンツをスクロールするために用いられる垂直方向のスワイプなどがある。</p>
+            <p>コンポーネントがタッチスクリーンデバイスでは軌跡ベースのジェスチャーを必要とするが、マウスでは必要としないある場合がある。一般的なスライダーを例にとると:</p>
             <ul>
                				
-               <li><strong>Using a mouse:</strong> If the user clicks on the thumb control of the slider and moves vertically, the slider will respond by moving to the right or left, even if the movement is mostly upwards. There will be no page scrolling as a result of the vertical movement as long as they drag with focus on the slider. Therefore, the slider does not require a path-based gesture with mouse pointer.</li>
+               <li><strong>マウスを使用:</strong> 利用者がスライダーの親指コントロールをクリックして垂直方向に移動する場合、たとえその動きがほとんど上向きであったとしても、スライダーは右又は左に移動して応答する。スライダーにフォーカスしてドラッグしている限り、垂直方向の動きによるページのスクロールは発生しない。したがって、スライダーにはマウスポインタを使用した軌跡ベースのジェスチャは必要ない。</li>
                				
-               <li><strong>Using a touch-screen:</strong> If the user puts their finger on the thumb control of the slider and moves upwards more than sideways, the slider may not respond because the browser takes control of the swipe and interprets it as a scroll, and will move the page up and down. Moving left or right on the slider thumb engages the slider and then the user can vary their vertical movement. This implementation has the 3-point requirement to work with a finger on a touch screen device so is a path-based gesture.</li>
+               <li><strong>タッチスクリーンを使用:</strong> I利用者がスライダーの親指コントロールに指を置き、横よりも上に移動する場合、ブラウザがスワイプを制御してスクロールとして解釈し、ページを上下に移動させるため、スライダーが応答しないことがある。スライダーの親指を左右に動かすとスライダーが動き、利用者は垂直方向の動きを変えることができる。この実装は、タッチスクリーンデバイス上で指で操作するための 3 点要件があり、軌跡ベースのジェスチャとなっている。</li>
                			
             </ul>
             <p>As touch screen devices can apply default gestures it is important to test with them if you are unsure whether a particular component does require a path-based gesture.</p>
