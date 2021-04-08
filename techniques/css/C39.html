@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C39: Using the CSS reduce-motion query to prevent motion</title>
+      <title>C39: モーションの防止に CSS reduce-motion クエリを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,94 +10,68 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C38">Previous Technique: C38</a></li>
-            <li><a href="C40">Next Technique: C40</a></li>
+            <li><a href="../#techniques" title="目次">目次</a></li>
+            <li><a href="../#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C38">前の達成方法: C38</a></li>
+            <li><a href="C40">次の達成方法: C40</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the CSS reduce-motion query to prevent motion</h1>
+      <h1>モーションの防止に CSS reduce-motion クエリを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content using technologies that support <a href="https://www.w3.org/TR/CSS/">Cascading Style Sheets (CSS)</a>.
-            </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/animation-from-interactions">Success Criterion 2.3.3: Animation from Interactions</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象) </h2>
+            <p><a href="https://www.w3.org/TR/CSS/">Cascading Style Sheets (CSS)</a> をサポートするウェブコンテンツ技術を使用したコンテンツ</p>
+            <p>この達成方法は、<span><a href="https://waic.jp/docs/WCAG21/Understanding/animation-from-interactions.html">達成基準 2.3.3: インタラクションによるアニメーションを理解する</a> (十分) </span>に関連する。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to allow users to prevent animation from being
-               displayed on Web pages, via the use of of the 'prefers-reduced-motion' CSS Media Query.
-            </p>
-            <p>Some users experience distraction or nausea from animated content. For example, if
-               scrolling a page causes elements to move (other than the essential movement associated
-               with scrolling) it can trigger vestibular disorders. Enclosing the CSS that creates
-               the animations in a media query allows people to prevent those symptoms.
-            </p>
-            <p>A typical example is 'parallax scrolling', where backgrounds move at different rates.
-               The movement due to scrolling the page is essential (and under the users control),
-               but additional movement triggered by the scrolling can also trigger vestibular symptoms.
-            </p>
-            <p>The understanding document for <a href="../../understanding/motion-actuation.html#resources">Motion Actuation</a> includes links for changing the reduce motion setting.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法は 'prefers-reduced-motion' CSS メディアクエリを使用して、利用者にウェブページでアニメーションが表示されないようにすることを目的とする。</p>
+            <p>一部の利用者は、動きのあるコンテンツから、注意散漫又は吐き気を経験することがある。例えば、ページのスクロールによって要素が動く (スクロールに伴う必要不可欠な動きを除く) と、前庭障害が発生する可能性がある。これらのアニメーションを構成する CSS をメディアクエリで囲むことで、それらの症状を防ぐことができる。</p>
+            <p>これの代表的な例としては、背景が前景とは異なる速度で動くパララックススクロールが挙げられる。スクロールによるページの動きは必要不可欠である（かつ利用者のコントロール下にある）が、スクロールによって発生する追加の動きは前庭障害を引き起こす可能性がある。</p>
+            <p><a href="../../understanding/motion-actuation.html#resources">動きによる起動</a>の理解に関するドキュメントにはモーション軽減設定の変更に関するリンクが含まれる。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-'prefers-reduced-motion'-css-media-query">
-               <h3>Example 1: 'prefers-reduced-motion' CSS Media Query</h3>
-               <p>Users can indicate their motion preference for interfaces in their system and the
-                  'prefers-reduced-motion' CSS Media Query will respect that choice. CSS can then be
-                  applied to disable that motion for users that request it.
-               </p><pre>
+               <h3>事例 1: 'prefers-reduced-motion' CSS メディアクエリ</h3>
+               <p>利用者はシステム内のインタフェースのモーションに関する意向を設定することができ、'prefers-reduced-motion' CSS メディアクエリはその選択を尊重する。モーションに CSS を適用することで、要求した利用者に対しては無効化することができる。</p>
+               <pre>
 @media (prefers-reduced-motion: reduce) {
   /* CSS to disable motion goes here */
 }</pre><p class="working-example">
-                  <a href="../../working-examples/css-reduced-motion-query/index.html">Working example of 'prefers-reduced-motion' CSS Media Query</a>
-                  
+                  <a href="https://www.w3.org/WAI/WCAG21/working-examples/css-reduced-motion-query/index.html">'prefers-reduced-motion' CSS メディアクエリの実装例</a>
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each interactive element that moves due to a user interaction:</p>
+               <h3>手順</h3>
+               <p>利用者のインタラクションによって動くインタラクティブな要素それぞれについて:</p>
                <ol>
-                  
-                  <li>Enable the 'Reduce Motion' setting in your system;</li>
-                  
-                  <li>Check that the motion is not essential;</li>
-                  
-                  <li>Check that the element does not move.</li>
-                  
+                  <li>システムの「視差効果を減らす」設定を有効化する、</li>
+                  <li>その動作が必要不可欠でないことを確認する、</li>
+                  <li>要素が動かないことを確認する。</li>
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
-                  
-                  <li>#2 and #3 are true.</li>
-                  
+                  <li>#2 と #3 の結果が真である。</li>
                </ul>
             </section>
          </section>
