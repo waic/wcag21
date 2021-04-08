@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C39: アニメーションの防止に CSS reduce-motion クエリを使用する</title>
+      <title>C39: モーションの防止に CSS reduce-motion クエリを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -26,7 +26,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>アニメーションの防止に CSS reduce-motion クエリを使用する</h1>
+      <h1>モーションの防止に CSS reduce-motion クエリを使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://w3c.github.io/wcag/understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
@@ -39,21 +39,21 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法は 'prefers-reduced-motion' CSS メディアクエリを使用して、ユーザーが Web ページのアニメーションを非表示にできることを目的とする。</p>
+            <p>この達成方法は 'prefers-reduced-motion' CSS メディアクエリを使用して、利用者にウェブページでアニメーションが表示されないようにすることを目的とする。</p>
             <p>一部の利用者は、動きのあるコンテンツから、注意散漫又は吐き気を経験することがある。例えば、ページのスクロールによって要素が動く (スクロールに伴う必要不可欠な動きを除く) と、前庭障害が発生する可能性がある。これらのアニメーションを構成する CSS をメディアクエリで囲むことで、それらの症状を防ぐことができる。</p>
-            <p>これの代表的な例として、背景が前景とは異なる速度で動くパララックススクロールが挙げられる。スクロールによるページの動きは必要不可欠である（かつユーザーのコントロール下にある）が、スクロールによって発生する追加の動きは前庭障害を引き起こす可能性がある。</p>
+            <p>これの代表的な例としては、背景が前景とは異なる速度で動くパララックススクロールが挙げられる。スクロールによるページの動きは必要不可欠である（かつ利用者のコントロール下にある）が、スクロールによって発生する追加の動きは前庭障害を引き起こす可能性がある。</p>
             <p><a href="../../understanding/motion-actuation.html#resources">動きによる起動</a>の理解に関するドキュメントにはモーション軽減設定の変更に関するリンクが含まれる。</p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-'prefers-reduced-motion'-css-media-query">
                <h3>事例 1: 'prefers-reduced-motion' CSS メディアクエリ</h3>
-               <p>ユーザーはシステム内のインタフェースのモーションに関する意向を設定することができ、'prefers-reduced-motion' CSS メディアクエリはその選択を尊重する。モーションに CSS を適用することで、要求したユーザーに対しては無効化することができる。</p>
+               <p>利用者はシステム内のインタフェースのモーションに関する意向を設定することができ、'prefers-reduced-motion' CSS メディアクエリはその選択を尊重する。モーションに CSS を適用することで、要求した利用者に対しては無効化することができる。</p>
                <pre>
 @media (prefers-reduced-motion: reduce) {
   /* CSS to disable motion goes here */
 }</pre><p class="working-example">
-                  <a href="../../working-examples/css-reduced-motion-query/index.html">'prefers-reduced-motion' CSS メディアクエリの実装例</a>
+                  <a href="https://www.w3.org/WAI/WCAG21/working-examples/css-reduced-motion-query/index.html">'prefers-reduced-motion' CSS メディアクエリの実装例</a>
                </p>
             </section>
          </section>
@@ -61,10 +61,10 @@
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>ユーザーのインタラクションによって動くインタラクティブな要素それぞれについて:</p>
+               <p>利用者のインタラクションによって動くインタラクティブな要素それぞれについて:</p>
                <ol>
-                  <li>システムの「視差効果を減らす」設定を有効化する;</li>
-                  <li>その動作が必要不可欠でないことを確認する;</li>
+                  <li>システムの「視差効果を減らす」設定を有効化する、</li>
+                  <li>その動作が必要不可欠でないことを確認する、</li>
                   <li>要素が動かないことを確認する。</li>
                </ol>
             </section>
