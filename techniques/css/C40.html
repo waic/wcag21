@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C40: Creating a two-color focus indicator to ensure sufficient contrast with all components</title>
+      <title>C40: すべてのコンポーネントで十分なコントラスト比を確保するために 2 色のフォーカスインジケータを作成する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,140 +10,98 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C39">Previous Technique: C39</a></li>
-            <li><a href="../failures/F1">Next Technique: F1</a></li>
+            <li><a href="../#techniques" title="目次">目次</a></li>
+            <li><a href="../#introduction" title="達成方法集のイントロダクション">イントロダクション</a></li>
+            <li><a href="C39">前の達成方法: C39</a></li>
+            <li><a href="../failures/F1">次の達成方法: F1</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">関連リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Creating a two-color focus indicator to ensure sufficient contrast with all components</h1>
+      <h1>すべてのコンポーネントで十分なコントラスト比を確保するために 2 色のフォーカスインジケータを作成する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。</p>
+      </section>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">Success Criterion 2.4.7: Focus Visible</a> (Sufficient)</span>.
-            </p>
+            <h2>適用 (対象)</h2>
+            <p>CSS をサポートする技術を使用したコンテンツ。</p>
+            <p>これは <span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化を理解する</a></span> (十分) に関連する達成方法である。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to create a two-color focus indicator that has
-               sufficient contrast against any background color. This technique eliminates the need
-               for multiple classes to ensure sufficient contrast of the focus indicator when viewed
-               against different backgrounds.
-            </p>
-            <p>The default focus indicators provided by browsers are typically one color, so they
-               are highly visible when some components have focus and not well seen on other components.
-               For instance, if a focus indicator is dark blue and a button is on a white background
-               then it will be easily seen, but if the background is also blue it will not be easily
-               seen.
-            </p>
-            <p>Although it is possible to create individual CSS classes to address the different
-               buttons across a site, this can be time consuming and easy to miss some types of interactive
-               content. However, if the focus indicator is two colors - a light color and a dark
-               color - then it will always have sufficient contrast against any background color.
-               Currently, this can be done by combining the <code>text-shadow</code> property with the <code>outline</code> property on the <code>focus</code> indicator.
-            </p>
-            <p>Developers may apply this technique to parts of the site where its hard to keep track
-               of the focus indicator (such as when there are lots of different component colors).
-               Developers can also provide a single-color focus indicator for components such as
-               a navigation menus that are used across a site, have specific design requirements,
-               and are easy to test and maintain.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法は、どのような背景色に対しても十分なコントラストをもつ 2 色で構成されたフォーカスインジケータを作成することを目的とする。この達成方法により、異なる背景色でフォーカスインジケータを表示したときに十分なコントラストを確保するために複数のクラスを付与する必要がなくなる。</p>
+            <p>ブラウザが提供する標準のフォーカスインジケータは多くの場合は単色であるため、フォーカスの視認性は、あるコンポーネントでは高い一方、他のコンポーネントでは低くなる。例えば、フォーカスインジケータが濃い青色で、ボタンが白色の背景上にある場合は見やすいが、背景も青色の場合は見にくい。</p>
+            <p>サイト内の様々なボタンに対応するため、それぞれ固有の CSS クラスを作成することは可能であるが、これは時間がかかる上に、インタラクティブなコンテンツの種類を見逃してしまう可能性がある。しかし、フォーカスインジケータが明るい色と暗い色の 2 色から構成されていれば、どのような背景色に対しても十分なコントラストを確保することができる。現在、<code>focus</code> インジケータに対して <code>text-shadow</code> プロパティと <code>outline</code> プロパティを組み合わせて使うことで実現できる。</p>
+            <p>開発者は、（異なる色のコンポーネントが多数存在する等の理由で）サイトのフォーカスインジケータを把握することが困難な部分に対して、この達成方法を適用することができる。また、ナビゲーションメニューのようなサイト全体で使用され、明確なデザイン要件があり、テスト及びメンテナンスが容易なコンポーネントについては、単色のフォーカスインジケータを提供することができる。</p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>If it can be determined that the two-color focus indicator CSS takes precedence then
-                  the test can be applied programmatically rather than by manually focusing on each
-                  interface component.
-               </p>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>2 色フォーカスインジケータの CSS が優先されると断定可能な場合は、検証は各インターフェースコンポーネントを手動でフォーカスする代わりに機械的に行うことができる。</p>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
-            <p>The examples demonstrate a simple implementation where focus styles are applied to
-               all links and inputs. In use on a more complex website care would need to be taken
-               that these styles are not overridden by more specific styles.
-            </p>
+            <h2>関連リソース</h2>
+            <p>これらの例では、フォーカススタイルがすべてのリンク及び入力に適用される、シンプルな実装例を示す。より複雑なウェブサイトで使用する場合は、これらのスタイルがより具体的なスタイルによって上書きされないよう、注意が必要である。</p>
             <section class="example" id="example-1-a-light-and-dark-dotted-indicator">
-               <h3>Example 1: A light and dark dotted indicator</h3>
-               <p>Description</p><pre><code>*:focus {
+               <h3>事例 1: 明暗のある点線のインジケータ</h3>
+               <p>説明</p><pre><code>*:focus {
 	box-shadow: 0 0 0px 1px white;
 	outline: dotted;
-}</code></pre><p class="working-example"><a href="../../working-examples/css-two-focus-colors/dotted.html">Working example of combining a dark outline and light text shadow</a></p>
+}</code></pre><p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/css-two-focus-colors/dotted.html">暗いアウトラインと明るいテキストシャドウを組み合わせた例</a></p>
             </section>
             <section class="example" id="example-2-a-thicker-light-and-dark-indicator">
-               <h3>Example 2: A thicker light and dark indicator</h3>
-               <p>Description</p><pre><code>*:focus { 
+               <h3>事例 2: 太めの明暗のあるインジケータ</h3>
+               <p>説明</p><pre><code>*:focus {
 	/* ensure high-contrast mode still has an indicator */
 	outline: 2px transparent solid;
 
-	/* Apply a thick yellow box-shadow with 
+	/* Apply a thick yellow box-shadow with
 	   a thin dark blue indicator in the middle */
 	box-shadow: 0 0 0 2px #F9F9D1, 0 0 0 4px #396196, 0 0 4px 8px #F9F9D1;
-}</code></pre><p class="working-example"><a href="../../working-examples/css-two-focus-colors/lined.html">Working example of combining a dark outline and light text shadow</a></p>
+}</code></pre><p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/css-two-focus-colors/lined.html">暗いアウトラインと明るいテキストシャドウを組み合わせた例</a></p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>関連リソース</h2>
+            <p>リソースは情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
-               				
-               <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus">The :focus pseudo-class on the Mozilla Developer Network</a></li>
-               				
-               <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">The :focus-visible pseudo-class on the Mozilla Developer Network</a></li>
-               			
+               <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/:focus">:focus 擬似クラス (MDN web docs)</a></li>
+               <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/:focus-visible">:focus-visible 擬似クラス (MDN web docs)</a></li>
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
-               				
-               <li><a href="../general/G149">G149: Using user interface components that are highlighted by the user agent when they receive
+               <li><a href="../general/G149">G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する
                      focus</a></li>
-               				
                <li><a href="../general/G195">G195: Using an author-supplied, highly visible focus indicator</a></li>
-               			
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="test-procedure">
-               <h3>Procedure</h3>
-               <p>For each focusable user interface element: </p>
+               <h3>手順</h3>
+               <p>フォーカス可能なユーザインタフェース要素それぞれに対して:</p>
                <ol>
-                  					
-                  <li>Check that the two-colors in the focus indicator are adjacent and have a contrast
-                     ratio that is 3:1 or greater with each other.
-                  </li>
-                  				
+                  <li>フォーカスインジケータの 2 色が隣接しており、コントラスト比が 3:1 以上であることを確認する</li>
                </ol>
             </section>
             <section class="test-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                <ul>
-                  					
-                  <li>#1 is true.</li>
-                  				
+                  <li>#1 が真である。</li>
                </ul>
             </section>
          </section>
