@@ -1,143 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja">
-
+   	
    <head>
-
+      		
       <meta charset="UTF-8" />
-
+      		
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-
+      		
+      		
       <title>WCAG 2.1 達成方法集</title>
-
+      		
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
-
+      		
       <link rel="stylesheet" type="text/css" href="techniques.css" />
-
+      	
    </head>
-
+   	
    <body>
 <div><p>【注意】 この文書は、W3C エディターズドラフト <a href="https://w3c.github.io/wcag/techniques/">Techniques for WCAG 2.1</a> の 2019 年 10 月 1 日版を、<a href="https://waic.jp/">ウェブアクセシビリティ基盤委員会 (WAIC)</a> が翻訳して公開しているものです。この文書の正式版は、W3C のサイトにある英語版です。正確な内容については、W3C が公開している原文 (英語) をご確認ください。この翻訳文書はあくまで参考情報であり、翻訳上の誤りが含まれていることがあります。翻訳上の誤りを見つけられた場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIpvogLx8kGIMewhQ6MzhG2pOCQZ50iIBViGg8pUrRJuslKg/viewform?entry.685195438=https%3A%2F%2Fwaic.jp%2fdocs%2fWCAG21%2fUnderstanding%2f" id="file-issue">翻訳に関するコメント (Google フォーム)</a>からご連絡ください。</p>
-<p>【重要】 原文の Techniques for WCAG 2.1 自体、ワーキンググループによって今後も継続的に修正されていくものと思われます。この文書の内容は古くなっていることがあります。あくまでも参考程度にご覧ください。</p></div>
+<p>【重要】 原文の Techniques for WCAG 2.1 自体、ワーキンググループによって今後も継続的に修正されていくものと思われます。この文書の内容は古くなっていることがあります。あくまでも参考程度にご覧ください。</p></div>      		
       <div class="head">
          			<a href="https://www.w3.org/" class="logo">
             				<img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48" />
             			</a>
-
+         			
          <h1 id="title" class="title p-name">WCAG 2.1 達成方法集</h1>
-
+         			
          <h2>Updated <span class="generate-date"></span></h2>
-
-
+         			
+         			
          <ul id="masthead">
-
+            				
             <li><strong>Authors:</strong> <a href="https://www.w3.org/WAI/GL/">Accessibility Guidelines Working Group</a></li>
-
+            				
             <li><strong>Editors:</strong> <a href="mailto:group-ag-chairs@w3.org">Alastair Campbell, Michael Cooper, Andrew Kirkpatrick</a></li>
-
+            				
             <li><strong>Editors' Draft:</strong> <a href="https://w3c.github.io/wcag/techniques/">https://w3c.github.io/wcag/techniques/</a></li>
-
+            				
             <li><strong>Official Version:</strong> <a href="https://www.w3.org/WAI/WCAG21/techniques/">https://www.w3.org/WAI/WCAG21/techniques/</a></li>
-
+            				
             <li><strong>File Issues</strong>: <a href="https://github.com/w3c/wcag/issues/">https://github.com/w3c/wcag/issues/</a></li>
-
+            			
          </ul>
-
-
+         			
+         			
          <p class="copyright">
             				<a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
             				2017-2018
-
+            				
             				<a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
             				(<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
             				<a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
             				<a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-
+            				
             				<abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
             				<a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
             				<a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
             				rules apply.
-
+            			
          </p>
-
+         			
          <hr title="Separator for header" />
-
+         		
       </div>
-
+      		
       <section id="abstract">
-
+         			
          <h2>概要</h2>
-
+         			
          <p>この文書 <em>WCAG 2.1 達成方法集</em>は、ウェブコンテンツ制作者および評価者向けに <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a> の達成基準を満たすためのガイダンスを提供している。 W3C の Web Accessibility Initiative (WAI) が、WCAG 2.1 を補足するために公開している一連の文書の一つである。WCAG 2.1 のイントロダクション、補足する技術文書、そして教材については <a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines (WCAG) Overview</a>. を参照のこと。
          </p>
-
+         			
          <p>達成方法は、参考情報である。つまり、達成方法は必須要件ではない。WCAG 2.1 への適合の判断は、<a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> の達成基準に基づくものであり、達成方法ではない。<strong>達成方法に関する重要な情報については、WCAG 2.1 解説書の <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>のセクションを参照のこと。</strong></p>
-
+         			
          <p><em>WCAG 2.1 達成方法集</em>は、独立した文書として利用されることを意図したものではない。コンテンツ制作者が通常は <a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet WCAG (Quick Reference)</a> を利用して、WCAG の達成基準を読み、そこから WCAG 2.1 解説書にある具体的なトピックや具体的な達成方法へのリンクを辿ることを想定している。
-         </p>
-
+         </p>	
+         
       </section>
-
+      		
       <section id="sotd">
-
+         			
          <h2>この文書のステータス</h2>
-
+         			
          <p>これは「Techniques for WCAG 2.1」の公式版であり、<a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines 2.1</a> によって参照されている。このリソースは、ガイドラインを満たすためにガイドの解釈及び参考達成方法を更新するために必要に応じてメンテナンスされる。
          </p>
-
+         			
          <p>コメントをするためには、<a href="https://github.com/w3c/wcag/issues/new"><abbr title="World Wide Web Consortium">W3C</abbr> WCAG 2.1 GitHubリポジトリにイシューを提出していただきたい</a>。この文書で提案されている達成基準はイシュー追跡の議論を参照しているが、ワーキンググループは、パブリックコメントを新しいイシューとして、個別のコメントごとに一つの課題として提出することを要請している。課題を報告するための GitHub アカウントを作成するのは無料である。GitHub でイシューを提出できない場合は、<a href="mailto:public-agwg-comments@w3.org?subject=WCAG%202.1%20public%20comment">public-agwg-comments@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-agwg-comments/">コメントアーカイブ</a>) に電子メールを送信していただきたい。
 
          </p>
-
+         		
       </section>
-
+      		
       <section id="introduction">
-
+         			
          <h2>WCAG 2.1 達成方法集のイントロダクション</h2>
-
+         			
          <p>この文書 <em>WCAG 2.1 達成方法集</em>は、ウェブコンテンツ制作者および評価者向けに<a href="https://www.w3.org/TR/WCAG21/"> Web Content Accessibility Guidelines (WCAG) 2.1</a> の達成基準を満たすためのガイダンスを提供している。W3C の Web Accessibility Initiative (WAI) が、WCAG 2.1 を補足するために公開している一連の文書の一つである。WCAG 2.1 のイントロダクション、補足する技術文書、そして教材については <a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility Guidelines (WCAG) Overview</a> を参照のこと。
          </p>
-
+         			
          <p>WCAG 2.1 自身は、変更されることのない安定した文書である。この <em>WCAG 2.1 達成方法集</em>は、現在のベストプラクティス並びに技術及び手段の変化をより多く取り扱うために、定期的に更新する文書である。
          </p>
-
+         			
          <p>達成方法は、参考情報である。つまり、達成方法は必須要件ではない。<a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> への適合の判断は、WCAG 2.1 の達成基準に基づくものであり、達成方法ではない。
          </p>
-
+         			
          <div class="note">
-
+            				
             <p>W3C は、必要とする W3C の十分な達成方法に対して警告する。要求されるべき唯一のものは、WCAG 2.1 の達成基準を満たすことである。より詳しくは、次の文書を参照のこと:
             </p>
-
+            				
             <ul>
-
+               					
                <li>
-
+                  						
                   <p>WCAG 2 FAQ における <a href="https://www.w3.org/WAI/WCAG20/wcag2faq.html#techsnot">What would be the negative consequences of allowing <em>only</em> W3C's published techniques to be used for conformance to WCAG 2?</a>
                   </p>
-
+                  					
                </li>
-
+               				
             </ul>
-
+            			
          </div>
-
+         			
          <p><em>WCAG 2.1 達成方法集</em>は、独立した文書として利用されることを意図したものではない。コンテンツ制作者が通常は <a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet WCAG (Quick Reference)</a>を利用して、WCAG の達成基準を読み、そこから WCAG 2.1 解説書にある具体的なトピックや具体的な達成方法へのリンクを辿ることを想定している。
          </p>
-
+         			
          <p>特定の技術に対する達成方法の公表は、WCAG 2.1 達成基準及び適合性要求を満たすコンテンツを作成するためにすべての状況において使用できることを意味しない。開発者は、特定の技術の限界を認識し、障害をもつ人々にアクセシブルな方法でコンテンツを提供する必要がある。
-
+            
          </p>
-
+         			
          <p><strong>達成方法に関する重要な情報については、WCAG 2.1 解説書の <a class="understanding" href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques.html">WCAG 達成基準の達成方法を理解する</a>のセクションを参照のこと。</strong></p>
-
+         		
       </section>
-
+      
       		<nav xmlns="http://www.w3.org/1999/xhtml" id="toc">
    <h2 class="introductory" id="techniques-pages">
       					Techniques
-
-
+      					
+      				
    </h2>
    <h3 id="aria">ARIA の達成方法<span class="permalink"><a href="#aria" aria-label="Permalink for ARIA Techniques" title="Permalink for ARIA Techniques"><span>§</span></a></span></h3>
    <ul>
@@ -270,7 +270,7 @@
             when changes to non-text content occur</a></li>
       <li><a href="failures/F22">F22: Failure of Success Criterion 3.2.5 due to opening windows that are not requested by
             the user</a></li>
-      <li><a href="failures/F23">F23: Failure of 1.4.2 due to playing a sound longer than 3 seconds where
+      <li><a href="failures/F23">F23: Failure of 1.4.2 due to playing a sound longer than 3 seconds where              
             there is no mechanism to turn it off</a></li>
       <li><a href="failures/F24">F24: Failure of Success Criterion 1.4.3, 1.4.6 and 1.4.8 due to specifying foreground colors
             without specifying background colors or vice versa</a></li>
@@ -800,123 +800,123 @@
       <li><a href="text/T3">T3: Using standard text formatting conventions for headings</a></li>
    </ul>
 </nav>
-
-
+      
+      		
       <section id="changelog">
-
+         			
          <h2>Change Log</h2>
-
+         			
          <p>A list of new, removed or significantly updated techniques:</p>
-
+         			
          <ol>
-
+            
             <li>
                <time datetime="2019-09-12">Sept 12th 2019</time>: Added <a href="./techniques/failures/F105">Failure of Success Criterion 2.5.1 due to providing functionality via a path-based
                   gesture without simple pointer alternative</a></li>
-
+            
             <li>
                <time datetime="2019-09-12">Sept 12th 2019</time>: Added <a href="./techniques/failures/F106">Failure due to inability to deactivate motion actuation</a></li>
-
+            				
             <li>
                <time datetime="2019-09-03">Sept 3rd 2019</time>: Added <a href="./techniques/failures/F104">Failure of Success Criterion 1.4.12 due to clipped or overlapped content when text
                   spacing is adjusted</a></li>
-
+            				
             <li>
                <time datetime="2019-09-03">Sept 3rd 2019</time>: Added <a href="./techniques/failures/F103">Failure of Success Criterion 4.1.3 due to providing status messages that cannot be
                   programmatically determined through role or properties</a></li>
-
+            				
             <li>
                <time datetime="2019-08-06">Aug 6th 2019</time>: Added <a href="./techniques/failures/F102">Failure of Success Criterion 1.4.10 due to content disappearing and not being available
                   when content has reflowed</a></li>
-
+            				
             <li>
                <time datetime="2019-07-16">Jul 16th 2019</time>: Added <a href="./techniques/general/G216">Providing single point activation for a control slider</a></li>
-
+            				
             <li>
                <time datetime="2019-07-16">Jul 16th 2019</time>: Added <a href="./techniques/general/G215">Providing controls to achieve the same result as path based or multipoint gestures</a></li>
-
+            				
             <li>
                <time datetime="2019-07-16">Jul 16th 2019</time>: Added <a href="./techniques/failures/F100">達成基準 1.3.4 の失敗例 － デバイスの向きを変更するように促すメッセージが表示される</a></li>
-
+            				
             <li>
                <time datetime="2019-07-16">Jul 16th 2019</time>: Added <a href="./techniques/general/G214">Using a control to allow access to content in different orientations which is otherwise
                   restricted</a></li>
-
+            				
             <li>
                <time datetime="2019-07-10">Jul 10th 2019</time>: Added <a href="./techniques/css/C40">Creating a two-color focus indicator to ensure sufficient contrast</a></li>
-
+            				
             <li>
                <time datetime="2019-07-10">Jul 10th 2019</time>: Added <a href="./techniques/failures/F99">Failure of Success Criterion 2.1.4 due to implementing character key shortcuts that
                   cannot be turned off or remapped</a></li>
-
+            				
             <li>
                <time datetime="2019-07-10">Jul 10th 2019</time>: Added <a href="./client-side-script/SCR39">Making content on focus or hover hoverable, dismissible, and persistent</a></li>
-
+            				
             <li>
                <time datetime="2019-06-18">Jun 18th 2019</time>: Added <a href="./general/G212">Using native controls to ensure functionality is triggered on the up-event</a></li>
-
+            				
             <li>
                <time datetime="2019-06-11">Jun 11 2019</time>: Added <a href="./failures/F98">Failure of Success Criterion 2.5.6 due to interactions being limited to touch-only
                   on touchscreen devices</a></li>
-
+            				
             <li>
                <time datetime="2019-06-18">Jun 18th 2019</time>: Added <a href="./general/G213">Provide conventional controls and an application setting for motion activated input</a></li>
-
+            				
             <li>
                <time datetime="2019-05-25">May 25th 2019</time>: Added <a href="./aria/ARIA24">Semantically identifying a font icon with role="img"</a></li>
-
+            				
             <li>
                <time datetime="2019-04-20">Apr 26th 2019</time>: Added <a href="./failures/F97">Failure due to locking the orientation to landscape or portrait view</a></li>
-
+            				
             <li>
                <time datetime="2019-02-26">Feb 26th 2019</time>: Removed <a href="./failures/F52">F52</a> from SC 3.2.1 (still attached to SC 3.2.5)
             </li>
-
+            				
             <li>
                <time datetime="2019-02-26">Feb 26th 2019</time>: Added <a href="./general/G209">Provide sufficient contrast at the boundaries between adjoining colors</a></li>
-
+            				
             <li>
                <time datetime="2019-01-10">Jan 10th 2019</time>: Added <a href="./css/C39">モーションの防止に CSS reduce-motion クエリを使用する</a></li>
-
+            				
             <li>
                <time datetime="2018-12-14">Dec 14th 2018</time>: Added <a href="./general/G207">Ensuring that a contrast ratio of 3:1 is provided for icons</a></li>
-
+            				
             <li>
                <time datetime="2018-11-13">Nov 30th 2018</time>: Added <a href="./css/C38">Using CSS width, max-width and flexbox to fit labels and inputs</a></li>
-
+            				
             <li>
                <time datetime="2018-11-30">Nov 30th 2018</time>: Added <a href="./failures/F95">F95 of 1.4.13 due to content shown on hover not being hoverable</a></li>
-
+            				
             <li>
                <time datetime="2018-11-13">Nov 13th 2018</time>: Added <a href="./css/C34">C34 Using media queries to un-fixing sticky headers / footers</a></li>
-
+            				
             <li>
                <time datetime="2018-11-13">Nov 13th 2018</time>: Added <a href="./css/C36">C36 Allowing for text spacing override</a></li>
-
+            				
             <li>
                <time datetime="2018-11-13">Nov 13th 2018</time>: Added <a href="./css/C37">C37 Using CSS max-width and height to fit images</a></li>
-
+            				
             <li>
                <time datetime="2018-11-30">Nov 30th 2018</time>: Added <a href="./general/G207">G207 Ensuring that drag-and-drop actions can be cancelled</a></li>
-
+            				
             <li>
                <time datetime="2018-11-30">Nov 30th 2018</time>: Added <a href="./failures/F95">F95 Failure of Success Criterion 1.4.13 due to content shown on hover not being hoverable</a></li>
-
+            				
             <li>
                <time datetime="2018-11-30">Nov 30th 2018</time>: Added <a href="./failures/F96">F96 Failure of Success Criterion 2.5.3 due to "accessible name" not containing the
                   visible label text</a></li>
-
+            				
             <li>
                <time datetime="2018-11-30">Nov 30th 2018</time>: Added <a href="./css/C38">C38 Using CSS width, max-width and flexbox to fit labels and inputs</a></li>
-
+            				
             <li>
                <time datetime="2018-12-14">Dec 14th 2018</time>: Added <a href="./general/G207">G207 Ensuring that a contrast ratio of 3:1 is provided for icons</a></li>
-
+            			
          </ol>
-
+         			
          <p>For a more detailed view of recent changes to the informative documents see the <a href="https://github.com/w3c/wcag/commits/master">github updates</a>.
          </p>
-
+         		
       </section>
       		<section class="appendix" id="acknowledgments">
     <h1>謝辞</h1>
@@ -1045,7 +1045,7 @@
     </section>
 </section>
 
-
+      	
    </body>
-
+   
 </html>
