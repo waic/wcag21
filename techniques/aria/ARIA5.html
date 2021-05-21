@@ -12,8 +12,8 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">目次</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
-            <li><a href="ARIA4">前: 達成方法 ARIA4</a></li>
-            <li><a href="ARIA6">次: 達成方法 ARIA6</a></li>
+            <li><a href="ARIA4">前の達成方法: ARIA4</a></li>
+            <li><a href="ARIA6">次の達成方法: ARIA6</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
@@ -31,23 +31,20 @@
       <h1>ユーザインターフェース コンポーネントの状態 (state) を明示するために、WAI-ARIA ステート及びプロパティ属性を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</accesskey="">を参照のこと。
-            適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>をサポートするウェブコンテンツ技術。
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
             <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2 (名前 (name) ・役割 (role) 及び値 (value) )</a>(<a href="../general/G10">G10: アクセシブルな変化の通知をサポートするウェブコンテンツ技術を用いて、コンポーネントを作成する</a>を満たす方法として十分)</span>に関連する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法の目的は、ユーザインタフェースコンポーネントのステート、プロパティ及び値を公開するために <a href="https://www.w3.org/TR/wai-aria/#states_and_properties">WAI-ARIA ステート及びプロパティ</a>を使用することであり、その結果それらが支援技術によって読み込まれて設定できるようになり、また、支援技術はそれらの値の変更を通知される。
-               WAI-ARIA 仕様は、各属性の規範的記述、及びユーザインタフェース要素がサポートするロールを提供する。
-               リッチインターネットアプリケーションが新しいユーザインタフェースウィジェットを定義する際、ステート及びプロパティ属性を公開することで、利用者がウィジェットを理解でき、そしてウィジェットと対話できるようになる。
+            <p>この達成方法の目的は、ユーザインタフェースコンポーネントのステート、プロパティ及び値を公開するために <a href="https://www.w3.org/TR/wai-aria/#states_and_properties">WAI-ARIA ステート及びプロパティ</a>を使用することであり、その結果それらが支援技術によって読み込まれて設定できるようになり、また、支援技術はそれらの値の変更を通知される。WAI-ARIA 仕様は、各属性の規範的記述、及びユーザインタフェース要素がサポートするロールを提供する。リッチインターネットアプリケーションが新しいユーザインタフェースウィジェットを定義する際、ステート及びプロパティ属性を公開することで、利用者がウィジェットを理解でき、そしてウィジェットと対話できるようになる。
             </p>
          </section>
          <section id="examples">
@@ -91,12 +88,9 @@
             </section>
             <section class="example" id="example-2-a-slider">
                <h3>事例 2: スライダー</h3>
-               <p><code class="att">slider</code> ロールをもつウィジェットは、利用者に指定した範囲内から値を選択させる。
-                 スライダーは、スライダーの大きさやつまみの位置によって、現在の値、及びとり得る値の範囲を表す。
-                 これらのスライダーのプロパティは、属性 <code class="att">aria-valuemin</code>、<code class="att">aria-valuemax</code>、及び <code class="att">aria-valuenow</code> で表される。
+               <p><code class="att">slider</code> ロールをもつウィジェットは、利用者に指定した範囲内から値を選択させる。スライダーは、スライダーの大きさやつまみの位置によって、現在の値、及びとり得る値の範囲を表す。これらのスライダーのプロパティは、属性 <code class="att">aria-valuemin</code>、<code class="att">aria-valuemax</code>、及び <code class="att">aria-valuenow</code> で表される。
                </p>
-               <p>以下のスニペットは Open Ajax Accessibility Examples の例 32 からの引用であり、JavaScript で作成されたスライダーに対する WAI-ARIA マークアップを示している。
-                  Javascript が属性 aria-valuemin、aria-valuemax、及び aria-valuenow を設定することに注意:
+               <p>以下のスニペットは Open Ajax Accessibility Examples の例 32 からの引用であり、JavaScript で作成されたスライダーに対する WAI-ARIA マークアップを示している。Javascript が属性 aria-valuemin、aria-valuemax、及び aria-valuenow を設定することに注意:
                </p><pre xml:space="preserve">   var handle = '&lt;img id="' + id + '" class="' + (this.vert == true ? 'v':'h') +'sliderHandle" ' +
     'src="http://www.oaa-accessibility.org/media/examples/images/slider_' + (this.vert == true ? 'v':'h') + '.png" ' + 'role="slider" ' +
     'aria-valuemin="' + this.min +
