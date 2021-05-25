@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA2: Identifying a required field with the aria-required property</title>
+      <title>ARIA2: aria-required プロパティによって必須項目を特定する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,83 +10,82 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA1">Previous Technique: ARIA1</a></li>
-            <li><a href="ARIA4">Next Technique: ARIA4</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA1">前の達成方法: ARIA1</a></li>
+            <li><a href="ARIA4">次の達成方法: ARIA4</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Identifying a required field with the aria-required property</h1>
+      <h1>aria-required プロパティによって必須項目を特定する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide programmatic indication that a form
-               field (which shown through presentation to be required) is mandatory for successful
-               submission of a form.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、(提示を通して必須であることが示されている) フォームフィールドが、フォームの正常送信のために必須であることを、プログラムの指標として提供することである。
             </p>
-            <p>The fact that the element is required is often visually presented (via a text or non-text
-               symbol, or text indicating input is required or color / styling) but this is not programmatically
-               determinable as part of the field's name.
+            <p>要素が必須であるという事実は多くの場合、(テキスト又は非テキストのシンボル、又は入力が必須であることを示すテキスト、又は色/スタイルを介して) 視覚的に提示されるが、これは、フィールド名の一部としてプログラムによる解釈が可能にはならない。
             </p>
-            <p>The WAI-ARIA <code class="prop">aria-required</code> property indicates that user input is required before submission. The <code class="prop">aria-required</code> property can have values of <code class="attval">true</code> or <code class="attval">false</code>. For example, if a user must fill in an address field, then <code class="att">aria-required</code> is set to <code class="attval">true</code>.
+            <p>WAI-ARIA <code class="prop">aria-required</code> プロパティは、送信前に利用者の入力が必須であることを示す。<code class="prop">aria-required</code> プロパティは、<code class="attval">true</code> 又は <code class="attval">false</code> の値を持つことができる。たとえば、利用者が住所のフィールドに入力しなければならない場合、<code class="att">aria-required</code> は <code class="attval">true</code> に設定される。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Note: Use of aria-required="true" might be beneficial even when an asterisk or other
-                     text symbol is programmatically associated with the field as it may reinforce its
-                     <code class="prop">required</code> property for some assistive technology users.
+                  <p>aria-required="true" の使用は、アスタリスクや他のテキストシンボルがプログラム的にフィールドに関連付けられている場合であっても、一部の支援技術の利用者に対して <code class="prop">required</code> プロパティによって補強できるので、有益であるかもしれない。
                   </p>
                   
-                  <p>The fact that the element is required is often visually   presented (such as a sign
-                     or symbol after the control). Using the <code class="prop">aria-required</code> property in addition to the visual presentation makes it much easier   for user agents
-                     to pass on this important information to the user in a   user agent-specific manner.
-                     Refer to <a href="https://www.w3.org/TR/wai-aria-primer/#ariahtml">Supporting   ARIA in XHTML and HTML 4.01</a> for information on how to provide   WAI-ARIA States and Properties with XHTML and
-                     HTML. WAI-ARIA States and   Properties is compatible with other languages as well;
-                     refer to documentation in those languages. 
+                  <p>多くの場合、要素が必須であるという事実は、(コントロールの後の符号や記号のように) 視覚的に提示される。視覚的な提示に加えて <code class="prop">aria-required</code> プロパティを使用することは、ユーザエージェントが、この重要な情報をユーザエージェント固有の方法で利用者に伝えることを、はるかに簡単にする。XHTML や HTML とともに WAI-ARIA ステート及びプロパティを提供する方法については、<a href="https://www.w3.org/TR/wai-aria-primer/#ariahtml">Supporting   ARIA in XHTML and HTML 4.01</a> を参照のこと。なお、WAI-ARIA ステート及びプロパティは他の言語とも互換性がある。詳しくはその言語における文書の活用を参照のこと。
                   </p>
                   
                </div>
             </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 1</div>
+               <div>
+                  <p>注記 にあるリンク「Supporting ARIA in XHTML and HTML 4.01」は <a href="https://www.w3.org/TR/wai-aria-primer/">WAI-ARIA 1.0 Primer</a> を参照しているが、この文書は作成が破棄されている。代わりに、<a href="https://www.w3.org/TR/wai-aria-1.1/#html_dtd">WAI-ARIA 1.1 §A.6 HTML 4.01 plus WAI-ARIA DTD</a> を参照できる。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 2</div>
+               <div>
+                  <p>XHTML 及び HTML 4.01 は廃止された勧告であることに注意されたい。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The <code class="prop">required</code> property is indicated by an asterisk placed next to the label element:
+               <h3>例 1</h3>
+               <p><code class="prop">required</code> プロパティが label 要素の後に置かれるアスタリスクによって示されている:
                </p><pre xml:space="preserve">
 &lt;form action="#" method="post"  id="login1" onsubmit="return errorCheck1()"&gt;
   &lt;p&gt;Note: [*]denotes mandatory field&lt;/p&gt;
@@ -104,8 +103,8 @@
 
 &lt;/form&gt;		</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The <code class="prop">required</code> property is indicated by the word "required" placed next to the <code class="el">label</code> element:
+               <h3>例 2</h3>
+               <p><code class="prop">required</code> プロパティが label 要素の後に置かれる単語 "required" によって示されている:
                </p><pre xml:space="preserve">
 &lt;form action="#" method="post" id="step1" onsubmit="return errorCheck2()"&gt;
   &lt;p&gt;
@@ -137,12 +136,8 @@
   &lt;/p&gt;
 &lt;/form&gt; </pre></section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>Required fields are indicated by a red border around the fields and a star icon rendered
-                  via CSS using content:before. This example also uses custom radio buttons with role=radio
-                  but the script to make the span actually work like radio buttons is not included in
-                  this example. The CSS properties are available below the form.
-                  
+               <h3>例 3</h3>
+               <p>必須フィールドは、フィールドの周りの赤いボーダーと content:before を使用する CSS によってレンダリングされる星のアイコンで示される。この例はまた、role=radio をもつカスタムラジオボタンを使用するが、span を実際にラジオボタンのように動作させるためのスクリプトは、この例に含まれていない。CSS プロパティはフォームの下にある。
                </p><pre xml:space="preserve">
 &lt;form action="#" method="post" id="alerts1"&gt;
   &lt;label for="acctnum" data-required="true"&gt;Account Number&lt;/label&gt;
@@ -156,19 +151,32 @@
     &lt;li id="rb2" role="radio"&gt;No&lt;/li&gt;
  &lt;/ul&gt;
 &lt;/form&gt;
- </pre><p>Related CSS style definition for this example:</p><pre xml:space="preserve">
+ </pre><p>この例に対する関連する CSS スタイル定義:</p><pre xml:space="preserve">
 [aria-required=true] {
   border: red thin solid;
 }
 [data-required=true]:after {
   content: url('/iconStar.gif');
 }
- </pre></section>
+ </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>説明に「<code>content:before</code> を使用する CSS によって」とあるが、コード例は <code>:after</code> となっており、説明とコードが矛盾している。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Pseudo-elements">MDN の疑似要素 (Pseudo-elements)</a> に示されているように、<code>:after</code> 疑似要素について、コロンを 1 個のみ用いるのは古い、互換性のための構文である。コロンを 2 個置くのが現在の正式な構文であることに注意されたい。
+                  </p>
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-4-a-required-text-input-field-in-xhtml">
-               <h3>Example 4: A required text input field in XHTML</h3>
-               <p>The following example shows an XHTML document using the <code class="prop">aria-required</code> property to indicate that a form field must be submitted. The mandatory   nature
-                  of the field is also indicated in the label as a fallback for   user agents that do
-                  not support WAI-ARIA. 
+               <h3>例 4: XHTML における必須のテキスト入力フィールド</h3>
+               <p>次の例は、フォームフィールドが送信されなければならないことを示すために <code class="prop">aria-required</code> プロパティを使用する XHTML 文書を示す。フィールドの必須の性質は、WAI-ARIA をサポートしないユーザエージェントのための予備として、ラベルでも表示される。
                </p><pre xml:space="preserve">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1
@@ -196,20 +204,15 @@
 &lt;/html&gt;
 		</pre></section>
             <section class="example" id="example-5-adding-aria-required-property-via-script">
-               <h3>Example 5: Adding <code class="prop">aria-required</code> property via script
+               <h3>例 5: スクリプト経由で <code class="prop">aria-required</code> プロパティを追加する
                </h3>
-               <p>This example uses scripting to add the <code class="prop">aria-required</code> property to a form element. The required property is assigned using the setAttribute()
-                  API. 
+               <p>この例は、フォーム要素に <code class="prop">aria-required</code> プロパティを追加するためにスクリプトを使用する。必須プロパティは、setAttribute() API を使用して割り当てられる。
                </p>
-               <p>The array variable, <var>requiredIds</var>, is created with the   ids of the elements which need to be marked as required. The
-                  setRequired()   function is called from the onload event of the <code class="obj">window</code>   object. 
+               <p>配列変数 <var>requiredIds</var> は、必須としてマークされる必要がある要素の ID とともに作成される。setRequired() 関数は、<code class="obj">window</code> オブジェクトの onload イベントから呼び出される。
                </p>
-               <p>The setRequired() function loops through all of the   ids provided, retrieves the
-                  element and assigns the <code class="prop">aria-required</code> property of true using the setAttribute() function. 
+               <p>setRequired() 関数は、提供された ID のすべてをループし、要素を取得し、setAttribute() 関数を使用して <code class="prop">aria-required</code> プロパティを true にする。
                </p>
-               <p>When this page is accessed using Firefox 3.0 or later and a   screen reader that supports
-                  WAI-ARIA, the screen reader will speak   "required" when reading the label for the
-                  input fields. 
+               <p>このページが Firefox 3.0 以降及び WAI-ARIA をサポートするスクリーンリーダーを使用してアクセスされる場合、入力フィールドのラベルを読む際にスクリーンリーダーは "required" と伝える。
                </p><pre xml:space="preserve">&lt;head&gt;
  &lt;script type="text/javascript"&gt;
  //&lt;![CDATA[
@@ -247,8 +250,8 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -269,29 +272,29 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each control which is shown via presentation to be required.</p>
+               <p>必須であることがプレゼンテーションを経由して示される各コントロールに対して:</p>
                
                <ol>
                   			
-                  <li>Check whether the <code class="att">aria-required</code> attribute is present:
+                  <li><code class="att">aria-required</code> 属性が存在するかどうかを確認する。
                   </li>
                   
-                  <li>Check whether the value of the <code class="att">aria-required</code> attribute is the correct required state of the user interface component.
+                  <li><code class="att">aria-required</code> 属性値が、そのユーザインタフェースコンポーネントに対する正しい required ステートであるかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
