@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA21: Using Aria-Invalid to Indicate An Error Field</title>
+      <title>ARIA21: エラーフィールドを示すために aria-invalid を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,38 +12,34 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA20">Previous Technique: ARIA20</a></li>
-            <li><a href="ARIA22">Next Technique: ARIA22</a></li>
+            <li><a href="ARIA20">前の達成方法: ARIA20</a></li>
+            <li><a href="ARIA22">次の達成方法: ARIA22</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using Aria-Invalid to Indicate An Error Field</h1>
+      <h1>エラーフィールドを示すために aria-invalid を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML with <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications</a>.
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA) </a>を用いる HTML。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)</span>.
+            <p>これは、次の達成基準に関連する達成方法である: <span><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1 (エラーの特定)</a> (十分な達成方法)</span>.
             </p>
          </section>
          <section id="description">
@@ -53,16 +49,14 @@
             </p>
             <ul>
                
-               <li>The error description does not programmatically identify the failed fields</li>
+               <li>エラーの説明から、失敗したフィールドをプログラムによって識別できない。</li>
                
-               <li>The failed fields are identified in a manner that is not available to some users -
-                  for example by using an error-icon rendered visually by some technique that does not
-                  rely on color such as a visual cue like a border.
+               <li>失敗したフィールドが、一部の利用者に利用できない方法で――たとえば、色に依存しない、ボーダーのような視覚的な手がかりなどの技術によって視覚的にレンダリングされるエラーアイコンの使用によって――識別される。
                </li>
                
             </ul>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記:</div>
                <div>
                   <p>One of the above two situations may be true for a field which has programmatically
                      associated label and / or instructions that conveys data format, a data range, or
@@ -88,14 +82,13 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-using-aria-invalid-on-required-fields">
-               <h3>Example 1: Using aria-invalid on required fields</h3>
                <p>The <code class="att">aria-invalid</code> attribute is used on required fields that have no input. A message above the form
                   conveys that form submission has failed due to this.
+               <h3>事例 1: 必須フィールドに aria-invalid を使用する</h3>
                </p>
-               <p>A portion of the jQuery code and the HTML form markup follow:</p><pre xml:space="preserve">
-&lt;code&gt;
+               <p>jQuery コード及び HTML フォームマークアップの一部は次のとおりである:</p><pre xml:space="preserve">
 &lt;script&gt;
 ...
 ...
@@ -136,38 +129,33 @@ label.failed {
     &lt;input type="submit" name="button" id="button" value="Submit"&gt;
   &lt;/p&gt;
 &lt;/form&gt;
-&lt;/code&gt;            </pre><p class="working-example"><a href="../../working-examples/aria-invalid-required-fields/">Working example: Using aria-invalid on required fields</a>.
+            </pre><p class="working-example"><a href="../../working-examples/aria-invalid-required-fields/">Working example: Using aria-invalid on required fields</a>.
                </p>
             </section>
             <section class="example" id="example-2-identifying-errors-in-data-format">
-               <h3>Example 2: Identifying errors in data format</h3>
                <p><code class="att">Aria-invalid</code> and <code class="att">aria-describedby</code> are used together to indicate an error when the personal identification number (PIN),
                   email address, or start date are not in the expected format. The error message is
                   associated with the field using <code class="att">aria-describedby</code>, and <code class="att">aria-invalid</code> makes it easier to programmatically find fields with errors.
+               <h3>事例 2: データフォーマットのエラーを識別する</h3>
                </p>
-               <p>Below is the rendered HTML code for the email address field in Example 1: When an
-                  invalid email address is entered by the user such as "samexample.com" (instead of
-                  sam@example.com), the HTML code is:
+               <p>以下は、事例 1 において電子メールアドレスフィールドにレンダリングされる HTML コードである。(sam@example.com の代わりに) "samexample.com" のような不正な電子メールアドレスが利用者によって入力された場合、HTML コードは次のようになる:
                </p><pre xml:space="preserve">
 &lt;div class="control"&gt;
 &lt;p&gt;&lt;label for="email"&gt;Email address: [*]&lt;/label&gt; 
 &lt;input type="text" name="email" id="email" class="error" aria-invalid="true" aria-describedBy="err_1" /&gt;&lt;/p&gt; 
 &lt;span class="errtext" id="err_1"&gt;Error: Incorrect data&lt;/span&gt;&lt;/div&gt;
-            </pre><p>And when no data is entered in the email field, the HTML code is:</p><pre xml:space="preserve">
+            </pre><p>そしてデータが電子メールフィールドに入力されなかった場合、HTML コードは次のようになる:</p><pre xml:space="preserve">
 &lt;div class="control"&gt;
 &lt;p&gt;&lt;label for="email"&gt;Email address: [*]&lt;/label&gt; 
 &lt;input type="text" name="email" id="email" class="error" aria-invalid="true" aria-describedBy="err_2" /&gt;&lt;/p&gt;
 &lt;span class="errtext" id="err_2"&gt;
  Error: Input data missing&lt;/span&gt;
-&lt;/div&gt;            </pre><p>jQuery code: jQuery is used to add aria-invalid or aria-describedby attributes as
-                  well as the class attribute and append the error text. This is the code that inserts
-                  aria-invalid and class="error" but does not associate the error text "incorrect data"
-                  with the control programmatically:
+&lt;/div&gt;             </pre><p>jQuery コード: jQuery は、class 属性だけでなく aria-invalid 又は aria-describedby 属性をも追加し、かつエラーテキストを追加するために使用される。これは、aria-invalid 及び class="error" を挿入するコードであるが、プログラム的にコントロールとエラーテキスト "incorrect data" を関連付けないコードである:
                </p><pre xml:space="preserve">
 $(errFld).attr("aria-invalid", "true").attr("class", "error");
 // Suffix error text: 
 $(errFld).parent().append('&lt;span class="errtext"&gt;Error: Incorrect data&lt;/span&gt;');
-            </pre><p>CSS Code:</p><pre xml:space="preserve">
+            </pre><p>CSS コード:</p><pre xml:space="preserve">
 input.error {
    border: red thin solid;}
 span.errtext {
@@ -181,8 +169,8 @@ span.errtext {
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -198,28 +186,27 @@ span.errtext {
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G83">G83: Providing text descriptions to identify required fields that were not completed</a></li>
+               <li><a href="../general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
                
-               <li><a href="../general/G85">G85: Providing a text description when user input falls outside the required format or
-                     values</a></li>
+               <li><a href="../general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
                
-               <li><a href="../general/G139">G139: Creating a mechanism that allows users to jump to errors</a></li>
+               <li><a href="../general/G139">G139: 利用者がエラー箇所に移動できるメカニズムを作成する</a></li>
                
-               <li><a href="../client-side-script/SCR32">SCR32: Providing client-side validation and adding error text via the DOM</a></li>
+               <li><a href="../client-side-script/SCR32">SCR32: クライアントサイドのバリデーションを提供し、DOM を介してエラーテキストを追加する</a></li>
                
-               <li><a href="ARIA18">ARIA18: Using aria-alertdialog to Identify Errors</a></li>
+               <li><a href="ARIA18">ARIA18: エラーを特定するために aria-alertdialog を使用する</a></li>
                
-               <li><a href="ARIA19">ARIA19: Using ARIA role=alert or Live Regions to Identify Errors</a></li>
+               <li><a href="ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <p>For each form control that relies on <code class="att">aria-invalid</code> to convey a validation failure:
                </p>
@@ -232,19 +219,18 @@ span.errtext {
                   <li>Check that <code class="att">aria-invalid</code> is set to true when a validation failure does exist.
                   </li>
                   
-                  <li>Check that the programmatically associated labels / programmatically associated instructional
-                     text for the field provide enough information to understand the error.
+                  <li>プログラム的に関連付けられたラベル/プログラム的にフィールドに関連づけられた説明文がエラーを理解するのに十分な情報を提供していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1-3 are true.</li>
+                  <li>1. から 3. の結果が真である。</li>
                   
                </ul>
                
