@@ -44,24 +44,16 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>This technique demonstrates how to assign a generic <code class="prop">region</code> role to a section of a page so that user agents and assistive technologies may be
-               able to programmatically identify it. The <code class="prop">region</code> role demarcates a segment of the page that contains content of significance so that
-               it is more readily discoverable and navigable. The generic region should be used when
-               the section cannot be marked up using a standard document landmark role (see <a href="ARIA11">ARIA11: Using ARIA landmarks to identify regions of a page</a>).
+            <p>この達成方法は、ユーザエージェント及び支援技術がプログラム的にページのセクションを識別できるように、そのページのセクションに一般的な <code class="prop">region</code> ロールを割り当てる方法を示す。<code class="prop">region</code> ロールは、より容易に発見可能かつナビゲート可能であるように、重要なコンテンツを含むページの区切りを定める。一般的な領域は、セクションが標準の文書ランドマークロールによってマークアップできない場合に使用されるべきである (<a href="ARIA11" class="tech-ref">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a>  (ARIA)を参照)。
             </p>
-            <p>It is important to name regions, because they are generic grouping elements and users
-               will need some way to tell which region they are in. Regions can be named using <code class="att">aria-labelledby</code>, <code class="att">aria-label</code>, or another technique. Doing so helps to better expose content and information relationships
-               on the page. The role of <code class="prop">region</code> should be used prudently, because if overused they can make the page overly verbose
-               for screen reader users.
+            <p>領域は一般的なグループ化された要素であり、かつ利用者がどの領域にいるのかを伝えるための手段が必要になるため、領域に名前を付けることは重要である。領域には、<code class="att">aria-labelledby</code> や <code class="att">aria-label</code>、その他の手法を使用して名前を付けることができる。そうすることで、ページ上のコンテンツと情報の関係をより良く公開する助けとなる。過剰に使用した場合、スクリーンリーダーの利用者に対してページを過度に冗長にすることがあるので、<code class="prop">region</code> のロールは、慎重に使用するべきである。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-region-on-a-news-website">
-               <h3>Example 1: Region on a news website</h3>
-               <p>A section on the home page of a news website that contains a poll that changes every
-                  week is marked up with role="region". The h3 text above the form is referenced as
-                  the region's name using <code class="att">aria-labelledby</code>.
+               <h3>事例 1: ニュースサイト上の領域</h3>
+               <p>毎週変更する世論調査を含むニュースサイトのホームページ上のセクションが、<code class="att">role="region"</code> でマークアップされている。フォーム上部の h3 テキストは、<code class="att">aria-labelledby</code> を使うことで領域の名前として参照されている。
                </p><pre xml:space="preserve">
 &lt;div role="region" aria-labelledby="pollhead"&gt;
 &lt;h3 id="pollhead"&gt;This week's Poll&lt;/h3&gt;
@@ -82,9 +74,8 @@
 &lt;/div&gt;			
             </pre></section>
             <section class="example" id="example-2-identifying-a-region-on-a-banking-site">
-               <h3>Example 2: Identifying a region on a banking site</h3>
-               <p>A user can expand links on a bank website after logging in to see details of term
-                  deposit accounts. The details are within a span marked up with <code class="prop">region</code> role. The heading for the region has role=heading and is included in the <code class="att">aria-labelledby</code> that names the region.
+               <h3>事例 2: 銀行サイト上の領域を識別する</h3>
+               <p>利用者は、銀行のウェブサイトにログインした後、リンクを展開することで定期預金口座の詳細を確認できるようになっている。詳細は、<code class="prop">region</code> ロールでマークアップされた範囲の中にある。その領域の見出しは <code>role=heading</code> を持ち、その領域に名前を付ける <code class="att">aria-labelledby</code> の中に含まれている。
                </p><pre xml:space="preserve">
 &lt;ol&gt;
 	&lt;li&gt;&lt;a id="l1" href="#" aria-expanded="false" title="Show details" aria-controls="block1" &gt;John Henry's Account&lt;/a&gt;&lt;img src="images/panel_expand.gif" alt="" /&gt;
@@ -101,10 +92,8 @@
  &lt;/ol&gt;
             </pre></section>
             <section class="example" id="example-3-identifying-a-portlet-with-a-generic-region">
-               <h3>Example 3: Identifying a portlet with a generic region</h3>
-               <p>This example shows how a generic <code class="prop">region</code> landmark might be added to a weather portlet. There is no existing text on the page
-                  that can be referenced as the label, so it is labelled with <code class="att">aria-label</code>.
-                  
+               <h3>事例 3: 一般的な領域とポートレットを同一視する</h3>
+               <p>次の例は、気象ポートレットに一般的な "region" ランドマークがどのように追加されうるのかを示している。ラベルとして参照できる既存のテキストがページ内に存在しないため、<code class="att">aria-label</code> でラベル付けされている。
                </p><pre xml:space="preserve">
 &lt;div role="region" aria-label="weather portlet"&gt; 
 	...
@@ -112,7 +101,7 @@
          </section>
          <section id="resources">
             <h2>参考リソース</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -126,11 +115,11 @@
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="ARIA11">ARIA11: Using ARIA landmarks to identify regions of a page</a></li>
+               <li><a href="ARIA11">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a></li>
                
-               <li><a href="ARIA12">ARIA12: Using role=heading to identify headings</a></li>
+               <li><a href="ARIA12">ARIA12: 見出しを特定するために role=heading を使用する</a></li>
                
-               <li><a href="ARIA13">ARIA13: Using aria-labelledby to name regions and landmarks</a></li>
+               <li><a href="ARIA13">ARIA13: リージョンとランドマークに名前 (name) を付けるために、aria-labelledby を使用する</a></li>
                
             </ul>
          </section>
@@ -139,17 +128,16 @@
             <section class="procedure" id="procedure">
                <h3>手順</h3>
                
-               <p>For each section marked up with role="region":</p>
+               <p><code>role="region"</code>で マークアップされる各セクションに対して:</p>
                
                <ol>
                   
-                  <li>Examine the content and ensure that it is important enough to have an independent
-                     landmark
+                  <li>コンテンツを調べ、独立したランドマークを持つのに十分なほど重要であることを確認する。
                   </li>
                   
-                  <li>Ensure that a standard landmark role is not appropriate for this content</li>
+                  <li>標準のランドマークロールがこのコンテンツに適さないことを確認する。</li>
                   
-                  <li>Check that the region has a programmatically determined name</li>
+                  <li>領域がプログラムによる解釈が可能な名前を持つことを確認する。</li>
                   
                </ol>
                
@@ -159,7 +147,7 @@
                
                <ul>
                   
-                  <li>Checks #1-3 are true.</li>
+                  <li>1. から 3. の結果が真である。</li>
                   
                </ul>
                
