@@ -10,26 +10,26 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA18">Previous Technique: ARIA18</a></li>
-            <li><a href="ARIA20">Next Technique: ARIA20</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA18">前の達成方法: ARIA18</a></li>
+            <li><a href="ARIA20">次の達成方法: ARIA20</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>Using ARIA role=alert or Live Regions to Identify Errors</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
+         <h2>達成方法に関する重要な情報</h2>
          <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
             they relate to the normative WCAG 2.1 success criteria. The Applicability section
             explains the scope of the technique, and the presence of techniques for a specific
@@ -39,7 +39,7 @@
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
             </p>
             <p>This technique relates to:</p>
@@ -51,7 +51,7 @@
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The purpose of this technique is to notify Assistive Technologies (AT) when an input
                error occurs. The <code class="att">aria-live</code> attribute makes it possible for an AT (such as a screen reader) to be notified when
                error messages are injected into a Live Region container. The content within the <code class="att">aria-live</code> region is automatically read by the AT, without the AT having to focus on the place
@@ -62,7 +62,7 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-injecting-error-messages-into-a-container-with-role=alert-already-present-in-the-dom">
                <h3>Example 1: Injecting error messages into a container with role=alert already present
                   in the DOM
@@ -122,7 +122,7 @@ $(document).ready(function(e) {
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
+            <h2>参考リソース</h2>
             <p>Resources are for information purposes only, no endorsement implied.</p>
             <ul>
                
@@ -164,9 +164,9 @@ $(document).ready(function(e) {
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
@@ -186,7 +186,7 @@ $(document).ready(function(e) {
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
