@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA19: Using ARIA role=alert or Live Regions to Identify Errors</title>
+      <title>ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -27,7 +27,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using ARIA role=alert or Live Regions to Identify Errors</h1>
+      <h1>エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.0 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.0 を満たすコンテンツを作成するために使用できることを意味するものではない。
@@ -36,47 +36,33 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。 (WAI-ARIA)</a>. 
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
             <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">Success Criterion 4.1.3: Status Messages</a> (Sufficient using a more specific technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (より具体的な手法を用いる十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The purpose of this technique is to notify Assistive Technologies (AT) when an input
-               error occurs. The <code class="att">aria-live</code> attribute makes it possible for an AT (such as a screen reader) to be notified when
-               error messages are injected into a Live Region container. The content within the <code class="att">aria-live</code> region is automatically read by the AT, without the AT having to focus on the place
-               where the text is displayed.
-               
+            <p>この達成方法の目的は、入力エラーが発生した場合に支援技術 (AT) に通知することである。<code class="att">aria-live</code> 属性は、エラーメッセージがライブ領域のコンテナに注入された際に、AT (スクリーンリーダーなど) による通知を可能にする。<code class="att">aria-live</code> 領域内部のコンテンツは、テキストが表示されている場所で AT がフォーカスする必要なしに、AT によって自動的に読みあげられる。
             </p>
-            <p>There are also a number of <a href="https://www.w3.org/WAI/PF/aria-practices/#chobet">special case live region roles</a> which can be used instead of applying live region properties directly.
+            <p>ライブ領域のプロパティを直接適用する代わりに使用できる<a href="http://www.w3.org/WAI/PF/aria-practices/#chobet">特殊ケースのライブ領域のロール</a>も多数ある。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-injecting-error-messages-into-a-container-with-role=alert-already-present-in-the-dom">
-               <h3>Example 1: Injecting error messages into a container with role=alert already present
-                  in the DOM
+               <h3>事例 1: DOM 内にすでに存在する role=alert をもつコンテナの中にエラーメッセージを注入する
                </h3>
-               <p>The following example uses role=alert which is equivalent to using aria-live=assertive.
-                  
+               <p>次の例は、<code>aria-live=assertive</code> を使用しているのと同等の <code>role=alert</code> を使用する。
                </p>
-               <p>In the example there is an empty error message container element with aria-atomic=true
-                  and an aria-live property or alert role present in the DOM on page load. The error
-                  container must be present in the DOM on page load for the error message to be spoken
-                  by most screen readers. aria-atomic=true is necessary to make Voiceover on iOS read
-                  the error messages after more than one invalid submission. 
-                  
+               <p>例において、ページロード時に DOM に存在する <code>aria-atomic=true</code> 及び <code>aria-live</code> プロパティ又は <code>alert</code> ロールをもつ空のエラーメッセージコンテナ要素が存在する。エラーコンテナは、ほとんどのスクリーンリーダーでエラーメッセージが読み上げられるために、ページロード時に DOM に存在しなければならない。<code>aria-atomic=true</code> は、複数の無効な投稿をした後にエラーメッセージを iOS の Voiceover に読み上げさせるために必要である。
                </p>
-               <p>jQuery is used to test if the inputs are empty on submit and inject error messages
-                  into the live region containers if so. Each time a new submit is attempted the previous
-                  error messages are removed from the container and new error messages injected.
-                  
+               <p>jQuery は、送信時に入力が空であるかどうかをテストし、そうであれば、ライブ領域コンテナにエラーメッセージを注入するために使用される。新しい送信が試みられるたびに、前のエラーメッセージがコンテナから削除され、新しいエラーメッセージが挿入される。
                </p><pre xml:space="preserve">&lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 $(document).ready(function(e) {
@@ -113,7 +99,7 @@ $(document).ready(function(e) {
   &lt;p&gt;
     &lt;input type="submit" name="button" id="button" value="Submit"&gt;
   &lt;/p&gt;
-&lt;/form&gt;</pre><p class="working-example">Working example: <a href="../../working-examples/aria-alert-identify-errors/">Using role=alert to identify errors</a>.
+&lt;/form&gt;</pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-alert-identify-errors/">エラーを識別するために role=alert を使用する</a>。
                </p>
             </section>
          </section>
@@ -166,15 +152,14 @@ $(document).ready(function(e) {
                
                <ol>
                   
-                  <li>Determine that an empty error container role=alert or aria-live=assertive attribute
-                     is present in the DOM at page load.
+                  <li><code>role=alert</code> 又は <code>aria-live=assertive</code> 属性が指定された空のエラーコンテナが、ページの読み込み時の DOM に存在することを判断する。
                   </li>
                   
-                  <li> Trigger the error that causes the content in the live region to appear or update.
+                  <li>ライブ領域のコンテンツの表示又更新を引き起こすエラーをトリガーする。
                      
                   </li>
                   
-                  <li> Determine that the error message was injected into the already present error container.
+                  <li>エラーメッセージが既に存在するエラーコンテナに挿入されたことを判断する。
                      
                   </li>
                   
@@ -186,7 +171,7 @@ $(document).ready(function(e) {
                
                <ul>
                   
-                  <li>#1 and #3 are true.</li>
+                  <li>1. 及び 3. の結果が真である。</li>
                   
                </ul>
                
