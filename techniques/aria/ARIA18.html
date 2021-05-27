@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA18: Using aria-alertdialog to Identify Errors</title>
+      <title>ARIA18: エラーを特定するために aria-alertdialog を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -27,7 +27,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using aria-alertdialog to Identify Errors</h1>
+      <h1>エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.0 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.0 を満たすコンテンツを作成するために使用できることを意味するものではない。
@@ -40,67 +40,52 @@
             </p>
             <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">Success Criterion 4.1.3: Status Messages</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The purpose of this technique is to alert people that an input error has occured.
-               Using role="alertdialog" creates a notification. This notification should be modal
-               with the following characteristics:
-               
+            <p>この達成方法の目的は、入力エラーが発生していることを利用者に警告することにある。<code>role="alertdialog"</code>を使用することで、通知を作成することができる。この通知は、次のような特徴をもつモーダルであるべきである:
             </p>
             <ul>
                
                <li>
-                  <code class="att">aria-label</code> or <code class="att">aria-labelledby</code> attribute gives the alertdialog an accessible name.
-                  
+                  <code class="att">aria-label</code> 又は <code class="att">aria-labelledby</code> 属性で、アラートダイアログにアクセシブルな名前を与えている。
                </li>
                
                <li>
-                  <code class="att">aria-describedby</code> provides a reference to the text of the alert.
-                  
+                  <code class="att">aria-describedby</code> で、アラートのテキストへの参照を提供している。
                </li>
                
-               <li>The alertdialog contains at least one focusable control, and the focus should move
-                  to that control when the alertdialog opens.
-                  
+               <li>そのアラートダイアログは、少なくとも一つのフォーカス可能なコントロールを含んでおり、アラートダイアログが開く際にフォーカスがそのコントロールに移動すべきである。
                </li>
                
-               <li>The tab order is constrained within the alertdialog whilst it is open.
-                  
+               <li>タブ順序は、タブが開いている間アラートダイアログの内部に拘束される。
                </li>
                
-               <li>When the dialog is dismissed, the focus moves back to the position it had before the
-                  dialog opened, if possible.
-                  
+               <li>ダイアログが閉じられる場合、可能であれば、フォーカスはダイアログが開く前の位置に戻る。
                </li>
                
             </ul>
-            <p>Note that the alertdialog should not be present in a way that it will be accessed
-               by AT until it is needed. One way to do this is not to include it in the static HTML
-               and instead to insert it into the DOM via script when the error condition is triggered.
-               The insertion would correspond to the following HTML sample.
-               
+            <p>アラートダイアログは、必要とされるまで、支援技術によってアクセスされる方法で存在すべきではないことに注意。これを行う一つの方法は、静的な HTML に含めない代わりに、エラー状態がトリガーされた時にスクリプトを通して DOM に挿入することである。この挿入は、次の HTML サンプルに対応する。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-alert-dialog">
-               <h3>Example 1: Alert dialog</h3>
-               <p>This example shows how a notification using role="alertdialog" can be used to notify
-                  someone they have entered invalid information.
+               <h3>事例 1: アラートダイアログ</h3>
+               <p>この例は、<code>role="alertdialog"</code>を使用する通知が、無効な情報を入力した人に通知するためにどのように使用できるかを示す。
                </p><pre xml:space="preserve">&lt;div role="alertdialog" aria-labelledby="alertHeading" aria-describedby="alertText"&gt;
 &lt;h1 id="alertHeading"&gt;Error&lt;/h1&gt;
 &lt;div id="alertText"&gt;Employee's Birth Date is after their hire date. Please verify the birth date and hire date.&lt;/div&gt;
 &lt;button&gt;Save and Continue&lt;/button&gt;
 &lt;button&gt;Return to page and correct error&lt;/button&gt;
-&lt;/div&gt;</pre><p class="working-example">Working example: <a href="../../working-examples/aria-alertdialog-identify-errors/">Alert dialog</a>.
+&lt;/div&gt;</pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/aria-alertdialog-identify-errors/">アラートダイアログ</a>.
                </p>
             </section>
          </section>
@@ -123,35 +108,25 @@
                
                <ol>
                   
-                  <li>Trigger the error that causes the alertdialog to appear.
-                     
+                  <li>アラートダイアログが表示される原因となるエラーをトリガーする。
                   </li>
                   
-                  <li>Determine that the alertdialog contains at least one focusable control, and the focus
-                     moves to that control when the alertdialog opens.
-                     
+                  <li>アラートダイアログは少なくとも一つのフォーカス可能なコントロールを含み、アラートダイアログが開いた際にフォーカスがそのコントロールに移動することを判断する。
                   </li>
                   
-                  <li>Determine that the tab order is constrained within the alertdialog while it is open,
-                     and when the dialog is dismissed, the focus moves back to the position it had before
-                     the dialog opene, if possible.
-                     
+                  <li>タブ順序は、タブが開いている間アラートダイアログ内に拘束され、ダイアログを閉じた際に、可能ならば、フォーカスはダイアログが開く前の位置に戻ることを判断する。
                   </li>
                   
-                  <li>Examine the element with role="alertdialog" applied.
-                     
+                  <li>適用された <code>role="alertdialog"</code> をもつ要素を調べる。
                   </li>
                   
-                  <li>Determine that either the <code class="att">aria-label</code> or <code class="att">aria-labelledby</code> attribute has been correctly used to give the alertdialog an accessible name.
-                     
+                  <li><code class="att">aria-label</code> 又は <code class="att">aria-labelledby</code> 属性のいずれかが、適切にアラートダイアログにアクセシブルな名前を与えるために使用されていることを判断する。
                   </li>
                   
-                  <li>Determine that the contents of the alertdialog identifies the input error.
-                     
+                  <li>アラートダイアログのコンテンツが入力エラーを識別していることを判断する。
                   </li>
                   
-                  <li>Determine whether contents of the alertdialog suggests how to fix the error.
-                     
+                  <li>アラートダイアログのコンテンツがエラーを修正する方法を提案しているかどうかを判断する。
                   </li>
                   
                </ol>
@@ -162,7 +137,7 @@
                
                <ul>
                   
-                  <li>Checks 2, 3, 5 and 6 are true. For SC 3.3.3, Check 7 is also true.</li>
+                  <li>2.、3.、5. 及び 6. の結果が真である。達成基準 3.3.3 を達成するためには、7 の結果も真である。</li>
                   
                </ul>
                
