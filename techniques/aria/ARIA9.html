@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA9: Using aria-labelledby to concatenate a label from several text nodes</title>
+      <title>ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,119 +10,99 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA8">Previous Technique: ARIA8</a></li>
-            <li><a href="ARIA10">Next Technique: ARIA10</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA8">前の達成方法: ARIA8</a></li>
+            <li><a href="ARIA10">次の達成方法: ARIA10</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using aria-labelledby to concatenate a label from several text nodes</h1>
+      <h1>複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
+            <h2>適用 (対象)</h2>
+            <p>
+              <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient as a way to meet <a href="../general/G131">G131: Providing descriptive labels</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (<a href="../general/G131">G131: 説明的なラベルを提供する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The <code class="prop">aria-labelledby</code> property can be used to label all visual objects. Applied to inputs, the <code class="prop">aria-labelledby</code> property can be used to label native inputs as well as non-native elements, such
-               as custom text inputs constructed with div contenteditable="true".
+            <h2>解説</h2>
+            <p>
+              <code class="prop">aria-labelledby</code>プロパティは、すべての視覚的オブジェクトをラベル付けするために使用できる。入力に適用する場合、<code class="prop">aria-labelledby</code> プロパティは、<code>div contenteditable="true"</code> によって構築されるカスタムテキスト入力のような非ネイティブ要素だけでなく、ネイティブの入力に対するラベル付けにも利用することができる。
             </p>
-            <p>One particular use of <code class="prop">aria-labelledby</code> is for text inputs in situations where a meaningful label should consist of more
-               than one label string.
+            <p>
+              <code class="prop">aria-labelledby</code> の特有の用途のひとつは、意味のあるラベルが複数のラベル文字列から構成される状況における、テキスト入力のためのものである。
             </p>
-            <p>Authors assign unique <code class="att">id</code>s to the label strings to be concatenated as the label for the <code class="el">input</code> element. The value of the <code class="att">aria-labelledby</code> attribute is then a space-separated list of all <code class="att">id</code>s in the order in which the label strings referenced should be read by screen readers.
-               Supporting user agents will concatenate the label strings referenced and read them
-               as one continuous label of the input.
+            <p>
+              制作者は、<code class="el">input</code> 要素のラベルとして連結されるために、ラベル文字列に一意の <code class="att">id</code> を割り当てる。<code class="att">aria-labelledby</code> 属性の値は、参照されたラベル文字列がスクリーンリーダーで読みあげられるべき順序に並べられた、全 <code class="att">id</code> のスペース区切りのリストである。サポートするユーザエージェントは、参照されたラベル文字列を連結して、入力欄の一つの連続したラベルとして読みあげる。
             </p>
-            <p>The concatenation of label strings can be useful for different reasons. In example
-               1, an input is nested within the context of a full sentence. The desired screen reader
-               output is "Extend time-out to [ 20 ] minutes - edit with autocomplete, selected 20".
-               Since the <code class="att">id</code> of the text input is included in the string of <code class="att">id</code>s referenced by aria-labelledby, the value of the input is included in the concatenated
-               label at the right position.
+            <p>
+              ラベル文字列の連結は、さまざまな理由で便利である。事例 1 において、入力欄は完全な一文のコンテキスト内に含まれている。望ましいスクリーンリーダーの出力は、"Extend time-out to [ 20 ] minutes - edit with autocomplete, selected 20" である。テキスト入力の <code class="att">id</code> は aria-labelledby で参照される <code class="att">id</code> の文字列に含まれているので、入力の値は連結されたラベルの正しい位置に含まれる。
             </p>
-            <p>Another application of <code class="att">aria-labelledby</code> is when there is no space to provide a visible label next to the input, or when using
-               native labels would create unnecessary redundancy. Here, the use <code class="att">aria-labelledby</code> makes it possible to associate visible elements on the page as label for such inputs.
-               This is demonstrated in example 2 where table column and row headings are concatenated
-               into labels for the text input elements inside the table.
+            <p>
+              <code class="att">aria-labelledby</code> の別の応用は、入力欄の隣に視覚的なラベルを提供するためのスペースが存在しない場合、又はネイティブラベルの使用が不必要な冗長性を生む場合である。このとき、<code class="att">aria-labelledby</code> を使用すると、ページ上の可視要素をそのような入力のラベルとして関連付けることができる。この方法は事例 2 において示されており、テーブルの列及び行の見出しが連結されて、テーブル内部のテキスト入力要素のラベルとなっている。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <div>
-                  
-                  <p>The <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">ARIA accessible name and description calculation</a> specifies that the string specified in <code class="att">aria-labelledby</code> should replace rather than add to the content of the element that carries the property.
-                     So adding the <code class="att">aria-labelledby</code> property to a native label should replace the text content inside that label unless
-                     the label itself is referenced as part of the sequence of <code class="att">id</code>s in <code class="att">aria-labelledby</code>.
-                  </p>
-                  
-               </div>
+              <div role="heading" class="note-title marker" aria-level="3">注記</div>
+              <div>
+                <p>
+                  <a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">ARIA accessible name and description calculation</a> は、<code class="att">aria-labelledby</code>で指定された文字列が、プロパティを有する要素のコンテンツに追加されるのではなく、置換するべきと規定している。よって、<code class="att">aria-labelledby</code> プロパティをネイティブラベルに追加する場合、ラベル自体が <code class="att">aria-labelledby</code> の <code class="att">id</code> のシーケンスの一部として参照されていない限り、そのラベル内のテキストコンテンツが置換されるべきである。
+                </p>
+              </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1--a-time-out-input-field-with-concatenated-label">
-               <h3>Example 1:  A time-out input field with concatenated label</h3>
-               <p>A text input allows users to extend the default time before a time-out occurs.</p>
-               <p>The string "Extend time-out to" is contained in a native <code class="el">label</code> element and is associated with the input with the input by id="timeout-duration"
-                  . This label is associated with this input using the for/id association only on user
-                  agents that don't support ARIA. On user agents that support ARIA, the for/id association
-                  is ignored and the label for the input is provided only by <code class="att">aria-labelledby</code>, per the <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> in the HTML to Platform Accessibility APIs Implementation Guide.
-               </p>
-               <p>The <code class="att">aria-labelledby</code> attribute on the text input references three elements: (1) the <code class="el">span</code> containing the native label, (2) the text input containing the default text '20'
-                  (recall that this input is not labelled with the for/id associated label text), and
-                  (3) the string 'minutes' contained in a <code class="el">span</code>. These elements should be concatenated to provide the full label for the text input
-               </p>
+               <h3>例 1: 連結されたラベルをもつタイムアウト入力フィールド</h3>
+               <p>テキスト入力欄があり、タイムアウトが発生する前に、利用者がデフォルトの時間を延長することを可能にしている。</p>
+               <p>文字列 "Extend time-out to" は、ネイティブの <code class="el">label</code> 要素に含まれており、<code>id="timeout-duration"</code> により入力に関連付けられる。このラベルは、ARIA をサポートしないユーザエージェント上においてのみ、for/id 関連付けを使用してこの入力に関連付けられる。ARIA をサポートするユーザエージェント上では、for/id 関連付けは無視され、入力用のラベルは、HTML to Platform Accessibility APIs Implementation Guide における <a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> に従って、<code class="att">aria-labelledby</code> のみによって提供される。</p>
+               <p>テキスト入力上の <code class="att">aria-labelledby</code> 属性は、三つの要素を参照する: (1) ネイティブのラベルを含む <code class="el">span</code>、(2) デフォルトテキスト'20'を含むテキスト入力 (この入力が、ラベルテキストに関連する for/id でラベル付けされないことを思い起こすこと)、(3) <code class="el">span</code> に含まれる文字列 'minutes'。これらの要素は、テキスト入力に対する完全なラベルを提供するために連結されるべきである。</p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
-                     
-                     <p>The use of tabindex="-1" on the <code class="el">span</code> element is not meant to support focusing by scripts - here, it merely serves to ensure
-                        that some browsers (IE9, IE10) will include the <code class="el">span</code> element in the accessibility tree, thus making it available for reference by <code class="att">aria-labelledby</code>. For more details see <a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a>
-                        
+                     <p>
+                       <code class="el">span</code> 要素上の <code>tabindex="-1"</code> の使用は、スクリプトによってフォーカスをサポートすることを意味するものではない――ここでは、単に一部のブラウザ (IE9、IE10) がアクセシビリティツリーに <code class="el">span</code> 要素を含めることを保証するためのものであり、その結果、<code class="att">aria-labelledby</code> による参照に利用できるようになる。詳細については、<a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a> を参照。
                      </p>
                      
                   </div>
-               </div><pre xml:space="preserve">&lt;form&gt;
+               </div>
+               <pre xml:space="preserve">&lt;form&gt;
 &lt;p&gt;&lt;span id="timeout-label" tabindex="-1"&gt;&lt;label for="timeout-duration"&gt;Extend time-out to&lt;/label&gt;&lt;/span&gt;
 &lt;input type="text" size="3" id="timeout-duration" value="20" 
     aria-labelledby="timeout-label timeout-duration timeout-unit"&gt;
 &lt;span id="timeout-unit" tabindex="-1"&gt; minutes&lt;/span&gt;&lt;/p&gt;
-&lt;/form&gt;</pre><p class="working-example">Working example, <a href="../../working-examples/aria-labelledby-time-out-input-concatenated-label/">Time-out input field with concatenated label</a>, adapted from Easy ARIA tip #2: aria-labelledby and aria-describedby, an example
-                  put together by Marco Zehe.
+&lt;/form&gt;</pre>
+               <p class="working-example">
+                 実装例 <a href="https://www.w3.org/WAI/WCAG21/Techniques/working-examples/ARIA9/ex1.html">連結されたラベルをもつタイムアウト入力フィールド</a> は、Marco Zeheによってまとめられた Easy ARIA tip #2: <code class="att">aria-labelledby</code> and <code class="att">aria-describedby</code> から翻案した。
                </p>
             </section>
             <section class="example" id="example-2-a-simple-data-table-with-text-inputs">
-               <h3>Example 2: A simple data table with text inputs</h3>
-               <p>A simple data table containing text inputs. The input labels are concatenated through
-                  <code class="att">aria-labelledby</code> referencing the respective column and row headers.
+               <h3>例 2: テキスト入力を含む単純なデータテーブル</h3>
+               <p>テキスト入力を含む単純なデータテーブルがある。入力ラベルは、それぞれの列及び行のヘッダーを参照する <code class="att">aria-labelledby</code> を通して連結される。
                </p><pre xml:space="preserve">&lt;table&gt;
 	&lt;tr&gt;
 		&lt;td&gt;&lt;/td&gt;
@@ -141,19 +121,15 @@
 		&lt;td&gt;&lt;input type="text" size="20" aria-labelledby="tpayer div" /&gt;&lt;/td&gt;
 		&lt;td&gt;&lt;input type="text" size="20" aria-labelledby="sp div" /&gt;&lt;/td&gt;
 	&lt;/tr&gt;
-&lt;/table&gt;</pre><p class="working-example">Working example, <a href="../../working-examples/aria-labelledby-table-text-inputs/">Using aria-labelledby for simple table with text inputs</a>, based on an example by Jim Thatcher.
+&lt;/table&gt;</pre>
+               <p class="working-example">実装例 <a href="../../working-examples/aria-labelledby-table-text-inputs/">テキスト入力をもつ単純なテーブルに対する aria-labelledby を使用する</a>は、Jim Thatcher による例に基づく。
                </p>
             </section>
             <section class="example" id="example-3-a-conference-workshop-booking-table">
-               <h3>Example 3: A conference workshop booking table</h3>
-               <p>A conference workshop booking table with two parallel tracks allows users to select
-                  the workshop they want to attend. When tabbing through the checkbox inputs in the
-                  table, the track (1 or 2), the title, and the speaker of the workshop followed by
-                  the adjacent checkbox label "Attend" are provided as concatenated label for the checkboxes
-                  via <code class="att">aria-labelledby</code>.
+               <h3>例 3: 会議ワークショップ予約テーブル</h3>
+               <p>二つの同時進行のトラックをもつ会議ワークショップ予約テーブルがあり、利用者が参加したいワークショップを選択することを可能にしている。テーブル内のチェックボックス入力の間をタブ移動するとき、トラック (1 又は 2)、タイトル、及び隣接するチェックボックスのラベル "Attend" に続くワークショップのスピーカーは、<code class="att">aria-labelledby</code> を介してチェックボックスに対する連結ラベルとして提供される。
                </p>
-               <p>Some browser / screen reader combinations (e.g. Mozilla Firefox and NVDA) will in
-                  addition speak the relevant table cell headers.
+               <p>一部のブラウザ/スクリーンリーダーの組み合わせ (たとえば Mozilla Firefox と NVDA) は、さらに関連するテーブルセルのヘッダーを伝える。
                </p><pre xml:space="preserve">&lt;h1&gt;Dinosaur Conference workshops timetable Thursday, 14.  &amp; Friday, 15. March 2013&lt;/h1&gt;
 &lt;table&gt;
 &lt;caption&gt;Dinosaur Conference workshop booking table&lt;/caption&gt;
@@ -234,80 +210,63 @@
 	&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</pre><p class="working-example">Working example: <a href="../../working-examples/aria-labelledby-workshop-booking-timetable/">Conference workshop booking timetable</a>.
+&lt;/table&gt;</pre><p class="working-example">実装例: <a href="../../working-examples/aria-labelledby-workshop-booking-timetable/">会議ワークショップ予約時間表</a>
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
-               
-               <li> 
+               <li>
                   <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">HTML to Platform Accessibility APIs Implementation Guide: Accessible Name and Description
                      Calculation</a> 
-                  
                </li>
                
                <li>
                   <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices 1.1</a> 
-                  
                </li>
                
                <li>
                   <a href="https://www.w3.org/TR/aria-in-html/">Using WAI-ARIA in HTML</a>: Section 2.7 aria-labelledby and aria-describedby
                </li>
-               
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
+               <li><a href="ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
                
-               <li><a href="ARIA6">ARIA6: Using aria-label to provide labels for objects</a></li>
-               
-               <li><a href="ARIA16">ARIA16: Using aria-labelledby to provide a name for user interface controls</a></li>
-               
+               <li><a href="ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For inputs that use <code class="att">aria-labelledby</code>:
-               </p>
+               <p><code class="att">aria-labelledby</code> を使用する入力に対して:</p>
                
                <ol>
-                  
-                  <li>Check that <code class="att">id</code>s referenced in <code class="att">aria-labelledby</code> are unique and match the <code class="att">id</code>s of the text nodes that together provide the label
+                  <li><code class="att">aria-labelledby</code> で参照される <code class="att">id</code> が一意であり、かつ組み合わせてラベルを提供するテキストノードの <code class="att">id</code> と一致することを確認する
                   </li>
                   
-                  <li>Check that the concatenated content of elements referenced by <code class="att">aria-labelledby</code> is descriptive for the purpose or function of the element labeled
+                  <li><code class="att">aria-labelledby</code> によって参照される要素を連結したコンテンツが、ラベル付けされた要素の目的又は機能に対する説明であることを確認する
                   </li>
-                  
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
-                  
                   <li>
+                     <p>1. 及び 2. の結果が真である。</p>
                      
-                     <p>#1 and #2 are true.</p>
-                     
-                     <p>If this is a sufficient technique for a success criterion, failing this test procedure
-                        does not necessarily mean that the success criterion has not been satisfied in some
-                        other way, only that this technique has not been successfully implemented and can
-                        not be used to claim conformance.
+                     <p>これが達成基準に対して十分な達成方法である場合、このテスト手順を失敗しても、この達成方法がうまく実装されず適合性を主張するために使用できないだけであり、達成基準が他の方法で満たされていないことを必ずしも意味するものではない。
                      </p>
-                     
                   </li>
-                  
                </ul>
-               
             </section>
          </section>
       </main>
