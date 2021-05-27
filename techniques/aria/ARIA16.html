@@ -10,27 +10,27 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA15">Previous Technique: ARIA15</a></li>
-            <li><a href="ARIA17">Next Technique: ARIA17</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA15">前の達成方法: ARIA15</a></li>
+            <li><a href="ARIA17">次の達成方法: ARIA17</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>Using aria-labelledby to provide a name for user interface controls</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
+         <h2>達成方法に関する重要な情報</h2>
          <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
             they relate to the normative WCAG 2.1 success criteria. The Applicability section
             explains the scope of the technique, and the presence of techniques for a specific
@@ -40,7 +40,7 @@
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
             </p>
             <p>This technique relates to:</p>
@@ -57,7 +57,7 @@
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>The purpose of this technique is to provide names for user interface controls that
                can be read by assistive technology.  WAI-ARIA provides a way to associate text with
                a section, drawing, form element, picture, and so on, using the <code class="att">aria-labelledby</code> property. This techniques uses the <code class="att">aria-labelledby</code> attribute to associate a user interface control, such as a form field, with text
@@ -94,7 +94,7 @@
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-labelling-a-simple-text-field">
                <h3>Example 1: Labelling a simple text field</h3>
                <p>The following is an example of <code class="att">aria-labelledby</code> used on a simple text field to provide a label in a situation where there is no text
@@ -130,7 +130,7 @@
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
+            <h2>参考リソース</h2>
             <p>Resources are for information purposes only, no endorsement implied.</p>
             <ul>
                
@@ -148,7 +148,7 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
                <li><a href="ARIA10">ARIA10: Using aria-labelledby to provide a text alternative for non-text content</a></li>
@@ -169,9 +169,9 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <p>For each user interface control element where an <code class="att">aria-labelledby</code> attribute is present:
                   
@@ -192,7 +192,7 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
