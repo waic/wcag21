@@ -37,8 +37,7 @@
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
-            <p>
-              <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
             <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
@@ -50,26 +49,20 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>
-              <code class="prop">aria-labelledby</code>プロパティは、すべての視覚的オブジェクトをラベル付けするために使用できる。入力に適用する場合、<code class="prop">aria-labelledby</code> プロパティは、<code>div contenteditable="true"</code> によって構築されるカスタムテキスト入力のような非ネイティブ要素だけでなく、ネイティブの入力に対するラベル付けにも利用することができる。
+            <p><code class="prop">aria-labelledby</code>プロパティは、すべての視覚的オブジェクトをラベル付けするために使用できる。入力に適用する場合、<code class="prop">aria-labelledby</code> プロパティは、<code>div contenteditable="true"</code> によって構築されるカスタムテキスト入力のような非ネイティブ要素だけでなく、ネイティブの入力に対するラベル付けにも利用することができる。
             </p>
-            <p>
-              <code class="prop">aria-labelledby</code> の特有の用途のひとつは、意味のあるラベルが複数のラベル文字列から構成される状況における、テキスト入力のためのものである。
+            <p><code class="prop">aria-labelledby</code> の特有の用途のひとつは、意味のあるラベルが複数のラベル文字列から構成される状況における、テキスト入力のためのものである。
             </p>
-            <p>
-              コンテンツ制作者は、<code class="el">input</code> 要素のラベルとして連結されるために、ラベル文字列に一意の <code class="att">id</code> を割り当てる。<code class="att">aria-labelledby</code> 属性の値は、参照されたラベル文字列がスクリーンリーダーで読みあげられるべき順序に並べられた、全 <code class="att">id</code> のスペース区切りのリストである。サポートするユーザエージェントは、参照されたラベル文字列を連結して、入力欄の一つの連続したラベルとして読みあげる。
+            <p>コンテンツ制作者は、<code class="el">input</code> 要素のラベルとして連結されるために、ラベル文字列に一意の <code class="att">id</code> を割り当てる。<code class="att">aria-labelledby</code> 属性の値は、参照されたラベル文字列がスクリーンリーダーで読みあげられるべき順序に並べられた、全 <code class="att">id</code> のスペース区切りのリストである。サポートするユーザエージェントは、参照されたラベル文字列を連結して、入力欄の一つの連続したラベルとして読みあげる。
             </p>
-            <p>
-              ラベル文字列の連結は、さまざまな理由で便利である。事例 1 において、入力欄は完全な一文のコンテキスト内に含まれている。望ましいスクリーンリーダーの出力は、"Extend time-out to [ 20 ] minutes - edit with autocomplete, selected 20" である。テキスト入力の <code class="att">id</code> は aria-labelledby で参照される <code class="att">id</code> の文字列に含まれているので、入力の値は連結されたラベルの正しい位置に含まれる。
+            <p>ラベル文字列の連結は、さまざまな理由で便利である。事例 1 において、入力欄は完全な一文のコンテキスト内に含まれている。望ましいスクリーンリーダーの出力は、"Extend time-out to [ 20 ] minutes - edit with autocomplete, selected 20" である。テキスト入力の <code class="att">id</code> は aria-labelledby で参照される <code class="att">id</code> の文字列に含まれているので、入力の値は連結されたラベルの正しい位置に含まれる。
             </p>
-            <p>
-              <code class="att">aria-labelledby</code> の別の応用は、入力欄の隣に視覚的なラベルを提供するためのスペースが存在しない場合、又はネイティブラベルの使用が不必要な冗長性を生む場合である。このとき、<code class="att">aria-labelledby</code> を使用すると、ページ上の可視要素をそのような入力のラベルとして関連付けることができる。この方法は事例 2 において示されており、テーブルの列及び行の見出しが連結されて、テーブル内部のテキスト入力要素のラベルとなっている。
+            <p><code class="att">aria-labelledby</code> の別の応用は、入力欄の隣に視覚的なラベルを提供するためのスペースが存在しない場合、又はネイティブラベルの使用が不必要な冗長性を生む場合である。このとき、<code class="att">aria-labelledby</code> を使用すると、ページ上の可視要素をそのような入力のラベルとして関連付けることができる。この方法は事例 2 において示されており、テーブルの列及び行の見出しが連結されて、テーブル内部のテキスト入力要素のラベルとなっている。
             </p>
             <div class="note">
               <div role="heading" class="note-title marker" aria-level="3">注記</div>
               <div>
-                <p>
-                  <a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">ARIA accessible name and description calculation</a> は、<code class="att">aria-labelledby</code>で指定された文字列が、プロパティを有する要素のコンテンツに追加されるのではなく、置換するべきと規定している。よって、<code class="att">aria-labelledby</code> プロパティをネイティブラベルに追加する場合、ラベル自体が <code class="att">aria-labelledby</code> の <code class="att">id</code> のシーケンスの一部として参照されていない限り、そのラベル内のテキストコンテンツが置換されるべきである。
+                <p><a href="http://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">ARIA accessible name and description calculation</a> は、<code class="att">aria-labelledby</code>で指定された文字列が、プロパティを有する要素のコンテンツに追加されるのではなく、置換するべきと規定している。よって、<code class="att">aria-labelledby</code> プロパティをネイティブラベルに追加する場合、ラベル自体が <code class="att">aria-labelledby</code> の <code class="att">id</code> のシーケンスの一部として参照されていない限り、そのラベル内のテキストコンテンツが置換されるべきである。
                 </p>
               </div>
             </div>
@@ -84,10 +77,8 @@
                <div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
-                     <p>
-                       <code class="el">span</code> 要素上の <code>tabindex="-1"</code> の使用は、スクリプトによってフォーカスをサポートすることを意味するものではない――ここでは、単に一部のブラウザ (IE9、IE10) がアクセシビリティツリーに <code class="el">span</code> 要素を含めることを保証するためのものであり、その結果、<code class="att">aria-labelledby</code> による参照に利用できるようになる。詳細については、<a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a> を参照。
+                     <p><code class="el">span</code> 要素上の <code>tabindex="-1"</code> の使用は、スクリプトによってフォーカスをサポートすることを意味するものではない――ここでは、単に一部のブラウザ (IE9、IE10) がアクセシビリティツリーに <code class="el">span</code> 要素を含めることを保証するためのものであり、その結果、<code class="att">aria-labelledby</code> による参照に利用できるようになる。詳細については、<a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a> を参照。
                      </p>
-                     
                   </div>
                </div>
                <pre xml:space="preserve">&lt;form&gt;
@@ -96,8 +87,7 @@
     aria-labelledby="timeout-label timeout-duration timeout-unit"&gt;
 &lt;span id="timeout-unit" tabindex="-1"&gt; minutes&lt;/span&gt;&lt;/p&gt;
 &lt;/form&gt;</pre>
-               <p class="working-example">
-                 実装例 <a href="https://www.w3.org/WAI/WCAG21/Techniques/working-examples/ARIA9/ex1.html">連結されたラベルをもつタイムアウト入力フィールド</a> は、Marco Zeheによってまとめられた Easy ARIA tip #2: <code class="att">aria-labelledby</code> and <code class="att">aria-describedby</code> から翻案した。
+               <p class="working-example">実装例 <a href="https://www.w3.org/WAI/WCAG21/Techniques/working-examples/ARIA9/ex1.html">連結されたラベルをもつタイムアウト入力フィールド</a> は、Marco Zeheによってまとめられた Easy ARIA tip #2: <code class="att">aria-labelledby</code> and <code class="att">aria-describedby</code> から翻案した。
                </p>
             </section>
             <section class="example" id="example-2-a-simple-data-table-with-text-inputs">
