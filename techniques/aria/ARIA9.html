@@ -57,7 +57,7 @@
               <code class="prop">aria-labelledby</code> の特有の用途のひとつは、意味のあるラベルが複数のラベル文字列から構成される状況における、テキスト入力のためのものである。
             </p>
             <p>
-              制作者は、<code class="el">input</code> 要素のラベルとして連結されるために、ラベル文字列に一意の <code class="att">id</code> を割り当てる。<code class="att">aria-labelledby</code> 属性の値は、参照されたラベル文字列がスクリーンリーダーで読みあげられるべき順序に並べられた、全 <code class="att">id</code> のスペース区切りのリストである。サポートするユーザエージェントは、参照されたラベル文字列を連結して、入力欄の一つの連続したラベルとして読みあげる。
+              コンテンツ制作者は、<code class="el">input</code> 要素のラベルとして連結されるために、ラベル文字列に一意の <code class="att">id</code> を割り当てる。<code class="att">aria-labelledby</code> 属性の値は、参照されたラベル文字列がスクリーンリーダーで読みあげられるべき順序に並べられた、全 <code class="att">id</code> のスペース区切りのリストである。サポートするユーザエージェントは、参照されたラベル文字列を連結して、入力欄の一つの連続したラベルとして読みあげる。
             </p>
             <p>
               ラベル文字列の連結は、さまざまな理由で便利である。事例 1 において、入力欄は完全な一文のコンテキスト内に含まれている。望ましいスクリーンリーダーの出力は、"Extend time-out to [ 20 ] minutes - edit with autocomplete, selected 20" である。テキスト入力の <code class="att">id</code> は aria-labelledby で参照される <code class="att">id</code> の文字列に含まれているので、入力の値は連結されたラベルの正しい位置に含まれる。
