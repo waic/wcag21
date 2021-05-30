@@ -46,7 +46,7 @@
             <h2>解説</h2>
             <p>この達成方法の目的は、支援技術によって読み取ることができるオブジェクトのラベルを提供することである。<code class="att">aria-label</code> 属性は、ボタンなど、オブジェクトのテキストラベルを提供する。スクリーンリーダーがオブジェクトに遭遇した際、<code class="att">aria-label</code> テキストが読み込まれ、利用者はそのオブジェクトがどのようなものかを知ることができる。
             </p>
-            <p>制作者は、<code class="att">aria-labelledby</code> が同じオブジェクトに使用される状況では、<code class="att">aria-label</code> が支援技術によって無視される場合があることに注意すべきである。名前付けの序列の詳細については、<a href="https://www.w3.org/TR/wai-aria/#textalternativecomputation">ARIA 仕様</a>及び HTML to Platform Accessibility APIs Implementation Guide における <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> を参照。制作者は、<code class="att">aria-label</code> の使用が画像の <code class="att">alt</code> や <code class="att">for</code> 属性を用いてフォームフィールドに関係付けられた <code class="el">label</code> などのネイティブな名前付けを全て上書きすることに注意すべきである。
+            <p>コンテンツ制作者は、<code class="att">aria-labelledby</code> が同じオブジェクトに使用される状況では、<code class="att">aria-label</code> が支援技術によって無視される場合があることに注意すべきである。名前付けの序列の詳細については、<a href="https://www.w3.org/TR/wai-aria/#textalternativecomputation">ARIA 仕様</a>及び HTML to Platform Accessibility APIs Implementation Guide における <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> を参照。コンテンツ制作者は、<code class="att">aria-label</code> の使用が画像の <code class="att">alt</code> や <code class="att">for</code> 属性を用いてフォームフィールドに関係付けられた <code class="el">label</code> などのネイティブな名前付けを全て上書きすることに注意すべきである。
             </p>
          </section>
          <section id="examples">
@@ -63,8 +63,8 @@
 &lt;div role="navigation" aria-label="Secondary"&gt;
 &lt;ul&gt;&lt;li&gt;...a list of links here ...&lt;/li&gt; &lt;/ul&gt;&lt;/div&gt;</pre></section>
             <section class="example" id="example-2-identifying-region-landmarks">
-               <h3>事例 2: 領域のランドマークを識別する</h3>
-               <p>次の例は、気象ポートレットに一般的な "region" ランドマークがどのように追加されうるのかを示している。ラベルとして参照できる既存のテキストがページ内に存在しないため、<code class="att">aria-label</code> でラベル付けされている。The following example shows how a generic "region" landmark might be added to a weather
+               <h3>事例 2: 領域のランドマークを特定する</h3>
+               <p>次の例は、気象ポートレットに一般的な "region" ランドマークがどのように追加されうるのかを示している。ラベルとして参照できる既存のテキストがページ内に存在しないため、<code class="att">aria-label</code> でラベル付けされている。
                </p><pre xml:space="preserve">&lt;div role="region" aria-label="weather portlet"&gt; 
 ...
 &lt;/div&gt;</pre></section>
