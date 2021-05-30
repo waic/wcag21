@@ -54,7 +54,10 @@
             <section class="example" id="example-1-distinguishing-navigation-landmarks">
                <h3>事例 1:  ナビゲーションランドマークを区別する</h3>
                <p>次の例は、同じページに同じ種類のランドマークが 2 個以上存在し、かつページ内にラベルとして参照できる既存のテキストが存在しない場合に、HTML4 及び XHTML 1.0 文書内で二つのナビゲーションランドマークを識別するために <code class="att">aria-label</code> をどのように使用するのかを示している。
-               <div class="note"><p class="prefix"><em>訳注: </em>HTML4 及び XHTML 1.0 は Superseded Recommendation としてマークされ、廃止された仕様である。</p></div>
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>HTML4 及び XHTML 1.0 は Superseded Recommendation としてマークされ、廃止された仕様である。</p>
+               </div>
                </p><pre xml:space="preserve">&lt;div role="navigation" aria-label="Primary"&gt;
 &lt;ul&gt;&lt;li&gt;...a list of links here ...&lt;/li&gt;&lt;/ul&gt; &lt;/div&gt;
 &lt;div role="navigation" aria-label="Secondary"&gt;
