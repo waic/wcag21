@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA16: Using aria-labelledby to provide a name for user interface controls</title>
+      <title>ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -17,7 +17,7 @@
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
             <li><a href="#important-information">達成方法に関する重要な情報</a></li>
             <li><a href="#applicability">適用 (対象)</a></li>
@@ -28,7 +28,7 @@
             <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using aria-labelledby to provide a name for user interface controls</h1>
+      <h1>ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
          <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
@@ -41,87 +41,63 @@
             </p>
             <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name) ・役割 (role) 及び値 (value) </a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name) ・役割 (role) 及び値 (value) </a> (書かれていない達成方法を満たす慣習的な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient as a way to meet <a href="../general/G10">G10: Creating components using a technology that supports the accessibility notification
-                     of changes</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name) ・役割 (role) 及び値 (value) </a> (<a href="../general/G10">G10: 名前 (name) 及び役割 (role) を取得し、利用者が設定可能なプロパティを直接設定可能にし、変化を通知するためにユーザエージェントが動作する、プラットフォームのアクセシビリティ API 機能をサポートするウェブコンテンツ技術を用いて、コンポーネントを作成する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>The purpose of this technique is to provide names for user interface controls that
-               can be read by assistive technology.  WAI-ARIA provides a way to associate text with
-               a section, drawing, form element, picture, and so on, using the <code class="att">aria-labelledby</code> property. This techniques uses the <code class="att">aria-labelledby</code> attribute to associate a user interface control, such as a form field, with text
-               on the page that labels it.
-               
+            <p>この達成方法の目的は、支援技術によって読み取ることができるユーザインタフェースコントロールの名前を提供することである。WAI-ARIA は、<code class="att">aria-labelledby</code> プロパティを使用して、セクション、描画、フォーム要素、画像などとテキストを関連付けるための方法を提供する。この達成方法では、<code class="att">aria-labelledby</code> 属性を使用して、フォームフィールドなどのユーザインタフェースコントロールと、それをラベル付けするページ上のテキストとを関連付ける。
             </p>
-            <p>Like <code class="att">aria-describedby</code>, <code class="att">aria-labelledby</code> can accept multiple ids to point to other elements of the page using a space separated
-               list. This capability makes <code class="att">aria-labelledby</code> especially useful in situations where sighted users use information from the surrounding
-               context to identify a control. <a href="ARIA9">ARIA9: Using aria-labelledby to concatenate a label from several text nodes</a> contains more examples of situations where names are created from several other text
-               elements on the page.
-               
+            <p><code class="att">aria-describedby</code> のように、<code class="att">aria-labelledby</code> は、スペース区切りのリストを使用して、ページの他の要素を指すように複数の ID を受け入れることができる。この機能は、目の見える利用者がコントロールを識別するために周囲のコンテキストからの情報を使用する状況において、<code class="att">aria-labelledby</code> を特に有用にする。<a href="ARIA9">複数の語句をつなげて一つのラベルにするために、aria-labelledby を使用する</a>でも、名前がページ上の他の複数のテキスト要素から構成される場合の事例を紹介している。
             </p>
-            <p>While the function of aria-labelledby appears similar to the native HTML label element,
-               there are some differences:
-               
+            <p>aria-labelledby の機能はネイティブな HTML の label 要素と似ているように見えるが、いくつか違いがある:
             </p>
             <ul>
                
-               <li> 
-                  <code class="att">aria-labelledby</code> can reference more than one text element; <code class="el">label</code> can only reference one.
+               <li>
+                  <code class="att">aria-labelledby</code> は複数のテキスト要素を参照することができる。<code class="el">label</code> が参照できるのは一つだけである。
                </li>
                
-               <li> 
-                  <code class="att">aria-labelledby</code> can be used for a variety of elements while the <code class="el">label</code> element can only be used on form elements.
+               <li>
+                  <code class="el">label</code> 要素がフォーム要素のみに使用できる一方で、<code class="att">aria-labelledby</code> はさまざまな要素に対して使用できる。
                </li>
                
-               <li> Clicking on a <code class="el">label</code> focuses the associated form field. This does not occur with <code class="att">aria-labelledby</code>. If this behaviour is required then use <code class="el">label</code> or implement this functionality using scripting.
-                  
+               <li>
+                  <code class="el">label</code> をクリックすると、関連付けられたフォームフィールドをフォーカスする。これは <code class="att">aria-labelledby</code> では起こらない。この動作が必要な場合、<code class="el">label</code> を使用するか、スクリプトを使用してこの機能を実装する。
                </li>
                
             </ul>
-            <p>Note that as of December 2013, <code class="el">label</code> has better support than <code class="att">aria-labelledby</code>, especially in older browsers and assistive technologies.
-               
+            <p>2013 年 12 月の時点で、特に古いブラウザや支援技術で、<code class="el">label</code> のほうが <code class="att">aria-labelledby</code> よりもより良くサポートされていることに注意すること。
             </p>
          </section>
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-labelling-a-simple-text-field">
-               <h3>Example 1: Labelling a simple text field</h3>
-               <p>The following is an example of <code class="att">aria-labelledby</code> used on a simple text field to provide a label in a situation where there is no text
-                  available for a dedicated label but there is other text on the page that can be used
-                  to accurately label the control.
+               <h3>事例 1: 単純なテキストフィールドをラベル付けする</h3>
+               <p>以下は、ラベル専用のテキストがないものの、正確にコントロールをラベル付けするためにページ上の他のテキストが使用できる状況で、<code class="att">aria-labelledby</code> を使用して単純なテキストフィールドにラベルを提供している例である。
                </p><pre xml:space="preserve">&lt;input name="searchtxt" type="text" aria-labelledby="searchbtn"&gt;
 &lt;input name="searchbtn" id="searchbtn" type="submit" value="Search"&gt;</pre></section>
             <section class="example" id="example-2-labelling-a-slider">
-               <h3>Example 2: Labelling a slider</h3>
-               <p>Below is an example of <code class="att">aria-labelledby</code> used to provide a label for a slider control. In this case the label text is selected
-                  from within a longer adjacent text string. Please note that this example is simplified
-                  to show only the labeling relationship; authors implementing custom controls also
-                  need to ensure that controls meet other success criteria.
+               <h3>事例 2: スライダーをラベル付けする</h3>
+               <p>以下は、スライダーコントロールにラベルを提供するために <code class="att">aria-labelledby</code> を使用している例である。このケースでは、ラベルテキストが、より長い隣接するテキスト文字列の中から選択される。この例は、単にラベル付けの関係を示すために簡略化されていることに注意すること。カスタムコントロールを実装するコンテンツ制作者は、コントロールが他の達成基準を満たしていることも確認する必要がある。
                </p><pre xml:space="preserve">&lt;p&gt;Please select the &lt;span id="mysldr-lbl"&gt;number of days for your trip&lt;/span&gt;&lt;/p&gt;
 &lt;div id="mysldr" role="slider" aria-labelledby="mysldr-lbl"&gt;&lt;/div&gt;</pre></section>
             <section class="example" id="example-3-a-label-from-multiple-sources">
-               <h3>Example 3: A label from multiple sources</h3>
-               <p>The following example of <code class="att">aria-labelledby</code> with multiple references uses the <code class="el">label</code> element. For additional detail on concatenating multiple sources of information into
-                  a label with <code class="att">aria-labelledby</code>, please view the technique <a href="ARIA9">ARIA9: Using aria-labelledby to concatenate a label from several text nodes</a>.
-                  
+               <h3>事例 3: 複数のソースからのラベル</h3>
+               <p>以下は、<code class="el">label</code> 要素を使用した複数の参照を伴う <code class="att">aria-labelledby</code> の例である。<code class="att">aria-labelledby</code> をもつラベルに複数のソースを連結する方法の詳細については、<a href="ARIA9">複数の語句をつなげて一つのラベルにするために、aria-labelledby を使用する</a>を参照すること。
                </p><pre xml:space="preserve">&lt;label id="l1" for="f3"&gt;Notify me&lt;/label&gt;
 &lt;select name="amt" id="f3" aria-labelledby="l1 f3 l2"&gt;
   &lt;option value="1"&gt;1&lt;/option&gt;
   &lt;option value="2"&gt;2&lt;/option&gt;
 &lt;/select&gt;
-&lt;span id="l2" tabindex="-1"&gt;days in advance&lt;/span&gt;</pre><p>Note: The use of the <code class="el">label</code> element is included for a number of reasons. If the user clicks on the text of the
-                  <code class="el">label</code> element, the corresponding form field will receive focus, which makes the clicking
-                  target larger for people with dexterity problems. Also the <code class="el">label</code> element will always be exposed via the accessibility API. A <code class="el">span</code> could have been used (but if so, it should receive a tabindex="-1" so that it will
-                  be exposed via the accessibility API in all versions of Internet Explorer). However,
-                  a <code class="el">span</code> would lose the advantage of the larger clickable region.
-                  
+&lt;span id="l2" tabindex="-1"&gt;days in advance&lt;/span&gt;</pre><p>注: <code class="el">label</code> 要素を使うことには多くの理由がある。利用者が <code class="el">label</code> 要素のテキストをクリックすれば、対応するフォームフィールドがフォーカスを受け取るため、器用さの問題を持つ人に対してクリックターゲットを大きくすることができる。また、<code class="el">label</code> 要素は常にアクセシビリティ API を介して公開される。<code class="el">span</code> が使われるかもしれない (ただしその場合、span が Internet Explorer のすべてのバージョンでアクセシビリティ API を介して公開されるように、span は tabindex="-1" を与えるべきである)。しかし、<code class="el">span</code> では、クリック可能な領域が大きくなるという利点が失われることになるだろう。
                </p>
             </section>
          </section>
@@ -147,20 +123,19 @@
             <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="ARIA10">ARIA10: Using aria-labelledby to provide a text alternative for non-text content</a></li>
+               <li><a href="ARIA10">ARIA10: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
                
-               <li><a href="ARIA6">ARIA6: Using aria-label to provide labels for objects</a></li>
+               <li><a href="ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
                
-               <li><a href="ARIA9">ARIA9: Using aria-labelledby to concatenate a label from several text nodes</a></li>
+               <li><a href="ARIA9">ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</a></li>
                
-               <li><a href="ARIA7">ARIA7: Using aria-labelledby for link purpose</a></li>
+               <li><a href="ARIA7">ARIA7: リンクの目的を示すために aria-labelledby を使用する</a></li>
                
                <li><a href="ARIA13">ARIA13: リージョンとランドマークに名前 (name) を付けるために、aria-labelledby を使用する</a></li>
                
-               <li><a href="../general/G92">G92: Providing long description for non-text content that serves the same purpose and presents
-                     the same information</a></li>
+               <li><a href="../general/G92">G92: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す長い説明を提供する</a></li>
                
-               <li><a href="../html/H45">H45: Using longdesc</a></li>
+               <li><a href="../html/H45">H45: longdesc 属性を用いる</a></li>
                
             </ul>
          </section>
@@ -169,19 +144,15 @@
             <section class="procedure" id="procedure">
                <h3>手順</h3>
                
-               <p>For each user interface control element where an <code class="att">aria-labelledby</code> attribute is present:
-                  
+               <p><code class="att">aria-labelledby</code> 属性が存在する場合に各ユーザインタフェースコントロール要素に対して:
                </p>
                
                <ol>
                   
-                  <li>Check that the value of the <code class="att">aria-labelledby</code> attribute is the <code class="att">id</code> of an element or a space separated list of <code class="att">id</code>s on the web page. 
-                     
+                  <li><code class="att">aria-labelledby</code> 属性の値は、ある要素の <code class="att">id</code>、又はウェブページ上の複数 <code class="att">id</code> のスペース区切りのリストであることを確認する。
                   </li>
                   
-                  <li>Check that the text of the referenced element or elements accurately labels the user
-                     interface control.
-                     
+                  <li>参照される要素又は複数要素のテキストが正確にユーザインタフェースコントロールにラベル付けすることを確認する。
                   </li>
                   
                </ol>
@@ -192,7 +163,7 @@
                
                <ul>
                   
-                  <li>#1 and #2 are true.</li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
