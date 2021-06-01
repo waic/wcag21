@@ -200,6 +200,7 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 
 例 G127 G139 G141 G156 G162 G200 H2 等　
 ```
+(Advisory)
 (参考)
 ```
 
