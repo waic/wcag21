@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA7: Using aria-labelledby for link purpose</title>
+      <title>ARIA7: リンクの目的を示すために aria-labelledby を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,94 +10,85 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA6">Previous Technique: ARIA6</a></li>
-            <li><a href="ARIA8">Next Technique: ARIA8</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA6">前の達成方法: ARIA6</a></li>
+            <li><a href="ARIA8">次の達成方法: ARIA8</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using aria-labelledby for link purpose</h1>
+      <h1>リンクの目的を示すために aria-labelledby を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。 
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <p>これは、<span><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> に関連する達成方法である(書かれていない達成方法としては十分である)</span>。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>With the <code class="att">aria-labelledby</code> attribute, authors can use a visible text element on the page as a label for a focusable
-               element (a form control or a link). For example, a "read more..." link could be associated
-               with the text of the heading of the preceding section to make the purpose of the link
-               unambiguous (see example 1).
+            <h2>解説</h2>
+            <p>
+               <code class="att">aria-labelledby</code> 属性を用いることで、コンテンツ制作者は、ページ上の可視テキスト要素を、フォーカス可能な要素 (フォームコントロール又はリンク) のラベルとして使用できる。たとえば、"read more..." のリンクは、リンクの目的を明確にするために、先行するセクションの見出しテキストと関連付けることができるかもしれない (事例 1 を参照)。
             </p>
-            <p>When associating text to a focusable element with the help of <code class="att">aria-labelledby</code>, the target text element is given an ID which is referenced in the value of the <code class="att">aria-labelledby</code> attribute of the focusable element.
+            <p>
+               <code class="att">aria-labelledby</code> の助けを借りてフォーカス可能な要素にテキストを関連付ける場合、ターゲットのテキスト要素は、フォーカス可能な要素の <code class="att">aria-labelledby</code> 属性値の中で参照される ID によって与えられる。
             </p>
-            <p>It is also possible to use several text elements on the page as a label for a focusable
-               element. Each of the text elements used must be given a unique ID which is referenced
-               as a string of IDs (IDREF) in the value of the <code class="att">aria-labelledby</code> attribute. The label text should then be concatenated following the order of IDs
-               in the value of the <code class="att">aria-labelledby</code> attribute.
+            <p>
+               フォーカス可能な要素のラベルとして、ページ上の複数のテキスト要素を使用することも可能である。使用されるそれぞれのテキスト要素は、<code class="att">aria-labelledby</code> 属性の値において IDs (IDREF) の文字列として参照される一意な ID を与えられなければならない。そして、ラベルテキストは <code class="att">aria-labelledby</code> 属性の値における ID の順序に従って連結されるべきである。
             </p>
-            <p>When applied on links, <code class="att">aria-labelledby</code> can be used to identify the purpose of a link that may be readily apparent for sighted
-               users, but less obvious for screen reader users.
+            <p>
+               リンクに適用する場合、<code class="att">aria-labelledby</code> は、目の見える利用者に対して直ちに明白かもしれないが、スクリーンリーダーの利用者にはあまり明らかではないリンクの目的を識別するために使用できる。
             </p>
-            <p>The specified behavior of <code class="att">aria-labelledby</code> is that the associated label text is announced instead of the link text (not in addition
-               to the link text). When the link text itself should be included in the label text,
-               the ID of the link should be referenced as well in the string of IDs forming the value
-               of the <code class="att">aria-labelledby</code> attribute.
+            <p>
+               <code class="att">aria-labelledby</code> の仕様上の動作は、関連付けられたラベルテキストが (リンクテキストに加えられるのではなく) リンクテキストの代わりに告知されるものである。リンクテキスト自身がラベルテキストに含まれるべきである場合、<code class="att">aria-labelledby</code> 属性の値を構成する IDs の文字列の中で、リンクの ID も参照されるべきである。
             </p>
-            <p>For more information on the naming hierarchy please consult the <a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a> and the <a href="https://www.w3.org/TR/html-aapi/#a-element">accessible name and description calculation for links</a> in the HTML to Platform Accessibility APIs Implementation Guide.
+            <p>
+               名前付けの序列の詳細については、<a href="https://www.w3.org/TR/accname/">ARIA specification</a> 及び HTML to Platform Accessibility APIs Implementation Guide における <a href="https://www.w3.org/TR/html-aapi/#a-element">accessible name and description calculation for links</a> を参照。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-providing-additional-information-for-links">
-               <h3>Example 1: Providing additional information for links</h3>
-               <p>This example will mean that the link text as shown on screen is then used as the start
-                  of the accessible name for the link. Popular screen readers like JAWS and NVDA will
-                  announce this as:
-                  "Read more ...Storms hit east coast" and will display that same text in the links
-                  list which is very useful for screen reader users who may browse by links.
-               </p><pre xml:space="preserve">&lt;h2 id="headline"&gt;Storms hit east coast&lt;/h2&gt;
+               <h3>事例 1: リンクに追加情報を提供する</h3>
+               <p>
+                  この例は、画面に表示されるリンクテキストが、リンクに対するアクセシブルな名前の最初に使用されることを意図している。JAWS や NVDA のようなポピュラーなスクリーンリーダーは、これを "Read more ...Stormshit east coast" のように告知し、リンクだけを閲覧することがあるスクリーンリーダーの利用者にとって有益なリンク一覧にも同じテキストを表示する。
+               </p>
+               <pre xml:space="preserve">&lt;h2 id="headline"&gt;Storms hit east coast&lt;/h2&gt;
 
 &lt;p&gt;Torrential rain and gale force winds have struck the east coast, causing flooding in many coastal towns.
 &lt;a id="p123" href="news.html" aria-labelledby="p123 headline"&gt;Read more...&lt;/a&gt;&lt;/p&gt;</pre></section>
             <section class="example" id="example-2-concatenating-link-text-from-multiple-sources">
-               <h3>Example 2: Concatenating link text from multiple sources</h3>
-               <p>There may be cases where an author will placed a tag around a section of code that
-                  will be referenced.
+               <h3>事例 2: 複数のソースからのリンクテキストを連結する</h3>
+               <p>
+                  制作者は、参照したいコードのセクションを囲むタグを配置することもあるだろう。
                </p>
-               <p>Note: The use of tabindex="-1" on the <code class="el">span</code> element is not meant to support focusing by scripts - here, it merely serves to ensure
-                  that some browsers (IE9, IE10) will include the <code class="el">span</code> element in the accessibility tree, thus making it available for reference by <code class="att">aria-labelledby</code>. For more details see <a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a>.
-               </p><pre xml:space="preserve">&lt;p&gt;Download &lt;span id="report-title" tabindex="-1"&gt;2012 Sales Report&lt;/span&gt;:
+               <p>
+                  注記: <code class="el">span</code> 要素上の tabindex="-1" の使用は、スクリプトによってフォーカスをサポートすることを意味するものではない――ここでは、単に一部のブラウザ (IE9、IE10) がアクセシビリティツリーに <code class="el">span</code> 要素を含めることを保証するためのものであり、その結果、<code class="att">aria-labelledby</code> による参照に利用できるようになる。詳細については、<a href="https://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements">Accessible HTML Elements</a> を参照。
+               </p>
+               <pre xml:space="preserve">&lt;p&gt;Download &lt;span id="report-title" tabindex="-1"&gt;2012 Sales Report&lt;/span&gt;:
 &lt;a aria-labelledby="report-title pdf" href="#" id="pdf"&gt;PDF&lt;/a&gt; |
 &lt;a aria-labelledby="report-title doc" href="#" id="doc"&gt;Word&lt;/a&gt; |
 &lt;a aria-labelledby="report-title ppt" href="#" id="ppt"&gt;Powerpoint&lt;/a&gt;&lt;/p&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -108,31 +99,33 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each link that has an <code class="att">aria-labelledby</code> attribute:
+               <p>
+                  <code class="att">aria-labelledby</code> 属性を持つ各リンクに対して:
                </p>
                
                <ol>
                   
-                  <li>Check that each ID in the value of the <code class="att">aria-labelledby</code> attribute matches an ID of a text element used as part of the link purpose.
+                  <li>
+                     <code class="att">aria-labelledby</code> 属性の値に含まれる各 ID が、リンクの目的の一部として使用されるテキスト要素の ID と一致することを確認する。
                   </li>
                   
-                  <li>Check that the combined value of the text referenced by the one or more ID's in the
-                     <code class="att">aria-labelledby</code> attribute properly describes the purpose of the link element.
+                  <li>
+                     <code class="att">aria-labelledby</code> 属性に含まれる一つ以上の ID によって参照されるテキストを合成した値が、link 要素の目的を適切に説明していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
