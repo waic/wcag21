@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H30: Providing link text that describes the purpose of a link for anchor elements</title>
+      <title>H30: a 要素のリンクの目的を説明するリンクテキストを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,131 +10,119 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H28">Previous Technique: H28</a></li>
-            <li><a href="H32">Next Technique: H32</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H28">前の達成方法: H28</a></li>
+            <li><a href="H32">次の達成方法: H32</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing link text that describes the purpose of a link for anchor elements</h1>
+      <h1>a 要素のリンクの目的を説明するリンクテキストを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML documents that contain links, (&lt;a
-               href&gt; elements)
+            <h2>適用 (対象)</h2>
+            <p>リンク (&lt;a href&gt; 要素) を含む HTML 及び XHTML ドキュメント。
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">Success Criterion 2.4.9: Link Purpose (Link Only)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">達成基準 2.4.9: リンクの目的 (リンクのみ)</a> (十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe the purpose of a link by providing
-               descriptive text as the content of the <code class="el">a</code> element. The description lets a
-               user distinguish this link from other links in the Web page and helps the user determine
-               whether to follow the link. The URI of the destination is generally not sufficiently
-               descriptive. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、リンク先を説明するテキストを <code class="el">a</code> 要素のコンテンツとして提供することにより、リンクの目的を説明することである。その説明により、利用者はこのリンクとウェブページ内にある他のリンクとの違いが区別でき、利用者がリンクをたどるかどうかを決定するのを助ける。一般的に、遷移先の URI では、そのリンクの目的を説明したことにはならない。
             </p>
-            <p>When an image is the only content of a link, the text alternative for the image
-               describes the unique function of the link.
+            <p>画像がリンクの唯一のコンテンツであるとき、画像のテキストによる代替がそのリンクに固有の機能を説明している。
             </p>
-            <p>When the content of a link contains both text and one or more images, if the text
-               is
-               sufficient to describe the purpose of the link, the images may have an empty text
-               alternative. (See <a href="H67">H67: Using null alt text and no title attribute on img elements for images that AT should
-                  ignore</a>.)
-               When the images convey information beyond the purpose of the link, they must also
-               have
-               appropriate alt text. 
+			<p>リンクのコンテンツがテキスト及び一つ以上の画像を含むとき、テキストがリンクの目的を十分に説明している場合、画像は空のテキストによる代替であってもよい。(<a href="H67">H67: 支援技術が無視すべき画像に対して、img 要素の alt テキストを空にして、title 属性を付与しない</a>を参照。) 画像がリンクの目的以外にも情報を伝えるときには、画像に適切な代替テキストも付与しなければならない。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H30 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H30.html">アクセシビリティ サポーテッド（AS）情報: H30</a> も参照されたい。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Describing the purpose of a link in HTML in the text content of the <code class="el">a</code>
-                  element.
+               <h3>例 1</h3>
+               <p>HTML において、<code class="el">a</code> 要素のテキストコンテンツを用いてリンクの目的を説明する。
                </p><pre xml:space="preserve">&lt;a href="routes.html"&gt;
   Current routes at Boulders Climbing Gym
 &lt;/a&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>Using the <code class="att">alt</code> attribute for the <code class="el">img</code> element to describe
-                  the purpose of a graphical link.
+               <h3>例 2</h3>
+               <p>画像のリンクの目的を説明するために、<code class="el">img</code> 要素に <code class="att">alt</code> 属性を使用する。
                </p><pre xml:space="preserve">&lt;a href="routes.html"&gt;
    &lt;img src="topo.gif" alt="Current routes at Boulders Climbing Gym" /&gt; 
-&lt;/a&gt; </pre></section>
+&lt;/a&gt; </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H30-2 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H30-2.html">アクセシビリティ・サポーテッド（AS）情報: H30-2</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>Using an empty <code class="att">alt</code> attribute when the anchor (<code class="el">a</code>) element contains text
-                  that describes the purpose of the link in addition to the <code class="el">img</code> element.
-                  Note that the link text will appear on the page next to the image.
+               <h3>例 3</h3>
+               <p>アンカー (<code class="el">a</code>) 要素が <code class="el">img</code> 要素に加えてリンクの目的を説明するテキストを含むときは、空の <code class="att">alt</code> 属性を使用する。リンクテキストはページ上で画像の隣りに表示されることに注意する。
                </p><pre xml:space="preserve">&lt;a href="routes.html"&gt;
   &lt;img src="topo.gif" alt="" /&gt;
   Current routes at Boulders Climbing Gym
 &lt;/a&gt;</pre></section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>A site allows users to provide feedback on products, when the user is logged in, by
-                  clicking on the "Feedback" link in a product detail page. Other users or the product
-                  manufacturer are able to provide a response to any feedback. The feedback link displays
-                  an icon before the "Feedback" text when a response to the user's feedback is available.
-                  The help information describes this icon as a talking bubble containing quotation
-                  marks and includes the icon itself as an example. The icon's text alternative in the
-                  help text is "Response received icon". The same text alternative is used in the product
-                  detail pages (when a response is available) to allow identification of this icon through
-                  multiple modalities.
+               <h3>例 4</h3>
+               <p>サイトでは、製品の詳細ページの「Feedback」リンクをクリックすることで、利用者がログインしたときに製品に関するフィードバックを提供することができる。他の利用者又は製品メーカーは、フィードバックに応答することができる。フィードバックのリンクは、利用者のフィードバックへの応答が利用可能な場合に、「Feedback」テキストの前にアイコンを表示する。ヘルプ情報は、このアイコンを二重引用符を含む吹き出しとして説明し、アイコン自体を例として示している。 ヘルプテキストにおけるアイコンのテキストによる代替は、「応答受信アイコン」である。複数のモダリティを使用してこのアイコンを識別できるように、製品の詳細ページ (応答が利用可能な場合) で同じテキストによる代替が使用される。
                </p><pre xml:space="preserve">&lt;a href="prod_123_feedback.htm"&gt;Feedback 
          &lt;img src="response.gif" width="15" height="15" alt="Response received icon" /&gt;&lt;/a&gt;</pre></section>
             <section class="example" id="example-5">
-               <h3>Example 5</h3>
-               <p>A link contains text and an icon, and the icon provides additional information about
-                  the target. 
+               <h3>例 5</h3>
+               <p>リンクはテキスト及びアイコンを含み、アイコンはリンク先についての追加情報を提供している。
                </p><pre xml:space="preserve">&lt;a href="WMFP.pdf"&gt;
 Woodend Music Festival Program
 &lt;img src="pdficon.gif" alt="PDF format"/&gt;
-&lt;/a&gt;</pre></section>
+&lt;/a&gt;</pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H30-5 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H30-5.html">アクセシビリティ・サポーテッド（AS）情報: H30-5</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-6">
-               <h3>Example 6</h3>
-               <p>The “MyCorp” company’s annual report is made available on the corporate
-                  				website as a PDF file, and the annual corporate budget is made available as an
-                  				Excel file on the web site.
+               <h3>例 6</h3>
+               <p>MyCorp 社の年次レポートは企業のウェブサイト上から PDF ファイルとして入手でき、年次企業予算は Excel ファイルとして入手できる。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Many users prefer to know the file type when opening a file that results in opening
-                        a new application to view the file, so it is often regarded as useful to include this
-                        additional information. However, this is not required for compliance with this success
-                        criterion.
+                     <p>多くの利用者は、ファイルを開く際に新しいアプリケーションが開く場合は、あらかじめファイルの種類を知りたいので、このような追加情報を含めるのはしばしば便利であると考えられる。 ただし、この達成基準を満たすには必須ではない。
                      </p>
                      
                   </div>
@@ -143,21 +131,27 @@ Woodend Music Festival Program
 &lt;a href=”2009mycorp_budget.xls”&gt;MyCorp 2009 Annual Budget (Excel)&lt;/a&gt;
 &lt;/p&gt;</pre></section>
             <section class="example" id="example-7">
-               <h3>Example 7</h3>
-               <p>Using a link to wrap block level elements in HTML5.</p><pre xml:space="preserve">&lt;article&gt;
+               <h3>例 7</h3>
+               <p>HTML5 においてブロックレベル要素をリンクで囲む。</p><pre xml:space="preserve">&lt;article&gt;
 &lt;a href="news.html"&gt;
 &lt;h3&gt;Budget Debate Continues in Parliament&lt;/h3&gt;
 &lt;p class="subhead"&gt;&lt;img class="alertimg" src="alerticon.png" alt="Breaking News" height="30" width="30"&gt;Members of Parliament continued vigorous debate on three challenging issues surrounding the upcoming year's budget.&lt;/p&gt;
 &lt;p&gt;Read more&lt;/p&gt;
 &lt;/a&gt;
-&lt;/article&gt;</pre><p class="working-example">This is shown in the <a href="../../working-examples/link-wraps-block/">working example of using a link to wrap block level elements</a>.
-                  
+&lt;/article&gt;</pre><p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/link-wraps-block/">ブロックレベル要素をリンクで囲む実例</a>を示す。
                </p>
+               <div class="note">
+                <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                 <div>
+                   <p>HTML5 ではブロックレベル要素は定義されていない。<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Block-level_elements">ブロックレベル要素 - HTML: HyperText Markup Language | MDN</a> も参照のこと。
+                   </p>
+                 </div>
+               </div>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -167,58 +161,59 @@ Woodend Music Festival Program
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。<a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text">HTML 5.1§4.7.5.1. Requirements for providing text to act as an alternative for images</a> を代わりに参照できる。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
                
-               <li><a href="H2">H2: Combining adjacent image and text links for the same resource</a></li>
+               <li><a href="H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
                
-               <li><a href="H24">H24:  Providing text alternatives for the area elements of image maps </a></li>
+               <li><a href="H24">H24:  イメージマップの area 要素にテキストによる代替を提供する</a></li>
                
-               <li><a href="H67">H67: Using null alt text and no title attribute on img elements for images that AT should
-                     ignore</a></li>
+               <li><a href="H67">H67: 支援技術が無視すべき画像に対して、img 要素の alt テキストを空にして、title 属性を付与しない</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each link in the content that uses this technique:</p>
+               <p>この達成方法を使用したコンテンツのそれぞれのリンクに対して:</p>
                
                <ol>
                   
-                  <li>Check that text or a text alternative for non-text content is included in the
-                     <code class="el">a</code> element
+                  <li>テキスト又は非テキストコンテンツのテキストによる代替が <code class="el">a</code> 要素に含まれている。
                   </li>
                   
-                  <li>If an <code class="el">img</code> element is the only content of the <code class="el">a</code> element,
-                     check that its text alternative describes the purpose of the link
+                  <li><code class="el">img</code> 要素だけが <code class="el">a</code> 要素のコンテンツである場合、<code class="el">img</code> 要素のテキストによる代替がリンクの目的を説明している。
                   </li>
                   
-                  <li>If the <code class="el">a</code> element contains one or more <code class="el">img</code> element(s)
-                     and the text alternative of the <code class="el">img</code> element(s) is empty, check that
-                     the text of the link describes the purpose of the link 
+                  <li><code class="el">a</code> 要素が一つ以上の <code class="el">img</code> 要素を含み、かつ <code class="el">img</code> 要素のテキストによる代替が空の場合、リンクのテキストがリンクの目的を説明していることを確認する。
                   </li>
                   
-                  <li>If the <code class="el">a</code> element only contains text, check that the text describes
-                     the purpose of the link
+                  <li><code class="el">a</code> 要素がテキストのみを含んでいる場合、そのテキストがリンクの目的を説明していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>The above checks are true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
