@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H24:  Providing text alternatives for the area elements of image maps </title>
+      <title>H24:  イメージマップの area 要素にテキストによる代替を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,67 +10,70 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H4">Previous Technique: H4</a></li>
-            <li><a href="H25">Next Technique: H25</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H4">前の達成方法: H4</a></li>
+            <li><a href="H25">次の達成方法: H25</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1> Providing text alternatives for the <code class="el">area</code> elements of image maps 
+      <h1> イメージマップの <code class="el">area</code> 要素にテキストによる代替を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML Documents that contain <code class="el">area</code> elements.
+            <h2>適用 (対象)</h2>
+            <p><code class="el">area</code> 要素を含む HTML 及び XHTML ドキュメント。
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">Success Criterion 2.4.9: Link Purpose (Link Only)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">達成基準 2.4.9: リンクの目的 (リンクのみ)</a> (十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide text alternatives that serve the same
-               purpose as the selectable regions of an image map. An image map is an image divided
-               into
-               selectable regions defined by <code class="el">area</code> elements. Each area is a link to another
-               Web page or another part of the current Web page. The <code class="att">alt</code> attribute of each
-               <code class="el">area</code> element serves the same purpose as the selectable area of the
-               image.
+            <h2>解説</h2>
+			<p>この達成方法の目的は、イメージマップ上の選択可能領域と同じ役割を果たすテキストによる代替を提供することである。イメージマップは、<code class="el">area</code> 要素によって定義された選択可能領域によって分割されている 1 枚の画像である。各領域は、他のウェブページや、現在のウェブページ内の他の場所へのリンクである。各 <code class="el">area</code> 要素の <code class="att">alt</code> 属性は、その画像の選択可能領域と同じ目的を果たすものである。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H24 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H24.html">アクセシビリティ・サポーテッド（AS）情報: H24</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H24 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H24.html">アクセシビリティ サポーテッド（AS）情報: H24</a> も参照されたい。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>This example uses the <code class="att">alt</code> attribute of the <code class="el">area</code> element
-                  to provide text that describes the purpose of the image map areas.
+               <h3>例 1</h3>
+               <p>この事例では、イメージマップ上の各領域の目的を示したテキストを提供するのに、<code class="el">area</code> 要素の <code class="att">alt</code> 属性を利用している。
                </p><pre xml:space="preserve">&lt;img src="welcome.gif" usemap="#map1" 
     alt="Areas in the library. Select an area for
 more information on that area." /&gt; 
@@ -82,8 +85,8 @@ more information on that area." /&gt;
 &lt;/map&gt;   </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -99,44 +102,49 @@ more information on that area." /&gt;
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://html.spec.whatwg.org/multipage/image-maps.html#image-maps">HTML §4.8.15 Image maps</a> 及び <a href="https://html.spec.whatwg.org/multipage/images.html#alt">HTML §4.8.4.4 Requirements for providing text to act as an alternative for images</a> を代わりに参照できる。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
-               <li><a href="H30">H30: Providing link text that describes the purpose of a link for anchor elements</a></li>
+               <li><a href="H30">H30: a 要素のリンクの目的を説明するリンクテキストを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each <code class="el">area</code> element in an image map: 
+               <p>イメージマップ上の各  <code class="el">area</code> 要素について: 
                </p>
                
                <ol>
                   
-                  <li>Check that the <code class="el">area</code> element has an <code class="att">alt</code> attribute.
+                  <li>その <code class="el">area</code> 要素に <code class="att">alt</code> 属性があることを確認する。
                   </li>
                   
-                  <li>Check that the text alternative specified by the <code class="att">alt</code> attribute serves the same
-                     purpose as the part of image map image referenced by the <code class="el">area</code> element
-                     of the imagemap.
+                  <li><code class="att">alt</code> 属性で指定したテキストによる代替が、イメージマップの <code class="el">area</code> 要素で参照されるイメージマップ画像の一部と同じ目的を果たしていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>The above checks are true.</li>
+                  <li>上記全ての結果が真である。</li>
                   
                </ul>
                
