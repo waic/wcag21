@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>ARIA6: Using aria-label to provide labels for objects</title>
+      <title>ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,76 +10,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="ARIA5">Previous Technique: ARIA5</a></li>
-            <li><a href="ARIA7">Next Technique: ARIA7</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="ARIA5">前の達成方法: ARIA5</a></li>
+            <li><a href="ARIA7">次の達成方法: ARIA7</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using aria-label to provide labels for objects</h1>
+      <h1>オブジェクトのラベルを提供するために aria-label を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support <a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a>. 
+            <h2>適用 (対象)</h2>
+            <p><a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA)</a> をサポートするウェブコンテンツ技術。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1 (非テキストコンテンツ)</a>(十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to provide a label for objects that can be read by
-               assistive technology. The <code class="att">aria-label</code> attribute provides the text label for an object, such as a button. When a screen
-               reader encounters the object, the <code class="att">aria-label</code> text is read so that the user will know what it is.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、支援技術によって読み取ることができるオブジェクトのラベルを提供することである。<code class="att">aria-label</code> 属性は、ボタンなど、オブジェクトのテキストラベルを提供する。スクリーンリーダーがオブジェクトに遭遇した際、<code class="att">aria-label</code> テキストが読み込まれ、利用者はそのオブジェクトがどのようなものかを知ることができる。
             </p>
-            <p>Authors should be aware that <code class="att">aria-label</code> may be disregarded by assistive technologies in situations where <code class="att">aria-labelledby</code> is used for the same object. For more information on the naming hierarchy please
-               consult the <a href="https://www.w3.org/TR/wai-aria/#textalternativecomputation">ARIA specification</a> and the <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> in the HTML to Platform Accessibility APIs Implementation Guide. Authors should be
-               aware that use of <code class="att">aria-label</code> will override any native naming such as <code class="att">alt</code> on images or <code class="el">label</code> associated with a form field using the <code class="att">for</code> attribute.
+            <p>コンテンツ制作者は、<code class="att">aria-labelledby</code> が同じオブジェクトに使用される状況では、<code class="att">aria-label</code> が支援技術によって無視される場合があることに注意すべきである。名前付けの序列の詳細については、<a href="https://www.w3.org/TR/wai-aria/#textalternativecomputation">ARIA 仕様</a>及び HTML to Platform Accessibility APIs Implementation Guide における <a href="https://www.w3.org/TR/html-aapi/#accessible-name-and-description-calculation">accessible name and description calculation</a> を参照。コンテンツ制作者は、<code class="att">aria-label</code> の使用が画像の <code class="att">alt</code> や <code class="att">for</code> 属性を用いてフォームフィールドに関係付けられた <code class="el">label</code> などのネイティブな名前付けを全て上書きすることに注意すべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-distinguishing-navigation-landmarks">
-               <h3>Example 1: Distinguishing navigation landmarks</h3>
-               <p>The following example shows how <code class="att">aria-label</code> could be used to distinguish two navigation landmarks in a HTML4 and XHTML 1.0 document,
-                  where there are more than two of the same type of landmark on the same page, and there
-                  is no existing text on the page that can be referenced as the label.
+               <h3>事例 1:  ナビゲーションランドマークを区別する</h3>
+               <p>次の例は、同じページに同じ種類のランドマークが 2 個以上存在し、かつページ内にラベルとして参照できる既存のテキストが存在しない場合に、HTML4 及び XHTML 1.0 文書内で二つのナビゲーションランドマークを識別するために <code class="att">aria-label</code> をどのように使用するのかを示している。
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>HTML4 及び XHTML 1.0 は Superseded Recommendation としてマークされ、廃止された仕様である。</p>
+               </div>
                </p><pre xml:space="preserve">&lt;div role="navigation" aria-label="Primary"&gt;
 &lt;ul&gt;&lt;li&gt;...a list of links here ...&lt;/li&gt;&lt;/ul&gt; &lt;/div&gt;
 &lt;div role="navigation" aria-label="Secondary"&gt;
 &lt;ul&gt;&lt;li&gt;...a list of links here ...&lt;/li&gt; &lt;/ul&gt;&lt;/div&gt;</pre></section>
             <section class="example" id="example-2-identifying-region-landmarks">
-               <h3>Example 2: Identifying region landmarks</h3>
-               <p>The following example shows how a generic "region" landmark might be added to a weather
-                  portlet. There is no existing text on the page that can be referenced as the label,
-                  so it is labelled with <code class="att">aria-label</code>.
+               <h3>事例 2: 領域のランドマークを特定する</h3>
+               <p>次の例は、気象ポートレットに一般的な "region" ランドマークがどのように追加されうるのかを示している。ラベルとして参照できる既存のテキストがページ内に存在しないため、<code class="att">aria-label</code> でラベル付けされている。
                </p><pre xml:space="preserve">&lt;div role="region" aria-label="weather portlet"&gt; 
 ...
 &lt;/div&gt;</pre></section>
             <section class="example" id="example-3-providing-a-label-for-math">
-               <h3>Example 3: Providing a label for Math</h3>
-               <p>Below is an example of a MathML function, using the math role, appropriate label,
-                  and MathML rendering:
+               <h3>事例 3: 数学のラベルを提供する</h3>
+               <p>以下は math ロール、適切なラベル、および MathML レンダリングを使用する、MathML の機能の例である。
                </p><pre xml:space="preserve">&lt;div role="math" aria-label="6 divided by 4 equals 1.5"&gt;
   &lt;math xmlns="https://www.w3.org/1998/Math/MathML"&gt;
     &lt;mfrac&gt;
@@ -92,8 +83,8 @@
 &lt;/div&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -110,38 +101,37 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="ARIA16">ARIA16: Using aria-labelledby to provide a name for user interface controls</a></li>
+               <li><a href="ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
                
-               <li><a href="../html/H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="../html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each element where a <code class="att">aria-label</code> attribute is present.
+               <p><code class="att">aria-label</code> 属性が存在する各要素に対して。
                </p>
                
                <ol>
                   
-                  <li>Examine whether the text description accurately labels the object or provides a description
-                     of its purpose or provides equivalent information.
+                  <li>テキストの説明が正確にオブジェクトをラベル付けする、又はその目的の説明を提供する、又は同等の情報を提供するかどうかを検査する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true.</li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
                
