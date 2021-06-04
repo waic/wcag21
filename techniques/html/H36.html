@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H36: Using alt attributes on images used as submit buttons</title>
+      <title>H36: 送信ボタンとして用いる画像の alt 属性を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,100 +10,94 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H35">Previous Technique: H35</a></li>
-            <li><a href="H37">Next Technique: H37</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H35">前の達成方法: H35</a></li>
+            <li><a href="H37">次の達成方法: H37</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using <code class="att">alt</code> attributes on images used as submit buttons
-      </h1>
+      <h1>送信ボタンとして用いる画像の <code class="att">alt</code> 属性を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Applies to content using image-based submit buttons. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p> 画像の送信/実行ボタンを使用するコンテンツに適用する。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: 非テキストコンテンツ</a> (十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> For input elements of type 'image', the <code class="att">alt</code> attribute of the
-               <code class="el">input</code> element is used to provide a functional label. This label indicates
-               the button's function, but does not attempt to describe the image. The label is
-               especially important if there are multiple submit buttons on the page that each lead
-               to
-               different results. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、type 属性が「image」である input 要素において、<code class="el">input</code> 要素の <code class="att">alt</code> 属性を機能的なラベルを提供するのに使用することである。このラベルは、画像の説明をするのではなく、ボタンの機能を説明する。もしそのページに、それぞれ異なる結果につながる複数の送信/実行ボタンがあるならば、ラベルは特に重要である。
             </p>
-            <p> The <code class="el">input</code> element is used to create many kinds of form controls. Although
-               the HTML and XHTML DTDs permits the <code class="att">alt</code> attribute on all of these, it should be used
-               only on image submit buttons. User agent support for this attribute on other types
-               of
-               form controls is not well defined, and other mechanisms are used to label these
-               controls. 
+            <p><code class="el">input</code> 要素は、多くの種類のフォームのコントロールを作成するのに使用される。HTML 及び XHTML の DTD では、これら全てで <code class="att">alt</code> 属性を用いることができるが、本来は画像の送信/実行ボタンだけに使用すべきである。ユーザエージェントでは、他の種類のフォームのコントロールでの alt 属性の使用をサポートしていないため、これらのコントロールをラベル付けするために他のメカニズムを用いている。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H36 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H36.html">アクセシビリティ・サポーテッド（AS）情報: H36</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。</p>
+               </div>
+            </div>
+           <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H36 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H36.html">アクセシビリティ サポーテッド（AS）情報: H36</a> も参照されたい。</p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p> An <code class="el">input</code> element with an <code class="att">alt</code> attribute
+               <h3>例 1</h3>
+               <p><code class="att">alt</code> 属性がある <code class="el">input</code> 要素
                </p><pre xml:space="preserve">&lt;form action="http://example.com/prog/text-read" method="post"&gt;
   &lt;input type="image" name="submit" src="button.gif" alt="Submit" /&gt;
 &lt;/form&gt;    </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G94">G94: Providing short text alternative for non-text content that serves the same purpose
-                     and presents the same information as the non-text content</a></li>
+               <li><a href="../general/G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、短いテキストによる代替を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> For all <code class="el">input</code> elements that have a type attribute value of "image", check for
-                     the presence of an <code class="att">alt</code> attribute. 
+                  <li>type 属性の値が "image" であるすべての <code class="el">input</code> 要素に、<code class="att">alt</code> 属性があることを確認する。
                   </li>
                   
-                  <li>Check that the <code class="att">alt</code> attribute indicates the 
-                     button's function.
+                  <li>その <code class="att">alt</code> 属性がボタンの機能を説明していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> #1 and #2 are true </li>
+                  <li> #1 及び #2 の結果が真である。</li>
                   
                </ul>
                
