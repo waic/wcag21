@@ -119,9 +119,11 @@ WCAG 2.0達成方法集には、訳注がついていることがあります。
 というものを
 
 ```html
+<div class="note">
 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
 <div>
 <p><!-- 訳注の中身 --></p>
+</div>
 </div>
 ```
 
