@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H43: Using id and headers attributes to associate data cells with header cells in
-         data tables
+      <title>H43: データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,69 +11,52 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H42">Previous Technique: H42</a></li>
-            <li><a href="H44">Next Technique: H44</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H42">前の達成方法: H42</a></li>
+            <li><a href="H44">次の達成方法: H44</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using id and headers attributes to associate data cells with header cells in
-         data tables
+      <h1>データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1 情報及び関係性</a>(書かれていない達成方法としては十分である)</span>に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to associate each data cell (in a data table) with
-               the appropriate headers. This technique adds a <code class="att">headers</code> attribute to each
-               data cell (<code class="el">td</code> element). It also adds an <code class="att">id</code> attribute to any
-               cell used as a header for other cells. The <code class="att">headers</code> attribute of a cell
-               contains a list of the <code class="att">id</code> attributes of the associated header cells. If
-               there is more than one <code class="att">id</code>, they are separated by spaces.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、(データテーブル内の) 各データセルを適切な見出しセルと関連付けることである。まず、各データセル (<code class="el">td</code> 要素) に <code class="att">headers</code> 属性を付加する。次に、データセルの見出しとなるセルには <code class="att">id</code> 属性を指定する。データセルの <code class="att">headers</code> 属性で指定するのは、関連付けられる見出しセルの <code class="att">id</code> 属性値であり、二つ以上の <code class="att">id</code> を含める場合はスペース区切りで列挙する。
             </p>
-            <p>This technique is used when data cells are associated with more than one row and/or
-               one
-               column header. This allows screen readers to speak the headers associated with each
-               data
-               cell when the relationships are too complex to be identified using the <code class="el">th</code>
-               element alone or the <code class="el">th</code> element with the <code class="att">scope</code> attribute.
-               Using this technique also makes these complex relationships perceivable when the
-               presentation format changes.
+            <p>この達成方法は、データセルを二つ以上の行見出し及び／又は列見出しに関連付ける場合に利用する。こうすることで、<code class="el">th</code> 要素のみ、または <code class="el">th</code> 要素に <code class="att">scope</code> 属性を付けただけでは、データセルと見出しセルの関係が複雑すぎて定義できない場合でも、スクリーンリーダーは各データセルと関連付けられている見出しセルを読み上げることができる。
+また、提示形式が変わったとしても、これらの複雑な関係を知覚しやすくなる。
             </p>
-            <p>This technique is not recommended for layout tables since its use implies a
-               relationship between cells that is not meaningful when tables are used for layout.
+            <p>この達成方法を、レイアウトテーブルに利用することは推奨しない。なぜなら、レイアウトのためにテーブルを利用する際には、意味がないにも関らず何らかの関係性を示してしまうことになるからである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-table-with-multiple-rows-of-headers">
-               <h3>Example 1: A table with multiple rows of headers</h3><pre xml:space="preserve">&lt;table&gt;
+               <h3>事例 1: 行見出しが複数あるテーブル</h3><pre xml:space="preserve">&lt;table&gt;
    &lt;tr&gt;
      &lt;th rowspan="2" id="h"&gt;Homework&lt;/th&gt;
      &lt;th colspan="3" id="e"&gt;Exams&lt;/th&gt;
@@ -100,8 +82,8 @@
   &lt;/table&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>HTML 4.01 <a href="https://www.w3.org/TR/html4/struct/tables.html#h-11.4.1">header information with data cells</a>
@@ -111,55 +93,46 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H39">H39: Using caption elements to associate data table captions with data tables</a></li>
+               <li><a href="H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
                
-               <li><a href="H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
-               <li><a href="H63">H63: Using the scope attribute to associate header cells and data cells in data tables</a></li>
+               <li><a href="H63">H63: データテーブルで見出しセルとデータセルを関連付けるために、scope 属性を使用する</a></li>
                
-               <li><a href="H73">H73: Using the summary attribute of the table element to give an overview of data tables</a></li>
+               <li><a href="H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check for layout tables: determine whether the content has a relationship with
-                     other content in both its column and its row. If “no," the table is a layout
-                     table. If “yes," the table is a data table.
+                  <li>レイアウトテーブルを確認する: 内容が同じ行と列の両方に含まれる他のセルの内容と関係があるかどうか判断する。「いいえ」の場合、そのテーブルはレイアウトテーブルである。「はい」の場合、そのテーブルはデータテーブルである。
                   </li>
                   
-                  <li>For data tables, check that any cell that is associated with more than one row
-                     and/or one column header contains a <code class="att">headers</code> attribute that lists the
-                     <code class="att">id</code> for all headers associated with that cell.
+                  <li>データテーブルに対しては、二つ以上の行見出し及び／又は列見出しと関連付けられているあらゆるセルが、そのセルに関連付けられている全ての見出しの <code class="att">id</code> を指定している <code class="att">headers</code> 属性を含むことを確認する。
                   </li>
                   
                   <li>
                      
-                     <p>For data tables where any cell contains an <code class="att">id</code> or
-                        <code class="att">headers</code> attribute, 
+                     <p>あらゆるセルに <code class="att">id</code> 属性又は <code class="att">headers</code> 属性が含まれるデータテーブルの場合:
                      </p>
                      
                      <ol>
                         
-                        <li>Check that each <code class="att">id</code> listed in the <code class="att">headers</code> attribute
-                           of the data cell matches the <code class="att">id</code> attribute of a cell that is used
-                           as a header element
+                        <li>データセルの <code class="att">headers</code> 属性で指定した各 <code class="att">id</code> が、見出し要素の <code class="att">id</code> 属性値と一致していることを確認する。
                         </li>
                         
-                        <li>Check that the <code class="att">headers</code> attribute of a data cell contains the
-                           <code class="att">id</code> attribute of all headers associated with the data cell
+                        <li>データセルの <code class="att">headers</code> 属性が、そのデータセルと関連付けられた全ての見出しの <code class="att">id</code> 属性値を含んでいることを確認する。
                         </li>
                         
-                        <li>Check that all ids are unique (that is, no two elements in the page have the
-                           same id)
+                        <li>全ての <code class="att">id</code> が一意であることを確認する (つまり、ページの中で二つ以上の要素が同じ <code class="att">id</code> を持つことはできない)。
                         </li>
                         
                      </ol>
@@ -170,20 +143,17 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If table is a layout table, no cells contain <code class="att">headers</code> or
-                     <code class="att">id</code> attributes
+                  <li>テーブルがレイアウトテーブルの場合、どのセルにも <code class="att">headers</code> 属性又は <code class="att">id</code> 属性がない。
                   </li>
                   
-                  <li>If table is a data table and any cell contains an <code class="att">id</code> attribute,
-                     checks #3.a, #3.b, and #3.c are true.
+                  <li>テーブルがデータテーブルで、かつセルが <code class="att">id</code> 属性を含む場合、3.a、3.b、及び 3.c の結果が真である。
                   </li>
                   
-                  <li>If table is a data table and any cell is associated with more than one row and/or
-                     one column header, check #2 is true.
+                  <li>テーブルがデータテーブルで、かつ二つ以上の行見出し及び／又は列見出しと関連付けられた全てのセルについて、2. の結果が真である。
                   </li>
                   
                </ul>
