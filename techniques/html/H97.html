@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H97: Grouping related links using the nav element</title>
+      <title>H97: nav 要素を使用して、関連したリンクをグループ化する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,59 +10,55 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H96">Previous Technique: H96</a></li>
-            <li><a href="H98">Next Technique: H98</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H96">前の達成方法: H96</a></li>
+            <li><a href="H98">次の達成方法: H98</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Grouping related links using the nav element</h1>
+      <h1>nav 要素を使用して、関連したリンクをグループ化する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML5 documents that contain related links.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>関係のあるリンクを含む HTML5 文書。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成方法 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to group navigation links using the HTML5 <code class="el">nav</code> element. The <code class="el">nav</code> element is one of several sectioning elements in HTML5. Use of this markup can make
-               groups of links easier to locate and skip past by users of assistive technology such
-               as screen readers. Using semantic structures allow custom style sheets to be used
-               to change the presentation of groups of links while preserving their relationship.
-               When the <code class="el">nav</code> element is employed more than once on a page, distinguish the navigation groups by
-               using an <code class="att">aria-label</code> or <code class="att">aria-labelledby</code> attribute.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、HTML5 <code class="el">nav</code> 要素を使ってナビゲーションリンクをグループ化することである。<code class="el">nav</code> 要素は、HTML5 のいくつかの区分される要素の一つである。このマークアップを使うと、スクリーンリーダーのような支援技術の利用者が過去に場所を確認してスキップしたリンクを分類するのが容易になる。セマンティックな構造を使うと、カスタムスタイルシートでそれらの関係性を維持しながらリンクのグループの提示を変更できる。<code class="el">nav</code> 要素がページ上で複数回使用されている場合は、<code class="att">aria-label</code> 又は <code class="att">aria-labelledby</code> 属性を使用してナビゲーショングループを区別する。
             </p>
-            <p>Not all groups of links need to use the <code class="el">nav</code> element for markup. For instance, links may be grouped in other structure such as
-               lists or may use ARIA markup if they do not represent a discrete section of the page.
+            <p>リンクのグループ全てを　<code class="el">nav</code> 要素でマークアップする必要は無い。例として、リンクはリストのような他の構造にグループ化されることもあり、またはページの分離されたセクションを表現しない場合 ARIA マークアップを使うこともある。
             </p>
+             <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H97 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H97.html">アクセシビリティ サポーテッド（AS）情報: H97</a> も参照されたい。</p>
+               </div>
+             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-navigation-links-enclosed-in-a-nav-element">
-               <h3>Example 1: Navigation links enclosed in a nav element</h3>
-               <p>This example uses a <code class="el">nav</code> element to group navigation links in an accessibility curriculum.
+               <h3>例 1: 一つの nav 要素に囲まれたナビゲーションリンク</h3>
+               <p>この例は、アクセシビリティカリキュラムにおけるナビゲーションリンクを分類するために <code class="el">nav</code> 要素を使う。
                </p><pre xml:space="preserve">
 				 &lt;nav&gt;
 				    &lt;a href="../webaccessibility.html"&gt;Web Accessibility&lt;/a&gt;
@@ -71,9 +67,8 @@
 				 &lt;/nav&gt;
             </pre></section>
             <section class="example" id="example-2-multiple-nav-elements">
-               <h3>Example 2: Multiple nav elements</h3>
-               <p>This example uses an nav element with an aria-label attribute to identify the navigation
-                  group when there is more than one nav element in a document.
+               <h3>例 2: 多くの nav 要素</h3>
+               <p>この例は、文書中に一つ以上の nav 要素があるときに、ナビゲーション分類を識別するために aria-label 属性と nav 要素を使う。
                </p><pre xml:space="preserve">
 			&lt;nav aria-label="Site menu"&gt;
 			  &lt;ul&gt;
@@ -87,11 +82,8 @@
 			  &lt;/nav&gt;
 			&lt;/article&gt;          </pre></section>
             <section class="example" id="example-3-generic-multiple-nav-elements">
-               <h3>Example 3: Generic multiple nav elements</h3>
-               <p>The following example shows a best practice of situation where there are more than
-                  two navigation menus on the same page, and there is no existing text on the page that
-                  can be referenced as the label.
-               </p><pre xml:space="preserve">
+               <h3>例 3: 一般的な多くの nav 要素</h3>
+               <p>以下の例は、同じページに二つ以上のナビゲーションメニューが存在し、ラベルとして参照されうるページ上に既存のテキストが無いという状況での良い事例である。               </p><pre xml:space="preserve">
 			&lt;nav aria-label="primary"&gt;
 				&lt;a href="home.html"&gt;Home&lt;/a&gt;
 				&lt;a href="about-us.html"&gt;About Us&lt;/a&gt;
@@ -105,8 +97,8 @@
 			&lt;/nav&gt;            </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -117,39 +109,38 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../aria/ARIA11">ARIA11: Using ARIA landmarks to identify regions of a page</a></li>
+               <li><a href="../aria/ARIA11">ARIA11: ページのリージョンを特定するために ARIA ランドマークを使用する</a></li>
                
-               <li><a href="../general/G141">G141: Organizing a page using headings</a></li>
+               <li><a href="../general/G141">G141: 見出しを用いてウェブページを構造化する</a></li>
                
-               <li><a href="../general/G140">G140: Separating information and structure from presentation to enable different presentations</a></li>
+               <li><a href="../general/G140">G140: 異なる提示を可能にするために、情報と構造を表現から分離する</a></li>
                
-               <li><a href="H42">H42: Using h1-h6 to identify headings</a></li>
+               <li><a href="H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that links that are visually grouped and represent a section of the page are
-                     enclosed in a <code class="el">nav</code> element.
+                  <li>視覚的に寄せ集められておりページのセクションを表現するリンクが <code class="el">nav</code> 要素で囲まれていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li> #1 の結果が真である。</li>
                   
                </ul>
                
