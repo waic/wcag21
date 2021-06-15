@@ -32,6 +32,12 @@ Pull Request は、ブランチ `master` にお願いします。また、issue 
 - 作業が終わったところでプルリクエストを出す
 - 作業内容に問題ないことが確認出来たら `master` にマージする
 
+## Q. 翻訳に誤りを見つけました。どこに報告すればよいですか？
+
+[issue](https://github.com/waic/wcag21/issues)を作成してコメントしてもらえると助かります。また、[Pull Request](https://github.com/waic/wcag21/pulls)を作成できるよという方はPull Requestでも歓迎します。\
+また、各翻訳物の訳注にもありますように、[Googleフォームでのコメント](https://docs.google.com/forms/d/e/1FAIpQLSdIpvogLx8kGIMewhQ6MzhG2pOCQZ50iIBViGg8pUrRJuslKg/viewform?entry.685195438)も受け付けています。
+
+
 # 元ファイル情報
 
 - WCAG 2.1 解説書は、 2019 年 3 月 6 日付けのファイルをもとにしています。W3C のソースファイルのハッシュは [dfad86](https://github.com/w3c/wcag/tree/dfad867083e7137d27e472e3b85aaac8cd2c2c77/understanding) です。
