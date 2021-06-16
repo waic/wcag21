@@ -40,15 +40,14 @@
          <section id="applicability">
             <h2>適用 (対象)</h2>
             <p>HTML and XHTML</p>
-            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1 情報及び関係性</a>(書かれていない達成方法としては十分である)</span>に関する達成方法である。
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1 情報及び関係性</a> (書かれていない達成方法としては十分である)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
             <p>この達成方法の目的は、(データテーブル内の) 各データセルを適切な見出しセルと関連付けることである。まず、各データセル (<code class="el">td</code> 要素) に <code class="att">headers</code> 属性を付加する。次に、データセルの見出しとなるセルには <code class="att">id</code> 属性を指定する。データセルの <code class="att">headers</code> 属性で指定するのは、関連付けられる見出しセルの <code class="att">id</code> 属性値であり、二つ以上の <code class="att">id</code> を含める場合はスペース区切りで列挙する。
             </p>
-            <p>この達成方法は、データセルを二つ以上の行見出し及び／又は列見出しに関連付ける場合に利用する。こうすることで、<code class="el">th</code> 要素のみ、または <code class="el">th</code> 要素に <code class="att">scope</code> 属性を付けただけでは、データセルと見出しセルの関係が複雑すぎて定義できない場合でも、スクリーンリーダーは各データセルと関連付けられている見出しセルを読み上げることができる。
-また、提示形式が変わったとしても、これらの複雑な関係を知覚しやすくなる。
+            <p>この達成方法は、データセルを二つ以上の行見出し及び／又は列見出しに関連付ける場合に利用する。こうすることで、<code class="el">th</code> 要素のみ、または <code class="el">th</code> 要素に <code class="att">scope</code> 属性を付けただけでは、データセルと見出しセルの関係が複雑すぎて定義できない場合でも、スクリーンリーダーは各データセルと関連付けられている見出しセルを読み上げることができる。また、提示形式が変わったとしても、これらの複雑な関係を知覚しやすくなる。
             </p>
             <p>この達成方法を、レイアウトテーブルに利用することは推奨しない。なぜなら、レイアウトのためにテーブルを利用する際には、意味がないにも関らず何らかの関係性を示してしまうことになるからである。
             </p>
@@ -92,7 +91,7 @@
                </li>
                
             </ul>
-            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、HTML 5.2§4.9.10. The th element を代わりに参照できる。</p></div></div>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、<a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">HTML §4.9.10. The th element</a> を代わりに参照できる。</p></div></div>
          </section>
          <section id="related">
             <h2>関連する達成方法</h2>
