@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H39: Using caption elements to associate data table captions with data tables</title>
+      <title>H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,125 +10,126 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H37">Previous Technique: H37</a></li>
-            <li><a href="H40">Next Technique: H40</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H37">前の達成方法: H37</a></li>
+            <li><a href="H40">次の達成方法: H40</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using caption elements to associate data table captions with data tables</h1>
+      <h1>データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML data tables </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTMLのデータテーブル</p>
+            <p>これは、次の達成基準に関連する達成方法である:<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性を理解する</a> (書かれていない達成方法を満たす手段として十分)</span>.
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to programmatically associate captions for data
-               tables where captions are provided in the presentation. The caption for a table is
-               a
-               table identifier and acts like a title or heading for the table. 
-            </p>
-            <p>The <code class="el">caption</code> element is the appropriate markup for such text and it ensures
-               that the table identifier remains associated with the table, including visually (by
-               default). In addition, using the <code class="el">caption</code> element allows screen reading software
-               to navigate directly to the caption for a table if one is present.
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、提示でテーブルの表題を付ける場合に、プログラムで解釈できるようにデータテーブルと表題を関連付けることである。表題はテーブルの識別子であり、タイトル又は見出しのような働きをする。</p>
+            <p><code class="el">caption</code>要素は表題のテキストのための適切なマークアップであり、(初期状態では) 表示上も、テーブルの識別子がそのテーブルに関連付けられていることを保証するものである。さらに、<code class="el">caption</code> 要素を用いることによって、音声読み上げソフトウェアがテーブルの表題に利用者を直接誘導することも可能になる。</p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記: </div>
                <div>
                   
-                  <p>Although WCAG 2.0 does not prohibit the use of layout tables, CSS-based layouts are
-                     recommended in order to retain the defined semantic meaning of the HTML
-                     <code class="el">table</code> elements and to conform to the coding practice of separating
-                     presentation from content. If a table is used for layout, the <code class="el">caption</code> element
-                     is not used. The purpose of a layout table is simply to control the placement of
-                     content; the table itself is “transparent" to the user. A <code class="el">caption</code> would "break"
-                     this transparency by calling attention to the table. See <a href="../failures/F46">F46: Failure of Success Criterion 1.3.1 due to using th elements, layout tables</a> for details..
-                  </p>
+                  <p>WCAG 2.0 はレイアウトテーブルの利用を禁止していないが、CSS ベースのレイアウトを推奨している。HTML の <code>table</code> 要素に与えられたセマンティックな意義を守り、コンテンツから提示を分離するというコーディングの実践に沿うためである。テーブルをレイアウトのために利用する場合、<code>caption</code> 要素は使用しない。レイアウトテーブルの目的は、コンテンツの配置を制御することのみであって、テーブルそのものは利用者から見て「透明」であるべきである。<code>caption</code> 要素を用いることによってテーブルの存在を示してしまうと、この透明性を壊すことになる。<a href="../failures/F46">F46: 達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素を使用している</a>を参照のこと。</p>
                   
+               </div>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                  <div>
+                     <p>WAIC では H39 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
+                     <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H39.html">アクセシビリティ・サポーテッド（AS）情報: H39</a>では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。</p>
+                  </div>
+               </div>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                  <div>
+                     <p>WAIC では H39 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。</p>
+                     <p>2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H39.html">アクセシビリティ サポーテッド（AS）情報: H39</a> も参照されたい。</p>
+                  </div>
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-an-appointment-calendar-with-a-caption&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;---">
-               <h3>Example 1: An appointment calendar with a <code class="el">caption</code>
+               <h3>事例 1: スケジュールカレンダーの表題
                   						   
                </h3><pre xml:space="preserve">&lt;table&gt;
 &lt;caption&gt;Schedule for the week of March 6&lt;/caption&gt;
 ...&lt;/table&gt; </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース
+</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>HTML 4.01 <a href="https://www.w3.org/TR/html/tabular-data.html#the-caption-element">HTML 5.0 Tabular Data: The caption element</a></li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、<a href="https://www.w3.org/TR/html52/tabular-data.html#the-caption-element">HTML 5.2§4.9.2. The caption element</a>を代わりに参照できる。</p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
-               <li><a href="H73">H73: Using the summary attribute of the table element to give an overview of data tables</a></li>
+               <li><a href="H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
                
-               <li><a href="../failures/F46">F46: Failure of Success Criterion 1.3.1 due to using th elements, layout tables</a></li>
+               <li><a href="../failures/F46">F46: 達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素を使用している</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each data table: </p>
+               <p>各データテーブルごとに: </p>
                
                <ol>
                   
                   <li>Check that the table has content that is presented as a table caption.</li>
                   
-                  <li>Check that the table includes a <code class="el">caption</code> element.
+                  <li>テーブルに <code class="el">caption</code> 要素が含まれていることを確認する。
                   </li>
                   
-                  <li>Check that the content of the <code class="el">caption</code> element identifies the table.
+                  <li><code class="el">caption</code> 要素の内容がテーブルを識別していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1-3 are true.</li>
+                  <li>1. 〜 3. の結果が真である。</li>
                   
                </ul>
                
