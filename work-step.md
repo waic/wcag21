@@ -197,7 +197,7 @@ This technique relates to <span><a>Success Criterion X.X.X: Xxxxxx</a></span> (Y
 例 G63
 ```
 (Sufficient as a way to meet an unwritten technique)
-(書かれていない達成方法を満たす慣習的な達成方法)
+(%%書かれていない達成方法を満たす慣習的な達成方法%%書かれていない達成方法を満たす手段として十分)
 ```
 
 例 G127 G139 G141 G156 G162 G200 H2 等　
