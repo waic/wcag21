@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H95: Using the track element to provide captions</title>
+      <title>H95: キャプションを提供するために、track 要素を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,87 +10,69 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H94">Previous Technique: H94</a></li>
-            <li><a href="H96">Next Technique: H96</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H94">前の達成方法: H94</a></li>
+            <li><a href="H96">次の達成方法: H96</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the track element to provide captions</h1>
+      <h1>キャプションを提供するために、track 要素を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>HTML5</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">Success Criterion 1.2.2: Captions (Prerecorded)</a> (Sufficient as a way to meet <a href="../general/G87">G87: Providing closed captions</a>)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">達成基準 1.2.2: キャプション (収録済)</a> (<a href="../general/G87">G87: クローズドキャプションを提供する</a>を満たす方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to use the HTML5 <code class="el">track</code> element to specify a captions timed text track for a video element. Caption timed
-               text tracks contain transcription or translation of the dialogue, sound effects, relevant
-               musical cues, and other relevant audio information, suitable for when sound is unavailable
-               or not clearly audible.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、タイミングを指定したテキストのキャプショントラックを video 要素に指定するために HTML5 <code class="el">track</code> 要素を用いることである。テキストのタイミングのとれたキャプショントラックは、音声が利用できない又は明確に聞こえない場合に適した、会話、効果音、関連する音楽の合図、及びその他の関連する音声情報の転写又は翻訳を含む。
             </p>
-            <p>The <code class="att">src</code> attribute of the <code class="el">track</code> element is a URL that is the address of the text track data.
+            <p><code class="el">track</code> 要素の <code class="att">src</code> 属性は URL であり、これはテキストトラックデータのアドレスである。
             </p>
-            <p>The <code class="att">kind</code> attribute of the <code class="el">track</code> element indicates the kind of information in the timed text. captions text tracks
-               provide a text version of dialogue and other sounds important to understanding the
-               video. Subtitles contain only the dialogue. If other audio information is important
-               to understanding the video, a subtitle track will not be sufficient to meet the success
-               criteria.
+            <p><code class="el">track</code> 要素の <code class="att">kind</code> 属性はタイミングを指定したテキストの情報の種類を指示している。キャプションテキストトラックはダイアログおよび他ビデオを理解するために重要な音声のテキストバージョンを提供している。字幕は発話コンテンツのみを含んでいる。もしほかの音声情報がビデオを理解するために重要なのであれば、字幕トラックは達成基準を満たすために十分ではない。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Some regions use the term "subtitle" for any visible text representation of the audio
-                     track. An author may mark up a timed text track in the language of the audio track
-                     as kind=subtitles, instead of kind=captions, and may include additional relevant audio
-                     information. It is not best practice to use subtitles in this situation, since it
-                     may confuse users who are trying to find captions, but such a timed text track would
-                     meet the requirements of <a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">Success Criterion 1.2.2</a>.
+                  <p>一部の領域では、オーディオトラックの表示可能なテキスト表示に「字幕」という用語が使われている。 制作者は、kind=captions ではなく、kind=subtitles として、オーディオトラックの言語でタイミングを指定したテキストのトラックをマークアップすることができ、関連するオーディオ情報を追加することある。 そのようなタイミングを指定したテキストトラックは<a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">達成基準 1.2.2</a> の要件を満たすつもりであったのに、キャプションを見つけようとする利用者を混乱させる可能性があるので、この状況で字幕を使用することは好事例ではない。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-captions-in-one-language">
-               <h3>Example 1: Captions in one language</h3>
-               <p>A <code class="el">video</code> element for a video in the English language with an English caption track. The captions
-                  are provided in the WebVTT format.
+               <h3>例 1: 一つの言語におけるキャプション</h3>
+               <p>英語のキャプショントラックを持つ、英語ビデオのための <code class="el">video</code> 要素。キャプションは WebVTT フォーマットで提供されている。
                </p><pre xml:space="preserve">
-			 &lt;video poster="myvideo.png" controls&gt;
+			  &lt;video poster="myvideo.png" controls&gt;
 				 &lt;source src="myvideo.mp4" srclang="en" type="video/mp4"&gt;
 				 &lt;track src="myvideo_en.vtt" kind="captions" srclang="en" label="English"&gt;
 			  &lt;/video&gt;
             </pre></section>
             <section class="example" id="example-2-captions-in-multiple-languages">
-               <h3>Example 2: Captions in multiple languages</h3>
-               <p>A <code class="el">video</code> element for a video in the English language with an English caption track. The captions
-                  are provided in the WebVTT format.
+               <h3>例 2: 複数の言語におけるキャプション</h3>
+               <p>英語のキャプショントラックを持つ、英語ビデオのための <code class="el">video</code> 要素。キャプションは WebVTT フォーマットで提供されている。
                </p><pre xml:space="preserve">
 			  &lt;video poster="myvideo.png" controls&gt;
 				&lt;source src="myvideo.mp4" srclang="en" type="video/mp4"&gt;
@@ -100,8 +82,8 @@
 			  &lt;/video&gt;            </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -127,34 +109,34 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G87">G87: Providing closed captions</a></li>
+               <li><a href="../general/G87">G87: クローズドキャプションを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each video element used to play a video:</p>
+               <p>動画を再生するために用いられる各 video 要素において:</p>
                
                <ol>
                   
-                  <li>Check that the video contains a <code class="el">track</code> element of <code class="att">kind</code> captions in the language of the video.
+                  <li>動画の言語で <code class="att">kind="captions"</code> の <code class="el">track</code> 要素を含むことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
