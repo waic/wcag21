@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H70: Using frame elements to group blocks of repeated material</title>
+      <title>H70: 繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,76 +10,64 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H69">Previous Technique: H69</a></li>
-            <li><a href="H71">Next Technique: H71</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H69">前の達成方法: H69</a></li>
+            <li><a href="H71">次の達成方法: H71</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
          <p>On this page:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using frame elements to group blocks of repeated material</h1>
+      <h1>繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
-         </p>
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。</p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML documents that use frames </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">Success Criterion 2.4.1: Bypass Blocks</a> (Sufficient, together with <a href="../html/H64">H64: Using the title attribute of the frame and iframe elements</a> as a way to meet an unwritten technique)</span>.
-            </p>
+            <h2>適用 (対象)</h2>
+            <p>フレームを用いている HTML 及び XHTML ドキュメント</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">達成基準 2.4.1: ブロックスキップ</a> (書かれていない達成方法を満たす手段として <a href="../html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a> とともに十分)</span> に関する達成方法である。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate how framesets can be used to group
-               blocks of repeated material. Since most user agents and assistive technology provide
-               a
-               way to navigate from frame to frame, using frames to organize elements can provide
-               a
-               mechanism for easily bypassing blocks of repeated content. If the site uses framesets,
-               organize the blocks of content into separate frames. Make certain that the repeated
-               blocks of content appear in the same frame within the frameset of each Web page. In
-               addition, each frame element must have a title attribute to describe the content of
-               the
-               frame. When frames are properly titled, users can use frame navigation to easily
-               navigate between blocks of content.
-            </p>
-            <p>This technique is appropriate when framesets are already used to organize the content
-               of the page; other techniques are preferred for pages that are not already using
-               framesets, because many people using assistive technology have trouble with frames
-               . An
-               advisory technique about using noframes is available in <a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1</a>. 
-            </p>
-            <p>In HTML5 the <code class="el">frame</code> element is marked as obsolete.
-            </p>
+            <h2>解説</h2>
+
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>WAIC では H70 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H70.html">アクセシビリティ・サポーテッド（AS）情報: H70</a>では、「達成不可能」と評価されている。WAIC はウェブ制作者がこの達成方法を使用することを推奨しない。</p>
+               </div>
+            </div>
+            
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               <p>WAIC では H70 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。</p>
+               <p>2020 年 3 月版の<a href="https://waic.jp/docs/as/info/202003/techs/H70.html">アクセシビリティ サポーテッド（AS）情報: H70</a>も参照されたい。</p>
+               </div>
+            </div>
+            
+            <p>この達成方法の目的は、繰り返しているブロックをグループ化するために、どのようにフレームセットを用いることができるかを示すことである。ユーザエージェント及び支援技術のほとんどが、フレームからフレームへとナビゲートする手段を提供しているため、要素をまとめるのにフレームを使うことによって、繰り返されているコンテンツのブロックを簡単に通過できるメカニズムを提供することができる。ウェブサイトでフレームセットを用いている場合、コンテンツのブロックそれぞれを別々のフレームにまとめられる。そして、繰り返しているコンテンツのブロックを、各ウェブページのフレームセットの中で、同一のフレームに表示させる。さらに、各<code>flame</code> 要素には、そのフレームの内容を説明する <code>title</code> 属性を指定しなければならない。フレームに適切なタイトルが付いていれば、利用者はフレームのナビゲーション機能を使用してコンテンツのブロック間を簡単に移動することができるようになる。</p>
+            <p>この達成方法は、ページ内のコンテンツを構成するのに既にフレームセットを用いている場合に適している。フレームセットを用いていないウェブページには、他の達成方法を用いることが望ましい。多くの支援技術利用者は、フレームの扱いに手間がかかるからである。さらに対応が望まれる達成方法 (参考) として、ノーフレーム (<code>noframes</code> 要素) を用いる達成方法が、<a href="https://waic.jp/docs/UNDERSTANDING-WCAG20/text-equiv-all.html" class="understanding-ref">達成基準 1.1.1</a> にある。</p>
+            <p>HTML5 では、<code>frame</code>要素は廃止されている。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example shows the use of two frames to organize content. The source
-                  of the first frame is the Web page, navigation.html, which contains the HTML for the
-                  navigation. This frame has a title attribute which identifies it as a navigation
-                  bar. The second frame contains the main content of the site as indicated by the
-                  source parameter of main.html and the title attribute, "Main News Content" which
-                  identifies its function.
-               </p><pre xml:space="preserve">&lt;frameset cols="20%, *"&gt;
+               <h3>例 1</h3>
+               <p>次のコード例では、コンテンツを構成するのに二つのフレームを用いている。一つ目のフレームのソースは navigation.html というウェブページであり、ナビゲーションのための HTML が含まれている。このフレームには、ナビゲーションバーであることを特定する title 属性が指定してある。二つ目のフレームはサイトの主要コンテンツであり、main.html がソースである。title 属性に「主要ニュースコンテンツ」とありその機能を特定している。</p>
+               <pre xml:space="preserve">&lt;frameset cols="20%, *"&gt;
   &lt;frame src="navigation.html" name="navbar" title="Navigation Bar" /&gt;
   &lt;frame src="main.html" name="maincontent" title="Main News Content" /&gt;
   &lt;noframes&gt;
@@ -88,8 +76,8 @@
 &lt;/frameset&gt;   </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> HTML 4.01 <a href="https://www.w3.org/TR/html4/present/frames.html#h-16.2.1">
@@ -107,39 +95,48 @@
                </li>
                
             </ul>
+
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+               <div>
+               HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記に関して、frame 要素及び frameset 要素は 
+                <a href="https://html.spec.whatwg.org/multipage/obsolete.html#frames">HTML §16.3.2 Frames</a>
+                 で廃止された機能として定義されている。
+               </div>
+            </div>
+
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H64">H64: Using the title attribute of the frame and iframe elements</a></li>
+               <li><a href="H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>If the Web page uses frames to organize content: </p>
+               <p>ウェブページが、フレームを用いてコンテンツを構成している場合: </p>
                
                <ol>
                   
-                  <li>Check if repeated blocks of content are organized into separate frames.</li>
+                  <li>繰り返されているコンテンツのブロックそれぞれを、別々のフレームにまとめているかどうかを確認する。</li>
                   
-                  <li>Check that the frames with repeated content appear in the same location within
-                     each frameset.
+                  <li>繰り返されているコンテンツのフレームそれぞれが、各ページのフレームセット内で同じ場所に出現することを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
