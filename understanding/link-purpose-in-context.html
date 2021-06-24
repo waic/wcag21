@@ -152,9 +152,6 @@
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H24">H24: イメージマップの area 要素にテキストによる代替を提供する</a></li>
                   
                   
-                  <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH27">FLASH27: ボタンの目的を説明するラベルを提供する</a></li>
-                  
-                  
                   <li><p>次の達成方法の一つを用いて、利用者が短めのリンクテキスト又は長めのリンクテキストを選べるようにする:</p>
                      
                      
@@ -165,9 +162,6 @@
                         
                         
                         <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR30">SCR30: リンクテキストを変更するために、スクリプトを使用する</a></li>
-                        
-                        
-                        <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH7">FLASH7: コントロールのラベルを変更するために、スクリプトを使用する</a></li>
                         
                         
                      </ul>
@@ -259,9 +253,6 @@
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
                   
                   
-                  <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
-                  
-                  
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H80">H80: リンクテキストと先行する見出し要素とを組み合わせて、リンクの目的を特定する</a></li>
                   
                   
@@ -293,7 +284,132 @@
                   
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">「注目すべき輸出品のひとつはグァバです」という文中にある「グァバ」という単語がリンクになっている。そのリンク先は、グァバの定義、グァバの輸出量を挙げる図表、又はグァバを収穫している人々の写真のいずれにもなり得る。リンクを動作させるまで、すべての利用者が確信を持てないため、障害のある人が不利な立場に置かれることはない。</p>
                   
-                  
+               </definition>
+            </dd>
+            <dt id="dfn-conforming-alternate-version">conforming alternate version</dt>
+            <dd>
+               <definition xmlns="">
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">version that</p>
+
+
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+
+
+                     <li>conforms at the designated level, and</li>
+
+
+                     <li>provides all of the same information and <a href="#dfn-functionality">functionality</a> in the same <a href="#dfn-human-language">human language</a>, and
+
+                     </li>
+
+
+                     <li>is as up to date as the non-conforming content, and</li>
+
+
+                     <li>
+
+                        <p>for which at least one of the following is true:</p>
+
+
+                        <ol>
+
+
+                           <li>the conforming version can be reached from the non-conforming page via an <a href="#dfn-accessibility-supported">accessibility-supported</a>
+                              <a href="#dfn-mechanism">mechanism</a>, or
+
+                           </li>
+
+
+                           <li>the non-conforming version can only be reached from the conforming version, or</li>
+
+
+                           <li>the non-conforming version can only be reached from a conforming page that also provides
+                              a mechanism to reach the conforming version
+
+                           </li>
+
+
+                        </ol>
+
+
+                     </li>
+
+
+                  </ol>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>In this definition, "can only be reached" means that there is some mechanism, such
+                        as a conditional redirect, that prevents a user from "reaching" (loading) the non-conforming
+                        page unless the user had just come from the conforming version.
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>The alternate version does not need to be matched page for page with the original
+                        (e.g., the conforming alternate version may consist of multiple pages).
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>If multiple language versions are available, then conforming alternate versions are
+                        required for each language offered.
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Alternate versions may be provided to accommodate different technology environments
+                        or user groups. Each version should be as conformant as possible. One version would
+                        need to be fully conformant in order to meet <a href="#cc1">conformance requirement 1</a>.
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>The conforming alternative version does not need to reside within the scope of conformance,
+                        or even on the same Web site, as long as it is as freely available as the non-conforming
+                        version.
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Alternate versions should not be confused with <a href="#dfn-supplemental-content">supplementary content</a>, which support the original page and enhance comprehension.
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Setting user preferences within the content to produce a conforming version is an
+                        acceptable mechanism for reaching another version as long as the method used to set
+                        the preferences is accessibility supported.
+
+                     </p>
+                  </div>
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">See <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
+
+                  </p>
+
                </definition>
             </dd>
             <dt id="dfn-link-purpose">リンクの目的 (link purpose)</dt>
@@ -324,5 +440,7 @@
             </dd>
          </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
