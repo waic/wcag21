@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H74: Ensuring that opening and closing tags are used according to specification</title>
+      <title>H74: 開始タグ及び終了タグを仕様に準じて使用していることを確認する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,143 +10,112 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H73">Previous Technique: H73</a></li>
-            <li><a href="H75">Next Technique: H75</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H73">前の達成方法: H73</a></li>
+            <li><a href="H75">次の達成方法: H75</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that opening and closing tags are used according to specification</h1>
+      <h1>開始タグ及び終了タグを仕様に準じて使用していることを確認する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">Success Criterion 4.1.1: Parsing</a> (Sufficient, together with <a href="../html/H93">H93: Ensuring that id attributes are unique on a Web page</a> and <a href="../html/H94">H94: Ensuring that elements do not contain duplicate attributes</a> as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p> HTML 及び XHTML。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">達成基準 4.1.1: 構文解析</a> (書かれていない達成方法を満たす手段として十分、<a href="../html/H93">H93: ウェブページの id 属性値が一意的 (ユニーク) であるようにする</a> 及び <a href="../html/H94">H94: 要素には重複した属性がないようにする</a>とともに)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> The objective of this technique is to avoid key errors that are known to cause
-               problems for assistive technologies when they are trying to parse content which involve
-               having opening and closing tags that are not used according to specification. These
-               errors can be avoided by using the HTML or XHTML mechanism to specify the technology
-               and
-               technology version, and making sure the Web page does not have these types of errors
-               in
-               it. There are several validators that the developer can use: validation reports
-               generally mention these types of errors. This technique deals only with errors related
-               to incorrectly formed opening and closing tags. The document type declaration is not
-               strictly necessary for this type of evaluation, but specifying the document type
-               declaration makes it easier to use a validator. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、支援技術がコンテンツを解析するときに生じる (ことで知られている) キーエラーを回避することである。このエラーは、コンテンツが、仕様に準じて用いられていない開始タグや終了タグを含むときに起こる。HTML あるいは XHTML のメカニズムをウェブコンテンツ技術やウェブコンテンツ技術のバージョンを特定するために用いたり、このようなタイプのエラーがないようにウェブページを制作したりすることで回避できる。バリデーターにはコンテンツ開発者が利用可能なものがいくつかあり、バリデーターのレポートではこのようなタイプのエラーが指摘される。この達成方法は、間違って形成された開始タグと終了タグに関連するエラーのみを対象としている。文書型宣言は、この検証では必ずしも必要ではないが、文書型宣言をしておくことでバリデーターを活用しやすくなる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1--html">
-               <h3>Example 1:  HTML</h3>
-               <p> HTML pages include a document type declaration (sometimes referred to as
-                  !DOCTYPE statement). The developer can use offline or online
-                  validators (see Resources below) to check that all id attribute values are unique
-                  and that opening and closing tags are used according to the specification. 
+               <h3>例 1:  HTML</h3>
+               <p>HTML ページが文書型宣言を含んでいる (!DOCTYPE として示されることが多い)。コンテンツ開発者はオフラインあるいはオンラインでバリデーターを利用できる (下記の参考リソース参照)。バリデーターでは、すべての id 属性の値が一意的で、かつ開始タグと終了タグが仕様に準じて用いられていることをチェックできる。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
-                     <p>The specification for which elements require closing tags has changed with the introduction
-                        of HTML5.
+                     <p>どの要素が終了タグを必要とするかの仕様が、HTML5 の導入とともに変更された。
                      </p>
                   </div>
                </div>
             </section>
             <section class="example" id="example-2-xhtml">
-               <h3>Example 2: XHTML</h3>
-               <p> Like other XML-based documents, XHTML documents reference a Document Type
-                  Definition (DTD) or other type of XML schema. The developer can use online or
-                  offline validators (including validation tools built into editors) to check that
-                  opening and closing tags are used according to the specification. 
+               <h3>例 2: XHTML</h3>
+               <p>XHTML その他の XML ベースの文書同様に、XHTML 文書は、文書型定義 (DTD) や他のタイプの XML スキーマを参照する。コンテンツ開発者はオンラインあるいはオフラインでバリデーターを利用でき (エディターに組み込まれているバリデーションツールを含む)、開始タグや終了タグが仕様に準じて用いられていることをチェックする。
                </p>
             </section>
             <section class="example" id="example-3-using-test-frameworks">
-               <h3>Example 3: Using test frameworks</h3>
-               <p> When a Website generates HTML or XHTML dynamically instead of serving only static
-                  pages, a
-                  developer can use <a href="http://xhtmlunit.sourceforge.net/">XHTMLUnit</a>,
-                  <a href="http://xmltestsuite.sourceforge.net/">XML Test Suite</a> or a similar
-                  framework to test the generated XHTML code. 
+               <h3>例 3: 検証のフレームワークを用いる</h3>
+               <p>ウェブサイトが静的なページではなく、HTML あるいは XHTML のページが動的に生成されるときは、コンテンツ開発者は <a href="http://xhtmlunit.sourceforge.net/">XHTMLUnit</a>や <a href="http://xmltestsuite.sourceforge.net/">XML Test Suite</a> あるいは類似のフレームワークを用いて生成される XHTML コードのチェックを行うことができる。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
-                  									         <a href="https://www.w3.org/QA/Tips/Doctype">Do not forget to add a doctype</a>
-                  by the W3C Quality Assurance Initiative explains what doctypes are and why you
-                  should use them. 
+                  									         <a href="https://www.w3.org/QA/Tips/Doctype">Do not forget to add a doctype</a> (W3C Quality Assurance Initiative) は、文書型がどういうもので、なぜそれを用いるべきかについて説明している。 
                </li>
                
                <li>
-                  									         <a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended DTDs to
-                     use in your Web document</a> by the W3C Quality Assurance Initiative is a list
-                  of commonly used declarations. 
+                  									         <a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html">Recommended DTDs to use in your Web document</a> (W3C Quality Assurance Initiative) は、よく用いられる宣言のリストである。 
                </li>
                
                <li>
-                  									         <a href="http://www.chami.com/html-kit/faq/pages/validate_tools.html">How do I
-                     validate my code or check for possible errors?</a> describes the tools in the
-                  free editor HTML-Kit for checking HTML, CSS and XML. 
+                  									         <a href="http://www.chami.com/html-kit/faq/pages/validate_tools.html">How do I validate my code or check for possible errors?</a> は、フリーエディタの HTML-Kit にある、HTML、CSS 及び XML をチェックするためのツールを説明している。 
                </li>
                
             </ul>
-            <p> For other resources, see <a href="../general/G134">G134: Validating Web pages</a>. 
+            <p><a href="../general/G134">G134: ウェブページをバリデートする</a>の参考リソースを参照のこと。
             </p>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Check that there are closing tags for all elements with required closing tags.
+                  <li>終了タグが必要なすべての要素に対して、終了タグがあることを確認する。
                      
                   </li>
                   
-                  <li> Check that there are no closing tags for all elements where closing tags are
-                     forbidden. 
+                  <li>終了タグが禁止されているすべての要素に対して、終了タグがないことを確認する。
+
+ 
                   </li>
                   
-                  <li> Check that opening and closing tags for all elements are correctly nested. </li>
+                  <li>入れ子になっているすべての要素の開始タグと終了タグが正しく入れ子になっていることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p> Steps 1, 2, and 3 are true.</p>
+               <p>#1、#2、及び #3 の結果が真である。</p>
                
             </section>
          </section>
