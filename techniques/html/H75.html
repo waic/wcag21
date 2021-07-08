@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H75: Ensuring that Web pages are well-formed</title>
+      <title>H75: ウェブページが well-formed であることを確認する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,91 +10,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H74">Previous Technique: H74</a></li>
-            <li><a href="H76">Next Technique: H76</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H74">前の達成方法: H74</a></li>
+            <li><a href="H76">次の達成方法: H76</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that Web pages are well-formed</h1>
+      <h1>ウェブページが well-formed であることを確認する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Any XML-based markup languages. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">Success Criterion 4.1.1: Parsing</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>すべての XML ベースのマークアップ言語。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">達成基準 4.1.1: 構文解析</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> The objective of this technique is to avoid key errors that are known to cause
-               problems for assistive technologies when they are trying to parse contents.
-               Well-formedness is checked by parsing the document with a conforming XML parser and
-               checking if the validation report mentions well-formedness errors. Every conforming
-               XML
-               parser is required to check well-formedness and stop normal processing when a
-               well-formedness error is found (a conforming XML parser does not need to support
-               validation).
+            <h2>解説</h2>
+            <p> この達成方法の目的は、支援技術がコンテンツを解析するときに生じるエラーを避けることである。well-formed については、文書を XML パーサーを用いてチェックし、バリデーションレポートが well-formed に関するエラーを含んでいるかどうかで確認できる。すべての XML パーサーには、well-formed をチェックし、well-formed に関するエラーが見つかったときは、通常の処理を停止することが要求される (XML パーサーは、バリデーションをサポートしていなくてもよい)。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>XML files include a document type declaration, a xsi:schemaLocation attribute or
-                  other type of reference to a schema. The developer can use off-line or online
-                  validators, an XML editor or an IDE with XML support (see Resources below) to check
-                  well-formedness. 
+               <h3>例 1</h3>
+               <p>XML ファイルは、文書タイプ宣言、xsi:schemaLocation 属性あるいは他のタイプのスキーマへのリファレンスを含む。コンテンツ開発者は、オンラインあるいはオフラインのバリデーター、XML エディタもしくは XML サポートのある IDE (下記参考リソースを参照) を用いて、well-formed であることをチェックできる。 
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p> When XML files do not include a document type declaration, a xsi:schemaLocation
-                  attribute or a processing instruction referencing a schema even though there is a
-                  schema for them, the relevant schema is specified by a command line instruction, a
-                  user dialog or a configuration file, and the XML files are checked against the
-                  schema.
+               <h3>例 2</h3>
+               <p>XML ファイルが文書タイプ宣言、xsi:schemaLocation 属性又はスキーマがあるのにスキーマ参照のインストラクションのない処理を含まないとき、関連するスキーマがコマンドラインの指示、ユーザダイアログあるいは (構成) コンフィグレーションファイルで指定されている。そして、XML ファイルがスキーマに対してチェックされている。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>When XML files do not include a document type declaration, a xsi:schemaLocation
-                  attribute or a processing instruction referencing a schema even though there is a
-                  schema for them, the namespace is dereferenced to retrieve a schema document or
-                  resource directory (Resource Directory Description Language: <a href="http://www.rddl.org/">RDDL</a>), and the XML files are checked against the
-                  schema.
+               <h3>例 3</h3>
+               <p>XML ファイルが文書タイプ宣言、xsi:schemaLocation 属性あるいはスキーマがあるのにスキーマ参照のインストラクションのない処理を 含まないとき、名前空間がスキーマ文書又は <a href="http://www.rddl.org/">RDDL (Resource Directory Description Language)</a> を読み出すのに参照されておらず、そして XML ファイルがスキーマに対してチェックされている。
                </p>
             </section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>When a Website generates XML dynamically instead of serving only static documents,
-                  a developer can use <a href="http://xmlunit.sourceforge.net/">XMLUnit</a>, <a href="http://xmltestsuite.sourceforge.net/">XML Test Suite</a> or a similar
-                  framework to test the generated XML code. 
+               <h3>例 4</h3>
+               <p>ウェブサイトが静的な文書ではなく、XML を動的に生成するとき、コンテンツ開発者は <a href="http://xmlunit.sourceforge.net/">XMLUnit</a> や <a href="http://xmltestsuite.sourceforge.net/">XML Test Suite</a> あるいは類似のフレームワークを用いて、生成される XML コードをチェックできる。 
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -114,27 +90,27 @@
                </li>
                
             </ul>
-            <p> For other resources, see <a href="../general/G134">G134: Validating Web pages</a>. 
+            <p><a href="../general/G134">G134: ウェブページをバリデートする</a>の参考リソースを参照のこと。
             </p>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Load each file into a validating XML parser. </li>
+                  <li>各ファイルを XML パーサーにロードする。</li>
                   
-                  <li> Check that there are no well-formedness errors. </li>
+                  <li>well-formedness エラーがないことを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p>Step 2 is true.</p>
+               <p>#2 の結果が真である。</p>
                
             </section>
          </section>
