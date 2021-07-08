@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H71:  Providing a description for groups of form controls using fieldset and legend
-         elements 
+      <title>H71:  fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,97 +11,70 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H70">Previous Technique: H70</a></li>
-            <li><a href="H73">Next Technique: H73</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H70">前の達成方法: H70</a></li>
+            <li><a href="H73">次の達成方法: H73</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1> Providing a description for groups of form controls using fieldset and legend
-         elements 
+      <h1>fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する 
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML。</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a semantic grouping for related form
-               controls. This allows users to understand the relationship of the controls and interact
-               with the form more quickly and effectively.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、関連するフォームコントロールをセマンティックにグループ化する方法を提供することである。これによって、利用者はフォームコントロールの関係が理解でき、より早く効率的にフォームを利用できるようになる。
             </p>
-            <p>Form controls can be grouped by enclosing them within the <code class="el">fieldset</code> element. All controls within a given <code class="el">fieldset</code> are then related. The first element inside the <code class="el">fieldset</code> must be a <code class="el">legend</code> element, which provides a label or description for the group.  Authors should avoid
-               nesting <code class="el">fieldsets</code> unnecessarily, as this can lead to confusion. 
+            <p>フォームコントロールは、<code class="el">fieldset</code> 要素で囲むことによってグループ化できる。つまり、<code class="el">fieldset</code> 要素内にある全てのフォームコントロールが関連付けられることになる。<code class="el">fieldset</code> 要素内での最初の要素は <code class="el">legend</code> 要素でなければならず、<code class="el">legend</code> 要素はそのグループのラベルや説明を提供するものである。なお、利用者を混乱させてしまう恐れがあるため、コンテンツ制作者は必要以上に <code class="el">fieldset</code> 要素を入れ子にすることを避けるべきである。 
             </p>
-            <p>Grouping controls is most important for related radio buttons and checkboxes. A set
-               of radio buttons or checkboxes is related when they all submit values for a single
-               named field. They work in the same way as selection lists, allowing the user to choose
-               from a set of options, except selection lists are single controls while radio buttons
-               and checkboxes are multiple controls. The individual label associated with each radio
-               or checkbox control may not fully convey the group's descriptive context. In this
-               situation, it is essential that they be grouped together semantically to facilitate
-               being treated as a single control, as well as to provide an additional group level
-               description. Often, user agents will present the value of the <code class="el">legend</code> before the label of each control to provide this description, as well as to remind
-               users that they are part of the same group.
+            <p>フォームコントロールのグループ化が最も重要なのは、関連するラジオボタンやチェックボックスをまとめるときである。ラジオボタンやチェックボックスは、name 属性で同じ値が指定されている場合に、一組のコントロールとして関連付けられる。これらは、選択肢の中から自由に選択できるセレクトメニューと同じように動作することになるが、セレクトメニューは単一のコントロールであるのに対し、ラジオボタンとチェックボックスは複数のコントロールである点が異なる。それぞれのラジオボタンやチェックボックスの個々のラベルは、そのグループの説明となる文脈を十分に伝えられないことがある。この場合、セマンティックにグループ化しておくことが特に重要であり、それによって単一のコントロールのように簡単に操作できるようになり、またグループの説明を補足することができる。ユーザエージェントは、その説明を提供し、複数のコントロールが同じグループの一部であることを利用者に伝えるために、各コントロールのラベルよりも先に <code class="el">legend</code> 要素の内容を提示することが多い。
             </p>
-            <p>It can also be useful to group other sets of controls less tightly related than radio
-               buttons and checkboxes. For instance, several fields that collect a user's address
-               might be grouped together with a legend of "Address", thus providing a group level
-               description for these controls. As a rule of thumb, it can be said that where a group
-               of controls within a larger form requires an additional heading to provide a description
-               specific to that particular group, the use of fieldset and legend elements is appropriate.
+            <p>ラジオボタンやチェックボックスほどには明確に関連していないコントロールをグループ化することが有用になることがある。たとえば、利用者の住所を入力するフィールドがいくつかに分かれている場合、「住所」という legend 要素を付けてグループ化しておくとよい。
             </p>
-            <p>However, when a group of related radio buttons or checkboxes (even having values for
-               a single named field) includes clear instructions and distinct selections (i.e. where
-               the individual label associated with each particular control provides a sufficient
-               description), the use of the <code class="el">fieldset</code> and <code class="el">legend</code> elements is not required. 
-               						<a href="#H44"></a> is sufficient in this case.
+            <p>ただし、(単一の名前付きフィールドの値を持つ場合でも) 関連するラジオボタン又はチェックボックスのグループに明らかな指示及び明確な選択肢が含まれている (すなわち、特定の各コントロールに関連付けられた個々のラベルが十分な記述を提供する) 場合、<code class="el">fieldset</code> 及び <code class="el">legend</code> 要素は必須ではない。この場合は、<a href="#H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a>で十分である。
             </p>
-            <p>Authors sometimes avoid using the <code class="el">fieldset</code> element because of the default display in the browser, which draws a border around
-               the grouped controls. This visual grouping is also useful and authors should seriously
-               consider retaining it (or some form of visual grouping). The visual effect can be
-               modified in CSS by overriding the "border" property of the <code class="el">fieldset</code> and the "position" property of the <code class="el">legend</code>. 
+            <p>ブラウザの初期状態では、<code class="el">fieldset</code> 要素によってグループ化したコントロール全体を枠で囲むという表示であるため、コンテンツ制作者は fieldset 要素の利用を避けたい場合がある。しかし、このような視覚的なグループ化も有益であり、その状態のままにしておくこと (あるいは、何らかの形で視覚的にグループ化すること) をしっかり検討すべきである。見た目のスタイルについては、CSS で <code class="el">fieldset</code> 要素に対する「border」プロパティを上書きしたり、<code class="el">legend</code> 要素に対する「position」プロパティを上書きしたりすることによって変更できる。 
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H71 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H71.html">アクセシビリティ サポーテッド（AS）情報: H71</a> も参照されたい。
+                  </p>  
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-multiple-choice-test-">
-               <h3>Example 1: A multiple choice test </h3>
-               <p>This example shows a test item with one question and five possible answers. Each
-                  answer is represented by a radio button (
-                  									<code class="el">input</code>
-                  									<code class="att">type</code>="radio"). The radio
-                  buttons are contained within a <code class="el">fieldset</code>. The test question is tagged
-                  with the <code class="el">legend</code> element.
+               <h3>例 1: 選択式のテスト</h3>
+               <p>この事例では、一つの質問に対して五つの解答の中からどれかを選べるテスト項目を示している。解答はそれぞれラジオボタン (<code class="el">input</code> <code class="att">type</code>="radio") で提示されており、<code class="el">fieldset</code> 要素に含めてある。テストの質問内容は <code class="el">legend</code> 要素でタグ付けしてある。
                </p><pre xml:space="preserve">&lt;fieldset&gt;
   &lt;legend&gt;The play &lt;cite&gt;Hamlet&lt;/cite&gt; was written by:&lt;/legend&gt;
   &lt;input type="radio" id="shakesp" name="hamlet" checked="checked" value="a"&gt;
@@ -115,16 +87,18 @@
   &lt;label for="hem"&gt;Ernest Hemingway&lt;/label&gt;&lt;br /&gt;
   &lt;input type="radio" id="dickens" name="hamlet" value="e"&gt;
   &lt;label for="dickens"&gt;Charles Dickens&lt;/label&gt;
-&lt;/fieldset&gt;   </pre></section>
+&lt;/fieldset&gt;   </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H71-1 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H71-1.html">アクセシビリティ サポーテッド（AS）情報: H71-1</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>  
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-2-a-set-of-checkboxes-">
-               <h3>Example 2: A set of checkboxes </h3>
-               <p>The User Profile page for a Web site allows users to indicate their interests by
-                  selecting multiple checkboxes. Each checkbox (
-                  									<code class="el">input</code>
-                  									<code class="att">type</code>="checkbox")
-                  has a <code class="el">label</code>. The checkboxes are contained within a
-                  <code class="el">fieldset</code>, and the <code class="el">legend</code> element contains the prompt for
-                  the entire group of checkboxes.
+               <h3>例 2: チェックボックスのグループ</h3>
+               <p>あるウェブサイトでの利用者プロフィールのページで、利用者が複数のチェックボックスを選んで自分の興味を示せるようになっている。各チェックボックス (<code class="el">input</code> <code class="att">type</code>="checkbox") には、<code class="el">label</code> がある。すべてのチェックボックスは、<code class="el">fieldset</code> 要素に含められており、<code class="el">legend</code> 要素にはチェックボックスのグループ全体の説明がある。
                </p><pre xml:space="preserve">&lt;fieldset&gt;
   &lt;legend&gt;I am interested in the following (check all that apply):&lt;/legend&gt;
   &lt;input type="checkbox" id="photo" name="interests" value="ph"&gt;
@@ -134,12 +108,18 @@
   &lt;input type="checkbox" id="acrylic" name="interests" checked="checked" value="ac"&gt;
   &lt;label for="acrylic"&gt;Acrylic&lt;/label&gt;
   …
-&lt;/fieldset&gt;    </pre></section>
+&lt;/fieldset&gt;    </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H71-2 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H71-2.html">アクセシビリティ サポーテッド（AS）情報: H71-2</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>  
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-3--radio-buttons-submitting-to-the-same-named-field">
-               <h3>Example 3:  Radio buttons submitting to the same named field</h3>
-               <p>This example requests the user to choose a single philosopher. Note that each field
-                  has the same "<code class="att">name</code>" attribute, indicating these radio buttons are related (they all submit the same
-                  field), and should be grouped as shown. Also note that while the "<code class="att">name</code>" attributes are the same, the "<code class="att">id</code>" attributes must be unique.
+               <h3>例 3:  同じ名前を付けたフィールドとして送信されるラジオボタン</h3>
+               <p>この事例では、1 人の哲学者を選ぶように利用者に求めている。各ラジオボタンが関連している (同じフィールドとして送信される) ことを示すために「<code class="att">name</code>」属性で同じ値を指定し、見た目としてもグループ化すべき点に注意しよう。また、「<code class="att">name</code>」属性は同じ値であっても、「<code class="att">id</code>」属性はそれぞれ一意的な値でなければならない点にも注意しよう。
                </p><pre xml:space="preserve">&lt;form action="http://example.com/vote" method="post"&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Your preferred philosopher&lt;/legend&gt;
@@ -151,20 +131,25 @@
     &lt;label for="philosopher_aristotle"&gt;Aristotle&lt;/label&gt;
   &lt;/fieldset&gt;
   &lt;/form&gt; </pre><div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Groups of related checkboxes work in the same way, except the user is allowed to express
-                        more than one preference for the field.
+                     <p>関連するチェックボックスのグループも同じように動作するが、利用者が一つ以上のフィールドを選べる点がラジオボタンとは異なる。
                      </p>
                      
                   </div>
                </div>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H71-3 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H71-3.html">アクセシビリティ サポーテッド（AS）情報: H71-3</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>  
+               </div>
+               </div>
             </section>
             <section class="example" id="example-4--logically-related-controls">
-               <h3>Example 4:  Logically related controls</h3>
-               <p>In this example, form fields for residential and postal addresses are distinguished
-                  by the value of the <code class="el">legend</code> in each <code class="el">fieldset</code> grouping.
+               <h3>例 4:  論理的に関連付けたコントロール</h3>
+               <p>この事例では、居住地と郵送先のフィールドを別々に <code class="el">fieldset</code> 要素でグループ化し、<code class="el">legend</code> 要素で異なる内容を指定している。
                </p><pre xml:space="preserve">&lt;form action="http://example.com/adduser" method="post"&gt;
    &lt;fieldset&gt;
      &lt;legend&gt;Residential Address&lt;/legend&gt;
@@ -182,11 +167,19 @@
      &lt;input type="text" id="pzip" name="pzip" /&gt;
      ...more postal address information...
    &lt;/fieldset&gt;
-&lt;/form&gt;</pre></section>
+&lt;/form&gt;</pre>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H71-4 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H71-4.html">アクセシビリティ サポーテッド（AS）情報: H71-4</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>  
+               </div>
+               </div>
+               </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>HTML 4.01 <a href="https://www.w3.org/TR/html4/interact/forms.html#adef-checked">Checkboxes</a>
@@ -201,42 +194,40 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="H65">H65: Using the title attribute to identify form controls when the label element cannot
-                     be used</a></li>
+               <li><a href="H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For groups of related controls where the individual labels for each control do not
-                  provide a sufficient description, and an additional group level description is needed,
+               <p>関連するコントロールのグループにおいて、各コントロールの個々のラベルが十分な記述を提供しておらず、追加でグループレベルの記述が必要な場合:
                </p>
                
                <ol>
                   
-                  <li>Check that the group of logically related <code class="el">input</code> or <code class="el">select</code> elements are contained within <code class="el">fieldset</code> elements.
+                  <li>論理的に関連している <code class="el">input</code> 要素又は <code class="el">select</code> 要素のグループが、<code class="el">fieldset</code> 要素内に含まれていることを確認する。
                   </li>
                   
-                  <li>Check that each <code class="el">fieldset</code> has a <code class="el">legend</code> element that includes a description for that group.
+                  <li>各 <code class="el">fieldset</code> 要素には、そのグループの説明を含む <code class="el">legend</code> 要素が指定されていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the above checks are true.</li>
+                  <li>上記全ての結果が真である。</li>
                   
                </ul>
                
