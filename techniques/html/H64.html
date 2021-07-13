@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H64: Using the title attribute of the frame and iframe elements</title>
+      <title>H64: frame 要素及び iframe 要素の title 属性を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,76 +10,58 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H63">Previous Technique: H63</a></li>
-            <li><a href="H65">Next Technique: H65</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H63">前の達成方法: H63</a></li>
+            <li><a href="H65">次の達成方法: H65</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the <code class="att">title</code> attribute of the <code class="el">frame</code> and <code class="el">iframe</code> elements
+      <h1><code class="el">frame</code> 要素及び <code class="el">iframe</code> 要素の <code class="att">title</code> 属性を使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML documents that use frames or iframes </p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>frame 要素又は iframe 要素を用いている HTML 及び XHTML ドキュメント</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">Success Criterion 2.4.1: Bypass Blocks</a> (Sufficient, together with <a href="../html/H70">H70: Using frame elements to group blocks of repeated material</a> as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">達成基準 2.4.1: ブロックスキップ</a> (<a href="../html/H70">H70: 繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</a>とともに、書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient as a way to meet <a href="../general/G108">G108: Using markup features to expose the name and role, allow user-settable properties
-                     to be directly set, and provide notification of changes</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value)</a> (<a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate the use of the <code class="att">title</code>
-               attribute of the <code class="el">frame</code> or <code class="el">iframe</code> element to describe the contents
-               of each frame. This provides a label for the frame so users can determine which frame
-               to
-               enter and explore in detail. It does not label the individual page (frame) or inline
-               frame (iframe) in the frameset.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、フレームの内容を説明するための、<code class="el">frame</code> 要素又は <code class="el">iframe</code> 要素での <code class="att">title</code> 属性の使用方法を示すことである。title 属性はフレームのラベルを提供するものなので、利用者はどのフレームの中に入ってその詳細を見て回るかどうかを判断できる。<code class="att">title</code> 属性は、フレームセットの中の個々のページ (<code class="el">frame</code> 要素) やインラインフレーム (<code class="el">iframe</code> 要素) のラベルを付けるものではない。
             </p>
-            <p>Note that the <code class="att">title</code> attribute labels frames, and is different from the
-               <code class="el">title</code> element which labels documents. Both should be provided, since the
-               first facilitates navigation among frames and the second clarifies the user's current
-               location.
+            <p><code class="att">title</code> 属性はフレームにラベルを付けるものであって、文書にラベルを付ける <code class="el">title</code> 要素とは異なることに注意しよう。<code class="att">title</code> 属性は利用者が複数のフレームの間を移動しやすくし、また <code class="el">title</code> 要素は利用者の現在位置を明確にするものであり、双方を提供すべきである。
             </p>
-            <p>The <code class="att">title</code> attribute is not interchangeable with the <code class="att">name</code>
-               attribute. The <code class="att">title</code> labels the frame for users; the <code class="att">name</code>
-               labels it for scripting and window targeting. The <code class="att">name</code> is not presented to
-               the user, only the <code class="att">title</code> is.
+            <p><code class="att">title</code> 属性を <code class="att">name</code> 属性に置き換えることはできない。<code class="att">title</code> 属性は利用者のためにフレームにラベルを付けるものであるのに対して、<code class="att">name</code> 属性はスクリプトによる操作やウィンドウのターゲットを決めるためにフレームにラベルを付けるものだからである。つまり、<code class="att">name</code> 属性は利用者に提供されるものではなく、<code class="att">title</code> 属性だけがその役割を果たしている。
             </p>
-            <p>In HTML5 the <code class="el">frame</code> element is marked as obsolete. The <code class="el">iframe</code> element remains part of the HTML5 specification.
+            <p>HTML5 では、<code class="el">frame</code> 要素が廃止されている。<code class="el">iframe</code> 要素は未だに HTML5 仕様の一部である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>This example shows how to use the <code class="att">title</code> attribute with
-                  <code class="el">frame</code> to describe the frames containing the navigation bar and the
-                  document.
+               <h3>例 1</h3>
+               <p>この事例は、ナビゲーションバーと主要コンテンツを別の文書として読み込んでいるフレームそれぞれを説明するために、<code class="el">frame</code> 要素に <code class="att">title</code> 属性を指定する方法を示している。
                </p><pre xml:space="preserve">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
   &lt;head&gt;
     &lt;title&gt;A simple frameset document&lt;/title&gt;
@@ -94,13 +76,18 @@
       &lt;/body&gt;
     &lt;/noframes&gt;
   &lt;/frameset&gt;
-&lt;/html&gt; </pre></section>
+&lt;/html&gt; </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H64-1 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H64-1.html">アクセシビリティ サポーテッド（AS）情報: H64-1</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>  
+               </div>
+            </div>
+            </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>This example shows how to use the title attribute with <code class="el">iframe</code> to
-                  describe the contents of an inline frame. The example also includes an alternative
-                  link to the page included by the iframe element for older browsers, which may not
-                  understand the <code class="el">iframe</code>element.
+               <h3>例 2</h3>
+               <p>この事例は、インラインフレームの内容を説明するために、 <code class="el">iframe</code> 要素に <code class="att">title</code> 属性を指定する方法を示している。さらに、<code class="el">iframe</code> 要素を解釈できない古いブラウザのために、読み込むページへの代替リンクを <code class="el">iframe</code> 要素の内容に含めてある。
                </p><pre xml:space="preserve"> &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
   &lt;head&gt;
     &lt;title&gt;A document using iframe&lt;/title&gt;
@@ -111,11 +98,19 @@
     &lt;a href="banner-ad.html"&gt;Advertisement&lt;/a&gt;
 &lt;/iframe&gt;
 ...
-&lt;/html&gt;  </pre></section>
+&lt;/html&gt;  </pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H64-2 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H64-2.html">アクセシビリティ サポーテッド（AS）情報: H64-2</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>  
+               </div>
+            </div>
+            </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -137,30 +132,35 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記に関して、frame 要素は <a href="https://www.w3.org/TR/html52/obsolete.html#frames">HTML 5.2§11.3.3. Frames</a> で廃止された機能として定義されており、iframe 要素は <a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#elementdef-iframe">HTML 5.2§4.7.6. The iframe element</a> を代わりに参照できる。
+                  </p>  
+               </div>
+            </div>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check each frame and iframe element in the HTML or XHTML source code for the presence
-                     of a
-                     title attribute.
+                  <li>HTML 又は XHTML のソースコードにある frame 要素及び iframe 要素のそれぞれに、title 属性が存在するかどうかを確認する。
                   </li>
                   
-                  <li>Check that the title attribute contains text that identifies the frame.</li>
+                  <li>title 属性の値として、そのフレームを特定できるテキストがあることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
