@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H63: Using the scope attribute to associate header cells and data cells in data
-         tables
+      <title>H63: データテーブルで見出しセルとデータセルを関連付けるために、scope 属性を使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,100 +11,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H62">Previous Technique: H62</a></li>
-            <li><a href="H64">Next Technique: H64</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H62">前の達成方法: H62</a></li>
+            <li><a href="H64">次の達成方法: H64</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the scope attribute to associate header cells and data cells in data
-         tables
+      <h1>データテーブルで見出しセルとデータセルを関連付けるために、scope 属性を使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to associate header cells with data cells in complex
-               tables using the
-               <code class="att">scope</code> attribute. The <code class="att">scope</code> attribute may be used to clarify
-               the scope of any cell used as a header. The scope identifies whether the cell is a
-               header for a row, column, or group of rows or columns. The values row,
-               col, rowgroup, and colgroup identify these
-               possible scopes respectively.
-            </p>
-            <p>For simple data tables where the header is not in the first row or column, like the
-               one
-               in Example 1, this technique can be used. Based on screen reader support today, its
-               use
-               is suggested in two situations both relating to simple tables:
-            </p>
+            <h2>解説</h2>
+            <p>この達成方法の目的は、<code class="att">scope</code> 属性を利用して見出しセルとデータセルを関連付けることである。 <code class="att">scope</code> 属性を利用するのは、見出しとして利用するあらゆるセルが及ぶ範囲を明確にするためである。範囲とは、そのセルが行、列、行グループ、列グループのどの見出しであるかを特定するものである。row、col、rowgroup、colgroup という値によって範囲を特定することになる。            </p>
+            <p>事例 1 のように、見出しが 1 行目や 1 列目にない単純なテーブルに対してこの達成方法が利用できる。今日のスクリーンリーダーのサポートを考えると、単純なテーブルについて次の二つの状況が当てはまる場合に、この達成方法の利用が示唆される:            </p>
             <ul>
                
-               <li>data cells marked up with <code class="el">td</code> that also function as row header or column
-                  header 
+               <li><code class="el">td</code> 要素でマークアップしてあるデータセルが、行見出し又は列見出しとしても機能する場合。
                </li>
                
-               <li>header cells marked up with <code class="el">td</code> instead of <code class="el">th</code>. Sometimes, authors
-                  use this to avoid the display characteristics associated with <code class="el">th</code> and also
-                  do not choose to use CSS to control the display for <code class="el">th</code>. 
+               <li><code class="el">th</code> 要素ではなく <code class="el">td</code> 要素でマークアップしてある見出しセルがある場合、コンテンツ制作者は、CSS でコントロールする方法があるがそれを採用せず、<code class="el">th</code> 要素の表示特性を避けるために <code class="el">td</code> 要素でマークアップすることがある。
                </li>
                
             </ul>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>For simple tables that have the headers in the first row or column then it is
-                     sufficient to simply use the TH elements without scope. 
+                  <p>1 行目や 1 列目に見出しがある単純なテーブルについては、scope 属性を指定せずに th 要素を利用するだけで十分である。
+                  </p>                
+                  <p>複雑なテーブルについては、For complex tables use ids and headers as in <a href="#H43">H43: データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する</a>の通り、id 属性と headers 属性を利用する。
+                  </p>                  
+                  <p>一つの複雑な表よりも、単純な複数の表を用いて作業するほうが簡単だと思う利用者もいるだろう。制作者は、複雑な表を一つ以上の単純な表に変換できるかどうかを検討したい場合がある。
                   </p>
-                  
-                  <p>For complex tables use ids and headers as in <a href="#H43"></a>. 
-                  </p>
-                  
-                  <p>Some users may find it easier to work with several simple tables than one more complex
-                     table. Authors may wish to consider whether they can convert complex tables to one
-                     or more simple tables.
-                  </p>
-                  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H63 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H63.html">アクセシビリティ サポーテッド（AS）情報: H63</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>WAIC では H63 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H63.html">アクセシビリティ サポーテッド（AS）情報: H63</a> も参照されたい。
+                  </p>  
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-simple-schedule">
-               <h3>Example 1: A simple schedule</h3>
-               <p>In the following example, column #1 contains serial numbers for rows in the table
-                  and the second column contains the key value for the row. The cells in the second
-                  column may then use 
-                  									<code class="att">scope</code>="row". The cells in the first row too are
-                  marked up with <code class="el">td</code> and use 
-                  									<code class="att">scope</code>="col". 
+               <h3>例 1: 単純なスケジュール表</h3>
+               <p>次のコード例では、1 列目にテーブルの行番号を示す連番が含まれている。行の中でも重要な値は 2 列目に含まれるため、各セルに <code class="att">scope</code>="row" と指定してある。1 行目のセルは code class="el">td</code> 要素でマークアップし、これらにも <code class="att">scope</code>="col" と指定してある。 
                </p><pre xml:space="preserve"> &lt;table border="1"&gt;
   &lt;caption&gt;Contact Information&lt;/caption&gt;
   &lt;tr&gt;
@@ -136,8 +118,8 @@
 &lt;/table&gt; </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>HTML 4.01 <a href="https://www.w3.org/TR/1999/REC-html401-19991224/struct/tables.html#adef-scope ">Table Cells: scope attribute</a>
@@ -155,47 +137,51 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://www.w3.org/TR/html52/tabular-data.html#the-th-element">HTML 5.2§4.9.10. The th element</a> を代わりに参照できる。
+                  </p>  
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H43">H43: Using id and headers attributes to associate data cells with header cells in data
-                     tables</a></li>
+               <li><a href="H43">H43: データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する</a></li>
                
-               <li><a href="H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each data table: </p>
+               <p>各データテーブルについて: </p>
                
                <ol>
                   
-                  <li>Check that all <code class="el">th</code> elements have a <code class="att">scope</code> attribute.
+                  <li><code class="el">th</code> 要素全てに、<code class="att">scope</code> 属性があることを確認する。
                   </li>
                   
-                  <li>Check that all <code class="el">td</code> elements that act as headers for other elements
-                     have a <code class="att">scope</code> attribute.
+                  <li>他の要素の見出しとしての役割を果たす全ての <code class="el">td</code> 要素に、<code class="att">scope</code> 属性があることを確認する。
                   </li>
                   
-                  <li>Check that all <code class="att">scope</code> attributes have the value row,
-                     col, rowgroup, or colgroup.
+                  <li>全ての <code class="att">scope</code> 属性に、値として row、col、rowgroup、又は colgroup があることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks above are true.</li>
+                  <li>上記全ての結果が真である。</li>
                   
                </ul>
                
