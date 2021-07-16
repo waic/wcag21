@@ -38,16 +38,16 @@
          <section id="applicability">
             <h2>適用 (対象)</h2>
             <p>HTML 及び XHTML</p>
-            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法の目的は、リスト要素を役割に合わせて適切に利用し、関連する項目のリストを生成することである。<code class="el">ol</code> 要素は順序のあるリストに、<code class="el">ul</code> 要素は順序のないリストに利用する。定義リスト (<code class="el">dl</code> 要素) は、用語とその定義をまとめるのに利用する。このようなマークアップを用いることで、リストを読みやすくできるとはいえ、すべてのリストをリスト要素でマークアップする必要はない。たとえば、文章に含まれるカンマ区切りのリストを、リスト要素でマークアップする必要はない。
+            <p>この達成方法の目的は、目的に適したリスト要素を使用して、関連する項目のリストを生成することである。<code class="el">ol</code> 要素は順序のあるリストに、<code class="el">ul</code> 要素は順序のないリストに利用する。定義リスト (<code class="el">dl</code> 要素) は、用語とその定義をまとめるのに利用する。このようなマークアップを用いることで、リストを読みやすくできるとはいえ、すべてのリストをリスト要素でマークアップする必要はない。たとえば、文章に含まれるカンマ区切りのリストを、リスト要素でマークアップする必要はない。
             </p>
             <p>リストの関係を示すためではなく、見た目をリストのようにしたいためにマークアップを用いることで、利用者が情報を利用しにくくなる恐れがある。リストのような見た目にする例としては、リスト項目の最初にアスタリスクを付け、<code class="el">br</code> 要素を用いて各リスト項目を分けるといったことが挙げられる。
             </p>
-            <p>支援技術の中には、利用者をリストからリストへ、またはリスト項目からリスト項目へと誘導する機能を備えているものがある。スタイルシートを利用すれば、リストという役割の整合性を保ったまま、提示を変更することができる。
+            <p>支援技術の中には、利用者をリストからリストへ、またはリスト項目からリスト項目へと誘導する機能を備えているものがある。スタイルシートを利用すれば、リストの整合性を保ったまま、提示を変更することができる。
             </p>
             <p>リスト構造 (<code class="el">ul</code> / <code class="el">ol</code>) はハイパーリンクをグループ化するのにも役立つ。これが完了すると、スクリーンリーダーがリストの最初の項目からリストの最後までナビゲートする、または次のリストにジャンプするのに役立つ。 この選択により、リンクグループをバイパス化することができる。
             </p>
@@ -139,7 +139,7 @@ ul.navigation li {
                </li>
                
             </ul>
-            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://www.w3.org/TR/html52/grouping-content.html#grouping-content">HTML 5.2: 4.4. Grouping content</a> を代わりに参照できる。</p></div></div>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content">HTML Standard: 4.4 Grouping content</a> を代わりに参照できる。</p></div></div>
          </section>
          <section id="related">
             <h2>関連する達成方法</h2>
