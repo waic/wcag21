@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H79: Identifying the purpose of a link in a data table using the link text combined with
-         its enclosing table cell and associated table header cells
+      <title>H79: リンクテキストとそれが含まれているデータセル及び関連づけられた見出しセルとを組み合わせて、リンクの目的を特定する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,62 +11,60 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H78">Previous Technique: H78</a></li>
-            <li><a href="H80">Next Technique: H80</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H78">前の達成方法: H78</a></li>
+            <li><a href="H80">次の達成方法: H80</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Identifying the purpose of a link in a data table using the link text combined with
-         its enclosing table cell and associated table header cells
+      <h1>リンクテキストとそれが含まれているデータセル及び関連づけられた見出しセルとを組み合わせて、リンクの目的を特定する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that contain links.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>リンクが含まれる全てのウェブコンテンツ技術。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to identify the purpose of a link from the link
-               in
-               its data table context. This context is the table cell enclosing the link and the
-               cell's
-               associated table header cells. The data table context provides the purpose for an
-               otherwise
-               unclear link when the table cell is the nearest enclosing block-level ancestor element.
-               It lets a user distinguish this link from other links in the Web page that lead to
-               other
-               destinations and helps the user determine whether to follow the link. Note that simply
-               providing the URI of the destination is not sufficiently descriptive for people with
-               disabilities, especially those with cognitive disabilities.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、リンクとそれを含んでいるデータテーブルのコンテキストから、リンクの目的を特定することである。このコンテキストは、そのリンクを含んでいるテーブルセルと、そのセルに関連付けられたテーブルの見出しセルとの関係を指している。そうでなければデータテーブルのコンテキストは、テーブルセルが最も近いブロックレベルの先祖要素で囲んでいる場合、不明瞭なリンクの目的を提供する。それによって、利用者がこのリンクと他の宛先につながるウェブページの他のリンクを区別できるようになり、そのリンクをたどるかどうかを判断するのに役立つ。単に目的地の URI を示すだけでは、障害のある利用者、特に認知障害のある利用者にとってはリンク先の説明として不十分であることに注意する。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H79 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H79.html">アクセシビリティ・サポーテッド（AS）情報: H79</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H79 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2020 年 3 月版の <a href="https://waic.jp/docs/as/info/202003/techs/H79.html">アクセシビリティ サポーテッド（AS）情報: H79</a> も参照されたい。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-table-of-rental-car-choices">
-               <h3>Example 1: A table of rental car choices</h3><pre xml:space="preserve"> &lt;table&gt;
+               <h3>例 1: レンタカー会社の料金比較表</h3><pre xml:space="preserve"> &lt;table&gt;
 &lt;tr&gt;
   &lt;th&gt;&lt;/th&gt;
   &lt;th scope="col"&gt;Alamo&lt;/th&gt;
@@ -111,55 +108,50 @@
 &lt;/table&gt;  </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G53">G53: Identifying the purpose of a link using link text combined with the text of the enclosing
-                     sentence</a></li>
+               <li><a href="../general/G53">G53: リンクテキストとそれが含まれている文中のテキストとを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="../general/G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
-               <li><a href="H33">H33: Supplementing link text with the title attribute</a></li>
+               <li><a href="H33">H33: title 属性を用いて、リンクテキストを補足する</a></li>
                
-               <li><a href="H77">H77: Identifying the purpose of a link using link text combined with its enclosing list
-                     item</a></li>
+               <li><a href="H77">H77: リンクテキストとそれが含まれているリスト項目とを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="H78">H78: Identifying the purpose of a link using link text combined with its enclosing paragraph</a></li>
+               <li><a href="H78">H78: リンクテキストとそれが含まれている段落とを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="H80">H80: Identifying the purpose of a link using link text combined with the preceding heading
-                     element</a></li>
+               <li><a href="H80">H80: リンクテキストと先行する見出し要素とを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="H81">H81: Identifying the purpose of a link in a nested list using link text combined with the
-                     parent list item under which the list is nested</a></li>
+               <li><a href="H81">H81: リストが入れ子になっている状況で、親のリスト項目と結合したリンクテキストを用いて、入れ子になったリストの中でリンクの目的を特定する</a></li>
                
-               <li><a href="../css/C7">C7: Using CSS to hide a portion of the link text</a></li>
+               <li><a href="../css/C7">C7: リンクテキストの一部を非表示にするために、CSS を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each link in the content that uses this technique:</p>
+               <p>コンテンツの中で、この達成方法を用いているリンクそれぞれに対して:</p>
                
                <ol>
                   
-                  <li> Check that the link is in a table cell. </li>
+                  <li>そのリンクがテーブルセルの中にあることを確認する。</li>
                   
-                  <li> Check that text of the link combined with the text of the associated table
-                     	header cells describes the purpose of the link. 
+                  <li>そのリンクテキストと関連付けられたテーブル見出しセルを組み合わせると、リンクの目的が説明されていることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> The above checks are true. </li>
+                  <li>上記全ての結果が真である。</li>
                   
                </ul>
                
