@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C13: Using named font sizes</title>
+      <title>C13: 名前付きフォントサイズを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,65 +10,64 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C12">Previous Technique: C12</a></li>
-            <li><a href="C14">Next Technique: C14</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C12">前の達成方法: C12</a></li>
+            <li><a href="C14">次の達成方法: C14</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using named font sizes</h1>
+      <h1>名前付きフォントサイズを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>CSS</p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">Success Criterion 1.4.5: Images of Text</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">達成基準 1.4.5: 文字画像</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient as a way to meet <a href="../general/G146">G146: Using liquid layout</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (<a href="../general/G146">G146: リキッドレイアウトを使用する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">Success Criterion 1.4.9: Images of Text (No Exception)</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">達成基準 1.4.9: 文字画像 (例外なし)</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to specify a named font size that expresses the
-               relative font size desired. These values provide hints so that the user agent can
-               choose a font-size relative to the inherited font-size.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、設定したい相対的なフォントサイズを表現するキーワードでフォントサイズを指定することである。これらの値は、ユーザエージェントが継承されたフォントサイズに相対的なフォントサイズを選択できるようにヒントを提供する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-named-font-sizes-in-css">
-               <h3>Example 1: Named font sizes in CSS</h3>
-               <p>This example selects a larger font size for <code class="el">strong</code> elements so that their text will always be larger than the surrounding text, in whatever
-                  context they are used. Assuming that headings and paragraphs use different font sizes,
-                  the emphasized words in this example will each be larger than their surrounding text.
-               </p><pre xml:space="preserve">
+               <h3>例 1: CSS でのキーワードによるフォントサイズ指定</h3>
+               <p>この事例では、どのような設定であっても、<code class="el">strong</code> 要素のテキストが周りのテキストよりも常に大きく表示されるように、「larger」というフォントサイズが指定してある。親要素である見出しやパラグラフにフォントサイズが指定されていても、strong 要素でマークアップされた強調語は、周りのテキストよりも大きく表示されるだろう。
+               </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>            
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong#%3Cem%3E_vs._%3Cstrong%3E">MDN の strong 要素</a>で示されているように、古い HTML では <code>strong</code> 要素を単により強い強調としていたが、現在の HTML では <code>strong</code> を重要性を表すものと定義している。
+                  </p>
+               </div>
+            </div><pre xml:space="preserve">
 strong {font-size: larger}
 
 ...
@@ -79,8 +78,8 @@ it is &lt;strong&gt;very&lt;/strong&gt; important to let him configure the text 
 …</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -94,37 +93,43 @@ it is &lt;strong&gt;very&lt;/strong&gt; important to let him configure the text 
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>            
+                  <p>フォントに関する CSS の仕様は、<a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a> を参照のこと。この仕様が、CSS 2 のフォントに関する記述に取って代わることに注意されたい。<a href="https://www.w3.org/TR/css-2018/">CSS Snapshot 2018</a> も参照のこと。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="C12">C12: Using percent for font sizes</a></li>
+               <li><a href="C12">C12: フォントサイズにパーセントを使用する</a></li>
                
-               <li><a href="C14">C14: Using em units for font sizes</a></li>
+               <li><a href="C14">C14: フォントサイズに em 単位を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the value of the CSS property that defines the font size is one of xx-small,
-                     xx-small, x-small, small, medium, large, x-large, xx-large, xsmaller, or larger.
+                  <li>フォントサイズを定義する CSS プロパティの値が、xx-small、x-small、small、medium、large、x-large、xx-large、smaller、larger の中のどれか一つであることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true</li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
