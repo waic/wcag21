@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C17: Scaling form elements which contain text</title>
+      <title>C17: テキストを含むフォーム要素を拡大縮小する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,102 +10,90 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C15">Previous Technique: C15</a></li>
-            <li><a href="C18">Next Technique: C18</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C15">前の達成方法: C15</a></li>
+            <li><a href="C18">次の達成方法: C18</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Scaling form elements which contain text</h1>
+      <h1>テキストを含むフォーム要素を拡大縮小する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>(X)HTML, CSS</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Advisory)</span>.
+            <h2>適用 (対象)</h2>
+            <p>(X)HTML、CSS</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (参考)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure text-based form controls resize when
-               text size is changed in the user agent. This will allow users to enter text and read
-               what they have entered in input boxes because the text is displayed at the size required
-               by the user.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ユーザエージェントによってテキストサイズが変更されたとき、テキストベースのフォームコントロールのサイズ変更を確かにすることである。これは、利用者によって必要とされるサイズでテキストが表示されるため、利用者がテキストを登録し、そして何を入力ボックスに登録したかを読むことができるであろう。
             </p>
-            <p>Text-based form controls include input boxes (text and textarea) as well as buttons.</p>
+            <p>テキストベースのフォームコントロールは、ボタンと同様に入力ボックス (テキスト及びテキストエリア) を含んでいる。</p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-contact-form">
-               <h3>Example 1: A Contact Form</h3>
-               <p>A Contact Us form has some introductory information and then form controls for users
-                  to enter their first name, last name, telephone number and email address. All of the
-                  text and form controls have been implemented in a scalable way. This includes specifying
-                  a font size for the form controls themselves because the font size is not inherited
-                  in Internet Explorer.
+               <h3>例 1: コンタクトフォーム</h3>
+               <p>お問い合わせフォームには、いくつかの初歩的な情報があり、利用者が自分の姓と名、電話番号、電子メールアドレスを入力するフォームコントロールがある。すべてのテキスト及びフォームコントロールは、拡大縮小可能な方法で実装されている。これは、Internet Explorer でフォントサイズが継承されていないため、フォームコントロール自体のフォントサイズを指定することも含まれる。
                </p>
-               <p>The XHTML component:</p><pre xml:space="preserve">&lt;h1&gt;Contact Us&lt;/h1&gt;
+               <p>XHTML コンポーネント:</p><pre xml:space="preserve">&lt;h1&gt;Contact Us&lt;/h1&gt;
 &lt;p&gt;Please provide us with your details and we will contact you as soon as we can. Note that all of the form fields are required.&lt;/p&gt;
 &lt;label for="fname"&gt;First Name&lt;/label&gt;&lt;input type="text" name="fname" id="fname" /&gt;&lt;br /&gt;
 &lt;label for="lname"&gt;Last Name&lt;/label&gt;&lt;input type="text" name="lname" id="lname" /&gt;&lt;br /&gt;
 &lt;label for="phone"&gt;Telephone&lt;/label&gt;&lt;input type="text" name="phone" id="phone" /&gt;&lt;br /&gt;
 &lt;label for="email"&gt;Email&lt;/label&gt;&lt;input type="text" name="email" id="email" /&gt;&lt;br /&gt;
-&lt;input type="submit" name="Submit" value="Submit" id="Submit" /&gt;</pre><p>The CSS component:</p><pre xml:space="preserve">h1 { font-size: 2em; }
-            p, label, input { font-size: 1em; }</pre><p class="working-example">Working example of this code: <a href="../../working-examples/input-resize/">Example of resizing input with CSS</a>.
+&lt;input type="submit" name="Submit" value="Submit" id="Submit" /&gt;</pre><p>CSS コンポーネント:</p><pre xml:space="preserve">h1 { font-size: 2em; }
+            p, label, input { font-size: 1em; }</pre><p class="working-example">このコードの使用例: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/C17/input-resize.html">CSS によって入力のサイズを変更する例</a>.
                </p>
             </section>
             <section class="example" id="example-2-radio-button">
-               <h3>Example 2: Radio button</h3>
-               <p>This example works in IE with its text size feature. However, it doesn't scale in
-                  Firefox 2.0.
+               <h3>例 2: ラジオボタン</h3>
+               <p>この事例は、テキストサイズ機能のある IE で動作する。しかしながら、Firefox 2.0 では拡大縮小されない。
                </p>
-               <p>The XHTML component:</p><pre xml:space="preserve">&lt;input type="radio" name="r1" value="r1" id="r1" class="geomsize" /&gt;
-&lt;input type="checkbox" name="c1" id="c1" value="c1" class="geomsize" /&gt;</pre><p>The CSS component:</p><pre xml:space="preserve">input.geomsize {
+               <p>XHTML コンポーネント:</p><pre xml:space="preserve">&lt;input type="radio" name="r1" value="r1" id="r1" class="geomsize" /&gt;
+&lt;input type="checkbox" name="c1" id="c1" value="c1" class="geomsize" /&gt;</pre><p>CSS コンポーネント:</p><pre xml:space="preserve">input.geomsize {
 width: 1.2em;
-height: 1.2em;}</pre><p class="working-example">Working example of this code: <a href="../../working-examples/radio-checkbox-resize/">Example of resizing radio buttons and checkboxes with CSS</a>.
+height: 1.2em;}</pre><p class="working-example">このコードの使用例: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/C17/radio-checkbox-resize.html">CSS によってラジオボタンとチェックボックスのサイズを変更する例</a>.
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Enter some text into text-based form controls that receive user entered text.</li>
+                  <li>利用者が入力したテキストを受け取るテキストベースのフォームコントロールにテキストを入力する。</li>
                   
-                  <li>Increase the text size of the content by 200%.</li>
+                  <li>コンテンツのテキストサイズを 200 ％まで増加させる。</li>
                   
-                  <li>Check that the text in text-based form controls has increased by 200%.</li>
+                  <li>テキストベースのフォームコントロールのテキストが 200 ％まで増加していることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#3 is true.</li>
+                  <li>#3 の結果が真である。</li>
                   
                </ul>
                
