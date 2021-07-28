@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C20: Using relative measurements to set column widths so that lines can average 80 characters
-         or less when the browser is resized
+      <title>C20: ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,97 +11,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C19">Previous Technique: C19</a></li>
-            <li><a href="C21">Next Technique: C21</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C19">前の達成方法: C19</a></li>
+            <li><a href="C21">次の達成方法: C21</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using relative measurements to set column widths so that lines can average 80 characters
-         or less when the browser is resized
+      <h1>ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>CSS</p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to ensure that CSS is used in a way that allows users
-               to view content in such a way that line length can average 80 characters or less.
-               This makes it possible for users with certain reading or vision disabilities that
-               have trouble keeping their place when reading long lines of text to view and interact
-               with the content more efficiently. This technique also allows for column width to
-               grow wider as font sizes increase, which will reduce the possibility of clipping as
-               the text size increases..
+            <h2>解説</h2>
+            <p>この達成方法の目的は、1 行が平均 80 字 (日本語なら 40 字) 以下になるようにして利用者がコンテンツを見ることができるように、CSS で指定することである。 こうすることで、テキストの長い行を読む際に、現在読んでいる位置を維持することが困難な読字障害や視覚障害のある利用者が、より効率よくコンテンツをを閲覧したり操作したりできるようになる。 この達成方法はまた、文字サイズの拡大に合わせてカラム幅を広くすることにもなり、それによって、文字サイズが大きくなるに従ってテキストの一部が欠けて読めなくなるような事態も発生しにくくなる。
             </p>
             <p>
-               Note that this technique does not require authors to use CSS to limit the width of
-               lines of text to less than 80 characters in the default view. Rather, the recommendation
-               to use relative measurements in CSS layouts helps to ensure that authors do not set
-               column widths in such a way that makes it impossible for users to view content with
-               line lengths of 80 characters or less. 
+               この達成方法は、コンテンツ制作者に対して、CSS を使ってデフォルトでテキストの各行の幅を 80 字 (日本語は 40 字) 以下に制限することを要求するものではない、という点に注意してほしい。 それよりもむしろ、CSS レイアウトに相対サイズを用いることを推奨して、利用者が 1 行 80 字以下で読むことができないようなカラム幅には、設定しないようにする。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In this example the <code class="el">div</code> width is set in ems in the stylesheet.
+               <h3>例 1</h3>
+               <p>この例では、<code class="el">div</code> 要素の幅はスタイルシートで em 単位で指定されている。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>The CSS property max-width is not supported in versions of Internet Explorer 6 and
-                        below.
+                     <p>CSS プロパティの max-width は、Internet Explorer 6 以前のバージョンではサポートされていない。
                      </p>
                      
                   </div>
-               </div><pre xml:space="preserve">#main_content {max-width: 70em}</pre><p>And the text block would be placed inside the <code class="el">div</code> in the content
+               </div><pre xml:space="preserve">#main_content {max-width: 70em}</pre><p>テキストのブロックは、コンテンツ内の <code class="el">div</code> 要素の中に収められる。
                </p><pre xml:space="preserve">
 &lt;div id="main_content"&gt; 
   &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing ...&lt;/p&gt;
 &lt;/div&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>In this example the <code class="el">div</code> width is set in percent in the stylesheet
-               </p><pre xml:space="preserve">#main_content {width: 90%}</pre><p>And the text block would be placed inside the <code class="el">div</code> in the content
+               <h3>例 2</h3>
+               <p>この例では、<code class="el">div</code> 要素の幅はスタイルシートでパーセントで指定されている。
+               </p><pre xml:space="preserve">#main_content {width: 90%}</pre><p>テキストのブロックは、コンテンツ内の <code class="el">div</code> 要素の中に収められる。
                </p><pre xml:space="preserve">
 &lt;div id="main_content"&gt; 
   &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing ...&lt;/p&gt;
 &lt;/div&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。
+
+</p>
             <ul>
                
                <li> 
@@ -136,29 +121,35 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>            
+                  <p>CSS2 の「Box Model」は、<a href="https://www.w3.org/TR/css-box-3/">CSS Box Model Module Level 3</a> で再定義されている。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Test to see that the columns are defined in relative units.</li>
+                  <li>カラム幅が、相対的な単位で定義されているかどうかの検査をする。</li>
                   
-                  <li>Check to see that line length can be set to 80 characters or less by resizing the
-                     browser window.
+                  <li>行の長さが、ブラウザのウィンドウをリサイズしても 80 字 (日本語は 40 字) 以下を維持していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
