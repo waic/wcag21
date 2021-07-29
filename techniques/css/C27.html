@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C27: Making the DOM order match the visual order</title>
+      <title>C27: DOM の順序を表示順序と一致させる</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,152 +10,148 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C25">Previous Technique: C25</a></li>
-            <li><a href="C28">Next Technique: C28</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C25">前の達成方法: C25</a></li>
+            <li><a href="C28">次の達成方法: C28</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Making the DOM order match the visual order</h1>
+      <h1>DOM の順序を表示順序と一致させる</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>CSS used with HTML and XHTML</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML で使用される CSS</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">Success Criterion 2.4.3: Focus Order</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">達成基準 2.4.3: フォーカス順序</a> (書かれていない達成方法を満たす手段として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that the order of content in the source
-               code is the same as the visual presentation of the content. The order of content in
-               the source code can be changed by the author to any number of visual presentations
-               with CSS. Each order may be meaningful in itself but may cause confusion for assistive
-               technology users. This could be due to the user switching off the author-specified
-               presentation, by accessing the content directly from the source code (such as with
-               a screen reader), or by interacting with the content with a keyboard. If a blind user,
-               who reads the page with a screen reader that follows the source order, is working
-               with a sighted user who reads the page in visual order, they may be confused when
-               they encounter information in different orders. A user with low vision who uses a
-               screen magnifier in combination with a screen reader may be confused when the reading
-               order appears to skip around on the screen. A keyboard user may have trouble predicting
-               where focus will go next when the source order does not match the visual order. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ソースコード上のコンテンツの順序が、コンテンツの視覚的提示の順序と同じになるようにすることである。 ソースコード上のコンテンツの順序は、コンテンツ制作者によって、CSS による提示結果とは異なるものにされる場合がある。 それぞれの順序はその状態では意味の分かるものになっているかもしれないが、支援技術の利用者にとっては混乱をもたらす可能性がある。 そのようなことは、(スクリーンリーダーのように) ソースコードに直接アクセスして内容を読み込んでいる場合や、キーボードで操作している場合などに、コンテンツ制作者による提示指定を利用者が無効にすることによって起こり得る。 もし、スクリーンリーダーを使ってページの内容をソースの順序で読んでいる全盲の利用者が、ページの内容を表示される順序で読んでいる利用者と一緒に働いていたら、異なる順序の情報に出くわすことで混乱するかもしれない。 スクリーンリーダーと組み合わせて画面拡大ソフトウェアを使用しているロービジョンの利用者は、読み上げている箇所を見失って混乱する可能性もある。 キーボード利用者は、ソースの順序が表示の順序と違っていると、次のフォーカスの場所が予想と違って困惑することもあるだろう。
             </p>
-            <p>There may also be situations where the visually presented order is necessary to the
-               overall understanding of the page, and if the source order is presented differently,
-               it may be much more difficult to understand. 
+            <p>表示結果の順序を前提としなければ、ページの全体を理解することが難しい状況もあるかもしれない。その場合、もしソースの順序が異なっていたら、理解することはさらに難しくなってしまう。
             </p>
-            <p>When the source order matches the visual order, everyone will read the content and
-               interact with it in the same (correct) order. 
+            <p>ソースの順序が表示結果の順序と同じである場合、すべての人が同じ (正しい) 順序でコンテンツを読んで情報のやり取りをすることができる。 
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>The <code class="att">tabindex</code> attribute in HTML has two functions. One is to make an element focusable and the
-                     other is to assign the element a position in the focus order. A <code class="att">tabindex</code> of 0 makes an element focusable, but adds it to the focus order in the order of source
-                     elements. The focus order will follow positive values of tabindex in ascending order.
-                     Setting <code class="att">tabindex</code> values that result in an order different from the order of elements in the Document
-                     Object Model (DOM) can mean the order is incorrect for users of assistive technologies.
-                     This is largely because the tabindex property is specified in the HTML or XHTML and
-                     not the CSS. This may change in future specifications. It may also differ from the
-                     visual presentation order. 
+                  <p>HTML の <code class="att">tabindex</code> 属性には二つの機能がある。ひとつは要素をフォーカス可能にすることであり、もうひとつは要素にフォーカスの順序を割り当てることである。<code class="att">tabindex</code> の値を 0 にするとその要素はフォーカス可能になるが、フォーカスが追加されるだけで順序はソースの通りになる。フォーカスの順序は、tabindex に指定された正の値だけで昇順となる。<code class="att">tabindex</code> の値をドキュメントオブジェクトモデル (DOM) の要素の順序と異なるように設定することは、支援技術の利用者にとっては不適当な順序となることもある。これは主に、tabindex が CSS ではなく、HTML 又は XHTML で指定されていることによるものだ。この点については、将来の仕様で変更される可能性がある。それは、視覚的な提示の順序とは異なる可能性もある。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An online newspaper has placed a navigation bar visually in the top left corner of
-                  the page directly below its initial logo. In the source code, the navigation elements
-                  appear after the elements encoding the logo. 
+               <li>あるオンライン新聞の表示では、ナビゲーションバーをイニシャルロゴの直下であるページの左上に配置している。ソースコードでも、ナビゲーションの要素はロゴを指定している要素の後になっている。 
                </li>
                
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
-                  <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18359">Microsoft Internet Explorer Developer Toolbar</a>. Allows examination of script-generated DOM in Microsoft Internet Explorer.
+                  <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18359">Microsoft Internet Explorer Developer Toolbar</a> を使用すると、Microsoft の Internet Explorer でスクリプトによって生成された DOM のチェックが可能になる。
                </li>
                
                <li>
-                  <a href="http://getfirebug.com/">Firebug</a>. Allows examination of script-generated DOM in Firefox.
+                  <a href="http://getfirebug.com/">Firebug</a> を使用すると、Firefox でスクリプトによって生成された DOM のチェックが可能になる。
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 1</div>
+               <div>                  
+                  <p>「Microsoft Internet Explorer Developer Toolbar」はページが削除されているが、代わりに開発者ツールを使用できる。詳細については、<a href="https://msdn.microsoft.com/ja-jp/library/dd565628%28v=vs.85%29.aspx">Internet Explorer 開発者ツールを理解する</a>を参照のこと。
+                  </p>                  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 2</div>
+               <div>                  
+                  <p>Firefox のアドオン「Firebug」は開発が終了している。代わりに開発ツールを使用できる。<a href="https://developer.mozilla.org/ja/docs/Tools">開発ツール | MDN</a> も参照のこと。
+                  </p>                  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 3</div>
+               <div>                  
+                  <p>Google Chrome の場合、類似のツールが利用できる。詳細については、<a href="https://developers.google.com/web/tools/chrome-devtools/?hl=ja">Chrome DevTools &nbsp;|&nbsp; Tools for Web Developers &nbsp;|&nbsp; Google Developers</a> を参照のこと。
+                  </p>                  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 4</div>
+               <div>                  
+                  <p>Edge の場合も、類似のツールが利用できる。詳細については、<a href="https://docs.microsoft.com/ja-jp/microsoft-edge/devtools-guide">Microsoft Edge Developer Tools - Microsoft Edge Development | Microsoft Docs</a> を参照のこと。
+                  </p>                  
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H4">H4: Creating a logical tab order through links, form controls, and objects</a></li>
+               <li><a href="../html/H4">H4: リンク、フォームコントロール、及びオブジェクトを通して、論理的なタブ順序を作成する</a></li>
                
-               <li><a href="../general/G57">G57: Ordering the content in a meaningful sequence</a></li>
+               <li><a href="../general/G57">G57: コンテンツを意味のある順序で並べる</a></li>
                
-               <li><a href="../general/G59">G59: Placing the interactive elements in an order that follows sequences and relationships
-                     within the content</a></li>
+               <li><a href="../general/G59">G59: コンテンツ内のシーケンスと関連性に応じた順序でインタラクティブ要素を配置する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Visually examine the order of the content in the Web page as it is presented to the
-                     end user.
+                  <li>エンドユーザに提供されているウェブページのコンテンツの順序を視覚的に検査する。
                   </li>
                   
-                  <li>Examine the elements in the DOM using a tool that allows you to see the DOM. </li>
+                  <li>DOM を表示できるツールを使って、DOM 内の要素を検査する。</li>
                   
-                  <li>Ensure that the order of the content in the source code sections match the visual
-                     presentation of the content in the Web page. (e.g., for an English language page the
-                     order is from top to bottom and from left to right.) " 
+                  <li>ソースコードセクション上でのコンテンツの順序が、ウェブページのコンテンツの視覚的提示と一致していることを確認する (例: 英語のページの場合、順序は上から下へ、左から右へとなる)。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Step #3 is true. </li>
+                  <li>#3 の結果が真である。</li>
                   
                </ul>
                
