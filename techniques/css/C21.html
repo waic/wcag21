@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C21: Specifying line spacing in CSS</title>
+      <title>C21: 行送り幅を CSS で指定する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,87 +10,79 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C20">Previous Technique: C20</a></li>
-            <li><a href="C22">Next Technique: C22</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C20">前の達成方法: C20</a></li>
+            <li><a href="C22">次の達成方法: C22</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Specifying line spacing in CSS</h1>
+      <h1>行送り幅を CSS で指定する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support CSS</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>CSS をサポートする全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/text-spacing">Success Criterion 1.4.12: Text Spacing</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/text-spacing">達成基準 1.4.12: テキストの間隔</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Many people with cognitive disabilities have trouble tracking lines of text when a
-               block of text is single spaced. Providing spacing between 1.5 to 2 allows them to
-               start a new line more easily once they have finished the previous one.
+            <h2>解説</h2>
+            <p>認知障害を持つ人の多くは、行間なしのテキストのブロックの中で各行を目で追っていくことに困難を覚える。 行の高さが文字サイズの 1.5～2 倍程度あると、前の行を読み終えて次の行へより簡単に読み進めていけるようになる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Setting the element to 1.5 line height. In the style sheet set the characteristics
-                  of the element.
-               </p><pre xml:space="preserve">p { line-height: 150%; }</pre><p>In the content the element will now be 1.5 line height, throughout the document.</p><pre xml:space="preserve">&lt;p&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
+               <h3>例 1</h3>
+               <p>要素の行の高さを 1.5 に設定。スタイルシートで要素の特性を設定している。
+               </p><pre xml:space="preserve">p { line-height: 150%; }</pre><p>コンテンツ側では、その要素はドキュメント全体を通して行の高さが 1.5 になる。</p><pre xml:space="preserve">&lt;p&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>Setting a class to 1.5 line height (space-and-a-half line spacing). In the stylesheet,
-                  define the class.
-               </p><pre xml:space="preserve">p.tall {line-height:150%}</pre><p>In the content, call up the class = "left".</p><pre xml:space="preserve">&lt;p class="tall"&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
+               <h3>例 2</h3>
+               <p>クラスを指定した要素の行の高さを 1.5 (行送り 1.5 文字) に設定。スタイルシートでクラスの表示を定義。
+               </p><pre xml:space="preserve">p.tall {line-height:150%}</pre><p>コンテンツ側では、以下のようにクラスを指定している。</p><pre xml:space="preserve">&lt;p class="tall"&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>Setting a class to double-spaced line height. In the stylesheet, define the class.</p><pre xml:space="preserve">p.tall {line-height:200%}</pre><p>In the content, call up the class = "right".</p><pre xml:space="preserve">&lt;p class="tall"&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
+               <h3>例 3</h3>
+               <p>行間を 1 行分空けるクラスを設定する。スタイルシートでクラスの表示を定義。</p><pre xml:space="preserve">p.tall {line-height:200%}</pre><p>コンテンツ側では、以下のようにクラスを指定している。</p><pre xml:space="preserve">&lt;p class="tall"&gt; Lorem ipsum dolor sit …  &lt;/p&gt;</pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Open content in a browser.</li>
+                  <li>ブラウザでコンテンツを開く。</li>
                   
-                  <li>Check that the spacing between lines in blocks of text is between 1.5 and 2.</li>
+                  <li>テキストのブロック内の行送りが 1.5 と 2 の間であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Test Procedure #2 is true.</li>
+                  <li>#2 の結果が真である。</li>
                   
                </ul>
                
