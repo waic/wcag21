@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C9: Using CSS to include decorative images</title>
+      <title>C9: 装飾目的の画像を付加するために、CSS を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,52 +10,42 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C8">Previous Technique: C8</a></li>
-            <li><a href="C12">Next Technique: C12</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C8">前の達成方法: C8</a></li>
+            <li><a href="C12">次の達成方法: C12</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using CSS to include decorative images</h1>
+      <h1>装飾目的の画像を付加するために、CSS を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Any technology that can use CSS to include images. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>画像を表示させるために CSS が利用可能なウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> The objective of this technique is to provide a mechanism to add purely
-               decorative images and images used for visual formatting to Web content
-               without requiring additional markup within the content. This makes it
-               possible for assistive technologies to ignore the non-text content. Some
-               user agents can ignore or turn off CSS at the user's request, so that
-               background images included with CSS simply "disappear" and do not interfere
-               with display settings such as enlarged fonts or high contrast settings. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、単に装飾することだけが目的の画像と、マークアップを追加することなくウェブコンテンツに対して視覚的な整形を行うための画像を追加する方法を示すことである。これによって、支援技術が非テキストコンテンツを無視することが可能になる。文字サイズの拡大やハイコントラストの設定を妨げている CSS の背景画像を消すことができるように、一部のユーザエージェントでは、利用者の要求に応じて CSS を無視または無効にすることができる。
             </p>
-            <p>Background images can be included with the following CSS properties:</p>
+            <p>背景画像は、以下の CSS プロパティで表示させることができる:</p>
             <ul>
                
                <li> 
@@ -67,8 +57,8 @@
                </li>
                
                <li>
-                  								       content, combined with the :before and
-                  :after pseudo-elements, 
+                  								       content (:before 及び
+                  :after 疑似要素と組み合わせて使用), 
                </li>
                
                <li> 
@@ -76,17 +66,21 @@
                </li>
                
             </ul>
-            <p>Note: This technique is not appropriate for any image that conveys
-               information or provides functionality, or for any image primarily intended
-               to create a specific sensory experience.
+            <p>注記: この達成方法は、情報を伝えている画像、なんらかの機能を持っているような画像、主として知覚的なエクスペリエンスを作り出すことを目的としているような画像に対しては使用すべきではない。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>   
+                  <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Pseudo-elements">MDN の疑似要素 (Pseudo-elements)</a> に示されているように、<code>:after</code> 及び <code>:after</code> 疑似要素について、コロンを 1 個のみ用いるのは古い、互換性のための構文である。コロンを 2 個置くのが現在の正式な構文であることに注意されたい。
+                  </p>  
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-background-image-for-an-html-page-">
-               <h3>Example 1: Background image for an HTML page </h3>
-               <p> The stylesheet for a Web page specifies a background image for the
-                  whole page.
+               <h3>例 1: HTML ページの背景画像</h3>
+               <p>以下のスタイルシートは、ページ全体の背景画像を指定している。
                </p><pre xml:space="preserve">…
   &lt;style type="text/css"&gt;
     body { background: #ffe url('/images/home-bg.jpg') repeat; }
@@ -96,19 +90,15 @@
 ...
 </pre></section>
             <section class="example" id="example-2-background-image-with-css-for-image-rollovers-">
-               <h3>Example 2: Background image with CSS for image rollovers </h3>
-               <p> The stylesheet for a Web page uses the CSS background
-                  property to create a decorative rollover effects when a user hovers
-                  the mouse pointer over a link. 
+               <h3>例 2: CSS によるロールオーバーの背景画像</h3>
+               <p>以下のスタイルシートは、利用者がマウスポインタをリンクの上に置いたときの装飾的なロールオーバー効果を出すために CSS の background プロパティを使用している。 
                </p><pre xml:space="preserve">a:hover { background: #ffe url('/images/hover.gif') repeat; color: #000;
   text-decoration: none;
 }</pre></section>
             <section class="example" id="example-3-background-images-with-css-to-create-rounded-corners-on&#xA;----------------------------tabs-or-other-elements-">
-               <h3>Example 3: Background images with CSS to create rounded corners on
-                  tabs or other elements 
+               <h3>例 3: タブなどの要素の角を丸くするために使われる CSS による背景画像 
                </h3>
-               <p> The styleseet for a Web page uses the CSS background
-                  property to create rounded corners on elements. 
+               <p>以下のスタイルシートでは、要素の角を丸くするために、CSS の background プロパティを使用している。
                </p><pre xml:space="preserve">…
   &lt;style type="text/css"&gt;
     div#theComments { width:600px; }
@@ -137,53 +127,64 @@
 …</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> The <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background">background property in the CSS 2 specification</a> 
                   
                </li>
                
-               <li> The <a href="https://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-background">HTML 4.01 specification</a> states that the
-                  background attribute of the body
-                  element is deprecated 
+               <li><a href="https://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-background">HTML 4.01 specification</a> には、body 要素の background 属性は非推奨であると記述されている。
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 1</div>
+               <div>   
+                  <p>「background property」は、<a href="https://www.w3.org/TR/css-backgrounds-3/#the-background">CSS Backgrounds and Borders Module Level 3§2.10. Backgrounds Shorthand: the background property</a> で再定義されている。この仕様は W3C 勧告ではないが、<a href="https://www.w3.org/TR/css-2020/">CSS Snapshot 2020</a> によれば、今日の CSS を構成する仕様として位置づけられている。
+                  </p>  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 2</div>
+               <div>   
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。HTML Standard において、body 要素の background 属性は、<a href="https://html.spec.whatwg.org/multipage/obsolete.html#attr-background">HTML Standard§16.2 Non-conforming features</a> で不適合な機能として定義されている。
+                  </p>  
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="C30">C30: Using CSS to replace text with images of text and providing user interface controls
-                     to switch</a></li>
+               <li><a href="C30">C30: テキストを文字画像に置き換えるために CSS を利用し、切り替えのためのユーザインタフェースコントロールを提供する
+</a></li>
                
-               <li><a href="../failures/F3">F3: Failure of Success Criterion 1.1.1 due to using CSS to include images that convey
-                     important information</a></li>
+               <li><a href="../failures/F3">F3: 達成基準 1.1.1 の失敗例 － 重要な情報を伝える画像を付加するために、CSS を使用している</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Check for the presence of decorative images </li>
+                  <li>装飾目的の画像の存在を確認する。 </li>
                   
-                  <li> Check that they are included with CSS </li>
+                  <li>それらが CSS に含まれていることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> If #1 is true, then #2 is true. </li>
+                  <li>#1 の結果が真である場合に、#2 の結果が真である。</li>
                   
                </ul>
                
