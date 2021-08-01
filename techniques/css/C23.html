@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C23: Specifying text and background colors of secondary content such as banners, features
-         and navigation in CSS while not specifying text and background colors of the main
-         content
+      <title>C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,88 +11,63 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C22">Previous Technique: C22</a></li>
-            <li><a href="C24">Next Technique: C24</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C22">前の達成方法: C22</a></li>
+            <li><a href="C24">次の達成方法: C24</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Specifying text and background colors of secondary content such as banners, features
-         and navigation in CSS while not specifying text and background colors of the main
-         content
+      <h1>メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that use CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>CSS を用いているウェブページ</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Some Web pages use colors to identify different groupings. The objective of this technique
-               is to allow users to select specific color combinations for the text and background
-               of the main content while retaining visual clues to the groupings and organization
-               of the web page. When a user overrides the foreground and background colors of all
-               the text on a page, visual clues to the grouping and organization of the Web page
-               may be lost, making it much more difficult to understand and use. 
+            <h2>解説</h2>
+            <p>ウェブページの中には、色を用いてコンテンツをグループ分けをしているものもある。この達成方法の目的は、ウェブページの構成やグループ分けを示す視覚的な情報を残しつつも、メインコンテンツ部分においては特定の文字色と背景色の組み合わせを利用者が選択できるようにすることである。利用者がページ上のすべてのテキストの文字色と背景色を上書きした場合、ウェブページの構成とグループ分けに関する情報は失われる可能性があり、そうなるとそのページを利用することも理解することも難しくなる。 
             </p>
-            <p>When an author does not specify the colors of the text and background of the main
-               content, it is possible to change the colors of those regions in the browser without
-               the need to override the colors with a user style sheet. Specifying the text and background
-               colors of secondary content means that the browser will not override those colors.
+            <p>コンテンツ制作者がメインコンテンツ部分の文字色と背景色を指定しなければ、ユーザスタイルシートを使うことなしに、ブラウザでそれらの色を変更することが可能になる。主要コンテンツ以外に対して文字色と背景色を指定するということは、ブラウザはそれらの色を変更しないことを意味する。
             </p>
-            <p>With this technique the author uses the default text color and background color of
-               the main area. As a result the colors are completely determined by the user agent
-               via the user's color preferences. The user can ensure that the color selection best
-               meets his needs and provides the best reading experience. 
+            <p>この達成方法を使うということは、コンテンツ制作者はメインコンテンツの領域に対してデフォルトの文字色と背景色の組み合わせを使うことになる。結果として、配色は利用者の好みの色に設定したユーザエージェントによって全面的に決められる。つまり、利用者のニーズに最も合う色の選択となり、利用者にとって最も読みやすい配色となる。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>An HTML Web page uses CSS to specify the text and background colors of all secondary
-                  content such as navigation bars, menu bars, and the table of contents. Neither the
-                  text color nor background of the main content is specified. The user sets their own
-                  color preferences in the browser so that they view the main content in colors and
-                  contrasts that work well for them. The distinction between the separate sections of
-                  the page are still visually obvious. 
+               <h3>例 1</h3>
+               <p>ある HTML のウェブページでは、ナビゲーションバー、メニューバー及び目次のような主要ではないコンテンツに対して、テキストと背景の色を指定するために CSS を使用している。しかし、メインコンテンツ部分に対しては、テキストにも背景にも色は指定していない。利用者は、自分に合った色とコントラストでメインコンテンツを閲覧するために、ブラウザで自分好みの色を設定する。ページの個々のセクションは、それでもなお視覚的にはっきり区別できる。 
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A music magazine has an article that is blue text on a white background. The site
-                  provides a link near the beginning of the page which assigns a different style sheet
-                  to the page. The new style sheet does not have any colors specified for the text or
-                  background.
+               <h3>例 2</h3>
+               <p>ある音楽雑誌のサイトには、白い背景に青い文字の記事がある。そのサイトのページの先頭近くでは、そのページに対して異なるスタイルシートを割り当てるリンクを提供している。新しいスタイルシートでは、テキストや背景に対しては色を指定していない。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -105,41 +78,36 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G148">G148: Not specifying background color, not specifying text color, and not using technology
-                     features that change those defaults</a></li>
+               <li><a href="../general/G148">G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない</a></li>
                
-               <li><a href="../general/G156">G156: Using a technology that has commonly-available user agents that can change the foreground
-                     and background of blocks of text</a></li>
+               <li><a href="../general/G156">G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する</a></li>
                
-               <li><a href="../general/G175">G175: Providing a multi color selection tool on the page for foreground and background colors</a></li>
+               <li><a href="../general/G175">G175: 背景色及び前景色のための複数色選択ツールをページ上で提供する</a></li>
                
-               <li><a href="C25">C25: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying
-                     text and text-background colors</a></li>
+               <li><a href="C25">C25: テキスト及び背景の色は指定せずに、ウェブページの各領域の範囲を明確にするためのボーダーやレイアウトを CSS で指定する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>Change the text, link and background colors in the browser settings so they are different
-                        from the default color and different from those specified in the secondary content.
+                     <p>ブラウザの設定でテキスト、リンク及び背景の色を変更し、デフォルトの色と異なる、補助的なコンテンツに指定されている色とも異なるようする。
                      </p>
                      
                      <div class="note">
-                        <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                        <div role="heading" class="note-title marker" aria-level="4">注記</div>
                         <div>
                            
-                           <p>Do not select the option that tells the browser to ignore the colors specified in
-                              the page. 
+                           <p>ブラウザがそのページに指定されている色を無視するような設定にはしないこと。 
                            </p>
                            
                         </div>
@@ -147,21 +115,20 @@
                      
                   </li>
                   
-                  <li>Check that the main content uses the new text, link and background colors. </li>
+                  <li>メインコンテンツが新しいテキスト、リンク及び背景の色を使用していることを確認する。</li>
                   
-                  <li>Check that the colors of the text, links and backgrounds in the secondary content
-                     has not changed. 
+                  <li>補助的なコンテンツのテキスト、リンク及び背景の色が変わらないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true. </li>
+                  <li>#2 及び #3 の結果が真である。</li>
                   
                </ul>
                
