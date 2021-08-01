@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H56: Using the dir attribute on an inline element to resolve problems
-         with nested directional runs
+      <title>H56: 入れ子になったテキストの表記方向に伴う問題を解決するために、インライン要素の dir 属性を使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,81 +11,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H54">Previous Technique: H54</a></li>
-            <li><a href="H57">Next Technique: H57</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H54">前の達成方法: H54</a></li>
+            <li><a href="H57">次の達成方法: H57</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the <code class="att">dir</code> attribute on an inline element to resolve problems
-         with nested directional runs
+      <h1>入れ子になったテキストの表記方向に伴う問題を解決するために、インライン要素の <code class="att">dir</code> 属性を使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Sufficient as a way to meet <a href="../general/G57">G57: Ordering the content in a meaningful sequence</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG20/Overview.html#content-structure-separation-sequence">達成基準 1.3.2: 意味のある順序</a></span>  (<a href="https://waic.jp/docs/NOTE-WCAG20-TECHS-20120103/G57.html">G57: コンテンツを意味のある順序で並べる</a>の達成方法として十分) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to identify changes in the text direction of text
-               that includes nested directional runs by providing the <code class="att">dir</code> attribute on
-               inline elements. A nested directional run is a run of text that includes mixed directional
-               text, for example, a paragraph in English containing a quoted Hebrew sentence which
-               in turn includes an English phrase. Use of the <code class="att">dir</code> attribute on an enclosing <code class="el">span</code> or other inline element may be necessary because the <a href="https://www.w3.org/International/articles/inline-bidi-markup/">Unicode bidirectional algorithm</a> can produce undesirable results when mixed
-               directional text contains spaces or punctuation. The concepts used in this technique
-               are described in <a href="https://www.w3.org/International/articles/inline-bidi-markup/">What you need to know about the bidi algorithm and inline markup</a>. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、入れ子になった表記方向が含まれるテキストについて、インライン要素の <code class="att">dir</code> 属性で方向の変化を指定することである。入れ子になったテキストの表記方向とは、たとえば英語のパラグラフで、文章が次々と続いている中にヘブライ語の引用文が含まれるといった、表記方向の異なるテキストが混在したテキストの表記方向のことである。表記方向の異なるテキストが混在し、スペースや句読点が含まれていると、<a href="https://www.w3.org/International/articles/inline-bidi-markup/">Unicode の双方向アルゴリズム</a>だけでは望ましくない結果になってしまうので、テキストを <code class="el">span</code> 要素や他のインライン要素で囲み、<code class="att">dir</code> 属性を指定する必要がある。この達成方法の考え方は、<a href="https://www.w3.org/International/articles/inline-bidi-markup/">What you need to know about the bidi algorithm and inline markup</a> で説明されている。
             </p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>上記の「What you need to know about the bidi algorithm and inline markup」は、「Inline markup and bidirectional text in HTML」とタイトルが変更されている。</p></div></div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>This example defines the text direction of a nested, mixed-direction phrase, in Hebrew
-                  and English, to be right-to-left. Because the whole quote is in Hebrew, and therefore
-                  runs right to left, the text "W3C" and the comma should appear to the left of (i.e.,
-                  after) the Hebrew text, like this:
+               <h3>事例 1</h3>
+               <p>この事例では、ヘブライ語と英語のように、混在したテキストの表記方向を持つ文章で、右から左へと表記すべき入れ子になったテキストの表記方向を明らかにする。引用全体はヘブライ語であり、右から左に表記されるが、「W3C」というテキストとカンマは、次のようにヘブライ語のテキストの左側に (すなわち、後ろに) 現れるべきである:
                </p>
                <p>The title is "<span lang="he">פעילות הבינאום, W3C</span>" in Hebrew.
                </p>
-               <p>Visually-ordered ASCII version (RTL text in uppercase, LTR in lower):</p>
+               <p>視覚的な順序に基づく ASCII (右から左へ表記するテキストは大文字で、左から右へ表記するテキストは小文字で書く) では、次の通りである:</p>
                <p>the title is "w3c ,YTIVITCA NOITAZILANOITANRETNI" in hebrew.</p>
-               <p>The Unicode bidirection algorithm alone is insufficient to achieve the right result,
-                  and leaves the text 'W3C' on the right side of the quote:
+               <p>正しく表示するためには、Unicode の双方向アルゴリズムだけでは不十分なため、次に示すように「W3C」というテキストが引用の中で右側に置かれたままである:
                </p>
                <p>The title is "<span lang="he">פעילות הבינאום</span>, W3C" in Hebrew.
                </p>
-               <p>Visually-ordered ASCII version:</p>
+               <p>視覚的な順序に基づく ASCII では、次の通りである:</p>
                <p>the title is "YTIVITCA NOITAZILANOITANRETNI, w3c" in hebrew.</p>
-               <p>The following markup will produce the expected result:</p><pre xml:space="preserve">
+               <p>次のようにマークアップすることによって、期待する結果が得られる。</p><pre xml:space="preserve">
 &lt;p&gt;The title says "&lt;span lang="he" 
 dir="rtl"&gt;פעילות הבינאום, W3C&lt;/span&gt;" in Hebrew.&lt;/p&gt; </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -103,41 +88,37 @@ dir="rtl"&gt;פעילות הבינאום, W3C&lt;/span&gt;" in Hebrew.&lt;/p&gt;
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H34">H34: Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction
-                     inline</a></li>
+               <li><a href="H34">H34: インラインでテキストの方向を混在させるために、Unicode の right-to-left mark (RLM) 又は left-to-right mark (LRM) を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the text direction of text in the document</li>
+                  <li>文書内のテキストの表記方向を調べる。</li>
                   
-                  <li>If the text direction is right-to-left, check that for the ancestor element that
-                     has a <code class="att">dir</code> attribute, the attribute has the value "rtl"
+                  <li>テキストの表記方向が右から左である場合、属性の値が "rtl" である、<code class="att">dir</code> 属性を持つ先祖要素を確認する。
                   </li>
                   
-                  <li>If the text direction is left-to-right, check that there is no ancestor element
-                     with a <code class="att">dir</code> attribute, or that for the ancestor element that has a
-                     <code class="att">dir</code> attribute, the attribute has the value "ltr"
+                  <li>テキストの表記方向が左から右である場合、<code class="att">dir</code> 属性を持つ先祖要素がない、又は属性の値が "ltr" である、<code class="att">dir</code> 属性を持つ先祖要素がないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true for all text.</li>
+                  <li>全てのテキストに対して 2. 及び 3. の結果が真である。</li>
                   
                </ul>
                
