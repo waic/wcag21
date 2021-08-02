@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C24: Using percentage values in CSS for container sizes</title>
+      <title>C24: コンテナのサイズに CSS のパーセント値を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,93 +10,82 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C23">Previous Technique: C23</a></li>
-            <li><a href="C25">Next Technique: C25</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C23">前の達成方法: C23</a></li>
+            <li><a href="C25">次の達成方法: C25</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using percentage values in CSS for container sizes</h1>
+      <h1>コンテナのサイズに CSS のパーセント値を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that use CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient as a way to meet <a href="../general/G146">G146: Using liquid layout</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>CSS を用いているウェブページ</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (<a href="../general/G146">G146: リキッドレイアウトを使用する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to enable users to increase the size of text without
-               having to scroll horizontally to read that text. To use this technique, an author
-               specifies the width of text containers using percent values. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、テキストを読むためにはテキストサイズ大きくする必要がある利用者が、1 行のテキストを横スクロールなしで読めるようにすることである。この達成方法を用いるには、コンテンツ制作者はテキストコンテナの幅をパーセント値で指定する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A newspaper has content in the middle of the window. The width of the container for
-                  the content is specified in page percentages, so that when a person with low vision
-                  increases the font size the text reflows inside the browser window at the new size
-                  and there is no need to scroll horizontally. 
+               <h3>例 1</h3>
+               <p>ある新聞サイトでは、画面の中央にコンテンツを表示させている。コンテンツのコンテナ幅は、ページ全体に対するパーセンテージで指定しているため、ロービジョンの人がフォントサイズを大きくしたときも、ブラウザ画面のサイズにあわせてテキストが折り返しされ、横スクロールバーは表示されない。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="C20">C20: Using relative measurements to set column widths so that lines can average 80 characters
-                     or less when the browser is resized</a></li>
+               <li><a href="C20">C20: ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that all container widths are specified as percentage values. </li>
+                  <li>全てのコンテナ幅をパーセント値で指定していることを確認する。</li>
                   
-                  <li>Increase the text size to 200%. </li>
+                  <li>テキストサイズを 200% に増やす。</li>
                   
-                  <li>Check to make sure that horizontal scrolling is not required to read any line of text.
-                     
+                  <li>どの行のテキストを読むにも、横スクロールの必要がないことを確認する。                     
                   </li>
                   
-                  <li>Check that all text is still visible on the page. </li>
+                  <li>全てのテキストが、ページ上に見えたままであることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1, #3, and #4 are true. </li>
+                  <li>#1、#3 及び #4 の結果が真である。</li>
                   
                </ul>
                
