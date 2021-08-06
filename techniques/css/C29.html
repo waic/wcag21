@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C29: Using a style switcher to provide a conforming alternate version</title>
+      <title>C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,142 +10,93 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C28">Previous Technique: C28</a></li>
-            <li><a href="C30">Next Technique: C30</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C28">前の達成方法: C28</a></li>
+            <li><a href="C30">次の達成方法: C30</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a style switcher to provide a conforming alternate version</h1>
+      <h1>適合している代替版を提供するために、スタイルスイッチャーを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>CSS used with client-side or server-side scripting. </p>
-            <p>This technique is not referenced from any Understanding document.</p>
+            <h2>適用 (対象)</h2>
+            <p>クライアントサイド又はサーバーサイドのスクリプトとともに使用される CSS</p>
+            <p>この達成方法は、解説書から参照されていない。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When some aspect of the default presentation of a Web page does not meet a Success
-               Criterion, it is possible to meet that requirement using the "Alternate Version" clause
-               in the conformance requirements (Conformance Requirement 1). For some requirements,
-               invoking a style switcher via a link or control on the page that can adjust the presentation
-               so that all aspects of the page conform at the level claimed allows authors to avoid
-               having to provide multiple versions of the same information.
+            <h2>解説</h2>
+            <p>ウェブページのデフォルトの提示が部分的に達成基準を満たさない場合、「適合要件」の条項 (適合要件 1) にある「代替版」を用意することで必要条件を満たすことができる。必要条件によっては、ページのあらゆる側面が主張したレベルに適合するように提示を調整できるリンク又はコントロールによってスタイルスイッチャーを呼び出すことで、コンテンツ制作者が同じ情報の複数バージョンの提供を避けることを可能にする。
             </p>
-            <p>The objective of this technique is to demonstrate how CSS can be used in combination
-               with scripting to provide conforming alternate versions of a Web page. In this technique,
-               an author provides alternative views of the content by providing controls that adjust
-               the CSS that is used to control the visual presentation of content. Controls provided
-               within the Web page allow users to select or modify the presentation in a way that
-               meets the success criterion at the level claimed. This makes it possible for different
-               visual presentations to be selected by users in situations such as the following:
+            <p>この達成方法の目的は、ウェブページの適合している代替版を提供するために、スクリプトと組み合わせて CSS を使う方法を示すことである。この達成方法では、コンテンツの提示を制御するために使用されている CSS を変更するコントロールを提供することで、コンテンツ制作者はコンテンツの代替表示を提供する。ウェブページ内で提供されるコントロールは、そのレベルで要求される達成基準を満たすことができるような提示方法を利用者が選択及び変更することを可能にする。これによって、以下のような状況において、利用者が異なる提示方法を選択できるようになる:
             </p>
             <ul>
                
-               <li>the user may not be able to adjust browser or operating system settings, due to a
-                  lack of familiarity or rights 
+               <li>パソコンの知識や権限がないことが原因で、利用者はブラウザや OS の設定を調整できないかもしれない 
                </li>
                
-               <li>the text is provided in a manner that does not respond to browser or operating system
-                  settings (such as text within an image) 
+               <li>テキストが、ブラウザや OS の設定では対処できない方法で提供されている (テキストが画像の中に書き込まれているなど) 
                </li>
                
-               <li>the default presentation of the content does not include sufficient contrast for some
-                  users 
+               <li>コンテンツのデフォルトの提示では、一部の利用者に対して十分なコントラストがない 
                </li>
                
             </ul>
-            <p>For this technique to be used successfully, three things must be true. </p>
+            <p>この達成方法で達成させるには、以下の 3 項目を満たしていなければならない。</p>
             <ol>
                
-               <li>The link or control on the original page must itself meet the success criteria to
-                  be met via the alternate presentation. For example, if a style switcher is used to
-                  provide increased font sizes and the control is presented using a small font, users
-                  may not be able to activate the control and view the alternate presentation. 
+               <li>オリジナルのページのリンク又はコントロール自身は、代替の提示を通して達成基準を満たしていなければならない。例えば、スタイルスイッチャーが大きなフォントサイズを提供するために使用され、かつそのコントロールが小さいフォントを用いて提示される場合、利用者はそのコントロールを作動させてその代替の提示を見ることができないかもしれない。 
                </li>
                
-               <li>The new page must contain all the same information and functionality as the original
-                  page. 
+               <li>新しいページは、オリジナルのページと同じすべての情報と機能を含んでいなければならない。 
                </li>
                
-               <li>The new page must conform to all of the Success Criteria for the desired level of
-                  conformance. For example, an alternate stylesheet can not be used to meet one requirement
-                  if it causes a different requirement to no longer conform. 
+               <li>新しいページは、希望する適合レベルのすべての達成基準に適合しなければならない。たとえば、ひとつの要求は満たすが、それを使うと別の要求に適合しなくなってしまうような代替スタイルシートは使用できない。 
                </li>
                
             </ol>
-            <p>When using a style switcher, it is important to consider the following challenges
-               and limitations: 
+            <p>スタイルスイッチャーを使う場合は、以下の課題と制限について検討することが重要である: 
             </p>
             <ul>
                
-               <li>The number and type of changes that a user can make is limited to the scope of the
-                  controls provided by the author of the Web page. A variety of presentation and preferences
-                  should be provided in order to address the needs of as wide an audience as possible.
-                  However, it is also important for authors to consider interactions between preferences
-                  and the complexity for users that might result from providing large numbers of options
-                  to users.
+               <li>利用者が行うことのできる変更の数や形式は、ウェブページのコンテンツ制作者によって制御される範囲に限定される。できる限り多くの利用者のニーズに対応できるようにするために、さまざまな提示と設定項目が提供されるべきである。しかしながら、コンテンツ制作者は、利用者に多くのオプションを提供することに起因する、利用者にとっての設定可能な項目と複雑さの相互作用について熟考することも重要である。
                </li>
                
-               <li>Maintaining the user's preference from one page to the next may be achieved by storing
-                  a cookie on the user's machine (see Resources section for more information) or by
-                  including their preferences in a profile saved on the Web server by passing a query
-                  string parameter, or by other means. 
+               <li>あるページから別のページに移動しても利用者の設定を保持しておくには、利用者の機器にクッキーで保存したり (詳細はリソースのセクションを参照)、ウェブサーバーに保存されるプロファイルにクエリー文字列として渡して格納するなどの方法で実現できる場合がある。 
                </li>
                
-               <li>The technical method used to implement a style switcher may be subject to the support
-                  and availability of one or more technologies on the user's machine (for example, many
-                  client-side solutions require support for both JavaScript and CSS). Unless these technologies
-                  are relied upon for conformance, authors should consider using server-side technologies
-                  where client-side support and availability of technologies can not be assured. Alternatively,
-                  the use of techniques which ensure that content will transform gracefully when one
-                  or more of the technologies used are not available can be an effective way to enhance
-                  pages when support for these technologies is not relied upon for conformance.
+               <li>スタイルスイッチャーを実装するための技術的手法は、利用者の環境においていくつかの技術が利用可能であることを前提としている (たとえば、多くのクライアントサイドソリューションは、JavaScript と CSS の両方が利用可能であることを必要とする)。これらのウェブコンテンツ技術が適合のために当てにできる場合を除き、クライアントサイドのサポートとウェブコンテンツ技術の利用可能性が保証されない場合には、コンテンツ制作者はサーバーサイドのウェブコンテンツ技術を使うことを検討すべきである。その代案としては、これらのウェブコンテンツ技術のサポートを適合のために当てにできない場合に、使用されているいくつかのウェブコンテンツ技術が有効でなくてもコンテンツが確実に適切な表現に変換されるような達成方法を使うことが、より良いページにするための効果的な方法となる。
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-using-a-javascript-control-to-apply-a-different-external-css-file-">
-               <h3>Example 1: Using a JavaScript control to apply a different external CSS file </h3>
-               <p>This example is of a page that provides links to change text and background colors
-                  for the page via JavaScript. The links should only be inserted if JavaScript is supported
-                  by and available on the user's system. Otherwise, selecting the links will not result
-                  in the desired changes. This can be achieved by using script to insert the links themselves
-                  (which means that the links would only be present when scripting is supported and
-                  available). 
+               <h3>例 1: 異なる外部スタイルシートファイルを適用するために JavaScript のコントロールを使う</h3>
+               <p>この例では、文字色と背景色を変更するリンクを JavaScript で提供する。そのリンクは、利用者の環境で JavaScript がサポートされており、かつ有効な場合にのみ挿入されるようにすべきである。これは、そのリンク自身を挿入するためにスクリプトを使う (つまり JavaScript がサポートされており、かつ有効な場合にのみリンクが表示される) ことで実現できる。 
                </p>
-               <p>The following code shows the JavaScript-dependent color-change links and a snippet
-                  of other content in the Web page, the associated style sheet rules, and the JavaScript
-                  that changes the style sheet in use when a color-change link is selected. 
+               <p>以下のコードは、JavaScript に依存した色を変更するリンク並びに、ウェブページのコンテンツの一部、関連するスタイルシート規則、及び色を変更するリンクが選択されたときに使われるスタイルシートを変更する JavaScript を示している。 
                </p>
-               <p>The example applies only to the current page view. In a production environment, it
-                  would be advisable to save this preference in a cookie or server-side user profile,
-                  so that users would only have to make the selection once per site. 
+               <p>この例は、現在のページの表示だけに適用される。実稼働環境では、利用者がそのサイトで一度選択すれば済むように、その設定をクッキーまたはサーバーサイドのユーザプロファイルに保存することが望ましい。
                </p>
-               <p>The XHTML components:</p><pre xml:space="preserve">
+               <p>XHTML (抜粋):</p><pre xml:space="preserve">
 In &lt;head&gt; section:
 
   &lt;link href="main.css" rel="stylesheet" type="text/css" /&gt;
@@ -173,7 +124,7 @@ In &lt;body&gt; section:
   &lt;p&gt;Last week's conference presented an impressive line-up of speakers...&lt;/p&gt;
 &lt;/div&gt;
 
-</pre><p>The CSS components:</p><pre xml:space="preserve">
+</pre><p>CSS (抜粋):</p><pre xml:space="preserve">
 In main.css:
 
 body{ font-family: Geneva, Arial, Helvetica, sans-serif; margin: 2em; }
@@ -233,34 +184,28 @@ body, h1, h2, h3, p, a {
     color:#000000; 
     background-color:#FFFFFF; 
 }
-  </pre><p>The JavaScript components:</p><pre xml:space="preserve">
+  </pre><p>JavaScript (抜粋):</p><pre xml:space="preserve">
 function changeColors (newCSS)
 {
   document.getElementById('currentCSS').href = newCSS; 
 }
-</pre><p class="working-example">A working example of this code, <a href="../../working-examples/script-swap-css/">Using a JavaScript control to apply a different external CSS file</a>, is available.
+</pre><p class="working-example">このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-swap-css/">異なる外部スタイルシートファイルを適用するために JavaScript のコントロールを使う</a>
                </p>
             </section>
             <section class="example" id="example-2-using-a-client-side-javascript-to-change-a-css-property-">
-               <h3>Example 2: Using a client-side JavaScript to change a CSS property </h3>
-               <p>This example can be used for simple changes to a section of content and may be less
-                  practical for complex sites or pages. The example uses a client-side JavaScript to
-                  change the class name to visually present the user's color selection (from a defined
-                  set of options) as a background for highlighting specific content. 
+               <h3>例 2: CSS プロパティを変更するためにクライアントサイドの JavaScript を使用する</h3>
+               <p>この例はコンテンツの一部分を単純に変更するもので、複雑なサイトやページに対してはあまり実用的なものではないかもしれない。この例では、特定のコンテンツを強調表示するための背景として (あらかじめ用意された選択肢から) 利用者が選択した色を反映させるために、クラス名を変更する目的でクライアントサイドの JavaScript を使用している。 
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>The following code includes JavaScript calls within the XHTML code to aid understanding
-                        of the technique. However, the author is encouraged to use current best practice for
-                        including JavaScript (see resources for more information about Unobtrusive JavaScript
-                        and progressive enhancement). 
+                     <p>以下のコードには、達成方法を理解しやすくする目的で、XHTML コード内から JavaScript を呼び出す部分が含まれている。しかし、コンテンツ制作者は、JavaScript を組み込むためのその時点でのベストプラクティスを採用することが推奨される (控えめな JavaScript とプログレッシブエンハンスメントについての詳細はリソースを参照)。 
                      </p>
                      
                   </div>
                </div>
-               <p>The XHTML components:</p><pre xml:space="preserve">
+               <p>XHTML (抜粋):</p><pre xml:space="preserve">
 &lt;h1&gt;Product comparison&lt;/h1&gt;
 &lt;p&gt;The products you selected to compare are listed below. 
 Any differences between the products are highlighted and italicized.&lt;/p&gt;
@@ -302,7 +247,7 @@ Any differences between the products are highlighted and italicized.&lt;/p&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 
-</pre><p>The CSS components:</p><pre xml:space="preserve">
+</pre><p>CSS (抜粋):</p><pre xml:space="preserve">
 body { color:#000000; background-color:#FFFFFF; }
 
 .hghltLightYellow { color: #000000; background-color: #FFFF99; font-style:oblique; }
@@ -317,7 +262,7 @@ body { color:#000000; background-color:#FFFFFF; }
 .inline li { display:inline; }
 .inline li a {padding: 0.5em 1em; border: 2px solid #000000; }
 
-</pre><p>The JavaScript components:</p><pre xml:space="preserve">
+</pre><p>JavaScript (抜粋):</p><pre xml:space="preserve">
 function changeColor(hghltColor)
 {
   // collects table data cells into an array
@@ -334,21 +279,16 @@ function changeColor(hghltColor)
   }
 }
 
-</pre><p class="working-example">A working example of this code, <a href="../../working-examples/script-change-css-property/">Using a client-side JavaScript to change a CSS property</a>, is available.
+</pre><p class="working-example">このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-change-css-property/">CSS プロパティを変更するためにクライアント JavaScript を使う</a>
                </p>
             </section>
             <section class="example" id="example-3-using-php-$_get-to-apply-a-different-external-css-file-">
-               <h3>Example 3: Using PHP $_GET to apply a different external CSS file </h3>
-               <p>This simple example uses PHP $_GET to assign one of two available external style sheets.
-                  Similar functionality could be achieved using a variety of PHP features. The example
-                  applies only to the current page view. In a production environment, it would be advisable
-                  to save this preference in a cookie or server-side user profile, so that users would
-                  only have to make the selection once per site. 
+               <h3>例 3: 異なる外部スタイルシートファイルを適用するために PHP の $_GET を使う</h3>
+               <p>このシンプルな例では、二つあるうちの一つの外部スタイルシートを割り当てるために PHP の $_GET を使用している。同様のことは、PHP の様々な機能を使って実現できる。この例では、現在のページの表示だけに適用される。実際の制作においては、利用者がそのサイトにおいて一度選択すれば済むように、設定をクッキーまたはサーバーサイドのユーザプロファイルに保存することが望ましい。
                </p>
-               <p>The following code is PHP, but a similar approach would work with a variety of server-side
-                  technologies. 
+               <p>以下のコードは PHP であるが、同様のアプローチは様々なサーバーサイドのウェブコンテンツ技術によって可能である。
                </p>
-               <p>The PHP and XHTML components: </p><pre xml:space="preserve">
+               <p>PHP 及び XHTML (抜粋): </p><pre xml:space="preserve">
 At the beginning of the PHP page:
 
 &lt;?php
@@ -383,7 +323,7 @@ else {
   &lt;p&gt;Last week's conference presented an impressive line-up of speakers...&lt;/p&gt;
 &lt;/div&gt;
 
-</pre><p>The CSS components: </p><pre xml:space="preserve">
+</pre><p>CSS (抜粋): </p><pre xml:space="preserve">
 In style1.css:
 
   body, p { color:#000000; background-color:#FFFFFF; }
@@ -393,26 +333,23 @@ In style2.css:
 
   body, h1, h2, h3, p, a { color:#FFFF00; background-color:#000000; }
 
-</pre><p class="working-example">A working example of this code, <a href="../../working-examples/uri-parameter-choose-stylesheet/">Using PHP $_GET to apply a different external CSS file</a>, is available.
+</pre><p class="working-example">このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG21/working-examples/uri-parameter-choose-stylesheet/">異なる外部スタイルシートファイルを適用するために PHP の $_GET を使う</a>
                </p>
             </section>
             <section class="example" id="example-4-using-jsp-to-provide-an-alternative-style-sheet-">
-               <h3>Example 4: Using JSP to provide an alternative style sheet </h3>
-               <p>The example below uses two files </p>
+               <h3>例 4: 代替スタイルシートを提供するために JSP を使用する</h3>
+               <p>以下の例では二つのファイルを使用している:</p>
                <ul>
                   
-                  <li>a Java Server Page (JSP) with the form and the form processing code, and </li>
+                  <li>フォームを含む Java Server Page (JSP) 及びフォームの処理コード</li>
                   
-                  <li>an include file with functions used by the previous page and in other pages use the
-                     same style. 
+                  <li>上記ページ及び同様のスタイルを使用する他のページで使用される関数を含むインクルードファイル 
                   </li>
                   
                </ul>
-               <p>The server-side code outputs a normal link element for the stylesheet that the user
-                  chooses and link elements with "alternate stylesheet" for the other styles. The code
-                  can thus be used as a fallback for the client-side code in the second example. 
+               <p>サーバーサイドのコードは、利用者が選択したスタイルシートのための通常の link 要素及び他のスタイル用の「alternate stylesheet」のついた link 要素を出力する。そのコードは、二つめの例にあるように、クライアントサイドのコードのフォールバックとして使用することもできる。 
                </p>
-               <p>The JSP page with the form: </p><pre xml:space="preserve">
+               <p>フォームを含む JSP ページ: </p><pre xml:space="preserve">
  &lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
  %&gt;&lt;%@include file="_jsp/styleswitch.jsp"%&gt;&lt;?xml version="1.0" encoding="UTF-8"?&gt;
  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
@@ -470,7 +407,7 @@ In style2.css:
    &lt;/form&gt;
  &lt;/body&gt;
  &lt;/html&gt;
- </pre><p>The styleswitcher.jsp file included in the previous file: </p><pre xml:space="preserve">
+ </pre><p>上記ファイルにインクルードされる「styleswitcher.jsp」ファイル: </p><pre xml:space="preserve">
  &lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
  &lt;%!
    /**
@@ -560,15 +497,14 @@ In style2.css:
      return theStyleLinks;
    }
  %&gt;
- </pre><p>Other JSP pages can use this code by means of the following include and scriptlet
-                  code:
+ </pre><p>他の JSP ページは、以下のコード (include / scriptlet) を用いてこのコードを使用できる:
                </p><pre xml:space="preserve">
  &lt;%@include file="_jsp/styleswitch.jsp"%&gt;&lt;% out.println(getStyleLinks(request)); %&gt;
  </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -579,18 +515,12 @@ In style2.css:
             </ul>
             <section id="using-cookies">
                
-               <h3>Using cookies</h3>
+               <h3>クッキーを使用する</h3>
                
-               <p>A user's selection can be made persistent across pages, and from one visit to another,
-                  by storing information on the user's computer via a cookie. This functionality requires
-                  cookies to be supported by and allowed on the user's computer. Cookies can be created,
-                  read, modified and erased by using client-side scripts, such as Javascript, or by
-                  server-side scripts, such as CGI scripts. Reliance on client-side technologies will
-                  require the support and availability of the technology on the user's computer in addition
-                  to supporting and allowing cookies. 
+               <p>クッキーを通して利用者のコンピュータ上に情報を保管することによって、利用者による設定はページ全体に渡って永続的に保存しておくことができる。この機能を利用するには、利用者のコンピュータでクッキーがサポートされており、かつその利用が許可されている必要がある。クッキーは、Javascript のようなクライアントサイドのスクリプト、または CGI スクリプトのようなサーバーサイドのスクリプトを使用することで、作成、読み込み、変更、及び削除することができる。クライアントサイドの実装に依存するということは、クッキーがサポートされその利用が許可されていることに加えて、利用者のコンピュータでその達成方法がサポートされており、かつ利用可能であることを要求することになる。 
                </p>
                
-               <p>Information on creating and using cookies can be found on the web. Here are some suggestions:
+               <p>クッキーの生成と使用方法に関する情報はウェブ上にある。以下にいくつかの参考となるページを示す:
                   
                </p>
                
@@ -618,39 +548,21 @@ In style2.css:
                   
                </ul>
                
-               <p>It is recommended that authors test for cookie support and provide an extra control
-                  if cookies are not supported. This extra control should include information about
-                  the persistence of the selection, such as "Apply selection to all pages". The message
-                  or page presented to the user in response to selecting the extra control provides
-                  information about the cookie requirement and their options for solving it. In the
-                  event that the user is unable to turn cookie support on, include a statement about
-                  what this will mean for them if they choose to continue to browse the site and provide
-                  information about how they can adjust their user agent to achieve similar results.
-                  
+               <p>コンテンツ制作者はクッキーをサポートしているかどうかのテストを行い、もしサポートされていなければ別のコントロールを提供することが推奨される。この別のコントロールには、「この設定をすべてのページに適用する」のような設定の有効化に関する情報が含まれるべきである。メッセージや別のコントロールの設定に応じて利用者に向けて表示されるページは、クッキーの動作環境とそれ以外の環境で利用できるオプションについての情報を提供する。 利用者がクッキーを有効にできない状況において、もし利用者がサイトの閲覧を継続することを選択した場合、それはどうなることを意味するのかということについての説明を含める。そしてクッキーをサポートしている場合と同様の結果を得るにはユーザエージェントをどう設定すればよいかということについての情報を提供する。
                </p>
                
-               <p>For example, "Your browser is not configured to accept cookies. On this site, cookies
-                  are required in order to apply your selected changes across all of the pages of the
-                  site. To find out how to enable cookies on your computer, visit <a href="https://support.google.com/accounts/answer/61416?rd=1">How to Enable Cookies</a>. Note that this may require administrative rights for the computer you are using.
-                  Without cookie support, your settings will not persist to include other pages on this
-                  site. We are endeavoring to provide this functionality without relying on your computer's
-                  capability. In the meantime, you will be able to select the change for each page that
-                  you visit." 
+               <p>例:「このブラウザはクッキーを受け付ける設定になっていません。このサイトでは、サイト内の全ページに渡って、あなたの変更した設定を適用するためにはクッキーが有効になっている必要があります。お使いの環境においてクッキーを有効にする方法については <a href="https://support.google.com/accounts/answer/61416?rd=1">How to Enable Cookies</a> を参照してください。ただし、これを実行するためには、お使いのコンピュータにおける管理者の権限が必要となる場合がありますので注意してください。クッキーが利用できない場合、あなたの設定はこのサイト内の他のページも含めて保存されません。弊社では、この機能をコンピュータの性能に関わらず提供できるよう努力しておりますが、それが実現できるまでの間でも、各ページにおいて設定を変更することは可能です。」
                </p>
                
             </section>
             <section id="progressive-enhancement-and-unobtrusive-javascript">
                
-               <h3>Progressive Enhancement and Unobtrusive Javascript</h3>
+               <h3>プログレッシブエンハンスメントと控えめな JavaScript</h3>
                
-               <p>Current best practice for implementing JavaScript in an HTML or XHTML page is to use
-                  it in a way that separates the behavior of content from its structure and presentation.
-                  The terms 'Progressive Enhancement' and 'Unobtrusive JavaScript' are often used to
-                  describe scripts that enhance or improve the functionality of a page, yet transform
-                  gracefully so that content continues to function even when JavaScript is not supported.
+               <p>HTML 又は XHTML ページにおける JavaScript 実装をするための現在のベストプラクティスは、構造及び提示からコンテンツの動作をある程度分離させて使用することである。「プログレッシブエンハンスメント」及び「控えめな JavaScript」という用語は、ページの機能を向上又改善するが、JavaScript がサポートされていない場合でもコンテンツが機能し続けられるように優雅に変換するスクリプトを表すのによく使用されている。
                </p>
                
-               <p>Here are some suggested starting points for more information: </p>
+               <p>より詳しく知るための推奨される情報: </p>
                
                <ul>
                   
@@ -679,63 +591,57 @@ In style2.css:
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G140">G140: Separating information and structure from presentation to enable different presentations</a></li>
+               <li><a href="../general/G140">G140: 異なる提示を可能にするために、情報と構造を表現から分離する</a></li>
                
-               <li><a href="../general/G174">G174: Providing a control with a sufficient contrast ratio that allows users to switch to
-                     a presentation that uses sufficient contrast</a></li>
+               <li><a href="../general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
                
-               <li><a href="../general/G178">G178: Providing controls on the Web page that allow users to incrementally change the size
-                     of all text on the page up to 200 percent</a></li>
+               <li><a href="../general/G178">G178: 利用者がウェブページ上のすべてのテキストを 200％まで徐々に変更できるコントロールをウェブページ上で提供する</a></li>
                
-               <li><a href="../general/G188">G188: Providing a button on the page to increase line spaces and paragraph spaces</a></li>
+               <li><a href="../general/G188">G188: 行間及び段落の間隔を広げるボタンをウェブページ上に提供する</a></li>
                
-               <li><a href="../general/G189">G189: Providing a control near the beginning of the Web page that changes the link text</a></li>
+               <li><a href="../general/G189">G189: ウェブページの先頭近くに、リンクテキストを変更するコントロールを提供する</a></li>
                
-               <li><a href="../general/G191">G191: Providing a link, button, or other mechanism that reloads the page without any blinking
-                     content</a></li>
+               <li><a href="../general/G191">G191: 点滅するコンテンツのないページを再読み込みするリンク、ボタン、又はその他のメカニズムを提供する</a></li>
                
-               <li><a href="../general/G206">G206: Providing options within the content to switch to a layout that does not require the
-                     user to scroll horizontally to read a line of text</a></li>
+               <li><a href="../general/G206">G206: 利用者が横スクロールをしなくてもテキストの行を読めるようにするような、レイアウトを切り替えるオプションをコンテンツの中で提供する</a></li>
                
-               <li><a href="C7">C7: Using CSS to hide a portion of the link text</a></li>
+               <li><a href="C7">C7: リンクテキストの一部を非表示にするために、CSS を使用する</a></li>
                
-               <li><a href="C22">C22: Using CSS to control visual presentation of text</a></li>
+               <li><a href="C22">C22: テキストの視覚的提示を制御するために、CSS を使用する</a></li>
                
-               <li><a href="../client-side-script/SCR38">SCR38: Creating a conforming alternate version for a web page designed with progressive enhancement</a></li>
+               <li><a href="../client-side-script/SCR38">SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the Web page contains controls that allow users to select alternate presentations.
+                  <li>利用者が代替となる提示を選択できるようなコントロールがウェブページに含まれていることを確認する。
                      
                   </li>
                   
-                  <li>Check that the control changes the presentation by modifying individual CSS style
-                     properties or by activating an alternate style sheet.
+                  <li>個々の CSS スタイルのプロパティを変更する、又は代替スタイルシートをアクティブにすることによって、コントロールが提示の変更していることを確認する。
                   </li>
                   
-                  <li>Verify that the resulting page is a conforming alternate version for the original
-                     page. 
+                  <li>結果として表示されたページは、元のページの適合している代替版であることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the above checks are true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
