@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C30: Using CSS to replace text with images of text and providing user interface controls
-         to switch
+      <title>C30: テキストを文字画像に置き換えるために CSS を利用し、切り替えのためのユーザインタフェースコントロールを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,106 +11,74 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C29">Previous Technique: C29</a></li>
-            <li><a href="C31">Next Technique: C31</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C29">前の達成方法: C29</a></li>
+            <li><a href="C31">次の達成方法: C31</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using CSS to replace text with images of text and providing user interface controls
-         to switch
+      <h1>テキストを文字画像に置き換えるために CSS を利用し、切り替えのためのユーザインタフェースコントロールを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology that supports CSS. </p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>CSS をサポートするすべてのウェブコンテンツ技術 </p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">Success Criterion 1.4.5: Images of Text</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">達成基準 1.4.5: 文字画像</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">Success Criterion 1.4.9: Images of Text (No Exception)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">達成基準 1.4.9: 文字画像 (例外なし)</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate how CSS can be used to replace structured
-               HTML text with images of text in a way that makes it possible for users to view content
-               according to their preferences. To use this technique, an author starts by creating
-               an HTML page that uses semantic elements to mark up the structure of the page. The
-               author then designs two or more stylesheets for that page. One stylesheet presents
-               the HTML text as text and the second uses CSS features to replace some of the HTML
-               text with images of text. Finally, through the use of server-side or client-side scripting,
-               the author provides a control that allows the user to switch between the available
-               views. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が好みに従ってコンテンツを表示できるように、構造化された HTML テキストを文字画像に置き換える CSS の用い方を示すことである。この達成方法を用いるには、コンテンツ制作者はページの構造をマークアップするためにセマンティックな要素を用いる HTML ページを作ることから始める。次にコンテンツ制作者はページに対して二つ以上のスタイルシートを作成する。一つめのスタイルシートは HTML テキストをテキストとして表現し、二つめはいくつかの HTML テキストを文字画像に置き換えるために CSS の機能を用いている。最後に、サーバーサイド又はクライアントサイドスクリプトの使用を通して、コンテンツ制作者は利用者が利用するビューを切り替えることができるコントロールを提供する。
             </p>
-            <p>This technique can be used to meet Success Criterion 1.4.5 or 1.4.9 if a presentation
-               that does not include images of text is available and as long as the user interface
-               control that is provided to allow users to switch to an alternate presentation meets
-               the relevant criteria. Where possible, authors should deliver the presentation that
-               does not include images of text as the default presentation. In addition, the control
-               used to switch should be located near the beginning of the page. 
+            <p>この達成方法は、文字画像を含まない表現が利用可能であり、かつ、利用者が代替表現に切り替えることができるユーザインタフェースコントロールが関連する達成基準を満たす限り、達成基準 1.4.5 又は 1.4.9 を満たすために用いることができる。可能であれば、コンテンツ制作者はデフォルトの表現として文字画像を含まない表現を配信すべきである。更に、切り替えのためのコントロールはページの先頭近くに配置されるべきである。 
             </p>
-            <p>A variety of "image replacement" techniques have been developed to address a variety
-               of user agent, configuration and compatibility with assistive technology issues (See
-               resources for more information). While there are a variety of approaches authors may
-               use to replace text, it is important to consider compatibility with assistive technology,
-               whether the technique will work correctly if scripting, CSS, images (or combinations
-               of these) are turned off. Since it can be difficult to find a single solution that
-               works in all cases, this technique recommends the use of a control that allows users
-               to switch to a presentation that does not include an image replacement technique.
-               
+            <p>「画像の置き換え」の達成方法は、さまざまなユーザエージェント、構成、及び支援技術の課題との互換性 (詳細は「参照リソース」を参照) に取り組むために多様なものが開発されてきた。コンテンツ制作者がテキストの置き換えのために用いる数々のアプローチがある一方、その達成方法がスクリプト、CSS、画像 (又はそれらの組み合わせ) をオフにした場合に正確に動作するかどうか、支援技術との互換性を考慮することは重要である。すべての場合において動作する単一の解決法を見出すことは難しいので、この達成方法は、利用者が画像置き換えの達成方法を含んでいない表現へ切り替えることのできるコントロールを用いることを推奨している。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>This technique can be used in combination with a style switching technique to present
-                     a page that is a <a href="https://w3c.github.io/wcag/guidelines/#" target="terms">conforming alternate version</a> for non-conforming content. Refer to <a href="#C29"></a> and <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a> for more information.
+                  <p>この達成方法は、不適合コンテンツのための<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version" target="terms">適合している代替版</a>のページを提示するために、スタイル切り替えの達成方法との組み合わせで用いることができる。更なる情報として、<a href="C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a>及び<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">適合している代替版を理解する</a>を参照。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A design studio site uses a style switcher to allow users to view two presentations
-                  of their home page. For the default version, the heading text is replaced with images
-                  of text. A control on the page allows users to switch to a version that presents the
-                  headings as text. 
+               <h3>例 1</h3>
+               <p>デザインスタジオのサイトは、利用者が彼らのウェブページの 2 種類の提示を見ることができるようにスタイルの切り替えを用いている。デフォルトのバージョンでは、見出しのテキストが文字画像で置き換えられている。ページ上のコントロールによって利用者はテキストで見出しを表現したバージョンへ切り替えることができる。 
                </p>
-               <p>The CSS component: </p><pre xml:space="preserve">...
+               <p>CSS: </p><pre xml:space="preserve">...
 &lt;div id="Header"&gt; 
   &lt;h1&gt;&lt;span&gt;Pufferfish Design Studio&lt;/span&gt;&lt;/h1&gt; 
   &lt;h2&gt;&lt;span&gt;Surprising Identity and Design Solutions&lt;/span&gt;&lt;/h2&gt; 
   &lt;/div&gt; 
 ...
-</pre><p>The CSS for the presentation that includes images of text follows. Note that the CSS
-                  uses positioning to place the contents of the heading elements offscreen so that the
-                  text remains available to screen reader users.
+</pre><p>文字画像を含んだ提示のための CSS を以下に記す。見出し要素のコンテンツを画面の外に配置して非表示にするためにポジショニングを使用することで、テキストはスクリーンリーダー利用者が利用可能な状態に保持されていることに注意。
                </p><pre xml:space="preserve">...
 #Header h1 {
 	background-image: url(pufferfish-logo.png);
@@ -138,7 +105,7 @@
 	position: absolute;
         left: -999em;
 	}
-	</pre><p>The CSS for the presentation that does not include images of text. </p><pre xml:space="preserve">...
+	</pre><p>文字画像を含まない提示のための CSS。</p><pre xml:space="preserve">...
 #Header h1 {
 	font: normal 200%/100% Garamond, "Times New Roman", serif;
 	margin-bottom: 0;
@@ -155,8 +122,8 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -186,42 +153,46 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>                  
+                  <p>Background に関するプロパティは、<a href="https://www.w3.org/TR/css-backgrounds-3/#the-background">CSS Backgrounds and Borders Module Level 3</a> で再定義されている。この仕様は W3C 勧告ではないが、<a href="https://www.w3.org/TR/css-2020/">CSS Snapshot 2020</a> によれば、今日の CSS を構成する仕様として位置づけられている。
+                  </p>                  
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                
-               <li><a href="../failures/F3">F3: Failure of Success Criterion 1.1.1 due to using CSS to include images that convey
-                     important information</a></li>
+               <li><a href="../failures/F3">F3: 達成基準 1.1.1 の失敗例 － 重要な情報を伝える画像を付加するために、CSS を使用している</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the Web page includes a control that allows users to select an alternate
-                     presentation. 
+                  <li>ウェブページに利用者が代替となる提示を選択できるコントロールが含まれていることを確認する。
                   </li>
                   
-                  <li>Check that when the control is activated the resulting page includes text (programmatically
-                     determined text) wherever images of text had been used. 
+                  <li>コントロールがアクティブである時、結果のページは文字画像が用いられている箇所全てにおいてテキスト (プログラムによる解釈が可能なテキスト) を含んでいることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> All of the above checks are true. </li>
+                  <li>上記の全ての結果が真である。 </li>
                   
                </ul>
                
