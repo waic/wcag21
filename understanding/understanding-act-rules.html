@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>Understanding ACT Rules</title>
+      <title>ACT ルールを理解する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="base.css" />
       <link rel="stylesheet" type="text/css" href="understanding.css" />
@@ -20,40 +20,34 @@
       <nav class="navtoc">
          <p>このページの内容:</p>
          <ul id="navbar">
-            <li><a href="#act-rules-are-informative">ACT Rules are Informative</a></li>
-            <li><a href="#act-rules-are-partial-checks">ACT Rules are Partial Checks</a></li>
-            <li><a href="#act-rules-check-for-failures">ACT Rules Check for Failures</a></li>
+            <li><a href="#act-rules-are-informative">ACT ルールは参考情報である</a></li>
+            <li><a href="#act-rules-are-partial-checks">ACT ルールは部分的なチェックである</a></li>
+            <li><a href="#act-rules-check-for-failures">ACT ルールは失敗をチェックする</a></li>
             <li><a href="#structure-of-act-rules">Structure of ACT Rules</a></li>
          </ul>
       </nav>
-      <h1>Understanding ACT Rules</h1>
+      <h1>ACT ルールを理解する</h1>
       <main>
          		
          		
          		
-         <p>Accessibility Conformance Testing (ACT) Rules provide guidance for developers of automated
-            testing tools and manual testing methodologies, to help ensure consistent interpretation
-            of WCAG Success Criteria.
+         <p>Accessibility Conformance Testing (ACT) ルールは、自動テストツールと手動テスト方法の開発者にガイダンスを提供し、WCAG 達成基準の一貫した解釈を保証する。 
          </p>
          		
-         <p>W3C's <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> is updated periodically. They are developed according to the <a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> standard.
+         <p>W3C の <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> は定期的に更新されている。これは、<a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> 標準に従って開発されている。
          </p>
          		
-         <p><a href="conformance.html">Understanding Conformance</a> provides related information, including on <a href="conformance.html#accessibility-support">understanding accessibility support</a>.
+         <p><a href="conformance.html">適合を理解する</a>は、<a href="conformance.html#accessibility-support">アクセシビリティサポートを理解する</a>を含む、関連する情報を提供する。
          </p>
          		
          		
          <section id="act-rules-are-informative">
             			
-            <h2>ACT Rules are Informative</h2>
+            <h2>ACT ルールは参考情報である</h2>
             			
-            <p><em>ACT Rules are informative — that means they are not required for determining conformance.
-                  The basis for determining conformance to WCAG is the success criteria from the WCAG
-                  standard — not the ACT Rules.</em></p>
+            <p><em>ACT ルールは参考情報である。つまり、適合を判断するために必要ではないことを意味する。WCAG への適合を判断するための基礎は、ACT ルールではなく、WCAG 標準の達成基準である。</em></p>
             			
-            <p>While W3C's <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> are reviewed by the W3C Accessibility Guidelines Working Group (AGWG), they are not
-               vetted to the same degree as the W3C Web Content Accessibility Guidelines (WCAG) standard
-               (called <em>W3C Recommendation</em>). The WCAG standard is the normative reference on determining conformance.
+            <p>W3C の <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> は、W3C の Accessibility Guidelines Working Group (AGWG) によってレビューされているが、W3C Web Content Accessibility Guidelines (WCAG) 標準 (W3C <em>勧告</em>と呼ばれる) と同程度に精査されていない。WCAG 規格は、適合を判断するための規範的な基準である。           
             </p>
             		
          </section>
@@ -61,19 +55,12 @@
          		
          <section id="act-rules-are-partial-checks">
             			
-            <h2>ACT Rules are Partial Checks</h2>
+            <h2>ACT ルールは部分的なチェックである</h2>
             			
-            <p>ACT Rules typically check specific aspects of WCAG success criteria. For example,
-               that a table cell has a header rather than the entire WCAG 2.2 success criterion 1.3.1
-               "Info and Relationships", which applies to many more information structures on a web
-               page. In fact, this example rule would not even check the validity of the table header,
-               only if the header exists for a given table cell.
+            <p>ACT ルールは通常、WCAG 達成基準の特定の側面をチェックする。例えば、テーブルセルには、WCAG 2.2 の全体の達成基準 1.3.1「情報及び関係性」ではない、ヘッダーがある。これは、ウェブページ上のより多くの情報構造に適用される。実際、このサンプルのルールは、特定のテーブルセルにヘッダーが存在する場合に限り、テーブルヘッダーの有効性をチェックさえしない。
             </p>
             			
-            <p>ACT Rules are also technology-specific. For example, the aforementioned table header
-               example would be specific to HTML, possibly enriched with WAI-ARIA roles and properties,
-               but not to other formats with tables. WCAG 2.2 success criteria are designed to be
-               technology-agnostic and applicable to all web technologies.
+            <p>ACT ルールはまた、技術固有である。例えば、前述のテーブルヘッダーの例は、HTML に固有であり、WAI-ARIA の役割 (role) 及びプロパティが強化されている可能性があるが、テーブルを使用する他の形式には固有ではない。 WCAG 2.2の達成基準は、技術にとらわれず、すべてのウェブ技術に適用できるように設計されている。
             </p>
             		
          </section>
@@ -81,26 +68,17 @@
          		
          <section id="act-rules-check-for-failures">
             			
-            <h2>ACT Rules Check for Failures</h2>
+            <h2>ACT ルールは失敗をチェックする</h2>
             			
-            <p>ACT Rules are designed to check failures in satisfying WCAG success criteria. That
-               is, when content fails ACT Rules, it means that the content does not satisfy the corresponding
-               success criteria. However, when content passes ACT Rules, it means that no corresponding
-               failures were detected — it does not necessarily mean that the content satisfies all
-               aspects of the corresponding success criteria.
+            <p>ACT ルールは、WCAG 達成基準を満たすための失敗をチェックするように設計されている。つまり、コンテンツが ACT ルールに失敗した場合、そのコンテンツは対応する達成基準を満たしていないことを意味する。しかし、コンテンツが ACT ルールに合格した場合、対応する失敗が検出されなかったことを意味する。これは必ずしも、コンテンツが対応する達成基準の全ての側面を満たしていることを意味するわけではない。
             </p>
             			
-            <p>The reason for this is because WCAG success criteria typically cover several aspects
-               and technologies, while ACT Rules only check specific aspects. Checking that content
-               satisfies all aspects of WCAG success criteria typically requires further verification
-               by human testers.
+            <p>これは、WCAG 達成基準は通常、いくつかの側面と技術を対象としているのに対し、ACT ルールは特定の側面のみをチェックするためである。コンテンツが WCAG 達成基準の全ての側面を満たしていることを確認するには、通常、人間の検証者によるさらなる検証が必要となる。
             </p>
             			
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p><a href="conformance.html#cc1">WCAG 2 Conformance Requirement 1</a> allows for "conforming alternate versions". That means that content may still conform
-                  to WCAG 2, even when content fails ACT Rules, thus does not satisfy the corresponding
-                  success criteria.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p><a href="conformance.html#cc1">WCAG 2 適合している代替版を理解する</a>は、「適合している代替版」を認めらていれる。これは、コンテンツが ACT ルールに失敗し、対応する達成基準を満たしていない場合でも、コンテンツはWCAG 2 に適合している可能性があることを意味する。 
                </p>
             </div>
             		
@@ -122,79 +100,78 @@
          		
          <section id="structure-of-act-rules">
             			
-            <h2>Structure of ACT Rules</h2>
+            <h2>ACT ルールの構造</h2>
             			
-            <p>ACT Rules conform to the <a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> standard. They include the following parts:
+            <p>ACT ルールは、<a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> 標準に適合する。これには、次の部分が含まれる:
             </p>
             			
             <ul>
                				
-               <li><strong>Descriptive Title</strong> – title for the ACT Rule, which should describe the rule
+               <li><strong>説明タイトル</strong> – ACT ルールのタイトル。これはルールを説明すべきである
                </li>
                				
-               <li><strong>Rule Identifier</strong> – identifier for the ACT Rule; the W3C rules use alphanumeric strings
+               <li><strong>ルール識別子</strong> – ACT ルールの識別子。 W3C ルールは英数字の文字列を使用する
                </li>
                				
-               <li><strong>Rule Type</strong> – there are two basic types of ACT Rules, depending on what is being tested:
+               <li><strong>ルールタイプ</strong> – テストするものに応じて、ACT ルールには2つの基本的な種類がある:
                   					
                   <ul>
                      						
-                     <li><strong>Atomic Rule</strong> – test one specific situation, which may be part of a composite rule
+                     <li><strong>アトミックルール</strong> – 一つの特定の状況をテストする。これは、コンポジットルールの一部の場合がある
                      </li>
                      						
-                     <li><strong>Composite Rule</strong> – combine outcome from multiple atomic rules to one outcome
+                     <li><strong>コンポジットルール</strong> – 複数のアトミックルールからの結果を一つの結果に結合する
                      </li>
                      					
                   </ul>
                   				
                </li>
                				
-               <li><strong>Accessibility Requirements Mapping</strong> – maps the ACT Rule to particular accessibility requirements; in this suite of rules
-                  we use Web Content Accessibility Guidelines (WCAG) 2 Success Criteria
+               <li><strong>アクセシビリティ要件のマッピング</strong> – ACT ルールを特定のアクセシビリティ要件にマッピングする。この一連のルールでは、Web Content Accessibility Guidelines（WCAG）2 の達成基準を使用する
                </li>
                				
-               <li><strong>Rule Input</strong> – describes the scope of input into ACT Rules, which is one of the following:
+               <li><strong>ルール入力</strong> – ACTルールへの入力の範囲を記述する。これは次のいずれかである:
                   					
                   <ul>
                      						
-                     <li><strong>Input Aspects</strong> – input into atomic rules, such as DOM Tree and CSS Styling etc.
+                     <li><strong>入力アスペクト</strong> – DOM ツリーや CSS スタイリングなどのアトミックルールへの入力
                      </li>
                      						
-                     <li><strong>Input Rules</strong> – input into the composite rules, which are the atomic rules in scope
+                     <li><strong>入力ルール</strong> – コンポジットルールへの入力。これは、範囲内のアトミックルールである 
                      </li>
                      					
                   </ul>
                   				
                </li>
                				
-               <li><strong>Applicability</strong> – description of the specific parts of the content, for which the rule applies
+               <li><strong>適用性</strong> – ルールが適用されるコンテンツの特定の部分の説明
                </li>
                				
-               <li><strong>Expectations</strong> – description of the expected characteristics of the applicable rule content
+               <li><strong>期待</strong> – 該当するルールコンテンツの期待される特性の説明
                </li>
                				
-               <li><strong>Assumptions</strong> – assumptions made, such as specific interpretations of the requirements
+               <li><strong>仮定</strong> – 要件の特定の解釈など、行われた仮定
                </li>
                				
-               <li><strong>Accessibility Support</strong> – known limitations regarding browsers and assistive technology
+               <li><strong>アクセシビリティサポート</strong> – ブラウザ及び支援技術に関する既知の制限
                </li>
                				
-               <li><strong>Test Cases</strong> – sample code demonstrating passed, failed, and inapplicable rule conditions
+               <li><strong>テストケース</strong> – 合格、不合格、および適用不可のルールの条件を示すサンプルコード
                </li>
                				
-               <li><strong>Change Log</strong> – history of changes for the ACT Rules, to support backward compatibility
+               <li><strong>変更点</strong> – 下位互換性をサポートするための ACT ルールの変更履歴
                </li>
                				
-               <li><strong>Glossary</strong> – list of key terms defined by the ACT Rule or used by the specific ACT Rule
+               <li><strong>用語集</strong> – ACT ルールによって定義された、又は特定の ACT ルールによって使用される重要な用語のリスト
                </li>
                				
-               <li><strong>Issues List (Optional)</strong> – list of known issues or bugs for the particular ACT Rule, if any
+               <li><strong>Issueリスト (オプション)</strong> – 存在する場合、特定の ACT ルールの既知の問題又はバグのリスト
                </li>
                				
-               <li><strong>Background (Optional)</strong> – relevant background, such as additional documentation, if any
+               <li><strong>背景 (オプション)</strong> – 存在する場合、追加の文書などの関連する背景
                </li>
                				
-               <li><strong>Acknowledgements (Optional)</strong> – such as rule writers, reviewers, and other contributors
+               <li><strong>謝辞 (オプション)</strong> – ルール作成者、レビュー担当者、その他の貢献者など
                </li>
                			
             </ul>
