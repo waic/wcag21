@@ -46,13 +46,14 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>この達成基準の意図は、利用者がテキストを読みやすくするためにテキストの間隔をオーバーライドできるようにすることである。達成基準の 4 つの箇条書きで規定される各要件は、利用者がテキストのスタイルを自分のニーズに合わせて調整できるようにするのに役立つ。</p>
+            <p>この達成基準の意図は、コンテンツ制作者が指定したテキスト間隔を上書きして、読書体験を向上させることができるようにすることである。達成基準の四つの箇条書きで規定される各要件は、利用者がテキストのスタイルを自分のニーズに合わせて調整できるようにするのに役立つ。</p>
+            <p>指定されたメトリクスは、最小のベースラインを設定する。コンテンツ制作者のメトリックとこの達成基準で指定されたメトリックの間の値で、コンテンツ又は機能が失われるべきでない。</p>
             <p>この達成基準は、行、単語、文字及び段落間の間隔を広げる機能に焦点を当てている。これらの任意の組み合わせによって、利用者がテキストを効率よく読むことを支援できる。また、コンテンツ制作者によって設定された間隔を利用者がオーバーライドできるようにすることで、他のスタイルを利用者が設定できる可能性も大幅に高まる。例えば、テキストを効率よく読むためには、コンテンツ制作者が設定したものよりも幅の広いフォントファミリーに変更する必要があるかもしれない。</p>
             <section id="author-responsibility-">
                
                <h3>コンテンツ制作者の責任</h3>
                
-               <p>この達成基準は、コンテンツ制作者が全てのコンテンツを指定された基準に設定しなければならないと指示しているのではない。そうではなく、コンテンツ制作者が作成したコンテンツを、コンテンツ又は機能を損なうことなく、それらの基準に設定できるようにすることを指示している。コンテンツ制作者の要件は、コンテンツ制作者の設定を利用者がオーバーライドすることを妨げないことと、そのように変更されたコンテンツが、"間隔のオーバーライドを許可しないことによる影響" の図 1 ～ 3 に示されている方法でコンテンツを壊させないようにすることの両方である。</p>
+               <p>この達成基準は、コンテンツ制作者が全てのコンテンツを指定された基準に設定しなければならないと指示しているのではない。そうではなく、コンテンツ制作者が作成したコンテンツを、コンテンツ又は機能を損なうことなく、それらの基準に設定できるようにすることを指示している。コンテンツ制作者の要件は、コンテンツ制作者の設定を利用者がオーバーライドすることを妨げないことと、そのように変更されたコンテンツが、"間隔のオーバーライドを許可しないことによる影響" の図 1 ～ 3 に示されている方法でコンテンツを壊させないようにすることの両方である。達成基準の値はベースラインである。コンテンツ制作者は、達成基準の値を構築の上限と見なさなすことなく、指定する値を超えることを勧める。利用者が指定されたメトリックを超えることを選択した場合、結果として生じるコンテンツ又は機能の損失は利用者の責任である。</p>
                
                <section id="applicability">
                   
@@ -79,7 +80,7 @@
                
                <h3>利用者の責任</h3>
                
-               <p>オーバーライドされた間隔から意味を読んで導き出す能力は利用者次第である。間隔が広がることがそれらの能力に影響を与える場合、利用者は調整するか、デフォルトの表示に戻すであろう。とにかく、利用者は達成基準で定められた範囲内で間隔を調整できる柔軟性を必要としている。そのような変更は、ユーザスタイルシート、ブックマークレット、拡張機能、又はアプリケーションを介して実現できる。</p>
+               <p>オーバーライドされた間隔から意味を読んで導き出す能力は利用者次第である。利用者は、達成基準の間隔調整を超えることを選択できる。 間隔を広げるとコンテンツ又は機能が失われる場合、利用者はコンテンツ制作者の元の間隔又は達成基準の範囲内の間隔に調整する又は戻る。とにかく、利用者は、コンテンツ又は機能を失うことなく、達成基準で設定された範囲内の間隔を調整する柔軟性を必要としている。そのような変更は、ユーザスタイルシート、ブックマークレット、拡張機能、又はアプリケーションを介して実現できる。</p>
                	
             </section>
             <section id="effects-of-not-allowing-for-spacing-override">
@@ -94,13 +95,13 @@
                   
                   <p>図 1 では、見出しにある &quot;Your Needs&quot; という単語の下部が切り取られているため、そのテキストが判読できない。&quot;We Provide a Mobile Application Service to Meet Your Needs.&quot; と読まれるべきである。</p>
                   
-                  <figure>
+                  <figure id="figure-text-cut">
                      
                      <figcaption>図 1: 失敗となる切り取られた縦書きのテキスト</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/b/ba/Spacing_cutoff_fail_vertical.png" alt="Heading text truncated vertically." width="420" height="190" /></figure>
                   
                   <p>図 2 では、3 つの横に並んだ見出しにあるテキストの最後の部分が切り取られている。最初の見出しは &quot;A cog in the wheel.&quot; と読まれるべきだが、&quot;A cog in the whe&quot; と読める。二つ目の &quot;e&quot; は半分しか表示されず、&quot;l&quot; という文字は完全に欠落している。2 番目の見出しは &quot;A penny for your thoughts&quot; と読まれるべきだが、&quot;A penny for your&quot; と読める。3 番目の見出しは &quot;Back to the drawing board.&quot; と読まれるべきだが、&quot;Back to the drawi&quot; と読める。</p>
                   
-                  <figure>
+                  <figure id="figure-horiz-text-cut">
                      
                      <figcaption>図 2: 失敗となる切り取られた横書きのテキスト</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/c/c2/Spacing_cutoff_fail_horizontal.png" alt="3 side-by-side headings with truncated text." width="509" height="184" /></figure>
                   		
@@ -112,7 +113,7 @@
                   
                   <p>図 3 では、&quot;Technologists Seeking Input from Groups and Programs&quot; という見出しの最後の 3 つの単語 &quot;Groups and Programs&quot; が、次に続く文と重なっている。その文は、&quot;You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective.&quot; と読まれるべきだが、&quot;You are invited to share ideas&quot; という言葉では不明瞭で判読できない。</p>
                   
-                  <figure>
+                  <figure id="figure-overlapping-text">
                      
                      <figcaption>図 3: 失敗となるテキストの重なり</figcaption><img src="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/images/1/11/Spacing_overlap_fail.png" alt="Heading text overlaps part of paragraph text." width="510" height="170" /></figure>
                   		
@@ -235,9 +236,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C36">C36: Allowing for text spacing override</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C36">C36: テキスト間隔を上書きできるようにする</a></li>
                   	
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C35">C35: Allowing for text spacing without wrapping</a></li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C35">C35: 折り返しのないテキストの間隔を見込む</a></li>
                   
                </ul>
             </section>
@@ -259,7 +260,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   		
-                  <li>Failure of Success Criterion 1.4.12 due to not allowing for spacing override. (Future technique)</li>
+                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/failures/F104">F104: 達成基準 1.4.12 の失敗例 － テキストの間隔を調整したときにコンテンツが切り取られる又は重なる</a></li>
                   	
                </ul>
             </section>
@@ -285,8 +286,6 @@
             </dd>
             <dt id="dfn-style-property">スタイルプロパティ (style properties)</dt>
             <dd><definition xmlns="">
-                  
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
                   
                   <p xmlns="http://www.w3.org/1999/xhtml">ユーザエージェントによってコンテンツ要素が (画面、音声スピーカー、点字ディスプレイなどを介して) レンダリングされる際の提示のされ方 (フォント、色、サイズ、位置、パディング、音量、合成音声の韻律など) を定義するプロパティ。</p>
                   	       
@@ -315,5 +314,7 @@
             </dd>
          </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
