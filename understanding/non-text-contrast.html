@@ -117,11 +117,11 @@
                <p>例えばそれぞれの星が黄色 (満ちている) 又は白 (空いている) のいずれかで埋まった黒いアウトラインをもつ 1-5 のスターインジケータなど、入力の値又は状態を伝えるために色相の違いのみを使用するコントロール内の非テキスト情報は、この基準よりも色の使用の基準に失敗する可能性がある。</p>
                
                				
-               <figure><img src="img/star-examples-pass.png" alt="二つ星評価。一つはチェックされていることを表すために黒い塗りつぶしと (白に) 黒いアウトラインを使用している。二つ目は黄色い塗りつぶし及び太く濃いボーダーがある。" width="300" /><figcaption>チェックされている状態を示すためのコントラストのあるべた塗り、又は太いボーダー及び黄色い塗りつぶしのいずれかを使用して達成基準に合格している二つの例。</figcaption>
+               <figure id="figure-two-star-ratings"><img src="img/star-examples-pass.png" alt="二つ星評価。一つはチェックされていることを表すために黒い塗りつぶしと (白に) 黒いアウトラインを使用している。二つ目は黄色い塗りつぶし及び太く濃いボーダーがある。" width="300" /><figcaption>図 6 チェックされている状態を示すためのコントラストのあるべた塗り、又は太いボーダー及び黄色い塗りつぶしのいずれかを使用して達成基準に合格している二つの例。</figcaption>
                   				
                </figure>
                				
-               <figure><img src="img/star-examples-fail.png" alt="二つ星評価。一つ目は黄色がチェックされていることを示す、黒いアウトライン及び黄色又は白の塗りつぶしの五つ星を使用している。二つ目は白に薄い黄色の星のみを使用している。" width="300" /><figcaption>達成基準に失敗する二つの例。一つ目は、黄色及び白の色相に依存していることにより、色の使用の基準に失敗する。二つ目の例は黄色対白のコントラスト比が 1.2:1 であることにより、非テキストのコントラストの基準に失敗する。</figcaption>
+               <figure id="figure-two-star-ratings-failing"><img src="img/star-examples-fail.png" alt="二つ星評価。一つ目は黄色がチェックされていることを示す、黒いアウトライン及び黄色又は白の塗りつぶしの五つ星を使用している。二つ目は白に薄い黄色の星のみを使用している。" width="300" /><figcaption>図 7 達成基準に失敗する二つの例。一つ目は、黄色 (#fff000) 及び白の色相に依存していることにより、色の使用の基準に失敗する。二つ目の例は黄色対白のコントラスト比が 1.2:1 であることにより、非テキストのコントラストの基準に失敗する。</figcaption>
                   				
                </figure>
                
@@ -129,9 +129,10 @@
                <p>フォーカス及び他の状態にコントラストの変化を使用することは状態を区別する方法である。これは <a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G195">G195: コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</a>の基礎であり、かつより多くの達成方法が追加されている。</p>
                
                				
-               <p><a href="https://www.w3.org/TR/WCAG21/#focus-visible">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。もしフォーカス状態が色の変化 (例:ボタンの背景色<em>のみ</em>を変更する) に依存している場合、コントロールの前の状態から最低でも 3:1 のコントラスト比があるように一つの色から他のものに変更することはフォーカスの可視化の基準を満たす一つの方法である。</p>
+               <p><a href="https://www.w3.org/TR/WCAG21/#focus-visible">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。</p>
                
-               				
+               <p>この達成基準は、コントロールのフォーカスされた状態とフォーカスされていない状態を直接比較しないことに注意すること。フォーカス状態が色の変化 (例:ボタンの背景色<em>のみ</em>を変更する) に依存している場合、この達成基準は、二つの状態間のコントラストの違いに関する要件を定義していない。</p>
+
                <section id="active-user-interface-component-examples">
                   					
                   <h4>アクティブなユーザインタフェース コンポーネントの例</h4>
@@ -175,11 +176,11 @@
                      						
                      <tr>
                         							
-                        <th>スタイル付けされたリンク又はボタン</th>
+                        <th>ボタン</th>
                         							
-                        <td>リンク又はボタンのフォーカスインジケータがコンテンツ制作者により提供されたスタイルを持つところでは、フォーカスインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
+                        <td>位置、テキストスタイル、コンテキストなどの識別インジケータがあるボタンは、ボタンであることを示すために<em>対照的な</em>視覚インジケーターを必要としないが、一部の利用者は、コントラスト要件をより簡単に満たすアウトラインでボタンを識別する可能性がある。</td>
                         							
-                        <td><img src="img/link-text-styled-default.png" alt="下線付きの濃い青でスタイル付けされたリンク。" /><br /> <img src="img/link-text-styled-focus.png" alt="濃い青のベタのアウトラインがついた、同じスタイル付けがされたリンク。" /></td>
+                        <td><img src="img/button-background.png" alt="かすかな青い背景のボタン。" width="100" /></td>
                         						
                      </tr>
                      						
@@ -187,7 +188,7 @@
                         							
                         <th>テキスト入力 (最小限)</th>
                         							
-                        <td>テキスト入力に、下部のボーダーなど、入力であるという視覚的なインジケータがあるところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
+                        <td>テキスト入力に、下部のボーダー (#767676) など、入力であることを示す視覚的なインジケータがあるところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
                         							
                         <td><img src="img/text-input-minimal.png" alt="下部のボーダー及び淡いグレーの背景で示されたラベルのあるテキスト入力。" /></td>
                         						
@@ -197,7 +198,7 @@
                         							
                         <th>テキスト入力</th>
                         							
-                        <td>完全なボーダーなど、テキスト入力がインジケータを持つところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
+                        <td>完全なボーダーborder (#767676) など、テキスト入力がインジケータを持つところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
                         							
                         <td><img src="img/text-input-default.png" alt="完全なボーダーで示されたラベルのあるテキスト入力。" /></td>
                         						
@@ -223,13 +224,99 @@
                         						
                      </tr>
                      						
-                     <tr> 
-                        							
-                        <th>背景色とフォーカススタイルを使用したテキスト入力</th>
-                        							
-                        <td>コンテンツ制作者により作成されたフォーカススタイルが濃い背景のコントロールに適用されたところでは、それは隣接した濃い背景と 3:1 のコントラスト比を持たなければならない。</td>
-                        							
-                        <td><img src="img/text-input-background-focus.png" alt="黄色いアウトラインの同じラベル及び入力" /></td>
+                     <tr>
+
+                        <th>Toggle button</th>
+
+                        <td>The toggle button's internal background (#070CD5) has a good contrast with the external
+                           white background. Also, the round toggle within (#7AC2FF) contrasts with the internal
+                           background.
+                        </td>
+
+                        <td><img src="img/toggle.png" alt="Dark blue oval toggle button with light blue internal indicator." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Dropdown indicator</th>
+
+                        <td>The down-arrow is required to understand that there is drop-down functionality, it
+                           has a contrast of 4.7:1 for the white icon on dark gray (#6E747B).
+                        </td>
+
+                        <td><img src="img/dropdown.png" alt="Button with the word Menu, and a down-arrow icon next to it." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Dropdown indicator</th>
+
+                        <td>The down-arrow is required to understand that there is drop-down functionality, it
+                           has a contrast of 21:1 for the black icon on white.
+                        </td>
+
+                        <td><img src="img/dropdown2.png" alt="Text with the word Menu, and a down-arrow icon next to it." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Checkbox - empty</th>
+
+                        <td>A black border on a white background indicates the checkbox.</td>
+
+                        <td><img src="img/checkbox-example1.png" alt="Black square border with a text label." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Checkbox - checked</th>
+
+                        <td>A black border on a white background indicates the checkbox, the black tick shape
+                           indicates the state of checked.
+                        </td>
+
+                        <td><img src="img/checkbox-example2.png" alt="Black square border with a tick inside, and a text label." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Checkbox - Fail</th>
+
+                        <td>The grey border color of the checkbox (#9D9D9D) has a contrast ratio of 2.7:1 with
+                           the white background, which is not sufficient for the visual information required
+                           to identify the checkbox.
+                        </td>
+
+                        <td><img src="img/checkbox-example3.png" alt="Grey box on a white background with a black tick in the middle." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Checkbox - Subtle hover style</th>
+
+                        <td>A black border on a white background indicates the checkbox, when the mouse pointer
+                           activates the subtle hover state adds a grey background (#DEDEDE). The black border
+                           has a 15:1 contrast ratio with the grey background.
+                        </td>
+
+                        <td><img src="img/checkbox-example4.png" alt="Blackbox on a circular grey background next to a text label." width="150" /></td>
+
+                     </tr>
+
+                     <tr>
+
+                        <th>Checkbox - Subtle focus style - fail</th>
+
+                        <td>A focus indicator is required. If the focus indicator is styled by the author, it
+                           must meet the 3:1 contrast ratio with adjacent colors. In this case, the gray (#AAA)
+                           indicator has an insufficient ratio of 2.3:1 with the white (#FFF) adjacent background.
+                        </td>
                         						
                      </tr>
                      					
