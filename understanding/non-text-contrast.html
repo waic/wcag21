@@ -198,7 +198,7 @@
                         							
                         <th>テキスト入力</th>
                         							
-                        <td>完全なボーダーborder (#767676) など、テキスト入力がインジケータを持つところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
+                        <td>完全なボーダー (#767676) など、テキスト入力がインジケータを持つところでは、そのインジケータは 3:1 のコントラスト比を満たさなければならない。</td>
                         							
                         <td><img src="img/text-input-default.png" alt="完全なボーダーで示されたラベルのあるテキスト入力。" /></td>
                         						
@@ -208,9 +208,9 @@
                         							
                         <th>テキスト入力のフォーカススタイル</th>
                         							
-                        <td>フォーカスインジケータは必須である。もしフォーカスインジケータがコンテンツ制作者によりスタイル付けされている場合は、3:1 のコントラスト比を満たさなければならない。</td>
+                        <td>フォーカスインジケータは必須である。While in this case the additional gray (#CCC) outline has an insufficient contrast of 1.6:1 against the white (#FFF) background, the cursor/caret which is displayed when the input receives focus <em>does</em> provide a sufficiently strong visual indication.</td>
                         							
-                        <td><img src="img/text-input-focus.png" alt="完全なボーダーと青いアウトラインで示されたラベルのあるテキスト入力。" /></td>
+                        <td><img src="img/text-input-focus.png" alt="かすかな灰色のアウトラインとカーソル/キャレットが表示されたラベルのあるテキスト入力。" /></td>
                         						
                      </tr>
                      						
@@ -218,7 +218,7 @@
                         							
                         <th>背景色を使用しているテキスト入力</th>
                         							
-                        <td>ボーダーがなく、かつ背景色のみで区別されるテキスト入力は隣接している背景に対して 3:1 のコントラスト比を持たなければならない。</td>
+                        <td>ボーダーがなく、かつ背景色のみで区別されるテキスト入力は隣接している背景 (#043464) に対して 3:1 のコントラスト比を持たなければならない。</td>
                         							
                         <td><img src="img/text-input-background.png" alt="濃い青のページ背景及び白いボックスで示されたラベルのあるテキスト入力" /></td>
                         						
@@ -317,7 +317,9 @@
                            must meet the 3:1 contrast ratio with adjacent colors. In this case, the gray (#AAA)
                            indicator has an insufficient ratio of 2.3:1 with the white (#FFF) adjacent background.
                         </td>
-                        						
+
+                        <td><img src="img/checkbox-example5.png" alt="Unchecked checkbox with a thick gray additional outline as focus indication." /></td>
+
                      </tr>
                      					
                   </table>
@@ -332,44 +334,11 @@
                   					
                   <p>利用者とのインタラクションに利用できないユーザインタフェース コンポーネント (例:HTML で無効化されたコントロール) は WCAG 2.1 ではコントラストの要件を満たすことを求められていない。アクティブではないユーザインタフェース コンポーネントは可視だが、現在は操作可能ではない。例としては、可視だが、フォームのすべての必須のフィールドに記入されるまで有効化できないフォームの下部にある送信ボタンがある。</p>
                   					
-                  <figure><img src="img/inactive-button.png" alt="グレーのボタンと対照しないグレーのテキスト。" width="120" /><figcaption>既定のブラウザのスタイルのアクティブではないボタン</figcaption>
+                  <figure id="figure-grey-button-and-text"><img src="img/inactive-button.png" alt="グレーのボタンと対照しないグレーのテキスト。" width="120" /><figcaption>図 8 既定のブラウザのスタイルのアクティブではないボタン</figcaption>
                      					
                   </figure>
                   					
-                  <p>HTML の無効化されたコントロールなどのアクティブではないコンポーネントは利用者とのインタラクションに利用できない。アクティブではないコントロールをコントラストの要件から免除するという判断は、多数の考察に基づく:</p>
-                  					
-                  <ul>
-                     						
-                     <li><strong>後方互換性:</strong> 1.4.3 コントラスト (最低限) の WCAG 2.0 ガイダンスは<q>アクティブではないユーザインタフェース コンポーネントの一部であるテキスト又は文字画像</q>を明確に免除する。テキストが属するグラフィカルなコンテナに十分なコントラストを求めながら、アクティブではないコンポーネント内の<strong>テキスト</strong>をコントラストに関する考察から免除することは紛らわしく、かつ一貫性がない。</li>
-                     						
-                     <li><p><strong>重要性のバリエーション:</strong>状況によって、無効化されたコントロールは、コントロールの無効化状態がどの程度意味を持つかによって、意図的におおよそ可視な状態にデザインされるかもしれない。二つの例で説明が可能である。</p>
-                        							
-                        <ol>
-                           								
-                           <li>コントロールは、利用者があらかじめ必要なタスクを完了した時点でアクティブになり、それまでは無効化されたままである。</li>
-                           								
-                           <li>デザイナーは多数の操作に標準的なレイアウトを使用する。一つの操作では、コントロールは有効ではなく、かつそのため無効化されているが、単に一貫したレイアウトを保つために可視のままである。</li>
-                           							
-                        </ol>
-                        							
-                        <p>一つ目の例の無効化されたコントロールは、より重要な手がかりを提供し、かつデザイナーは、重要性を強調しないために二つ目の例では意図的にコントラストを減らすかもしれない。</p>
-                        						
-                     </li>
-                     						
-                     <li><strong>相反するニーズ及び要求。</strong>意味のある情報は (知覚できる者たちには) より低いコントラストの無効化されたコントロールで伝えられているが、すべての利用者が無効化されたコントロールが目立つ度合いの増加を要求しているわけではない。<ul>
-                           								
-                           <li>ロービジョン - 何人かの利用者は無効化された要素を無視し、有効化された要素だけに集中したいだろう。他のロービジョンの利用者は、はっきりと無効化された項目を見たいだろう。</li>
-                           								
-                           <li>認知 - 認知障害のある人の何人かは、実際には有効な要素に集中 (かつ有効ではない要素を無視) したいだろう。我々が無効化された要素により強いコントラストを強いた場合、すべての目の見える人にとって、何がアクティブ (で何が無効化されている) か区別することが難しくなることが起こり得る。</li>
-                           							
-                        </ul>
-                        						
-                     </li>
-                     					
-                  </ul>
-                  					
-                  <p>汎用的な解決策を制定することは非常に困難だった。無効化されたコントロールにアイコンを追加するなど、利用者の設定に応じて無効化されたコントロールを様々に提示する方法が将来の発展として期待されている。</p>
-                  
+                  <p>HTML の無効化されたコントロールなどのアクティブではないコンポーネントは利用者とのインタラクションに利用できない。アクティブではないコントロールをコントラストの要件から免除するという判断は、多数の考察に基づく。Although it would be benefitial to some people to discern inactive controls, 汎用的な解決策を制定することは非常に困難だった。無効化されたコントロールにアイコンを追加するなど、利用者の設定に応じて無効化されたコントロールを様々に提示する方法が将来の発展として期待されている。</p>
                   				
                </section>
                			
@@ -386,7 +355,7 @@
                <p>すべてのグラフィカルオブジェクトが周囲を対照することが必要なわけではない - グラフィックが伝えていることを利用者が理解するのに必要なもののみである。<a href="https://en.wikipedia.org/wiki/Gestalt_psychology#Pr.C3.A4gnanz">Gestalt principles</a> の「連続性の法則」などは他のグラフィカルオブジェクト又は色の軽微な重なりを無視するために使用できる。</p>
                
                				
-               <table>
+               <table class="data">
                   					
                   <thead>
                      						
@@ -406,7 +375,7 @@
                         							
                         <td><img src="img/contrast-phone.png" alt="中央に白い電話のアイコンのあるオレンジの円。" width="40" /></td>
                         							
-                        <td><p>電話のアイコンはオレンジの円の中にある単純な形である。この意味はアイコン単体から理解でき、円の後ろにある背景は重要ではない。オレンジの背景及び白いアイコンは 3:1 以上のコントラストがあり、合格する。</p>
+                        <td><p>電話のアイコンはオレンジ (#E3660E) の円の中にある単純な形である。この意味はアイコン単体から理解でき、円の後ろにある背景は重要ではない。オレンジの背景及び白いアイコンは 3:1 以上のコントラストがあり、合格する。</p>
                            							
                            <p>グラフィカルオブジェクトは白い電話のアイコンである。</p>
                            							
@@ -420,7 +389,7 @@
                         							
                         <td><p>マグネットは薄く色づけられた先端と「U」という形により理解できる。そのため、このグラフィックを理解するには、(背景に対して) 全体の形及び (その他の U の形及び背景に対して) 薄く色づけられた先端を理解できるべきである。</p>
                            							
-                           <p>グラフィカルオブジェクトは (アウトラインによる、又はベタ塗りの赤色による) 「U」という形及びマグネットの各先端である。</p>
+                           <p>グラフィカルオブジェクトは (アウトラインによる、又はベタ塗りの赤色 #D0021B による) 「U」という形及びマグネットの各先端である。</p>
                            							
                         </td>
                         						
@@ -430,7 +399,7 @@
                         							
                         <td><img src="img/contrast-currency-down.png" alt="ポンド記号 (通貨) が中央にある下向きの黄色い矢印。" /></td>
                         							
-                        <td><p>低通貨記号は外形 (下向き矢印) 及び通貨記号 (外形とポンドアイコン) を識別することにより理解することができる。このグラフィックを理解するには、白い背景に対して矢印の形、及び黄色い背景に対してポンドアイコンを理解する必要がある。</p>
+                        <td><p>通貨 (£) が下がっていることを示す記号は、外形 (下向き矢印) 及び通貨記号 (グラフィックの一部である外形とポンドアイコン) を識別することにより理解することができる。このグラフィックを理解するには、白い背景に対して矢印の形、及び黄色い背景 (#F5A623) に対してポンドアイコンを理解する必要がある。</p>
                            							
                            <p>グラフィカルオブジェクトは外形及び通貨記号である。</p>
                            							
@@ -443,11 +412,11 @@
                         <td><!-- Sourced from wikipedia under CC sharealike license https://en.wikipedia.org/wiki/File:Simple_line_graph_of_ACE_2012_results_by_candidate_sj01.png --> <a href="img/simple-line-graph.png"><img src="img/simple-line-graph.png" alt="四つの異なる色の線が時間と共に追跡している、地域を横断する投票数の線チャート。" width="200" /></a></td>
                         
                         							
-                        <td><p>グラフを理解するためには、各条件の線及び外形を理解する必要がある。そのため、各線及び色のついた形はグラフ内の「グラフィカルオブジェクト」であり、かつ白い背景に対して 3:1 以上であるべきである。緑の三角形以外のほとんどは良いコントラストを持っている。</p>
+                        <td><p>グラフを理解するためには、各条件の線及び外形を理解する必要がある。To perceive the values of each line along the chart you need to discern the grey lines marking the graduated 100 value increments.</p>
                            							
                            <p>グラフィカルオブジェクトは値のための背景の線を含むグラフ内の線、及び形と色つきの線である。</p>
                            							
-                           <p>線には背景に対して 3:1 のコントラストがあるべきだが、それらの他の線との重なりは小さいため、それぞれと対照しなくても良い。(以下の検証の原則を確認すること。)</p>
+                           <p>線には背景に対して 3:1 のコントラストがあるべきだが、それらの他の線との重なりは小さいため、それぞれ又は目盛り付きの線と対照しなくても良い。(以下の検証の原則を確認すること。)</p>
                            						
                         </td>
                         
@@ -496,7 +465,15 @@
                   				
                   <ul>
                      					
-                     <li>ラベル及びチャート内の値など、グラフィックに埋め込まれた又は重ねられたテキストが同じ情報を伝えている。</li>
+                     <li><p>ラベル<em>及び</em>チャート内の値など、グラフィックに埋め込まれた又は重ねられたテキストが同じ情報を伝えている。</p>
+                     
+                        <div class="note">
+                           <div role="heading" class="note-title marker" aria-level="5">Note</div>
+                           <p>グラフィック内のテキストは <a href="https://waic.jp/docs/WCAG21/#contrast-minimum">1.4.3 コントラスト (最低限)</a> を満たさなければならない。
+                           </p>
+                        </div>
+
+                     </li>
                      					
                      <li>グラフィックが見栄えのためにあり、利用者にコンテンツを理解するため又は機能を使用するために見る又は理解することを求めない。</li>
                      					
@@ -515,7 +492,7 @@
                   				
                   <p>グラデーションは領域間の見かけのコントラストを減らすことができ、かつ検証をより困難にする。一般的な原則としては、理解するのに必要なグラフィカルオブジェクトを特定し、その領域の中央の色をとることである。もし十分なコントラストのない隣接している色を取り除いても、まだグラフィカルオブジェクトを特定しかつ理解することができるのか？</p>
                   				
-                  <figure><img src="img/contrast-gradient.png" alt="「i」が情報ということを示す二つのバージョンの青い円。一つ目の例では青いグラデーションの背景があり、二つ目は上半分の背景がなくなっており、 i を不明瞭にしている。" width="300" /><figcaption>十分なコントラストのない背景を取り除くことは、グラフィカルオブジェクト (「i」) が理解できなくなることを強調する。</figcaption>
+                  <figure id="figure-blue-circle-i-versions"><img src="img/contrast-gradient.png" alt="「i」が情報ということを示す二つのバージョンの青い円。一つ目の例では青いグラデーションの背景があり、二つ目は上半分の背景がなくなっており、 i を不明瞭にしている。" width="300" /><figcaption>図 9 十分なコントラストのない背景を取り除くことは、グラフィカルオブジェクト (「i」) が理解できなくなることを強調する。</figcaption>
                   </figure>
                   				
                </section>
@@ -530,7 +507,7 @@
                   				
                   <!-- example from http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=pieChart&demo=default -->
                   				
-                  <figure><img alt="一つの扇形が強調された円グラフ及び隣に付いているボックスはデータを表していて、かつ凡例内のソースを示している。" src="img/dynamic-pie-chart.png" width="350" /><figcaption>現在の「扇形」がホバー又はフォーカスされている動的なチャートは、値の関連しているテキスト表示を活性化し、かつ series を強調する</figcaption>
+                  <figure><img alt="一つの扇形が強調された円グラフ及び隣に付いているボックスはデータを表していて、かつ凡例内のソースを示している。" src="img/dynamic-pie-chart.png" width="350" /><figcaption>図 10 現在の「扇形」がホバー又はフォーカスされている動的なチャートは、値の関連しているテキスト表示を活性化し、かつ series を強調する</figcaption>
                      				
                   </figure>
                   				
@@ -659,25 +636,25 @@
                				
                <p>円グラフはこの達成基準のグラフィカルオブジェクトに関する部分の良いケーススタディになる。次の円グラフは、ブラウザの市場シェアの割合を伝えることを意図している。実際の数字は作られたものであり、これらは実際の市場シェアではないことに注意いただきたい。</p>
                				
-               <figure><img src="img/graphics-contrast_pie-chart_fail.png" alt="失敗している円グラフ" /><figcaption>
+               <figure id="figure-failing-pie-chart"><img src="img/graphics-contrast_pie-chart_fail.png" alt="失敗している円グラフ" /><figcaption>
                      						
-                     <p><strong>失敗:</strong>円グラフには各扇形にラベルがついている (そのため、1.4.1 色の使用は合格する) が、扇形の割合を理解するためには、その扇形の縁 (必要不可欠な情報を伝えるグラフィカルオブジェクト) を認識しなければならず、かつ各扇形間のコントラストは 3:1 又はそれ以上ではない。</p>
+                     <p>図 11 <strong>失敗:</strong>円グラフには各扇形にラベルがついている (そのため、1.4.1 色の使用は合格する) が、扇形の割合を理解するためには、その扇形の縁 (必要不可欠な情報を伝えるグラフィカルオブジェクト) を認識しなければならず、かつ各扇形間のコントラストは 3:1 又はそれ以上ではない。</p>
                      					
                   </figcaption>
                   				
                </figure>
                				
-               <figure><img src="img/graphics-contrast_pie-chart_na.png" alt="適用されない円グラフ" /><figcaption>
+               <figure id="figure-not-applicable-pie-chart"><img src="img/graphics-contrast_pie-chart_na.png" alt="適用されない円グラフ" /><figcaption>
                      						
-                     <p><strong>非適用:</strong>円グラフには可視ラベル<em>及び</em>値があり、グラフィカルオブジェクト (円の扇形) の同等の情報を伝えている。</p>
+                     <p>図 12 <strong>非適用:</strong>円グラフには可視ラベル<em>及び</em>値があり、グラフィカルオブジェクト (円の扇形) の同等の情報を伝えている。</p>
                      					
                   </figcaption>
                   				
                </figure>
                				
-               <figure><img src="img/graphics-contrast_pie-chart_pass.png" alt="合格している円グラフ" /><figcaption>
+               <figure id="figure-passing-pie-chart"><img src="img/graphics-contrast_pie-chart_pass.png" alt="合格している円グラフ" /><figcaption>
                      						
-                     <p><strong>合格:</strong>円グラフには可視ラベルがあり、かつ十分なコントラストが円グラフの扇形 (グラフィカルオブジェクト) の周囲及び間にある。コントラストレベルを得るために、さらに濃いボーダーが黄色い扇形の周りに追加されている。</p>
+                     <p>図 13 <strong>合格:</strong>円グラフには可視ラベルがあり、かつ十分なコントラストが円グラフの扇形 (グラフィカルオブジェクト) の周囲及び間にある。コントラストレベルを得るために、さらに濃いボーダーが黄色い扇形の周りに追加されている。</p>
                      					
                   </figcaption>
                   				
@@ -688,9 +665,9 @@
                				
                <h3>インフォグラフィック</h3>
                				
-               <figure><img src="img/infographic-fail.png" alt="五つの異なるソーシャルネットワークのサイズ示すために複数のサイズの明るい色の円で表しているインフォグラフィック" /><figcaption>
+               <figure id="figure-infographic-light-circles"><img src="img/infographic-fail.png" alt="五つの異なるソーシャルネットワークのサイズ示すために複数のサイズの明るい色の円で表しているインフォグラフィック" /><figcaption>
                      						
-                     <p><strong>失敗:</strong>ネットワークのサイズを理解するために円を識別する必要があり、かつどのネットワークを表しているかを識別するために各円の中のアイコンを区別する必要がある。</p>
+                     <p>図 14 <strong>失敗:</strong>ネットワークのサイズを理解するために円を識別する必要があり、かつどのネットワークを表しているかを識別するために各円の中のアイコンを区別する必要がある。</p>
                      					
                   </figcaption>
                   				
@@ -698,9 +675,9 @@
                				
                <p>グラフィカルオブジェクトは (背景に対して測定される) 円及び (円の背景に対して測定される) 各円の中のアイコンである。</p>
                				
-               <figure><img src="img/infographic-pass.png" alt="円の周りに濃いボーダーと対照するアイコン、対照しているテキストのある同じインフォグラフィック" /><figcaption>
+               <figure id="figure-infographic-contrasting-text"><img src="img/infographic-pass.png" alt="円の周りに濃いボーダーと対照するアイコン、対照しているテキストのある同じインフォグラフィック" /><figcaption>
                      						
-                     <p><strong>合格:</strong>円には対照するボーダーがあり、かつアイコンは薄い円の背景に対して対照する濃い色である。</p>
+                     <p>図 15 <strong>合格:</strong>円には対照するボーダーがあり、かつアイコンは薄い円の背景に対して対照する濃い色である。</p>
                      					
                   </figcaption>
                   				
@@ -729,20 +706,26 @@
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
-               <section class="situation" id="user-interface-component-contrast">
+               <section class="situation" id="situation-b-color-is-required-to-understand-graphical-content">
                   
-                  <h4>ユーザインタフェース コンポーネントのコントラスト</h4>
-                  
-                  <ul>
-                     
-                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G195">G195: コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</a></li>
-                     
-                  </ul>
+                  <section class="situation" id="situation-a-color-is-used-to-identify-user-interface-components-or-used-to-identify-user-interface-component-states">
+
+                     <h5>Situation A: Color is used to identify user interface components or used to identify
+                        user interface component states
+                     </h5>
+
+                     <ul>
+
+                        <li><a class="general" href="https://www.w3.org/WAI/WCAG21/Techniques/general/G195">G195: Using an author-supplied, highly visible focus indicator</a></li>
+
+                        <li><a class="general" href="https://www.w3.org/WAI/WCAG21/Techniques/general/G174">G174: Providing a control with a sufficient contrast ratio that allows users to switch to
+                              a presentation that uses sufficient contrast</a></li>
+
+                     </ul>
+
+                  </section>
                   				
-               </section>
-               <section class="situation" id="graphics-with-sufficient-contrast">
-                  					
-                  <h4>十分なコントラストのグラフィック</h4>
+                  <h4>Situation B: Color is required to understand graphical content</h4>
                   					
                   <ul>
                      						
@@ -753,34 +736,6 @@
                   </ul>
                   				
                </section>
-               <section class="situation" id="text-in-or-over-graphics">
-                  					
-                  <h4>グラフィック内又は上にあるテキスト</h4>
-                  					
-                  <ul>
-                     						
-                     <li>@@ グラフィックにラベル及び値を含める (TBD)</li>
-                     						
-                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G18">G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する</a></li>
-                     						
-                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G145">G145: テキスト (及び文字画像) とその背景の間に、少なくとも 3:1 のコントラスト比を確保する</a></li>
-                     						
-                     <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
-                     						
-                     <li><a href="https://www.w3.org/WAI/GL/wiki/Using_sufficient_contrast_for_images_that_convey_information">Using sufficient contrast for images that convey information (Draft)</a></li>
-                     					
-                  </ul>
-                  				
-               </section>
-            </section>
-            <section id="advisory">
-               <h3>参考達成方法</h3>
-               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
-               <ul>
-                  					
-                  <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a></li>
-                  				
-               </ul>
             </section>
             <section id="failure">
                <h3>失敗例</h3>
@@ -865,9 +820,6 @@
             </dd>
             <dt id="dfn-state">状態 (state)</dt>
             <dd><definition xmlns="">
-                  					
-                  
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="change">New</p>
                   					
                   
                   <p xmlns="http://www.w3.org/1999/xhtml">ユーザーのアクション又は自動プロセスに応答して変化し得るユーザインタフェースコンポーネントの特性を表現する動的特性。</p>
