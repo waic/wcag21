@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H89: Using the title attribute to provide context-sensitive help</title>
+      <title>H89: コンテキストに応じたヘルプを提供するために、title 属性を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,71 +10,68 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H88">Previous Technique: H88</a></li>
-            <li><a href="H90">Next Technique: H90</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H88">前の達成方法: H88</a></li>
+            <li><a href="H90">次の達成方法: H90</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the title attribute to provide context-sensitive help</h1>
+      <h1>コンテキストに応じたヘルプを提供するために、title 属性を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/help">Success Criterion 3.3.5: Help</a> (Advisory)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML </p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/help">達成基準 3.3.5: ヘルプ</a> (参考)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide context sensitive help for users as
-               they enter data in forms by providing the help information in a <code class="att">title</code> attribute. The help may include format information or examples of input. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、<code class="att">title</code> 属性にヘルプ情報を提供することで、フォームにデータを入力する利用者にコンテキストに応じたヘルプを提供することである。ヘルプは書式情報もしくは入力例を含んでもよい。 
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <div>
-                  
-                  <p>Current user agents and assistive technologies do not always provide the information
-                     contained in the <code class="att">title</code> attribute to users. Avoid using this technique in isolation until the <code class="att">title</code> attribute has wide-spread support. 
-                  </p>
-                  
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>     
+                  <p>現在のユーザエージェントおよび支援技術は <code class="att">title</code> 属性に含まれた情報を利用者に常には提供しない。<code class="att">title</code> 属性が広範囲にサポートされるまではこの達成方法を単独で利用することは避けるべきである。 
+                  </p>                  
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>     
+                  <p>上記の注記同様、<a href="https://www.w3.org/TR/html52/dom.html#the-title-attribute">HTML 5.2§3.2.5.1. The title attribute</a> の Warning で述べられているように、多くのユーザエージェントではアクセシブルな形でこの属性を公開しないので、<code>title</code> 属性に依存することを勧めていない。 
+                  </p>                  
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A mapping application provides a form consisting of a label "Address:", an input box
-                  and a submit button with value "Find map". The input box has a <code class="att">title</code> attribute value with an example of the address format the user should enter. 
+               <h3>例 1</h3>
+               <p>地図検索アプリケーションはラベル"住所:"で構成されるフォームと、入力ボックスと、"地図検索"という値の実行ボタンを提供する。インプットボックスは利用者が入力するアドレス書式の例を <code class="att">title</code> 属性に持つ。 
                </p><pre xml:space="preserve">
 &lt;label for="searchAddress"&gt;Address: &lt;/label&gt;
 &lt;input id="searchAddress" type="text" size="30" value="" name="searchAddress" 
  title="Address example: 101 Collins St, Melbourne, Australia" /&gt;
              </pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A form that allows users to pay their bill online requires the user to enter their
-                  account number. The input box associated with the "Account number" label has a <code class="att">title</code> attribute providing information on locating the account number. 
+               <h3>例 2</h3>
+               <p>利用者が請求書をオンラインで支払うことを可能にするフォームでは、利用者は自分の口座番号を入力する必要がある。ラベル「口座番号」がついたインプットボックスは、口座番号の特定に関する情報を提供する <code class="att">title</code> 属性を持つ。 
                </p><pre xml:space="preserve">
 &lt;label for="accNum1"&gt;Account number: &lt;/label&gt;
 &lt;input id="accNum1" type="text" size="10" value="" title="Your account number 
@@ -82,39 +79,38 @@
              </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H65">H65: Using the title attribute to identify form controls when the label element cannot
-                     be used</a></li>
+               <li><a href="H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
                
-               <li><a href="../general/G71">G71: Providing a help link on every Web page</a></li>
+               <li><a href="../general/G71">G71: すべてのウェブページにヘルプへのリンクを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify form controls that require text input. </li>
+                  <li>テキスト入力を要求しているフォームコントロールを特定する。</li>
                   
-                  <li>Check that each form control has an explicitly associated label </li>
+                  <li>各フォームコントロールに明示的に関連付けられたラベルがあることを確認する。</li>
                   
-                  <li>Check that each form control has context-sensitive help provided in the <code class="att">title</code> attribute. 
+                  <li>各フォームコントロールがコンテキストに応じたヘルプを <code class="att">title</code>  属性で提供していることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true.</li>
+                  <li>上記 #2 及び #3 の結果が真である。</li>
                   
                </ul>
                
