@@ -311,35 +311,29 @@
 </pre></section>
             <section class="example" id="example-4-checkbox-">
                <h3>例 4: チェックボックス</h3>
-               <p>Example 4 has a role of "checkbox", from the 'type' attribute of the <code class="el">input</code> element. The <code class="el">label</code> element is associated with the <code class="el">input</code> element via the 'for' attribute which refers to the 'id' attribute of the <code class="el">input</code> element. The name comes from the <code class="el">label</code> element, in this case "cheese". Its state can be "checked" or "unchecked" and comes
-                  from the 'checked' attribute. The state can be changed by the user's interaction with
-                  the control. 
+               <p>例 4 は、<code class="el">input</code> 要素の type 属性から「チェックボックス」という役割 (role) を持っている。<code class="el">label</code> 要素の for 属性が <code class="el">input</code> 要素の id 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した「Cheese」となる。状態 (state) は checked 属性で「チェックあり」又は「チェックなし」に設定できる。そのコントロールに対する利用者のインタラクションによって、状態 (state) が変更される。 
                </p><pre xml:space="preserve">&lt;label for="cb_1"&gt;Cheese&lt;/label&gt; 
 &lt;input id="cb_1" type="checkbox" checked="checked"&gt;
                     </pre></section>
             <section class="example" id="example-5-radio-buttons-">
-               <h3>Example 5: Radio Buttons </h3>
-               <p>Example 5 has a role of "radio button" from the 'type' attribute on the <code class="el">input</code> element. Its name comes from the <code class="el">label</code> element. The state can be "checked" or "unchecked" and comes from the 'checked' attribute.
-                  The state can be changed by the user. 
+               <h3>例 5: ラジオボタン</h3>
+               <p>例 5 は、<code class="el">input</code> 要素の type 属性から「ラジオボタン」という役割 (role) を持っている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素から与えられる。状態 (state) は、checked 属性によって「チェックあり」又は「チェックなし」に設定できる。状態 (state) は、利用者が変更できる。 
                </p><pre xml:space="preserve">&lt;input type="radio" name="color" id="r1" checked="checked"/&gt;&lt;label for="r1"&gt;Red&lt;/label&gt;
 &lt;input type="radio" name="color" id="r2" /&gt;&lt;label for="r2"&gt;Blue&lt;/label&gt;
 &lt;input type="radio" name="color" id="r3" /&gt;&lt;label for="r3"&gt;Green&lt;/label&gt;
                     </pre></section>
             <section class="example" id="example-6">
-               <h3>Example 6</h3>
-               <p class="exsubhead">Example 6a</p>
-               <p>Example 6a has a role of "list box" from the <code class="el">select</code> element. Its name is "Numbers" from the <code class="el">label</code> element. Forgetting to give a name to the select is a common error. The value is
-                  the <code class="el">option</code> element that has the 'selected' attribute present (with a value of "selected" in
-                  XHTML). In this case, the default value is "Two". 
+               <h3>例 6</h3>
+               <p class="exsubhead">例 6a</p>
+               <p>例 6a は、<code class="el">select</code> 要素によって「リストボックス」という役割 (role) を持っている。名前 (name) は「Numbers」で、label 要素から与えられている。<code class="el">select</code> 要素に名前 (name) を付け忘れるのは、よくあるエラーの一つである。値 (value) は、selected 属性 (XHTML では値を "selected" と指定) のある <code class="el">option</code> 要素であり、初期値は「Two」ということになる。 
                </p><pre xml:space="preserve">&lt;label for="s1"&gt;Numbers&lt;/label&gt;
 &lt;select id="s1" size="1"&gt;
  &lt;option&gt;One&lt;/option&gt;
  &lt;option selected="selected"&gt;Two&lt;/option&gt;
  &lt;option&gt;Three&lt;/option&gt;
 &lt;/select&gt;
-                    </pre><p class="exsubhead">Example 6b</p>
-               <p>Example 6b has the same name, role, and value as the above, but sets the name with
-                  the 'title' attribute on the <code class="el">select</code> element. This technique can be used when a visible label is not desirable. 
+                    </pre><p class="exsubhead">例 6b</p>
+               <p>例 6b では、事例 6a の <code class="el">select</code> 要素と同じ名前 (name)、役割 (role)、値 (value) であるが、名前 (name) を title 属性で指定している点が異なる。この方法は、ラベルを視覚的に表示しないほうがよい場合に用いることができる。
                </p><pre xml:space="preserve">&lt;select id="s1" title="Numbers" size="1"&gt;
  &lt;option&gt;One&lt;/option&gt;
  &lt;option selected="selected"&gt;Two&lt;/option&gt;
@@ -347,21 +341,19 @@
 &lt;/select&gt;
                     </pre></section>
             <section class="example" id="example-7--textarea">
-               <h3>Example 7:  Textarea</h3>
-               <p class="exsubhead">Example 7a</p>
-               <p>Example 7a has a role of "editable text" from the <code class="el">textarea</code> element. The name is "Type your speech here" from the <code class="el">label</code> element. The value is the content inside the <code class="el">textarea</code> element, in this case "Four score and seven years ago". 
+               <h3>例 7:  テキストエリア</h3>
+               <p class="exsubhead">例 7a</p>
+               <p>例 7a は、<code class="el">textarea</code> 要素の「編集可能なテキスト」という役割 (role) を持っている。名前 (name) は、<code class="el">label</code> 要素で指定した「Type your speech here」である。値 (value) は、<code class="el">textarea</code> 要素内にある「Four score and seven years ago」である。
                </p><pre xml:space="preserve">&lt;label for="ta_1"&gt;Type your speech here&lt;/label&gt;
 &lt;textarea id="ta_1" &gt;Four score and seven years ago&lt;/textarea&gt;
-                    </pre><p class="exsubhead">Example 7b</p>
-               <p>Example 7b has the same role, the name is set using the 'title' attribute, and the
-                  value is the empty string.
+                    </pre><p class="exsubhead">例 7b</p>
+               <p>例 7b は、同じ役割 (role) を持ち、名前 (name) は title 属性を用いて指定していて、値 (value) は空である。
                </p><pre xml:space="preserve">&lt;textarea id="ta_1" title="Type your speech here" &gt;Four score and seven years ago&lt;/textarea&gt;
                     </pre></section>
             <section class="example" id="example-8">
-               <h3>Example 8</h3>
-               <p class="exsubhead">Radio Fieldset</p>
-               <p>The radio fieldset in example 8 has a role of "grouping". The name comes from the
-                  <code class="el">legend</code> element. 
+               <h3>例 8</h3>
+               <p class="exsubhead">ラジオボタンのフィールドセット</p>
+               <p>例 8 のラジオボタンのフィールドセットには「グループ化」という役割 (role) がある。名前 (name) は <code class="el">legend</code> 要素によって与えられている。 
                </p><pre xml:space="preserve">&lt;fieldset&gt;
   &lt;legend&gt;Choose a Color:&lt;/legend&gt; 
      &lt;input id="red" type="radio" name="color" value="red" /&gt;&lt;label for="red"&gt;Red&lt;/label&gt;&lt;br /&gt; 
@@ -371,8 +363,8 @@
                     </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -393,35 +385,34 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Inspect the HTML source code.</li>
+                  <li>HTML のソースコードを調べる。</li>
                   
-                  <li>For each instance of links and form elements, check that the name, value, and state
-                     are specified as indicated in the table above. 
+                  <li>リンク及びフォーム要素に対して、上記の表で示されているように、名前 (name)、値 (value)、状態 (state) が指定されていることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>上記 #2 の結果が真である。</li>
                   
                </ul>
                
