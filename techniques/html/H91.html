@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H91: Using HTML form controls and links</title>
+      <title>H91: HTML のフォームコントロール及びリンクを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,82 +10,65 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H90">Previous Technique: H90</a></li>
-            <li><a href="H93">Next Technique: H93</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H90">前の達成方法: H90</a></li>
+            <li><a href="H93">次の達成方法: H93</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using HTML form controls and links</h1>
+      <h1>HTML のフォームコントロール及びリンクを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML form controls and links </p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML のフォームコントロール及びリンク</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient as a way to meet <a href="../general/G108">G108: Using markup features to expose the name and role, allow user-settable properties
-                     to be directly set, and provide notification of changes</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value)</a> (<a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to use standard HTML form controls and link elements
-               to provide keyboard operation and assistive technology interoperability of interactive
-               user interface elements.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、インタラクティブなユーザインタフェースを構成する要素のキーボード操作及び支援技術との相互運用性を提供するために、標準的な HTML のフォームコントロール及びリンク要素を用いることである。
             </p>
-            <p>User agents provide the keyboard operation of HTML form controls and links. In addition,
-               the user agent maps the form controls and links to an accessibility API. Assistive
-               technologies use the accessibility API to extract appropriate accessibility information,
-               such as role, name, state, and value, and present them to users. The role is provided
-               by the HTML element, and the name is provided by the text associated with that element.
-               Elements for which values and states are appropriate also expose the values and states
-               via multiple mechanisms. 
+            <p>ユーザエージェントは、HTML のフォームコントロール及びリンクのキーボード操作を提供している。さらに、ユーザエージェントは、フォームコントロール及びリンクを、アクセシビリティ API に結び付けている。支援技術は、アクセシビリティ API を利用して、役割 (role)、識別名 (name)、状態 (state)、値 (value) といった適切なアクセシビリティ情報を抽出し、それらを利用者に提供している。役割は HTML の要素によって提供され、名前はその要素に関連付けられているテキストによって提供される。値及び状態が適切な要素は、複合的なメカニズムを通じて、それらの値及び状態も支援技術に提示している。 
             </p>
-            <p>In some cases, the text is already associated with the control through a required
-               attribute. For example, submit buttons use the button element text or image 'alt'
-               attribute as the name. In the case of form controls, label elements or 'title' attributes
-               are used. The following table describes how the role, name, value, and state are determined
-               for HTML links and form controls. 
+            <p>必須の属性を通じてテキストがすでにコントロールと関連付けられている場合もある。たとえば、送信ボタンは、button 要素内のテキスト又は画像の「alt」属性を識別名として用いている。フォームコントロールの場合は、label 要素又は「title」属性が用いられる。次の表は、HTML のフォームコントロール及びリンクの役割、識別名、値、状態がどのように決定されるかを示したものである。
             </p>
-            <table summary="Table describing how the role, name, value and state are determined for HTML links and form controls." id="H91_mappings">
+            <table summary="Table describing how the role, name, value and state are determined for HTML links and form controls." id="H91_mappings" border="1">
                		
                <thead>
                   			
                   <tr>
                      				
-                     <th>HTML element </th>
+                     <th>HTML 要素</th>
                      				
-                     <th>Role</th>
+                     <th>役割 (role)</th>
                      				
-                     <th>Name </th>
+                     <th>識別名 (name)</th>
                      				
-                     <th>Value </th>
+                     <th>値 (value)</th>
                      				
-                     <th>State </th>
+                     <th>状態 (state)</th>
                      			
                   </tr>
                   		
@@ -97,13 +80,12 @@
                      				
                      <td>&lt;a&gt; </td>
                      				
-                     <td> link </td>
+                     <td>リンク</td>
                      				
-                     <td> 'title' attribute, text within &lt;a&gt; element or 'alt' attribute if image link. Concatenated
-                        if both text and image 'alt' attribute are provided 
+                     <td><code>&lt;a&gt;</code> 要素の <code>title</code> 属性、画像リンクの場合は <code>alt</code> 属性。テキストと画像の <code>alt</code> 属性を両方が提供されている場合は、両者を結合する。 
                      </td>
                      				
-                     <td> 'href' attribute </td>
+                     <td><code>href</code> 属性</td>
                      				
                      <td></td>
                      			
@@ -113,9 +95,9 @@
                      				
                      <td>&lt;button&gt; </td>
                      				
-                     <td> push button </td>
+                     <td>プッシュボタン</td>
                      				
-                     <td> text inside &lt;button&gt; element or 'title' attribute </td>
+                     <td><code>&lt;button&gt;</code> 要素内のテキスト又は <code>title</code> 属性</td>
                      				
                      <td></td>
                      				
@@ -127,9 +109,9 @@
                      				
                      <td>&lt;fieldset&gt; </td>
                      				
-                     <td> grouping </td>
+                     <td>グループ化</td>
                      				
-                     <td>text inside &lt;legend&gt; element within fieldset element</td>
+                     <td>フィールドセット要素にある <code>&lt;legend&gt;</code> 要素内のテキスト</td>
                      				
                      <td></td>
                      				
@@ -139,11 +121,11 @@
                   			
                   <tr>
                      				
-                     <td>&lt;input type = "button", "submit", or "reset"&gt; </td>
+                     <td>&lt;input type = "button", "submit", 又は "reset"&gt; </td>
                      				
-                     <td> push button </td>
+                     <td>プッシュボタン</td>
                      				
-                     <td> 'value' attribute </td>
+                     <td><code>value</code> 属性</td>
                      				
                      <td></td>
                      				
@@ -155,9 +137,9 @@
                      				
                      <td>&lt;input type = "image"&gt; </td>
                      				
-                     <td> push button </td>
+                     <td>プッシュボタン</td>
                      				
-                     <td> 'alt' attribute or 'title' attribute </td>
+                     <td><code>alt</code> 属性又は <code>title</code> 属性</td>
                      				
                      <td></td>
                      				
@@ -169,11 +151,11 @@
                      				
                      <td>&lt;input type = "text"&gt; </td>
                      				
-                     <td> editable text </td>
+                     <td>編集可能なテキスト</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
                      				
-                     <td> 'value' attribute </td>
+                     <td><code>value</code> 属性</td>
                      				
                      <td></td>
                      			
@@ -183,11 +165,11 @@
                      				
                      <td>&lt;input type = "password"&gt; </td>
                      				
-                     <td> editable text </td>
+                     <td>編集可能なテキスト </td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
                      				
-                     <td>value is purposefully hidden</td>
+                     <td>値は意図的に隠されている</td>
                      				
                      <td></td>
                      			
@@ -197,11 +179,11 @@
                      				
                      <td>&lt;input type="file"&gt; </td>
                      				
-                     <td> editable text </td>
+                     <td>編集可能なテキスト</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は 'title' 属性</td>
                      				
-                     <td>'value' attribute</td>
+                     <td>'value' 属性</td>
                      				
                      <td></td>
                      			
@@ -211,13 +193,13 @@
                      				
                      <td>&lt;input type="checkbox"&gt; </td>
                      				
-                     <td> checkbox </td>
+                     <td>チェックボックス</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
                      				
                      <td></td>
                      				
-                     <td> 'checked' attribute
+                     <td><code>checked</code> 属性
                         				
                      </td>
                      			
@@ -227,13 +209,13 @@
                      				
                      <td>&lt;input type="radio"&gt; </td>
                      				
-                     <td> radio button </td>
+                     <td>ラジオボタン</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性 </td>
                      				
                      <td></td>
                      				
-                     <td> 'checked' attribute
+                     <td><code>checked</code> 属性
                         					
                         				
                      </td>
@@ -244,11 +226,11 @@
                      				
                      <td>&lt;select&gt; </td>
                      				
-                     <td> list box </td>
+                     <td>リスト</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
                      				
-                     <td>&lt;option&gt; element with 'selected' attribute set to "selected" </td>
+                     <td><code>&lt;option&gt;</code> 要素の <code>selected</code> 属性で「<code>selected</code>」と指定</td>
                      				
                      <td></td>
                      			
@@ -258,11 +240,11 @@
                      				
                      <td>&lt;textarea&gt; </td>
                      				
-                     <td> editable text </td>
+                     <td>編集可能なテキスト</td>
                      				
-                     <td>&lt;label&gt; element associated with it or 'title' attribute </td>
+                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
                      				
-                     <td> text within  &lt;textarea&gt; element </td>
+                     <td><code>&lt;textarea&gt;</code> 要素内のテキスト</td>
                      				
                      <td></td>
                      			
@@ -273,69 +255,62 @@
             </table>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-links">
-               <h3>Example 1: Links</h3>
-               <p>User agents provide mechanisms to navigate to and select links. In each of the following
-                  examples, the role is "link" from the &lt;a href&gt;.  Note that &lt;a name&gt; does not provide
-                  a role of "link". The value is the URI in the 'href' attribute. 
+               <h3>例 1: リンク</h3>
+               <p>ユーザエージェントは、リンクをナビゲートして選択するメカニズムを提供する。次の各事例では、<a href> により、役割 (role) は "link" となる。<a name> は "link" の役割 (role) を提供しないことに注意する。値 (value) は、href 属性の URI である。 
                </p>
-               <p class="exsubhead">Example 1a</p>
-               <p>In example 1a, the name is the text inside the link, in this case "Example Site".
+               <p class="exsubhead">例 1a</p>
+               <p>例 1a では、名前 (name) はリンクの中にあるテキストである。この場合は「Example Site」が該当する。
                   
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;Example Site&lt;/a&gt;
-                    </pre><p class="exsubhead">Example 1b</p>
-               <p>In example 1b of an image inside a link, the 'alt' attribute for the image provides
-                  the name. Some tools for viewing APIs, such as Microsoft Inspect Objects, will not
-                  surface this, but AT does. 
+                    </pre><p class="exsubhead">例 1b</p>
+               <p>リンクの中にある画像に関する例 1b では、画像の alt 属性が名前 (name) を提供している。例えば、Microsoft Inspect Objects などのように API を閲覧するツールには、alt 属性を可視化できないものもあるが、支援技術では抽出できる。
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;&lt;img src="example_logo.gif" alt="Example"&gt;&lt;/a&gt;
-                    </pre><p class="exsubhead">Example 1c</p>
-               <p>In example 1c, some assistive technology will not automatically insert a space character
-                  when concatenating the image's alt text and the text of the link. If the text should
-                  not be concatenated without a space, it is safest to insert a space between the image
-                  and the adjacent word so that words will not run together.
+                    </pre><p class="exsubhead">例 1c</p>
+               <p>例 1c では、画像の代替テキストとリンクのテキストを連結するときに自動的に空白文字を挿入しない支援技術もある。テキストをスペースなしで連結すべきでない場合、画像と隣接する単語との間にスペースを挿入して、単語が混ざらないようにするのが最も安全である。
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;&lt;img src="example_logo.gif" alt="Example"&gt; Text&lt;/a&gt;
-</pre></section>
+</pre>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>WAIC では H91-1c に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H91-1c.html">アクセシビリティ サポーテッド（AS）情報: H91-1c</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
+                  </p>
+               </div>
+            </div></section>
             <section class="example" id="example-2-buttons">
-               <h3>Example 2: Buttons</h3>
-               <p>There are several ways to create a button in HTML, and they all map to the "push button"
-                  role.
+               <h3>例 2: ボタン</h3>
+               <p>HTML では、ボタンを生成するのにさまざまな方法があるが、それらは全て「プッシュボタン」という役割 (role) に位置付けられる。
                </p>
-               <p class="exsubhead">Example 2a</p>
-               <p>In example 2a, the text is contained in the <code class="el">button</code> element, in this case "save", as the name. There is no value.
+               <p class="exsubhead">例 2a</p>
+               <p>例 2a では、<code class="el">button</code> 要素内の「save」というテキストが名前 (name) となる。値 (value) はない。
                </p><pre xml:space="preserve">&lt;button&gt;Save&lt;/button&gt;
-                    </pre><p class="exsubhead">Example 2b</p>
-               <p>Example 2b uses the 'value' attribute, in this case "Save", "Submit", or "Reset" as
-                  the name.
+                    </pre><p class="exsubhead">例 2b</p>
+               <p>例 2b では、value 属性を用いて「Save」「Submit」「Reset」という名前 (name) を指定している。
                </p><pre xml:space="preserve">&lt;input type="button" value="Save" /&gt; 
 &lt;input type="submit" value="Submit" /&gt;  
 &lt;input type="reset" value="Reset" /&gt;   
-                    </pre><p class="exsubhead">Example 2c</p>
-               <p>Example 2c uses the 'alt' attribute, in this case "save", as the name.</p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" /&gt; 
-                    </pre><p class="exsubhead">Example 2d</p>
-               <p>In example 2d, there is no 'alt' attribute so the 'title' attribute, in this case
-                  "save", is used as the name.
+                    </pre><p class="exsubhead">例 2c</p>
+               <p>例 2c では、alt 属性を用いて「save」という名前 (name) を指定している。</p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" /&gt; 
+                    </pre><p class="exsubhead">例 2d</p>
+               <p>例 2d では、alt 属性ではなく、title 属性を用いて「save」という名前 (name) を指定している。
                </p><pre xml:space="preserve">&lt;input type="image" src="save.gif" title="save" /&gt;
-                    </pre><p class="exsubhead">Example 2e</p>
-               <p>Example 2e clarifies how the user agent determines the name if the author specifies
-                  both the 'alt' and 'title' attributes of the input element. In this case, the user
-                  agent uses the 'alt' attribute ("Save") and ignores the 'title' attribute.
+                    </pre><p class="exsubhead">例 2e</p>
+               <p>例 2e は、コンテンツ制作者が input 要素の 'alt' 属性と 'title' 属性の両方を指定する場合、ユーザエージェントが名前 (name) をどのように決定するかを明らかにする。この場合、ユーザエージェントは、 'alt' 属性 ("save") を使用して、 'title' 属性を無視する。
                </p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" title="save the file" /&gt;
 </pre></section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p class="exsubhead">Example 3a</p>
-               <p>In example 3a, the input field has a role of "editable text". The <code class="el">label</code> element is associated to the <code class="el">input</code> element via the 'for' attribute which references the 'id' attribute of the <code class="el">input</code>&gt; element. The name comes from the <code class="el">label</code> element, in this case, "Type of fruit". Its value comes from its value attribute,
-                  in this case "bananas". 
+               <h3>例 3</h3>
+               <p class="exsubhead">例 3a</p>
+               <p>例 3a では、入力フィールドが「編集可能テキスト」という役割 (role) を持っている。<code class="el">label</code> 要素の for 属性が、<code class="el">input</code> 要素の id 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した「Type of fruit」となる。値 (value) は、value 属性の「bananas」となる。
                </p><pre xml:space="preserve">&lt;label for="text_1"&gt;Type of fruit&lt;/label&gt;
 &lt;input id="text_1" type="text" value="bananas"&gt;
-</pre><p class="exsubhead">Example 3b</p>
-               <p>In example 3b, the input field has the same role as example 3a, but the value is the
-                  empty string and the field gets its name from the 'title' attribute. 
+</pre><p class="exsubhead">例 3b</p>
+               <p>例 3b では、入力フィールドが例 3a と同じ役割 (role) を持つが、値 (value) がなく、名前 (name) を title 属性で指定している点が異なる。 
                </p><pre xml:space="preserve">&lt;input id="text_1" type="text" title="Type of fruit"&gt;
 </pre></section>
             <section class="example" id="example-4-checkbox-">
-               <h3>Example 4: Checkbox </h3>
+               <h3>例 4: チェックボックス</h3>
                <p>Example 4 has a role of "checkbox", from the 'type' attribute of the <code class="el">input</code> element. The <code class="el">label</code> element is associated with the <code class="el">input</code> element via the 'for' attribute which refers to the 'id' attribute of the <code class="el">input</code> element. The name comes from the <code class="el">label</code> element, in this case "cheese". Its state can be "checked" or "unchecked" and comes
                   from the 'checked' attribute. The state can be changed by the user's interaction with
                   the control. 
