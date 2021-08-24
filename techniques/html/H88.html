@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H88: Using HTML according to spec</title>
+      <title>H88: 仕様に準じて HTML を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,147 +10,112 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H86">Previous Technique: H86</a></li>
-            <li><a href="H89">Next Technique: H89</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H86">前の達成方法: H86</a></li>
+            <li><a href="H89">次の達成方法: H89</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using HTML according to spec</h1>
+      <h1>仕様に準じて HTML を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">Success Criterion 4.1.1: Parsing</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">達成基準 4.1.1: 構文解析</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Sufficient as a way to meet <a href="../general/G108">G108: Using markup features to expose the name and role, allow user-settable properties
-                     to be directly set, and provide notification of changes</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value)</a> (<a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to use HTML and XHTML according to their respective
-               specifications. Technology specifications define the meaning and proper handling of
-               features of the technology. Using those features in the manner described by the specification
-               ensures that user agents, including assistive technologies, will be able to present
-               representations of the feature that are accurate to the author's intent and interoperable
-               with each other.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、HTML 及び XHTML をそれぞれの仕様に準じて用いることである。技術仕様では、そのウェブコンテンツ技術の意味及び機能の適切な取扱方法を定めている。仕様に記述されている通りに HTML 及び XHTML の機能を用いることによって、支援技術を含むユーザエージェントが、コンテンツ制作者の意図通りで互いに相互運用性のある機能を提示することが可能となる。
             </p>
-            <p>At the time this technique was published, the appropriate versions of these technologies
-               is HTML 4.01 and XHTML 1.0. HTML 4.01 is the latest mature version of HTML, which
-               provides specific accessibility features and is widely supported by user agents. XHTML
-               1.0 provides the same features as HTML 4.01, except that it uses an XML structure,
-               and has a more strict syntax than the HTML structure. Later versions of these technologies
-               are not mature and / or are not widely supported by user agents at this time.
+            <p>この文書を記述した時点では、HTML 及び XHTML の妥当なバージョンは、HTML 4.01 及び XHTML 1.0 である。HTML 4.01 は、HTML の最も成熟したバージョンであり、特定のアクセシビリティ機能を提供し、ユーザエージェントによって広くサポートされている。XHTML 1.0 は、HTML 4.01 と同じ機能を提供しているが、XML 構造を用いており、HTML の構造よりも厳密な構文となっている。HTML 及び XHTML の最新バージョンは、まだ未成熟であり、ユーザエージェントにもまだ広くサポートされていないのが現状である。
             </p>
-            <p>There are a few broad aspects to using HTML and XHTML according to their specification.</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>HTML4 及び XHTML 1.0 は Superseded Recommendation としてマークされ、廃止された仕様である。2018 年 11 月現在、有効な W3C Recommendation は <a href="https://www.w3.org/TR/html51/">HTML 5.1</a> 及び <a href="https://www.w3.org/TR/html52/">HTML 5.2</a> である。
+                  </p>
+               </div>
+            </div>
+            <p>HTML 及び XHTML を仕様に準じて用いるにあたり、幾つかの留意すべき点がある。</p>
             <ol>
                
                <li>
-                  								       <strong>Using only features that are defined in the specification</strong> HTML defines sets of elements, attributes, and attribute values that may be used
-                  on Web pages. These features have specific semantic meanings and are intended to be
-                  processed by user agents in particular ways. Sometimes, however, additional features
-                  come into common authoring practice. These are usually initially supported by only
-                  one user agent. When features not in the specification are used, many user agents
-                  may not support the feature for a while or ever. Furthermore, lacking standard specifications
-                  for the use of these features, different user agents may provide varying support.
-                  This impacts accessibility because assistive technologies, developed with fewer resources
-                  than mainstream user agents, may take a long time if ever to add useful support. Therefore,
-                  authors should avoid features not defined in HTML and XHTML to prevent unexpected
-                  accessibility problems.
+                  								       <strong>仕様で定められている機能だけを用いる:</strong> HTML では、ウェブページで用いることのできる要素、属性及び属性値の一式を定義している。それらには固有のセマンティックな意味を持ち、ユーザエージェントが特定の方法で処理するよう意図されている。しかし、時には、仕様にはない方法がコンテンツ制作の際に一般的に用いられることがある。それが一つのユーザエージェントだけによってサポートされることが、そのきっかけとなることが多い。仕様にはない方法を用いた場合、多くのユーザエージェントはそれを当分の間サポートしなかったり、いつまでもサポートしなかったりする。さらに、標準仕様にない用い方をすると、ユーザエージェントによってそのサポート方法が異なることもある。そして、主流のブラウザと比べ少ないリソースで開発されている支援技術は、有用なサポートを追加する場合でも時間を要するため、アクセシビリティに影響を及ぼすことになる。よって、予期しないアクセシビリティの問題を回避するためにも、コンテンツ制作者は HTML 及び XHTML で定義されていない用法を避けるべきである。
                </li>
                
                <li>
-                  								       <strong>Using features in the manner prescribed by the specification</strong> The HTML specification provides specific guidance about how particular elements,
-                  attributes, and attribute values are to be processed and understood semantically.
-                  Sometimes, however, authors use features in a manner that is not supported by the
-                  specification, for example, using semantic elements to achieve visual effects without
-                  intending the underlying semantic message to be conveyed. This leads to confusion
-                  for user agents and assistive technologies that rely on correct semantic information
-                  to present a coherent representation of the page. It is important to use HTML features
-                  only as prescribed by the HTML specification.
+                  								       <strong>仕様によって規定されている方法で機能を用いる:</strong> HTML の仕様では、どのように特定の要素、属性及び属性値をセマンティックに処理し解釈すべきかについて、具体的なガイダンスを提供している。しかし、時には、コンテンツ制作者が仕様ではサポートされていない方法でそれらを用いることがある。例えば、本来のセマンティックなメッセージが伝わることを意図せずに、セマンティックな要素を用いて視覚的な効果を得ることが挙げられる。これは、正確なセマンティック情報を用いて首尾一貫したページを描画しているユーザエージェント及び支援技術に対して混乱を招くことにつながる。あくまで HTML の仕様によって規定されている機能として、HTML の各機能を用いることが重要である。
                </li>
                
                <li>
-                  								       <strong>Making sure the content can be parsed</strong> HTML and XHTML also define how content should be encoded in order to be correctly
-                  processed by user agents. Rules about the structure of start and end tags, attributes
-                  and values, nesting of elements, etc. ensure that user agents will parse the content
-                  in a way to achieve the intended document representation. Following the structural
-                  rules in these specifications is an important part of using these technologies according
-                  to specification. 
+                  								       <strong>コンテンツが解析可能であることを確認する:</strong> HTML 及び XHTML では、ユーザエージェントによって正しく処理されるためには、コンテンツをどのようにコーディングすべきかも定めている。開始タグ及び終了タグ、属性及び値、要素の入れ子などの構造に関するルールは、意図された文書の表現となるようにユーザエージェントがコンテンツを処理できるようにするためにある。HTML 及び XHTML の仕様における構造のルールに従うことが、仕様に準じてそれらのウェブコンテンツ技術を用いる上で重要なことの一つである。
                </li>
                
             </ol>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
-            <p>Refer to the resources section of <a href="../general/G134">G134: Validating Web pages</a>. 
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <p><a href="../general/G134">G134: ウェブページをバリデートする</a>の参考リソースを参照のこと。
             </p>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="H74">H74: Ensuring that opening and closing tags are used according to specification</a></li>
+               <li><a href="H74">H74: 開始タグ及び終了タグを仕様に準じて使用していることを確認する</a></li>
                
-               <li><a href="H75">H75: Ensuring that Web pages are well-formed</a></li>
+               <li><a href="H75">H75: ウェブページが well-formed であることを確認する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each HTML or XHTML page:</p>
+               <p>HTML 又は XHTML の各ページに対して:</p>
                
                <ol>
                   
-                  <li>Check that the page uses only elements, attributes, and attribute values that are
-                     defined in the relevant specification.
+                  <li>ページが、関連する仕様において定義されている要素、属性及び属性値のみを用いていることを確認する。
                   </li>
                   
-                  <li>Check that elements, attributes, and values are used in the manner prescribed by the
-                     relevant specification.
+                  <li>要素、属性及び値が、関連する仕様によって規定されている方法で用いられていることを確認する。
                   </li>
                   
-                  <li>Check that the page can be parsed correctly, according to the rules of the relevant
-                     specification.
+                  <li>ページが、関連する仕様のルールに従って、正しく解析可能であることを確認する。
                   </li>
                   
                </ol>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Check #1 and #3 are most easily checked with page validation tools. Check #2 can be
-                        checked with the assistance of heuristic evaluation tools though manual judgment is
-                        usually required.
+                     <p>上記 #1 及び #3 は、ページバリデーションツールを用いて容易に確認することができる。上記 #2 は、通常は人間による判断が求められるが、ヒューリスティックな評価ツールを補助的に用いて確認することが可能である。
                      </p>
                      
                   </div>
@@ -158,11 +123,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1, #2, and #3 are true.</li>
+                  <li>上記 #1、#2 及び #3 の結果が真である。</li>
                   
                </ul>
                
