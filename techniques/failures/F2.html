@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey
-         information without using the appropriate markup or text
+      <title>F2: 達成基準 1.3.1 の失敗例 － 情報を伝えるために、適切なマークアップ又はテキストを用いずに、テキストの提示の変化を使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,58 +11,48 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F1">Previous Technique: F1</a></li>
-            <li><a href="F3">Next Technique: F3</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F1">前の達成方法: F1</a></li>
+            <li><a href="F3">次の達成方法: F3</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey
-         information without using the appropriate markup or text
+      <h1>達成基準 1.3.1 の失敗例 － 情報を伝えるために、適切なマークアップ又はテキストを用いずに、テキストの提示の変化を使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support images or presentation markup.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>画像又は提示のマークアップをサポートする全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: (情報及び関係性</a></span>  (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This document describes a failure that occurs when a change in the appearance of text
-               conveys meaning without using appropriate semantic markup. This failure also applies
-               to images of text that are not enclosed in the appropriate semantic markup.
+            <h2>解説</h2>
+            <p>この文書では、テキストの見た目の変化が、適切なセマンティックマークアップを用いずに意味を伝える場合に発生する失敗例について説明する。この失敗例は、適切なセマンティックマークアップで囲まれていない文字画像にも適用される。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-using-css-to-style-the-p-element-to-look-like-a-heading">
-               <h3>Example 1: Using CSS to style the <code class="el">p</code> element to look like a heading
+               <h3>事例1: CSS を用いて <code class="el">p</code> 要素を見出しのような見た目にする
                </h3>
-               <p>The author intended to make a heading but didn't want the look of the default HTML
-                  heading. So they used CSS to style the P element to look like a heading and they called
-                  it a heading. But they failed to use the proper HTML heading element. Therefore, the
-                  Assisitive Technology could not distinguish it as a heading.
+               <p>コンテンツ制作者は見出しを作成しようとしたが、デフォルトの HTML 見出しの見た目を望まなかった。よって見出しのように見えるように P 要素をスタイル付けするために CSS を使用し、これを見出しと呼んだ。しかし、適切な HTML 見出し要素を使用しそこなった。したがって、支援技術はそれを見出しとして見分けることができない。
                </p><pre xml:space="preserve">
  &lt;style type="text/css"&gt;
  .heading1{
@@ -78,23 +67,19 @@
  ........
  &lt;/p&gt;
 </pre><div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>In this case, the proper approach would be to use CSS to style the <code class="el">H1</code> element in HTML.
+                     <p>この事例で用いるべき適切な手法は、HTML の <code class="el">h1</code> 要素を対象にした CSS を用いて見た目を制御する方法である。
                      </p>
                      
                   </div>
                </div>
             </section>
             <section class="example" id="example-2-images-of-text-used-as-headings-where-the-images-are-not-marked-up-with-heading-tags">
-               <h3>Example 2: Images of text used as headings where the images are not marked up with
-                  heading tags
+               <h3>事例 2: 見出しとして用いられる文字画像で、その画像が見出しタグでマークアップされていない
                </h3>
-               <p>Chapter1.gif is an image of the words, "Chapter One" in a Garamond font sized at 20
-                  pixels. This is a failure because at a minimum the img element should be enclosed
-                  within a header element. A better solution would be to eliminate the image and to
-                  enclose the text within a header element which has been styled using CSS.
+               <p>Chapter1.gif は、20 ピクセルの Garamond フォントで表示した「Chapter One」という文字列の画像である。この場合、少なくともこの画像を見出し要素に入れる必要があるため、失敗例である。よりよい手法は、このテキストを見出し要素でマークアップし、この要素に対する CSS を用いて見た目を指定する方法である。
                </p><pre xml:space="preserve">
 &lt;img src="Chapter1.gif" alt="Chapter One"&gt;
  
@@ -102,19 +87,16 @@
 &lt;/p&gt;
 </pre></section>
             <section class="example" id="example-3-using-css-to-visually-emphasize-a-phrase-or-word-without-conveying-that-emphasis-semantically">
-               <h3>Example 3: Using CSS to visually emphasize a phrase or word without conveying that
-                  emphasis semantically
+               <h3>事例 3: 単語やフレーズを強調するために CSS を用いて見た目を制御しているが、その強調のセマンティックを表すマークアップが行われていない場合
                </h3>
-               <p>The following example fails because the information conveyed by using the CSS font-weight
-                  property to change to a bold font is not conveyed through semantic markup or stated
-                  explicitly in the text.
+               <p>以下の例では、CSS の font-weight プロパティを用いて太字に変更している部分の持つ情報について、セマンティックマークアップがされておらず、また明示的なテキスト情報も提供されていないため失敗となる。
                </p>
-               <p>Here is a CSS class to specify bold:</p><pre xml:space="preserve">
+               <p>以下が CSS で太字の書体を指定するためのクラスである:</p><pre xml:space="preserve">
 .yell {
   font-weight:bold;
   text-transform: uppercase;
 }
-</pre><p>And here is the corresponding HTML:</p><pre xml:space="preserve">
+</pre><p>そして以下が対応する HTML である:</p><pre xml:space="preserve">
 &lt;p&gt;
  "I said, &lt;span class="yell"&gt;no&lt;/span&gt;, not before dinner!", 
  was the exasperated response when Timmy asked his mother for the 
@@ -123,37 +105,35 @@
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H42">H42: Using h1-h6 to identify headings</a></li>
+               <li><a href="../html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
                
-               <li><a href="../html/H49">H49: Using semantic markup to mark emphasized or special text</a></li>
+               <li><a href="../html/H49">H49: 強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
                
-               <li><a href="../general/G115">G115: Using semantic elements to mark up structure</a></li>
+               <li><a href="../general/G115">G115: 構造をマークアップするために、セマンティックな要素を使用する</a></li>
                
-               <li><a href="../general/G117">G117: Using text to convey information that is conveyed by variations in presentation of
-                     text</a></li>
+               <li><a href="../general/G117">G117: テキストの提示のバリエーションによって伝えている情報を伝達するために、テキストを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>For images of text:</p>
+                     <p>文字画像の場合:</p>
                      
                      <ol>
                         
-                        <li>Check if any images of text are used to convey structural information of the document.</li>
+                        <li>全ての文字画像が、ドキュメントの構造情報を伝えるために使用されているかどうかを確認する。</li>
                         
-                        <li>Check that the proper semantic structure (e.g., HTML headings) is used with the text
-                           to convey the information.
+                        <li>適切なセマンティック構造 (例: HTML の見出し) が情報を伝えるためにテキストとともに使用されていることを確認する。
                         </li>
                         
                      </ol>
@@ -162,14 +142,13 @@
                   
                   <li>
                      
-                     <p>For styled text that conveys information:</p>
+                     <p>(何らかの構造的な) 情報を表すために見た目が変更されているテキストの場合:</p>
                      
                      <ol>
                         
-                        <li>Check if there is any styled text that conveys structural information.</li>
+                        <li>構造的な情報を表現するために、見た目が変更されているテキストがある。</li>
                         
-                        <li>Check that in addition to styling, the proper semantic structure is used with the
-                           text to convey the information.
+                        <li>見た目に加えて、適切なセマンティック構造によってテキストが表されていることを確認する。
                         </li>
                         
                      </ol>
@@ -180,13 +159,13 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #1.1 is true, then #1.2 is true.</li>
+                  <li>1. の a. の結果が真である場合は、1. の b. の結果が真である。</li>
                   
-                  <li>If check #2.1 is true, then #2.2 is true.</li>
+                  <li>2. の a. の結果が真である場合は、2. の b. の結果が真である。</li>
                   
                </ul>
                
