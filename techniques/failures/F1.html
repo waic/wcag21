@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F1: Failure of Success Criterion 1.3.2 due to changing the meaning of content by
-         positioning information with CSS
+      <title>F1: 達成基準 1.3.2 の失敗例 － CSS で情報を配置することにより、コンテンツの意味を変えている
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,80 +11,53 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="../css/C40">Previous Technique: C40</a></li>
-            <li><a href="F2">Next Technique: F2</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="../css/C40">前の達成方法: C40</a></li>
+            <li><a href="F2">次の達成方法: F2</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.2 due to changing the meaning of content by
-         positioning information with CSS
+      <h1>達成基準 1.3.2 の失敗例 － CSS で情報を配置することにより、コンテンツの意味を変えている
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>CSS　をサポートする全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a></span>  (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This describes the failure condition that results when CSS, rather than
-               structural markup, is used to modify the visual layout of the content, and
-               the modified layout changes the meaning of the content. Using the
-               positioning properties of CSS2, content may be displayed at any position on
-               the user's viewport. The order in which items appear on a screen may be
-               different than the order they are found in the source document. Assistive
-               technologies rely on the source code or other programmatically determined
-               order to render the content in the correct sequence. Thus, it is important
-               not to rely on CSS to visually position content in a specific sequence if this sequence
-               results in a meaning that is different from the programmatically determined reading
-               order. 
-               
+            <h2>解説</h2>
+            <p>これは、コンテンツの視覚的なレイアウトを変更するのに構造的なマークアップではなく CSS が用いられていて、かつ、レイアウトの変更によってコンテンツの意味が変わってしまっているという失敗例について述べている。CSS2 の position プロパティを用いると、利用者のビューポート上のどんな位置にでもコンテンツを表示させることができる。その場合、個々のアイテムが画面上に表示される順序は、ソース文書内に登場する順序とは異なる可能性がある。しかし、支援技術は、コンテンツを正しい順序でレンダリングするために、ソースコードでの順序又はプログラムによる解釈がされる順序を用いている。そのため、CSS によってコンテンツの順序を指定する際には、それによってプログラムによる解釈がされる音声読み上げ順序とは異なる意味になってしまうのであれば、CSS を用いてコンテンツの視覚的な位置を指定しないようにすることが重要である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example demonstrates how CSS has been improperly used
-                  to create a set of columns. In addition, the text appears visually
-                  in the browser in a different order than in the markup. 
+               <h3>事例 1</h3>
+               <p>次の例では、段組みのレイアウトを作成するために CSS が不適切に用いられている。また、テキストは、ブラウザの画面ではマークアップの順序とは異なる順序で視覚的に表示される。 
                </p>
-               <p>In this example a class is defined for each object that is being
-                  positioned. When style sheets are applied, the text appears in two
-                  columns. Elements of class "menu1" (Products) and "menu2"
-                  (Locations) appear as column headings. "Telephones, Computers, and
-                  Portable MP3 Players" are listed under Products and "Idaho" and
-                  "Wisconsin" are listed under Locations (note the different order for
-                  Idaho and Wisconsin in the source code order). 
+               <p>この例では、配置される各オブジェクトに対してクラスが定義されている。スタイルシートが適用されると、テキストは二つの段組みで表示される。まず、「menu1」クラスの要素 (Products) と「menu2」の要素 (Locations) は、カラムの見出しとして表示される。そして、「Telephones」「Computers」「Portable MP3 Players」は、Products の下に表示され、「Idaho」と「Wisconsin」は、Locations の下に表示される (Idaho と Wisconsin の順序は、ソースコードの順序とは異なっている)。 
                </p>
-               <p>Since appropriate structural elements have not been used, when style
-                  sheets are not applied, all of the text appears in one line in the
-                  source order, "Products Locations Telephones Computers Portable MP3
-                  Players Wisconsin Idaho." 
+               <p>適切な構造要素が使われていないため、スタイルシートが適用されない状況では、全てのテキストがソースの順序に則って 1 列に提示され、「Products Locations Telephones Computers Portable MP3 Players Wisconsin Idaho」となってしまう。
                </p>
-               <p>Here is the HTML content:</p><pre xml:space="preserve">
+               <p>HTML のコンテンツは次の通り:</p><pre xml:space="preserve">
 &lt;div class="box"&gt;      
      &lt;span class="menu1"&gt;Products&lt;/span&gt;       
      &lt;span class="menu2"&gt;Locations&lt;/span&gt;       
@@ -95,7 +67,7 @@
      &lt;span class="item5"&gt;Wisconsin&lt;/span&gt;       
      &lt;span class="item4"&gt;Idaho&lt;/span&gt;
 &lt;/div&gt;
-</pre><p>Here are the styles for the above content:</p><pre xml:space="preserve">
+</pre><p>上記コンテンツに対するスタイルは次の通り:</p><pre xml:space="preserve">
 .menu1 { 
      position: absolute; 
      top: 3em; 
@@ -150,20 +122,17 @@
      top: 5em; 
      left: 5em 
 } 
-</pre><p>A better solution for this content would be to use more meaningful
-                  elements, such as a table or a definition list.
+</pre><p>このコンテンツの場合は、テーブル又は定義リストのように、意味のある要素を用いたほうがよいだろう。
                </p>
                <ul>
                   
                   <li class="working-example"> 
-                     <a href="../../working-examples/failure-css-positioning/">Example
-                        of CSS positioning failure</a>
+                     <a href="../../working-examples/failure-css-positioning/">CSS による配置の失敗例</a>
                      									         
                   </li>
                   
                   <li class="working-example"> 
-                     	<a href="../../working-examples/failure-css-positioning/styles-removed">Example of CSS positioning failure with styles
-                        removed</a>
+                     	<a href="../../working-examples/failure-css-positioning/styles-removed">CSS による配置の失敗例: スタイルを外したバージョン</a>
                      									         
                   </li>
                   
@@ -171,40 +140,37 @@
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../css/C6">C6: Positioning content based on structural markup</a></li>
+               <li><a href="../css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For content which uses CSS for positioning: </p>
+               <p>CSS を用いて配置されているコンテンツに対して: </p>
                
                <ol>
                   
-                  <li>Remove the style information from the document or turn off use of
-                     style sheets in the user agent.
+                  <li>文書からスタイル情報を取り除く、又はユーザエージェントでスタイルシートの使用を無効にする。
                   </li>
                   
-                  <li>Check that the reading order of the content is correct and the
-                     meaning of the content is preserved.
+                  <li>コンテンツの音声読み上げ順序が正しく、コンテンツの意味が変わっていないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #2 is false, then this failure condition applies and the
-                     content fails this Success Criterion.
+                  <li>手順 2. の結果が偽である場合、この失敗例の条件が適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
