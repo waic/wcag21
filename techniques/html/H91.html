@@ -52,7 +52,7 @@
             </p>
             <p>ユーザエージェントは、HTML のフォームコントロール及びリンクのキーボード操作を提供している。さらに、ユーザエージェントは、フォームコントロール及びリンクを、アクセシビリティ API に結び付けている。支援技術は、アクセシビリティ API を利用して、役割 (role)、名前 (name)、状態 (state)、値 (value) といった適切なアクセシビリティ情報を抽出し、それらを利用者に提供している。役割は HTML の要素によって提供され、名前はその要素に関連付けられているテキストによって提供される。値及び状態が適切な要素は、複合的なメカニズムを通じて、それらの値及び状態も支援技術に提示している。 
             </p>
-            <p>必須の属性を通じてテキストがすでにコントロールと関連付けられている場合もある。たとえば、送信ボタンは、button 要素内のテキスト又は画像の「alt」属性を識別名として用いている。フォームコントロールの場合は、label 要素又は「title」属性が用いられる。次の表は、HTML のフォームコントロール及びリンクの役割、識別名、値、状態がどのように決定されるかを示したものである。
+            <p>必須の属性を通じてテキストがすでにコントロールと関連付けられている場合もある。たとえば、送信ボタンは、button 要素内のテキスト又は画像の「alt」属性をとして用いている。フォームコントロールの場合は、label 要素又は「title」属性が用いられる。次の表は、HTML のフォームコントロール及びリンクの役割 (role)、名前 (name)、値 (value)、状態 (state) がどのように決定されるかを示したものである。
             </p>
             <table summary="Table describing how the role, name, value and state are determined for HTML links and form controls." id="H91_mappings" border="1">
                		
@@ -64,7 +64,7 @@
                      				
                      <th>役割 (role)</th>
                      				
-                     <th>識別名 (name)</th>
+                     <th>名前 (name)</th>
                      				
                      <th>値 (value)</th>
                      				
@@ -82,10 +82,10 @@
                      				
                      <td>リンク</td>
                      				
-                     <td><code>&lt;a&gt;</code> 要素の <code>title</code> 属性、画像リンクの場合は <code>alt</code> 属性。テキストと画像の <code>alt</code> 属性を両方が提供されている場合は、両者を結合する。 
+                     <td>&lt;a&gt; 要素の title 属性、画像リンクの場合は alt 属性。テキストと画像の alt 属性を両方が提供されている場合は、両者を結合する。 
                      </td>
                      				
-                     <td><code>href</code> 属性</td>
+                     <td>href 属性</td>
                      				
                      <td></td>
                      			
@@ -97,7 +97,7 @@
                      				
                      <td>プッシュボタン</td>
                      				
-                     <td><code>&lt;button&gt;</code> 要素内のテキスト又は <code>title</code> 属性</td>
+                     <td>&lt;button&gt; 要素内のテキスト又は title 属性</td>
                      				
                      <td></td>
                      				
@@ -111,7 +111,7 @@
                      				
                      <td>グループ化</td>
                      				
-                     <td>フィールドセット要素にある <code>&lt;legend&gt;</code> 要素内のテキスト</td>
+                     <td>フィールドセット要素にある &lt;legend&gt; 要素内のテキスト</td>
                      				
                      <td></td>
                      				
@@ -125,7 +125,7 @@
                      				
                      <td>プッシュボタン</td>
                      				
-                     <td><code>value</code> 属性</td>
+                     <td>value 属性</td>
                      				
                      <td></td>
                      				
@@ -139,7 +139,7 @@
                      				
                      <td>プッシュボタン</td>
                      				
-                     <td><code>alt</code> 属性又は <code>title</code> 属性</td>
+                     <td>alt 属性又は title 属性</td>
                      				
                      <td></td>
                      				
@@ -153,9 +153,9 @@
                      				
                      <td>編集可能なテキスト</td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性</td>
                      				
-                     <td><code>value</code> 属性</td>
+                     <td>value 属性</td>
                      				
                      <td></td>
                      			
@@ -167,7 +167,7 @@
                      				
                      <td>編集可能なテキスト </td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性</td>
                      				
                      <td>値は意図的に隠されている</td>
                      				
@@ -195,11 +195,11 @@
                      				
                      <td>チェックボックス</td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性</td>
                      				
                      <td></td>
                      				
-                     <td><code>checked</code> 属性
+                     <td>checked 属性
                         				
                      </td>
                      			
@@ -211,11 +211,11 @@
                      				
                      <td>ラジオボタン</td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性 </td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性 </td>
                      				
                      <td></td>
                      				
-                     <td><code>checked</code> 属性
+                     <td>checked 属性
                         					
                         				
                      </td>
@@ -228,9 +228,9 @@
                      				
                      <td>リスト</td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性</td>
                      				
-                     <td><code>&lt;option&gt;</code> 要素の <code>selected</code> 属性で「<code>selected</code>」と指定</td>
+                     <td>&lt;option&gt; 要素の selected 属性で「selected」と指定</td>
                      				
                      <td></td>
                      			
@@ -242,9 +242,9 @@
                      				
                      <td>編集可能なテキスト</td>
                      				
-                     <td>そのコントロールに関連付けられた <code>&lt;label&gt;</code> 要素又は <code>title</code> 属性</td>
+                     <td>そのコントロールに関連付けられた &lt;label&gt; 要素又は title 属性</td>
                      				
-                     <td><code>&lt;textarea&gt;</code> 要素内のテキスト</td>
+                     <td><&lt;textarea&gt; 要素内のテキスト</td>
                      				
                      <td></td>
                      			
