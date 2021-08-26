@@ -39,12 +39,12 @@
          <section id="applicability">
             <h2>適用 (対象)</h2>
             <p>CSS に対応しているウェブコンテンツ技術全て</p>
-            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a></span>  (失敗例) に関する達成方法である。
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>CSS の background-image プロパティは、HTML コード内での参照なしに、画像を CSS で文書に含める方法を提供する。CSS の background-image プロパティは装飾のために使用するものであるため、CSS で組み込まれる画像にテキストによる代替を付けることはできない。 テキストによる代替は、重要な情報を伝える画像を見ることのできない人にとって必須のものである。 したがって、このプロパティを重要な情報を伝える画像を追加するために使用した場合は失敗例となる。この失敗は、背景画像が HTML の style 属性で宣言された場合、及び背景画像宣言がクライアントスクリプトで動的に作成された場合 (下の失敗例 3: を参照) にも同様に適用される。
+            <p>CSS の background-image プロパティは、HTML コード内での参照なしに、画像を CSS で文書に含める方法を提供する。CSS の background-image プロパティは装飾のために使用するものであるため、CSS で組み込まれる画像にテキストによる代替を付けることはできない。テキストによる代替は、重要な情報を伝える画像を見ることのできない人にとって必須のものである。したがって、このプロパティを重要な情報を伝える画像を追加するために使用した場合は失敗例となる。この失敗は、背景画像が HTML の style 属性で宣言された場合、及び背景画像宣言がクライアントスクリプトで動的に作成された場合 (下の失敗例 3: を参照) にも同様に適用される。
             </p>
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">注記</div>
@@ -59,7 +59,7 @@
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>事例1:</h3>
+               <h3>事例 1</h3>
                <p>以下の例では、コンテンツの一部として CSS によってのみ表示させられている画像が含まれている。その画像 (TopRate.png) は 180×200 ピクセルで「基準金利 年 19.3%」というテキストを含んでいる。 
                </p><pre xml:space="preserve">CSS内: 
 p#bestinterest {
@@ -70,10 +70,10 @@ p#bestinterest {
   Where else would you find a better interest rate?
 &lt;/p&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>事例2:</h3>
+               <h3>事例 2</h3>
                <p>ある書籍販売業者は、「新刊」「限定版」「在庫あり」「在庫なし」を示すためのアイコンとして背景画像を使用している。 
                </p>
-               <p>CSS内: </p><pre xml:space="preserve">
+               <p>CSS 内: </p><pre xml:space="preserve">
 ul#booklist li {
   padding-left: 20px;
 }
@@ -101,7 +101,7 @@ ul#booklist li.outstock {
   &lt;li class="outstock"&gt;A book you actually want &lt;/li&gt;
 &lt;/ul&gt;</pre></section>
             <section class="example" id="example-3">
-               <h3>事例3:</h3>
+               <h3>事例 3</h3>
                <p>事例 1 のコードで使用されている、同じ背景画像が HTML style 属性で宣言されている。
                </p><pre xml:space="preserve">&lt;p id="bestinterest" style="background: transparent url(/images/TopRate.png) no-repeat top left;" &gt;
 Where else would you find a better interest rate?
