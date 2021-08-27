@@ -31,18 +31,18 @@
       <h1>HTML のフォームコントロール及びリンクを使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
             <p>HTML のフォームコントロール及びリンク</p>
-            <p>これは、次の達成基準に関する達成方法である:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
                <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value)</a> (<a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a>の達成方法として十分)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value) </a> (<a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a> の達成方法として十分)
                </li>
             </ul>
          </section>
@@ -50,9 +50,9 @@
             <h2>解説</h2>
             <p>この達成方法の目的は、インタラクティブなユーザインタフェースを構成する要素のキーボード操作及び支援技術との相互運用性を提供するために、標準的な HTML のフォームコントロール及びリンク要素を用いることである。
             </p>
-            <p>ユーザエージェントは、HTML のフォームコントロール及びリンクのキーボード操作を提供している。さらに、ユーザエージェントは、フォームコントロール及びリンクを、アクセシビリティ API に結び付けている。支援技術は、アクセシビリティ API を利用して、役割 (role)、名前 (name)、状態 (state)、値 (value) といった適切なアクセシビリティ情報を抽出し、それらを利用者に提供している。役割は HTML の要素によって提供され、名前はその要素に関連付けられているテキストによって提供される。値及び状態が適切な要素は、複合的なメカニズムを通じて、それらの値及び状態も支援技術に提示している。 
+            <p>ユーザエージェントは、HTML のフォームコントロール及びリンクのキーボード操作を提供している。さらに、ユーザエージェントは、フォームコントロール及びリンクを、アクセシビリティ API に結び付けている。支援技術は、アクセシビリティ API を利用して、役割 (role)、名前 (name)、状態 (state)、値 (value) といった適切なアクセシビリティ情報を抽出し、それらを利用者に提供している。役割は HTML の要素によって提供され、名前はその要素に関連付けられているテキストによって提供される。値及び状態が適切な要素は、複合的なメカニズムを通じて、それらの値及び状態も支援技術に提示している。
             </p>
-            <p>必須の属性を通じてテキストがすでにコントロールと関連付けられている場合もある。たとえば、送信ボタンは、button 要素内のテキスト又は画像の「alt」属性を名前 (name) として用いている。フォームコントロールの場合は、label 要素又は「title」属性が用いられる。次の表は、HTML のフォームコントロール及びリンクの役割 (role)、名前 (name)、値 (value)、状態 (state) がどのように決定されるかを示したものである。
+            <p>必須の属性を通じてテキストがすでにコントロールと関連付けられている場合もある。たとえば、送信ボタンは、button 要素内のテキスト又は画像の 'alt' 属性を名前 (name) として用いている。フォームコントロールの場合は、label 要素又は 'title' 属性が用いられる。次の表は、HTML のフォームコントロール及びリンクの役割 (role)、名前 (name)、値 (value)、状態 (state) がどのように決定されるかを示したものである。
             </p>
             <table summary="Table describing how the role, name, value and state are determined for HTML links and form controls." id="H91_mappings" border="1">
                		
@@ -257,83 +257,83 @@
          <section id="examples">
             <h2>事例</h2>
             <section class="example" id="example-1-links">
-               <h3>例 1: リンク</h3>
-               <p>ユーザエージェントは、リンクをナビゲートして選択するメカニズムを提供する。次の各事例では、<a href> により、役割 (role) は "link" となる。<a name> は "link" の役割 (role) を提供しないことに注意する。値 (value) は、href 属性の URI である。 
+               <h3>事例 1: リンク</h3>
+               <p>ユーザエージェントは、リンクをナビゲートして選択するメカニズムを提供する。次の各事例では、&lt;a href&gt; により、役割 (role) は "link" となる。&lt;a name&gt; は "link" の役割 (role) を提供しないことに注意する。値 (value) は、href 属性の URI である。
                </p>
-               <p class="exsubhead">例 1a</p>
-               <p>例 1a では、名前 (name) はリンクの中にあるテキストである。この場合は「Example Site」が該当する。
-                  
+               <p class="exsubhead">事例 1a</p>
+               <p>事例 1a では、名前 (name) はリンクの中にあるテキストである。この場合は "Example Site" が該当する。
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;Example Site&lt;/a&gt;
-                    </pre><p class="exsubhead">例 1b</p>
-               <p>リンクの中にある画像に関する例 1b では、画像の alt 属性が名前 (name) を提供している。例えば、Microsoft Inspect Objects などのように API を閲覧するツールには、alt 属性を可視化できないものもあるが、支援技術では抽出できる。
+                    </pre><p class="exsubhead">事例 1b</p>
+               <p>リンクの中にある画像に関する事例 1b では、画像の 'alt' 属性が名前 (name) を提供している。例えば、Microsoft Inspect Objects などのように API を閲覧するツールには、alt 属性を可視化できないものもあるが、支援技術では抽出できる。
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;&lt;img src="example_logo.gif" alt="Example"&gt;&lt;/a&gt;
-                    </pre><p class="exsubhead">例 1c</p>
-               <p>例 1c では、画像の代替テキストとリンクのテキストを連結するときに自動的に空白文字を挿入しない支援技術もある。テキストをスペースなしで連結すべきでない場合、画像と隣接する単語との間にスペースを挿入して、単語が混ざらないようにするのが最も安全である。
+                    </pre><p class="exsubhead">事例 1c</p>
+               <p>事例 1c では、画像の代替テキストとリンクのテキストを連結するときに自動的に空白文字を挿入しない支援技術もある。テキストをスペースなしで連結すべきでない場合、画像と隣接する単語との間にスペースを挿入して、単語が混ざらないようにするのが最も安全である。
                </p><pre xml:space="preserve">&lt;a href="www.example.com"&gt;&lt;img src="example_logo.gif" alt="Example"&gt; Text&lt;/a&gt;
 </pre>
-            <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
-               <div>
-                  <p>WAIC では H91-1c に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H91-1c.html">アクセシビリティ サポーテッド（AS）情報: H91-1c</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。
-                  </p>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                  <div>
+                     <p>WAIC では H91-1c に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
+                     <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H91-1c.html">アクセシビリティ・サポーテッド（AS）情報: H91-1c</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。</p>
+                  </div>
                </div>
-            </div></section>
+            </section>
             <section class="example" id="example-2-buttons">
-               <h3>例 2: ボタン</h3>
+               <h3>事例 2: ボタン</h3>
                <p>HTML では、ボタンを生成するのにさまざまな方法があるが、それらは全て「プッシュボタン」という役割 (role) に位置付けられる。
                </p>
-               <p class="exsubhead">例 2a</p>
-               <p>例 2a では、<code class="el">button</code> 要素内の「save」というテキストが名前 (name) となる。値 (value) はない。
+               <p class="exsubhead">事例 2a</p>
+               <p>事例 2a では、<code class="el">button</code> 要素内の "save" というテキストが名前 (name) となる。値 (value) はない。
                </p><pre xml:space="preserve">&lt;button&gt;Save&lt;/button&gt;
-                    </pre><p class="exsubhead">例 2b</p>
-               <p>例 2b では、value 属性を用いて「Save」「Submit」「Reset」という名前 (name) を指定している。
+                    </pre><p class="exsubhead">事例 2b</p>
+               <p>事例 2b では、'value' 属性を用いて "Save"、"Submit"、"Reset" という名前 (name) を指定している。
                </p><pre xml:space="preserve">&lt;input type="button" value="Save" /&gt; 
 &lt;input type="submit" value="Submit" /&gt;  
 &lt;input type="reset" value="Reset" /&gt;   
-                    </pre><p class="exsubhead">例 2c</p>
-               <p>例 2c では、alt 属性を用いて「save」という名前 (name) を指定している。</p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" /&gt; 
-                    </pre><p class="exsubhead">例 2d</p>
-               <p>例 2d では、alt 属性ではなく、title 属性を用いて「save」という名前 (name) を指定している。
+                    </pre><p class="exsubhead">事例 2c</p>
+               <p>事例 2c では、'alt' 属性を用いて "save" という名前 (name) を指定している。</p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" /&gt; 
+                    </pre><p class="exsubhead">事例 2d</p>
+               <p>事例 2d では、'alt' 属性ではなく、'title' 属性を用いて "save" という名前 (name) を指定している。
                </p><pre xml:space="preserve">&lt;input type="image" src="save.gif" title="save" /&gt;
-                    </pre><p class="exsubhead">例 2e</p>
-               <p>例 2e は、コンテンツ制作者が input 要素の 'alt' 属性と 'title' 属性の両方を指定する場合、ユーザエージェントが名前 (name) をどのように決定するかを明らかにする。この場合、ユーザエージェントは、 'alt' 属性 ("save") を使用して、 'title' 属性を無視する。
+                    </pre><p class="exsubhead">事例 2e</p>
+               <p>事例 2e は、コンテンツ制作者が input 要素の 'alt' 属性と 'title' 属性の両方を指定する場合、ユーザエージェントが名前 (name) をどのように決定するかを明らかにする。この場合、ユーザエージェントは、 'alt' 属性 ("save") を使用して、 'title' 属性を無視する。
                </p><pre xml:space="preserve">&lt;input type="image" src="save.gif" alt="save" title="save the file" /&gt;
 </pre></section>
             <section class="example" id="example-3">
-               <h3>例 3</h3>
-               <p class="exsubhead">例 3a</p>
-               <p>例 3a では、入力フィールドが「編集可能テキスト」という役割 (role) を持っている。<code class="el">label</code> 要素の for 属性が、<code class="el">input</code> 要素の id 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した「Type of fruit」となる。値 (value) は、value 属性の「bananas」となる。
+               <h3>事例 3</h3>
+               <p class="exsubhead">事例 3a</p>
+               <p>事例 3a では、入力フィールドが「編集可能テキスト」という役割 (role) を持っている。<code class="el">label</code> 要素の 'for' 属性が、<code class="el">input</code> 要素の 'id' 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した "Type of fruit" となる。値 (value) は、<code class="el">value</code> 属性の "bananas" となる。
                </p><pre xml:space="preserve">&lt;label for="text_1"&gt;Type of fruit&lt;/label&gt;
 &lt;input id="text_1" type="text" value="bananas"&gt;
-</pre><p class="exsubhead">例 3b</p>
-               <p>例 3b では、入力フィールドが例 3a と同じ役割 (role) を持つが、値 (value) がなく、名前 (name) を title 属性で指定している点が異なる。 
+</pre><p class="exsubhead">事例 3b</p>
+               <p>事例 3b では、入力フィールドが事例 3a と同じ役割 (role) を持つが、値 (value) がなく、名前 (name) を 'title' 属性で指定している点が異なる。
                </p><pre xml:space="preserve">&lt;input id="text_1" type="text" title="Type of fruit"&gt;
 </pre></section>
             <section class="example" id="example-4-checkbox-">
-               <h3>例 4: チェックボックス</h3>
-               <p>例 4 は、<code class="el">input</code> 要素の type 属性から「チェックボックス」という役割 (role) を持っている。<code class="el">label</code> 要素の for 属性が <code class="el">input</code> 要素の id 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した「Cheese」となる。状態 (state) は checked 属性で「チェックあり」又は「チェックなし」に設定できる。そのコントロールに対する利用者のインタラクションによって、状態 (state) が変更される。 
+               <h3>事例 4: チェックボックス</h3>
+               <p>事例 4 は、<code class="el">input</code> 要素の 'type' 属性から「チェックボックス」という役割 (role) を持っている。<code class="el">label</code> 要素の 'for' 属性が <code class="el">input</code> 要素の 'id' 属性を参照することで、<code class="el">label</code> 要素を <code class="el">input</code> 要素と関連付けている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素で指定した「Cheese」となる。状態 (state) は 'checked' 属性で「チェックあり」又は「チェックなし」に設定できる。そのコントロールに対する利用者のインタラクションによって、状態 (state) が変更される。
                </p><pre xml:space="preserve">&lt;label for="cb_1"&gt;Cheese&lt;/label&gt; 
 &lt;input id="cb_1" type="checkbox" checked="checked"&gt;
                     </pre></section>
             <section class="example" id="example-5-radio-buttons-">
-               <h3>例 5: ラジオボタン</h3>
-               <p>例 5 は、<code class="el">input</code> 要素の type 属性から「ラジオボタン」という役割 (role) を持っている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素から与えられる。状態 (state) は、checked 属性によって「チェックあり」又は「チェックなし」に設定できる。状態 (state) は、利用者が変更できる。 
+               <h3>事例 5: ラジオボタン</h3>
+               <p>事例 5 は、<code class="el">input</code> 要素の 'type' 属性から「ラジオボタン」という役割 (role) を持っている。<code class="el">input</code> 要素の名前 (name) は、<code class="el">label</code> 要素から与えられる。状態 (state) は、'checked' 属性によって「チェックあり」又は「チェックなし」に設定できる。状態 (state) は、利用者が変更できる。
                </p><pre xml:space="preserve">&lt;input type="radio" name="color" id="r1" checked="checked"/&gt;&lt;label for="r1"&gt;Red&lt;/label&gt;
 &lt;input type="radio" name="color" id="r2" /&gt;&lt;label for="r2"&gt;Blue&lt;/label&gt;
 &lt;input type="radio" name="color" id="r3" /&gt;&lt;label for="r3"&gt;Green&lt;/label&gt;
                     </pre></section>
             <section class="example" id="example-6">
-               <h3>例 6</h3>
-               <p class="exsubhead">例 6a</p>
-               <p>例 6a は、<code class="el">select</code> 要素によって「リストボックス」という役割 (role) を持っている。名前 (name) は「Numbers」で、label 要素から与えられている。<code class="el">select</code> 要素に名前 (name) を付け忘れるのは、よくあるエラーの一つである。値 (value) は、selected 属性 (XHTML では値を "selected" と指定) のある <code class="el">option</code> 要素であり、初期値は「Two」ということになる。 
+               <h3>事例 6</h3>
+               <p class="exsubhead">事例 6a</p>
+               <p>事例 6a は、<code class="el">select</code> 要素によって「リストボックス」という役割 (role) を持っている。名前 (name) は「Numbers」で、<code class="el">label</code> 要素から与えられている。<code class="el">select</code> 要素に名前 (name) を付け忘れるのは、よくあるエラーの一つである。値 (value) は、'selected' 属性 (XHTML では値を "selected" と指定) のある <code class="el">option</code> 要素であり、初期値は「Two」ということになる。
                </p><pre xml:space="preserve">&lt;label for="s1"&gt;Numbers&lt;/label&gt;
 &lt;select id="s1" size="1"&gt;
  &lt;option&gt;One&lt;/option&gt;
  &lt;option selected="selected"&gt;Two&lt;/option&gt;
  &lt;option&gt;Three&lt;/option&gt;
 &lt;/select&gt;
-                    </pre><p class="exsubhead">例 6b</p>
-               <p>例 6b では、事例 6a の <code class="el">select</code> 要素と同じ名前 (name)、役割 (role)、値 (value) であるが、名前 (name) を title 属性で指定している点が異なる。この方法は、ラベルを視覚的に表示しないほうがよい場合に用いることができる。
+                    </pre><p class="exsubhead">事例 6b</p>
+               <p>事例 6b では、事例 6a の <code class="el">select</code> 要素と同じ名前 (name)、役割 (role)、値 (value) であるが、名前 (name) を 'title' 属性で指定している点が異なる。この方法は、ラベルを視覚的に表示しないほうがよい場合に用いることができる。
                </p><pre xml:space="preserve">&lt;select id="s1" title="Numbers" size="1"&gt;
  &lt;option&gt;One&lt;/option&gt;
  &lt;option selected="selected"&gt;Two&lt;/option&gt;
@@ -341,19 +341,19 @@
 &lt;/select&gt;
                     </pre></section>
             <section class="example" id="example-7--textarea">
-               <h3>例 7:  テキストエリア</h3>
-               <p class="exsubhead">例 7a</p>
-               <p>例 7a は、<code class="el">textarea</code> 要素の「編集可能なテキスト」という役割 (role) を持っている。名前 (name) は、<code class="el">label</code> 要素で指定した「Type your speech here」である。値 (value) は、<code class="el">textarea</code> 要素内にある「Four score and seven years ago」である。
+               <h3>事例 7: テキストエリア</h3>
+               <p class="exsubhead">事例 7a</p>
+               <p>事例 7a は、<code class="el">textarea</code> 要素の「編集可能なテキスト」という役割 (role) を持っている。名前 (name) は、<code class="el">label</code> 要素で指定した「Type your speech here」である。値 (value) は、<code class="el">textarea</code> 要素内にある "Four score and seven years ago" である。
                </p><pre xml:space="preserve">&lt;label for="ta_1"&gt;Type your speech here&lt;/label&gt;
 &lt;textarea id="ta_1" &gt;Four score and seven years ago&lt;/textarea&gt;
-                    </pre><p class="exsubhead">例 7b</p>
-               <p>例 7b は、同じ役割 (role) を持ち、名前 (name) は title 属性を用いて指定していて、値 (value) は空である。
+                    </pre><p class="exsubhead">事例 7b</p>
+               <p>事例 7b は、同じ役割 (role) を持ち、名前 (name) は 'title' 属性を用いて指定していて、値 (value) は空である。
                </p><pre xml:space="preserve">&lt;textarea id="ta_1" title="Type your speech here" &gt;Four score and seven years ago&lt;/textarea&gt;
                     </pre></section>
             <section class="example" id="example-8">
-               <h3>例 8</h3>
+               <h3>事例 8</h3>
                <p class="exsubhead">ラジオボタンのフィールドセット</p>
-               <p>例 8 のラジオボタンのフィールドセットには「グループ化」という役割 (role) がある。名前 (name) は <code class="el">legend</code> 要素によって与えられている。 
+               <p>事例 8 のラジオボタンのフィールドセットには「グループ化」という役割 (role) がある。名前 (name) は <code class="el">legend</code> 要素によって与えられている。
                </p><pre xml:space="preserve">&lt;fieldset&gt;
   &lt;legend&gt;Choose a Color:&lt;/legend&gt; 
      &lt;input id="red" type="radio" name="color" value="red" /&gt;&lt;label for="red"&gt;Red&lt;/label&gt;&lt;br /&gt; 
@@ -364,7 +364,7 @@
          </section>
          <section id="resources">
             <h2>参考リソース</h2>
-            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -401,7 +401,7 @@
                   
                   <li>HTML のソースコードを調べる。</li>
                   
-                  <li>リンク及びフォーム要素に対して、上記の表で示されているように、名前 (name)、値 (value)、状態 (state) が指定されていることを確認する。 
+                  <li>リンク及びフォーム要素に対して、上記の表で示されているように、名前 (name)、値 (value)、状態 (state) が指定されていることを確認する。
                   </li>
                   
                </ol>
