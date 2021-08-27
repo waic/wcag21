@@ -286,47 +286,46 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-conforming-alternate-version">conforming alternate version</dt>
+            <dt id="dfn-conforming-alternate-version">適合している代替版 (conforming alternate version)</dt>
             <dd>
                <definition xmlns="">
 
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">version that</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">以下の事項を満たす版のことを指す:</p>
 
 
                   <ol xmlns="http://www.w3.org/1999/xhtml">
 
 
-                     <li>conforms at the designated level, and</li>
+                     <li>指定されたレベルで適合しており、かつ</li>
 
 
-                     <li>provides all of the same information and <a href="#dfn-functionality">functionality</a> in the same <a href="#dfn-human-language">human language</a>, and
+                     <li>同じ情報及び<a href="#dfn-functionality">機能</a>のすべてを同一の<a href="#dfn-human-language">自然言語</a>で提供しており、かつ
 
                      </li>
 
 
-                     <li>is as up to date as the non-conforming content, and</li>
+                     <li>不適合コンテンツと同時に更新されていて、かつ</li>
 
 
                      <li>
 
-                        <p>for which at least one of the following is true:</p>
+                        <p>以下に挙げる事項のうち少なくとも一つを満たしていること:</p>
 
 
                         <ol>
 
 
-                           <li>the conforming version can be reached from the non-conforming page via an <a href="#dfn-accessibility-supported">accessibility-supported</a>
-                              <a href="#dfn-mechanism">mechanism</a>, or
+                           <li><a href="#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>な
+                              <a href="#dfn-mechanism">メカニズム</a>を用いて、 不適合ページから適合版へ到達できる。もしくは、
 
                            </li>
 
 
-                           <li>the non-conforming version can only be reached from the conforming version, or</li>
+                           <li>不適合版に到達できるのは、適合版からのみである。</li>
 
 
-                           <li>the non-conforming version can only be reached from a conforming page that also provides
-                              a mechanism to reach the conforming version
+                           <li>不適合版に到達できるのは、適合版に到達するメカニズムも提供している適合ページからのみである。
 
                            </li>
 
@@ -341,72 +340,61 @@
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>In this definition, "can only be reached" means that there is some mechanism, such
-                        as a conditional redirect, that prevents a user from "reaching" (loading) the non-conforming
-                        page unless the user had just come from the conforming version.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この定義において、「到達できるのは……からのみ」とは、利用者が適合版から来ていない限り、不適合ページに「到達する」 (読み込む) のを防ぐ条件付きリダイレクトのような何らかのメカニズムがある、ということを意味する。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>The alternate version does not need to be matched page for page with the original
-                        (e.g., the conforming alternate version may consist of multiple pages).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページと一対一で対応している必要はない (例えば、適合している代替版は複数のページであってもよい)。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>If multiple language versions are available, then conforming alternate versions are
-                        required for each language offered.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数の言語版が利用できる場合、各言語版に対して、適合している代替版を提供する必要がある。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Alternate versions may be provided to accommodate different technology environments
-                        or user groups. Each version should be as conformant as possible. One version would
-                        need to be fully conformant in order to meet <a href="#cc1">conformance requirement 1</a>.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は異なる技術環境や利用者層に適応するよう提供される。この場合、各版は可能なかぎり適合したものでなければならず、<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>The conforming alternative version does not need to reside within the scope of conformance,
-                        or even on the same Web site, as long as it is as freely available as the non-conforming
-                        version.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>不適合版と同じように自由に利用可能であるかぎり、適合している代替版は、適合宣言の範囲に含まれている必要はなく、同一のウェブサイト上で提供されている必要もない。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Alternate versions should not be confused with <a href="#dfn-supplemental-content">supplementary content</a>, which support the original page and enhance comprehension.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページを補助して理解を高める<a href="#dfn-supplemental-content">補足コンテンツ</a>と混同されないようにすべきである。
 
                      </p>
                   </div>
 
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Setting user preferences within the content to produce a conforming version is an
-                        acceptable mechanism for reaching another version as long as the method used to set
-                        the preferences is accessibility supported.
-
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ内で利用者が設定を行うことで適合版が作り出される仕組みは、その利用者の設定に用いられている手法がアクセシビリティ サポーテッドであるかぎり、代替版への到達メカニズムとして条件を満たしているといえる。
                      </p>
                   </div>
 
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">See <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/Understanding/conformance.html#conforming-alt-versions">適合している代替版を理解する</a>を参照。
 
                   </p>
 
