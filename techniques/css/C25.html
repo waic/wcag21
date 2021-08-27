@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>C25: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying
-         text and text-background colors
+      <title>C25: テキスト及び背景の色は指定せずに、ウェブページの各領域の範囲を明確にするためのボーダーやレイアウトを CSS で指定する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,127 +11,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="C24">Previous Technique: C24</a></li>
-            <li><a href="C27">Next Technique: C27</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="C24">前の達成方法: C24</a></li>
+            <li><a href="C27">次の達成方法: C27</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Specifying borders and layout in CSS to delineate areas of a Web page while not specifying
-         text and text-background colors
+      <h1>テキスト及び背景の色は指定せずに、ウェブページの各領域の範囲を明確にするためのボーダーやレイアウトを CSS で指定する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that use CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>CSS を用いているウェブページ</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to specify borders and layout using CSS and leave
-               text and background colors to render according to the user's browser and/or operating
-               system settings (Please see above note in relation to Safari). This allows users to
-               view the text in the colors they require while maintaining other aspects of the layout
-               and page design such as columns of text, borders around sections or vertical lines
-               between a menu and main content area. It will also prevent some display issues in
-               some browsers when pages contain Javascript pop-up boxes or drop-down menus and have
-               the colors overridden.
+            <h2>解説</h2>
+            <p>この達成方法が意図するのは、ボーダー (境界) やレイアウトは CSS を用いて指定するが、文字色と背景色については利用者のブラウザや OS の設定に従って表示できるように指定しないでおく、ということである。これによって利用者は、自分が見たい色でテキストを見ることができるようになり、同時に、テキストの段組、セクションの周りのボーダー、又はメニューとメインコンテンツの領域を区切る縦線といったレイアウトやページデザインの外観は保つことができるようになる。また、ページに JavaScript のポップアップボックス又はドロップダウンメニューが含まれている場合に色が上書きされるという、一部のブラウザで起こる表示の問題も回避することができる。
             </p>
-            <p>Borders and layout indicators help many people with cognitive disabilities, as does
-               flexibility over the text and background colors. Sometimes these two needs are in
-               conflict when the user has to over-ride the author's color selection of text and background
-               in the browser and the browser also removes the borders and the intended layout. This
-               can mean the page is displayed in a single column with one block of content below
-               the other, which can result in unnecessary whitespace and long lines of text. It can
-               also mean that pop-up boxes gain a transparent background, superimposing the text
-               of the box on the text of the page, and drop-down menus either become transparent
-               or gain a dark-grey background. When a Web author does not specify the colors of any
-               text and background, while specifying border colors and layout, it is possible, in
-               most popular browsers, to change the text and background colors without affecting
-               the other (author-specified) CSS declarations. 
+            <p>ボーダーやレイアウトを示す表示は、文字色と背景色に関する柔軟性と同様に、認知障害のある多くの人にとって役に立つ。しかし、状況によってはこれら二つのニーズは相容れないこともある。それは、利用者がブラウザ上でコンテンツ制作者が選択した文字色と背景色を上書きする必要があるとき、ブラウザがボーダーやレイアウトまでも取り除いてしまうような場合である。これは、ページがシングルカラムでひとつのブロックが他のブロックの下に表示されることを意味し、そうなると、不必要な余白ができ、テキストの 1 行の長さが長くなってしまう。また、ポップアップボックスの背景が透過して、ページ上のテキストの上にボックスのテキストが重なってしまったり、ドロップダウンメニューが透過するかダークグレーの背景になってしまったりすることを意味する。コンテンツ制作者が文字色と背景色を一切指定せず、その一方でボーダーの色やレイアウトを指定した場合、一般的なブラウザのほとんどでは、(コンテンツ制作者が指定した) CSS の他の宣言に影響を与えずにテキストと背景の色を変更することができる。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A Web page is designed using HTML. CSS is used to specify border colors around discrete
-                  areas of the page and to layout the content so that the menu floats to the left of
-                  the main content area. Neither the text color nor background is specified. The user
-                  sets their own colors in the browser. They can view the page in colors and contrasts
-                  that work well for them without disrupting the layout. 
+               <h3>例 1</h3>
+               <p>あるウェブページは、HTML を使ってデザインされている。ページを構成する各領域を囲うボーダーの色を指定し、メニューがメインコンテンツ領域の左側にフロートするレイアウトにするために CSS が使用されている。文字色も背景色も指定されていない。利用者がブラウザで自分の色を設定すると、レイアウトを崩すことなしに、利用者に適した色とコントラストでページを閲覧できる。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G17">G17: Ensuring that a contrast ratio of at least 7:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="../general/G17">G17: テキスト (及び文字画像) とその背景の間に、少なくとも 7:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="../general/G18">G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="../general/G18">G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="../general/G145">G145: Ensuring that a contrast ratio of at least 3:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="../general/G145">G145: テキスト (及び文字画像) とその背景の間に、少なくとも 3:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="../general/G148">G148: Not specifying background color, not specifying text color, and not using technology
-                     features that change those defaults</a></li>
+               <li><a href="../general/G148">G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない</a></li>
                
-               <li><a href="../general/G156">G156: Using a technology that has commonly-available user agents that can change the foreground
-                     and background of blocks of text</a></li>
+               <li><a href="../general/G156">G156: テキストのブロックの前景及び背景を変更できる、一般に入手可能なユーザエージェントが備えるウェブコンテンツ技術を使用する</a></li>
                
-               <li><a href="C23">C23: Specifying text and background colors of secondary content such as banners, features
-                     and navigation in CSS while not specifying text and background colors of the main
-                     content</a></li>
+               <li><a href="C23">C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Open the Web page in a browser that allows users to change colors of HTML content.
+                  <li>HTML コンテンツの色を変更できるブラウザでウェブページを開く。
                      
                   </li>
                   
                   <li>
                      
-                     <p>Change the text, link and background colors in the browser settings so they are different
-                        than those currently set in the browser. 
+                     <p>ブラウザの設定で、テキスト、リンク及び背景の色を変更し、ブラウザで現在の設定とは異なる色に変える。 
                      </p>
                      
                      <div class="note">
-                        <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                        <div role="heading" class="note-title marker" aria-level="4">注記</div>
                         <div>
                            
-                           <p>Make sure that you do not select the option that tells the browser to ignore the colors
-                              specified in the page.
+                           <p>「ページで指定されている色を無視する」というようなオプションを選択していないことを確認する。
                            </p>
                            
                         </div>
@@ -140,21 +103,20 @@
                      
                   </li>
                   
-                  <li>Return to the page and check that it is displaying the page in the new text, link
-                     and background colors. 
+                  <li>ページに戻り、ページが新しいテキスト、リンク及び背景の色で表示されていることを確認する。 
                   </li>
                   
-                  <li>Check that any borders are still displayed and that the layout is retained. </li>
+                  <li>どのボーダーも消えずに表示されており、レイアウトも崩れていないことを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #3 and Check #4 are true.</li>
+                  <li>#3 及び #4 の結果が真である。</li>
                   
                </ul>
                

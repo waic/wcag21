@@ -24,6 +24,7 @@
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#testing-rules">テストルール</a></li>
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
@@ -88,9 +89,6 @@
                
                
                <li><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">Microsoft Active Accessibility, Version 2.0</a></li>
-               
-               
-               <li><a href="http://www.adobe.com/accessibility.htmlproducts/flash/best-practices.html">Adobe Flash accessibility design guidelines</a></li>
                
                
             </ul>
@@ -184,19 +182,10 @@
                   <ol>
                      
                      
-                     <li><p><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G135">G135: Using the accessibility API features of a technology to expose names and notification of changes</a> using technology-specific techniques below:</p>
+                     <li><p>以下の技術固有の達成方法を用いて<a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G135">G135: 名前 (name) 及び変更の通知を公開するためのアクセシビリティ API 機能を使用する</a>:</p>
                         
                         
                         <ul>
-                           
-                           
-                           <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH32">FLASH32: フォームコントロールにテキストラベルを関連付けるために、自動ラベリングを使用する</a></li>
-                           
-                           
-                           <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH29">FLASH29: フォームコンポーネントに label プロパティを設定する</a></li>
-                           
-                           
-                           <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH30">FLASH30: 画像ボタンにアクセシブルな名前 (accessible name) を指定する</a></li>
                            
                            
                            <li><a class="pdf" href="https://waic.jp/docs/WCAG21/Techniques/pdf/PDF10">PDF10: PDF 文書内のインタラクティブなフォームコントロールにラベルを付ける</a></li>
@@ -268,27 +257,13 @@
                   
                </section>
             </section>
-            <section id="advisory">
-               <h3>参考達成方法</h3>
-               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
-            </section>
             <section id="failure">
                <h3>失敗例</h3>
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   
                   
-                  <li><p><a class="failure" href="https://waic.jp/docs/WCAG21/Techniques/failures/F59">F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている</a></p>
-                     
-                     
-                     <div class="note"><div role="heading" class="note-title marker" aria-level="4">注記</div>
-                        <div><p>この失敗例は、将来的に DHTML ロードマップの達成方法を用いて問題が解決されるかもしれない。</p>
-                           
-                           
-                        </div>
-                     </div>
-                     
-                     
+                  <li><a class="failure" href="https://waic.jp/docs/WCAG21/Techniques/failures/F59">F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている</a>
                   </li>
                   
                   
@@ -312,6 +287,14 @@
                   
                </ul>
             </section>
+         </section>
+         <section id="testing-rules">
+            <h2>テストルール</h2>
+            <p>以下は、この達成基準の特定の側面に関するテストルールである。この特定のルールを使用して WCAG に適合しているかどうかを確認する必要はないが、これらのルールは定義され、承認されたテスト方法である。Accessibility Conformance Testing (ACT) ルールの使用については、<a href="understanding-act-rules.html">WCAG 達成基準の ACT ルールを理解する</a>を参照のこと。
+            </p>
+            <ul>
+               <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/image-button-accessible-name-59796f/">Image button has accessible name</a></li>
+            </ul>
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
@@ -466,5 +449,7 @@
             </dd>
          </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>

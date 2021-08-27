@@ -152,9 +152,6 @@
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H24">H24: イメージマップの area 要素にテキストによる代替を提供する</a></li>
                   
                   
-                  <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH27">FLASH27: ボタンの目的を説明するラベルを提供する</a></li>
-                  
-                  
                   <li><p>次の達成方法の一つを用いて、利用者が短めのリンクテキスト又は長めのリンクテキストを選べるようにする:</p>
                      
                      
@@ -165,9 +162,6 @@
                         
                         
                         <li><a class="script" href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR30">SCR30: リンクテキストを変更するために、スクリプトを使用する</a></li>
-                        
-                        
-                        <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH7">FLASH7: コントロールのラベルを変更するために、スクリプトを使用する</a></li>
                         
                         
                      </ul>
@@ -259,9 +253,6 @@
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
                   
                   
-                  <li><a class="flash" href="https://waic.jp/docs/WCAG21/Techniques/flash/FLASH5">FLASH5: 同じリソースに対して隣接する画像とテキストのボタンを結合する</a></li>
-                  
-                  
                   <li><a class="html" href="https://waic.jp/docs/WCAG21/Techniques/html/H80">H80: リンクテキストと先行する見出し要素とを組み合わせて、リンクの目的を特定する</a></li>
                   
                   
@@ -293,7 +284,120 @@
                   
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">「注目すべき輸出品のひとつはグァバです」という文中にある「グァバ」という単語がリンクになっている。そのリンク先は、グァバの定義、グァバの輸出量を挙げる図表、又はグァバを収穫している人々の写真のいずれにもなり得る。リンクを動作させるまで、すべての利用者が確信を持てないため、障害のある人が不利な立場に置かれることはない。</p>
                   
-                  
+               </definition>
+            </dd>
+            <dt id="dfn-conforming-alternate-version">適合している代替版 (conforming alternate version)</dt>
+            <dd>
+               <definition xmlns="">
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">以下の事項を満たす版のことを指す:</p>
+
+
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+
+
+                     <li>指定されたレベルで適合しており、かつ</li>
+
+
+                     <li>同じ情報及び<a href="#dfn-functionality">機能</a>のすべてを同一の<a href="#dfn-human-language">自然言語</a>で提供しており、かつ
+
+                     </li>
+
+
+                     <li>不適合コンテンツと同時に更新されていて、かつ</li>
+
+
+                     <li>
+
+                        <p>以下に挙げる事項のうち少なくとも一つを満たしていること:</p>
+
+
+                        <ol>
+
+
+                           <li><a href="#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>な
+                              <a href="#dfn-mechanism">メカニズム</a>を用いて、 不適合ページから適合版へ到達できる。もしくは、
+
+                           </li>
+
+
+                           <li>不適合版に到達できるのは、適合版からのみである。</li>
+
+
+                           <li>不適合版に到達できるのは、適合版に到達するメカニズムも提供している適合ページからのみである。
+
+                           </li>
+
+
+                        </ol>
+
+
+                     </li>
+
+
+                  </ol>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この定義において、「到達できるのは……からのみ」とは、利用者が適合版から来ていない限り、不適合ページに「到達する」 (読み込む) のを防ぐ条件付きリダイレクトのような何らかのメカニズムがある、ということを意味する。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページと一対一で対応している必要はない (例えば、適合している代替版は複数のページであってもよい)。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数の言語版が利用できる場合、各言語版に対して、適合している代替版を提供する必要がある。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は異なる技術環境や利用者層に適応するよう提供される。この場合、各版は可能なかぎり適合したものでなければならず、<a href="#cc1">適合要件 1</a> を満たすためには、そのうちの一つの版が完全に適合したものでなければならない。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>不適合版と同じように自由に利用可能であるかぎり、適合している代替版は、適合宣言の範囲に含まれている必要はなく、同一のウェブサイト上で提供されている必要もない。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>代替版は、元のページを補助して理解を高める<a href="#dfn-supplemental-content">補足コンテンツ</a>と混同されないようにすべきである。
+
+                     </p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ内で利用者が設定を行うことで適合版が作り出される仕組みは、その利用者の設定に用いられている手法がアクセシビリティ サポーテッドであるかぎり、代替版への到達メカニズムとして条件を満たしているといえる。
+                     </p>
+                  </div>
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/Understanding/conformance.html#conforming-alt-versions">適合している代替版を理解する</a>を参照。
+
+                  </p>
+
                </definition>
             </dd>
             <dt id="dfn-link-purpose">リンクの目的 (link purpose)</dt>
@@ -324,5 +428,7 @@
             </dd>
          </section>
       </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>

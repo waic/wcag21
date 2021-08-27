@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ACT ルールを理解する</title>
+      <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+      <link rel="stylesheet" type="text/css" href="base.css" />
+      <link rel="stylesheet" type="text/css" href="understanding.css" />
+      <link rel="stylesheet" type="text/css" href="slicenav.css" />
+   </head>
+   <body>
+      <nav>
+         <ul id="navigation">
+            <li><a href="." title="Table of Contents">目次</a></li>
+            <li><a href="understanding-techniques.html">Previous: WCAG 達成基準の達成方法を理解する</a></li>
+            <li><a href="text-alternatives.html">First <abbr title="Guideline">GL</abbr>: テキストによる代替</a></li>
+            <li><a href="non-text-content.html">First <abbr title="Success Criterion">SC</abbr>: 非テキストコンテンツ</a></li>
+         </ul>
+      </nav>
+      <nav class="navtoc">
+         <p>このページの内容:</p>
+         <ul id="navbar">
+            <li><a href="#act-rules-are-informative">ACT ルールは参考情報である</a></li>
+            <li><a href="#act-rules-are-partial-checks">ACT ルールは部分的なチェックである</a></li>
+            <li><a href="#act-rules-check-for-failures">ACT ルールは失敗をチェックする</a></li>
+            <li><a href="#structure-of-act-rules">ACT ルールの構造</a></li>
+         </ul>
+      </nav>
+      <h1>ACT ルールを理解する</h1>
+      <main>
+         		
+         		
+         		
+         <p>Accessibility Conformance Testing (ACT) ルールは、自動テストツールと手動テスト方法の開発者にガイダンスを提供し、WCAG 達成基準の一貫した解釈を保証する。 
+         </p>
+         		
+         <p>W3C の <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> は定期的に更新されている。これは、<a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> 標準に従って開発されている。
+         </p>
+         		
+         <p><a href="conformance.html">適合を理解する</a>は、<a href="conformance.html#accessibility-support">アクセシビリティサポートを理解する</a>を含む、関連する情報を提供する。
+         </p>
+         		
+         		
+         <section id="act-rules-are-informative">
+            			
+            <h2>ACT ルールは参考情報である</h2>
+            			
+            <p><em>ACT ルールは参考情報である。つまり、適合を判断するために必要ではないことを意味する。WCAG への適合を判断するための基礎は、ACT ルールではなく、WCAG 標準の達成基準である。</em></p>
+            			
+            <p>W3C の <a href="https://www.w3.org/WAI/standards-guidelines/act/">List of ACT Rules for WCAG 2</a> は、W3C の Accessibility Guidelines Working Group (AGWG) によってレビューされているが、W3C Web Content Accessibility Guidelines (WCAG) 標準 (W3C <em>勧告</em>と呼ばれる) と同程度に精査されていない。WCAG 規格は、適合を判断するための規範的な基準である。           
+            </p>
+            		
+         </section>
+         		
+         		
+         <section id="act-rules-are-partial-checks">
+            			
+            <h2>ACT ルールは部分的なチェックである</h2>
+            			
+            <p>ACT ルールは通常、WCAG 達成基準の特定の側面をチェックする。例えば、テーブルセルには、WCAG 2.2 の全体の達成基準 1.3.1「情報及び関係性」ではない、ヘッダーがある。これは、ウェブページ上のより多くの情報構造に適用される。実際、このサンプルのルールは、特定のテーブルセルにヘッダーが存在する場合に限り、テーブルヘッダーの有効性をチェックさえしない。
+            </p>
+            			
+            <p>ACT ルールはまた、技術固有である。例えば、前述のテーブルヘッダーの例は、HTML に固有であり、WAI-ARIA の役割 (role) 及びプロパティが強化されている可能性があるが、テーブルを使用する他の形式には固有ではない。 WCAG 2.2の達成基準は、技術にとらわれず、すべてのウェブ技術に適用できるように設計されている。
+            </p>
+            		
+         </section>
+         		
+         		
+         <section id="act-rules-check-for-failures">
+            			
+            <h2>ACT ルールは失敗をチェックする</h2>
+            			
+            <p>ACT ルールは、WCAG 達成基準を満たすための失敗をチェックするように設計されている。つまり、コンテンツが ACT ルールに失敗した場合、そのコンテンツは対応する達成基準を満たしていないことを意味する。しかし、コンテンツが ACT ルールに合格した場合、対応する失敗が検出されなかったことを意味する。これは必ずしも、コンテンツが対応する達成基準の全ての側面を満たしていることを意味するわけではない。
+            </p>
+            			
+            <p>これは、WCAG 達成基準は通常、いくつかの側面と技術を対象としているのに対し、ACT ルールは特定の側面のみをチェックするためである。コンテンツが WCAG 達成基準の全ての側面を満たしていることを確認するには、通常、人間の検証者によるさらなる検証が必要となる。
+            </p>
+            			
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p><a href="conformance.html#cc1">WCAG 2 適合している代替版を理解する</a>は、「適合している代替版」を認めらていれる。これは、コンテンツが ACT ルールに失敗し、対応する達成基準を満たしていない場合でも、コンテンツはWCAG 2 に適合している可能性があることを意味する。 
+               </p>
+            </div>
+            		
+         </section>
+         		
+         		
+         <!-- //
+         <section>
+            <h2>ACT Rule Implementations</h2>
+            <p>Implementation of an ACT Rule can be any automated testing tool, manual testing methodology, or other procedure that provides the same expected results for the test cases defined by the ACT Rule. Specifically, when the expected result for a test case is:</p>
+            <ul>
+               <li><strong>Passed</strong>, the test result generated from the implementation is <strong>passed</strong>, <strong>cantTell</strong>, or <strong>inapplicable</strong></li>
+               <li><strong>Failed</strong>, the test result generated from the implementation is <strong>failed</strong> or <strong>cantTell</strong></li>
+               <li><strong>Inapplicable</strong>, the test result generated from the implementation is <strong>inapplicable</strong>, <strong>cantTell</strong>, or <strong>passed</strong></li>
+            </ul>
+         </section>
+         //-->
+         		
+         		
+         <section id="structure-of-act-rules">
+            			
+            <h2>ACT ルールの構造</h2>
+            			
+            <p>ACT ルールは、<a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing (ACT) Rules Format 1.0</a> 標準に適合する。これには、次の部分が含まれる:
+            </p>
+            			
+            <ul>
+               				
+               <li><strong>説明タイトル</strong> – ACT ルールのタイトル。これはルールを説明すべきである
+               </li>
+               				
+               <li><strong>ルール識別子</strong> – ACT ルールの識別子。 W3C ルールは英数字の文字列を使用する
+               </li>
+               				
+               <li><strong>ルールタイプ</strong> – テストするものに応じて、ACT ルールには2つの基本的な種類がある:
+                  					
+                  <ul>
+                     						
+                     <li><strong>アトミックルール</strong> – 一つの特定の状況をテストする。これは、コンポジットルールの一部の場合がある
+                     </li>
+                     						
+                     <li><strong>コンポジットルール</strong> – 複数のアトミックルールからの結果を一つの結果に結合する
+                     </li>
+                     					
+                  </ul>
+                  				
+               </li>
+               				
+               <li><strong>アクセシビリティ要件のマッピング</strong> – ACT ルールを特定のアクセシビリティ要件にマッピングする。この一連のルールでは、Web Content Accessibility Guidelines（WCAG）2 の達成基準を使用する
+               </li>
+               				
+               <li><strong>ルール入力</strong> – ACTルールへの入力の範囲を記述する。これは次のいずれかである:
+                  					
+                  <ul>
+                     						
+                     <li><strong>入力アスペクト</strong> – DOM ツリーや CSS スタイリングなどのアトミックルールへの入力
+                     </li>
+                     						
+                     <li><strong>入力ルール</strong> – コンポジットルールへの入力。これは、範囲内のアトミックルールである 
+                     </li>
+                     					
+                  </ul>
+                  				
+               </li>
+               				
+               <li><strong>適用性</strong> – ルールが適用されるコンテンツの特定の部分の説明
+               </li>
+               				
+               <li><strong>期待</strong> – 該当するルールコンテンツの期待される特性の説明
+               </li>
+               				
+               <li><strong>仮定</strong> – 要件の特定の解釈など、行われた仮定
+               </li>
+               				
+               <li><strong>アクセシビリティサポート</strong> – ブラウザ及び支援技術に関する既知の制限
+               </li>
+               				
+               <li><strong>テストケース</strong> – 合格、不合格、および適用不可のルールの条件を示すサンプルコード
+               </li>
+               				
+               <li><strong>変更点</strong> – 下位互換性をサポートするための ACT ルールの変更履歴
+               </li>
+               				
+               <li><strong>用語集</strong> – ACT ルールによって定義された、又は特定の ACT ルールによって使用される重要な用語のリスト
+               </li>
+               				
+               <li><strong>Issueリスト (オプション)</strong> – 存在する場合、特定の ACT ルールの既知の問題又はバグのリスト
+               </li>
+               				
+               <li><strong>背景 (オプション)</strong> – 存在する場合、追加の文書などの関連する背景
+               </li>
+               				
+               <li><strong>謝辞 (オプション)</strong> – ルール作成者、レビュー担当者、その他の貢献者など
+               </li>
+               			
+            </ul>
+            		
+         </section>
+         	
+      </main>
+      <hr>
+      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+   </body>
+</html>

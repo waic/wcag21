@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>H46: Using noembed with embed
+      <title>embed 要素と一緒に noembed 要素を用いる
          				
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
@@ -12,62 +12,54 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="H45">Previous Technique: H45</a></li>
-            <li><a href="H48">Next Technique: H48</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="H45">前の達成方法: H45</a></li>
+            <li><a href="H48">次の達成方法: H48</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using <code class="el">noembed</code> with <code class="el">embed</code>
+      <h1><code class="el">embed</code> 要素と一緒に <code class="el">noembed</code> 要素を用いる
          				
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Documents that load plugins with the <code class="el">embed</code> element.
+            <h2>適用 (対象)</h2>
+            <p><code class="el">embed</code> 要素でプラグインを読み込むドキュメント
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">Success Criterion 1.2.8: Media Alternative (Prerecorded)</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">達成基準 1.2.8: メディアに対する代替 (収録済)</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide alternative content for the
-               <code class="el">embed</code> element in a <code class="el">noembed</code> element. The <code class="el">noembed</code> is rendered
-               only if the <code class="el">embed</code> is not supported. While it can be positioned anywhere on the
-               page, it is a good idea to include it as a child element of <code class="el">embed</code> so that it is
-               clear to assistive technologies that a text alternative is associated with the
-               <code class="el">embed</code> element it describes.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、<code class="el">embed</code> 要素の代替コンテンツとして <code class="el">noembed</code> を提供することである。<code class="el">noembed</code> 要素は <code class="el">embed</code> 要素がサポートされていない場合のみレンダリングされる。ページのどこにでも配置できるが、<code class="el">embed</code> 要素の子要素として組み込む方が良い。これによりテキストによる代替が <code class="el">embed</code> 要素に関連付けられてことが支援技術にも明らかになる。
+               
             </p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注:</div><div><p>noembed 要素は、以前の HTML のバージョンで標準として定義されておらず、HTML5 で改めて廃止された要素として定義された。<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/noembed">MDN の noembed 要素</a> によれば、新規のサイトではこの要素を使用せず、代わりに object 要素の内容として記述するように勧められている。<a href="https://waic.jp/docs/WCAG-TECHS/H53">H53: object 要素のボディを使用する</a> (HTML) も参照のこと。</p></div></div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-----noembed-is-provided-inside-an-embed&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;---">
-               <h3>Example 1: 
-                  							     <code class="el">noembed</code> is provided inside an <code class="el">embed</code>
+               <h3>事例 1: <code class="el">noembed</code> 要素が <code class="el">embed</code> 要素の内側にある
                   						   
                </h3><pre xml:space="preserve">&lt;embed src="../movies/history_of_rome.mov"
   height="60" width="144" autostart="false"&gt;
@@ -76,8 +68,7 @@
   &lt;/noembed&gt;
 &lt;/embed&gt;</pre></section>
             <section class="example" id="example-2-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-----noembed-is-provided-beside-an-embed&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;---">
-               <h3>Example 2: 
-                  							     <code class="el">noembed</code> is provided beside an <code class="el">embed</code>
+               <h3>事例 2: <code class="el">noembed</code> 要素が <code class="el">embed</code> 要素のそばにある                   
                   						   
                </h3><pre xml:space="preserve">&lt;embed src="moviename.swf" width="100" height="80"
   pluginspage="http://example.com/shockwave/download/" /&gt;
@@ -87,28 +78,27 @@
 &lt;/noembed&gt;;</pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check if <code class="el">embed</code> element has a child <code class="el">noembed</code> element 
+                  <li><code class="el">embed</code> 要素に子 <code class="el">noembed</code> 要素があるかどうかを確認する
                   </li>
                   
-                  <li>Check if <code class="el">embed</code> element has a <code class="el">noembed</code> element that
-                     immediately follows it. 
+                  <li><code class="el">embed</code> 要素の直下に <code class="el">noembed</code> 要素があるかどうかを確認する
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true or #2 is true </li>
+                  <li>1. 又は 2. の結果が真である。</li>
                   
                </ul>
                

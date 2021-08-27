@@ -145,7 +145,7 @@
       <li><a href="aria/ARIA2">ARIA2: aria-required プロパティによって必須項目を特定する</a></li>
       <li><a href="aria/ARIA4">ARIA4: ユーザインタフェース コンポーネントの役割 (role) を明示するために、WAI-ARIA ロールを使用する</a></li>
       <li><a href="aria/ARIA5">ARIA5: ユーザインターフェース コンポーネントの状態 (state) を明示するために、WAI-ARIA ステート及びプロパティ属性を使用する</a></li>
-      <li><a href="aria/ARIA6">ARIA6: Using aria-label to provide labels for objects</a></li>
+      <li><a href="aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
       <li><a href="aria/ARIA7">ARIA7: リンクの目的を示すために aria-labelledby を使用する</a></li>
       <li><a href="aria/ARIA8">ARIA8: リンクの目的を示すために aria-label を使用する</a></li>
       <li><a href="aria/ARIA9">ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</a></li>
@@ -196,34 +196,28 @@
    </ul>
    <h3 id="css">CSS の達成方法<span class="permalink"><a href="#css" aria-label="Permalink for CSS Techniques" title="Permalink for CSS Techniques"><span>§</span></a></span></h3>
    <ul>
-      <li><a href="css/C6">C6: Positioning content based on structural markup</a></li>
-      <li><a href="css/C7">C7: Using CSS to hide a portion of the link text</a></li>
-      <li><a href="css/C8">C8: Using CSS letter-spacing to control spacing within a word</a></li>
-      <li><a href="css/C9">C9: Using CSS to include decorative images</a></li>
-      <li><a href="css/C12">C12: Using percent for font sizes</a></li>
-      <li><a href="css/C13">C13: Using named font sizes</a></li>
-      <li><a href="css/C14">C14: Using em units for font sizes</a></li>
-      <li><a href="css/C15">C15: Using CSS to change the presentation of a user interface component when it receives
-            focus</a></li>
-      <li><a href="css/C17">C17: Scaling form elements which contain text</a></li>
-      <li><a href="css/C18">C18: Using CSS margin and padding rules instead of spacer images for layout design</a></li>
-      <li><a href="css/C19">C19: Specifying alignment either to the left OR right in CSS</a></li>
-      <li><a href="css/C20">C20: Using relative measurements to set column widths so that lines can average 80 characters
-            or less when the browser is resized</a></li>
-      <li><a href="css/C21">C21: Specifying line spacing in CSS</a></li>
-      <li><a href="css/C22">C22: Using CSS to control visual presentation of text</a></li>
-      <li><a href="css/C23">C23: Specifying text and background colors of secondary content such as banners, features
-            and navigation in CSS while not specifying text and background colors of the main
-            content</a></li>
-      <li><a href="css/C24">C24: Using percentage values in CSS for container sizes</a></li>
-      <li><a href="css/C25">C25: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying
-            text and text-background colors</a></li>
-      <li><a href="css/C27">C27: Making the DOM order match the visual order</a></li>
-      <li><a href="css/C28">C28: Specifying the size of text containers using em units</a></li>
-      <li><a href="css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
-      <li><a href="css/C30">C30: Using CSS to replace text with images of text and providing user interface controls
-            to switch</a></li>
-      <li><a href="css/C31">C31: コンテンツをリフローするために CSS Flexbox を使う</a></li>
+      <li><a href="css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
+      <li><a href="css/C7">C7: リンクテキストの一部を非表示にするために、CSS を使用する</a></li>
+      <li><a href="css/C8">C8: 単語内の文字間隔を制御するために、CSS の letter-spacing を使用する</a></li>
+      <li><a href="css/C9">C9: 装飾目的の画像を付加するために、CSS を使用する</a></li>
+      <li><a href="css/C12">C12: フォントサイズにパーセントを使用する</a></li>
+      <li><a href="css/C13">C13: 名前付きフォントサイズを使用する</a></li>
+      <li><a href="css/C14">C14: フォントサイズに em 単位を使用する</a></li>
+      <li><a href="css/C15">C15: ユーザインタフェースコンポーネントがフォーカスを受けとったときの提示を変更するために、CSS を使用する</a></li>
+      <li><a href="css/C17">C17: テキストを含むフォーム要素を拡大縮小する</a></li>
+      <li><a href="css/C18">C18: レイアウトデザインのためのスペーサー画像ではなく、CSS のマージンとパディング規則を使用する</a></li>
+      <li><a href="css/C19">C19: CSS でテキストの配置を左寄せ又は右寄せに指定する</a></li>
+      <li><a href="css/C20">C20: ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する</a></li>
+      <li><a href="css/C21">C21: 行送り幅を CSS で指定する</a></li>
+      <li><a href="css/C22">C22: テキストの視覚的提示を制御するために、CSS を使用する</a></li>
+      <li><a href="css/C23">C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する</a></li>
+      <li><a href="css/C24">C24: コンテナのサイズに CSS のパーセント値を使用する</a></li>
+      <li><a href="css/C25">C25: テキスト及び背景の色は指定せずに、ウェブページの各領域の範囲を明確にするためのボーダーやレイアウトを CSS で指定する</a></li>
+      <li><a href="css/C27">C27: DOM の順序を視覚的順序と一致させる</a></li>
+      <li><a href="css/C28">C28: em 単位を用いて、テキストコンテナのサイズを指定する</a></li>
+      <li><a href="css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
+      <li><a href="css/C30">C30: テキストを文字画像に置き換えるために CSS を利用し、切り替えのためのユーザインタフェースコントロールを提供する</a></li>
+      <li><a href="css/C31">C31: コンテンツをリフローするために CSS Flexbox を使用する</a></li>
       <li><a href="css/C32">C32: メディアクエリとグリッド CSS を使用して列をリフローする</a></li>
       <li><a href="css/C33">C33: 長い URL 及びテキスト文字列をリフローできるようにする</a></li>
       <li><a href="css/C34">C34: 固定されていないスティッキーヘッダー/フッターに、メディアクエリーを利用する</a></li>
@@ -236,12 +230,9 @@
    </ul>
    <h3 id="failures">よくある失敗例<span class="permalink"><a href="#failures" aria-label="Permalink for Common Failures" title="Permalink for Common Failures"><span>§</span></a></span></h3>
    <ul>
-      <li><a href="failures/F1">F1: Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning
-            information with CSS</a></li>
-      <li><a href="failures/F2">F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey
-            information without using the appropriate markup or text</a></li>
-      <li><a href="failures/F3">F3: Failure of Success Criterion 1.1.1 due to using CSS to include images that convey
-            important information</a></li>
+      <li><a href="failures/F1">F1: 達成基準 1.3.2 の失敗例 － CSS で情報を配置することにより、コンテンツの意味を変えている</a></li>
+      <li><a href="failures/F2">F2: 達成基準 1.3.1 の失敗例 － 情報を伝えるために、適切なマークアップ又はテキストを用いずに、テキストの提示の変化を使用している</a></li>
+      <li><a href="failures/F3">F3: 達成基準 1.1.1 の失敗例 － 重要な情報を伝える画像を付加するために、CSS を使用している</a></li>
       <li><a href="failures/F4">F4: Failure of Success Criterion 2.2.2 due to using text-decoration:blink without a mechanism
             to stop it in less than five seconds</a></li>
       <li><a href="failures/F7">F7: Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash,
@@ -501,7 +492,7 @@
       <li><a href="general/G93">G93: オープン (常に見える) キャプションを提供する</a></li>
       <li><a href="general/G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、短いテキストによる代替を提供する</a></li>
       <li><a href="general/G95">G95: 非テキストコンテンツの簡単な説明を提供する、簡潔なテキストによる代替を提供する</a></li>
-      <li><a href="general/G96">G96: 理解させる必要のあるアイテムを感覚的にだけ伝えるのではなく、テキストによる識別情報もあわせて提供する</a></li>
+      <li><a href="general/G96">G96: 理解するために感覚的な情報のみに依存するような項目に対して、テキストによる識別を別の方法で提供する</a></li>
       <li><a href="general/G97">G97: 略語の初出時、その直前又は直後に元の語を提供する</a></li>
       <li><a href="general/G98">G98: 送信する前に、利用者が回答を確認及び修正できるようにする</a></li>
       <li><a href="general/G99">G99: 削除した情報を復元する機能を提供する</a></li>
@@ -529,7 +520,7 @@
       <li><a href="general/G131">G131: 説明的なラベルを提供する</a></li>
       <li><a href="general/G133">G133: 複数部分で構成されるフォームの最初のページに、利用者がセッションの制限時間を延長又は解除を要求できるチェックボックスを提供する</a></li>
       <li><a href="general/G134">G134: ウェブページをバリデートする</a></li>
-      <li><a href="general/G135">G135: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変更の通知を提供するためのウェブコンテンツ技術のアクセシビリティ API 機能を使用する</a></li>
+      <li><a href="general/G135">G135: 名前 (name) 及び変更の通知を公開するためのアクセシビリティ API 機能を使用する</a></li>
       <li><a href="general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
       <li><a href="general/G138">G138: 色の手がかりを用いるときは必ず、セマンティックなマークアップを使用する</a></li>
       <li><a href="general/G139">G139: 利用者がエラー箇所に移動できるメカニズムを作成する</a></li>
@@ -629,7 +620,7 @@
    <h3 id="html">HTML の達成方法<span class="permalink"><a href="#html" aria-label="Permalink for HTML Techniques" title="Permalink for HTML Techniques"><span>§</span></a></span></h3>
    <ul>
       <li><a href="html/H2">H2: 同じリソースに対して隣接する画像とテキストリンクを結合する</a></li>
-      <li><a href="html/H4">H4: Creating a logical tab order through links, form controls, and objects</a></li>
+      <li><a href="html/H4">H4: リンク、フォームコントロール、及びオブジェクトを通して、論理的なタブ順序を作成する</a></li>
       <li><a href="html/H24">H24:  イメージマップの area 要素にテキストによる代替を提供する</a></li>
       <li><a href="html/H25">H25: title 要素を用いて、ページタイトルを提供する</a></li>
       <li><a href="html/H28">H28: abbr 要素を用いて、略語の定義を提供する</a></li>
@@ -640,56 +631,48 @@
       <li><a href="html/H35">H35:  applet 要素にテキストによる代替を提供する</a></li>
       <li><a href="html/H36">H36: 送信ボタンとして用いる画像の alt 属性を使用する</a></li>
       <li><a href="html/H37">H37: Using alt attributes on img elements</a></li>
-      <li><a href="html/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
+      <li><a href="html/H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
       <li><a href="html/H40">H40: 記述リストを使用する</a></li>
       <li><a href="html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
       <li><a href="html/H43">H43: データテーブルのデータセルを見出しセルと関連付けるために、id 属性及び headers 属性を使用する</a></li>
       <li><a href="html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
-      <li><a href="html/H45">H45: Using longdesc</a></li>
-      <li><a href="html/H46">H46: Using noembed with embed </a></li>
-      <li><a href="html/H48">H48: Using ol, ul and dl for lists or groups of links</a></li>
-      <li><a href="html/H49">H49: Using semantic markup to mark emphasized or special text</a></li>
-      <li><a href="html/H51">H51: Using table markup to present tabular information</a></li>
-      <li><a href="html/H53">H53: Using the body of the object element</a></li>
-      <li><a href="html/H54">H54: Using the dfn element to identify the defining instance of a word</a></li>
-      <li><a href="html/H56">H56: Using the dir attribute on an inline element to resolve problems with nested directional
-            runs</a></li>
-      <li><a href="html/H57">H57: Using the language attribute on the HTML element</a></li>
-      <li><a href="html/H58">H58: Using language attributes to identify changes in the human language </a></li>
-      <li><a href="html/H59">H59: Using the link element and navigation tools</a></li>
-      <li><a href="html/H60">H60: Using the link element to link to a glossary</a></li>
-      <li><a href="html/H62">H62: Using the ruby element</a></li>
-      <li><a href="html/H63">H63: Using the scope attribute to associate header cells and data cells in data tables</a></li>
-      <li><a href="html/H64">H64: Using the title attribute of the frame and iframe elements</a></li>
-      <li><a href="html/H65">H65: Using the title attribute to identify form controls when the label element cannot
-            be used</a></li>
-      <li><a href="html/H67">H67: Using null alt text and no title attribute on img elements for images that AT should
-            ignore</a></li>
-      <li><a href="html/H69">H69: Providing heading elements at the beginning of each section of content</a></li>
-      <li><a href="html/H70">H70: Using frame elements to group blocks of repeated material</a></li>
-      <li><a href="html/H71">H71:  Providing a description for groups of form controls using fieldset and legend elements
+      <li><a href="html/H45">H45: longdesc 属性を用いる</a></li>
+      <li><a href="html/H46">H46: embed 要素と一緒に noembed 要素を用いる </a></li>
+      <li><a href="html/H48">H48: リスト又はリンクのグループに、ol 要素、ul 要素、dl 要素を用いる</a></li>
+      <li><a href="html/H49">H49: 強調又は特別なテキストをマークアップするために、セマンティックなマークアップを使用する</a></li>
+      <li><a href="html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
+      <li><a href="html/H53">H53: object 要素のボディを使用する</a></li>
+      <li><a href="html/H54">H54: 単語の定義箇所を特定するために、dfn 要素を使用する</a></li>
+      <li><a href="html/H56">H56: 入れ子になったテキストの表記方向に伴う問題を解決するために、インライン要素の dir 属性を使用する</a></li>
+      <li><a href="html/H57">H57: HTML 要素の言語属性を使用する</a></li>
+      <li><a href="html/H58">H58: 自然言語の変更を指定するために、言語属性を使用する</a></li>
+      <li><a href="html/H59">H59: link 要素及びナビゲーションツールを使用する</a></li>
+      <li><a href="html/H60">H60: 用語集にリンクするために、link 要素を使用する</a></li>
+      <li><a href="html/H62">H62: ruby 要素を使用する</a></li>
+      <li><a href="html/H63">H63: データテーブルで見出しセルとデータセルを関連付けるために、scope 属性を使用する</a></li>
+      <li><a href="html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a></li>
+      <li><a href="html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
+      <li><a href="html/H67">H67: 支援技術が無視すべき画像に対して、img 要素の alt テキストを空にして、title 属性を付与しない</a></li>
+      <li><a href="html/H69">H69: コンテンツの各セクションの開始位置に見出し要素を提供する</a></li>
+      <li><a href="html/H70">H70: 繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</a></li>
+      <li><a href="html/H71">H71:  fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する
             </a></li>
-      <li><a href="html/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a></li>
-      <li><a href="html/H74">H74: Ensuring that opening and closing tags are used according to specification</a></li>
-      <li><a href="html/H75">H75: Ensuring that Web pages are well-formed</a></li>
-      <li><a href="html/H76">H76: Using meta refresh to create an instant client-side redirect</a></li>
-      <li><a href="html/H77">H77: Identifying the purpose of a link using link text combined with its enclosing list
-            item</a></li>
-      <li><a href="html/H78">H78: Identifying the purpose of a link using link text combined with its enclosing paragraph</a></li>
-      <li><a href="html/H79">H79: Identifying the purpose of a link in a data table using the link text combined with
-            its enclosing table cell and associated table header cells</a></li>
-      <li><a href="html/H80">H80: Identifying the purpose of a link using link text combined with the preceding heading
-            element</a></li>
-      <li><a href="html/H81">H81: Identifying the purpose of a link in a nested list using link text combined with the
-            parent list item under which the list is nested</a></li>
-      <li><a href="html/H83">H83: Using the target attribute to open a new window on user request and indicating this
-            in link text</a></li>
-      <li><a href="html/H84">H84: Using a button with a select element to perform an action</a></li>
-      <li><a href="html/H85">H85: Using OPTGROUP to group OPTION elements inside a SELECT</a></li>
-      <li><a href="html/H86">H86: Providing text alternatives for ASCII art, emoticons, and leetspeak</a></li>
-      <li><a href="html/H88">H88: Using HTML according to spec</a></li>
-      <li><a href="html/H89">H89: Using the title attribute to provide context-sensitive help</a></li>
-      <li><a href="html/H90">H90: Indicating required form controls using label or legend</a></li>
+      <li><a href="html/H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
+      <li><a href="html/H74">H74: 開始タグ及び終了タグを仕様に準じて使用していることを確認する</a></li>
+      <li><a href="html/H75">H75: ウェブページが well-formed であることを確認する</a></li>
+      <li><a href="html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a></li>
+      <li><a href="html/H77">H77: リンクテキストとそれが含まれているリスト項目とを組み合わせて、リンクの目的を特定する</a></li>
+      <li><a href="html/H78">H78: リンクテキストとそれが含まれている段落とを組み合わせて、リンクの目的を特定する</a></li>
+      <li><a href="html/H79">H79: リンクテキストとそれが含まれているデータセル及び関連づけられた見出しセルとを組み合わせて、リンクの目的を特定する</a></li>
+      <li><a href="html/H80">H80: リンクテキストと先行する見出し要素とを組み合わせて、リンクの目的を特定する</a></li>
+      <li><a href="html/H81">H81: リストが入れ子になっている状況で、親のリスト項目と結合したリンクテキストを用いて、入れ子になったリストの中でリンクの目的を特定する</a></li>
+      <li><a href="html/H83">H83: 利用者の要求に応じて新しいウィンドウを開くために target 属性を使用して、そのことをリンクテキストで明示する</a></li>
+      <li><a href="html/H84">H84: アクションを実行するために、select 要素とともにボタンを使用する</a></li>
+      <li><a href="html/H85">H85: select 要素内の option 要素をグループ化するために、optgroup 要素を使用する</a></li>
+      <li><a href="html/H86">H86: ASCII アート、顔文字、及びリート語にテキストによる代替を提供する</a></li>
+      <li><a href="html/H88">H88: 仕様に準じて HTML を使用する</a></li>
+      <li><a href="html/H89">H89: コンテキストに応じたヘルプを提供するために、title 属性を使用する</a></li>
+      <li><a href="html/H90">H90: label 要素又は legend 要素を使用して、必須のフォームコントロールを明示する</a></li>
       <li><a href="html/H91">H91: HTML のフォームコントロール及びリンクを使用する</a></li>
       <li><a href="html/H93">H93: ウェブページの id 属性値が一意的 (ユニーク) であるようにする</a></li>
       <li><a href="html/H94">H94: 要素には重複した属性がないようにする</a></li>
