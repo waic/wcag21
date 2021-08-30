@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F13: Failure of Success Criterion 1.1.1 and 1.4.1 due to having a text alternative that
-         does not
-         include information that is conveyed by color differences in the image
+      <title>F13: 達成基準 1.1.1 及び 1.4.1 の失敗例 － 画像の色の違いで伝られる情報が含まれないテキストによる代替を持っている
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,110 +11,87 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F12">Previous Technique: F12</a></li>
-            <li><a href="F14">Next Technique: F14</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F12">前の達成方法: F12</a></li>
+            <li><a href="F14">次の達成方法: F14</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.1.1 and 1.4.1 due to having a text alternative that
-         does not
-         include information that is conveyed by color differences in the image
+      <h1>達成基準 1.1.1 及び 1.4.1 の失敗例 － 画像の色の違いで伝られる情報が含まれないテキストによる代替を持っている
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">達成基準 1.4.1: 色の使用</a> (失敗)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe the failure that occurs when
-               an image uses color differences to convey information, but the text alternative for
-               the
-               image does not convey that information. This can cause problems for people
-               who are blind or colorblind because they will not be able to perceive the
-               information conveyed by the color differences.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、画像が色の違いを用いて情報を伝えていても、その画像のテキストによる代替がその情報を伝えていないときに生じる失敗例について述べることである。全盲又は色覚異常の利用者は色の違いによって伝えられている情報を知覚することができないため、そのような利用者に対して問題を引き起こす恐れがある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A bar chart of sales data is provided as an image. The chart includes
-                  yearly sales figures for four employees in the Sales Department. The
-                  text alternative for the image says, "The following bar chart
-                  displays the yearly sales figures for the Sales Department. Mary
-                  sold 3.1 Million; Fred, 2.6 Million; Bob, 2.2 Million; and Andrew,
-                  3.4 Million. The red bars indicate sales that were below the yearly
-                  quota". This text alternative fails to provide the information which
-                  is conveyed by the color red in the image. The alternative should
-                  indicate which people did not meet the sales quota rather than
-                  relying on color.
+               <li>売上データの棒グラフが画像で提供されている。そのグラフには、営業部 4 名の社員の年間売上高が含まれている。その画像のテキストによる代替には、「営業部の年間売上額を示す棒グラフ。メアリー 310 万 ドル、フレッド 260 万ドル、ボブ 220 万ドル、そしてアンドリュー 340 万ドル。赤い棒は、年間のノルマを達成できなかったことを示している。」と書かれている。このテキストによる代替は、画像が赤色を使って伝えている情報を提供していない。テキストによる代替では、色を説明するのではなく、誰が年間のノルマを達成できなかったのかを示すべきである。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G94">G94: Providing short text alternative for non-text content that serves the same purpose
-                     and presents the same information as the non-text content</a></li>
+               <li><a href="../general/G94">G94: 非テキストコンテンツに対して、それと同じ目的を果たし、かつ同じ情報を示す、短いテキストによる代替を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For all images in the content that convey information by way of color differences:
+               <p>コンテンツ内で、色の違いによって情報を伝えている画像全てに対して:
                   
                </p>
                
                <ol>
                   
-                  <li>Check that the information conveyed by color differences is not included in
-                     the text alternative for the image.
+                  <li>色の違いによって伝えられている情報が、画像のテキストによる代替に含まれていないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #1 is true, then this failure condition applies and
-                     content fails the Success Criterion.
+                  <li>#1 の結果が真である場合、この失敗例の条件は適用され、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
