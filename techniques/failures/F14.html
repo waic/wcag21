@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F14: Failure of Success Criterion 1.3.3 due to identifying content only by its shape or
-         location
+      <title>F14: 達成基準 1.3.3 の失敗例 － 形状又は位置のみでコンテンツを特定している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,89 +11,59 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F13">Previous Technique: F13</a></li>
-            <li><a href="F15">Next Technique: F15</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F13">前の達成方法: F13</a></li>
+            <li><a href="F15">次の達成方法: F15</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.3 due to identifying content only by its shape or
-         location
+      <h1>達成基準 1.3.3 の失敗例 － 形状又は位置のみでコンテンツを特定している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/sensory-characteristics">Success Criterion 1.3.3: Sensory Characteristics</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/sensory-characteristics">達成基準 1.3.3: 感覚的な特徴</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to show how identifying content only by
-               its visual shape or location makes content difficult to understand and operate.
-               When only visual identification or location is used, users with visual
-               disabilities may find it difficult to locate content since they cannot see
-               the screen or may perceive only a small portion of the screen at one time.
-               Also, location of content can vary if page layout varies due to variations
-               in font, window, or screen size.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、コンテンツをその形又は位置のみによって特定すると、コンテンツの理解及び操作が困難になってしまう失敗例について述べることである。視覚的な識別又は位置のみが用いられている場合、視覚障害のある利用者は画面を見ることができないため、又は一度に画面のごく一部しか知覚できないため、そのコンテンツを見つけることが困難になることがある。また、ページのレイアウトがフォント、ウィンドウ又は画面サイズに応じて変化する場合には、コンテンツの位置が変わってしまうこともある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>The navigation instructions for a site state, "To go to next page,
-                  press the button to the right. To go back to previous page, press
-                  the button to the left." 
+               <li>サイトの操作説明に「次のページへ行くには、右のボタンを押してください。前のページに戻るには、左のボタンを押してください」と書いてある。
                </li>
                
-               <li>A user is reading a news article in an on-line newspaper. The article
-                  contains an illustration and additional links for more information.
-                  Within the text of the article is a statement, "Please see sidebar
-                  to the left of the illustration for links to additional
-                  information." An assistive technology user would have difficulty
-                  finding the illustration and the sidebar. Some alternatives would be
-                  to include the list of links within the text; to provide an in-page
-                  link within the text which links to the sidebar; to provide a
-                  heading for the sidebar which can be used for navigation and refer
-                  to the heading in the instructions.
+               <li>利用者がオンライン新聞サイトで新着記事を読んでいる。記事にはイラスト及びより多くの情報へのリンクがある。記事の文中には次のように書いてある。「この記事の続きへのリンクは、イラストの左側の関連記事欄にあります。」支援技術の利用者は、イラスト及び関連記事欄を見つけるのが困難である。考えられる解決策としては、記事の文中にリンクの一覧を含めること、記事文中に関連記事欄へのページ内リンクを提供すること、又は関連記事欄に何らかの見出しをつけて支援技術のナビゲーション機能が使えるようにして、説明文中でその見出しを示すことが挙げられる。
                </li>
                
-               <li>A user is completing an on-line survey. There are three buttons at
-                  the bottom of the survey form. The instructions state, "Press the
-                  square button to exit the survey without saving, Press the triangle
-                  button to save in-progress survey results. You may return later to
-                  complete the survey. Press the round button to submit the survey
-                  results." A screen reader user or a user unable to distinguish shapes cannot determine
-                  which button is
-                  square, triangular, or round. The buttons must have additional
-                  information to indicate their functions or their shapes.
+               <li>利用者がオンライン調査のフォームに入力している。調査フォームの最後に三つのボタンがある。説明文には「保存せずに入力を終えるには四角いボタン、入力内容を保存するには三角のボタンを押してください。後から入力を続けることができます。フォームを送信するには円いボタンを押してください。」と書かれている。スクリーンリーダーの利用者には、どのボタンが四角形、三角形又は円形なのかを知る術がない。ボタンには、それぞれの機能を示す情報 (ラベル) を付加しなければならない。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
                <li><a href="../general/G96">G96: 理解するために感覚的な情報のみに依存するような項目に対して、テキストによる識別を別の方法で提供する</a></li>
@@ -102,30 +71,27 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the Web page for textual references to content within the
-                     Web page. 
+                  <li>ウェブページ内にあるコンテンツを示しているテキスト参照を調べる。 
                   </li>
                   
-                  <li>Check that the references do not rely on only the visual shape or
-                     location of the content.
+                  <li>参照がコンテンツの視覚的な形又は位置だけに依存していないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #2 is false, then this failure condition applies and the
-                     content fails this Success Criterion.
+                  <li>#2 の結果が偽である場合、この失敗基準が適用され、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
