@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F16: Failure of Success Criterion 2.2.2 due to including scrolling content where movement
-         is not essential to the activity without also including a mechanism to pause and restart
-         the content
+      <title>F16: 達成基準 2.2.2 の失敗例 － コンテンツを一時停止及び再開するメカニズムなしで、動きが操作に不可欠ではないところにスクロールするコンテンツを含んでいる
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,111 +11,95 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F15">Previous Technique: F15</a></li>
-            <li><a href="F19">Next Technique: F19</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F15">前の達成方法: F15</a></li>
+            <li><a href="F19">次の達成方法: F19</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.2.2 due to including scrolling content where movement
-         is not essential to the activity without also including a mechanism to pause and restart
-         the content
+      <h1>達成基準 2.2.2 の失敗例 － コンテンツを一時停止及び再開するメカニズムなしで、動きが操作に不可欠ではないところにスクロールするコンテンツを含んでいる
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support visual movement or scrolling.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">Success Criterion 2.2.2: Pause, Stop, Hide</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>目で見える動きやスクロールをサポートする全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">達成基準 2.2.2: 一時停止、停止、非表示</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>In this failure technique, there is moving or scrolling content that cannot
-               be paused and resumed by users. In this case, some users with low vision or
-               cognitive disabilities will not be able to perceive the content.
+            <h2>解説</h2>
+            <p>この失敗例では、動きのある又はスクロールするコンテンツを利用者が一時停止したり再開したりすることができない。この場合、ロービジョンの又は認知障害のある利用者のなかには、コンテンツを知覚できないことがある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A page has a scrolling news ticker without a mechanism to pause it.
-                  Some users are unable to read the scrolling content.
+               <li>ウェブページにスクロールするニュースティッカーがあり、そのスクロールを一時停止するメカニズムがない。なかには、スクロールするコンテンツを読むことができない利用者がいる。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G4">G4: Allowing the content to be paused and restarted from where it was paused</a></li>
+               <li><a href="../general/G4">G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>On a page with moving or scrolling content,</p>
+               <p>動きのある又はスクロールするコンテンツのあるウェブページ上で、</p>
                
                <ol>
                   
-                  <li>Check that a mechanism is provided in the Web page or user agent
-                     to pause moving or scrolling content.
+                  <li>ウェブページ又はユーザエージェントに、動きのあるコンテンツ又はスクロールするコンテンツを一時停止させるメカニズムが提供されていることを確認する。
                   </li>
                   
-                  <li>Use the pause mechanism to pause the moving or scrolling
-                     content.
+                  <li>一時停止させるメカニズムを用いて、動きのあるコンテンツ又はスクロールするコンテンツを一時停止させる。
                   </li>
                   
-                  <li>Check that the moving or scrolling has stopped and does not
-                     restart by itself.
+                  <li>動きのあるコンテンツ又はスクロールするコンテンツが停止し、そのまま再開しないことを確認する。
                   </li>
                   
-                  <li>Check that a mechanism is provided in the Web page or user agent
-                     to restart the paused content.
+                  <li>ウェブページ又はユーザエージェントに、一時停止したコンテンツを再開させるメカニズムが提供されていることを確認する。
                   </li>
                   
-                  <li>Use the restart mechanism provided to restart the moving
-                     content.
+                  <li>再開させるメカニズムを用いて、コンテンツの動きを再開させる。
                   </li>
                   
-                  <li>Check that the movement or scrolling has resumed from the point
-                     where it was stopped.
+                  <li>コンテンツの動き又はスクロールが、一時停止したところから再開されることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If  step #1, step #3, step #4, or step #6 are false, then the content fails the success
-                     criterion.
+                  <li>#1、#3、#4、又は #6 の結果が偽である場合、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
