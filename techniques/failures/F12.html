@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F12: Failure of Success Criterion 2.2.5 due to having a session time limit without a mechanism
-         for saving user's input and re-establishing that information upon
-         re-authentication
+      <title>F12: 達成基準 2.2.5 の失敗例 － 利用者の入力を保存し、再認証時にその情報を再確立するためのメカニズムなしに、セッションの制限時間がある
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,120 +11,90 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F10">Previous Technique: F10</a></li>
-            <li><a href="F13">Next Technique: F13</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F10">前の達成方法: F10</a></li>
+            <li><a href="F13">次の達成方法: F13</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.2.5 due to having a session time limit without a mechanism
-         for saving user's input and re-establishing that information upon
-         re-authentication
+      <h1>達成基準 2.2.5 の失敗例 － 利用者の入力を保存し、再認証時にその情報を再確立するためのメカニズムなしに、セッションの制限時間がある
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Sites that require user login to submit input and that terminate the session
-               after a some period of inactivity.
+            <h2>適用 (対象)</h2>
+            <p>入力を送信するのに利用者のログインが必要で、しばらく操作しない期間の後にセッションを切断するサイト。
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/re-authenticating">Success Criterion 2.2.5: Re-authenticating</a> (Failure)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/re-authenticating">達成基準 2.2.5: 再認証</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Web servers that require user authentication usually have a session mechanism
-               in which a session times out after a period of inactivity from the user.
-               This is sometimes done for security reasons, to protect users who are
-               assumed to have left their computer exposed in a state where someone could
-               do something harmful to them such as transfer bank funds or make an
-               unauthorized purchase. A user with a disability may actually still be
-               working to complete the form as it may take him or her longer to complete
-               the form than would normally be expected. Upon re-authentication, if the
-               state of the user's session is not restored, including all data that had
-               been previously entered into the form, he or she will have to start over.
-               And for these users, it is likely that the session will time out again
-               before they can complete the form. This sets up a situation where a user who
-               needs more time to complete the form can never complete it.
+            <h2>解説</h2>
+            <p>通常、利用者の認証を必要とするウェブサーバーは、利用者が操作しない期間の後、セッションをタイムアウトするセッションのメカニズムを持っている。これはセキュリティ上の理由のためで、コンピュータを銀行口座振替や不正な購入などの有害な行為をする可能性がある状態のままにしておくと思われる利用者を保護するために行われることがある。障害のある利用者は、フォームに入力する時間が普通に予測される時間よりもかかることがあるため、実際はまだフォームの入力中かもしれない。再認証のとき、これまでフォームに入力したすべてのデータを含め、利用者のセッションの状態が復旧しないと、利用者はやり直さなければならなくなる。そして、そういった利用者の場合には、再びフォームを入力し終わる前に、セッションは再びタイムアウトしてしまうだろう。これは、フォームに入力するのにより多くの時間を必要とする利用者が、決してそれを完了できない状況を引き起こしてしまう。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A user submits a form on an authenticated site after their login has
-                  expired. On submitting the form, they are prompted to log in again,
-                  and then taken to a general welcome page. The data is not processed
-                  and they must try again.
+               <li>ログインの期限が切れた後に、利用者が認証されたサイトのフォームを送信する。フォームを送信すると、利用者は再びログインするように促され、そしていわゆるウェルカムページに連れて行かれる。データは処理されておらず、利用者はまたやり直さなければならない。
                </li>
                
-               <li>A user submits a form on an authenticated site after their login has
-                  expired. On submitting the form, they are prompted to log in again,
-                  and then taken back to the page they were on just before the login,
-                  which in this case contains the form they attempted to submit.
-                  However, the form is not populated with the data they just entered,
-                  and they must re-enter it.
+               <li>ログインの期限が切れた後に、利用者が認証されたサイトのフォームを送信する。フォームを送信すると、利用者は再びログインするように促され、そして、この場合、利用者が送信を試みたフォームを含むログイン前のページに戻される。しかしながら、フォームには利用者が入力したデータは残っておらず、利用者は再入力しなければならない。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G105">G105: Saving data so that it can be used after a user re-authenticates</a></li>
+               <li><a href="../general/G105">G105: 利用者が再認証した後に利用できるようにデータを保存する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>On a site where authentication is required, user input is collected, and
-                  which ends the user's session after a known period of inactivity:
+               <p>利用者の入力を収集していて、既知の非アクティブ時間の後に利用者のセッションを終了する、認証が必要なサイトにおいて:
                </p>
                
                <ol>
                   
-                  <li>Provide user input as required but allow the session to time out,
-                     then submit the form.
+                  <li>必要な入力をした後、セッションをタイムアウトさせ、それからフォームを送信する。
                   </li>
                   
-                  <li>When requested, re-authenticate with the server.</li>
+                  <li>要求された場合、サーバーで再認証する。</li>
                   
-                  <li>Determine if the function is performed using the previously
-                     submitted data.
+                  <li>タイムアウト後に送信したデータが処理されるかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #3 is false, the site fails the Success Criterion.</li>
+                  <li>手順 3.の結果が偽である場合、サイトは達成基準の失敗となる。</li>
                   
                </ul>
                
