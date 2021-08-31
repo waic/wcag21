@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F24: Failure of Success Criterion 1.4.3, 1.4.6 and 1.4.8 due to specifying foreground colors
-         without
-         specifying background colors or vice versa
+      <title>F24: 達成基準 1.4.3、1.4.6 及び 1.4.8 の失敗例 － 背景色を指定せずに前景色を指定する (又は、前景色を指定せずに背景色を指定する)
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,101 +11,70 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F23">Previous Technique: F23</a></li>
-            <li><a href="F25">Next Technique: F25</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F23">前の達成方法: F23</a></li>
+            <li><a href="F25">次の達成方法: F25</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.4.3, 1.4.6 and 1.4.8 due to specifying foreground colors
-         without
-         specifying background colors or vice versa
+      <h1>達成基準 1.4.3、1.4.6 及び 1.4.8 の失敗例 － 背景色を指定せずに前景色を指定する (又は、前景色を指定せずに背景色を指定する)
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> All technologies that allow user agents to control foreground and background
-               colors through personal stylesheets or other means. 
+            <h2>適用 (対象)</h2>
+            <p>ユーザエージェントが個人のスタイルシート又は他の方法を通して前景と背景の色を制御することを可能にする全てのウェブコンテンツ技術 
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">Success Criterion 1.4.3: Contrast (Minimum)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">Success Criterion 1.4.6: Contrast (Enhanced)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (失敗)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Users with vision loss or cognitive, language and learning challenges often prefer
-               specific foreground and background color combinations. In some cases, individuals
-               with low vision will find it much easier to see a Web page that has white text on
-               a black background, and they may have set their user agent to present this contrast.
-               Many user agents make it possible for users to choose a preference about the foreground
-               or background colors they would like to see without overriding all author-specified
-               styles. This makes it possible for users to view pages where colors have not been
-               specified by the author in their preferred color combination.
+            <h2>解説</h2>
+            <p>失明、認知障害、言語又は学習障害のある利用者は、多くの場合特定の前景色と背景色の組み合わせを好む。弱視の利用者は黒の背景に白い文字のウェブページの方がより見やすく、そしてそれぞれのユーザエージェントをこのコントラストに設定していることがある。多くのユーザエージェントでは、制作者が指定したすべてのスタイルを上書きせずに、好みの前景色または背景色に関する設定を利用者が選択できるようになっている。これにより、利用者は好ましい色の組み合わせの中でコンテンツ制作者によって色が指定されていないページを閲覧することが可能になる。
             </p>
-            <p>Unless an author specifies both foreground and background colors, then they (the author)
-               can no longer guarantee that the user will get a contrast that meets the contrast
-               requirements. If, for example, the author specifies, that text should be grey, then
-               it may override the settings of the user agent and render a page that has grey text
-               (specified by the author) on a light grey background (that was set by the user in
-               their user agent). This principle also works in reverse. If the author forces the
-               background to be white, then the white background specified by the author could be
-               similar in color to the text color preference expressed by the user in their user
-               agent settings, thus rendering the page unusable to the user. Because an author can
-               not predict how a user may have configured their preferences, if the author specifies
-               a foreground text color then they should also specify a background color which has
-               sufficient contrast with the foreground and vice versa.
+            <p>コンテンツ制作者が前景と背景の両方の色を指定しない限り、コンテンツ制作者は、コントラストの要求を満足したコントラストになっていることを保証できない。たとえば、コンテンツ制作者がテキストを灰色に指定していたら、それはユーザエージェントの設定より優先され、(ユーザエージェントによって利用者に設定された) 明るい灰色の背景に (コンテンツ制作者に指定された) 灰色のテキストというページが描画される。この原則は逆も成り立つ。もしコンテンツ制作者が背景を白にしていたら、コンテンツ制作者に指定された白い背景は、利用者のユーザエージェントの設定によって表現されている好みのテキストの色に似ているかもしれない。そのため、利用者にとって使用できないページに描写されてしまう。コンテンツ制作者は利用者がどのようにして好みの設定にしているかを予測できないため、コンテンツ制作者が前景色を指定していたら十分なコントラストを持つ背景色も指定すべきであり、逆もまた同様である。
             </p>
-            <p>It is not necessary that the foreground and background colors both be defined on the
-               same CSS rule. Since CSS color properties inherit from ancestor elements, it is sufficient
-               if both foreground and background colors are defined either directly or through inheritance
-               by the time that color is applied to a given element.
+            <p>前景色と背景色の両方を同じ CSS 規則上で定義する必要はない。CSS の色のプロパティは、先祖要素から引き継がれるので、前景色と背景色の両方が直接的に、又はその色が要素に対して適用される継承を通して定義されるのであればそれで十分である。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
                   <p>
-                     Best practice is to include all states of the text. For example, text, link text,
-                     visited link text, link text with hover and keyboard focus, etc.
+                     実践するにあたっては、テキストの全ての状態を含めることが重要である。例えば、テキスト、リンクテキスト、訪問済みリンクテキスト、マウスフォーカスがあたったとき及びキーボードフォーカスがあたったときのリンクテキストなど。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-specifying-only-background-color-with-css">
-               <h3>Example 1: Specifying only background color with CSS</h3>
-               <p>In the example below the background color is defined on the CSS
-                  stylesheet, however the foreground color is not defined. Therefore,
-                  the example fails the Success Criterion.
+               <h3>例 1: CSS で背景色のみ指定する</h3>
+               <p>次の例では、背景色は CSS スタイルシートで定義されているが前景色は定義されていない。よって、この事例は達成基準を満たしていない。
                </p><pre xml:space="preserve">
   &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
@@ -125,10 +92,8 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre></section>
             <section class="example" id="example-2-specifying-only-foreground-color-with-css">
-               <h3>Example 2: Specifying only foreground color with CSS</h3>
-               <p>In the example below the foreground color is defined on the CSS
-                  stylesheet, however the background color is not defined. Therefore,
-                  the example fails the Success Criterion. 
+               <h3>例 2: CSS で前景色のみ指定する</h3>
+               <p>次の例では、前景色は CSS スタイルシートで定義されているが背景色は定義されていない。よって、この事例は達成基準を満たしていない。
                </p><pre xml:space="preserve">
  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
@@ -146,10 +111,8 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre></section>
             <section class="example" id="example-3-specifying-foreground-color-of-link-text-with-css">
-               <h3>Example 3: Specifying foreground color of link text with CSS</h3>
-               <p>In the example below the link text (foreground) color is defined on
-                  the body element. However, the background color is not defined.
-                  Therefore, the example fails the Success Criterion. 
+               <h3>例 3: CSS でリンクテキストの色を指定する</h3>
+               <p>次の例では、リンクテキスト (前景) の色をボディ要素で定義している。しかし背景色は定義していない。よって、この事例は達成基準を満たしていない。
                </p><pre xml:space="preserve">
   &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
     "https://www.w3.org/TR/html4/strict.dtd"&gt;
@@ -169,14 +132,11 @@
 &lt;/body&gt;
 &lt;/html&gt;</pre></section>
             <section class="example" id="example-4-specifying-only-background-color-with-bgcolor-in-html-">
-               <h3>Example 4: Specifying only background color with <code class="att">bgcolor</code> in HTML 
+               <h3>例 4: HTML の <code class="att">bgcolor</code> 属性で背景色のみ指定する 
                </h3>
-               <p>In the example below the background color is defined on the body
-                  element, however the foreground color is not defined. Therefore, the
-                  example fails the Success Criterion.
+               <p>次の例では、背景色は body 要素で定義されているが前景色は定義されていない。よって、この事例は達成基準を満たしていないことになる。
                </p>
-               <p>Note that the use of the <code class="att">bgcolor</code> attribute is deprecated as of HTML 4, but this failure example is included as this
-                  usage is still found on some web sites.
+               <p>HTML 4 の時点で <code class="att">bgcolor</code> 属性の使用は廃止予定である、しかしこの失敗例は、この使用法がまだ一部のウェブサイトで見られるため含まれていることに注意する。
                </p><pre xml:space="preserve">   
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
@@ -190,14 +150,11 @@
           &lt;/body&gt;
   &lt;/html&gt;</pre></section>
             <section class="example" id="example-5-specifying-only-foreground-color-with-the-text-attribute-in-html-">
-               <h3>Example 5: Specifying only foreground color with the <code class="att">text</code> attribute in HTML 
+               <h3>例 5: HTML の <code class="att">text</code> 属性を持つ前景色のみを指定する
                </h3>
-               <p>In the example below the foreground color is defined on the body
-                  element, however the background color is not defined. Therefore, the
-                  example fails the Success Criterion. 
+               <p>次の例では、前景色は body 要素で定義されているが、背景色は定義されていない。したがって、この例は達成基準を満たしていない。 
                </p>
-               <p>Note that the use of the <code class="att">text</code> attribute is deprecated as of HTML 4, but this failure example is included as this
-                  usage is still found on some web sites.
+               <p>HTML 4 の時点で <code class="att">text</code> 属性の使用は廃止予定である、しかしこの失敗例は、この使用法がまだ一部のウェブサイトで見られるため含まれていることに注意する。
                </p><pre xml:space="preserve">
  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
    "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
@@ -213,8 +170,8 @@
 &lt;/html&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -223,51 +180,49 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+                  <p>CSS2 の「Assigning property values, Cascading, and Inheritance」は、<a href="https://www.w3.org/TR/css-cascade-3/">CSS Cascading and Inheritance Level 3</a> で再定義されている。この仕様は W3C 勧告ではないが、<a href="https://www.w3.org/TR/css-2018/">CSS Snapshot 2018</a> によれば、今日の CSS を構成する仕様として位置づけられている。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../css/C23">C23: Specifying text and background colors of secondary content such as banners, features
-                     and navigation in CSS while not specifying text and background colors of the main
-                     content</a></li>
+               <li><a href="../css/C23">C23: メインコンテンツのテキスト及び背景の色を指定せず、バナー、機能及びナビゲーションなどのような補助的なコンテンツのテキスト及び背景の色を CSS で指定する</a></li>
                
-               <li><a href="../css/C25">C25: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying
-                     text and text-background colors</a></li>
+               <li><a href="../css/C25">C25: テキスト及び背景の色は指定せずに、ウェブページの各領域の範囲を明確にするためのボーダーやレイアウトを CSS で指定する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the code of the Web page.</li>
+                  <li>ウェブページのソースコードを調べる。</li>
                   
-                  <li>Check to see if an author-specified foreground color is present</li>
+                  <li>コンテンツ制作者が指定した前景色があるかどうかを確認する。</li>
                   
-                  <li>Check to see if an author-specified background color is present</li>
+                  <li>コンテンツ制作者が指定した背景色があるかどうかを確認する。</li>
                   
                </ol>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
                      <p>
-                        Color and background color may be specified at any level in the cascade of preceding
-                        selectors, by external stylesheets or through inheritance rules.
-                        
+                        色及び背景色は、外部のスタイルシート又は継承ルールによって、先行する一連のセレクターのあらゆるレベルで指定することができる。
                      </p>
                      
                      <p>
-                        Background color may also be specified using a background image with the CSS property
-                        'background-image' or with the CSS property 'background' (with the URI of the image,
-                        e.g., 'background: url("images/bg.gif")'). With background images, it is still necessary
-                        to specify a background color, because users may have images turned off in their browser.
-                        But the background image and the background color need to be checked. 
+                        背景色は CSS プロパティ 'background-image' 又は 'background' (画像の URL、例えば、'background: url("images/bg.gif")') プロパティで背景画像を用いて指定されているかもしれない。背景画像があるとしても、背景色を指定する必要がある。なぜならば利用者はブラウザ上で画像を非表示にしているかもしれないからである。よって、背景画像及び背景色を確認する必要がある。
                      </p>
                      
                   </div>
@@ -275,11 +230,9 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p>If step #2 is true but step #3 is false, OR if step #3 is true but step #2 is false
-                  then this
-                  failure condition applies and content fails these Success Criteria.
+               <p>#2 の結果が真であるが #3 の結果が偽である、又は、#3 の結果が真であるが #2 の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                </p>
                
             </section>
