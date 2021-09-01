@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F25: Failure of Success Criterion 2.4.2 due to the title of a Web page not identifying
-         the
-         contents
+      <title>F25: 達成基準 2.4.2 の失敗例 － コンテンツを特定しないウェブページのタイトル
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,123 +11,118 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F24">Previous Technique: F24</a></li>
-            <li><a href="F26">Next Technique: F26</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F24">前の達成方法: F24</a></li>
+            <li><a href="F26">次の達成方法: F26</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.4.2 due to the title of a Web page not identifying
-         the
-         contents
+      <h1>達成基準 2.4.2 の失敗例 － コンテンツを特定しないウェブページのタイトル
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/page-titled">Success Criterion 2.4.2: Page Titled</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/page-titled">達成基準 2.4.2: ページタイトル</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This describes a failure condition when the Web page has a title, but the
-               title does not identify the contents or purpose of the Web page. 
+            <h2>解説</h2>
+            <p>これは、ウェブページにページタイトルはあるが、そのページタイトルがウェブページのコンテンツ又は目的を示していないことによる失敗例について述べている。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Examples of text that are not titles include: </p>
+               <h3>例 1</h3>
+               <p>次に挙げるのは、ページタイトルとはいえない文言の例である: </p>
                <ul>
                   
                   <li>
                      
-                     <p>Authoring tool default titles, such as </p>
+                     <p>オーサリングツールの初期設定のページタイトル。例えば、</p>
                      
                      <ul>
                         
-                        <li>"Enter the title of your HTML document here," </li>
+                        <li>"ここに HTML ドキュメントのタイトルを入れてください"</li>
                         
-                        <li>"Untitled Document" </li>
+                        <li>"無題ドキュメント"</li>
                         
-                        <li>"No Title" </li>
+                        <li>"タイトルなし"</li>
                         
-                        <li>"Untitled Page" </li>
+                        <li>"無題ページ"</li>
                         
-                        <li>"New Page 1"</li>
+                        <li>"新しいページ 1"</li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li>Filenames that are not descriptive in their own right, such
-                     as "report.html" or "spk12.html"
+                  <li>それぞれの内容を示していないファイル名。例えば、"report.html" 又は "spk12.html" など。
                   </li>
                   
-                  <li>Empty text</li>
+                  <li>空のテキスト</li>
                   
-                  <li>Filler or placeholder text</li>
+                  <li>埋め草又はプレースホルダーのテキスト</li>
                   
                </ul>
+               <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                  <div>
+                     <p>埋め草とは、空いたところや、欠けた部分を埋め補うもののこと。フィラー。<a href="https://dictionary.goo.ne.jp/jn/20545/meaning/m0u/%E5%9F%8B%E3%82%81%E8%8D%89/">埋め草（うめくさ）の意味 - goo国語辞書</a>も参照のこと。
+                     </p>
+                  </div>
+               </div>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A site generated using templates includes the same title for each
-                  page on the site. So the title cannot be used to distinguish among
-                  the pages.
+               <h3>例 2</h3>
+               <p>テンプレートを用いて生成されたサイトにおいて、サイトの各ページに同じページタイトルがついている。そのため、ページタイトルによってページの違いを見分けることができない。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H25">H25: Providing a title using the title element</a></li>
+               <li><a href="../html/H25">H25: title 要素を用いて、ページタイトルを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check whether the title of each Web page identifies the contents
-                     or purpose of the Web page .
+                  <li>各ウェブページのタイトルが、そのウェブページのコンテンツ又は目的を特定するかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #1 is false, then this failure condition applies and the
-                     content fails this Success Criterion.
+                  <li>#1 の結果が偽である場合、この失敗例が適用され、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
