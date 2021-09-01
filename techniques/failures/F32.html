@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F32: Failure of Success Criterion 1.3.2 due to using white space characters to control
-         spacing within a word
+      <title>F32: 達成基準 1.3.2 の失敗例 － 単語内の間隔を制御するために、空白文字を使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,92 +11,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F31">Previous Technique: F31</a></li>
-            <li><a href="F33">Next Technique: F33</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F31">前の達成方法: F31</a></li>
+            <li><a href="F33">次の達成方法: F33</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.2 due to using white space characters to control
-         spacing within a word
+      <h1>達成基準 1.3.2 の失敗例 － 単語内の間隔を制御するために、空白文字を使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe how using white space characters, such
-               as space, tab, line break, or carriage return, to format individual words visually
-               can be a failure to present meaningful sequences properly. When blank characters are
-               inserted to control letter spacing within a word, they may change the interpretation
-               of the word or cause it not to be programmatically recognized as a single word. 
+            <h2>解説</h2>
+            <p>この文書は、単語を視覚的にフォーマットするために、単語の中でスペース、タブ文字、改行文字又はキャリッジリターンのような空白文字を用いると、それらを意味のある並びとして適切に提示するのが困難になるという失敗例について解説する。文字間を制御するために空白文字を挿入すると、単語の解釈を変えてしまうかもしれないし、それが一つの単語であるとプログラムで解釈できないようにしてしまうことがある。
                
             </p>
-            <p>Inserting white space characters into an initialism is not an example of this
-               failure, since the white space does not change the interpretation of the
-               initialism and may make it easier to understand.
+            <p>頭文字語の文字間に空白文字を挿入することはこの失敗例には当たらない。空白文字が頭文字語の解釈を変えるわけではないし、むしろ理解しやすくするかもしれないからである。
             </p>
-            <p>The use of white space between words for visual formatting is not a failure,
-               since it does not change the interpretation of the words.
+            <p>単語間のスペースを利用して視覚的なフォーマットを行うことはこの失敗例には当たらない。空白文字が単語の解釈を変えることはないからである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-failure-due-to-adding-white-space-in-the-middle-of-a-word">
-               <h3>Example 1: Failure due to adding white space in the middle of a word</h3>
-               <p>This example has white spaces within a word to space out the letters
-                  in a heading. Screen readers may read each letter individually
-                  instead of the word "Welcome."
+               <h3>例 1: 単語の途中に空白を挿入することによる失敗例</h3>
+               <p>この事例では、見出しとして文字をまばらに配置するために単語の途中にスペースを置いている。スクリーンリーダーは、"Welcome" という単語としてではなく、文字を一つずつばらばらに読み上げてしまうだろう。
                </p><pre xml:space="preserve">
 &lt;h1&gt;W e l c o m e&lt;/h1&gt;
-</pre><p>&amp;nbsp; can also be used to add white space, producing similar
-                  failures:
+</pre><p>&amp;nbsp; を用いてスペースを追加することもできるが、同様の失敗例となる:
                </p><pre xml:space="preserve">
 &lt;h1&gt;H&amp;nbsp;E&amp;nbsp;L&amp;nbsp;L&amp;nbsp;O&lt;/h1&gt;
 </pre></section>
             <section class="example" id="example-2-white-space-in-the-middle-of-a-word-changing-its-meaning">
-               <h3>Example 2: White space in the middle of a word changing its meaning</h3>
-               <p>In Japanese, Han characters (Kanji) may have multiple readings that
-                  mean very different things. In this example, the word is read
-                  incorrectly because screen readers may not recognize these
-                  characters as a word because of the white space between the
-                  characters. The characters mean "Tokyo," but screen readers say
-                  "Higashi Kyo".
+               <h3>例 2: 単語の途中に入れた空白によって意味が変わってしまう</h3>
+               <p>日本語においては、一つの漢字がそれぞれ意味の異なるいくつかの読み方を持っていることがある。この例では、スクリーンリーダーは空白文字があるためにこれらの文字列を一つの単語と認識できず、誤った読み方をしてしまう可能性がある。この文字列は「東京 (とうきょう)」を意味しているが、スクリーンリーダーは「ひがし　きょう」と読み上げてしまう。
                </p><pre xml:space="preserve">
 &lt;h1&gt;東　京&lt;/h1&gt;
 </pre></section>
             <section class="example" id="example-3-using-line-break-characters-to-format-vertical-text">
-               <h3>Example 3: Using line break characters to format vertical text</h3>
-               <p>In the row header cell of a data table containing Japanese text,
-                  authors often create vertical text by using line break characters.
-                  However screen readers are not able to read the words in vertical
-                  text correctly because the line breaks occur within the word. In the
-                  following example, "東京都"(Tokyo-to) will be read "Higashi Kyo
-                  Miyako".
+               <h3>例 3: 縦書きのテキストを表現するために改行文字を使用している</h3>
+               <p>データテーブルの行見出しセルに日本語が含まれる場合に、制作者は改行文字を使用して縦書きのテキストを表現することがよくある。しかし、単語中に改行文字があるために、スクリーンリーダーはこのような縦書き文字列にある単語を正しく読み上げることができない。次の例は「東京都 (とうきょうと)」ではなく「ひがし　きょう　みやこ」と読み上げられてしまう。
                </p><pre xml:space="preserve">
 &lt;table&gt;
 &lt;caption&gt;表1.　都道府県別一覧表&lt;/caption&gt;
@@ -116,38 +90,35 @@
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../css/C8">C8: Using CSS letter-spacing to control spacing within a word</a></li>
+               <li><a href="../css/C8">C8: 単語内の文字間隔を制御するために、CSS の letter-spacing を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each word that appears to have non-standard spacing between
-                  characters: 
+               <p>文字間に標準的でない空白があるように見える各単語について: 
                </p>
                
                <ol>
                   
-                  <li>Check whether any words in the text of the content contain white
-                     space characters .
+                  <li>コンテンツのテキストを構成する単語が空白文字を含んでいるかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #1 is true, then this failure condition applies and the
-                     content fails this Success Criterion.
+                  <li>#1 の結果が真である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
