@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F38: Failure of Success Criterion 1.1.1 due to not marking up decorative images in HTML
-         in a way that allows assistive technology to ignore them
+      <title>F38: 達成基準 1.1.1 の失敗例 － 支援技術が装飾的な画像を無視できる方法で、HTML でその画像をマークアップしていない
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,95 +11,77 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F37">Previous Technique: F37</a></li>
-            <li><a href="F39">Next Technique: F39</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F37">前の達成方法: F37</a></li>
+            <li><a href="F39">次の達成方法: F39</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.1.1 due to not marking up decorative images in HTML
-         in a way that allows assistive technology to ignore them
+      <h1>達成基準 1.1.1 の失敗例 － 支援技術が装飾的な画像を無視できる方法で、HTML でその画像をマークアップしていない
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> This describes a failure condition for text alternatives for images that
-               should be ignored by AT. If there is no alt attribute at all assistive
-               technologies are not able to ignore the non-text content. The alt attribute
-               must be provided and have a null value (i.e., alt="" ) to avoid a failure of this
-               Success Criterion. 
+            <h2>解説</h2>
+            <p>これは、支援技術によって無視されるべき画像のテキストによる代替に対する失敗条件を記述する。alt 属性が全くない場合、支援技術は非テキストコンテンツを無視することができない。この達成基準の失敗を回避するには、alt 属性を指定し、空値 (alt="") を指定しなければならない。
             </p>
-            <p>This describes a failure condition for text alternatives for images that should be
-               ignored by assistive technology (AT). If an image has the attribute role="presentation",
-               it will be ignored by AT. However, if it does not have role="presentation", and if
-               there is no <code class="att">alt</code> attribute at all assistive technologies are not able to ignore the image. For decorative
-               images which need to be ignored by AT, either role="presentation" must be used or
-               the alt attribute must be provided and have a null value (i.e., alt="") to avoid a
-               failure of this Success Criterion.
+            <p>これは、支援技術 (AT) によって無視されるべき画像のためのテキストによる代替の失敗条件を記述する。画像が属性 role="presentation" を持つ場合、テキストによる代替は AT によって無視される。ただし、role="presentation" を持たない場合、かつ <code class="att">alt</code> 属性が全くない場合は、支援技術は画像を無視することはできない。AT によって無視される必要のある装飾画像の場合、この達成基準の失敗を避けるために、role="presentation" を使用するか、又は空値 (alt="") の値を持つ alt 属性を提供しなければならない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>Decorative images that have no <code class="att">alt</code>
-                  attribute and no <code class="att">role</code> attribute
-                  
+               <li><code class="att">alt</code> 属性がなく、<code class="att">role</code> 属性がない装飾画像
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For any <code class="el">img</code> element that is used for purely decorative content:
+               <p>純粋に装飾的なコンテンツとして使用される <code class="el">img</code> 要素の場合:
                </p>
                
                <ol>
                   
-                  <li>Check whether the element has no <code class="att">role</code> attribute or has a <code class="att">role</code> attribute value that is not <code class="attval">presentation</code>.
+                  <li>要素に  <code class="att">role</code> 属性がないか、又は <code class="att">role</code> 属性値が <code class="attval">presentation</code> ではないかどうかを確認する。
                   </li>
                   
-                  <li>Check whether the element has no <code class="att">alt</code> attribute or has an <code class="att">alt</code> attribute with a value that is not null.
+                  <li>要素に <code class="att">alt</code> 属性がないか、又は <code class="att">alt</code> 属性に空ではない値が含まれていないかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #1 is true and if step #2 is true, this failure condition applies and content
-                     fails the Success Criterion.
+                  <li>#1 の結果が真であり、かつ #2 の結果が真である場合、この失敗条件が適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
