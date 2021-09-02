@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F40: Failure due to using meta redirect with a time limit
-         
+      <title>F40: 達成基準 2.2.1、2.2.4 及び 3.2.5 の失敗例 － 制限時間付きの meta 要素リダイレクトを使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,70 +11,57 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F39">Previous Technique: F39</a></li>
-            <li><a href="F41">Next Technique: F41</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F39">前の達成方法: F39</a></li>
+            <li><a href="F41">次の達成方法: F41</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure due to using meta redirect with a time limit
-         
+      <h1>達成基準 2.2.1、2.2.4 及び 3.2.5 の失敗例 － 制限時間付きの meta 要素リダイレクトを使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> All pages</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのページ</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">達成基準 2.2.1: タイミング調整可能</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/interruptions">達成基準 2.2.4: 割り込み</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">達成基準 3.2.5: 要求による変化</a> (失敗)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> 
-               meta
-               						   http-equiv of {time-out}; url=... is often used to
-               automatically redirect users. When this occurs after a time delay, it is an
-               unexpected change of context that may interrupt the user.
+            <h2>解説</h2>
+            <p> meta http-equiv の {time-out}; url=... はしばしば、自動的に利用者をリダイレクトする目的で使用される。これが時間をおいて発生した場合、予期しないコンテキストの変化によって利用者の邪魔をする可能性がある。
             </p>
-            <p>It is acceptable to use the meta element to create a redirect
-               when the time-out is set to zero, since the redirect is instant and will not
-               be perceived as a change of context. However, it is preferable to use
-               server-side methods to accomplish this. See <a href="../server-side-script/SVR1">SVR1: Implementing automatic redirects on the server side instead of on the client side</a>.
+            <p>タイムアウトが 0 に設定されている場合には、meta 要素をリダイレクトのために利用することが容認される。なぜなら、リダイレクトが即時に行われるので、コンテキストの変化として知覚できないからである。しかしながら、これを実行するためにはサーバーサイドの達成方法を用いることが望ましい。<a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバーサイドで自動リダイレクトを実装する</a>を参照のこと。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p> The page below is a failure because it will redirect to the URI
-                  http://www.example.com/newpage after a time limit of 5 seconds.
+               <h3>例 1</h3>
+               <p>以下のページは 5 秒後に http://www.example.com/newpage という URI へリダイレクトされるため、失敗となる。
                </p><pre xml:space="preserve">
 &lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
    &lt;head&gt;     
@@ -95,8 +81,8 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -105,64 +91,64 @@
                </li>
                
             </ul>
+            <div class="note">
+                  <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                  <div>
+                     <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記は、<a href="https://www.w3.org/TR/html52/document-metadata.html#the-meta-element">HTML 5.2§4.2.5. The meta element</a> を代わりに参照できる。
+                     </p>
+                  </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../server-side-script/SVR1">SVR1: Implementing automatic redirects on the server side instead of on the client side</a></li>
+               <li><a href="../server-side-script/SVR1">SVR1: クライアントサイドではなく、サーバーサイドで自動リダイレクトを実装する</a></li>
                
-               <li><a href="../html/H76">H76: Using meta refresh to create an instant client-side redirect</a></li>
+               <li><a href="../html/H76">H76: クライアントサイドで瞬間的にリダイレクトするために、meta 要素の refresh を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For a page that uses <code>meta http-equiv="refresh"</code>:
+               <p><code>meta http-equiv="refresh"</code> を使用しているページについて:
                </p> 
                
                <ol>
                   
-                  <li>Check that the numerical value for seconds until refresh in the 
-                     <att>content</att> attribute is present.
+                  <li><att>content</att> 属性の中に更新までの秒数の数値が存在することを確認する。
                   </li>
                   
-                  <li>Check that the numerical value for seconds until refresh in the 
-                     <att>content</att> attribute is less than one or greater than 72,000.
+                  <li><att>content</att>属性の中にある更新までの秒数の数値が、1 未満又は 72,000 より大きいことを確認する。
                   </li>
                   
-                  <li>Check if the page qualifies for Real-time or Essential Exceptions in <a href="https://www.w3.org/TR/WCAG21/#timing-adjustable">Success Criterion 2.2.1 Timing Adjustable</a>.
+                  <li>そのページが、<a href="https://www.w3.org/TR/WCAG21/#timing-adjustable">達成基準 2.2.1 タイミング調整可能</a>のリアルタイムの例外又は必要不可欠な例外に該当するかを確認する。
                   </li>
                   
-                  <li>Check if the user is provided an opportunity to turn off, extend, or adjust the timing
-                     of the page refresh.
+                  <li>ページ更新のタイミングをオフにする、延長する、又は調整する機会が、利用者に提供されているかを確認する。
                   </li>
                   
-                  <li>Check if the page does not redirect after the duration specified in the 
-                     <att>content</att> attribute.
+                  <li><att>content</att> 属性で指定された時間が経過しても、ページがリダイレクトされないかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ol>
                   
-                  <li>If checks #1-5 are false, this failure condition applies and the content fails Success
-                     Criterion 2.2.1.
+                  <li>#1 - #5 の結果が偽の場合、この失敗条件が適用され、そのコンテンツは達成基準 2.2.1 の失敗となる。
                   </li>
                   
-                  <li>If checks #1, #2, #4, and #5 are false, this failure condition applies and the content
-                     fails Success Criterion 2.2.4.
+                  <li>#1、#2、#4 及び #5 の結果が偽の場合、この失敗条件が適用され、そのコンテンツは達成基準 2.2.4 の失敗となる。
                   </li>
                   
-                  <li>If checks #1, #4, and #5 are false, this failure condition applies and the content
-                     fails Success Criterion 3.2.5.
+                  <li>#1、#4 及び #5 の結果が偽の場合、この失敗条件が適用され、そのコンテンツは達成基準 3.2.5 の失敗となる。
                   </li>
                   
                </ol>
