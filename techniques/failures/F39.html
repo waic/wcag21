@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F39: Failure of Success Criterion 1.1.1 due to providing a text alternative that is not
-         null (e.g., alt="spacer" or alt="image") for images that should be ignored by assistive
-         technology
+      <title>F39: 達成基準 1.1.1 の失敗例 － 支援技術によって無視されることが望ましい画像に対して、空ではないテキストによる代替を提供している (例: alt="spacer" 又は alt="image")
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,108 +11,88 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F38">Previous Technique: F38</a></li>
-            <li><a href="F40">Next Technique: F40</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F38">前の達成方法: F38</a></li>
+            <li><a href="F40">次の達成方法: F40</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.1.1 due to providing a text alternative that is not
-         null (e.g., alt="spacer" or alt="image") for images that should be ignored by assistive
-         technology
+      <h1>達成基準 1.1.1 の失敗例 － 支援技術によって無視されることが望ましい画像に対して、空ではないテキストによる代替を提供している (例: alt="spacer" 又は alt="image")
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Applies to HTML and XHTML.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This technique describes a failure condition for images that should
-               be ignored by assistive technologies. A text alternative for an image
-               should convey the meaning of the image. When an image is used for decoration,
-               spacing or other purpose that is not part of the meaningful content
-               in the page then the image has no meaning and should be ignored by
-               assistive technologies. 
+            <h2>解説</h2>
+            <p>この達成方法は、支援技術によって無視されることが望ましい画像に対する失敗条件について述べている。画像のテキストによる代替は、画像の意味を伝えることが望ましい。ページ内に意味のないコンテンツの一部である装飾、スペーシング又は他の目的で画像が使用される場合、画像は意味を持たず、支援技術では無視することが望ましい。
             </p>
-            <p>Providing a null text alternative (i.e., alt="" )
-               will allow assistive technology to ignore the image and avoid a failure
-               of this Success Criterion. 
+            <p>空のテキストによる代替 (alt="") を提供すると、支援技術によって画像が無視され、この達成基準の失敗を回避できるだろう。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-decorative-images-that-have-no-alt-attribute">
-               <h3>Example 1: Decorative images that have no <code class="att">alt</code> attribute
+               <h3>例 1: <code class="att">alt</code> 属性を持たない装飾画像
                </h3>
-               <p>An image is used to create a blank space between content, where the
-                  spacing itself is not meaningful to the content. The image has an alt
-                  text value of "spacer". This image fails the Success Criterion
-                  because the text alternative does not serve an equivalent purpose.
-                  The image is meant to be ignored but its alternative text "spacer" is
-                  announced by screen readers and displayed in some alternate color schemes. 
+               <p>コンテンツ間に空白領域を作成するために、それ自体は意味を持たない画像が使用されている。その画像の代替テキストの値は "spacer" である。テキストによる代替が同等の目的を果たさないため、この画像は達成基準の失敗となる。その画像は無視されることを意図されているが、代替テキスト "spacer" はスクリーンリーダーによって読み上げられ、いくつかの代替カラースキームでは表示される。 
                </p><pre xml:space="preserve">&lt;div&gt;Tree type: &lt;img src="spacer.gif" width="100" height="1" alt="spacer"/&gt;Cedrus deodara&lt;/div&gt;
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H37">H37: Using alt attributes on img elements</a></li>
+               <li><a href="../html/H37">H37: img 要素の alt 属性を使用する</a></li>
                
-               <li><a href="../css/C9">C9: Using CSS to include decorative images</a></li>
+               <li><a href="../css/C9">C9: 装飾目的の画像を付加するために、CSS を使用する</a></li>
                
-               <li><a href="F38">F38: Failure of Success Criterion 1.1.1 due to not marking up decorative images in HTML
-                     in a way that allows assistive technology to ignore them</a></li>
+               <li><a href="F38">F38: 達成基準 1.1.1 の失敗例 － 支援技術が装飾的な画像を無視できる方法で、HTML でその画像をマークアップしていない</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Identify any img elements that are used for decoration, spacing
-                     or other purpose that is not part of the meaningful content in the
-                     page 
+                  <li>装飾、スペーシング、又はページ内の意味のあるコンテンツの一部ではない他の目的に使用される img 要素を特定する
+
+
                   </li>
                   
-                  <li> Check that the alt attribute for these elements is null. </li>
+                  <li> これらの要素に対する alt の値が空であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> If step #2 is false, this failure condition applies and the content
-                     fails the Success Criterion. 
+                  <li>#2 の結果が偽である場合、この失敗条件が適用され、コンテンツは達成基準の失敗となる。 
                   </li>
                   
                </ul>
