@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F34: Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to
-         format tables in plain text content
+      <title>F34: 達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツでテーブルの書式を整えるために、空白文字を使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,76 +11,56 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F33">Previous Technique: F33</a></li>
-            <li><a href="F36">Next Technique: F36</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F33">前の達成方法: F33</a></li>
+            <li><a href="F36">次の達成方法: F36</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to
-         format tables in plain text content
+      <h1>達成基準 1.3.1 及び 達成基準 1.3.2 の失敗例 － プレーンテキストのコンテンツでテーブルの書式を整えるために、空白文字を使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>これらの達成方法 (参考) の使用法及び、それらが WCAG 2.1 達成基準 (規定) とどのように関係するかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) セクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法があるからといって、WCAG 2.1 を満たすコンテンツを作成する際に、常にその技術が使用可能であるわけではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a> (失敗)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe how using white space
-               characters, such as space, tab, line break, or carriage return, to format tables in
-               text
-               content is a failure to use structure properly. When tables are created in
-               this manner there is no way to indicate that a cell is intended to be a
-               header cell, no way to associate the table header cells with the table data
-               cells, or to navigate directly to a particular cell in a table.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、テキストコンテンツ内でスペース、タブ、改行又はキャリッジリターン (CR) といった空白文字を使用してテーブルを整形すると、適切に構造を示すことができない失敗例について述べることである。 テーブルがこのような方法で作成されると、セルを見出しセルとして示すことができなくなり、見出しのセルとデータのセルを関連付けできなくなる。又はテーブルの中のセルへ直接誘導することができなくなる。
             </p>
-            <p>In addition, assistive technologies will interpret content in the reading
-               order of the current language. Using white space to organize data in a
-               visual table does not provide the information in a natural reading order in
-               the source of the document. Thus, the assistive technology user will not be
-               presented with the information in a logical reading order.
+            <p>さらに、支援技術は現在の自然言語の音声読み上げ順序でコンテンツを解釈していく。視覚的なテーブルにおいて、データをレイアウトするために空白を使用すると、ドキュメントのソースの情報を自然な音声読み上げ順序で提供できなくなってしまう。このように、支援技術の利用者に対して情報が論理的な音声読み上げ順序で提示されなくなる。
             </p>
-            <p>Plain text is not suitable for displaying complex information like tables
-               because the structure of the table cannot be perceived. Rather than using
-               visual formatting to represent tabular relations, 
-               tabular information would need to be presented using a different technology or presented
-               linearly. (See Presenting tabular information in plain text)
+            <p>プレーンテキストはテーブルのような複雑な情報を表示するのには適していない。なぜなら、テーブルの構造は知覚できないからである。テーブルの情報は見た目の書式を整える方法によって表形式の情報の関係を表現するよりは、別のウェブコンテンツ技術を使用するか又は直線的に読上げられるように提示する (プレーンテキストでテーブルの情報を表現するを参照)。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example incorrectly uses white space to format a Menu
-                  as a visual table.
+               <h3>例 1</h3>
+               <p>次の事例では、空白を不適切に使ってメニューを見かけ上のテーブル形式にしている。
                </p><pre xml:space="preserve">
 Menu
          Breakfast        Lunch           Dinner
@@ -95,8 +74,7 @@ Tuesday   Pancakes       vegetable soup  Caesar salad
           sausage        hot dogs        Spaghetti with meatballs
           orange juice   potato salad    Italian bread
                          brownie         ice cream
-</pre><p>If this table was to be interpreted and spoken by a screen reader it
-                  would speak the following lines:
+</pre><p>この表は、スクリーンリーダでは次のように解釈され、読上げられる。
                </p>
                <ul>
                   
@@ -113,45 +91,41 @@ Tuesday   Pancakes       vegetable soup  Caesar salad
                   <li>Oatmeal cookie mashed potatoes</li>
                   
                </ul>
-               <p>This reading order does not make sense since there is no structure in
-                  the table for the assistive technology to identify it as a table. If
-                  the text were reflowed, or changed from a fixed to a variable font,
-                  or increased in size until lines no longer fit on the page, similar
-                  issues would arise in the visual presentation.
+               <p>支援技術がテーブルとして特定するための構造がテーブルにないため、この読み上げ順序は意味をなさない。 テキストがリフローする、又はは固定フォントから可変フォントに変更される、又は行がページに収まらなくなるまでサイズを大きくする場合、視覚的提示で同様の問題が発生する。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="../html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the document for visually formatted tables.</li>
+                  <li>視覚的に整形されたテーブルのドキュメントを調べる。</li>
                   
-                  <li>Check whether the tables are created using white space characters
-                     to layout the tabular data.
+                  <li>テーブルのデータをレイアウトするために空白文字を使ってテーブルが作られているかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #2 is true, then this failure condition applies and the
-                     content fails these Success Criteria.
+                  <li>#2 の結果が真である場合、この失敗例の条件は適用され、コンテンツはこれらの達成基準の失敗となる。
+
+
                   </li>
                   
                </ul>
