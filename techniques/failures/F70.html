@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F70: Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute
-         markup
+      <title>F70: 達成基準 4.1.1 の失敗例 － 開始タグ及び終了タグ、又は属性のマークアップを誤って使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,138 +11,120 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F69">Previous Technique: F69</a></li>
-            <li><a href="F71">Next Technique: F71</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F69">前の達成方法: F69</a></li>
+            <li><a href="F71">次の達成方法: F71</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute
-         markup
+      <h1>達成基準 4.1.1 の失敗例 － 開始タグ及び終了タグ、又は属性のマークアップを誤って使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Markup languages: HTML, XHTML, and other SGML or XML-based technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">Success Criterion 4.1.1: Parsing</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>マークアップ言語: HTML、XHTML、及び他の SGML 又は XML ベースのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/parsing">達成基準 4.1.1: 構文解析</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this failure is to identify examples of markup errors in element
-               tags that could cause assistive technology to be unable to generate a satisfactory
-               model of the page. Different user agents may implement different heuristics to recover
-               from errors, resulting in inconsistent presentations of the page between user agents.
+            <h2>解説</h2>
+            <p>この失敗例の目的は、要素タグにおいて、支援技術が満足できるページのモデルを生成できない原因となるマークアップの誤りの例を特定することである。 ユーザエージェントは、エラーから復旧するために、異なる推測に基づいた方法をそれぞれ実装している。結果として、ユーザエージェント間で一貫性のないページのプレゼンテーションとなっている。
             </p>
-            <p>Some common types of problems with start and end tags that lead to this failure condition
-               (though this is not an exhaustive list):
+            <p>(これは完全なリストではないが) この失敗例の条件を生じさせる開始及び終了タグの一般的な問題:
             </p>
             <ul>
                
-               <li>Opening and closing tags that are missing the opening &lt; and closing &gt; brackets.</li>
+               <li>開始の < 及び終了の > の括弧が足りない開始及び終了タグ。</li>
                
-               <li>Closing tag missing the initial / to indicate it is a closing tag.</li>
+               <li>終了タグであることを示す最初の / が足りない終了タグ。</li>
                
-               <li>Attribute values that have an opening quote but not a closing quote. Attribute values
-                  must be either fully quoted or, in some markup languages, may be unquoted.
+               <li>開始の引用符はあるが、終了の引用符がない属性値。 属性値は、引用符で完全にくくられているか、又はあるマークアップ言語では、引用符でくくられていないかのどちらかである。
                </li>
                
-               <li>Lack of whitespace between attributes.</li>
+               <li>属性間の空白の欠如。</li>
                
-               <li>Unquoted attribute values that have whitespace in the value.</li>
+               <li>値に空白のある引用符でくくられていない属性値。</li>
                
-               <li>Failure to provide a closing element tag for elements that do not accept empty-element
-                  syntax.
+               <li>空の要素の構文が使用できない要素のための終了の要素タグを提供しない場合。
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-missing-angle-brackets-in-xhtml">
-               <h3>Example 1: Missing angle brackets in XHTML</h3>
-               <p>The following code fails because the opening tag is missing an angle bracket, and
-                  the intended boundary of the tag is unclear.
+               <h3>事例 1: XHTML の山形括弧が足りない</h3>
+               <p>開始タグに山形括弧がなく、タグの意図する境界が不明瞭であるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;p This is a paragraph&lt;/p&gt;
 </pre></section>
             <section class="example" id="example-2-missing-slash-on-closing-tag-in-xhtml">
-               <h3>Example 2: Missing slash on closing tag in XHTML</h3>
-               <p>The following code fails because the closing tag is missing the slash, making it look
-                  like it is in fact another opening tag.
+               <h3>事例 2: XHTML の終了タグのスラッシュが足りない</h3>
+               <p>終了タグにスラッシュがなく、事実上、別の開始タグのように見えるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;p&gt;This is a paragraph&lt;p&gt;
 </pre></section>
             <section class="example" id="example-3-unbalanced-attribute-quoting">
-               <h3>Example 3: Unbalanced attribute quoting</h3>
-               <p>The following code fails because the attribute value is missing the closing quote,
-                  which makes the boundary of the attribute-value pair unclear.
+               <h3>事例 3: 均衡が取れていない属性の引用符づけ</h3>
+               <p>属性値に終了の引用符がないことで、属性値の対の境界が不明確となるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;input title="name type="text"&gt;
 </pre></section>
             <section class="example" id="example-4-lack-of-whitespace-between-attributes">
-               <h3>Example 4: Lack of whitespace between attributes</h3>
-               <p>The following code fails because the there is not whitespace between attributes, which
-                  makes the boundary between attribute-value pairs unclear.
+               <h3>事例 4: 属性間の空白の欠如</h3>
+               <p>属性間に空白がないことで、属性値の対の境界が不明確となるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;input title="name"type="text"&gt;
 </pre></section>
             <section class="example" id="example-5-unquoted-attribute-with-whitespace-value">
-               <h3>Example 5: Unquoted attribute with whitespace value</h3>
-               <p>The following code fails because an attribute value is not quoted and contains whitespace,
-                  which makes the boundary of the attribute-value pair unclear.
+               <h3>事例 5: 空白スペースを含む値を持つ引用符がついていない属性</h3>
+               <p>属性値に引用符がつけられておらず、値に空白が含まれていることで、属性値の対の境界が不明確となるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;input title=Enter name here type=text&gt;
 </pre></section>
             <section class="example" id="example-6-missing-end-tags-in-xhtml">
-               <h3>Example 6: Missing end tags in XHTML</h3>
-               <p>The following code fails because the closing tag of the first paragraph is missing,
-                  making it unclear whether the second paragraph is a child or sibling of the first.
+               <h3>事例 6: XHTML の終了タグが足りない</h3>
+               <p>第 1 パラグラフの終了タグがないことで、第 2 パラグラフが第 1 パラグラフの子なのか兄弟なのかが不明確になるため、下記のコードは失敗となる。
                </p><pre xml:space="preserve">
 &lt;p&gt;This is a paragraph
 &lt;p&gt;This is another paragraph&lt;/p&gt;
 </pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check the source code of pages implemented in markup languages.</li>
+                  <li>ページのソースコードがマークアップ言語で実装されていることを確認する。</li>
                   
-                  <li>Check whether any opening tags, closing tags or attributes are malformed.</li>
+                  <li>開始タグ、終了タグ又は属性で不正な形式になっているものがあるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #2 is true, then the failure condition applies and the content does not meet
-                     this Success Criterion.
+                  <li>手順 2.の結果が真である場合、この失敗例の条件は適用され、コンテンツは達成基準を満たしていない。
                   </li>
                   
                </ul>
