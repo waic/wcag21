@@ -35,65 +35,24 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>この達成基準の意図は、コンポーネントに視覚的にラベルを付ける単語が、コンポーネントにプログラムにより関連付けられる単語でもあることを確実にすることである。これは、障害のある人がコンポーネントとやりとりする手段として可視ラベルを確実に信頼できるようにするのを助ける。
-            </p>
-            <p>ほとんどのコントロールは、可視のテキスト<strong>ラベル</strong>を伴う。この同じコントロールには、アクセシブルな名前 (<a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name</a>) とも呼ばれるプログラムの<strong>名前</strong>がある。コントロールの可視ラベルの単語及び文字が一致する、又はアクセシブルな名前 (accessible name) に含まれている場合、利用者は一般に、はるかに優れた体験をする。これらが一致するとき、音声入力の利用者 (すなわち、音声認識アプリケーションの利用者) は、画面に表示されるメニュー、リンク、ボタンなどのコンポーネントの可視のテキストラベルを話すことによってナビゲートできる。テキスト読み上げ (スクリーンリーダーなど) を使用する視力のある利用者も、聞こえるテキストが画面に表示されるテキストと一致する場合に、よりよい体験をする。
-            </p>
-            <p>コンポーネントに可視のテキストラベルが存在しない場合、この達成基準はそのコンポーネントには適用されないことに注意する。
-            </p>
-            <p>テキストラベルが存在し、確立されたオーサリングプラクティスを通じてユーザーインタフェースコンポーネントに適切にリンクされている場合、ラベルと名前は通常一致する。それらが一致しない場合、ナビゲーション又は選択の手段として可視のテキストラベルを使用しようとする音声入力の利用者 (「パスワードに移動」など) は失敗する。利用者が話す可視ラベルが、音声入力コマンドとして有効であるアクセシブルな名前 (accessible name) と一致しない (又はその一部ではない) ため、音声ベースのナビゲーションは失敗する。さらに、アクセシブルな名前 (accessible name) が可視ラベルと異なる場合、音声入力の利用者によって誤って作動される可能性のある非表示のコマンドとして機能することがある。
-            </p>
-            <p>Mismatches between visible labels and programmatic names for controls are even more
-               of an issue for speech-input and text-to-speech users who also have cognitive challenges.
-               Mismatches create an extra cognitive load for speech-input users, who must remember
-               to say a speech command that is different from the visible label they see on a control.
-               It also creates extra cognitive load for a text-to-speech user to absorb and understand
-               speech output that does not match the visible label.
-            </p>
-            <p>In order for the label text and accessible name to be matched, it is first necessary
-               to determine which text on the screen should be considered a label for any given control.
-               There are often multiple text strings in a user interface that may be relevant to
-               a control. However, there are reasons why it is best to conservatively interpret the
-               label as being only the text in close proximity.
-            </p>
-            <p>Conventionally the label for user interface components is the adjacent text string.
-               The typical positioning for left to right languages is:
-            </p>
+            <p>この達成基準の意図は、コンポーネントに視覚的にラベルを付ける単語が、コンポーネントにプログラムにより関連付けられる単語でもあることを確実にすることである。これは、障害のある人がコンポーネントとやりとりする手段として可視ラベルを確実に信頼できるようにするのを助ける。</p>
+            <p>ほとんどのコントロールは、可視のテキスト<strong>ラベル</strong>を伴う。この同じコントロールには、アクセシブルな名前 (<a href="https://www.w3.org/TR/accname-aam-1.1/">Accessible Name</a>) とも呼ばれるプログラムの<strong>名前</strong>がある。コントロールの可視ラベルの単語及び文字が一致する、又はアクセシブルな名前 (accessible name) に含まれている場合、利用者は一般に、はるかに優れた体験が得られる。これらが一致するとき、音声入力の利用者 (すなわち、音声認識アプリケーションの利用者) は、画面に表示されるメニュー、リンク、ボタンなどのコンポーネントの可視のテキストラベルを話すことによってナビゲートできる。テキスト読み上げ (スクリーンリーダーなど) を使用する視力のある利用者も、聞こえるテキストが画面に表示されるテキストと一致する場合に、よりよい体験が得られる。</p>
+            <p>コンポーネントに可視のテキストラベルが存在しない場合、この達成基準はそのコンポーネントには適用されないことに注意する。</p>
+            <p>テキストラベルが存在し、確立されたオーサリングプラクティスを通じてユーザインタフェースコンポーネントに適切にリンクされている場合、ラベルと名前は通常一致する。それらが一致しない場合、ナビゲーション又は選択の手段として可視のテキストラベルを使用しようとする音声入力の利用者 (「パスワードに移動」など) は失敗する。利用者が話す可視ラベルが、音声入力コマンドとして有効であるアクセシブルな名前 (accessible name) と一致しない (又はその一部ではない) ため、音声ベースのナビゲーションは失敗する。さらに、アクセシブルな名前 (accessible name) が可視ラベルと異なる場合、音声入力の利用者によって誤って作動される可能性のある非表示のコマンドとして機能することがある。</p>
+            <p>コントロールの可視ラベルとプログラム名との間の不一致は、認知の問題も抱えている音声入力の利用者及びテキスト読み上げの利用者にとってさらに問題になる。不一致は、音声入力の利用者に余分な認知的負荷を引き起こす。その利用者は、コントロールに表示される可視ラベルとは異なる音声コマンドを言うことを忘れてはならない。また、テキスト読み上げの利用者が、可視ラベルと一致しない音声出力を吸収して理解するための追加の認知的負荷を引き起こす。</p>
+            <p>ラベルテキストとアクセシブルな名前 (accessible name) を一致させるには、まず画面上のどのテキストを与えられたコントロールのラベルと見なすかを決定する必要がある。多くの場合、ユーザインタフェースには、コントロールに関連する可能性のある複数のテキスト文字列がある。しかし、ラベルを近接したテキストのみであると保守的に解釈することが最良である理由がいくつか存在する。</p>
+            <p>ユーザインタフェース コンポーネントの伝統的なラベルは隣接するテキスト文字列である。左から右への言語の一般的な配置は次のとおりである:</p>
             <ul>
-               <li>immediately to the left of comboboxes, dropdown lists, text inputs, and other widgets
-                  (or in the absence of left-side labels, immediately above and aligned with the left
-                  edge of each input)
-               </li>
+               <li>コンボボックス、ドロップダウンリスト、テキスト入力、及びその他のウィジェットのすぐ左 (又は、左側のラベルがない場合、各入力のすぐ上で左端に揃えられる)</li>
 
-               <li>immediately to the right of checkboxes and radio buttons</li>
+               <li>チェックボックス及びラジオボタンのすぐ右側</li>
 
-               <li>inside buttons and tabs or immediately below icons serving as buttons</li>
+               <li>ボタン及びタブの内側、又はボタンとして機能するアイコンのすぐ下</li>
 
             </ul>
-            <p>The rationale for some of these conventions is explained in <a href="https://waic.jp/docs/WCAG21/Techniques/general/G162">G162: Positioning labels to maximize predictability of relationships</a>.
-
-            </p>
-            <p>It is important to bias towards treating only the adjacent text as a label because
-               liberal interpretations of what constitutes a text label can jeopardize the value
-               of this Success Criterion (SC) by lessening predictability. Isolating the label to
-               the single string in close proximity to the component makes it easier for developers,
-               testers, and end users to identify the label targeted for evaluation in this SC. Predictable
-               interpretation of labeling allows users of speech recognition technologies to interact
-               with the element via its conventionally positioned label, and allows users of screen
-               reading technologies to enjoy consistency between the nearby visible label and the
-               announced name of the component.
-            </p>
-            <p>Note that placeholder text within an input field is not considered an appropriate
-               means of providing a label. The <a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 specification</a> states <q>The placeholder attribute should not be used as an alternative to a &lt;label&gt;.</q> However, it is worth noting that "label" in that HTML5 statement is in code brackets
-               and links to the <code>label</code> element. For the purposes of this Label in Name Success Criterion, "label" is not
-               used in such a programmatic sense but is simply referring to a text string in close
-               visual proximity to a component. As such, in the absence of any other nearby text
-               string (as described in the preceding list), if an input contains placeholder text,
-               such text may be a candidate for Label in Name. This is supported both through the
-               accessible name calculation (discussed later) and from the practical sense that where
-               a visible label is not otherwise provided, it is likely that a speech-input user may
-               attempt to use the placeholder text value as a means of interacting with the input.
-            </p>
+            <p>これらの規則のいくつかの根本原理は、<a href="https://waic.jp/docs/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a>で説明されている。</p>
+            <p>テキストラベルを構成するものを自由に解釈すると、予測可能性の低下によりこの達成基準の価値が危険にさらされる可能性があるため、隣接するテキストのみをラベルとして扱うようにバイアスをかけることが重要である。コンポーネントに近接した単一の文字列にラベルを分離すると、開発者、テスター、およびエンドユーザがこの達成基準で評価の対象となるラベルを簡単に特定できるようになる。ラベル付けの予測可能な解釈により、音声認識技術の利用者は、伝統的な位置にあるラベルを通して要素とやりとりでき、画面読み上げ技術の利用者は、近くに表示されるラベルとコンポーネントの通知された名前との間の一貫性を得ることを可能にする。</p>
+            <p>入力フィールド内のプレースホルダーテキストは、ラベルを提供する適切な手段とは見なされないことに注意する。<a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 仕様</a> では、<q>プレースホルダー属性を&lt;label&gt;の代わりに使用すべきでない</q>と記述されている。しかし、その HTML5 ステートメントの "ラベル" はコードブラケット内にあり、<code>label</code>要素にリンクしていることに注意する。名前 (name) のラベルの成功基準の目的のために、"ラベル" はそのようなプログラム的な意味で使用されないが、単にコンポーネントに視覚的に近接したテキスト文字列を指す。そのため、 (前述のリストで説明したように) 近くに他のテキスト文字列がない場合に、入力にプレースホルダーテキストが含まれているならば、そのようなテキストは名前 (name) のラベルの候補になることがある。これは、アクセシブルな名前の計算 (後で説明) と、可視ラベルが他に提供されない場合、音声入力の利用者が入力をともなうやりとりの手段としてプレースホルダーテキストの値を使用しようとする可能性があるという実際的な意味の両方でサポートされる。</p>
             <section id="text-labels-&#34;express-something-in-human-language&#34;">
 
                <h3>Text labels "express something in human language"</h3>
