@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F31: Failure of Success Criterion 3.2.4 due to using two different labels for the same
-         function on different Web pages within a set of Web pages 
+      <title>F31: 達成基準 3.2.4 の失敗例 － ウェブページ一式の中で異なるウェブページ上の同じ機能に対して、二つの異なるラベルを使用している 
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,105 +11,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F30">Previous Technique: F30</a></li>
-            <li><a href="F32">Next Technique: F32</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F30">前の達成方法: F30</a></li>
+            <li><a href="F32">次の達成方法: F32</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 3.2.4 due to using two different labels for the same
-         function on different Web pages within a set of Web pages 
+      <h1>達成基準 3.2.4 の失敗例 － ウェブページ一式の中で異なるウェブページ上の同じ機能に対して、二つの異なるラベルを使用している 
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Applies to all technologies. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-identification">Success Criterion 3.2.4: Consistent Identification</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-identification">達成基準 3.2.4: 一貫した識別性</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> Components that have the same function in different Web pages are more
-               easily recognized if they are labeled consistently. If the naming is not
-               consistent, some users may get confused. 
+            <h2>解説</h2>
+            <p>異なるウェブページ上にある同じ機能のコンポーネントは、一貫して同じラベルが用いられているとより容易に認知されやすくなる。名称に一貫性がない場合、利用者が混乱してしまうことがある。 
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Text alternatives that are "consistent" are not always "identical." For
-                     instance, you may have an graphical arrow at the bottom of a Web page
-                     that links to the next Web page. The text alternative may say "Go to
-                     page 4." Naturally, it would not be appropriate to repeat this exact
-                     text alternative on the next Web page. It would be more appropriate to
-                     say "Go to page 5". Although these text alternatives would not be
-                     identical, they would be consistent, and therefore would not be failures
-                     for this Success Criterion.
+                  <p>"一貫性を保った" テキストによる代替が常に "同一のもの" であるとは限らない。例えば、次のページへのリンクになっている矢印の画像がウェブページの一番下にある。テキストによる代替は "4 ページへ" となっている。当然、これと全く同じテキストによる代替を次のウェブページで繰り返すことは適切でない。"5 ページへ" とする方が適切である。これらのテキストによる代替は同一のものではないが、一貫性を保っており、この達成基準の失敗例とはならない。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p> One of the most common examples of using inconsistent labels for
-                  components with the same function is to use a button that says
-                  "search" in one page and to use a button that says "find" on another
-                  page when they both serve the identical function. 
+               <h3>例 1</h3>
+               <p> 同じ機能のコンポーネントに対して一貫性のないラベルを使用している例で最もよく見かけるのは、どちらも同じ機能であるのに、あるページでは「検索」という名称のボタンを使用し、別のページでは「探す」という名称のボタンを使用している場合である。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>An online authoring tool that uses a button with "Save page" on one
-                  page and "Save" on another page, in both cases for the same
-                  function. 
+               <h3>例 2</h3>
+               <p>オンラインのオーサリングツールで、あるページでは「ページを保存」というボタン、別のページでは「保存」をそれぞれ同じ機能に対して使用している。 
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> In a set of Web pages, find components with the same function
-                     that are repeated in multiple Web pages. 
+                  <li>ウェブページ一式の中で、複数のページで繰り返し使用されている同じ機能を持つコンポーネントを探す。
                   </li>
                   
-                  <li> For each component with the same function found in step #1, check
-                     that the naming is consistent. 
+                  <li>#1 で見つけた同じ機能の個々のコンポーネントに対して、名称が一貫していることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p> If step #2 is false then this failure condition applies and content fails
-                  the Success Criterion. 
+               <p>#2 の結果が偽である場合、この失敗例が適用され、そのコンテンツは達成基準の失敗となる。 
                </p>
                
             </section>
