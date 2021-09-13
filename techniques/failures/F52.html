@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F52: Failure of Success Criterion 3.2.1 and 3.2.5 due to opening a new window as soon as
-         a new page is loaded
+      <title>F52: 達成基準 3.2.1 及び達成基準 3.2.5 の失敗例 － 新しいページを読み込むのと同時に、新しいウィンドウを開いている
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,78 +11,73 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F50">Previous Technique: F50</a></li>
-            <li><a href="F54">Next Technique: F54</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F50">前の達成方法: F50</a></li>
+            <li><a href="F54">次の達成方法: F54</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 3.2.1 and 3.2.5 due to opening a new window as soon as
-         a new page is loaded
+      <h1>達成基準 3.2.1 及び達成基準 3.2.5 の失敗例 － 新しいページを読み込むのと同時に、新しいウィンドウを開いている
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies when scripting is used to open new windows. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>新しいウィンドウを開くために使用されるスクリプト</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: 要求による変化</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> Some Web sites open a new window when a page is loaded, to advertise a
-               product or service. The objective of this technique is to ensure that pages
-               do not disorient users by opening up one or more new windows that automatically attain
-               focus as soon as a
-               page is loaded. 
+            <h2>解説</h2>
+            <p>製品又はサービスを宣伝するために、あるウェブサイトではページが読みこまれた時に新しいウィンドウが開く。この達成方法の目的は、ページが読み込まれたと同時に一つ以上の新しいウィンドウが開かれることによって、ページが利用者を混乱させないようにすることである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>There are multiple methods by which this failure may be triggered. Two
-                     common examples that are supported differently in various versions of
-                     user agents are listed as examples below. 
+                  <p>この失敗例が引き起こされる可能性のある方法は複数存在する。さまざまなバージョンのユーザエージェントで別にサポートされている二つの一般的な事例が、例として以下に掲載されている。
                   </p>
                   
                </div>
             </div>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example is commonly used in HTML 4.01 to open new
-                  windows when pages are loaded.
-               </p><pre xml:space="preserve">
+               <h3>例 1</h3>
+               <p>下記の事例は、ページがロードされた時に新しいウィンドウを開くために HTML 4.01 で一般的に使用される。
+               </p>
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                   <div>
+                     <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。
+                     </p>  
+                   </div>
+               </div>               
+               <pre xml:space="preserve">
 window.onload = showAdvertisement;
  function showAdvertisement()
  {
   window.open('advert.html', '_blank', 'height=200,width=150');
  }</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The following example commonly used in XHTML to open new windows when
-                  pages are loaded.
+               <h3>例 2</h3>
+               <p>下記の事例は、ページがロードされた時に新しいウィンドウを開くために XHTML で一般的に使用される。
                </p><pre xml:space="preserve">
 if (window.addEventListener) { 
     window.addEventListener("load", showAdvertisement, true);
@@ -97,38 +91,36 @@ window.open('noscript.html', '_blank', 'height=200,width=150');
 }</pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G107">G107: Using "activate" rather than "focus" as a trigger for changes of context</a></li>
+               <li><a href="../general/G107">G107: コンテキストの変化に対するトリガーとして、"focus" ではなく、"activate" を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> load a new page </li>
+                  <li>新しいページをロードする</li>
                   
-                  <li> check to see whether a new window has been opened as a result of
-                     loading the new page 
+                  <li>新しいページをロードしたことの結果として新しいウィンドウが開かれたかどうかを確認する 
                   </li>
                   
-                  <li>Check to see whether the new window is automatically given focus </li>
+                  <li>新しいウィンドウに自動的にフォーカスが移っているかどうかを確認する</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> If step 2 and step 3 are true, then this failure condition applies and
-                     content fails the Success Criterion. 
+                  <li>#2 及び #3 の結果が真である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。 
                   </li>
                   
                </ul>
