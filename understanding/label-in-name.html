@@ -55,35 +55,23 @@
             <p>入力フィールド内のプレースホルダーテキストは、ラベルを提供する適切な手段とは見なされないことに注意する。<a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 仕様</a> では、<q>プレースホルダー属性を&lt;label&gt;の代わりに使用すべきでない</q>と記述されている。しかし、その HTML5 ステートメントの "ラベル" はコードブラケット内にあり、<code>label</code>要素にリンクしていることに注意する。名前 (name) のラベルの成功基準の目的のために、"ラベル" はそのようなプログラム的な意味で使用されないが、単にコンポーネントに視覚的に近接したテキスト文字列を指す。そのため、 (前述のリストで説明したように) 近くに他のテキスト文字列がない場合に、入力にプレースホルダーテキストが含まれているならば、そのようなテキストは名前 (name) のラベルの候補になることがある。これは、アクセシブルな名前の計算 (後で説明) と、可視ラベルが他に提供されない場合、音声入力の利用者が入力をともなうやりとりの手段としてプレースホルダーテキストの値を使用しようとする可能性があるという実際的な意味の両方でサポートされる。</p>
             <section id="text-labels-&#34;express-something-in-human-language&#34;">
 
-               <h3>Text labels "express something in human language"</h3>
+               <h3>「自然言語で何かを表現している」テキストラベル</h3>
 
                <section id="symbolic-text-characters">
 
-                  <h4>Symbolic text characters</h4>
+                  <h4>記号的な文字</h4>
 
-                  <p>For the purposes of this SC, text should not be considered a visible label if it is
-                     used in a symbolic manner, rather than directly <q>expressing something in human language</q> as per the definition of <a href="#dfn-text">text</a> in WCAG. For example, <a href="https://waic.jp/docs/WCAG21/#images-of-text">1.4.5 Images of Text</a> describes considerations for "symbolic text characters." In the images of text example
-                     "B", "I", and "ABC" appear on icons in a text editor, where they are meant to symbolize
-                     the functions for Bold, Italics, and Spelling, respectively. In such a case, the accessible
-                     name should be the function the button serves (e.g., "Spell check" or "Check spelling"),
-                     not the visible symbolic characters. A similar text editor is shown in the figure
-                     below.
-                  </p>
+                  <p>この達成基準のために、テキストは、WCAG の<a href="#dfn-text">テキスト</a>の定義に従って直接<q>自然言語で何かを表現しているもの</q>よりむしろ、記号的な方法で使用される場合、可視のラベルと見なされるべきでない。例えば、<a href="https://waic.jp/docs/WCAG21/#images-of-text">1.4.5 文字画像</a>は、「記号的な文字」に関する考慮事項を説明している。文字画像の例では、「B」、「I」、及び「ABC」がテキストエディタのアイコンに表示される。これらは、それぞれ太字、斜体、およびスペルの機能を表すことを目的としている。そのような場合、アクセシブルな名前 (accessible name) は、表示されている記号的な文字ではなく、ボタンが提供する機能 (「スペルチェック」や「スペルをチェックする」など) とするべきである。同様のテキストエディタを次の図に示す。</p>
 
                   <figure id="figure-RTE-github">
-                     	<img alt="Icons for transforming text, including heading, bold, italic, quote, code, and link, along with icons for ordered and unordered lists and other controls" src="img/rich-text-editor-detail.png" />
+                     	<img alt="見出し、太字、斜体、引用、コード、リンクなどのテキストを変換するためのアイコン、順序付き及び順序なしのリスト並びにその他のコントロールのアイコン" src="img/rich-text-editor-detail.png" />
 
-                     <figcaption>Figure 1A detail of the rich text editor in Github, showing a variety of unlabeled icons,
-                        including icons resembling text characters.
+                     <figcaption>図 1 Github のリッチテキストエディタの詳細。文字に似たアイコンなど、ラベルのないさまざまなアイコンが表示されている。
                      </figcaption>
 
                   </figure>
 
-                  <p>Likewise, where an author has used a greater-than symbol ("&gt;") to mimic the appearance
-                     of the right-facing arrow, the text does not convey something in human language. It
-                     is a symbol, in this scenario likely meant to mimic the icons used for a "Play" button
-                     or a "Next" arrow.
-                  </p>
+                  <p>同様に、コンテンツ制作者が大なり記号 (">") を使用して右向きの矢印の外観を模倣した場合、テキストは自然言語で何も伝えない。これは記号であり、このシナリオでは、「再生」ボタン又は「次へ」矢印に使用されるアイコンを模倣することを意図した可能性がある。</p>
 
                   <h4>Punctuation and capitalization</h4>
 
