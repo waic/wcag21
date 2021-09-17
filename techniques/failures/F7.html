@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F7: Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash,
-         that has blinking content without a mechanism to pause the content that blinks
-         for more than five seconds
+      <title>F7: 達成基準 2.2.2 の失敗例 － 5 秒よりも長く点滅するコンテンツを一時停止するメカニズムなしでコンテンツを点滅している、Java 又は Flash などのオブジェクト又はアプレット
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,100 +11,95 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F4">Previous Technique: F4</a></li>
-            <li><a href="F8">Next Technique: F8</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F4">前の達成方法: F4</a></li>
+            <li><a href="F8">次の達成方法: F8</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash,
-         that has blinking content without a mechanism to pause the content that blinks
-         for more than five seconds
+      <h1>達成基準 2.2.2 の失敗例 － 5 秒よりも長く点滅するコンテンツを一時停止するメカニズムなしでコンテンツを点滅している、Java 又は Flash などのオブジェクト又はアプレット
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that support blinking content within an object, applet, or a
-               plug-in.
+            <h2>適用 (対象)</h2>
+            <p>オブジェクト、アプレット又はプラグインにおいて、点滅するコンテンツをサポートするウェブコンテンツ技術
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">Success Criterion 2.2.2: Pause, Stop, Hide</a> (Failure)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">達成基準 2.2.2: 一時停止、停止、非表示</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When content that is rendered by a plug-in or contained in an applet blinks,
-               there may be no way for the user agent to pause the blinking. If neither the
-               plug-in, applet, nor the content itself provides a mechanism to pause the
-               content, the user may not have sufficient time to read the content between
-               blinks or it may be so distracting that the user will not be able to read
-               other content on the page.
+            <h2>解説</h2>
+            <p>プラグインによってレンダリングされるコンテンツ又はアプレットに含まれているコンテンツが点滅している際、ユーザエージェントがその点滅を一時停止させることができない場合がある。プラグイン、アプレット又はコンテンツ自体がその点滅を一時停止させるメカニズムを提供していない場合、利用者が点滅しているコンテンツを読み取れない、又は点滅によって気が散ってしまってそのページにある他のコンテンツを読むことができなくなる恐れがある。
             </p>
+            <div class="note">
+<div role="heading" class="note-title marker" aria-level="3">訳注 1:</div>
+<div>
+<p>NPAPI と呼ばれるプラグインは、ほとんどのブラウザでサポートが終息している。<a href="https://support.mozilla.org/ja/kb/npapi-plugins">Java、Silverlight、Adobe Acrobat および他のプラグインが動作しなくなりました | Firefox ヘルプ</a> も参照されたい。</p>
+</div>
+</div>
+<div class="note">
+<div role="heading" class="note-title marker" aria-level="3">訳注 2:</div>
+<div>
+<p>Oracle 社の <a href="https://www.oracle.com/technetwork/jp/java/eol-135779-ja.html">Oracle Java SE サポート・ロードマップ</a>によれば、Java Plugin のサポートは 2019 年 3 月までと告知されている。</p>
+</div>
+</div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An applet displays an advertisement on a news site. The applet blinks
-                  key words in the advertisement in order to call the user's attention
-                  to it. The blinking cannot be paused through any user agent settings
-                  and the applet does not provide a mechanism to stop it.
+               <li>ニュースのサイトでアプレットが広告を表示している。利用者の目を惹くために、アプレットは広告のキーワードを点滅させている。ユーザエージェントの設定によってその点滅を一時停止させることはできず、アプレットも点滅を停止させるメカニズムを提供していない。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../client-side-script/SCR22">SCR22: Using scripts to control blinking and stop it in five seconds or less</a></li>
+               <li><a href="../client-side-script/SCR22">SCR22: 点滅を制御し、5 秒以内に停止させるために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each page that has blinking content in a plugin or applet:</p>
+               <p>プラグイン又はアプレットで点滅するコンテンツのあるページに対して:</p>
                
                <ol>
                   
-                  <li>Determine if the content continues to blink for longer than 5
-                     seconds.
+                  <li>コンテンツが 5 秒よりも長く点滅するかどうかを測定する。
                   </li>
                   
-                  <li>Determine if there is a means to pause the blinking content.</li>
+                  <li>点滅しているコンテンツを一時停止させる手段があるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If step #1 is true and step #2 is false, the content fails the success
-                     criterion.
+                  <li>1. の結果が真でありかつ、2. の結果が偽である場合、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
