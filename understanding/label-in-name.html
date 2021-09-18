@@ -73,27 +73,18 @@
 
                   <p>同様に、コンテンツ制作者が大なり記号 (">") を使用して右向きの矢印の外観を模倣した場合、テキストは自然言語で何も伝えない。これは記号であり、このシナリオでは、「再生」ボタン又は「次へ」矢印に使用されるアイコンを模倣することを意図した可能性がある。</p>
 
-                  <h4>Punctuation and capitalization</h4>
+                  <h4>句読点及び大文字の使用</h4>
 
                </section>
 
                <section id="">
 
-                  <p>The use of punctuation and capitalization in labels <em>may</em> also be considered optional for the same reason. For example, the colon conventionally
-                     added at the end of input labels does not express something in human language, and
-                     capitals on the first letter of each word in a label do not normally alter the words'
-                     meaning. This is particularly relevant in the context of this SC, since it is primarily
-                     aimed at users of speech recognition; capitals and most punctuation are frequently
-                     ignored when a user speaks a label as a means of interacting with a control.
+                  <p>ラベルにおける句読点の使用及び大文字の使用も、同じ理由でオプションと見なされてもよい</em>。例えば、入力ラベルの最後に従来追加されていたコロンは自然言語では何も表現せず、そしてラベルの各単語の最初の文字を大文字にしても、通常は単語の意味は変わらない。これは、主に音声認識の利用者を対象としているため、この達成基準のコンテキストに特に関係がある。利用者がコントロールとやりとりする手段としてラベルを話すとき、大文字及びほとんどの句読点は頻繁に無視される。
                   </p>
 
-                  <p>While it is certainly not an error to include the colon and capitalization in the
-                     accessible name, a computed name of "First name" should not be considered a failure
-                     of "First Name:".<br />
+                  <p>アクセシブルな名前 (accessible name) にコロン及び大文字を含めることは間違いなくエラーではないが、"First name" の計算された名前は、"First Name:" の失敗と見なされるべきではない。<br />
                      <label for="firstname">First Name: </label><input id="firstname" type="text" name="firstname" /><br />
-                     Likewise, "Next…" visibly shown on a button could have "Next" as the accessible name.
-                     When in doubt, where a meaningful visible label exists, match the string exactly for
-                     the accessible name.<br />
+                     同様に、ボタンに表示される "Next…" は、アクセシブルな名前 (accessible name) として "Next" を持つことができます。意味のある可視のラベルが存在するのか疑わしい場合、アクセシブルな名前 (accessible name) の文字列と正確に一致させる。<br />
                      <input type="submit" value="Next..." /></p>
 
                </section>
@@ -103,21 +94,7 @@
 
                   <h4>Mathematical expressions and formulae</h4>
 
-                  <p>Mathematical expressions are an exception to the previous subsection about symbolic
-                     characters. Math symbols can be used as labels; for example "11×3=33" and "A&gt;B" convey
-                     meaning. The label should not be overwritten in the accessible name, and substitutions
-                     of words where a formula is used should be avoided since there are multiple ways to
-                     express the same equation. For example, making the name "eleven multiplied by three
-                     is equivalent to thirty-three" might mean a user who said "eleven times three equals
-                     thirty-three" may not match. It is best to leave the formulas as used in the label
-                     and count on the user's familiarity with their speech software to achieve a match.
-                     Further, converting a mathematical formula label into an accessible name that is a
-                     spelled-out equivalent may create issues for translation. The name should match the
-                     label's formula text. Note that a consideration for authors is to use the proper symbol
-                     in the formula. For instance 11x3 (with a lower or upper case letter X), 11*3 (with
-                     the asterisk symbol), and 11×3 (with the <code>&amp;</code>times<code>;</code> symbol) are all easy for sighted users to interpret as meaning the same formula,
-                     but may not all be matched to "11 times 3" by the speech recognition software. The
-                     proper operator symbol (in this case the times symbol) should be used.<br />
+                  <p>数式は、記号文字に関する前のサブセクションの例外である。数学記号はラベルとして使用することができる。例えば、"11×3=33" 及び "A&gt;B" は意味を伝える。ラベルはアクセシブルな名前 (accessible name) で上書きすべきでなく、同じ方程式を表現する方法は複数あるため、式が使用されている単語の置換は避けるべきである。例えば、"11×3 は 33 に相当する" という名前 (name) を付けると、"11×3 は 33 に等しい" と言う利用者は一致しない可能性がある。ラベルで使用されている式をそのままにして、一致を達成するために利用者が音声ソフトウェアに精通していることを期待するのが最善である。さらに、数式のラベルを、スペルアウトされた同等のアクセシブルな名前 (accessible name) に変換すると、翻訳の問題が発生する可能性がある。名前 (name) は、ラベルの数式テキストと一致すべきである。コンテンツ制作者にとっての考慮事項は、数式で適切な記号を使用することであることに注意する。例えば、11x3 (小文字又は大文字のX)、11*3 (アスタリスク記号をもつ)、及び 11x3（<code>&amp;</code>times<code>;</code> 記号をもつ）は全て、目の見える利用者にとって同じ式を意味するものとして解釈するのは簡単であるが、音声認識ソフトウェアによって全てが "11×3" に一致するとは限らない。適切な演算子記号 (この場合は乗算記号) を使用すべきである。<br />
 
                      <input type="radio" name="equation" id="answer1" value="A&gt;B" /><label for="answer1">A&gt;B</label>
                      <input type="radio" name="equation" id="answer2" value="A=B" /><label for="answer2">A=B</label>
