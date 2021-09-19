@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F46: Failure of Success Criterion 1.3.1 due to using th elements,
-         caption elements, or non-empty summary attributes in
-         layout tables
+      <title>F46: 達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素、caption 要素、又は空ではない summary 属性を使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,105 +11,66 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F44">Previous Technique: F44</a></li>
-            <li><a href="F47">Next Technique: F47</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F44">前の達成方法: F44</a></li>
+            <li><a href="F47">次の達成方法: F47</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.1 due to using th elements,
-         caption elements, or non-empty summary attributes in
-         layout tables
+      <h1>達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素、caption 要素、又は空ではない summary 属性を使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe a failure that occurs when a
-               table used only for layout includes either th elements, a
-               summary attribute, or a caption element. This
-               is a failure because it uses structural (or semantic) markup only for
-               presentation. The intent of the HTML and XHTML table elements is to present data.
-               
+            <h2>解説</h2>
+            <p>この達成方法の目的は、レイアウトにのみ使用されるテーブルに th 要素、summary 属性、又は caption 要素が含まれる場合に発生する失敗について記述することである。これは、構造化 (又はセマンティック) マークアップを提示だけのために使用するため、失敗例である。HTML 及び XHTML の table 要素の目的は、データを提示することである。
             </p>
-            <p>Although not commonly used in a layout table, the following structural markup would
-               also be failures of Success Criterion 1.3.1 if used in a layout table: 
+            <p>レイアウトテーブルの中で用いられることは少ないが、以下の構造的なマークアップもレイアウトテーブル内で用いられる場合に達成基準 1.3.1 の失敗例となる: 
             </p>
             <ul>
                
                <li> 
-                  <code class="att">headers</code> attributes 
+                  <code class="att">headers</code> 属性 
                </li>
                
                <li> 
-                  <code class="att">scope</code> attributes 
+                  <code class="att">scope</code> 属性 
                   
                </li>
                
             </ul>
-            <p>Assistive technologies use the structure of an HTML or XHTML table to present data
-               to
-               the user in a logical manner. The th element is used to mark
-               the column and row headers of the table. A screen reader uses the
-               information in th elements to speak the header information that
-               changes as the user navigates the table. The summary attribute on the
-               table element provides a textual description of the table
-               that describes its purpose and function. Assistive technologies make the
-               summary attribute information available to users. The
-               caption element is part of the table and identifies the
-               table.
+            <p>支援技術は、HTML 又は XHTML のテーブルに含まれる構造を用いて、利用者に対してデータを論理的な形で伝える。th 要素は、行及び列の見出しをマークすすために用いられる。スクリーンリーダーは、利用者が表をナビゲートすると、変化する見出し情報を読み上げるために th 要素の情報を利用する。table 要素の summary 属性は、その表の目的及び機能についてのテキストによる説明を提供する。支援技術は、summary 属性の情報を利用者が利用できるようにする。caption 要素は表の一部であり、その表を特定する役割を持つ。
             </p>
             <p>
-               Although WCAG 2 does not prohibit the use of layout tables, CSS-based layouts are
-               recommended in order to retain the defined semantic meaning of the HTML table elements
-               and to conform to the coding practice of separating presentation from content. 
-               When a table is used
-               for layout purposes the th element should not be used. Since
-               the table is not presenting data there is no need to mark any cells as
-               column or row headers. Likewise, there is no need for an additional
-               description of a table which is only used to layout content. Do not include
-               a summary attribute and do not use the summary
-               attribute to describe the table as, for instance, "layout table". When
-               spoken, this information does not provide value and will only distract users
-               navigating the content via a screen reader. Empty summary
-               attributes are acceptable on layout tables, but not recommended.
+               WCAG 2 はレイアウトテーブルの使用を禁止していないが、HTML のテーブル関連要素の定義されたセマンティックな意味を保持し、コンテンツから提示を分離するコーディングの慣習に従うためにも、CSS ベースのレイアウトが推奨される。テーブルがレイアウトの目的で使用されるとき、th 要素を使用すべきではない。そのテーブルはデータを示していないため、どのセルも行又は列の見出しとしてマークアップする必要はない。同様に、コンテンツをレイアウトするためにのみ用いられているテーブルについて、追加の説明を提供する必要はない。summary 属性を含めない。そして、テーブルを「レイアウトテーブル」のような説明をするために summary 属性を使用しない。音声の場合、この情報は価値を提供せず、スクリーンリーダーを通してコンテンツをナビゲートする利用者の気を散らすだけである。空の summary 属性はレイアウトテーブルで許容されるが、推奨されない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Here is a simple example that uses a table to layout content in a
-                  three column format. The navigation bar is in the left column, the
-                  main content in the middle column, and an additional sidebar is on
-                  the right. At the top is a page title. The example marks the page
-                  title as &lt;th&gt;, and provides a summary
-                  attribute indicating that the table is a layout table.
+               <h3>例 1</h3>
+               <p>以下は、テーブルを使ってコンテンツを 3 段組にする単純な例である。左側にナビゲーションバー、中央にメインのコンテンツ、右側に追加のサイドバーが配置されている。ページの上部にはページのタイトルが表示されている。この例では、ページのタイトルを &lt;th&gt; を使ってマークアップし、この表がレイアウトテーブルであることを示す summary 属性が指定されている。
                </p><pre xml:space="preserve">
  &lt;table summary="layout table"&gt;
  &lt;tr&gt;
@@ -129,46 +88,41 @@
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
+               <li><a href="../html/H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
                
-               <li><a href="../html/H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="../html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
-               <li><a href="../html/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a></li>
+               <li><a href="../html/H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the source code of the HTML or XHTML document for the
-                     table element
+                  <li>HTML 又は XHTML のソースコードに、table 要素があることを確認する。
                   </li>
                   
                   <li>
                      
-                     <p>If the table is used only to visually lay out elements within the
-                        content 
+                     <p>そのコンテンツの中で、視覚的レイアウトのみの目的でテーブルが用いられている場合
                      </p>
                      
                      <ol>
                         
-                        <li>Check that the table does not contain any th
-                           elements.
+                        <li>その table 要素には、th 要素が含まれていないことを確認する。
                         </li>
                         
-                        <li>Check that the table element does not
-                           contain a non-empty summary attribute.
+                        <li>その table 要素が、値が空ではない summary 属性を含んでいないことを確認する。
                         </li>
                         
-                        <li>Check that the table element does not
-                           contain a caption element.
+                        <li>その table 要素が caption 要素を含んでいないことを確認する。
                         </li>
                         
                      </ol>
@@ -179,12 +133,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If any check above is false, then this failure condition applies
-                     and the content fails the Success Criterion.
+                  <li>上記の結果のいずれかが偽である場合、失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>

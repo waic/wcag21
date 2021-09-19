@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F59: Failure of Success Criterion 4.1.2 due to using script to make div or span a user
-         interface control in HTML without providing a role for the control
+      <title>F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,84 +11,69 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F58">Previous Technique: F58</a></li>
-            <li><a href="F60">Next Technique: F60</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F58">前の達成方法: F58</a></li>
+            <li><a href="F60">次の達成方法: F60</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 4.1.2 due to using script to make div or span a user
-         interface control in HTML without providing a role for the control
+      <h1>達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p> HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name)・役割 (role) 及び値 (value)</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> This failure demonstrates how using generic HTML elements to create user
-               interface controls can make the controls inaccessible to assistive
-               technology. Assistive technologies rely on knowledge of the role and current
-               state of a component in order to provide that information to the user. Many
-               HTML elements have well defined roles, such as links, buttons, text fields,
-               etc. Generic elements such as <code class="el">div</code> and <code class="el">span</code> do not
-               have any predefined roles. When these generic elements are used to create
-               user interface controls in HTML the assistive technology may not have the
-               necessary information to describe and interact with the control. 
+            <h2>解説</h2>
+            <p>この失敗例では、ユーザインタフェースコントロールを生成するために汎用的な HTML 要素を用いたとき、どのようにしてコントロールが支援技術に対してアクセシブルでなくなるかを示している。コンポーネントについての情報を利用者に伝達する際、支援技術は、コンポーネントの役割 (role) 及びカレントステートの情報に依存している。多くの HTML 要素は、リンク、ボタン、テキストフィールドなどといった明確な役割 (role) を持っている。<code class="el">div</code> 及び <code class="el">span</code> などの汎用的な要素は、事前に定義された役割 (role) がない。これらの汎用的な要素が、HTML でユーザインタフェースコントロールを生成するために使用されると、支援技術は、コントロールを表現したり、コントロールとやり取りしたりするために必要な情報を得られないかもしれない。
             </p>
             <p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="3">Note</div>
-                  <div>Attaching event handlers to elements that are not normally interactive, such
-                     as <code class="el">span</code> and <code class="el">div</code>, can be disorienting to
-                     users. Even if care is taken to provide keyboard access to such elements,
-                     users may have a difficult time discovering that there are interactive
-                     controls in the content or understanding what type of behavior to expect
-                     from them. For example, users may not know which keystrokes are supported by
-                     the script to activate the element. Additionally, these elements do not
-                     generate the same operating system events as interactive elements, so
-                     assistive technology may not be notified when the user activates them.
+                  <div role="heading" class="note-title marker" aria-level="3">注記</div>
+                  <div>通常、インタラクティブではない要素 (<code class="el">span</code> や <code class="el">div</code> など) にイベントハンドラを設定すると、利用者に混乱を招く可能性がある。そのような要素へのキーボードアクセスを提供することに注意が払われても、利用者はコンテンツにインタラクティブなコントロールを見つけたり、その要素の振る舞いを理解することが困難な場合がある。たとえば、利用者が要素をアクティブにするためにスクリプトでサポートされているキーストロークがわからない場合がある。さらに、これらの要素はインタラクティブ要素と同じオペレーティングシステムイベントを生成しないため、利用者がそれらをアクティブにしても支援技術に通知されないことがある。
                   </div>
                </div>
             </p>
-            <p> The W3C Candidate Recommendation "<a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA) 1.0</a>" describes mechanisms to provide the necessary role and state information to create
-               fully accessible user interface controls.
+            <p>W3C 勧告の「<a href="https://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA) 1.0</a>」は、完全にアクセシブルなユーザインターフェイスコントロールを作成するために必要な役割 (role) と状態 (state) の情報を提供するメカニズムについて説明する。
             </p>
+            <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                   <div>
+                     <p>「Accessible Rich Internet Applications (WAI-ARIA) 1.0」は、正しくは「Accessible Rich Internet Applications (WAI-ARIA) 1.1」となる。
+                     </p>  
+                   </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example fails because it creates a checkbox using a span and an image.</p><pre xml:space="preserve">
+               <h3>例 1</h3>
+               <p>span 及び画像を使用したチェックボックスを生成するため、下記の事例は失敗となる。</p><pre xml:space="preserve">
   &lt;p&gt; 
   &lt;span  onclick="toggleCheckbox('chkbox')"&gt; 
   &lt;img src="unchecked.gif"  id="chkbox" alt=""&gt; Include Signature 
   &lt;/span&gt; 
-  &lt;/p&gt;</pre><p>Here is the scripting code which changes the image source when the <code class="el">span</code> is clicked with the mouse.
+  &lt;/p&gt;</pre><p>これは、マウスで <code class="el">span</code> をクリックする時に、画像のソースを変更するスクリプトコードである。
                </p><pre xml:space="preserve"> 
   var CHECKED = "check.gif"; 
   var UNCHECKED = "unchecked.gif"; 
@@ -103,15 +87,13 @@
   theImg.src = CHECKED; 
   // additional code to implement checked action 
   } 
-  } </pre><p> A checkbox created in this manner will not work with assistive technology since there
-                  is no information that identifies it as a checkbox. In addition, this example is also
-                  not operable from the keyboard and would fail guideline 2.1.
+  } </pre><p>このような方法で生成されたチェックボックスは、チェックボックスとして識別する情報がないため、支援技術では機能しない。加えて、この事例はキーボードからも操作できず、ガイドライン 2.1 の失敗となる。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -125,42 +107,48 @@
                </li>
                
             </ul>
+            <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+                   <div>
+                     <p>「Accessible Rich Internet Applications (WAI-ARIA) 1.0」「WAI-ARIA 1.0 Authoring Practices」はそれぞれ、正しくは「Accessible Rich Internet Applications (WAI-ARIA) 1.1」「WAI-ARIA Authoring Practices 1.1」となる。
+                     </p>  
+                   </div>
+            </div>
+
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="F42">F42: Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links</a></li>
+               <li><a href="F42">F42: 達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</a></li>
                
-               <li><a href="../aria/ARIA4">ARIA4: Using a WAI-ARIA role to expose the role of a user interface component</a></li>
+               <li><a href="../aria/ARIA4">ARIA4: ユーザインタフェース コンポーネントの役割 (role) を明示するために、WAI-ARIA ロールを使用する</a></li>
                
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Examine the parsed source code for elements which have event handlers assigned within
-                     the mark-up or via scripting (indicating that the element is a user interface control).
+                  <li>解析されたソースコードで、マークアップ内又はスクリプトを介して割り当てられたイベントハンドラを持つ要素 (ユーザインターフェースコントロールであることを示す要素) を検証する。
                   </li>
                   
-                  <li>Check if the role of the control is already defined natively in the mark-up language.</li>
+                  <li>コントロールの役割 (role) がマークアップ言語でネイティブに定義されているかどうかを確認する。</li>
                   
-                  <li>Check if another valid method, such as the assignment of a fitting WAI-ARIA role,
-                     has been used to define the role of the control.
+                  <li>適切な WAI-ARIA の役割 (role) の割り当てのように、他の有効なメソッドを使用してコントロールの役割 (role) を定義しているかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
-               <p>If check #2 AND check #3 are false, the failure condition applies.</p>
+               <p>#2 及び #3 の結果が偽である場合、失敗条件が適用される。</p>
                
             </section>
          </section>
