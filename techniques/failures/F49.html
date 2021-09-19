@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F49: 
-         Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not
-         make sense when linearized  
+      <title>F49: 達成基準 1.3.2 の失敗例 － 線形化したときに、意味を成さない HTML のレイアウトテーブルを使用している  
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,81 +11,52 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F48">Previous Technique: F48</a></li>
-            <li><a href="F50">Next Technique: F50</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F48">前の達成方法: F48</a></li>
+            <li><a href="F50">次の達成方法: F50</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>
-         Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not
-         make sense when linearized  
+         達成基準 1.3.2 の失敗例 － 線形化したときに、意味を成さない HTML のレイアウトテーブルを使用している  
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Although WCAG 2 does not prohibit the use of layout tables, CSS-based layouts are
-               recommended in order to retain the defined semantic meaning of the HTML <code class="el">table</code> elements and to conform to the coding practice of separating presentation from content.
-               If a layout table is used, however, it is important that the content make sense when
-               linearized.
-               
+            <h2>解説</h2>
+            <p>WCAG 2 はレイアウトテーブルの使用を禁止していないが、HTML の <code class="el">table</code> 要素の定義されたセマンティックな意味を保持し、コンテンツから提示を分離するコーディングの慣習に従うためにも、CSS ベースのレイアウトが推奨される。それにもかかわらずレイアウトテーブルを使用する場合、線形化したときにコンテンツが意味をなすことが重要である。
             </p>
-            <p>This failure occurs when a meaningful sequence of content conveyed through
-               presentation is lost because HTML tables used to control the visual
-               placement of the content do not “linearize" correctly. Tables present
-               content in two visual dimensions, horizontal and vertical. However, screen
-               readers present this two-dimensional content in linear order of the content
-               in the source, beginning with the first cell in the first row and ending
-               with the last cell in the last row. The screen reader reads the table from
-               top to bottom, reading the entire contents of each row before moving to the
-               next row. The complete content of each cell in each row is spoken—including
-               the complete content of any table nested within a cell. This is called
-               linearization.
+            <p>この失敗例は、コンテンツの視覚的配置を制御するために使用される HTML テーブルが正しく「線形化」されないことによって、提示を通じて伝えられる意味のあるコンテンツの順序が失われた場合に発生する。テーブルは、横及び縦の二つの視覚的な次元でコンテンツを提示する。しかし、スクリーンリーダーは、この 2 次元コンテンツを最初の行の最初のセルから最後の行の最後のセルまで、ソース内のコンテンツの線形的順序で提示する。スクリーンリーダーは、上から下にテーブルを読み上げ、次の行に移動する前に各行の内容全体を読み上げる。セル内にネストされたテーブルのすべての内容を含む、各行の各セルのすべての内容が読み上げられる。これは線形化と呼ばれる。
             </p>
-            <p>Suppose that a Web page is laid out using a table with 9 columns and 22 rows.
-               The screen reader speaks the content of the cell at Column 1, Row 1 followed
-               by the cells in columns 2, 3, 4 and so on to column 9. However, if any cell
-               contains a nested table, the screen reader will read the entire nested table
-               before it reads the next cell in the original (outer) table. For example, if
-               the cell at column 3, row 6 contains a table with 6 columns and 5 rows, all
-               of those cells will be read before Column 4, Row 6 of the original (outer)
-               table. As a result, the meaningful sequence conveyed through visual
-               presentation may not be perceivable when the content is spoken by a screen
-               reader.
+            <p>あるウェブページが 22 行 9 列のテーブルによってレイアウトされているとしよう。スクリーンリーダーは最初に 1 行目の第 1 セル、続いて第 2、第 3、第 4 と第 9 セルまで読み上げる。しかし、いずれかのセルがネストされたテーブルを含む場合、スクリーンリーダーはネストされたテーブルのすべての内容を、元の (外側の) テーブルの次のセルよりも先に読み上げる。 たとえば 6 行目 3 列のセルに、5 行 6 列のテーブルが含まれる場合、含まれたテーブルのすべてのセルが、元の (外側の) テーブルの 6 行目 4 列のセルよりも先に読み上げられる。その結果、視覚的提示によって伝えられている意味のある順序がスクリーンリーダーによる読み上げでは知覚できないかもしれない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-layout-table-that-does-not-linearize-correctly">
-               <h3>Example 1: A layout table that does not linearize correctly</h3>
-               <p>An advertisement makes clever use of visual positioning, but changes
-                  meaning when linearized.
+               <h3>例 1: 正しく線形化できないレイアウトテーブル</h3>
+               <p>ある広告では視覚的配置をうまく用いているが、線形化されると意味が変わってしまう。
                </p><pre xml:space="preserve">
 &lt;table&gt;
 &lt;tr&gt;
@@ -97,7 +66,7 @@
 &lt;tr&gt;
   &lt;td&gt;XYZ gets you to the&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/table&gt;</pre><p>The reading order from this example would be: </p>
+&lt;/table&gt;</pre><p>このテーブルの読み上げ順序は次のようになってしまうだろう: </p>
                <ul>
                   
                   <li>XYZ mountaineering top! </li>
@@ -107,20 +76,10 @@
                </ul>
             </section>
             <section class="example" id="example-2-a-layout-table-that-separates-a-meaningful-sequence-when-linearized">
-               <h3>Example 2: A layout table that separates a meaningful sequence when linearized</h3>
-               <p>A Web page from a museum exhibition positions a navigation bar
-                  containing a long list of links on the left side of the page. To the
-                  right of the navigation bar is an image of one of the pictures from
-                  the exhibition. To the right of the image is the kind of "placard"
-                  text you'd see on the wall next to the object if you were at the
-                  museum. Below that text is a heading that says "Description," and
-                  below that heading is a description of the image. The image, placard
-                  text, Description heading, and text of the description form a
-                  meaningful sequence.
+               <h3>例 2: 線形化されると意味のある列が分割されてしまうレイアウトテーブル</h3>
+               <p>ある美術館の展覧会に関するウェブページでは、リンクの長い一覧を含むナビゲーションバーをページ左側に配置している。そのナビゲーションバーの右側には展覧会に展示される絵の一つが置かれている。その絵の右側には、美術館でその絵の横の壁にみられるであろうプラカードのテキストが置かれている。そのテキストの下には、「Description,」という見出しと、その見出しの下にその絵の説明が置かれている。絵、プラカードのテキスト、説明の見出し、そして絵の説明というのが意味のある順序となっている。
                </p>
-               <p>A layout table is used to position the elements of the page. The
-                  links in the navigation bar are split into different cells in the
-                  leftmost column.
+               <p>ページ中で各要素を配置するためにレイアウトテーブルが用いられている。ナビゲーションバー中の一連のリンクは、最も左の列の異なるセルに分割されている。
                </p><pre xml:space="preserve">
 &lt;table&gt;
 &lt;tr&gt;
@@ -162,7 +121,7 @@
 	&lt;td&gt;&lt;a href="#"&gt;Link 20&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-</pre><p>The reading order from this example would be: </p>
+</pre><p>この例の読み順は次のようになってしまうだろう: </p>
                <ul>
                   
                   <li>Link 1</li>
@@ -196,56 +155,51 @@
                   <li>Link 20</li>
                   
                </ul>
-               <p>Because the navigation bar links are interleaved with the content
-                  describing the image, screen readers cannot present the content in a
-                  meaningful sequence corresponding to the sequence presented
-                  visually.
+               <p>ナビゲーションバーの一連のリンクに絵を説明するコンテンツが割り込んでいるため、スクリーンリーダーは視覚的な順序に対応した意味のある順序でコンテンツを提示することができない。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../css/C6">C6: Positioning content based on structural markup</a></li>
+               <li><a href="../css/C6">C6: 構造を示すマークアップに基づいてコンテンツを配置する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>Linearize the content in either of the following ways: </p>
+                     <p>以下のいずれかの方法によってコンテンツを線形化する: </p>
                      
                      <ul>
                         
-                        <li>Present the content in source code order</li>
+                        <li>コンテンツをソースコードの順序で表示する</li>
                         
-                        <li>Remove the table markup from around the content</li>
+                        <li>コンテンツを囲むテーブルのマークアップを除去する</li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li>Check that the linear reading order matches any meaningful
-                     sequence conveyed through presentation.
+                  <li>線形化した読み上げ順序が、プレゼンテーションによって伝えられている意味のある順序と一致することを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #2 is false, then this failure condition applies and the
-                     content fails this Success Criterion.
+                  <li>#2 の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
