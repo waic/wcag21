@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F42: Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links</title>
+      <title>F42: 達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,102 +10,80 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F41">Previous Technique: F41</a></li>
-            <li><a href="F43">Next Technique: F43</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F41">前の達成方法: F41</a></li>
+            <li><a href="F43">次の達成方法: F43</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links</h1>
+      <h1>達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: Info and Relationships</a> (Failure)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: Keyboard</a> (Failure)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This failure occurs when JavaScript event handlers are attached to elements
-               to emulate links. A link created in this manner cannot be tabbed to from the keyboard
-               and does not gain keyboard focus like other controls and/or links.
-               If scripting events are used to emulate links, user
-               agents including assistive technology may not be able to identify the links
-               in the content as links. They may be recognized as interactive controls but still
-               not recognized as links.  Such elements do not appear in the links
-               list generated by user agents or assistive technology.
+            <h2>解説</h2>
+            <p>この失敗は、JavaScript のイベントハンドラが、リンクをエミュレートするために要素に付加されている場合に発生する。この方法で作成されたリンクは、キーボードでタブ移動することができず、他のコントロール及び／又はリンクのようにキーボードでフォーカスを受け取れない。スクリプトのイベントがリンクをエミュレートするために使用される場合、支援技術を含むユーザエージェントは、コンテンツ内のリンクをリンクとして識別できないかもしれない。インタラクティブなコントロールとして認識されてもリンクとして認識されないかもしれない。そのような要素は、ユーザエージェントや支援技術によって生成されたリンクリストには現れない。
             </p>
             <p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="3">Note</div>
-                  <div>It is possible to use the ARIA <code class="att">role</code> attribute to identify an anonymous element as link control for assistive technologies.
-                     However, best practice for ARIA calls for <a href="https://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use">making use of native elements whenever possible</a>, so the use of the <code class="att">role</code> attribute to identify anonymous elements as links is not recommended.
+                  <div role="heading" class="note-title marker" aria-level="3">注記</div>
+                  <div>支援技術がリンクコントロールとして不明な要素を識別するために、ARIA <code class="att">role</code> 属性を使用することは可能である。しかし、ARIA の最善の対応策としては、<a href="http://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use">可能な限りネイティブな要素を使用すること</a>が求められ、不明な要素をリンクとして識別するために <code class="att">role</code> 属性を使用することは推奨しない。
                   </div>
                </div>
             </p>
-            <p>The <code class="el">a</code> and <code class="el">area</code>
-               elements are intended to mark up links.
+            <p><code class="el">a</code> と <code class="el">area</code> 要素は、リンクをマークアップするためのものである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-scripting-a-span-element">
-               <h3>Example 1: Scripting a <code class="el">span</code> element
+               <h3>例 1: <code class="el">span</code> 要素のスクリプト
                </h3>
-               <p>Scripted event handling is added to a <code class="el">span</code> element so
-                  that it functions as a link when clicked with a mouse. Assistive
-                  technology does not recognize this element as a link.
+               <p>スクリプトによるイベントハンドリングが <code class="el">span</code> 要素に追加されているので、それがマウスでクリックされた場合はリンクとして機能する。支援技術はこの要素をリンクとして認識しない。
                </p><pre xml:space="preserve">
 &lt;span onclick="location.href='newpage.html'"&gt;
     Fake link
 &lt;/span&gt;
 </pre></section>
             <section class="example" id="example-2-scripting-an-img-element">
-               <h3>Example 2: Scripting an <code class="el">img</code> element
+               <h3>例 2: <code class="el">img</code> 要素のスクリプト
                </h3>
-               <p>Scripted event handling is added to an <code class="el">img</code> element so
-                  that it functions as a link when clicked with a mouse. Assistive
-                  technology does not recognize this element as a link.
+               <p>スクリプトによるイベントハンドリングが <code class="el">img</code> 要素に追加されているので、それがマウスでクリックされた場合はリンクとして機能する。支援技術はこの要素をリンクとして認識しない。
                </p><pre xml:space="preserve">
    &lt;img src="go.gif" 
    alt="go to the new page" 
    onclick="location.href='newpage.html'"&gt;
 </pre></section>
             <section class="example" id="example-3-scripting-an-img-element-with-keyboard&#xA;----------------------------support">
-               <h3>Example 3: Scripting an <code class="el">img</code> element, with keyboard
-                  support
+               <h3>例 3: キーボードサポートがある <code class="el">img</code> 要素のスクリプト
                </h3>
-               <p>Scripted event handling is added to an <code class="el">img</code> element so
-                  that it functions as a link. In this example, the link functionality
-                  can be invoked with the mouse or via the Enter key if the user agent
-                  includes the element in the tab chain. Nevertheless, the element
-                  will not be recognized as a link.
+               <p>スクリプトによるイベントハンドリングが <code class="el">img</code> 要素に追加されているので、リンクとして機能する。この例では、リンク機能がマウス又はユーザエージェントが要素をタブ移動可能な範囲に含まれる場合には Enter キーで機能する。それでもなお、この要素はリンクとしては認識されない。
                </p><pre xml:space="preserve">
 function doNav(url)
 {
@@ -121,7 +99,7 @@ function doKeyPress(url)
       doNav(url);
    }
 }
-</pre><p>The markup for the image is:</p><pre xml:space="preserve">
+</pre><p>画像のためのマークアップ:</p><pre xml:space="preserve">
 &lt;p&gt;
 	&lt;img src="bargain.jpg"
 		tabindex="0" 
@@ -131,13 +109,9 @@ function doKeyPress(url)
 &lt;/p&gt;
 </pre></section>
             <section class="example" id="example-4-scripting-a-div-element">
-               <h3>Example 4: Scripting a <code class="el">div</code> element
+               <h3>例 4: <code class="el">div</code> 要素のスクリプト
                </h3>
-               <p>This example uses script to make a <code class="el">div</code> element behave
-                  like a link. Although the author has provided complete keyboard
-                  access and separated the event handlers from the markup to enable
-                  repurposing of the content, the <code class="el">div</code> element will not be
-                  recognized as a link by assistive technology.
+               <p>この例では、<code class="el">div</code> 要素がリンクとして機能するようにスクリプトを使用している。制作者は、完璧なキーボードアクセスを提供し、コンテンツの再利用を可能にするためイベントハンドラをマークアップから切り離しているが、この <code class="el">div</code> 要素は支援技術にリンクとして認識されない。
                </p><pre xml:space="preserve">
 window.onload = init;
 
@@ -168,7 +142,7 @@ function changeLocation(objEvent, strLocation)
 
 	window.location.href = strLocation;
 }
-</pre><p>The markup for the <code class="el">div</code> element is:
+</pre><p><code class="el">div</code> 要素のためのマークアップ:
                </p><pre xml:space="preserve">
 &lt;div id="linklike"&gt;
 View the results of the survey.
@@ -176,8 +150,8 @@ View the results of the survey.
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -188,44 +162,39 @@ View the results of the survey.
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G115">G115: Using semantic elements to mark up structure</a></li>
+               <li><a href="../general/G115">G115: 構造をマークアップするために、セマンティックな要素を使用する</a></li>
                
-               <li><a href="F59">F59: Failure of Success Criterion 4.1.2 due to using script to make div or span a user
-                     interface control in HTML without providing a role for the control</a></li>
+               <li><a href="F59">F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                		
-               <p>For all elements presented as links which use JavaScript event handlers to make the
-                  element emulate a link:
+               <p>要素がリンクをエミュレートするために JavaScript のイベントハンドラを使用したリンクとして提示されるすべての要素について:
                </p>
                
                <ol>
                   
-                  <li>Check if the programmatically determined role of the element is <code class="prop">link</code>.
+                  <li>プログラムによる解釈のされた要素の役割 (role) が <code class="prop">link</code> かどうかを確認する。
                   </li>
                   
-                  <li>Check if the emulated link can be activated using the keyboard.</li>
+                  <li>エミュレートされたリンクが、キーボード操作で有効にできるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #1 is false then this failure condition applies and the content fails Success
-                     Criteria 1.3.1 and 4.1.2.
-                     If check #2 is false then this failure condition applies and the content fails Success
-                     Criteria 2.1.1 and 2.1.3.
+                  <li>#1 の結果が偽である場合、この失敗条件が適用され、コンテンツは達成基準 1.3.1 及び 4.1.2 の失敗となる。#2 の結果が偽である場合、この失敗条件が適用され、コンテンツは達成基準 2.1.1 及び 2.1.3 の失敗となる。
                   </li>
                   
                </ul>

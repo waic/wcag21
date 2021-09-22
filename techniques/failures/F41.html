@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F41: Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to
-         reload the page
+      <title>F41: 達成基準 2.2.1、達成基準 2.2.4、及び 達成基準 3.2.5 の失敗例 － ページを再読み込みするために、meta 要素リフレッシュを使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,73 +11,53 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F40">Previous Technique: F40</a></li>
-            <li><a href="F42">Next Technique: F42</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F40">前の達成方法: F40</a></li>
+            <li><a href="F42">次の達成方法: F42</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to
-         reload the page
+      <h1>達成基準 2.2.1、達成基準 2.2.4、及び 達成基準 3.2.5 の失敗例 － ページを再読み込みするために、meta 要素リフレッシュを使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">達成基準 2.2.1: タイミング調整可能</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/interruptions">Success Criterion 2.2.4: Interruptions</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/interruptions">達成基準 2.2.4: 割り込み</a> (失敗)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">達成基準 3.2.5: 要求による変化</a> (失敗)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> 
-               meta
-               						   http-equiv of refresh is often used to periodically refresh
-               pages or to redirect users to another page. If the time interval is too
-               short, and there is no way to turn auto-refresh off, people who are blind will not
-               have enough time to make their screen
-               readers read the page before the page refreshes unexpectedly and causes the
-               screen reader to begin reading at the top. Sighted users may also be
-               disoriented by the unexpected refresh.
+            <h2>解説</h2>
+            <p>refresh のある meta http-equiv は、定期的にページを更新したり、利用者を別のページにリダイレクトしたりするためにしばしば用いられる。もし時間間隔が短すぎ、かつ自動更新を無効にする方法がない場合、全盲の人はスクリーンリーダーでページを読み終わらないうちに、予期せずページが更新されてしまい、スクリーンリーダーがページの先頭から読み上げてしまう。目の見える利用者も、予期しない更新によって混乱させられる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p> This is a deprecated example that changes the user's page at regular
-                  intervals. Content developers should not use this technique to
-                  simulate "push" technology. Developers cannot predict how much time
-                  a user will require to read a page; premature refresh can disorient
-                  users. Content developers should avoid periodic refresh and allow
-                  users to choose when they want the latest information. (The number
-                  in the content attribute is the refresh interval in
-                  seconds.)
+               <h3>例 1</h3>
+               <p>この非推奨例では、利用者ページが一定間隔で変化する。コンテンツ制作者はこの手法を「プッシュ」テクノロジーのシミュレートに用いるべきではない。制作者は、利用者がページを読むのにどれくらいの時間を必要とするかを予期することはできない。早すぎるリフレッシュは利用者を混乱させることになる。コンテンツ制作者は周期的なリフレッシュを避け、利用者自身にいつ最新の情報がほしいかを選択させるべきである。(content 属性の数字は秒単位の更新間隔である。)
                </p><pre xml:space="preserve">
 &lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;
   &lt;head&gt;     
@@ -92,52 +71,45 @@
 </pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For a page that uses <code>meta http-equiv="refresh"</code>:
+               <p>code>meta http-equiv="refresh"</code> を使用しているページについて:
                </p> 
                
                <ol>
                   
-                  <li>Check that the numerical value for seconds until refresh in the 
-                     <att>content</att> attribute is present.
+                  <li><att>content</att> 属性の中に更新までの秒数の数値が存在することを確認する。
                   </li>
                   
-                  <li>Check that the numerical value for seconds until refresh in the 
-                     <att>content</att> attribute is less than one or greater than 72,000.
+                  <li><att>content</att>属性の中にある更新までの秒数の数値が、1 未満又は 72,000 より大きいことを確認する。
                   </li>
                   
-                  <li>Check if the page qualifies for Real-time or Essential Exceptions in <a href="https://www.w3.org/TR/WCAG21/#timing-adjustable">Success Criterion 2.2.1 Timing Adjustable</a>.
+                  <li>そのページが、<a href="https://www.w3.org/TR/WCAG21/#timing-adjustable">達成基準 2.2.1 タイミング調整可能</a>のリアルタイムの例外又は必要不可欠な例外に該当するかを確認する。
                   </li>
                   
-                  <li>Check if the user is provided an opportunity to turn off, extend, or adjust the timing
-                     of the page refresh.
+                  <li>ページ更新のタイミングをオフにする、延長する、又は調整する機会が、利用者に提供されているかを確認する。
                   </li>
                   
-                  <li>Check if the page does not refresh after the duration specified in the 
-                     <att>content</att> attribute.
+                  <li><att>content</att> 属性で指定された時間が経過しても、ページが更新されないかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If checks #1-5 are false then this failure condition applies and content fails Success
-                     Criteria 2.2.1.
+                  <li>#1 - #5 の結果が偽の場合、この失敗条件が適用され、コンテンツは達成基準 2.2.1 の失敗となる。
                   </li>
                   
-                  <li>If checks #1, #2, #4, and #5 are false, this failure condition applies and the content
-                     fails Success Criterion 2.2.4.
+                  <li>#1、#2、#4 及び #5 の結果が偽の場合、この失敗条件が適用され、コンテンツは達成基準 2.2.4 の失敗となる。
                   </li>
                   
-                  <li>If checks #1 and #4 are false then this failure condition applies and content fails
-                     Success Criterion 3.2.5.
+                  <li>#1 及び #4 の結果が偽の場合、この失敗条件が適用され、コンテンツは達成基準 3.2.5 の失敗となる。
                   </li>
                   
                </ul>

@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F71: Failure of Success Criterion 1.1.1 due to using text look-alikes to represent text
-         without providing a text alternative
+      <title>F71: 達成基準 1.1.1 の失敗例 － テキストを表すために、テキストによる代替を提供せずに、テキストのようなものを使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,111 +11,89 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F70">Previous Technique: F70</a></li>
-            <li><a href="F72">Next Technique: F72</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F70">前の達成方法: F70</a></li>
+            <li><a href="F72">次の達成方法: F72</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.1.1 due to using text look-alikes to represent text
-         without providing a text alternative
+      <h1>達成基準 1.1.1 の失敗例 － テキストを表すために、テキストによる代替を提供せずに、テキストのようなものを使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this failure condition is to avoid substituting characters whose
-               glyphs look similar to the intended character, for that intended character. The Unicode
-               character set defines thousands of characters, covering dozens of writing systems.
-               While the glyphs for some of these characters may look like the glyphs for other characters
-               in visual presentation, they are not processed the same by text-to-speech tools.
+            <h2>解説</h2>
+            <p>この失敗例の目的は、グリフが目的の文字に似ている文字をその目的の文字の代わりに用いるのを回避することである。Unicode の文字セットでは、数十種類の筆記方法にわたる何千もの文字が定義されている。一部の文字のグリフは、視覚的提示では他の文字のグリフに似ているかもしれないが、テキストを音声に変換するツールでは、同じようには処理されない。
             </p>
-            <p>For example, the characters U+0063 and U+03F2 both look like the letter "c", yet the
-               first is from the Western alphabet and the second from the Greek alphabet and not
-               used in Western languages. The characters U+0033 and U+04E0 both look like the number
-               "3", yet the second is actually a letter from the Cyrillic alphabet.
+            <p>例えば、U+0063 と U+03F2 は、どちらも「c」の文字に似ている。しかし、U+0063 が西欧言語のアルファベットであるのに対して、U+03F2 はギリシャ語のアルファベットで、西欧言語では使われないという違いがある。また、U+0033 と U+04E0 は、どちらも数字の「3」に似ている。しかし、U+04E0 は、実際にはキリル文字のアルファベットである。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記: </div>
                <div>
                   
-                  <p>This failure also applies to the use of character entities. It is the incorrect character
-                     used because of its glyph representation that comprises a failure, not the mechanism
-                     by which that character is implemented.
+                  <p>この失敗例は、文字実体の使用にも適用される。失敗例を含むグリフ表現のために使用される不正な文字であって、文字が実装されるメカニズムではない。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-characters-">
-               <h3>Example 1: Characters </h3>
-               <p>The following word looks, in browsers with appropriate font support, like the English
-                  word "cook", yet is composed of the string U+03f2 U+043E U+03BF U+006B, only one of
-                  which is a letter from the Western alphabet. This word will not be processed meaningfully,
-                  and a text alternative is not provided.
+               <h3>事例 1: 文字</h3>
+               <p>次の語は、適切なフォントサポートのあるブラウザで見ると、英語の「cook」という単語のように見える。しかし、実際には U+03f2 U+043E U+03BF U+006B という文字列で構成されていて、このうち西欧言語のアルファベットは 1 字しかない。この語は、意味のあるかたちでは処理されず、テキストによる代替は提供されていない。
                </p><pre xml:space="preserve">
 ϲоοk
 </pre></section>
             <section class="example" id="example-2-character-entities">
-               <h3>Example 2: Character entities</h3>
-               <p>The following example, like the one above, will look like the English word "cook"
-                  when rendered in browsers with appropriate font support. In this case, the characters
-                  are implemented with character entities, but the word will still not be processed
-                  meaningfully, and a text alternative is not provided.
+               <h3>事例 2: 文字実体</h3>
+               <p>次の例は、先の例と同様、適切なフォントサポートのあるブラウザで見ると、英語の「cook」という単語のように見える。この場合、これらの文字が、文字実体で実装されているが、やはり単語として意味のあるかたちでは処理されず、テキストによる代替は提供されていない。
                </p><pre xml:space="preserve">
 &amp;#x03F2;&amp;#x043E;&amp;#x03BF;&amp;#x006B;
-</pre><p>Working Example: "ϲоοk"</p>
+</pre><p>コード例の実際の表示例: "ϲоοk"</p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check the characters or character entities used to represent text.</li>
+                  <li>テキストを表現するために、文字又は文字実体を用いていることを確認する。</li>
                   
-                  <li>If the characters used do not match the appropriate characters for the displayed glyphs
-                     in the human language of the content, then look-alike glyphs are being used.
+                  <li>用いられている文字は、コンテンツの自然言語において表示されるグリフの適切な文字と一致しない場合、見た目が似たグリフが使われている。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If look-alike glyphs are used, and there is not a text alternative for any range of
-                     text that uses look-alike glyphs, then the content does not meet the Success Criterion.
+                  <li>よく似たグリフが使用され、かつよく似たグリフを使用するテキストの範囲に対してテキストによる代替がない場合、コンテンツは達成基準を満たしていない。
                   </li>
                   
                </ul>
