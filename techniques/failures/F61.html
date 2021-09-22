@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F61: Failure of Success Criterion 3.2.5 due to complete change of main content through
-         an
-         automatic update that the user cannot disable from within the content
+      <title>F61: 達成基準 3.2.5 の失敗例 － 利用者がコンテンツの中から無効にできない自動的な更新によってメインコンテンツの変更を完了する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,166 +11,140 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F60">Previous Technique: F60</a></li>
-            <li><a href="F63">Next Technique: F63</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F60">前の達成方法: F60</a></li>
+            <li><a href="F63">次の達成方法: F63</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 3.2.5 due to complete change of main content through
-         an
-         automatic update that the user cannot disable from within the content
+      <h1>達成基準 3.2.5 の失敗例 － 利用者がコンテンツの中から無効にできない自動的な更新によってメインコンテンツの変更を完了する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>General </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全般</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">達成基準 3.2.5: 要求による変化</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> This document describes a failure that occurs when the content in the main <a href="https://www.w3.org/TR/WCAG21/#dfn-viewport">viewport</a> viewport is automatically updated, and there is no option for a user to disable this
-               behavior. 
+            <h2>解説</h2>
+            <p>この文書では、メインの<a href="https://waic.jp/docs/WCAG21/#dfn-viewport">ビューポート</a>に表示されているコンテンツが自動的に更新され、コンテンツに利用者がこの振る舞いを停止するための選択肢がない失敗例について述べている。 
             </p>
-            <p>Two procedures are presented below to test for the existence of a failure against
-               Success Criterion 3.2.5. Procedure 1 is the preferred procedure and assumes that content
-               authors have access to the code that generates the viewport content.
+            <p>達成基準 3.2.5 の失敗例となるかどうかを検証するための手順が「検証」のセクションで挙げられている。手順 1. が可能であることが望ましく、コンテンツ制作者がビューポートのコンテンツを生成するコードを確認できることを想定している。
             </p>
-            <p>However there may be instances where this may not be possible (eg: in certain content
-               management systems, application environments such as django or ruby-on-rails, or content
-               generated through scripting languages such as AJAX or PHP that are generated by third
-               parties.) To that end, the second procedure is supplied to allow testing in these
-               instances. Note that timeframes are indicative only, and that any change after any
-               amount of time should be treated as a failure if the test otherwise does not pass
-               the other step evaluations. 
+            <p>しかし、それが可能ではないケースも考えられる (例えば、CMS、django や ruby-on-rails などのアプリケーション環境、またはサードパーティによる Ajax や PHP などのスクリプト言語によって生成されるコンテンツなど)。そのため、手順 2. がそのような場合の検証のために提示されている。時間枠は指標でしかなく、その他の手順を満たしていなければ、一定の時間が経過した後に生じるあらゆる変化は失敗例としてみなすべきである。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A news site automatically refreshes itself to ensure that it has the
-                  newest headlines. There is no option to disable this behavior. 
+               <h3>例 1</h3>
+               <p>ニュースサイトで、常に最新の見出しが表示されるように、コンテンツが自動的に更新される。この振る舞いを停止させる選択肢がない。 
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A slideshow fills the entire viewport and advances to the next slide
-                  automatically. There is no stop button. 
+               <h3>例 2</h3>
+               <p>スライドショーがビューポートの全体に表示されていて、自動的に次のスライドに進んでいく。停止ボタンはない。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>A search engine automatically generates results and dynamically updates content based
-                  on user input. There is no option to disable this behavior.
+               <h3>例 3</h3>
+               <p>検索エンジンが自動的に検索結果を生成し、利用者の入力に応じてコンテンツを動的に更新する。この振る舞いを停止する選択肢がない。
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Open the source code in an appropriate editing tool.</li>
+                  <li>適当な編集ツールでソースコードを開く。</li>
                   
-                  <li>Examine the source code thoroughly.</li>
+                  <li>そのソースコードを精査する。</li>
                   
-                  <li>Confirm that content is dynamically generated or the code will trigger a change of
-                     context for the viewport on an event or after a time period.
+                  <li>コンテンツが動的に生成されている、つまりコードがイベントによって又は一定時間後にビューポートのコンテキストの変更を引き起こすことを確認する。
                   </li>
                   
-                  <li>Confirm that there does not exist an appropriate mechanism for users to disable this
-                     behavior. 
+                  <li>利用者がこの動作を無効にするための適切なメカニズムが存在しないことを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If both checks 3 and 4 are true, then this failure condition applies and the content
-                     fails this Success Criterion
+                  <li>#3 及び #4 の両方の結果が真である場合、この失敗例の条件は適用され、コンテンツはこの達成基準の失敗となる。
                   </li>
                   
                </ul>
                
             </section>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Measure or estimate the amount of time that the average user spends on the page.</li>
+                  <li>平均的な利用者がページに費やす時間を測定又は推定する。</li>
                   
-                  <li>Go to the page</li>
+                  <li>ページに移動する。</li>
                   
-                  <li>Wait for 10 times the length of time the average user stays on the page.  (From Step
-                     1)
+                  <li>平均的な利用者がページに滞在する 10 倍の時間を待つ。(手順 1 から)
                   </li>
                   
-                  <li>Check to see if there is a change in context during this time.</li>
+                  <li>この間にコンテキストに変化があるかどうか確認する。</li>
                   
-                  <li>If there is no change of context STOP.</li>
+                  <li>コンテキストの変化がない場合、終了する。</li>
                   
-                  <li>If there is a change in context, then check to see if there is any mechanism on the
-                     page that would have prevented that change of context.   
+                  <li>コンテキストの変化がある場合は、そのコンテキストの変化を止めるメカニズムがページに存在するかどうかを確認する。  
                   </li>
                   
-                  <li>If there IS a mechanism for preventing that change of context, use that mechanism
-                     to prevent that change of context and run the test over. 
+                  <li>コンテキストの変化を止めるメカニズムがある場合は、そのメカニズムを使用してコンテキストの変化を止めて、テストをやり直す。
                   </li>
                   
-                  <li>If there is a change of context and there are no mechanism to prevent that change
-                     in context then you have a failure.
+                  <li>コンテキストの変化があり、コンテキストの変化を止めるメカニズムがない場合は失敗となる。
                   </li>
                   
                </ol>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>One way to measure or estimate the amount of time in step 1 would be to check a web
-                        site's analytics to see how long the average user looks at the page.
+                     <p>#1 の時間を測定または推定する一つの方法は、ウェブサイトの解析結果から平均的な利用者がページをどのくらいの時間見ているかを確認することである。
                      </p>
                      
-                     <p>An example of step 6 would be a mechanism for turning off auto updates.</p>
+                     <p>#6 の例は、自動更新をオフにするメカニズムである。</p>
                      
                   </div>
                </div>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If you reach step 8 then the content fails this success criterion.</li>
+                  <li>#8 に達する場合、コンテンツはこの達成基準の失敗となる。</li>
                   
                </ul>
                

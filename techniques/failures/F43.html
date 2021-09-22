@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F43: Failure of Success Criterion 1.3.1 due to using structural markup in a way that does
-         not represent relationships in the content
+      <title>F43: 達成基準 1.3.1 の失敗例 － コンテンツにおける関係を表さない方法で、構造的なマークアップを使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,74 +11,56 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F42">Previous Technique: F42</a></li>
-            <li><a href="F44">Next Technique: F44</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F42">前の達成方法: F42</a></li>
+            <li><a href="F44">次の達成方法: F44</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.1 due to using structural markup in a way that does
-         not represent relationships in the content
+      <h1>達成基準 1.3.1 の失敗例 － コンテンツにおける関係を表さない方法で、構造的なマークアップを使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to describe a failure that occurs when
-               structural markup is used to achieve a presentational effect, but indicates
-               relationships that do not exist in the content. This is disorienting to
-               users who are depending on those relationships to navigate the content or to
-               understand the relationship of one piece of the content to another. Note
-               that the use of HTML tables for layout is not an example of this failure as
-               long as the layout table does not include improper structural markup such as
-               &lt;th&gt; or &lt;caption&gt;
-               elements.
+            <h2>解説</h2>
+            <p>この失敗例では、プレゼンテーション上の効果を実現するために用いられている構造的マークアップが、コンテンツ上には存在しない関係を示している場合に発生する失敗について解説する。この失敗例は、コンテンツ上の構造的関係を頼りにナビゲーションを行ったり、コンテンツの一部と他の部分の関係を理解している利用者の混乱を招く。なお、&lt;th&gt; 要素や &lt;caption&gt; 要素など、不適切な構造的マークアップが含まれていない限り、HTML テーブルをレイアウトに使用することはこの失敗例には当たらない。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Though an element's semantic meaning is generally exposed to AT, the WAI-ARIA presentation
-                     role can be used to suppress the native semantics of an element so that they are not
-                     mapped to the accessibility API. Setting an element's <code class="att">role</code> to presentation may avoid this failure by hiding that element's semantics from the
-                     user.
+                  <p>要素のセマンティックな意味は一般的に支援技術に受け渡されているが、WAI-ARIA presentation role は、要素のネイティブなセマンティクスを隠してアクセシビリティ API にマップされないようにするために使用できる。要素の <code class="att">role</code> を presentation に設定すると、その要素のセマンティクスを利用者から隠すことでこの失敗を避けられるかもしれない。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-heading-used-only-for-visual-effect">
-               <h3>Example 1: A heading used only for visual effect</h3>
-               <p>In this example, a heading element is used to display an address in a
-                  large, bold font. The address does not identify a new section of the
-                  document, however, so it should not be marked as a heading.
+               <h3>例 1: 視覚的効果の実現のみのために用いられている見出し</h3>
+               <p>この例では、太字の大きな文字で連絡先住所を表示するために見出しが用いられている。しかし、この連絡先住所がページ中の新しい章や節の開始を示しているわけではないので、見出しとしてマークアップするのは不適切である。
                </p><pre xml:space="preserve">
 &lt;p&gt;Interested in learning more? Write to us at&lt;/p&gt; 
 &lt;h4&gt;3333 Third Avenue, Suite 300 · New York City&lt;/h4&gt;
@@ -87,15 +68,8 @@
 &lt;p&gt;And we'll send you the complete informational packet absolutely Free!&lt;/p&gt;
 </pre></section>
             <section class="example" id="example-2-using-heading-elements-for-presentational-effect">
-               <h3>Example 2: Using heading elements for presentational effect</h3>
-               <p>In this example, heading markup is used in two different ways: to
-                  convey document structure and to create visual effects. The
-                  h1 and h2 elements are used appropriately
-                  to mark the beginning of the document as a whole and the beginning
-                  of the abstract. However, the h3 and h4
-                  elements between the title and the abstract are used only for visual
-                  effect — to control the fonts used to display the authors' names and
-                  the date.
+               <h3>例 2: プレゼンテーション上の効果を目的とした見出し要素の使用</h3>
+               <p>この例では、見出し要素が文書構造を表すため、そして視覚的な効果を実現するための二つの異なる目的で用いられている。h1 及び h2 要素はそれぞれ、文書全体の始まりと概要を示す目的で適切に使用されている一方で、タイトルと概要の間にある h3 及び h4 要素は、作者の名前と日付を表示するためのフォントを制御する目的で使用されている。
                </p><pre xml:space="preserve">
 &lt;h1&gt;Study on the Use of Heading  Elements in Web Pages&lt;/h1&gt;
 &lt;h3&gt;Joe Jones and Mary Smith&lt;h3&gt;
@@ -105,12 +79,9 @@
 &lt;/p&gt;
 </pre></section>
             <section class="example" id="example-3-using-blockquote-elements-to-provide-additional&#xA;----------------------------indentation">
-               <h3>Example 3: Using <code class="el">blockquote</code> elements to provide additional
-                  indentation
+               <h3>例 3: 追加の字下げを目的とした blockquote 要素の使用
                </h3>
-               <p>The following example uses blockquote for text that is
-                  not a quotation to give it prominence by indenting it when displayed
-                  in graphical browsers.
+               <p>以下の例では、視覚的な表示を行うブラウザにおいてテキストを目立たせる目的で、引用文ではないテキストに対して blockquote 要素が使用されている。
                </p><pre xml:space="preserve">
 &lt;p&gt;After extensive study of the company Web site, the task force 
 identified the following common problem.&lt;/p&gt;
@@ -124,8 +95,7 @@ pages confusing to screen reader users.&lt;/p&gt;
 introduced by this practice below.&lt;/p&gt;
 </pre></section>
             <section class="example" id="example-4-using-the-fieldset-and-legend-elements-to&#xA;----------------------------give-a-border-to-text">
-               <h3>Example 4: Using the fieldset and legend elements to
-                  give a border to text
+               <h3>例 4: テキストの枠線を表示する目的で fieldset 要素と legend 要素を使用する
                </h3><pre xml:space="preserve">
 &lt;fieldset&gt;
 &lt;legend&gt;Bargain Corner&lt;/legend&gt;
@@ -134,41 +104,40 @@ introduced by this practice below.&lt;/p&gt;
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="F46">F46: Failure of Success Criterion 1.3.1 due to using th elements, layout tables</a></li>
+               <li><a href="F46">F46: 達成基準 1.3.1 の失敗例 － レイアウトテーブルで、th 要素、caption 要素、又は空ではない summary 属性を使用している</a></li>
                
-               <li><a href="../general/G115">G115: Using semantic elements to mark up structure</a></li>
+               <li><a href="../general/G115">G115: 構造をマークアップするために、セマンティックな要素を使用する</a></li>
                
-               <li><a href="../html/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
+               <li><a href="../html/H39">H39: データテーブルのキャプションとデータテーブルを関連付けるために、caption 要素を使用する</a></li>
                
-               <li><a href="../html/H42">H42: Using h1-h6 to identify headings</a></li>
+               <li><a href="../html/H42">H42: 見出しを特定するために、h1 要素～ h6 要素を使用する</a></li>
                
-               <li><a href="../html/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a></li>
+               <li><a href="../html/H73">H73: データテーブルの概要を提供するために、table 要素の summary 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the element's semantic meaning is exposed to assistive technology and appropriate
-                     for the content of the element.
+                  <li>要素のセマンティックな意味が支援技術に公開され、かつ要素のコンテンツに対して適切であることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #1 is false then this failure condition applies.</li>
+                  <li>#1 の結果が偽である場合、この失敗条件が適用される。</li>
                   
                </ul>
                

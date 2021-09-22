@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F26: 
-         Failure of Success Criterion 1.3.3 due to using a graphical symbol alone to convey
-         information
+      <title>F26: 達成基準 1.3.3 の失敗例 － 情報を伝えるために、グラフィカルなシンボルのみを使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,104 +11,84 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F25">Previous Technique: F25</a></li>
-            <li><a href="F30">Next Technique: F30</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F25">前の達成方法: F25</a></li>
+            <li><a href="F30">次の達成方法: F30</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
       <h1>
-         Failure of Success Criterion 1.3.3 due to using a graphical symbol alone to convey
-         information
+         達成基準 1.3.3 の失敗例 － 情報を伝えるために、グラフィカルなシンボルのみを使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/sensory-characteristics">Success Criterion 1.3.3: Sensory Characteristics</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/sensory-characteristics">達成基準 1.3.3: 感覚的な特徴</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to show how using a graphical symbol to convey
-               information can make content difficult to comprehend. A graphical symbol may be an
-               image, an image of text or a pictorial or decorative character symbol (glyph) which
-               imparts information nonverbally. Examples of graphical symbols include an image of
-               a red circle with a line through it, a "smiley" face, or a glyph which represents
-               a check mark, arrow, or other symbol but is not the character with that meaning.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、グラフィカルなシンボルを用いて情報を伝えることによって、コンテンツを理解することを困難にしてしまう失敗例について述べることである。グラフィカルなシンボルには、言葉を使わないで情報を伝える、画像、文字画像、又は絵で表したもしくは装飾的な文字のシンボル (グリフ) がある。グラフィカルなシンボルの例としては、斜線の入った赤い円、「スマイリー」と呼ばれる顔文字、又はチェックマーク、矢印もしくはその他のシンボルを表すがその意味を持つ文字ではないグリフが挙げられる。
             </p>
-            <p>Assistive technology users may have difficulty determining the meaning of the graphical
-               symbol. If a graphical symbol is used to convey information, provide an alternative
-               using features of the technology or use a different mechanism that can be marked with
-               an alternative to represent the graphical symbol. For example, an image with a text
-               alternative can be used instead of the glyph.
+            <p>支援技術の利用者は、そのようなグラフィカルなシンボルの意味を判断するのが困難なことがある。 グラフィカルなシンボルを用いて情報を提供する場合、ウェブコンテンツ技術の機能を用いて代替物を提供する、又はそのグラフィカルなシンボルの代替を示すことが可能な異なるメカニズムを用いるべきである。例えば、グリフの代わりに、テキストによる代替のある画像を用いることができる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-glyphs-used-to-indicate-status">
-               <h3>Example 1: Glyphs Used to Indicate Status</h3>
-               <p>A shopping cart uses two simple glyphs to indicate whether an item is available for
-                  immediate shipment. A circle indicates that the item is in stock and ready to ship.
-                  An square indicates that the item is currently on back order and not available for
-                  immediate shipment. The instructions above items refer to the circle and square as
-                  the sole means to differentiating whether an item is available.
+               <h3>例 1: ステータスを示すために用いるグリフ</h3>
+               <p>ショッピングカートが二つのシンプルなグリフを用いて、その商品がすぐに発送可能かどうかを示している。具体的には、丸は商品の在庫があり発送可能であることを示し、四角形は商品が入荷待ちの状態ですぐには発送できないことを示している。上記のインストラクションでは、商品があるかどうかを区別する唯一の手段として、丸及び四角形を参照している。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H37">H37: Using alt attributes on img elements</a></li>
+               <li><a href="../html/H37">H37: img 要素の alt 属性を使用する</a></li>
                
-               <li><a href="../aria/ARIA24">ARIA24: Semantically identifying a font icon with role="img"</a></li>
+               <li><a href="../aria/ARIA24">ARIA24: アイコンフォントを意味的に識別するために role="img" を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each instuction that refers to non-text marks that convey information:</p>
+               <p>情報を伝える非テキストのマークを参照している各インストラクションにおいて:</p>
                
                <ol>
                   
-                  <li>Check whether there are other means to determine the information conveyed by the non-text
-                     marks.
+                  <li>非テキストのマークによって伝えている情報を把握できる他の手段があるかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If #1 is false, then this failure condition applies and the content fails this Success
-                     Criterion.
+                  <li>#1 の結果が偽である場合、この失敗基準が適用され、そのコンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
