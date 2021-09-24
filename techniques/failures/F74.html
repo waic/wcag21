@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F74: Failure of  Success Criterion 1.2.2 and 1.2.8 due to not labeling a synchronized media
-         alternative to text as an alternative
+      <title>F74: 達成基準 1.2.2 及び 達成基準 1.2.8 の失敗例 － テキストに対する同期したメディアによる代替を、代替としてラベル付けしていない
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,95 +11,75 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F73">Previous Technique: F73</a></li>
-            <li><a href="F75">Next Technique: F75</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F73">前の達成方法: F73</a></li>
+            <li><a href="F75">次の達成方法: F75</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of  Success Criterion 1.2.2 and 1.2.8 due to not labeling a synchronized media
-         alternative to text as an alternative
+      <h1>達成基準 1.2.2 及び 達成基準 1.2.8 の失敗例 － テキストに対する同期したメディアによる代替を、代替としてラベル付けしていない
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that provide synchronized media alternatives to text.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>テキストに対する代替である同期したメディアを提供しているウェブページ</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">Success Criterion 1.2.2: Captions (Prerecorded)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">達成基準 1.2.2: キャプション (収録済)</a> (失敗例)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">Success Criterion 1.2.8: Media Alternative (Prerecorded)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/media-alternative-prerecorded">達成基準 1.2.8: メディアに対する代替 (収録済)</a> (失敗例)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this failure is to avoid situations in which synchronized media alternatives
-               are not labeled with the text for which they are alternatives. Synchronized media
-               alternatives provide enhanced access to users for whom synchronized media is a more
-               effective format than text. Since they are alternatives to text, they do not need
-               themselves to have redundant text alternatives. However, they need to be clearly labeled
-               with the text for which they substitute, so users can find them and so users who normally
-               expect text alternatives to synchronized media know not to look for them.
+            <h2>解説</h2>
+            <p>この失敗例の目的は、テキストの代替メディアとなる同期したメディアに対して、そのテキストを含んだラベルが付けられていないという状況を回避することである。テキストの代替メディアとなる同期したメディアは、同期したメディアの方がテキストよりも有効なフォーマットとなる利用者に対して、情報へのより良いアクセスを提供する。同期したメディアがテキストの代替であるため、それ自体に冗長なテキストによる代替を必要としない。しかし、その同期したメディアに対して、テキストの代替メディアであることを明確にラベル付けすることによって、利用者がテキストの代替メディアである同期したメディアを見つけられるようにし、また同期したメディアに対して通常はそのテキストによる代替を期待する利用者が、テキストによる代替を探さないようにする必要がある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-synchronized-media-alternatives-provided-elsewhere-on-page">
-               <h3>Example 1: Synchronized media alternatives provided elsewhere on page</h3>
-               <p>A page with instructions to complete a tax form provides a prose description of the
-                  fields to complete, data to provide, etc. Additionally, a synchronized media alternative
-                  provides spoken instructions, with video of a person completing the section being
-                  discussed in the audio. Although both versions are provided on the page, the synchronized
-                  media version is provided elsewhere on the page and is not clearly labeled with the
-                  part of the text for which it is a substitute. This makes it difficult for users encountering
-                  the text to find it, and users encountering the video do not know where its text alternative
-                  is.
+               <h3>事例 1: 同期したメディアの代替がページ上の他のどこかで提供されている</h3>
+               <p>納税申告書の記入方法を説明したウェブページで、記入すべき項目や提供すべきデータなどの説明が文章で書かれている。さらに、テキストの代替メディアとなる同期したメディアが、音声による説明を提供しており、その音声で説明されている部分を記入している人の映像がある。文章のバージョンと同期したメディアのバージョンの両方がウェブページで提供されているにもかかわらず、同期したメディアのバージョンはそのウェブページの他の場所にあり、それがテキストの代替メディアであること示すラベルが明確に付けられていない。このため、テキストに遭遇した利用者がその同期したメディアのバージョンを見つけるのは難しく、映像に遭遇した利用者は、そのテキストによる代替がどこにあるのかが分からない。
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check pages that provide synchronized media alternatives to text.</li>
+                  <li>テキストに対して同期したメディアによる代替を提供しているページを確認する。</li>
                   
-                  <li>Check that synchronized media is clearly labeled with the text for which it is an
-                     alternative.
+                  <li>同期したメディアが、代替メディアであって，明確にラベル付けされていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #2 is false, then this failure condition applies and the content fails these
-                     Success Criteria.
+                  <li>2. の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
