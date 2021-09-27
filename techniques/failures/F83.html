@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F83: Failure of Success Criterion 1.4.3 and 1.4.6 due to using background images that do
-         not provide sufficient contrast with foreground text (or images of text)
+      <title>F83: 達成基準 1.4.3 及び 1.4.6 の失敗例 － 前景のテキスト (又は文字画像) との十分なコントラストを提供しない背景画像を使用している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,102 +11,83 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F82">Previous Technique: F82</a></li>
-            <li><a href="F84">Next Technique: F84</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F82">前の達成方法: F82</a></li>
+            <li><a href="F84">次の達成方法: F84</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.4.3 and 1.4.6 due to using background images that do
-         not provide sufficient contrast with foreground text (or images of text)
+      <h1>達成基準 1.4.3 及び 1.4.6 の失敗例 － 前景のテキスト (又は文字画像) との十分なコントラストを提供しない背景画像を使用している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">Success Criterion 1.4.3: Contrast (Minimum)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (失敗例)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">Success Criterion 1.4.6: Contrast (Enhanced)</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (失敗例)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This failure occurs when people with low vision are not able to read text that is
-               displayed over a background image. When there is not sufficient contrast between the
-               background image and the text, features of the background image can be confused with
-               the text making it difficult to accurately read the text.
+            <h2>解説</h2>
+            <p>この失敗例は、弱視の利用者が背景画像の上に表示されているテキストを読むことができない場合に関するものである。背景画像とテキストのコントラストが十分ではない時、背景画像はテキストと混同し、正確に読むことを困難にさせることがある。
             </p>
-            <p>To satisfy Success Criterion 1.4.3 and 1.4.6, there must be sufficient contrast between
-               the text and its background. For pictures, this means that there would need to be
-               sufficient contrast between the text and those parts of the image that are most like
-               the text and behind the text. 
+            <p>達成基準 1.4.3 と 1.4.6 を満たすためには、テキストとその背景画像の間に十分なコントラストを確保しなければならない。画像に対して、これはテキストの背後にあってテキストにとても似ている画像の一部とテキストの間に十分なコントラストが必要であることを意味している。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-failure-example-1">
-               <h3>Example 1: Failure Example 1</h3>
-               <p>Black text overlays an image with black lines. The lines cross behind the letters
-                  making F's look like E's etc.
+               <h3>事例 1: 失敗例 1</h3>
+               <p>黒いテキストが黒い線の画像と重なっている。その線は文字の背景にあり、F's をまるで E's のように見せている。
                </p>
             </section>
             <section class="example" id="example-2-failure-example-2">
-               <h3>Example 2: Failure Example 2</h3>
-               <p>Black text overlays an image with dark gray areas. Wherever the text crosses a dark
-                  gray area the contrast is so bad that the text cannot be read.
+               <h3>事例 2: 失敗例 2</h3>
+               <p>黒いテキストが濃い灰色の場所のある画像と重なっている。テキストが濃い灰色のどこの場所で交差していても、コントラストがとても不十分なため、テキストを読むことができない。
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> 
-                     <strong>Quickcheck:</strong> First do a quick check to see if the contrast between the text and the area of the
-                     image that is darkest (for dark text) or lightest (for light text) meets or exceeds
-                     that required by the Success Criterion (1.4.3 or 1.4.5). If the contrast meets or
-                     exceeds the specified contrast, then there is no failure. 
+                  <li><strong>クイックチェック:</strong> まず初めに、テキストとその場所の一番暗い部分 (色の濃いテキストに対して) 又は一番明るい部分 (色の明るいテキストに対して) との間のコントラストが達成基準 (1.4.3 又は 1.4.5) による要求事項を満たしている、又は上回っていることを確認する。コントラストが指定されたコントラストを満たす又は超える場合、失敗はない。
                   </li>
                   
-                  <li>If the Quickcheck is false, then check to see if the background behind each letter
-                     has sufficient contrast with the letter.
+                  <li>クイックチェックが偽である場合、各文字の背後にある背景がその文字と十分なコントラストがあるかどうかを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If Quickcheck is false and #2 is false as well then this failure condition applies
-                     and the content fails the contrast Success Criterion.
+                  <li>クイックチェックが偽かつ 2. の結果も同様に偽である場合、この失敗例の条件は適用され、コンテンツはコントラストの達成基準の失敗となる。
                   </li>
                   
                </ul>
