@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically
-         determined name
+      <title>F68: 達成基準 4.1.2 の失敗例 － プログラムによる解釈が可能な名前 (name) を持っていないユーザインタフェース コントロール
          
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
@@ -13,59 +12,48 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F67">Previous Technique: F67</a></li>
-            <li><a href="F69">Next Technique: F69</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F67">前の達成方法: F67</a></li>
+            <li><a href="F69">次の達成方法: F69</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically
-         determined name
+      <h1>達成基準 4.1.2 の失敗例 － プログラムによる解釈が可能な名前 (name) を持っていないユーザインタフェース コントロール
          
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML controls</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2: Name, Role, Value</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML のコントロール</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2: 名前 (name) ・役割 (role) 及び値 (value)</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This failure describes a problem that occurs when a form control does not have a name
-               exposed to assistive technologies. The result is that some users will not be able
-               to identify the purpose of the form control. The name can be provided in multiple
-               ways, including the <code class="el">label</code> element. Other options include use of the <code class="att">title</code> attribute and <code class="att">aria-label</code> which are used to directly provide text that is used for the accessibility name or
-               <code class="att">aria-labelledby</code> which indicates an association with other text on a page that is providing the name.
-               Button controls can have a name assigned in other ways, as indicated below, but in
-               certain situations may require use of <code class="att">label</code>, <code class="att">title</code>, <code class="att">aria-label</code>, or <code class="att">aria-labelledby</code>.
+            <h2>解説</h2>
+            <p>この失敗例は、フォームコントロールの名前が支援技術に公開されていない場合に発生する問題を説明する。その結果、一部の利用者はフォームコントロールの目的を特定できなくなる。名前 (name) は、<code class="el">label</code> 要素を含む複数の方法で指定できる。他のオプションには、アクセシビリティ名に使用されるテキストを直接提供するために使用される <code class="att">title</code> 属性および <code class="att">aria-label</code> の使用、又はその名前 (name) を提供しているページ上の他のテキストとの関連を示す <code class="att">aria-labelledby</code> が含まれる。ボタンコントロールには、以下に示すように、別の方法で名前 (name) を割り当てることができるが、特定の状況では <code class="att">label</code>、<code class="att">title</code>、<code class="att">aria-label</code>、または <code class="att">aria-labelledby</code> の使用が必要な場合がある。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記/div>
                <div>
                   
-                  <p>Elements that can use an explicitly-associated <code class="el">label</code> element are:
+                  <p>明示的に関連付けられた <code class="el">label</code> を使用できる要素は次のとおりとなる。
                   </p>
                   
                   <ul>
@@ -87,19 +75,18 @@
                      
                   </ul>
                   
-                  <p>The <code class="el">label</code> element is not used for the following because labels for these elements are provided
-                     via the <code class="att">value</code> attribute (for Submit and Reset buttons), the <code class="att">alt</code> attribute (for image buttons), or element content itself (<code class="el">button</code>):
+                  <p>以下の要素については、ラベルを <code class="att">value</code> 属性 (送信及びリセットボタン)、 <code class="att">alt</code> 属性 (画像を用いたボタン)、あるいは要素の内容そのもの (<code class="el">button</code>) でそれぞれ指定するため、<code class="el">label</code> 要素を用いない。
                   </p>
                   
                   <ul>
                      
-                     <li>Submit and Reset buttons (input type="submit" or input type="reset")</li>
+                     <li>送信及びリセットボタン (input type="submit" 又は input type="reset")</li>
                      
-                     <li>Image buttons (input type="image")</li>
+                     <li>画像を用いたボタン (input type="image")</li>
                      
-                     <li>Hidden input fields (input type="hidden")</li>
+                     <li>隠し入力フィールド (input type="hidden")</li>
                      
-                     <li>Buttons (button elements or &lt;input type="button"&gt;)</li>
+                     <li>ボタン (button 要素又は &lt;input type="button"&gt;)</li>
                      
                   </ul>
                   
@@ -107,13 +94,10 @@
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The following example demonstrates a form that visually presents labels for form controls,
-                  but does not use the <code class="el">label</code> element to associate them with their controls. The code example below is a failure
-                  because assistive technology may not be able to determine which label goes with which
-                  control.
+               <h3>事例 1</h3>
+               <p>以下の例では、視覚的には分かる形でフォームのコントロールに対応するラベルが提示されているが、<code class="el">label</code> 要素を用いてラベルとコントロールの対応が示されていない。この例の場合、ユーザエージェント (支援技術を含む) がどのラベルとどのコントロールが対応しているのかを判断できない可能性があるため失敗例となる。
                </p><pre xml:space="preserve">
 &lt;form&gt;
  First name: 
@@ -127,9 +111,8 @@
 &lt;/form&gt;
 </pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>In the following code example, <code class="el">label</code> elements are present, but they are not programmatically linked to the corresponding
-                  input controls and may therefore not be properly determined by assistive technology.
+               <h3>事例 2</h3>
+               <p>次のコード例では、 <code class="el">label</code> 要素は存在するが、対応するインプットコントロールとプログラム的に関連付けられていないため、支援技術によって正しく判定されない可能性がある。
                </p><pre xml:space="preserve">
 &lt;form action="..." method="post"&gt; 
 &lt;p&gt; 
@@ -141,16 +124,15 @@
 &lt;/form&gt;
 </pre></section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>The search text box in the following code example does not have a programmatically
-                  determinable name. The name can be supplied with any of the approaches mentioned above.
+               <h3>事例 3</h3>
+               <p>次のコード例の検索テキストボックスには、プログラムによる解釈が可能な名前がない。名前 (name) は、上記の方法のいずれかで提供することができる。
                </p><pre xml:space="preserve">
 &lt;input type="text" value="Type your search here"&gt;&lt;input type="submit" type="submit" value="Search"&gt;
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -161,65 +143,62 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="../html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="../html/H65">H65: Using the title attribute to identify form controls when the label element cannot
-                     be used</a></li>
+               <li><a href="../html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
                
-               <li><a href="../general/G167">G167: Using an adjacent button to label the purpose of a field</a></li>
+               <li><a href="../general/G167">G167: テキストフィールドの目的をラベル付けするために隣接するボタンを用いる</a></li>
                
-               <li><a href="../aria/ARIA6">ARIA6: Using aria-label to provide labels for objects</a></li>
-               
-               
-               <li><a href="../aria/ARIA9">ARIA9: Using aria-labelledby to concatenate a label from several text nodes</a></li>
+               <li><a href="../aria/ARIA6">ARIA6: オブジェクトのラベルを提供するために aria-label を使用する</a></li>
                
                
-               <li><a href="../aria/ARIA16">ARIA16: Using aria-labelledby to provide a name for user interface controls</a></li>
+               <li><a href="../aria/ARIA9">ARIA9: 複数のテキストノードをつなげて一つのラベルにするために、aria-labelledby を使用する</a></li>
                
                
-               <li><a href="../aria/ARIA14">ARIA14: Using aria-label to provide an invisible label where a visible label cannot be used</a></li>
+               <li><a href="../aria/ARIA16">ARIA16: ユーザインターフェース コントロールの名前 (name) を提供するために、aria-labelledby を使用する</a></li>
+               
+               
+               <li><a href="../aria/ARIA14">ARIA14: 可視ラベルが使用できない場所で不可視ラベルを提供するために、aria-label を使用する</a></li>
                
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For all <code class="el">input</code>, <code class="el">textarea</code> and <code class="el">select</code> elements in the Web page (except inputs of type <code class="attval">hidden</code>, <code class="attval">submit</code>, <code class="attval">reset</code>, or <code class="attval">button</code>:
+               <p>ウェブページ内のすべての <code class="el">input</code>、<code class="el">textarea</code> 及び <code class="el">select</code> 要素 (<code class="attval">hidden</code>、<code class="attval">submit</code>、<code class="attval">reset</code>、又は <code class="attval">button</code> の input を除く):
                </p>
                
                <ol>
                   
                   <li>
                      
-                     <p>Check that each element has a programmatically determined name using one of the following
-                        ways:
+                     <p>次のいずれかの方法で、各要素にプログラムによる解釈が可能な名前が付いていることを確認する。
                      </p>
                      
                      <ol>
                         				  
-                        <li>the text label or labels are programmatically associated with the control element
-                           via the <code class="att">aria-labelledby</code> attribute (each id given as a value in the <code class="att">aria-labelledby</code> attribute matches the <code class="att">id</code> of the text label element).
+                        <li>テキストラベル又はラベルは、<code class="att">aria-labelledby</code> 属性 (<code class="att">aria-labelledby</code> 属性の値として与えられた各 id は、テキストラベル要素の <code class="att">id</code> と一致する) を介して、コントロール要素とプログラムにより関連付けられている。
                         </li>
                         				  
-                        <li>the control is programmatically determined through the value of its <code class="att">aria-label</code> attribute.
+                        <li>コントロールは、その <code class="att">aria-label</code> 属性の値によってプログラムにより解釈される。
                         </li>
                         
-                        <li>the text label is contained in a <code class="el">label</code> element that is correctly associated to the respective <code class="el">input</code> element via the label's <code class="att">for</code> attribute (the <code class="att">id</code> given as value in the <code class="att">for</code> attribute matches the <code class="att">id</code> of the input element).
+                        <li>テキストラベルは、ラベルの <code class="att">for</code> 属性 (<code class="att">for</code> 属性の値として与えられた <code class="att">id</code> は入力要素の <code class="att">id</code> と一致する) を介して、それぞれの <code class="el">input</code> 要素に正しく関連付けられた <code class="el">label</code> 要素に含む。
                         </li>
                         
-                        <li>the control is contained within a <code class="el">label</code> element that also contains the label text.
+                        <li>コントロールはラベルテキストも含む <code class="el"></code> 要素内に含まれる。
                         </li>
                         				  
-                        <li>the control is an <code class="el">input</code> of <code class="att">type</code> <code class="attval">image</code> and the <code class="att">alt</code> attribute provides a text label.
+                        <li>コントロールは <code class="att">type</code> が <code class="attval">image</code> の <code class="el">input</code> であり、<code class="att">alt</code> 属性はテキストラベルを提供する。
                         </li>
                         
-                        <li>the control is programmatically determined through the value of <code class="att">title</code> attribute.
+                        <li>コントロールは <code class="att">title</code> 属性の値によってプログラムにより解釈される。
                         </li>
                         
                      </ol>
@@ -230,12 +209,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If all options of check #1 are false, then this failure condition applies and the
-                     content fails the Success Criteria.
+                  <li>1. の全てのオプションの結果が偽である場合、この失敗条件が適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
