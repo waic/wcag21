@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F82: Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields
-         but not including a text label
+      <title>F82: 達成基準 3.3.2 の失敗例 － 電話番号のフィールド一式を視覚的にフォーマットしているが、テキストラベルを含んでいない
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,92 +11,71 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F81">Previous Technique: F81</a></li>
-            <li><a href="F83">Next Technique: F83</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F81">前の達成方法: F81</a></li>
+            <li><a href="F83">次の達成方法: F83</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields
-         but not including a text label
+      <h1>達成基準 3.3.2 の失敗例 － 電話番号のフィールド一式を視覚的にフォーマットしているが、テキストラベルを含んでいない
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明 </a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This failure ensures that people with visual or cognitive disabilities will recognize
-               phone number fields and understand what information to provide to fill in the fields.
-               Phone numbers are frequently formatted in fixed, distinctive ways, and authors may
-               feel that just providing visual formatting of the fields will be sufficient to identify
-               them. However, even if all the fields have programmatically determined names, a text
-               label must also identify the set of fields as a phone number.
+            <h2>解説</h2>
+            <p>この文書では、視覚障害、又は認知障害のある利用者が、電話番号入力欄であることを認識し、フィールドにどのような情報を入力すればよいかを理解できない失敗例について述べている。電話番号は多くの場合、固定の、特有の書式で示されるため、コンテンツ制作者は電話番号入力欄であることを示すにはフィールドに視覚的な書式を設定すれば十分であると考えているかもしれない。しかし、全てのフィールドがプログラムによる解釈が可能な名前 (name) を持っている場合においても、テキストラベルでフィールドの一式を電話番号として特定するようにしなければならない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In the United States, phone numbers are broken into a three digit area code, a three
-                  digit prefix, and a four digit extension. A web page creates fixed length text input
-                  fields for the three parts of the phone number, surrounding the first field with parenthesis
-                  and separating the second and third fields with a dash. Because of this formatting,
-                  some users recognize the fields as a phone number. However, there is no text label
-                  for the phone number on the web page. This is because the label for each field will
-                  be the closest preceding text, so the three fields would be labeled "(", ")" , and
-                  "-" respectively.
+               <h3>事例 1 </h3>
+               <p>アメリカ合衆国では、電話番号は 3 桁の市外局番と 3 桁の市内局番、及び 4 桁の番号に区切られている。あるウェブページ上で電話番号の三つの部分に対して固定長のテキスト入力フィールドを作成し、最初のフィールドをカッコで囲い、ダッシュ「-」で 2 番目と 3 番目のフィールドを区切っている。この書式から、利用者はフィールドを電話番号として認識するが、そのウェブページではそれが電話番号であることを示すテキストラベルがつけられていない。それぞれのフィールドのラベルはその直前にあるテキストであることが多いので、三つのフィールドのラベルはそれぞれ「(」、「)」と「-」ということになってしまう。
                </p>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>For each set of phone number fields in the web page that represents a single phone
-                     number, check that the set of fields are labeled with a visible text label that is
-                     positioned near the set of phone number fields.
+                  <li>一つの電話番号を表すウェブページ上の電話番号フィールド一式に対して、電話番号フィールド一式が近くに配置された目に見えるテキストラベルでラベル付けされていることを確認する。
                   </li>
                   
-                  <li>For each set of phone number fields in the Web page that represent a single phone
-                     number, instructions are provided about how to fill in the fields.
+                  <li>一つの電話番号を表すウェブページ上の電話番号フィールド一式に対して、フィールドへの入力方法の説明がある。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If both check #1 and check #2 are false, then this failure condition applies and the
-                     content fails this success criterion.
+                  <li>1. と 2. の両方の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
