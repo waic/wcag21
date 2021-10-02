@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F78: Failure of Success Criterion 2.4.7 due to styling element outlines and borders in
-         a way that removes or renders non-visible the visual focus indicator
+      <title>F78: 達成基準 2.4.7 の失敗例 － 視覚的なフォーカスインジケータを除去する又は不可視にするような方法で、要素のアウトライン及びボーダーをスタイル指定する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,98 +11,81 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F77">Previous Technique: F77</a></li>
-            <li><a href="F79">Next Technique: F79</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F77">前の達成方法: F77</a></li>
+            <li><a href="F79">次の達成方法: F79</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 2.4.7 due to styling element outlines and borders in
-         a way that removes or renders non-visible the visual focus indicator
+      <h1>達成基準 2.4.7 の失敗例 － 視覚的なフォーカスインジケータを除去する又は不可視にするような方法で、要素のアウトライン及びボーダーをスタイル指定する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">Success Criterion 1.4.11: Non-text Contrast</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">達成基準 1.4.11: 非テキストのコントラスト</a> (失敗例)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">Success Criterion 2.4.7: Focus Visible</a> (Failure)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化</a> (失敗例)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This describes a failure condition that occurs when the user agent's default visual
-               indication of keyboard focus is turned off or rendered non-visible by other styling
-               on the page without providing an author-supplied visual focus indicator. Turning off
-               the focus indicator instructs the user agent not to present the focus indicator. Other
-               styling may make it difficult to see the focus indicator even though it is present,
-               such as outlines that look the same as the focus outline, or thick borders that are
-               the same color as the focus indicator so it cannot be seen against them.
+            <h2>解説</h2>
+            <p>この文書は、ユーザエージェントでデフォルトに指定されているキーボードフォーカスの視覚的なインジケーターが非表示になっている、又はコンテンツ制作者が提供する視覚的なフォーカスインジケーターが提供されずに、ページ上の他のスタイル指定により非表示にされる時に起こる失敗例の条件について述べている。フォーカスインジケーターを非表示に指定することで、ユーザエージェントはフォーカスインジケーターを表示しなくなる。他のスタイル指定によって、フォーカスインジケーターが提示されていても見づらくなることがある。例えばフォーカスのアウトラインと同じように見えるアウトライン、又はフォーカスインジケーターと同じ色になっているため識別できない太いボーダーといったものである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-the-focus-indicator-is-turned-off-with-css">
-               <h3>Example 1: The focus indicator is turned off with CSS</h3>
-               <p>The following CSS example will remove the default focus indicator, which fails the
-                  requirement to provide a visible focus indicator.
+               <h3>事例 1: CSS を用いて、フォーカスインジケーターを表示しないようにする</h3>
+               <p>下記の CSS の事例では、デフォルトのフォーカスインジケーターを除去しているため、視覚的に認識可能なフォーカスインジケーターを提供するという要求に失敗となる。
                </p><pre xml:space="preserve">:focus {outline: none}</pre></section>
             <section class="example" id="example-2-the-outline-of-elements-is-visually-similar-to-the-focus-indicator">
-               <h3>Example 2: The outline of elements is visually similar to the focus indicator</h3>
-               <p>The following CSS example will create an outline around links that looks the same
-                  as the focus indicator. This makes it impossible for users to determine which one
-                  in fact has the focus, even though the user agent does draw the focus indicator.
+               <h3>事例 2: 要素のアウトラインが、フォーカスインジケーターと視覚的に類似している</h3>
+               <p>下記の CSS の事例は、リンクの周辺にフォーカスインジケーターと同じように見えるアウトラインを生成するものである。たとえユーザエージェントがフォーカスインジケーターを表示しているとしても、利用者にはどの要素が実際にフォーカスを持つのか判別できない。
                </p><pre xml:space="preserve">a {outline: thin dotted black}</pre></section>
             <section class="example" id="example-3-elements-have-a-border-that-occludes-the-focus-indicator">
-               <h3>Example 3: Elements have a border that occludes the focus indicator</h3>
-               <p>The following CSS example creates a border around links that does not have enough
-                  contrast for the focus indicator to be seen when drawn on top of it. In this case
-                  the focus indicator is drawn just ouside the border, but as both are black and the
-                  border is thicker than the focus indicator, it no longer meets the definition of "visible".
+               <h3>事例 3: 要素が、フォーカスインジケーターを覆い隠すボーダーを持つ</h3>
+               <p>下記の CSS の事例では、フォーカスインジケーターがボーダーの上に表示されたときに、フォーカスインジケーターに対してコントラストが十分でないボーダーをリンクの周辺に生成している。この場合、フォーカスインジケーターがボーダーのすぐ外側に表示されているが、両方とも黒で、ボーダーがフォカスインジケーターよりも太くなっている。これにより、「視覚的に認識可能」の定義を満たさない。
                </p><pre xml:space="preserve">a {border: medium solid black}</pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Set the focus to all focusable elements on a page using the keyboard.</li>
+                  <li>キーボードを使ってページ上のすべてのフォーカス可能な要素にフォーカスを設定する。</li>
                   
-                  <li>Check that the focus indicator is visible.</li>
+                  <li>フォーカスインジケーターが可視であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true.</li>
+                  <li>2. の結果が真である。</li>
                   
                </ul>
                

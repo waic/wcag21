@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F75: Failure of Success Criterion 1.2.2 by providing synchronized media without captions
-         when the synchronized media presents more information than is presented on the page
+      <title>F75: 達成基準 1.2.2 の失敗例 － 同期したメディアがページ上にある情報よりも多くの情報を提示するときに、キャプションなしで同期したメディアを提供している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,75 +11,59 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F74">Previous Technique: F74</a></li>
-            <li><a href="F77">Next Technique: F77</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F74">前の達成方法: F74</a></li>
+            <li><a href="F77">次の達成方法: F77</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.2.2 by providing synchronized media without captions
-         when the synchronized media presents more information than is presented on the page
+      <h1>達成基準 1.2.2 の失敗例 － 同期したメディアがページ上にある情報よりも多くの情報を提示するときに、キャプションなしで同期したメディアを提供している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">Success Criterion 1.2.2: Captions (Prerecorded)</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">達成基準 1.2.2: キャプション (収録済) </a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this failure is to avoid situations in which synchronized media alternatives
-               provide more information than the text for which they are alternatives, but do not
-               provide their own text alternatives to provide access to the extra information. Synchronized
-               media alternatives provide enhanced access to users for whom synchronized media is
-               a more effective format than text. Since they are alternatives to text, they do not
-               need themselves to have redundant text alternatives in the form of captions, audio
-               descriptions or full text alternatives. However, if they provide more information
-               than the text for which they are an alternative, then they are not just alternatives
-               but are synchronized media content in their own right. In this case they are subject
-               to the full requirements of <a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">Success Criterion 1.2.2</a> to provide captions and to <a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">Success Criterion 1.2.3</a> and <a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">1.2.5</a>.
+            <h2>解説</h2>
+            <p>この失敗例の目的は、同期したメディアの代替が、代替のテキストよりも多くの情報を提供しているが、必要以上の情報にアクセスを提供するための独自のテキストによる代替を提供していないという状況を避けるためのものである。同期したメディアのほうがテキストよりも効果的なフォーマットである利用者にとっては、テキストの代替となる同期したメディアのほうが利用しやすい。テキストの代替となる同期したメディアは、テキストの代替コンテンツなので、キャプション形式の冗長なテキストによる代替、音声による説明又は完全なテキストによる代替をそれ自身のために用意する必要はない。その元となるテキストよりも多くの情報を同期したメディアが含んでいる場合は、単なるテキストの代替メディアというよりは、それ自体が同期したメディアのコンテンツとなる。こういった場合、キャプションを提供するための<a href="https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded">達成基準 1.2.2</a> に十分従ったうえで、<a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3</a> 及び <a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">1.2.5</a> の要件にも従うものとする。
             </p>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check for captions on synchronized media alternatives.</li>
+                  <li>同期したメディアによる代替のキャプションを確認する。</li>
                   
                   <li>
                      
-                     <p>Check that the synchronized media alternative does not provide more information than
-                        is presented on the page in text.
+                     <p>同期したメディアによる代替が、テキストでページ上に示されている情報よりも多くの情報を提供していないことを確認する。
                      </p>
                      
                      <div class="note">
-                        <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                        <div role="heading" class="note-title marker" aria-level="4">注記: </div>
                         <div>
                            
-                           <p>Synchronized media alternatives often use different words to present what is on the
-                              page but it should not present new information on the topic of the page.
+                           <p>同期したメディアによる代替では、ページ上にあるのとは別の言葉を用いている場合がよくあるが、そのページのトピックについて新しい情報を提示すべきではない。
                            </p>
                            
                         </div>
@@ -92,12 +75,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #2 is false, then this failure condition applies and the content fails these
-                     Success Criteria.
+                  <li>2.の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
