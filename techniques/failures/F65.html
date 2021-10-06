@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F65: Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative
-         on img elements, area elements, and input elements of type "image"
+      <title>F65: 達成基準 1.1.1 の失敗例 － img 要素、area 要素、及び type "image" の input 要素の alt 属性又はテキストによる代替を省略している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,76 +11,58 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F63">Previous Technique: F63</a></li>
-            <li><a href="F66">Next Technique: F66</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F63">前の達成方法: F63</a></li>
+            <li><a href="F66">次の達成方法: F66</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative
-         on img elements, area elements, and input elements of type "image"
+      <h1>達成基準 1.1.1 の失敗例 － img 要素、area 要素、及び type "image" の input 要素の alt 属性又はテキストによる代替を省略している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">Success Criterion 1.1.1: Non-text Content</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1: 非テキストコンテンツ</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This describes a failure condition for text alternatives on images. If there is no
-               source of text to provide an alternative for the image then assistive technologies
-               are not able to identify the image or to convey its purpose to the user. The <code class="att">alt</code> attribute continues to be the preferred way to provide alternative text for images.
-               Appropriate WAI-ARIA attributes may be used to provide alternative text, as long as
-               they are accessibility supported.  For more information about accessibility support,
-               see <a href="https://waic.jp/docs/WCAG21/Understanding/documenting-accessibility-support">Documenting Accessibility Support</a>. The <a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a> described the method of deriving text alternative from the HTML and WAI-ARIA attributes
-               of an element.
+            <h2>解説</h2>
+            <p>この文章では、画像のテキストによる代替の失敗条件を示す。画像の代替を提供するテキストがない場合、支援技術は画像を識別することも、その目的を利用者に伝えることもできない。<code class="att">alt</a> 属性は画像の代替テキストを提供するための好ましい実装方法であり続ける。アクセシビリティ サポーテッドである限り、適切な WAI-ARIA 属性を使用して代替テキストを提供することができる。アクセシビリティ サポートの詳細については、<a href="https://waic.jp/docs/WCAG21/Understanding/documenting-accessibility-support">アクセシビリティ サポートを文書化する</a>を参照する。<a href="https://www.w3.org/TR/accname/">Accessible Name and Description Computation</a>は、要素の HTML 属性及び WAI-ARIA 属性から代替テキストを導出する方法を解説した。
             </p>
-            <p>
-               Some Assistive Technologies attempt to compensate for the missing text alternatives
-               by reading the file name of the image. But it is insufficient to rely simply on the
-               file name for many reasons. For example, file names may not be descriptive (e.g.,
-               images/nav01.gif), and technology specifications do not require descriptive file names.
-               And some Assistive Technologies do not read the file name if there is no text alternative
-               provided via HTML attributes.
+            <p>いくつかの支援技術は、画像のファイル名を読み取ることにより、欠落しているテキストによる代替を補うことを試みる。しかし、多くの理由からファイル名に単純に頼るのは不十分である。例えば、ファイル名は説明的ではない場合があり (例 images/nav01.gif)、技術仕様には説明的なファイル名は必須ではない。そして多くの支援技術は HTML 属性を介して提供されるテキストによる代替がない場合はファイル名を読み取らない。
                
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-missing-text-alternative">
-               <h3>Example 1: Missing text alternative</h3>
-               <p>In the code example below, the person using a screen reader would not know the purpose
-                  of the image.
+               <h3>事例 1: テキストによる代替が存在しない</h3>
+               <p>以下のコード例において、スクリーンリーダーを使っている人は画像の目的を知ることはできない。
                </p><pre xml:space="preserve">
 &lt;img src="../images/animal.jpg" /&gt;
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -98,48 +79,43 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H67">H67: Using null alt text and no title attribute on img elements for images that AT should
-                     ignore</a></li>
+               <li><a href="../html/H67">H67: 支援技術が無視すべき画像に対して、img 要素の alt テキストを空にして、title 属性を付与しない</a></li>
                
-               <li><a href="../html/H37">H37: Using alt attributes on img elements</a></li>
+               <li><a href="../html/H37">H37: img 要素の alt 属性を使用する</a></li>
                
-               <li><a href="../aria/ARIA10">ARIA10: Using aria-labelledby to provide a text alternative for non-text content</a></li>
+               <li><a href="../aria/ARIA10">ARIA10: 非テキストコンテンツに対してテキストによる代替を提供するために aria-labelledby を使用する</a></li>
                
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>Identify <code class="el">img</code>, <code class="el">area</code> and <code class="el">input</code> elements of type <code class="attval">image</code>. For each of these elements:
+               <p><code class="el">img</code>、<code class="el">area</code> 及び type が <code class="attval">image</code> の <code class="el">input</code> を特定する。これらの要素のそれぞれについて:
                </p>
                
                <ol>
                   
                   <li>
-                     									         Check if the <code class="att">alt</code> attribute is present. 
+                     									         <code class="att">alt</code> 属性が存在するかどうかを確認する。
                      									
                      
                   </li>
                   
-                  <li>
-                     Check if <code class="att">aria-labelledby</code> attribute is present AND references one or more id elements in the page AND check
-                     if <code class="att">aria-labelledby</code> is <a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported">accessibility supported</a>.
+                  <li><code class="att">aria-labelledby</code> 属性が存在するかどうかを確認し、かつページ内の一つ以上の id 要素を参照し、かつ <code class="att">aria-labelledby</code> が<a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>かどうかを確認する。
                      								       
                   </li>
                   
-                  <li>
-                     Check if the <code class="att">aria-label</code> attribute is present AND check if <code class="att">aria-label</code> is <a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported">accessibility supported</a>.
+                  <li><code class="att">aria-label</code> 属性が存在するかどうかを確認し、かつ <code class="att">aria-label</code> が<a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>かどうかを確認する。
                      
                   </li>
                   
-                  <li>
-                     Check if the <code class="att">title</code> attribute is present AND check if <code class="att">title</code> is <a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported"> accessibility supported</a>.
+                  <li><code class="att">title</code> 属性が存在するかどうかを確認し、かつ <code class="att">title</code> が<a href="https://waic.jp/docs/WCAG21/#dfn-accessibility-supported">アクセシビリティ サポーテッド</a>かどうかを確認する。
                      
                   </li>
                   
@@ -147,11 +123,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If all of #1, #2, #3 and #4 are false then this failure condition applies.</li>
+                  <li>1.、2.、3.、及び 4. の全ての結果が偽である場合、この失敗条件が適用される。</li>
                   
                </ul>
                
