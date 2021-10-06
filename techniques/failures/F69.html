@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F69: Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200
-         percent causes the text, image or controls to be clipped, truncated or obscured
+      <title>達成基準 1.4.4 の失敗例 － 視覚的にレンダリングされたテキストを 200% まで拡大するときに、テキスト、画像又はコントロールが、切り取られたり、端が欠けたり、又は覆い隠されたりする
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,127 +11,107 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F68">Previous Technique: F68</a></li>
-            <li><a href="F70">Next Technique: F70</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F68">前の達成方法: F68</a></li>
+            <li><a href="F70">次の達成方法: F70</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200
-         percent causes the text, image or controls to be clipped, truncated or obscured
+      <h1>達成基準 1.4.4 の失敗例 － 視覚的にレンダリングされたテキストを 200% まで拡大するときに、テキスト、画像又はコントロールが、切り取られたり、端が欠けたり、又は覆い隠されたりする
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML, XHTML and CSS</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML、XHTML 及び CSS</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a></span> (失敗例) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this failure condition is to describe a problem that occurs when
-               changing the size of text causes text to be clipped, truncated, or obscured, so that
-               it is no longer available to the user. In general, this failure occurs when there
-               is no way for a user agent's layout engine to honor all the layout hints in the HTML
-               at the new font size. Some of the ways in which this can occur include:
+            <h2>解説</h2>
+            <p>この文書は、テキストのサイズ変更によって、テキストが切り取られたり、端が欠けたり、又は覆い隠されたりして、利用者がテキストを入手できなくなるという失敗例について述べている。一般的に、この失敗例は、ユーザエージェントのレイアウトエンジンが、HTML 内の新しいフォントサイズについてのレイアウトヒントのすべてには対応できない場合に発生する。これが発生する方法には、下記のようなものがある:
             </p>
             <ul>
                
-               <li>Setting the overflow property of the enclosing element to hidden
+               <li>囲み要素の overflow プロパティを hidden に設定する
                   							     
                </li>
                
-               <li>Using absolutely positioned content</li>
+               <li>コンテンツを絶対配置にして使用する</li>
                
-               <li>Creating popups that aren't big enough for their content at the new font size</li>
+               <li>新しいフォントサイズで表示されたコンテンツに対して、十分な大きさがないポップアップを作成する</li>
                
             </ul>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>The Working Group has discovered many misunderstandings about how to test this failure.
-                     We are planning to revise this failure in a future update. Until then, if the content
-                     passes the success criterion using any of the listed sufficient techniques, then it
-                     does not meet this failure.
+                  <p>WCAG ワーキンググループは、この失敗例の検証方法に多くの誤解があることを確認している。この失敗例の文書を次回の更新時に修正する予定である。それまでは、コンテンツが「十分な達成方法」のいずれかを用いて達成基準を満たしていれば、この失敗例には該当しないと考えてよい。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The font size is set in a scalable way, but the container is set to a fixed pixel
-                  size. A gray border shows the boundaries of the text container. When the text is resized,
-                  it spills out of its container, and obsures the next paragraph.
+               <h3>事例 1</h3>
+               <p>フォントサイズはスケーラブルな方法で設定されているが、コンテナは固定ピクセルサイズに設定されている。灰色のボーダーは、テキストのコンテナの境界線を示している。テキストが拡大されるとき、そのコンテナからあふれ、次のパラグラフを覆い隠す。
                </p><pre xml:space="preserve">
 &lt;div style="font-size:100%; width:120px; height:100px; border: thin solid gray;"&gt; 
   Now is the time for all good men to come to the aid of their country. 
 &lt;/div&gt;
 &lt;p&gt;Now is the time for all good men to come to the aid of their country.&lt;/p&gt;
-</pre><p>Illustration of example 1:</p>
+</pre><p>事例 1 のイラストによる説明:</p>
                <figure id="figure-text-out-of-container">
                   	<img src="img/F69-obscured.gif" />
                   	
-                  <figcaption>Figure 1Example showing text that spills outside of its container, obscuring other text on
-                     the page.
+                  <figcaption>図1 : コンテナーの外側にテキストがこぼれている例で、ページ上の他のテキストが見えなくなっている。
                   </figcaption>
                   
                </figure>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>This example is identical to the last one, except that the container is set to clip
-                  the text. The text is no longer bleeding into the next paragraph, but now it is truncated.
-                  This is also a failure.
+               <h3>事例 2 </h3>
+               <p>この事例は、コンテナがテキストを切り取るように設定されることを除けば、前の失敗例と同じである。テキストは次のパラグラフに流れ出してはいないが、端が欠けている。これも失敗例である。
                </p><pre xml:space="preserve">
 &lt;div style="font-size:100%; width:120px; height:100px; overflow: hidden; border: thin solid gray;"&gt;
  Now is the time for all good men to come to the aid of their country. 
 &lt;/div&gt;
 &lt;p&gt;Now is the time for all good men to come to the aid of their country.&lt;/p&gt;
-</pre><p>Illustration of example 2:</p>
+</pre><p>事例 2 のイラストによる説明:</p>
                <figure id="figure-text-truncated-resized">
                   	<img src="img/F69-truncated.gif" />
                   	
-                  <figcaption>Figure 2Example showing text that truncated due to resized text.</figcaption>
+                  <figcaption>図2 : テキストのサイズが変更されたために切り捨てられたテキストを示す例</figcaption>
                   
                </figure>
             </section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>The Working Group has discovered many misunderstandings about how to test this failure.
-                        We are planning to revise this failure in a future update. Until then, if the content
-                        passes the success criterion using any of the listed sufficient techniques, then it
-                        does not meet this failure.
+                     <p>WCAG ワーキンググループは、この失敗例の検証方法に多くの誤解があることを確認している。この失敗例の文書を次回の更新時に修正する予定である。それまでは、コンテンツが「十分な達成方法」のいずれかを用いて達成基準を満たしていれば、この失敗例には該当しないと考えてよい。
                      </p>
                      
                   </div>
@@ -140,20 +119,19 @@
                
                <ol>
                   
-                  <li>Increase the text size of the content by 200%.</li>
+                  <li>コンテンツのテキストの文字サイズを 200 ％拡大する。</li>
                   
-                  <li>Check that no text is clipped, truncated, or obscured.</li>
+                  <li>テキストが切り取られたり、端が欠けたり、又は覆い隠されたりしていない。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #2 is false, then the failure condition applies and the content fails these
-                     Success Criteria.
+                  <li>手順 2. の結果が偽である場合、失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
