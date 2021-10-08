@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR21: Using functions of the Document Object Model (DOM) to add content to a page</title>
+      <title>SCR21: ページにコンテンツを追加するために、Document Object Model (DOM) の機能を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,112 +10,97 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR20">Previous Technique: SCR20</a></li>
-            <li><a href="SCR22">Next Technique: SCR22</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR20">前の達成方法: SCR20</a></li>
+            <li><a href="SCR22">次の達成方法: SCR22</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">解説</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using functions of the Document Object Model (DOM) to add content to a page</h1>
+      <h1>ページにコンテンツを追加するために、Document Object Model (DOM) の機能を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>ECMAScript used inside HTML and XHTML</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 及び XHTML の中で利用される ECMAScript</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a></span>に関する達成方法である。(書かれていない達成方法を満たす慣習的な達成方法)
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate how to use functions of the Document
-               Object Model (DOM) to add content to a page instead of using document.write or object.innerHTML.
-               The document.write() method does not work with XHTML when served with the correct
-               MIME type (application/xhtml+xml), and the innerHTML property is not part of the DOM
-               specification and thus should be avoided.  If the DOM functions are used to add the
-               content, user agents can access the DOM to retrieve the content. The createElement()
-               function can be used to create elements within the DOM.  The createTextNode() is used
-               to create text associated with elements.  The appendChild(), removeChild(), insertBefore()
-               and replaceChild() functions are used to add and remove elements and nodes. Other
-               DOM functions are used to assign attributes to the created elements.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、document.write 又は object.innerHTML の代わりに Document Object Model (DOM) の機能を用いて、ページ中にコンテンツを追加することである。document.write() メソッドは XHTML で正しい MIME タイプ (application/xhtml+xml) が指定されているときに動作せず、innerHTML プロパティは DOM の仕様ではないため利用すべきでない。もし DOM の機能を利用してコンテンツを追加すれば、ユーザエージェントは DOM にアクセスしてコンテンツを取り込むことができる。createElement() 関数を使って DOM の中に要素を作成することもできる。createTextNode() は要素に関連付けられたテキストを作成するのに用いられる。appendChild()、removeChild()、insertBefore() 及び replaceChild() 関数は、要素やノードを追加したり削除したりするのに用いられる。その他の DOM 関数は、作成された要素に属性を与えるときに使用される。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>When adding focusable elements into the document, do not add tabindex attributes to
-                     explicitly set the tab order as this can cause problems when adding focusable elements
-                     into the middle of a document. Let the default tab order be assigned to the new element
-                     by not explicitly setting a tabindex attribute.
+                  <p>フォーカス可能な要素を文書に追加するとき、tabindex 属性を用いて明示的なタブ順序を指定してはならない。なぜなら、文書の中央にフォーカス可能な要素を追加するときに問題が発生するからである。tabindex 属性を明示的に設定しないことで、デフォルトのタブ順序が新しい要素に割り当てられるようにする。
                   </p>
                   
                </div>
             </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 1:</div>
+              <div>
+                <p><a href="https://www.w3.org/TR/html52/webappapis.html#documentwrite">HTML 5.2§7.4.3. document.write()</a> の Warning でも述べられているように、たとえ HTML (MIME タイプ text/html) であっても <code>document.write()</code> の使用は勧められていない。</p>
+              </div>
+            </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 2:</div>
+              <div>
+                <p><code>innerHTML</code> は 2018 年現在、<a href="https://w3c.github.io/DOM-Parsing/#dfn-innerhtml">DOM Parsing and Serialization</a> 仕様で定義されている。</p>
+              </div>
+            </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 3:</div>
+              <div>
+                <p>WAIC では SCR21 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/SCR21.html">アクセシビリティ・サポーテッド（AS）情報: SCR21</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。</p>
+              </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>This example demonstrates use of client-side scripting to validate a form. If errors
-                  are found appropriate error messages are displayed.  The example uses the DOM functions
-                  to add error notification consisting of a title, a short paragraph explaining that
-                  an error has occurred, and a list of errors in an ordered list. The content of the
-                  title is written as a link so that it can be used to draw the user's attention to
-                  the error using the focus method. Each item in the list is also written as a link
-                  that places the focus onto the form field in error when the link is followed.
+               <h3>事例 1</h3>
+               <p>この例では、クライアントサイドスクリプトの使用法として、フォームの検証方法を紹介している。もしエラーがみつかれば、適切なエラーメッセージが表示される。この例では DOM 関数を使用し、タイトル、エラーに関する短い説明、及びエラー一覧の順序付リストを含むエラー通知を追加している。タイトルの内容はリンクとして書かれているので、focus メソッドを使って利用者の注意をエラーに向けることができる。個別のリスト項目もまた、リンクとして書かれているので、そのリンク先に移動したときにエラーのあるフォームのフィールドにフォーカスできるように書かれている。
                </p>
-               <p>For simplicity, the example just validates two text fields, but can easily be extended
-                  to become a generic form handler. Client-side validation should not be the sole means
-                  of validation , and should be backed up with server-side validation. The benefit of
-                  client-side validation is that you can provide immediate feedback to the user to save
-                  them waiting for the errors to come back from the server, and it helps reduce unnecessary
-                  traffic to the server.
+               <p>この例では、簡単にするために二つのテキストフィールドだけを検証しているが、一般的なフォームハンドラにするために容易に拡張することができる。クライアントサイドの検証は、それを唯一の検証とすべきではなく、サーバーサイドの検証でも確認するべきである。クライアントサイドでの検証の利点は、利用者にすぐにフィードバックを提供することで、サーバーからエラーが帰ってくるまでの間、彼らを待たせることがないこと、及びサーバーへの余計なトラフィックを軽減できることである。
                </p>
-               <p>Here is the script that adds the event handlers to the form. If scripting is enabled,
-                  the validateNumbers() function will be called to perform client-side validation before
-                  the form is submitted to the server. If scripting is not enabled, the form will be
-                  immediately submitted to the server, so validation should also be implemented on the
-                  server. 
-                  
+               <p>次の例はフォームにイベントハンドラを追加するスクリプトである。もしスクリプトが有効であれば、サーバーにフォームが送信される前に validateNumbers() 関数がクライアントサイドの検証のために呼び出される。もしスクリプトが有効でなければ、フォームはすぐにサーバー側に送信されるので、検証機能はサーバーにも実装されるべきである。
                </p><pre xml:space="preserve">
 window.onload = initialise;
 function initialise()
 {
-  // Ensure we're working with a relatively standards compliant user agent
+  // 標準に準拠したユーザエージェントが対象
   if (!document.getElementById || !document.createElement || !document.createTextNode)
     return;
 
-  // Add an event handler for the number form
+  // 標準に準拠したユーザエージェントが対象
   var objForm = document.getElementById('numberform');
   objForm.onsubmit= function(){return validateNumbers(this);};
 }
-</pre><p>Here is the validation function.  Note the use of the createElement(), createTextNode(),
-                  and appendChild() DOM functions to create the error message elements.
+</pre><p>次の例は validation の機能である。エラーメッセージの要素を作成するために createElement()、createTextNode()、及び appendChild() DOM 関数を使用しているところに注目して欲しい。
                </p><pre xml:space="preserve">
 function validateNumbers(objForm)
 {
-  // Test whether fields are valid
+  // フィールドを検証
   var bFirst = isNumber(document.getElementById('num1').value);
   var bSecond = isNumber(document.getElementById('num2').value);
-  // If not valid, display errors
+// 問題がある場合、エラーを表示
   if (!bFirst || !bSecond)
   {
     var objExisting = document.getElementById('validationerrors');
@@ -126,9 +111,9 @@ function validateNumbers(objForm)
     var objAnchor = document.createElement('a');
     var strID = 'firsterror';
     var strError;
-    // The heading element will contain a link so that screen readers
-    // can use it to place focus - the destination for the link is 
-    // the first error contained in a list
+    // 見出し要素にリンクを含めることによって、スクリーンリーダーは
+    // フォーカスを置くことができる － そのリンク先はエラー一覧の中で 
+    // 一番最初のエラー項目とする
     objAnchor.appendChild(document.createTextNode('Errors in Submission'));
     objAnchor.setAttribute('href', '#firsterror');
     objTitle.appendChild(objAnchor);
@@ -136,7 +121,7 @@ function validateNumbers(objForm)
     objNew.setAttribute('id', 'validationerrors');
     objNew.appendChild(objTitle);
     objNew.appendChild(objParagraph);
-    // Add each error found to the list of errors
+    // 発見したエラーすべてをエラー一覧に追加
     if (!bFirst)
     {
       strError = 'Please provide a numeric value for the first number';
@@ -149,10 +134,10 @@ function validateNumbers(objForm)
       objList.appendChild(addError(strError, '#num2', objForm, strID));
       strID = '';
     }
-    // Add the list to the error information
+    // エラー情報に一覧を追加
     objNew.appendChild(objList);
-    // If there were existing errors, replace them with the new lot,
-    // otherwise add the new errors to the start of the form
+    // 既存のエラーがあった場合、新規のエラーと置き換える
+    // あるいは、新規のエラーをフォームの先頭に追加する
     if (objExisting)
       objExisting.parentNode.replaceChild(objNew, objExisting);
     else
@@ -160,26 +145,25 @@ function validateNumbers(objForm)
       var objPosition = objForm.firstChild;
       objForm.insertBefore(objNew, objPosition);
     }
-    // Place focus on the anchor in the heading to alert
-    // screen readers that the submission is in error
+    // フォーカスを見出しにあるアンカーに置いて、スクリーンリーダーに
+    // 対してエラーがあることを警告する
     objAnchor.focus();
-    // Do not submit the form
+    // フォームを送信しない
     objForm.submitAllowed = false;
     return false;
   }
   return true;
 }
 
-// Function to validate a number
+// 数字を検証する関数
 function isNumber(strValue)
 {
   return (!isNaN(strValue) &amp;&amp; strValue.replace(/^\s+|\s+$/, '') !== '');
 } 
-</pre><p>Below are the helper functions to create the error message and to set focus to the
-                  associated form field.
+</pre><p>以下は、エラーメッセージを作成して、関連するフォームのフィールドにフォーカスさせるための補助関数である。
                </p><pre xml:space="preserve">
-// Function to create a list item containing a link describing the error
-// that points to the appropriate form field
+// エラー内容を説明する、エラーのフォームフィールドへのリンクの
+// リスト項目を作成する関数
 function addError(strError, strFragment, objForm, strID)
 {
   var objAnchor = document.createElement('a');
@@ -188,25 +172,25 @@ function addError(strError, strFragment, objForm, strID)
   objAnchor.setAttribute('href', strFragment);
   objAnchor.onclick = function(event){return focusFormField(this, event, objForm);};
   objAnchor.onkeypress = function(event){return focusFormField(this, event, objForm);};
-  // If strID has a value, this is the first error in the list
+  // strIDに値がある場合、これがリストで一番目のエラーとなる
   if (strID.length &gt; 0)
     objAnchor.setAttribute('id', strID);
   objListItem.appendChild(objAnchor);
   return objListItem;
 }
 
-// Function to place focus to the form field in error
+// エラーのフォームフィールドにフォーカスを置く関数
 function focusFormField(objAnchor, objEvent, objForm)
 {
-  // Allow keyboard navigation over links
+  // キーボードナビゲーションを可能にする
   if (objEvent &amp;&amp; objEvent.type == 'keypress')
     if (objEvent.keyCode != 13 &amp;&amp; objEvent.keyCode != 32)
       return true;
-  // set focus to the form control
+  // フォーカスをフォームコントロールに設定する
   var strFormField = objAnchor.href.match(/[^#]\w*$/);
   objForm[strFormField].focus();
   return false;
-}</pre><p>Here is the HTML for the example form.</p><pre xml:space="preserve">
+}</pre><p>以下は事例のフォーム用 HTML である。</p><pre xml:space="preserve">
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -234,54 +218,52 @@ function focusFormField(objAnchor, objEvent, objForm)
 &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</pre><p>This example is limited to client-side scripting, and should be backed up with server-side
-                  validation. The example is limited to the creation of error messages when client-side
-                  scripting is available. 
-                  
+</pre><p>この例はクライアントサイドスクリプトに限定しているため、サーバーサイドの検証によって補完されるべきである。例では、クライアントサイドスクリプトが利用できるときのエラーメッセージの作成に限定される。
                </p>
-               <p class="working-example">Here is a link to a working example: <a href="../../working-examples/script-form-validation/">Form Validation</a> 
-                  
+               <p class="working-example">このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR21/ex1.html">フォームの検証</a>
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
-               <li>HTML 4.01  <a href="http://www.webreference.com/js/column44/index.html">The Document Object Model, More methods</a> from Webreference.com
-                  									
+               <li>HTML 4.01 <a href="http://www.webreference.com/js/column44/index.html">The Document Object Model, More methods</a> from Webreference.com
                </li>
                
                <li>
                   <a href="http://usability.com.au/2008/09/accessible-forms-using-wcag-2-0/">Accessible Forms using WCAG 2.0</a>
-                  
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For pages that dynamically create new content:</p>
+               <p>動的に新しいコンテンツを作成するページに対して:</p>
                
                <ol>
                   
-                  <li>Examine the source code and check that the new content is not created using document.write(),
-                     innerHTML, outerHTML, innerText or outerText.
+                  <li>ソースコードを検証して、新しいコンテンツが document.write()、innerHTML、outerHTML、innerText 又は outerText を用いて作成されていないことを確認する。
                   </li>
                   
                </ol>
-               
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p><a href="#SCR21-description">解説</a>の訳注で示した <code>document.write()</code>、<code>innerHTML</code> に加えて、<code>outerHTML</code> は 2018 年現在、<a href="https://w3c.github.io/DOM-Parsing/#dfn-outerhtml">DOM Parsing and Serialization</a> 仕様で定義されており、<code>innerText</code> は <a href="https://www.w3.org/TR/html52/dom.html#the-innertext-idl-attribute">HTML 5.2§3.2.6. The innerText IDL attribute</a> で定義されている。したがって、手順 1 に示されるものに関しては、<code>outerText</code> のみが非標準である。<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText">HTMLElement.outerText - Web APIs | MDN</a> も参照のこと。</p>
+                 </div>
+               </div>
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
                
