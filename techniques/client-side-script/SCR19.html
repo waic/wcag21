@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR19: Using an onchange event on a select element without causing a change of
-         context
+      <title>SCR19: select 要素の onchange イベントは、コンテキストの変化を引き起こすことのないように使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,94 +11,67 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR18">Previous Technique: SCR18</a></li>
-            <li><a href="SCR20">Next Technique: SCR20</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR18">前の達成方法: SCR18</a></li>
+            <li><a href="SCR20">次の達成方法: SCR20</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using an onchange event on a select element without causing a change of
-         context
+      <h1>select 要素の onchange イベントは、コンテキストの変化を引き起こすことのないように使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> HTML and XHTML with support for scripting. This technique uses the try/catch
-               construct of JavaScript 1.4. 
+            <h2>適用 (対象)</h2>
+            <p>スクリプトをサポートする HTML 及び XHTML。この達成方法では、JavaScript 1.4 の try/catch 構文を用いる。 
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/on-input">Success Criterion 3.2.2: On Input</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/on-input">の達成基準 3.2.2: 入力時</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">Success Criterion 3.2.5: Change on Request</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/change-on-request">の達成基準 3.2.5: 要求による変化</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> The objective of this technique is to demonstrate how to correctly use an
-               onchange event with a select element to update other elements on the Web page. This
-               technique will not cause a change of context. When there are one
-               or more select elements on the Web page, an onchange event on one, can
-               update the options in another select element on the Web page. All of the
-               data required by the select elements is included within the Web page. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページの他の要素を更新する select 要素において onchange イベントを正しく使用する方法を示すことである。この達成方法は、コンテキストの変化を引き起こさない。ウェブページに一つかそれ以上の select 要素があるとき、一方の onchange イベントは、そのウェブページの別の select 要素における選択肢を更新できる。そして、select 要素によって必要とされるデータのすべてが、ウェブページの中に含まれている。 
             </p>
-            <p> It is important to note that the select item which is modified is after the
-               trigger select element in the reading order of the Web page. This ensures
-               that assistive technologies will pick up the change and users will encounter
-               the new data when the modified element receives focus. This technique relies
-               on JavaScript support in the user agent. 
+            <p>ウェブページでの音声読み上げ順序において、選択によって変更されるアイテムが、トリガーとなる select 要素の後にあることに注意することが重要である。これは、支援技術が変化を察知するのを確実にし、変更されたアイテムがフォーカスされたとき、利用者は新しいデータを認識する。なお、この達成方法は、ユーザエージェントによる JavaScript のサポート状況に依存する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p> This example contains two select elements. When an item is selected
-                  in the first select, the choices in the other select are updated
-                  appropriately. The first select element contains a list of
-                  continents. The second select element will contain a partial list of
-                  countries located in the selected continent. There is an onchange
-                  event associated with the continent select. When the continent
-                  selection changes, the items in the country select are modified
-                  using JavaScript via the Document Object Model (DOM). All of the
-                  data required, the list of countries and continents, is included
-                  within the Web page. 
+               <h3>例 1</h3>
+               <p>この事例には、二つの select 要素がある。最初の select 要素でアイテムが選択されたとき、二つめの select 要素の選択肢が適切に更新される。最初の select 要素には、大陸のリストがある。そして、二つめの select 要素には、選択された大陸に位置する国々の一部のリストがある。onchange イベントは、大陸の選択に連動している。大陸の選択が変わると、国の選択肢は、ドキュメントオブジェクトモデル (DOM) を通して JavaScript を用いて変更される。必要であるすべてのデータ、国と大陸のリスト、はウェブページの中に含まれている。
                </p>
-               <p>Overview of the code below</p>
+               <p>以下のコードの概要:</p>
                <ul>
                   
-                  <li> countryLists array variable which contains the list of
-                     countries for each continent in the trigger select element.
+                  <li>トリガーとなる select 要素の大陸ごとの国々のリストを含む countryLists 配列
                      
                   </li>
                   
-                  <li> countryChange() function which is called by the onchange
-                     event of the continent select element. 
+                  <li>大陸の select 要素の onchange イベントによって呼ばれる countryChange() 関数. 
                   </li>
                   
-                  <li> The XHTML code to create the select elements in the body of
-                     the Web page. 
+                  <li>ウェブページの本文の select 要素を作成する XHTML コード 
                   </li>
                   
                </ul><pre xml:space="preserve">
@@ -171,15 +143,14 @@
     &lt;option value="0"&gt;Select a country&lt;/option&gt;
   &lt;/select&gt;
 &lt;/body&gt;
- &lt;/html&gt;</pre><p class="working-example"> Here is a working example: <a href="../../working-examples/script-dynamic-select/">Dynamic
-                     Select</a> 
+ &lt;/html&gt;</pre><p class="working-example">実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-dynamic-select/">動的なセレクトメニュー</a> 
                   
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -195,46 +166,39 @@
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Navigate to the trigger select element (in this example, the one
-                     to select continents) and change the value of the select. 
+                  <li>トリガーとなる select 要素 (この事例では、大陸を選択するセレクトメニュー) に移動し、選択肢の値を変える。 
                   </li>
                   
-                  <li> Navigate to the select element that is updated by the trigger
-                     (in this example, the one to select countries). 
+                  <li>トリガーによって更新された select 要素 (この事例では、国を選択するセレクトメニュー) へ移動する。 
                   </li>
                   
-                  <li> Check that the matching option values are displayed in the other
-                     select element. 
+                  <li>一致する選択肢の値が、他の select 要素に表示されていることを確認する。 
                   </li>
                   
-                  <li> Navigate to the trigger select element, navigate through the
-                     options but do not change the value. 
+                  <li>トリガーとなる select 要素へ移動し、選択肢へ移動するが、値を変えない。
                   </li>
                   
-                  <li> Check that the matching option values are still displayed in the
-                     associated element. 
+                  <li>一致する選択肢の値が、関連付けられた要素にまだ表示されていることを確認する。
                   </li>
                   
                </ol>
                
-               <p>It is recommended that the select elements are tested with an assistive
-                  technology to verify that the changes to the associated element are
-                  recognized. 
+               <p>関連付けられた要素の変化が認識されることを確かめるために、select 要素を支援技術を用いて検証することが望ましい。 
                </p>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> Step #3 and #5 are true. </li>
+                  <li>#3 及び #5 の結果が真である。</li>
                   
                </ul>
                
