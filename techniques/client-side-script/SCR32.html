@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR32: Providing client-side validation and adding error text via the DOM</title>
+      <title>SCR32: クライアントサイドのバリデーションを提供し、DOM を介してエラーテキストを追加する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,82 +10,75 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR31">Previous Technique: SCR31</a></li>
-            <li><a href="SCR33">Next Technique: SCR33</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR31">前の達成方法: SCR31</a></li>
+            <li><a href="SCR33">次の達成方法: SCR33</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing client-side validation and adding error text via the DOM</h1>
+      <h1>クライアントサイドのバリデーションを提供し、DOM を介してエラーテキストを追加する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Script used with HTML or XHTML.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>HTML 又は XHTML で使用されるスクリプト</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate the display of an error message
-               when client side validation of a form field has failed. Anchor elements are used to
-               display the error messages in a list and are inserted above the fields to be validated.
-               Anchor elements are used in the error messages so that focus can be placed on the
-               error message(s), drawing the user's attention to it. The <code class="att">href</code> of the anchor elements contain an in-page link which references the fields where
-               error(s) have been found. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、クライアントサイドでフォームフィールドの検証に失敗したときにエラーメッセージを表示する方法について説明することである。アンカー要素はリスト中でエラーメッセージを表示させる際に使用され、検証が必要なフィールドの上に挿入される。フォーカスをエラーメッセージの場所に移し、利用者の注意を引くために、アンカー要素がエラーメッセージに使用される。アンカー要素の <code class="att">href</code> は、エラーがみつかったフィールドへのページ内リンクを含む。 
             </p>
-            <p>In a deployed application, if Javascript is turned off, client side validation will
-               not occur. Therefore, this technique would only be sufficient in situations where
-               scripting is relied upon for conformance or when server side validation techniques
-               are also used to catch any errors and return the page with information about the fields
-               with errors. 
+            <p>配置されたアプリケーションにおいて、もし JavaScript が無効になっていれば、クライアントサイドの検証は行われない。そのため、この達成方法はスクリプトが適合性において信頼できる、又はサーバーサイドの検証技術があらゆるエラーを発見し、エラーを含むフィールドの情報とともにページを返すように用いられている場合のみ、十分であるといえる。
             </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+
+                  <p>WAIC では SCR32 に関する<a href="https://waic.jp/docs/as/">アクセシビリティサポーテッド（AS）情報</a>を提供している。2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/SCR32.html">アクセシビリティ・サポーテッド（AS）情報: SCR32</a> では、「達成可能」と評価されている。WAIC はこの達成方法が検証した環境で広く動作すると判断している。
+                  </p>
+
+               </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>This example validates required fields as well as fields where a specific format is
-                  required. When an error is identified, the script inserts a list of error messages
-                  into the DOM and moves focus to them.
+               <h3>例 1</h3>
+               <p>この事例は必須のフィールドを検証し、さらに特定の書式が必要なフィールドを検証する。エラーがみつかったとき、スクリプトはエラーメッセージの一覧を DOM に挿入し、フォーカスをそこへ移動する。
                </p>
                <figure id="figure-form-errors">
                   		<img src="img/form2.jpg" />
                   		
-                  <figcaption>Figure 1Screenshot showing the error messages for several fields that were not filled out
-                     correctly. Error messages appear as a list of links near the top of the form.
+                  <figcaption>図1 正しく入力されなかったいくつかのフィールドのエラーメッセージを示すスクリーンショット。エラーメッセージは、フォームの上部にリンクのリストとして表示される。
                   </figcaption>
                   	
                </figure>
                <p>
-                  <em>HTML and Javascript code </em>
+                  <em>HTML 及び Javascript のコード</em>
                   
                </p>
-               <p>Here is the HTML for the example form: </p><pre xml:space="preserve">
+               <p>これは事例のフォームの HTML である: </p><pre xml:space="preserve">
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -160,7 +153,7 @@
             &lt;/p&gt;
         &lt;/form&gt;
     &lt;/body&gt;
-&lt;/html&gt;                      </pre><p>Here is the Javascript which performs the validation and inserts the error messages:
+&lt;/html&gt;                      </pre><p>以下は検証を行ってエラーメッセージを挿入する JavaScript である:
                   
                </p><pre xml:space="preserve">
 window.onload = initialise;
@@ -439,60 +432,55 @@ function checkOptional(bValid, strValue, arClass)
 
    return bValid;
    }
-   </pre><p class="working-example">Working example of this technique implemented using PHP, Javascript, CSS and XHTML:
-                  <a href="../../working-examples/script-form-validation-2/index.php">Form Validation Example</a>.
+   </pre><p class="working-example">このコードの実装サンプルは、PHP、JavaScript、CSS 及び XHTML で実装されている:
+                  <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-form-validation-2/index.php">フォーム検証の例</a>
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G83">G83: Providing text descriptions to identify required fields that were not completed</a></li>
+               <li><a href="../general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
                
-               <li><a href="../general/G85">G85: Providing a text description when user input falls outside the required format or
-                     values</a></li>
+               <li><a href="../general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
                
-               <li><a href="SCR18">SCR18: Providing client-side validation and alert</a></li>
+               <li><a href="SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>Create error messages using anchor tags and appropriate scripting via the technique
-                  above. 
+               <p>アンカータグを用いてエラーメッセージを作成し、上記の達成方法による適切なスクリプトを使用する。. 
                </p>
                
                <ol>
                   
-                  <li>Load the page.</li>
+                  <li>ページを読み込む。</li>
                   
-                  <li>Enter a valid value in the field(s) associated with an error message and verify that
-                     no error messages are displayed. 
+                  <li>エラーメッセージに関連付けられたフィールドに有効な値を入力し、エラーメッセージが表示されないことを確認する。
                   </li>
                   
-                  <li>Enter an invalid value in the field(s) associated with an error message and verify
-                     that the correct error message for the field is displayed. 
+                  <li>エラーメッセージに関連付けられたフィールドに無効な値を入力し、そのフィールドに正確なエラーメッセージが表示されることを確認する。 
                   </li>
                   
-                  <li>Verify that the error messages receive focus.</li>
+                  <li>エラーメッセージがフォーカスを受け取ることを確認する。</li>
                   
-                  <li>Enter a valid value in the field(s) associated with the displayed error message and
-                     verify that the error message is removed. 
+                  <li>表示されたエラーメッセージと関連付けられたフィールドに有効な値を入力し、エラーメッセージが除去されることを確認する。
                   </li>
                   
-                  <li>Repeat for all fields with associated error messages created via anchor tags. </li>
+                  <li>アンカータグによって作例されたエラーメッセージと関連付けられた全てのフィールドに対して、繰り返す。</li>
                   
                </ol>
                
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>It is recommended that you also run the above procedure using an assistive technology.
+                     <p>上記の手順を、支援技術を用いて実行することも推奨する。
                         
                      </p>
                      
@@ -501,11 +489,11 @@ function checkOptional(bValid, strValue, arClass)
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2, #3, #4, and #5 are all true.</li>
+                  <li>#2、#3、#4 及び #5 の全ての結果が真である。</li>
                   
                </ul>
                
