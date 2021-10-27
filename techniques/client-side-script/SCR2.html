@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR2: Using redundant keyboard and mouse event handlers</title>
+      <title>SCR2: キーボード及びマウスのイベントハンドラを両方とも使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,72 +10,48 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR1">Previous Technique: SCR1</a></li>
-            <li><a href="SCR14">Next Technique: SCR14</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR1">前の達成方法: SCR1</a></li>
+            <li><a href="SCR14">次の達成方法: SCR14</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using redundant keyboard and mouse event handlers</h1>
+      <h1>キーボード及びマウスのイベントハンドラを両方とも使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML with scripting support. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet <a href="../general/G90">G90: Providing keyboard-triggered event handlers</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>スクリプトをサポートしている HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (<a href="../general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate using device independent events
-               to change a decorative image in response to a mouse or focus event. Use the onmouseover
-               and onmouseout events to change a decorative image when the mouse moves on top of
-               or away from an element on the page. Also, use the onfocus and onblur events to change
-               the image when the element receives and loses focus.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、マウスやフォーカスのイベントによって装飾画像が変化する、機器に依存しないイベントの使い方を説明することである。onmouseover や onmouseout イベントを使って、マウスがページ中のある要素に重なるか、又は離れたときに装飾画像が変化するようにする。また、onfocus や onblur イベントを使って、要素がフォーカスされたか、フォーカスを失ったかによって画像を変更する。
             </p>
-            <p>The example below has a decorative image in front of an anchor element. When the user
-               mouses over the anchor tag, the decorative image in front of the anchor is changed.
-               When the mouse moves off of the anchor, the image is changed back to its original
-               version. The same image change effect occurs when the user gives keyboard focus to
-               the anchor element. When focus is received the image changes, when focus is lost the
-               image is changed back. This is accomplished by attaching onmouseover, onmouseout,
-               onfocus and onblur event handlers to the anchor element. The event handler is a JavaScript
-               function called updateImage(), which changes the src attribute of the image. The updateImage()
-               is called in response to the onmouseover, onmouseout, onfocus, and onblur events.
+            <p>下記の例では、アンカー要素の前に装飾画像がある。利用者がアンカータグにマウスオーバーすると、アンカータグの前の装飾画像が変化する。また、マウスがアンカーを離れると、画像は元に戻る。同じ画像の変化は、利用者がキーボードを使ってアンカー要素にフォーカスしたときにも起こる。フォーカスされたときに画像が変化し、フォーカスを失ったときには元の画像に戻る。これは、アンカー要素に onmouseover、onmouseout、onfocus 及び onblur イベントハンドラを付加することで実現できる。このイベントハンドラは JavaScript の関数で updateImage() と呼ばれており、画像の src 属性を変更する。updateImage() は onmouseover、onmouseout、onfocus、及び onblur イベントの応答として呼ばれる。
             </p>
-            <p>Each image is given a unique id. This unique id is passed to updateImage() along with
-               a boolean value indicating which image is to be used: updateImage(imgId, isOver);.
-               The boolean value of true is passed when the mouse is over the anchor element or it
-               has focus. A false value is passed when the mouse moves off of the anchor element
-               or it loses focus. The updateImage() function uses the image id to load the image
-               and then changes the src attribue based on the boolean value. Note that since the
-               image is for decorative purposes, it has a null alt attribute. 
+            <p>それぞれの画像には固有の ID が与えられている。この ID はどちらの画像が使われるかを表す論理値とともに、updateImage() に渡される: updateImage(imgId, isOver);。論理値 true は、マウスがアンカー要素に乗った場合、又はそれがフォーカスされた場合に渡される。false は、マウスがアンカー要素から離れた場合、又はそれがフォーカスを失った場合に渡される。 updateImage() 関数は、画像の ID を使用して画像を読み込み、その後に論理値の状態に応じて src 属性を変更する。画像は装飾目的で使用されているので、alt 属性値は空であることに注意する。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>It is best to use images that are similar in size and to specify the height and width
-                     attributes on the image element. This will prevent any changes to the layout of the
-                     page when the image is updated. This example uses images which are identical in size.
+                  <p>Iサイズの近い画像を使用し、画像要素では幅と高さの属性値を指定することが望ましい。これは、画像が更新されることによりページのレイアウトが変化してしまうことを防ぐ。例では、同一サイズの画像が使用されている。
                      
                   </p>
                   
@@ -83,9 +59,9 @@
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3><pre xml:space="preserve">
+               <h3>例 1</h3><pre xml:space="preserve">
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "https://www.w3.org/TR/html4/loose.dtd"&gt;
  &lt;html lang="en"&gt;
  &lt;head&gt;
@@ -127,30 +103,28 @@
 </pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>Load the Web page and test the events using a mouse and via the keyboard. </p>
+               <p>ウェブページを読み込み、マウス及びキーボードを用いてイベントを検証する。</p>
                
                <ol>
                   
-                  <li>Check that the "standard" image is displayed as expected when the Web page is loaded.
+                  <li>ウェブページが読み込まれたとき、「通常の」画像が期待通りに表示されていることを確認する。
                      
                   </li>
                   
                   <li>
                      
-                     <p>Using the Mouse </p>
+                     <p>マウスを使用</p>
                      
                      <ol>
                         
-                        <li>Move the mouse over the element containing the event handlers (in this example it
-                           is an anchor element). Check that the image changes to the expected image.
+                        <li>イベントハンドラを含む要素の上にマウスを移動する (この事例ではアンカー要素)。画像が期待されている画像に変化することを確認する。
                         </li>
                         
-                        <li>Move the mouse off of the element. Check that the image changes back to the "standard"
-                           image. 
+                        <li>マウスを要素から外す。画像が「通常の」画像に戻ることを確認する。
                         </li>
                         
                      </ol>
@@ -159,35 +133,32 @@
                   
                   <li>
                      
-                     <p>Using the Keyboard </p>
+                     <p>キーボードを使用</p>
                      
                      <ol>
                         
-                        <li>Use the keyboard to set focus to the element containing the event handlers. Check
-                           that the image changes to the expected image. 
+                        <li>キーボードを使ってイベントハンドラを含む要素にフォーカスを設定する。画像が期待されている画像に変化することを確認する。 
                         </li>
                         
-                        <li>Use the keyboard to remove focus from the element (generally by moving focus to another
-                           element). Check that the image changes to the "standard" image.
+                        <li>キーボードを使って要素からフォーカスを外す (一般的には別の要素にフォーカスを移す)。画像が「通常の」画像に戻ることを確認する。
                         </li>
                         
                      </ol>
                      
                   </li>
                   
-                  <li>Verify that the layout of other elements on the page is not affected when the image
-                     is changed. 
+                  <li>画像が変更されたときに、ページ上の他の要素のレイアウトに影響がないことを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the steps for the above checks are true. </li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
