@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR20: Using both keyboard and other device-specific functions</title>
+      <title>SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,78 +10,56 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR19">Previous Technique: SCR19</a></li>
-            <li><a href="SCR21">Next Technique: SCR21</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR19">前の達成方法: SCR19</a></li>
+            <li><a href="SCR21">次の達成方法: SCR21</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using both keyboard and other device-specific functions</h1>
+      <h1>キーボードとその他のデバイス固有の機能を両方とも使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to all content that uses Script to implement functionality.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet <a href="../general/G90">G90: Providing keyboard-triggered event handlers</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>機能を実装するためにスクリプトを用いる全てのコンテンツ</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a></span>に関する達成方法である。(<a href="https://waic.jp/docs/WCAG21/Techniques/general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a>の達成方法として十分)
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>
-               The objective of this technique is to illustrate the use of both keyboard-specific
-               and mouse-specific events with code that has a scripting function associated with
-               an event. Using both keyboard-specific and mouse-specific events together ensures
-               that content can be operated by a wide range of devices. For example, a script may
-               perform the same action when a keypress is detected that is performed when a mouse
-               button is clicked. This technique goes beyond the Success Criterion requirement for
-               keyboard access by including not only keyboard access but access using other devices
-               as well. 
-               
+            <h2>解説</h2>
+            <p>この達成方法の目的は、イベントと関連付けられたスクリプト機能を含むコードを伴った、キーボード固有及びマウス固有のイベント双方の使用を明示することである。キーボード固有及びマウス固有のイベントを一緒に用いることにより、さまざまな種類の機器でコンテンツを操作できることを保証することができる。例えば、スクリプトが keypress を認識したときに、マウスボタンをクリックしたときと同じ動作を行うことができるようにする。このテクニックにより、キーボードによるアクセスだけでなく他の機器によるアクセスの達成基準を満たすことができる。
             </p>
-            <p>
-               In JavaScript, commonly used event handlers include, onblur, onchange, onclick, ondblclick,
-               onfocus, onkeydown, onkeypress, onkeyup, onload, onmousedown, onmousemove, onmouseout,
-               onmouseover, onmouseup, onreset, onselect, onsubmit, onunload. Some mouse-specific
-               functions have a logical corresponding keyboard-specific function (such as 'onmouseover'
-               and 'onfocus'). A keyboard event handler should be provided that executes the same
-               function as the mouse event handler.
-               
+            <p>JavaScript でよく使用されるイベントハンドラには、onblur、onchange、onclick、ondblclick、onfocus、onkeydown、onkeypress、onkeyup、onload、onmousedown、onmousemove、onmouseout、onmouseover、onmouseup、onreset、onselect、onsubmit、onunload が含まれる。いくつかのマウス固有の機能には、論理的に対応するキーボード固有の機能がある (例えば 'onmouseover' と 'onfocus' のように)。キーボード向けのイベントハンドラは、対応するマウス向けの機能とともに提供すべきである。
             </p>
-            <p>
-               The following table suggests keyboard event handlers to pair mouse event handlers.
-               
+            <p>次の表は、マウスイベントハンドラに対応するキーボードイベントハンドラの候補である。
             </p>
             <table id="SCR20_mappings">
                
-               <caption>Device Handler Correspondences</caption>
+               <caption>対応表</caption>
                
                <tbody>
                   
                   <tr>
                      				
-                     <th scope="col">Use...</th>
+                     <th scope="col">マウス向け</th>
                      				
-                     <th scope="col">...with</th>
+                     <th scope="col">キーボード向け</th>
                      
                   </tr>
                   
@@ -163,58 +141,35 @@
                
             </table>
             <p>
-               						   <sup>1</sup> Although click is in principle a mouse event handler, most HTML and XHTML user agents
-               also process this event when a native HTML control (e.g. a button or a link) is activated,
-               regardless of whether it was activated with the mouse or the keyboard. In practice,
-               therefore, it is not necessary to duplicate this event when adding handlers to natively
-               focusable HTML elements. However, it is necessary when adding handlers to other events,
-               such as in Example 2 below.
+               						   <sup>1</sup> click は基本的にはマウスのイベントハンドラであるが、ほとんどの HTML 及び XHTML 向けのユーザエージェントは、HTML のネイティブコントロール (例: ボタン又はリンク) が有効化された場合、マウス又はキーボードのどちらで有効化されたかにかかわらず、イベントを処理することができる。そのため、もともとフォーカスできる HTML 要素にハンドラを追加するときは、実際にはキーボード用のイベントを補完する必要はない。しかし、下記の事例 2 のように他のイベントにハンドラを追加するときは、必要である。
             </p>
             <p>
-               						   <sup>2</sup> Since the keypress event handler reacts to any key, the event handler function should
-               check first to ensure the Enter key was pressed before proceeding to handle the event.
-               Otherwise, the event handler will run each time the user presses any key, even the
-               tab key to leave the control, and this is usually not desirable.
+               						   <sup>2</sup> keypress イベントハンドラは、どのキーに対しても有効であることから、そのイベントハンドラ関数では、イベントを処理する前に、Enter キーが押されたかどうかをチェックすべきである。そうでなければ、イベントハンドラは利用者が任意のキーを押すたびに実行され、コントロールから抜けるために Tab キーを押すような場合にも実行されるので、通常は望ましくない。
                
             </p>
-            <p>
-               Some mouse-specific functions (such as dblclick and mousemove) do  not have a corresponding
-               keyboard-specific function. This means that some functions may need  to be implemented
-               differently for each device (for example, including a series of buttons to execute,
-               via keyboard, the equivalent mouse-specific functions implemented).
+            <p>(dblclick 及び mousemove のような) いくつかのマウス固有の機能には、対応するキーボード固有の機能がない。つまり、いくつかの機能は機器別に違った実装をしなければならないということである (例えば、実装されているマウス固有の機能と同等の機能を、キーボードから実行するための一連のボタン操作を含むようにする)。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In this example of an image link, the image is changed when the user positions the
-                  pointer over the image. To provide keyboard users with a similar experience, the image
-                  is also changed when the user tabs to it.
-                  
+               <h3>事例 1</h3>
+               <p>この画像リンクの例では、利用者がポインタを画像に重ねると画像が変化する。キーボード利用者に同様の体験を提供するには、利用者が画像リンクに Tab キーで移動した場合に、画像を変化させればよい。
                </p><pre xml:space="preserve">
 &lt;a href="menu.php" onmouseover="swapImageOn('menu')" onfocus="swapImageOn('menu')" 
 onmouseout="swapImageOff('menu')" onblur="swapImageOff('menu')"&gt; 
 &lt;img id="menu" src="menu_off.gif" alt="Menu" /&gt; 
 &lt;/a&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>
-                  								This example shows a custom image control for which both the mouse and the
-                  keyboard can be used to activate the function. The mouse event onclick is duplicated
-                  by an appropriate keyboard event onkeypress. The tabindex attribute ensures that the
-                  keyboard will have a tab stop on the image. Note that in this example, the nextPage()
-                  function should check that the keyboard key pressed was Enter, otherwise it will respond
-                  to all keyboard actions while the image has focus, which is not the desired behavior.
+               <h3>事例 2</h3>
+               <p>この事例では、マウスとキーボードの両方を用いて機能を実行できる画像のカスタムコントロールを紹介している。マウスイベントの onclick は、対応するキーボードイベントの onkeypress によって補完されている。tabindex 属性は、キーボードを用いて Tab キーで移動した際に、画像の上で停止させるためのものである。この事例では nextPage() 関数が、押されたキーボードのキーがEnterであることを確認すべきであり、そうでない場合は、画像がフォーカスを持つ間にすべてのキーボード動作に応答するが、これは期待される動作ではないことに注意する。
                </p><pre xml:space="preserve">
 &lt;img onclick="nextPage();" onkeypress="nextPage();" tabindex="0" src="arrow.gif" 
 alt="Go to next page"&gt; </pre><div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>This example uses tabindex on an img element. Even though this is currently invalid,
-                        it is provided as a transitional technique to make this function work. Custom controls
-                        like this should also use WAI-ARIA to expose the role and state of the control.
+                     <p>この例では img 要素に tabindex を用いている。現時点では (文法的に) 妥当ではないが、この機能を実装するための古典的なテクニックとして用いられている。このようなカスタムコントロールでは、コントロールの役割 (role) と状態 (state) を支援技術に引き渡すために WAI-ARIA も用いるべきである。
                      </p>
                      
                   </div>
@@ -222,8 +177,8 @@ alt="Go to next page"&gt; </pre><div class="note">
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -234,41 +189,35 @@ alt="Go to next page"&gt; </pre><div class="note">
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G90">G90: Providing keyboard-triggered event handlers</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>
-                     Find all interactive functionality
-                     
+                  <li>全てのインタラクティブな機能を探す。
                   </li>
                   
-                  <li>
-                     Check that all interactive functionality can be accessed using the keyboard alone
-                     
+                  <li>それらのインタラクティブな機能全てに、キーボードだけを使ってアクセスできることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>
-                     #2 is true
-                     
+                  <li>2. の結果が真である
                   </li>
                   
                </ul>
