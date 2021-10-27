@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR18: Providing client-side validation and alert</title>
+      <title>SCR18: クライアントサイドのバリデーション及びアラートを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,63 +10,55 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR16">Previous Technique: SCR16</a></li>
-            <li><a href="SCR19">Next Technique: SCR19</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR16">前の達成方法: SCR16</a></li>
+            <li><a href="SCR19">次の達成方法: SCR19</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing client-side validation and alert</h1>
+      <h1>クライアントサイドのバリデーション及びアラートを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content that validates user input.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>利用者の入力を検証するコンテンツ</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">Success Criterion 3.3.4: Error Prevention (Legal, Financial, Data)</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">達成基準 3.3.4: エラー回避 (法的、金融、データ)</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to validate user input as values are entered for
-               each field, by means of client-side scripting. If errors are found, an alert dialog
-               describes the nature of the error in text. Once the user dismisses the alert dialog,
-               it is helpful if the script positions the keyboard focus on the field where the error
-               occurred.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、クライアントサイドのスクリプトによって、各フィールドで利用者が入力する値を確認することである。エラーが見つかった場合、警告ダイアログを表示し、エラーの内容をテキストで示す。警告ダイアログを閉じるとともに、スクリプトによってキーボードフォーカスをエラーが起こったフィールドに移動させれば、それは利用者にとって役立つ。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-checking-a-single-control-with-an-event-handler">
-               <h3>Example 1: Checking a single control with an event handler</h3>
-               <p>The following script will check that a valid date has been entered in the form control.</p><pre xml:space="preserve">
+               <h3>例 1: イベントハンドラで単一のコントロールをチェックする</h3>
+               <p>以下のスクリプトは、有効な日付がフォームのコントロールに入力されたかをチェックする。</p><pre xml:space="preserve">
 &lt;label for="date"&gt;Date:&lt;/label&gt;
 &lt;input type="text" name="date" id="date" 
 onchange="if(isNaN(Date.parse(this.value))) 
@@ -74,29 +66,22 @@ alert('This control is not a valid date.
 Please re-enter the value.');" /&gt;
 </pre></section>
             <section class="example" id="example-2-checking-multiple-controls-when-the-user-submits-the-form">
-               <h3>Example 2: Checking multiple controls when the user submits the form</h3>
-               <p>The following sample shows multiple controls in a form. The <code class="el">form</code> element uses the <code class="att">onsubmit</code> attribute which creates an event handler to execute the validation script when the
-                  user attempts to submit the form. If the validation is successful, the event returns
-                  <code class="propval">true</code> and the form submission proceeds; if the validation finds errors, it displays an
-                  error message and returns <code class="propval">false</code> to cancel the submit attempt so the user can fix the problems.
+               <h3>例 2: 利用者がフォームを送信したときに複数のコントロールをチェックする</h3>
+               <p>次の例はフォーム内の複数のコントロールを表している。<code class="el">form</code> 要素は、利用者がフォームを送信しようとした際、検証スクリプトを実行するために、イベントハンドラを作成する <code class="att">onsubmit</code> 属性を用いている。検証で問題がない場合、イベントは <code class="propval">true</code> を返し、フォームの送信を続行する。検証でエラーが検出された場合は、利用者が問題を修正できるようエラーメッセージを表示し、送信を取り消すために <code class="propval">false</code> を返す。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      				
-                     <p>This example demonstrates an alert for simplicity. A more helpful notification to
-                        the user would be to highlight the controls with problems and add information to the
-                        page about the nature of the errors and how to navigate to the controls that require
-                        data fixes.
+                     <p>この事例は簡潔さのためにアラートを用いて説明している。利用者により役立つ通知は、問題のあるコントロールをハイライトし、エラーの内容とデータの修正が必要なコントロールに移動する方法をページ上に示すことである。
                      </p>
                      				
-                     <p>Although this example uses an <code class="att">onsubmit</code> attribute on the <code class="el">form</code> element for brevity, normal practice is to create a submit event listener when the
-                        page is loaded.
+                     <p>この事例では簡潔さのために <code class="el">form</code> 要素に <code class="att">onsubmit</code> 属性を用いているが、通常であればページがロードした際にフォーム送信用のイベントリスナーを作成する。
                      </p>
                      			
                   </div>
                </div>
-               <p>Script code:</p><pre xml:space="preserve">
+               <p>スクリプトコード:</p><pre xml:space="preserve">
 function validate() {
 	// initialize error message
 	var msg = "";
@@ -116,7 +101,7 @@ function validate() {
 		return false;
 	} else return true;
 }
-</pre><p>Form code:</p><pre xml:space="preserve">
+</pre><p>フォームコード:</p><pre xml:space="preserve">
 &lt;form action="multiple-controls.html" onsubmit="return validate()"&gt;
 	&lt;p&gt;
 		&lt;label for="name"&gt;Name: &lt;/label&gt;
@@ -130,40 +115,40 @@ function validate() {
 		&lt;input type="submit" /&gt;
 	&lt;/p&gt;
 &lt;/form&gt;
-</pre><p class="working-example">This is demonstrated in the <a href="../../working-examples/script-check-multiple-controls/">working example of checking multiple controls when the user submits the form</a>.
+</pre><p class="working-example"><a href="https://www.w3.org/WAI/WCAG21/working-examples/script-check-multiple-controls/">利用者がフォームを送信したときに複数のコントロールをチェックする実装例</a> にこの実装方法のデモがある。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G89">G89: Providing expected data format and example</a></li>
+               <li><a href="../general/G89">G89: 期待されるデータ書式及び入力例を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For form fields that require specific input:</p>
+               <p>特定の入力を必要とするフォームのフィールドに対して:</p>
                
                <ol>
                   
-                  <li>enter invalid data</li>
+                  <li>無効なデータを入力する。</li>
                   
-                  <li>determine if an alert describing the error is provided.</li>
+                  <li>エラーを説明している警告が提供されているかどうかを判断する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#2 is true</li>
+                  <li>#2 の結果が真である。</li>
                   
                </ul>
                
