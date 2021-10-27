@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR34: Calculating size and position in a way that scales with text size</title>
+      <title>SCR34: テキストサイズに応じて拡大縮小するように、サイズ及びポジションを定める</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,90 +10,77 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR33">Previous Technique: SCR33</a></li>
-            <li><a href="SCR35">Next Technique: SCR35</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR33">前の達成方法: SCR33</a></li>
+            <li><a href="SCR35">次の達成方法: SCR35</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Calculating size and position in a way that scales with text size</h1>
+      <h1>テキストサイズに応じて拡大縮小するように、サイズ及びポジションを定める</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Client-side scripting.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>クライアントサイドスクリプティング</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">Success Criterion 1.4.8: Visual Presentation</a> (Sufficient as a way to meet <a href="../general/G146">G146: Using liquid layout</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/visual-presentation">達成基準 1.4.8: 視覚的提示</a> (<a href="../general/G146">G146: リキッドレイアウトを使用する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">Success Criterion 1.4.10: Reflow</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/reflow">達成基準 1.4.10: リフロー</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to calculate the size and position of elements
-               in a way that will scale appropriately as the text size is scaled. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、文字サイズが拡大縮小されるのに従って、適切に拡大縮小する方法で要素のサイズ及びポジションを計算することである。 
             </p>
-            <p>There are four properties in JavaScript that help determine the size and position
-               of elements: 
+            <p>ここに要素のサイズとポジションを決める JavaScript の四つのプロパティがある: 
             </p>
             <ul>
                
                <li>
-                  offsetHeight (the height of the element in pixels) 
+                  offsetHeight (ピクセルでの要素の高さ) 
                </li>
                
                <li>
-                  offsetWidth (the width of the element in pixels) 
+                  offsetWidth (ピクセルでの要素の幅) 
                </li>
                
                <li>
-                  offsetLeft (the distance of the element from the left of its parent (offsetParent)
-                  in pixels) 
+                  offsetLeft (ピクセルでの親要素 (offsetParent) の左からの距離) 
                </li>
                
                <li>
-                  offsetTop (the distance of the element from the top of its parent (offsetParent) in
-                  pixels) 
+                  offsetTop (ピクセルでの親要素 (offsetParent) の上からの距離) 
                </li>
                
             </ul>
-            <p>Calculating the height and width using offsetHeight and offsetWidth is straightforward,
-               but when calculating an object's left and top position as absolute values, we need
-               to consider the parent element. The calculatePosition function below iterates through
-               all of an element's parent nodes to give a final value. The function takes two parameters;
-               objElement (the name of the element in question), and the offset property (offsetLeft
-               or offsetTop): 
+            <p>offsetHeight や offsetWidth を用いて高さや幅を定めることは簡単である、しかし、オブジェクトの左とトップの位置を絶対配置の値として定める時、親要素を考える必要がある。下記において、calculatePosition 関数は、要素におけるすべての親ノードの最終的な値が決定するまで繰り返されている。その関数は objElement (当該の要素の名前) とオフセットプロパティ (offsetLeft 又は offsetTop ) の二つの引数を取っている。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The Javascript function:</p><pre xml:space="preserve">
+               <h3>例 1</h3>
+               <p>Javascript の関数:</p><pre xml:space="preserve">
 function calculatePosition(objElement, strOffset)
 {
     var iOffset = 0;
@@ -110,8 +97,7 @@ function calculatePosition(objElement, strOffset)
     return iOffset;
 }
 
-</pre><p>The following example illustrates using the function above by aligning an object beneath
-                  a reference object, the same distance from the left: 
+</pre><p>次の事例は、上の関数がオブジェクトを、参照オブジェクトの下、かつ、左から同じ距離に配置するために用いられていることを示している: 
                </p><pre xml:space="preserve">
 // Get a reference object
 var objReference = document.getElementById('refobject');
@@ -124,8 +110,8 @@ objAlign.style.top = calculatePosition(objReference, 'offsetTop') + objReference
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -134,57 +120,61 @@ objAlign.style.top = calculatePosition(objReference, 'offsetTop') + objReference
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>
+
+                  <p>「MSDN: Fix the Box Instead of Thinking Outside It」はリソースがリダイレクトされているが適切に処理されていない。代わりに、MDN の <a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight">HTMLElement.offsetHeight</a>、<a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetWidth">HTMLElement.offsetWidth</a>、<a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetLeft">HTMLElement.offsetLeft</a>、<a href="https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop">HTMLElement.offsetTop</a> をそれぞれ参照できる。
+                  </p>
+
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../css/C12">C12: Using percent for font sizes</a></li>
+               <li><a href="../css/C12">C12: フォントサイズにパーセントを使用する</a></li>
                
-               <li><a href="../css/C14">C14: Using em units for font sizes</a></li>
+               <li><a href="../css/C14">C14: フォントサイズに em 単位を使用する</a></li>
                
-               <li><a href="../css/C17">C17: Scaling form elements which contain text</a></li>
+               <li><a href="../css/C17">C17: テキストを含むフォーム要素を拡大縮小する</a></li>
                
-               <li><a href="../css/C20">C20: Using relative measurements to set column widths so that lines can average 80 characters
-                     or less when the browser is resized</a></li>
+               <li><a href="../css/C20">C20: ブラウザがサイズ変更されるときに、行が平均で 80 字以下になるようなカラムの幅を設定するために、相対長さを使用する</a></li>
                
-               <li><a href="../css/C24">C24: Using percentage values in CSS for container sizes</a></li>
+               <li><a href="../css/C24">C24: コンテナのサイズに CSS のパーセント値を使用する</a></li>
                
-               <li><a href="../general/G206">G206: Providing options within the content to switch to a layout that does not require the
-                     user to scroll horizontally to read a line of text</a></li>
+               <li><a href="../general/G206">G206: 利用者が横スクロールをしなくてもテキストの行を読めるようにするような、レイアウトを切り替えるオプションをコンテンツの中で提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Open a page that is designed to adjust container sizes as text size changes. </li>
+                  <li>テキストサイズの変更とともにテキストコンテナのサイズを調整するように設計されているページを開く。</li>
                   
-                  <li>Increase the text size up to 200% using the browser's text size adjustment (not the
-                     zoom feature). 
+                  <li>ブラウザのテキストサイズ調節を使って 200% のサイズまで大きくする。(ズーム機能は使用しない) 
                   </li>
                   
-                  <li>Examine the text to ensure the text container size is adjusted to accommodate the
-                     size of the text. 
+                  <li>テキストコンテナのサイズがテキストサイズに合わせて調整されることを確認する。 
                   </li>
                   
-                  <li>Ensure that no text is "clipped" or has disappeared as a result of the increase in
-                     text size. 
+                  <li>テキストサイズを大きくした結果、どのテキストも「切り取られ」たり、見えなくなっていたりしないことを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #3 and #4 are true.</li>
+                  <li>#3 及び #4 の結果が真である。</li>
                   
                </ul>
                
