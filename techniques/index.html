@@ -169,23 +169,22 @@
    <h3 id="client-side-script">クライアントサイドスクリプトの達成方法<span class="permalink"><a href="#client-side-script" aria-label="Permalink for Client-Side Script Techniques" title="Permalink for Client-Side Script Techniques"><span>§</span></a></span></h3>
    <ul>
       <li><a href="client-side-script/SCR1">SCR1: Allowing the user to extend the default time limit </a></li>
-      <li><a href="client-side-script/SCR2">SCR2: Using redundant keyboard and mouse event handlers</a></li>
-      <li><a href="client-side-script/SCR14">SCR14: Using scripts to make nonessential alerts optional</a></li>
-      <li><a href="client-side-script/SCR16">SCR16: Providing a script that warns the user a time limit is about to expire</a></li>
-      <li><a href="client-side-script/SCR18">SCR18: Providing client-side validation and alert</a></li>
-      <li><a href="client-side-script/SCR19">SCR19: Using an onchange event on a select element without causing a change of context</a></li>
-      <li><a href="client-side-script/SCR20">SCR20: Using both keyboard and other device-specific functions</a></li>
+      <li><a href="client-side-script/SCR2">SCR2: キーボード及びマウスのイベントハンドラを両方とも使用する</a></li>
+      <li><a href="client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>
+      <li><a href="client-side-script/SCR16">SCR16: 制限時間が切れようとしていることを利用者に警告するスクリプトを提供する</a></li>
+      <li><a href="client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
+      <li><a href="client-side-script/SCR19">SCR19: select 要素の onchange イベントは、コンテキストの変化を引き起こすことのないように使用する</a></li>
+      <li><a href="client-side-script/SCR20">SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</a></li>
       <li><a href="client-side-script/SCR21">SCR21: Using functions of the Document Object Model (DOM) to add content to a page</a></li>
       <li><a href="client-side-script/SCR22">SCR22: Using scripts to control blinking and stop it in five seconds or less</a></li>
       <li><a href="client-side-script/SCR24">SCR24: Using progressive enhancement to open new windows on user request</a></li>
-      <li><a href="client-side-script/SCR26">SCR26: Inserting dynamic content into the Document Object Model immediately following its
-            trigger element</a></li>
-      <li><a href="client-side-script/SCR27">SCR27: Reordering page sections using the Document Object Model</a></li>
+      <li><a href="client-side-script/SCR26">SCR26: 動的なコンテンツを、Document Object Model の、そのトリガーとなる要素の直後に挿入する</a></li>
+      <li><a href="client-side-script/SCR27">SCR27: Document Object Model を用いて、ページ上にある複数のセクションを並び替える</a></li>
       <li><a href="client-side-script/SCR28">SCR28: Using an expandable and collapsible menu to bypass block of content</a></li>
       <li><a href="client-side-script/SCR29">SCR29: Adding keyboard-accessible actions to static HTML elements</a></li>
       <li><a href="client-side-script/SCR30">SCR30: Using scripts to change the link text</a></li>
-      <li><a href="client-side-script/SCR31">SCR31: Using script to change the background color or border of the element with focus</a></li>
-      <li><a href="client-side-script/SCR32">SCR32: Providing client-side validation and adding error text via the DOM</a></li>
+      <li><a href="client-side-script/SCR31">SCR31: フォーカスのある要素の背景色又はボーダーを変更するために、スクリプトを使用する</a></li>
+      <li><a href="client-side-script/SCR32">SCR32: クライアントサイドのバリデーションを提供し、DOM を介してエラーテキストを追加する</a></li>
       <li><a href="client-side-script/SCR33">SCR33: コンテンツをスクロールし、かつそれを一時停止するメカニズムを提供するためにスクリプトを使用する</a></li>
       <li><a href="client-side-script/SCR34">SCR34: Calculating size and position in a way that scales with text size</a></li>
       <li><a href="client-side-script/SCR35">SCR35: Making actions keyboard accessible by using the onclick event of anchors and buttons</a></li>
@@ -297,23 +296,16 @@
       <li><a href="failures/F82">F82: 達成基準 3.3.2 の失敗例 － 電話番号のフィールド一式を視覚的にフォーマットしているが、テキストラベルを含んでいない</a></li>
       <li><a href="failures/F83">F83: 達成基準 1.4.3 及び 1.4.6 の失敗例 － 前景のテキスト (又は文字画像) との十分なコントラストを提供しない背景画像を使用している</a></li>
       <li><a href="failures/F84">F84: 達成基準 2.4.9 の失敗例 － リンクテキストを具体的なテキストに変更するメカニズムなしで、「ここをクリック」又は「続きを読む」などの不明確なリンクを使用している</a></li>
-      <li><a href="failures/F85">F85: Failure of Success Criterion 2.4.3 due to using dialogs or menus that are not adjacent
-            to their trigger control in the sequential navigation order</a></li>
-      <li><a href="failures/F86">F86: Failure of Success Criterion 4.1.2 due to not providing names for each part of a multi-part
-            form field, such as a US telephone number</a></li>
-      <li><a href="failures/F87">F87: Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using
-            :before and :after pseudo-elements and the 'content' property in CSS</a></li>
-      <li><a href="failures/F88">F88: Failure of Success Criterion 1.4.8 due to using text that is justified (aligned to
-            both the left and the right margins)</a></li>
+      <li><a href="failures/F85">F85: 達成基準 2.4.3 の失敗例 － 連続するナビゲーション順序において、トリガーとなるコントロールに隣接していないダイアログ又はメニューを使用している</a></li>
+      <li><a href="failures/F86">F86: 達成基準 4.1.2 の失敗例 － アメリカの電話番号など、複数に分けられたテキストフィールドのそれぞれに対して、名前 (name) が提供されていない</a></li>
+      <li><a href="failures/F87">F87: 達成基準 1.3.1 の失敗例 － CSS の :before 及び :after 疑似要素並びに 'content' プロパティを用いて、非装飾のコンテンツを挿入している</a></li>
+      <li><a href="failures/F88">F88: 達成基準 1.4.8 の失敗例 － 両端揃え (左右両方のマージンを揃える) のテキストを使用している</a></li>
       <li><a href="failures/F89">F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible
             name for an image which is the only content in a link</a></li>
-      <li><a href="failures/F90">F90: Failure of Success Criterion 1.3.1 for incorrectly associating table headers and content
-            via the headers and id attributes</a></li>
-      <li><a href="failures/F91">F91: Failure of Success Criterion 1.3.1 for not correctly marking up table headers</a></li>
-      <li><a href="failures/F92">F92: Failure of Success Criterion 1.3.1 due to the use of role presentation on content
-            which conveys semantic information</a></li>
-      <li><a href="failures/F93">F93: Failure of Success Criterion 1.4.2 for absence of a way to pause or stop an HTML5
-            media element that autoplays</a></li>
+      <li><a href="failures/F90">F90: 達成基準 1.3.1 の失敗例 － headers 属性及び id 属性によってテーブルの見出しとコンテンツが不正確に関連付けられている</a></li>
+      <li><a href="failures/F91">F91: 達成基準 1.3.1 の失敗例 － テーブルの見出しを正しくマークアップしていない</a></li>
+      <li><a href="failures/F92">F92: 達成基準 1.3.1 の失敗例 － セマンティックな情報を伝えるコンテンツに presentation ロールを使用している</a></li>
+      <li><a href="failures/F93">F93: 達成基準 1.4.2 の失敗例 － 自動再生する HTML5 のメディア要素を一時停止又は停止する方法がない</a></li>
       <li><a href="failures/F94">F94: 達成基準 1.4.4 の失敗例 － テキストのサイズ変更のためのビューポート単位を誤って使用している</a></li>
       <li><a href="failures/F95">F95: 達成基準 1.4.13 の失敗例 － ホバーによって表示されるコンテンツがホバーできない</a></li>
       <li><a href="failures/F96">F96: 達成基準 2.5.3 の失敗例 - アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいない</a></li>

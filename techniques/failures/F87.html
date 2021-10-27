@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>F87: Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using
-         :before and :after pseudo-elements and the 'content' property in CSS
+      <title>F87: 達成基準 1.3.1 の失敗例 － CSS の :before 及び :after 疑似要素並びに 'content' プロパティを用いて、非装飾のコンテンツを挿入している
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,81 +11,74 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="F86">Previous Technique: F86</a></li>
-            <li><a href="F88">Next Technique: F88</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="F86">前の達成方法: F86</a></li>
+            <li><a href="F88">次の達成方法: F88</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using
-         :before and :after pseudo-elements and the 'content' property in CSS
+      <h1>達成基準 1.3.1 の失敗例 － CSS の :before 及び :after 疑似要素並びに 'content' プロパティを用いて、非装飾のコンテンツを挿入している
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support CSS.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Failure)</span>.
+            <h2>適用 (対象)</h2>
+            <p>CSS をサポートする全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (失敗)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The CSS :before and :after pseudo-elements specify the location of content before
-               and after an element's document tree content. The content property, in conjunction
-               with these pseudo-elements, specifies what is inserted. For users who need to customize
-               style information in order to view content according to their needs, they may not
-               be able to access the information that is inserted using CSS. Therefore, it is a failure
-               to use these properties to insert non-decorative content.
+            <h2>解説</h2>
+            <p>CSS の :before と :after の疑似要素が、要素のドキュメントツリーコンテンツの前及び後のコンテンツの位置を指定している。そして、content プロパティが、それらの疑似要素とあわせて、何が挿入されるかを指定している。スタイル情報をカスタマイズして自分のニーズに合わせてコンテンツを閲覧している利用者の場合、CSS を用いて挿入されている情報にアクセスできないことがある。そのため、これらのプロパティを使って非装飾的なコンテンツを挿入するのは、不適合となる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>A common way to test this critieria is to disable CSS styles to view whether content
-                  added using pseudo-elements remains visible.
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>この達成基準を検証する一般的な方法は、CSS スタイルを無効にして、疑似要素を使って追加されたコンテンツが可視のままになっているかどうかを確認することである。
+               </p>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Pseudo-elements">MDN の疑似要素 (Pseudo-elements)</a> に示されているように、<code>:after</code> 及び <code>:after</code> 疑似要素について、コロンを 1 個のみ用いるのは古い、互換性のための構文である。コロンを 2 個置くのが現在の正式な構文であることに注意されたい。
                </p>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>In the following example, :before and :after are used to indicate speaker changes
-                  and to insert quotation marks in a screenplay.
+               <h3>例 1</h3>
+               <p>次の例では、:before 及び :after を用いて話者の切り替わりを示し、また脚本内の引用文を挿入している。
                </p>
-               <p>The CSS contains:</p><pre xml:space="preserve"> p.jim:before {	content: "Jim: " }
+               <p>CSS は、次のようになっている。</p><pre xml:space="preserve">p.jim:before {	content: "Jim: " }
 p.mary:before { content: "Mary: " }
 
 q:before { content: open-quote }
-q:after  { content: close-quote }</pre><p>It is used in this excerpt:</p><pre xml:space="preserve"> &lt;p class="jim"&gt;
+q:after  { content: close-quote }</pre><p>これが、次のように使われている。</p><pre xml:space="preserve"> &lt;p class="jim"&gt;
  &lt;q&gt;Do you think he's going to make it?&lt;/q&gt;
 &lt;/p&gt;
 &lt;p class="mary"&gt;
  &lt;q&gt;It's not looking good.&lt;/q&gt;
 &lt;/p&gt;</pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>In this example, :before is used to differentiate facts from opinions.</p>
-               <p>The CSS contains:</p><pre xml:space="preserve"> p.fact:before { content: "Fact: "; font-weight: bold; }
- p.opinion:before { content: "Opinion: "; font-weight: bold; }</pre><p>It is used in this excerpt:</p><pre xml:space="preserve"> &lt;p class="fact"&gt;
+               <h3>例 2</h3>
+               <p>この例では、:before を用いて、意見と事実の違いを区別している。</p>
+               <p>CSS は、次のようになっている。</p><pre xml:space="preserve"> p.fact:before { content: "Fact: "; font-weight: bold; }
+ p.opinion:before { content: "Opinion: "; font-weight: bold; }</pre><p>これが、次のように使われている。</p><pre xml:space="preserve">&lt;p class="fact"&gt;
  The defendant was at the scene of the crime when it occurred. 
 &lt;/p&gt;
 &lt;p class="opinion"&gt;
@@ -94,51 +86,49 @@ q:after  { content: close-quote }</pre><p>It is used in this excerpt:</p><pre xm
 &lt;/p&gt;</pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
-            <ul>
-               
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
+            <ul>               
                <li>
-                  <a href="https://www.w3.org/TR/CSS21/generate.html">CSS 2.1: Generated content, automatic numbering, and lists</a>
-                  
-               </li>
-               
+                  <a href="https://www.w3.org/TR/CSS21/generate.html">CSS 2.1: Generated content, automatic numbering, and lists</a>     
+               </li>               
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <p><a href="https://www.w3.org/TR/selectors-3/#gen-content">Selectors Level 3 §7.4. The ::before and ::after pseudo-elements</a> も参照のこと。この仕様の記述が、「CSS 2.1: Generated content, automatic numbering, and lists」に取って代わることに注意されたい。
+               </p>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="F3">F3: Failure of Success Criterion 1.1.1 due to using CSS to include images that convey
-                     important information</a></li>
+               <li><a href="F3">F3: 達成基準 1.1.1 の失敗例 － 重要な情報を伝える画像を付加するために、CSS を使用している</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each instance of content inserted through use of the :before and :after pseudo-elements
-                  and the content property:
+               <p>疑似要素の :before 及び :after、並びに content プロパティを用いて挿入されたコンテンツの各インスタンスについて:
                </p>
                
                <ol>
                   
-                  <li>Check that non-decorative information presented by the generated content is available
-                     when styles are overridden.
+                  <li>生成されたコンテンツによって提示される非装飾的な情報が、スタイルがオーバーライドされた場合であっても、利用可能であることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>If check #1 is false, then this failure condition applies and the content fails this
-                     Success Criterion.
+                  <li>#1 の結果が偽である場合、この失敗例の条件は適用され、コンテンツは達成基準の失敗となる。
                   </li>
                   
                </ul>
