@@ -62,8 +62,8 @@
 &lt;script type="text/javascript" src="popup.js"&gt;&lt;/script&gt;
 …
 &lt;a href="help.html" id="newwin"&gt;Show Help&lt;/a&gt;</pre><p>スクリプト:</p><pre xml:space="preserve"> 
-// ブラウザによるイベント登録のサポートは不十分だが
-// 従来のイベントモデルを用いる
+// Use traditional event model whilst support for event registration
+// amongst browsers is poor.
 window.onload = addHandlers;
 
 function addHandlers()
@@ -74,8 +74,8 @@ function addHandlers()
   {
     objAnchor.firstChild.data = objAnchor.firstChild.data + ' (opens in a new window)';
     objAnchor.onclick = function(event){return launchWindow(this, event);}
-    // UAAG ではユーザエージェントにデバイス非依存な方法でイベントを処理することを
-    // 要求しているが、そうしないブラウザが多いのでキーボードイベントを追加する
+    // UAAG requires that user agents handle events in a device-independent manner
+    // but only some browsers do this, so add keyboard event to be sure
     objAnchor.onkeypress = function(event){return launchWindow(this, event);}
   }
 }
@@ -84,8 +84,8 @@ function launchWindow(objAnchor, objEvent)
 {
   var iKeyCode, bSuccess=false;
 
-  // キーボードからのイベントである場合、利用者がリンクをリクエストしたときだけ
-  // 新しいウィンドウを開くようにする (リターン又はスペース)
+  // If the event is from a keyboard, we only want to open the
+  // new window if the user requested the link (return or space)
   if (objEvent &amp;&amp; objEvent.type == 'keypress')
   {
     if (objEvent.keyCode)
@@ -93,20 +93,20 @@ function launchWindow(objAnchor, objEvent)
     else if (objEvent.which)
       iKeyCode = objEvent.which;
 
-    // キャリッジリターン又はスペースではない場合、ユーザエージェントが
-    // アクションの処理を継続するようにtrueを返す
+    // If not carriage return or space, return true so that the user agent
+    // continues to process the action
     if (iKeyCode != 13 &amp;&amp; iKeyCode != 32)
       return true;
   }
 
   bSuccess = window.open(objAnchor.href);
 
-  // ウィンドウが開かなかった場合、ブラウザには同じウィンドウで開くという
-  // デフォルトのアクションを継続させる
+  // If the window did not open, allow the browser to continue the default
+  // action of opening in the same window
   if (!bSuccess)
     return true;
 
-  // ウィンドウが開いたら、ブラウザによる処理をそこで止める
+  // The window was opened, so stop the browser processing further
   return false;
 }</pre></section>
          </section>
