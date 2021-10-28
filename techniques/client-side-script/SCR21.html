@@ -56,7 +56,7 @@
             <div class="note">
               <div role="heading" class="note-title marker" aria-level="3">訳注 1:</div>
               <div>
-                <p><a href="https://www.w3.org/TR/html52/webappapis.html#documentwrite">HTML 5.2§7.4.3. document.write()</a> の Warning でも述べられているように、たとえ HTML (MIME タイプ text/html) であっても <code>document.write()</code> の使用は勧められていない。</p>
+                <p><a href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()">HTML §8.4.3 document.write()</a> の Warning でも述べられているように、たとえ HTML (MIME タイプ text/html) であっても <code>document.write()</code> の使用は勧められていない。</p>
               </div>
             </div>
             <div class="note">
@@ -85,11 +85,11 @@
 window.onload = initialise;
 function initialise()
 {
-  // 標準に準拠したユーザエージェントが対象
+  // Ensure we're working with a relatively standards compliant user agent
   if (!document.getElementById || !document.createElement || !document.createTextNode)
     return;
 
-  // 標準に準拠したユーザエージェントが対象
+  // Add an event handler for the number form
   var objForm = document.getElementById('numberform');
   objForm.onsubmit= function(){return validateNumbers(this);};
 }
@@ -97,10 +97,10 @@ function initialise()
                </p><pre xml:space="preserve">
 function validateNumbers(objForm)
 {
-  // フィールドを検証
+  // Test whether fields are valid
   var bFirst = isNumber(document.getElementById('num1').value);
   var bSecond = isNumber(document.getElementById('num2').value);
-// 問題がある場合、エラーを表示
+// If not valid, display errors
   if (!bFirst || !bSecond)
   {
     var objExisting = document.getElementById('validationerrors');
@@ -111,9 +111,9 @@ function validateNumbers(objForm)
     var objAnchor = document.createElement('a');
     var strID = 'firsterror';
     var strError;
-    // 見出し要素にリンクを含めることによって、スクリーンリーダーは
-    // フォーカスを置くことができる － そのリンク先はエラー一覧の中で 
-    // 一番最初のエラー項目とする
+    // The heading element will contain a link so that screen readers
+    // can use it to place focus - the destination for the link is 
+    // the first error contained in a list
     objAnchor.appendChild(document.createTextNode('Errors in Submission'));
     objAnchor.setAttribute('href', '#firsterror');
     objTitle.appendChild(objAnchor);
@@ -121,7 +121,7 @@ function validateNumbers(objForm)
     objNew.setAttribute('id', 'validationerrors');
     objNew.appendChild(objTitle);
     objNew.appendChild(objParagraph);
-    // 発見したエラーすべてをエラー一覧に追加
+    // Add each error found to the list of errors
     if (!bFirst)
     {
       strError = 'Please provide a numeric value for the first number';
@@ -134,10 +134,10 @@ function validateNumbers(objForm)
       objList.appendChild(addError(strError, '#num2', objForm, strID));
       strID = '';
     }
-    // エラー情報に一覧を追加
+    // Add the list to the error information
     objNew.appendChild(objList);
-    // 既存のエラーがあった場合、新規のエラーと置き換える
-    // あるいは、新規のエラーをフォームの先頭に追加する
+    // If there were existing errors, replace them with the new lot,
+    // otherwise add the new errors to the start of the form
     if (objExisting)
       objExisting.parentNode.replaceChild(objNew, objExisting);
     else
@@ -145,25 +145,25 @@ function validateNumbers(objForm)
       var objPosition = objForm.firstChild;
       objForm.insertBefore(objNew, objPosition);
     }
-    // フォーカスを見出しにあるアンカーに置いて、スクリーンリーダーに
-    // 対してエラーがあることを警告する
+    // Place focus on the anchor in the heading to alert
+    // screen readers that the submission is in error
     objAnchor.focus();
-    // フォームを送信しない
+    // Do not submit the form
     objForm.submitAllowed = false;
     return false;
   }
   return true;
 }
 
-// 数字を検証する関数
+// Function to validate a number
 function isNumber(strValue)
 {
   return (!isNaN(strValue) &amp;&amp; strValue.replace(/^\s+|\s+$/, '') !== '');
 } 
 </pre><p>以下は、エラーメッセージを作成して、関連するフォームのフィールドにフォーカスさせるための補助関数である。
                </p><pre xml:space="preserve">
-// エラー内容を説明する、エラーのフォームフィールドへのリンクの
-// リスト項目を作成する関数
+// Function to create a list item containing a link describing the error
+// that points to the appropriate form field
 function addError(strError, strFragment, objForm, strID)
 {
   var objAnchor = document.createElement('a');
@@ -172,21 +172,21 @@ function addError(strError, strFragment, objForm, strID)
   objAnchor.setAttribute('href', strFragment);
   objAnchor.onclick = function(event){return focusFormField(this, event, objForm);};
   objAnchor.onkeypress = function(event){return focusFormField(this, event, objForm);};
-  // strIDに値がある場合、これがリストで一番目のエラーとなる
+  // If strID has a value, this is the first error in the list
   if (strID.length &gt; 0)
     objAnchor.setAttribute('id', strID);
   objListItem.appendChild(objAnchor);
   return objListItem;
 }
 
-// エラーのフォームフィールドにフォーカスを置く関数
+// Function to place focus to the form field in error
 function focusFormField(objAnchor, objEvent, objForm)
 {
-  // キーボードナビゲーションを可能にする
+  // Allow keyboard navigation over links
   if (objEvent &amp;&amp; objEvent.type == 'keypress')
     if (objEvent.keyCode != 13 &amp;&amp; objEvent.keyCode != 32)
       return true;
-  // フォーカスをフォームコントロールに設定する
+  // set focus to the form control
   var strFormField = objAnchor.href.match(/[^#]\w*$/);
   objForm[strFormField].focus();
   return false;
@@ -254,7 +254,7 @@ function focusFormField(objAnchor, objEvent, objForm)
                <div class="note">
                  <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
                  <div>
-                   <p><a href="#SCR21-description">解説</a>の訳注で示した <code>document.write()</code>、<code>innerHTML</code> に加えて、<code>outerHTML</code> は 2018 年現在、<a href="https://w3c.github.io/DOM-Parsing/#dfn-outerhtml">DOM Parsing and Serialization</a> 仕様で定義されており、<code>innerText</code> は <a href="https://www.w3.org/TR/html52/dom.html#the-innertext-idl-attribute">HTML 5.2§3.2.6. The innerText IDL attribute</a> で定義されている。したがって、手順 1 に示されるものに関しては、<code>outerText</code> のみが非標準である。<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText">HTMLElement.outerText - Web APIs | MDN</a> も参照のこと。</p>
+                   <p><a href="#SCR21-description">解説</a>の訳注で示した <code>document.write()</code> 及び <code>innerHTML</code> に加えて、<code>outerHTML</code> は 2021 年現在 <a href="https://w3c.github.io/DOM-Parsing/#dfn-outerhtml">DOM Parsing and Serialization</a> 仕様で定義されている。また、<code>innerText</code> 及び <code>outerText</code> は <a href="https://html.spec.whatwg.org/multipage/dom.html#the-innertext-idl-attribute">HTML§3.2.7 The innerText and outerText properties</a> で定義されている。</p>
                  </div>
                </div>
             </section>
