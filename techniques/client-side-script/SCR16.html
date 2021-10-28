@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR16: Providing a script that warns the user a time limit is about to expire</title>
+      <title>SCR16: 制限時間が切れようとしていることを利用者に警告するスクリプトを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,76 +10,56 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR14">Previous Technique: SCR14</a></li>
-            <li><a href="SCR18">Next Technique: SCR18</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR14">前の達成方法: SCR14</a></li>
+            <li><a href="SCR18">次の達成方法: SCR18</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a script that warns the user a time limit is about to expire</h1>
+      <h1>制限時間が切れようとしていることを利用者に警告するスクリプトを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>
-               Time limits exist that are controlled by script.
+               スクリプトによって制御された制限時間
                
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Sufficient, together with <a href="../client-side-script/SCR1">SCR1: Allowing the user to extend the default time limit </a>)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">達成基準 2.2.1: タイミング調整可能</a> (十分、<a href="../client-side-script/SCR1">SCR1: 利用者が初期設定の制限時間を延長できるようにする</a>とともに)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
+            <h2>解説</h2>
             <p>
-               The objective of this technique is to notify users that they are almost out of time
-               to complete an interaction. When scripts provide functionality that has time limits,
-               the script can include functionality to warn the user of imminent time limits and
-               provide a mechanism to request more time. 20 seconds or more before the time limit
-               occurs, the script provides a confirm dialog that states that a time limit is imminent
-               and asks if the user needs more time. If the user answers "yes" then the time limit
-               is reset. If the user answers "no" or does not respond, the time limit is allowed
-               to expire.
+               Tこの達成方法の目的は、インタラクションを完了させるための時間がほとんど無いことを利用者に通知することである。スクリプトによって、時間制限のある機能が提供される場合には、そのスクリプトは利用者に制限時間が迫っていることを警告する機能を含み、より多くの時間を要求するためのメカニズムを提供することができる。制限時間の 20 秒以上前に、そのスクリプトは制限時間が迫っている事を伝え、利用者がさらに時間を必要とするかどうかを尋ねる確認ダイアログを提供する。もし利用者の答えが「はい」の場合、制限時間をリセットする。もし利用者の答えが「いいえ」又は返答がない場合、制限時間の終了を許可する。
                
             </p>
             <p>
-               This technique involves time limits set with the window.setTimeout() method. If, for
-               example, the time limit is set to expire in 60 seconds, you can set the time limit
-               for 40 seconds and provide the confirm dialog. When the confirm dialog appears, a
-               new time limit is set for the remaining 20 seconds. Upon expiry of the "grace period
-               time limit" the action that would have been taken at the expiry of the 60 second time
-               limit in the original design is taken.
+               この達成方法は、window.setTimeout() メソッドで設定された制限時間に関係する。例えば、60 秒で制限時間が切れる設定の場合、制限時間を 40 秒に設定して、確認ダイアログを表示させることができる。確認ダイアログが表示された時、新しく時間制限が残り 20 秒に設定される。「制限時間の猶予期間」の満了時に、当初の設計では 60 秒の制限時間の満了の時にとられていたであろう処置がとられる。
                
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
+               <h3>例 1</h3>
                <p>
-                  A page of stock market quotes uses script to refresh the page every five minutes in
-                  order to ensure the latest statistics remain available. 20 seconds before the five
-                  minute period expires, a confirm dialog appears asking if the user needs more time
-                  before the page refreshes. This allows the user to be aware of the impending refresh
-                  and to avoid it if desired.
+                  ある株式市場相場ページは最新の統計を利用可能な状態を確保するため 5 分毎にページを更新するスクリプトを使用している。その 5 分間が終了する 20 秒前に、確認ダイアログが表示され、利用者がページを更新する前にもっと時間が必要かどうかを尋ねる。これにより、利用者に更新が差し迫っていることを認識させるとともに、もし希望するならそれを回避できるようにする。
                   
                </p><pre xml:space="preserve">
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -120,32 +100,31 @@ timeControl();
 </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="SCR1">SCR1: Allowing the user to extend the default time limit </a></li>
+               <li><a href="SCR1">SCR1: 利用者が初期設定の制限時間を延長できるようにする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <p>
-                  On a Web page that has a time limit controlled by a script: 
+                  スクリプトによって時間制限を制御されているウェブページにおいて: 
                </p>
                
                <ol>
                   
                   <li>
-                     load the page and start a timer that is 20 seconds less than the time limit.
+                    ページを読み込み、制限時間より 20 秒少ないタイマーを開始する。
                      
                   </li>
                   
                   <li>
-                     when the timer expires, check that a confirmation dialog is displayed warning of the
-                     impending time limit.
+                     タイマーが切れるとき、間近に迫った時間制限を警告する確認ダイアログが表示されることを確認する。
                      
                   </li>
                   
@@ -153,12 +132,12 @@ timeControl();
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
                   <li>
-                     #2 is true.
+                     #2 の結果が真である。
                      
                   </li>
                   
