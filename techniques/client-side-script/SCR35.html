@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR35: Making actions keyboard accessible by using the onclick event of anchors and buttons</title>
+      <title>SCR35: アンカー及びボタンの onclick イベントを用いて、アクションをキーボード操作可能にする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,74 +10,53 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR34">Previous Technique: SCR34</a></li>
-            <li><a href="SCR36">Next Technique: SCR36</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR34">前の達成方法: SCR34</a></li>
+            <li><a href="SCR36">次の達成方法: SCR36</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Making actions keyboard accessible by using the onclick event of anchors and buttons</h1>
+      <h1>アンカー及びボタンの onclick イベントを用いて、アクションをキーボード操作可能にする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Script used with HTML or XHTML.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet <a href="../general/G90">G90: Providing keyboard-triggered event handlers</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>HTML 又は XHTML で使用されるスクリプト</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (<a href="../general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to demonstrate how to invoke a scripting function
-               in a way that is keyboard accessible by attaching it to a keyboard-accessible control.
-               In order to ensure that scripted actions can be invoked from the keyboard, they are
-               associated with "natively actionable" HTML elements (links and buttons). The onclick
-               event of these elements is device independent. While "onclick" sounds like it is tied
-               to the mouse, the onclick event is actually mapped to the default action of a link
-               or button. The default action occurs when the user clicks the element with a mouse,
-               but it also occurs when the user focuses the element and hits enter or space, and
-               when the element is triggered via the accessibility API.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、キーボードでアクセス可能なコントロールに加えることで、キーボードでアクセス可能になるスクリプトの関数を呼び出す方法について説明することである。スクリプトによる動きが確実にキーボードから呼び出されるように、それらの動きは「ネイティブに実行可能な」HTML 要素 (リンク及びボタン) に関連付けられている。これらの要素の onclick イベントは機器に依存していない。「onclick」という表現はマウスに関連付けられているようにも思えるが、onclick イベントは実際のところ、リンク又はボタンのデフォルトの動きにマッピングされている。デフォルトの動きは、利用者がマウスで要素をクリックしたときに発生するが、要素にフォーカスして Enter キーやスペースキーを押したとき及び、他のアクセシビリティ API によってトリガーされたときにも発生する。
             </p>
-            <p>This technique relies on client-side scripting. However, it is beneficial to provide
-               a backup implementation or explanation for environments in which scripting is not
-               available.  When using anchor elements to invoke a JavaScript action, a backup implementation
-               or explanation is provided via the <code class="att">href</code> attribute. When using buttons, it is provided via a form post. 
+            <p>この達成方法はクライアントサイドスクリプトに依存しているが、スクリプトが利用できない環境に対する、代替としての実装又は説明として意味がある。アンカー要素を使って JavaScript によるアクションを呼び出すとき、代替としての実装又は説明は <code class="att">href</code> 属性によって提供される。ボタンを使用するときは、フォームの送信によって提供される。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Link that runs a script and has no fallback for non-scripted browsers. This approach
-                  should only be used when script is relied upon as an Accessibility Supported Technology.
+               <h3>例 1</h3>
+               <p>スクリプトを実行するリンクで、スクリプトをサポートしていないブラウザに対して代替手段を持たないもの。この方法は、スクリプトがアクセシビリティ サポーテッドな技術に依存しているときのみに使用されるべきである。
                </p>
-               <p>Even though we do not want to navigate from this link, we must use the href attribute
-                  on the <code class="el">a</code> element in order to make this a true link and get the proper eventing. In this case,
-                  we're using "#" as the link target, but you could use anything. This link will never
-                  be navigated.
+               <p>このリンクからナビゲートしたくないのではあるが、これを実際のリンクにし、適切なイベントを得るために、<code class="el">a</code> 要素上の href 属性を使わなければならない。この事例では、我々は「#」をリンクターゲットとして使用しているが、何を使用しても良い。このリンクからナビゲートされることはない。
                </p>
-               <p>The "return false;" at the end of the doStuff() event handling function tells the
-                  browser not to navigate to the URI. Without it, the page would refresh after the script
-                  ran. 
+               <p>doStuff() イベントハンドリング関数の最後にある「return false;」は、ブラウザにその URI へ移動しないよう指示している。それがなければ、ページはスクリプト実行後に再読み込みされることになる。 
                </p><pre xml:space="preserve">
 &lt;script&gt; 
 function doStuff()
@@ -89,15 +68,8 @@ function doStuff()
 &lt;a href="#" onclick="return doStuff();"&gt;do stuff&lt;/a&gt;
 </pre></section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>Link that runs script, but navigates to another page when script is not available.
-                  This approach can be used to create sites that don't rely on script, if and only if
-                  the navigation target provides the same functionality as the script. This example
-                  is identical to the example 1, except that its href is now set to a real page, dostuff.htm.
-                  Dostuff.htm must provide the same functionality as the script.The "return false;"
-                  at the end of the doStuff() event handling function tells the browser not to navigate
-                  to the URI. Without it, the browser would navigate to dostuff.htm after the script
-                  ran.
+               <h3>例 2</h3>
+               <p>スクリプトを実行するリンクであるが、スクリプトが実行可能でなければ他のページに移動させるもの。この方法はスクリプトに依存しないサイトで、移動先がスクリプトと同じ機能を提供している場合にのみ使用される。この例は、href が実在するページである dostuff.htm に設定されていること以外は、例 1と同じである。dostuff.htmでは、スクリプトと同じ機能を提供しなければならない。doStuff() イベントハンドリング関数の最後にある「return false;」が、ブラウザにその URI へ移動しないように指示している。そうでなければ、ブラウザはスクリプト実行後に dostuff.htm に移動してしまう。
                </p><pre xml:space="preserve">
 &lt;script&gt; 
 function doStuff() 
@@ -107,15 +79,12 @@ function doStuff()
  }
 &lt;/script&gt;
 &lt;a href="dostuff.htm" onclick="return doStuff();"&gt;do stuff&lt;/a&gt;
-</pre><p class="working-example">A working example of this code is available. Refer to <a href="../../working-examples/script-action-links/">Creating Action Links using JavaScript</a>.
+</pre><p class="working-example">このコードの実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-action-links/">JavaScriptを用いてアクションリンクを作成</a>
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>Button that runs a script and falls back to a form post for users without script.
-                  This approach can be used by sites that do not rely on script, if and only if the
-                  form post provides the same functionality as the script. The onsubmit="return false;"
-                  prevents the form from submitting. 
+               <h3>例 3</h3>
+               <p>スクリプトを実行して、かつスクリプトを使わない利用者のためにフォーム送信を代替とするボタン。このアプローチは、スクリプトに依存しないサイトで、フォームの送信がスクリプトと同じ機能を提供できる場合にのみ使用できる。onsubmit="return false;" はフォームから送信されるのを防ぐ。
                </p><pre xml:space="preserve">
 &lt;script&gt;
   function doStuff()
@@ -126,14 +95,12 @@ function doStuff()
 &lt;form action="doStuff.aspx" onsubmit="return false;"&gt;
  &lt;input type="submit" value="Do Stuff" onclick="doStuff();" /&gt;
 &lt;/form&gt;
-</pre><p class="working-example">A working example of this code is available. Refer to <a href="../../working-examples/script-action-buttons/">Creating Action Buttons using JavaScript</a>.
+</pre><p class="working-example">このコードの実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-action-buttons/">JavaScript を用いてアクションボタンを作成</a>
                </p>
             </section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>Button that runs a script, implemented with input type="image". Note that an alt attribute
-                  must be added to the <code class="el">input</code> to provide a text equivalent for the image. This approach should only be used when
-                  script is relied upon. 
+               <h3>例 4</h3>
+               <p>スクリプトを実行するボタンで、input type="image" を用いて実装されているもの。<code class="el">input</code> には、画像と等価のテキストを提供するために、タイトル属性を追加しなければならないことに注意する。この方法は、スクリプトに依存しているときのみに利用すべきである。 
                </p><pre xml:space="preserve">
 &lt;script&gt;
   function doStuff()
@@ -145,18 +112,15 @@ function doStuff()
 &lt;input  type="image"  src="stuff.gif"  alt="Do stuff"  onclick="return doStuff();" /&gt;
 </pre></section>
             <section class="example" id="example-5">
-               <h3>Example 5</h3>
-               <p>Button that runs a script, implemented with input type="submit", input type="reset"
-                  or input type="button". This approach should only be used when script is relied upon.
+               <h3>例 5</h3>
+               <p>スクリプトを実行するボタンで、input type="submit"、input type="reset" 又は input type="button" のいずれかを用いて実装されているもの。この方法は、スクリプトに依存しているときのみに利用すべきである。
                   
                </p><pre xml:space="preserve">
 &lt;input type="submit" onclick="return doStuff();" value=”Do Stuff” /&gt;
 </pre></section>
             <section class="example" id="example-6">
-               <h3>Example 6</h3>
-               <p>Button that runs a script, implemented with <code class="el">button</code>…<code class="el">/button</code>. This is valuable when you want more control over the look of your button. In this
-                  particular example, the button contains both an icon and some text. This approach
-                  should only be used when script is relied upon. 
+               <h3>例 6</h3>
+               <p>スクリプトを実行するボタンで、<code class="el">button</code>…<code class="el">/button</code> を用いて実装されているもの。これは、ボタンの見た目をより詳細に調整したいときに有効である。この特定の例では、ボタンはアイコンとテキストの両方を含んでいる。この方法は、スクリプトに依存しているときのみに利用すべきである。 
                </p><pre xml:space="preserve">
 &lt;button onclick="return doStuff();"&gt;
  &lt;img src="stuff.gif" alt="stuff icon"&gt;
@@ -165,8 +129,8 @@ function doStuff()
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -190,59 +154,71 @@ function doStuff()
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 1</div>
+               <div>
+                  <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://html.spec.whatwg.org/multipage/scripting.html#semantics-scripting">HTML Standard§4.12. Scripting</a>、<a href="https://html.spec.whatwg.org/multipage/forms.html#sec-forms">HTML Standard§4.10. Forms</a>、<a href="https://html.spec.whatwg.org/multipage/links.html#links">HTML Standard§4.6. Links</a>を代わりに参照できる。
+                  </p>
+               </div>
+            </div>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注 2</div>
+               <div>
+                  <p>DOM 仕様は現在、WHATWG で策定されている。<a href="https://dom.spec.whatwg.org/">DOM Standard</a> も参照のこと。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G90">G90: Providing keyboard-triggered event handlers</a></li>
+               <li><a href="../general/G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a></li>
                
-               <li><a href="../general/G108">G108: Using markup features to expose the name and role, allow user-settable properties
-                     to be directly set, and provide notification of changes</a></li>
+               <li><a href="../general/G108">G108: 名前 (name) 及び役割 (role) を公開し、利用者が設定可能なプロパティを直接設定可能にして、変化の通知を提供するために、マークアップを用いる</a></li>
                
-               <li><a href="../html/H91">H91: Using HTML form controls and links</a></li>
+               <li><a href="../html/H91">H91: HTML のフォームコントロール及びリンクを使用する</a></li>
                
-               <li><a href="SCR20">SCR20: Using both keyboard and other device-specific functions</a></li>
+               <li><a href="SCR20">SCR20: キーボードとその他のデバイス固有の機能を両方とも使用する</a></li>
                
-               <li><a href="SCR24">SCR24: Using progressive enhancement to open new windows on user request</a></li>
+               <li><a href="SCR24">SCR24: 利用者の要求に応じて新しいウィンドウを開くために、プログレッシブエンハンスメントを使用する</a></li>
                
-               <li><a href="../failures/F42">F42: Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links</a></li>
+               <li><a href="../failures/F42">F42: 達成基準 1.3.1、達成基準 2.1.1、達成基準 2.1.3、又は達成基準 4.1.2 の失敗例 － リンクをエミュレートしている</a></li>
                
-               <li><a href="../failures/F59">F59: Failure of Success Criterion 4.1.2 due to using script to make div or span a user
-                     interface control in HTML without providing a role for the control</a></li>
+               <li><a href="../failures/F59">F59: 達成基準 4.1.2 の失敗例 － コントロールに役割 (role) を提供せずに、HTML の div 要素又は span 要素をユーザインタフェースコントロールにするために、スクリプトを用いている</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For all script actions associated with <code class="el">a</code>, <code class="el">button</code>, or <code class="el">input</code> elements: 
+               <p><code class="el">a</code>、<code class="el">button</code>、又は <code class="el">input</code> 要素と関連付けられたすべてのスクリプトのアクションについて: 
                </p>
                
                <ol>
                   
                   <li>
                      
-                     <p>In a user agent that supports Scripting </p>
+                     <p>スクリプトをサポートするユーザエージェントで:</p>
                      
                      <ul>
                         
-                        <li>Click on the control with the mouse. </li>
+                        <li>マウスを用い、コントロールをクリックする。</li>
                         
-                        <li>Check that the scripting action executes properly. </li>
+                        <li>スクリプトのアクションが適切に実行されることを確認する。</li>
                         
-                        <li>If the control is an anchor element, check that the URI in the <code class="att">href</code> attribute of the anchor element is not invoked. 
+                        <li>コントロールがアンカー要素である場合、アンカー要素の <code class="att">href</code> 属性の URI が呼び出されないことを確認する。 
                         </li>
                         
-                        <li>Check that it is possible to navigate to and give focus to the control via the keyboard.</li>
+                        <li>キーボードでコントロールに移動して、フォーカスを与えることが可能であることを確認する。</li>
                         
-                        <li>Set keyboard focus to the control.</li>
+                        <li>キーボードのフォーカスをコントロールに設定する。</li>
                         
-                        <li>Check that pressing ENTER invokes the scripting action. </li>
+                        <li>Enter キーを押すことで、スクリプトのアクションを呼び出すことを確認する。</li>
                         
-                        <li>If the control is an anchor element, check that the URI in the <code class="att">href</code> attribute of the anchor element is not invoked. 
+                        <li>コントロールがアンカー要素である場合、アンカー要素の <code class="att">href</code> 属性の URI が呼び出されないことを確認する。
                         </li>
                         
                      </ul>
@@ -251,21 +227,20 @@ function doStuff()
                   
                   <li>
                      
-                     <p>In a user agent that does not support Scripting </p>
+                     <p>スクリプトをサポートしていないユーザエージェントで:</p>
                      
                      <ul>
                         
-                        <li>Click on the control with the mouse.</li>
+                        <li>マウスでコントロールをクリックする。</li>
                         
-                        <li>If the control is an anchor element, check that the URI in the <code class="att">href</code> attribute of the anchor element is invoked. 
+                        <li>コントロールがアンカー要素である場合、アンカー要素の <code class="att">href</code> 属性の URI が呼び出されることを確認する。 
                         </li>
                         
-                        <li>Check that it is possible to navigate to and give focus to the control via the keyboard.</li>
+                        <li>キーボードでコントロールに移動して、フォーカスを与えることが可能であることを確認する。</li>
                         
-                        <li>Set keyboard focus to the control.</li>
+                        <li>キーボードのフォーカスをコントロールに設定する。</li>
                         
-                        <li>If the control is an anchor element, check that pressing ENTER invokes the URI of
-                           the anchor element's <code class="att">href</code> attribute.
+                        <li>コントロールがアンカー要素である場合、Enter キーを押すことでアンカー要素の <code class="att">href</code> 属性の URI が呼び出されることを確認する。
                         </li>
                         
                      </ul>
@@ -276,11 +251,11 @@ function doStuff()
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the above checks are true. </li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
