@@ -54,20 +54,20 @@
 &lt;div id="blink1" class="highlight"&gt;New item!&lt;/div&gt;
 &lt;script type="text/javascript"&gt;
 &lt;!--
-// 点滅「on」状態
+// blink "on" state
 function show()
 {
 	if (document.getElementById)
 	document.getElementById("blink1").style.visibility = "visible";
 }
-// 点滅「off」状態
+// blink "off" state
 function hide()
 {
 	if (document.getElementById)
 	document.getElementById("blink1").style.visibility = "hidden";
 }
-// 点滅効果を出すために「on」と「off」の状態を450ミリ秒ごとに切り替え
-// 4500ミリ秒後に終了 (5秒未満)
+// toggle "on" and "off" states every 450 ms to achieve a blink effect
+// end after 4500 ms (less than five seconds)
 for(var i=900; i &lt; 4500; i=i+900)
 {
 	setTimeout("hide()",i);
@@ -76,7 +76,7 @@ for(var i=900; i &lt; 4500; i=i+900)
 --&gt;
 &lt;/script&gt;
 ...
-            </pre><p class="working-example">このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR22/ex1.html">点滅をコントロールするために、スクリプトを使用する</a>
+            </pre><p class="working-example">このコードの実装サンプル: <a href="hhttps://www.w3.org/WAI/WCAG21/working-examples/script-control-blink/">点滅をコントロールするために、スクリプトを使用する</a>
                </p>
             </section>
          </section>
