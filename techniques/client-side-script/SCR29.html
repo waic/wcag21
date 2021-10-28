@@ -67,38 +67,38 @@
                </p><pre xml:space="preserve">
 ...
 &lt;script type="text/javascript"&gt;
- // これはアクションを実行する関数である。このシンプルな例はメッセージを開閉する。
+ // this is the function to perform the action. This simple example toggles a message.
  function doSomething(event) {
    var msg=document.getElementById("message");
    msg.style.display = msg.style.display=="none" ? "" : "none";
    //return false from the function to make certain that the href of the link does not get invoked
    return false;
  }
- // これは Enter キーが押された際にアクションが実行される関数である。
+ // this is the function to perform the action when the Enter key has been pressed.
  function doSomethingOnEnter(event) {
    var key = 0;
-   // window.event 又はイベントオブジェクトが使用されているかに応じて押されたキーを判定する。
+   // Determine the key pressed, depending on whether window.event or the event object is in use
    if (window.event) {
      key = window.event.keyCode;
    } else if (event) {
      key = event.keyCode;
    }
-   // Enter キー又はスペースキーが押されたか？
+   // Was the Enter or Space key pressed?
    if (key == 13 || key == 32) {
      return doSomething(event);
    } 
-   // イベントが処理されなかったため、trueを返す
+   // The event has not been handled, so return true
    return true;
  }
- // このsetUpActions()関数は存在するdiv要素にonclick及びonkeyupイベントハンドラを設定するために呼び出されなければならない。
- // この関数はid="active"の付与されたdiv要素がDOMに読み込まれた後に呼び出されなければならない。
- // この例では、setUpActions()関数はbody要素のonloadイベントから呼び出されている。
+ // This setUpActions() function must be called to set the onclick and onkeyup event handlers onto the existing
+ // div element. This function must be called after the div element with id="active" has been loaded into the DOM.
+ // In this example the setUpActions() function is called from the onload event for the body element.
  function setUpActions() {
-   // divオブジェクトを取得する
+   // get the div object
    var active=document.getElementById("active");
-   // onclickハンドラをオブジェクトに割り当てる
+   // assign the onclick handler to the object.
    active.onclick=doSomething;
-   // onkeyupハンドラをオブジェクトに割り当てる
+   // assign the onkeyup handler to the object.
    active.onkeyup=doSomethingOnEnter;
  }
  &lt;/script&gt;
@@ -112,7 +112,7 @@
  &lt;div id="message"&gt;Hello, world!&lt;/div&gt;
  &lt;/div&gt;
 ...
-</pre><p class="working-example">このコードの実装例: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR29/action-on-div.html">JavaScriptによる制御を用いてdiv要素を作成する。</a>
+</pre><p class="working-example">このコードの実装例: <a href="https://www.w3.org/WAI/WCAG21/working-examples/script-action-on-div/">JavaScriptによる制御を用いてdiv要素を作成する。</a>
                </p>
             </section>
          </section>
@@ -151,7 +151,7 @@
             <div class="note">
               <div role="heading" class="note-title marker" aria-level="3">訳注 1:</div>
               <div>
-                <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://www.w3.org/TR/html52/semantics-scripting.html#semantics-scripting">HTML 5.2§4.12. Scripting</a>、<a href="https://www.w3.org/TR/html52/editing.html#the-tabindex-attribute">HTML 5.2§5.4.3. The tabindex attribute</a> を代わりに参照できる。</p>
+                <p>HTML 4.01 は Superseded Recommendation としてマークされ、廃止された仕様である。上記はそれぞれ、<a href="https://html.spec.whatwg.org/multipage/scripting.html">HTML§4.12 Scripting</a>、<a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">HTML§6.5.3 The tabindex attribute</a> を代わりに参照できる。</p>
               </div>
               <div role="heading" class="note-title marker" aria-level="3">訳注 2:</div>
               <div>
