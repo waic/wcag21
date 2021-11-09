@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR38: Creating a conforming alternate version for a web page designed with progressive enhancement</title>
+      <title>SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -12,111 +12,72 @@
          <ul id="navigation">
             <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
             <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR37">Previous Technique: SCR37</a></li>
-            <li><a href="SCR39">Next Technique: SCR39</a></li>
+            <li><a href="SCR37">前の達成方法: SCR37</a></li>
+            <li><a href="SCR39">次の達成方法: SCR39</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">達成方法に関する重要な情報</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Creating a conforming alternate version for a web page designed with progressive enhancement</h1>
+      <h1>プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
+            <h2>適用 (対象)</h2>
             <p>HTML with scripting.</p>
-            <p>This technique is not referenced from any Understanding document.</p>
+            <p>この達成方法は、解説書から参照されていない。</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This objective of this technique is to offer a conforming alternate version for a
-               web page designed with progressive enhancement. The technique demonstrates how to
-               use a scripting technique to accomplish this by:
+            <h2>解説</h2>
+            <p>この達成方法の目的は、プログレッシブエンハンスメントで設計されたウェブページに適合する代替バージョンを提供することである。この達成方法は、スクリプトを用いて達成する方法を次のように示している:
             </p>
             <ol>
                
-               <li>Storing the initial pre-enhanced version of the web page so that it can act as a "conforming
-                  alternate version" for any later enhanced versions of the content; and
+               <li>ウェブページの初期拡張バージョンを格納することで、後に拡張されたコンテンツのバージョンに対して「適合した代替バージョン」として機能できるようにし、かつ
                </li>
                
-               <li>Inserting a mechanism into all enhanced versions of the web page which allows a user
-                  to revert the content back to the stored pre-enhanced Alternate Version.
+               <li>すべての拡張されたバージョンのウェブページに対して、利用者がコンテンツを格納された初期拡張の代替バージョンに戻すことができる機能を実装する。
                </li>
                
             </ol>
-            <p>Web pages designed with progressive enhancement detect features in the web-enabled
-               accessing device (size, capability and software) to allow those supported web technologies
-               to be applied in layers on top of an HTML foundation. The basic content and functionality
-               of such a web page are available through the HTML foundation to anyone using a more
-               simple web-enabled accessing device, whilst enhanced versions of the page are created
-               to suit the different features in more advanced accessing devices.
+            <p>プログレッシブエンハンスメントで設計されたウェブページはサポートされたウェブ技術を HTML 基盤のレイヤーに適用できるようにするため、ウェブ対応機器 (サイズ、機能及びソフトウェア) の特徴を検出する。より高度なアクセス機器のさまざまな機能に合わせて拡張バージョンのページが作成される一方で、そのようなウェブページの基本的なコンテンツと機能は、よりシンプルなウェブ対応機器を使用している人なら誰でも HTML 基盤を通じて利用することができる。
             </p>
-            <p>The current guidance for web pages delivered in alternate versions reads: "Note 4:
-               Alternate versions may be provided to accommodate different technology environments
-               or user groups. Each version should be as conformant as possible. One version would
-               need to be fully conformant in order to meet conformance requirement 1." With regard
-               to web pages designed with progressive enhancement this leaves the problem of which
-               version to select as the one fully conformant version - all whilst trying to ensure
-               that no set of users is disadvantaged by that choice.
+            <p>現在の代替バージョンのウェブページの要件は次のようになっている: 「注記 4: 様々な技術環境又は利用者層に対応するために、複数の代替バージョンを提供してもよい。この場合、各バージョンは可能なかぎり適合したものでなければならず、適合要件 1 を満たすためには、そのうちの一つのバージョンが完全に適合したものでなければならない。」プログレッシブエンハンスメントで設計されたウェブページは、どのバージョンを完全に適合したものとして選ぶかという問題を残しているが、どんな利用者においても不利な状況におかれないようにする。
             </p>
-            <p>One solution to this challenge is to select the pre-enhanced version of the web page
-               (e.g. the DOM state created solely from the HTML in the source code in the absence
-               of support for scripts, styles or non-HTML plugins) as the "fully conformant version",
-               due to its broad reach, with regard to support, across all the possible web-enabled
-               devices accessing the content.
+            <p>この課題の解決策の一つは、広範囲のウェブ対応機器がコンテンツにアクセス可能なため、拡張前のウェブページ (例: スクリプト、スタイル、HTML ではないプラグインが無効時に作成される HTML のソースコードの DOM の状態) を「完全に適合したバージョン」として選択することである。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記: </div>
                <div>
-                  <p>This technique removes all scripts, styles, and plugins, but it is important to state
-                     that this is not required for conformance with WCAG 2.0. An author could use a similar
-                     technique, but retain a reduced set of styles and scripts in the “pre-enhanced” version.
+                  <p>この達成方法はすべてのスクリプト、スタイル、プラグインを除外するが、これは WCAG 2.0 に適合するために必須ではないことを示す必要がある。制作者は類似した技術を使用することができるが、還元されたスタイルとスクリプトを「拡張前」のバージョンで保つことができる。
                   </p>
                </div>
             </div>
-            <p>While this technique offers a way to base conformance claims on a single version,
-               authors should continue to work to ensure that each enhanced version of the web page
-               is as conformant as possible.
+            <p>この技術は一つのバージョンで適合表明を行う方法を提供するが、制作者は各拡張版のウェブページが可能な限り適合するために作業し続けるべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-using-javascript">
-               <h3>Example 1: Using JavaScript</h3>
-               <p>The example uses JavaScript in the "accToggle.js" file to store the initial pre-enhanced
-                  version of the web page, created solely from the HTML in the source code, so that
-                  it can act as a "conforming alternate version" for any later enhanced versions of
-                  the web page; and inserts a toggle link into all enhanced versions of the web page
-                  which allows a user to revert the web page back to the stored pre-enhanced "Conforming
-                  Alternate Version". Note: The "sayhello.js" file is simply there as an example payload
-                  external file, and is to be replaced by any other external scripts which are desired.
+               <h3>事例 1: JavaScript を使用する</h3>
+               <p>この事例は「accToggle.js」ファイル内で JavaScript を使用し、HTML ソースコードのみで作成された拡張前のウェブページを格納することで、後に拡張されたウェブページの「適合した代替バージョン」として機能させることができる。そして、利用者がウェブページを最初の拡張前の「適合した代替バージョン」に戻せるよう、すべての拡張されたウェブページに切り替えリンクを設置する。注記: 「sayhello.js」ファイルは単なる外部のペイロードファイルの例であり、必要な他の外部スクリプトに置き換えられる。
                </p>
-               <p>The script in the acctoggle.js file stores the pre-enhanced version - assigning the
-                  version the url postfix #accessible. Clicking the "WCAG 2.0 conforming alternate version"
-                  link (inserted as the first child of the <code class="el">body</code> element in any enhanced versions) changes the url to include the postfix "#accessible"
-                  which then resets the html located in the <code class="el">body</code> element and the <code class="el">head</code> element to pre-enhanced code. The pre-enhanced state can be reached from the link,
-                  or directly from a url typed into the browser. In addition, a link is inserted into
-                  the pre-enhanced "Conforming Alternate Version" which allows the user to re-enhance
-                  the web page (something which can also be done using the web browser's back button).
+               <p>accToggle.js ファイル内のスクリプトは拡張前のバージョンを格納し、このバージョンの URL に #accessible という接尾辞を付与する。「WCAG 2.0 適合する代替版」という (すべての拡張されたバージョンのページにおいて、<code class="el">body</code> 要素の最初の子要素として設置される) リンクをクリックすることにより、接尾辞に「#accessible」とついた URL に変化し、<code class="el">body</code> 要素と <code class="el">head</code> 要素内の HTML を拡張前のコードに初期化する。拡張前の状態はリンクから、又は URL をブラウザに直接入力することでアクセスできる。さらに、拡張前の「適合する代替版」にリンクが追加され、利用者がウェブページを拡張版にすることができる (これはブラウザの戻るボタンからでも可能)。
                </p>
-               <p>acctoggle.js source code:</p><pre xml:space="preserve">window.onload = function(event) {
+               <p>acctoggle.js ソースコード:</p><pre xml:space="preserve">window.onload = function(event) {
 
     // store pre-enhanced element content
     var initialHead = document.head.innerHTML;
@@ -173,7 +134,7 @@
         }
     };
 }
-		 </pre><p>HTML web page source code:</p><pre xml:space="preserve">&lt;!DOCTYPE html&gt;
+		 </pre><p>HTML ウェブページソースコード:</p><pre xml:space="preserve">&lt;!DOCTYPE html&gt;
   &lt;html lang="en"&gt;
     &lt;head&gt;
         &lt;title&gt;Evaluera Ltd&lt;/title&gt;
@@ -185,23 +146,15 @@
         &lt;p&gt;Say: &lt;span id="change"&gt;Goodbye&lt;/span&gt;&lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;			
-		 </pre><p>sayhello.js source code</p><pre xml:space="preserve">var change = document.querySelector("#change");
+		 </pre><p>sayhello.js ソースコード</p><pre xml:space="preserve">var change = document.querySelector("#change");
          change.innerText = "Hello";			
 		 </pre></section>
             <section class="example" id="example-2-using-enhancejs---a-javascript-framework-designed-to-improve-the-application-of-progressive-enhancement">
-               <h3>Example 2: Using EnhanceJS - A Javascript framework designed to improve the application
-                  of Progressive Enhancement
+               <h3>事例 2: EnhanceJS を使用する―プログレッシブエンハンスメントのアプリケーションを改善するために設計された Javascript フレームワーク
                </h3>
-               <p><a href="https://code.google.com/p/enhancejs/">EnhanceJS</a> is an open source JavaScript framework "designed to improve the application of Progressive
-                  Enhancement by first testing browser capabilities for key Javascript and CSS support
-                  before applying advanced styles and scripts to the page". In addition, the default
-                  EnhanceJS script automatically creates a toggle link in any post-enhanced versions
-                  of the page which allows a user to return the web page to its pre-enhanced state (in
-                  EnhanceJS with default settings this is called the "low bandwidth version"). The setting
-                  have been changed in EnhanceJS to indicate that the pre-enhanced state is to be considered
-                  the "WCAG 2.0 conforming alternate version", rather than the "low bandwidth version".
+               <p>EnhanceJS は「高度なスタイルとスクリプトをページに適用する前に、JavaScript の主要な機能と CSS のサポートを最初にテストすることで、プログレッシブエンハンスメントのアプリケーションを改善するように設計された」オープンソースの JavaScript フレームワークである。さらに、デフォルトの <a href="https://code.google.com/p/enhancejs/">EnhanceJS</a> スクリプトは、利用者が拡張前のウェブページの状態に戻すことがでるよう、すべての拡張版のページに自動的に切り替えリンクを作成する。(EnhanceJS でデフォルトで設定されるこれを「低帯域幅版」と呼ぶ)。EnhanceJS ではこの設定は拡張前の状態が「低帯域幅版」ではなく、「WCAG 2.0 の適合している代替版」として認識されるよう変更されている。
                </p>
-               <p>HTML Component:</p><pre xml:space="preserve">&lt;!DOCTYPE html&gt;
+               <p>HTML コンポーネント:</p><pre xml:space="preserve">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
     &lt;script type="text/javascript" src="enhance.js"&gt;&lt;/script&gt;
@@ -226,54 +179,51 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
-                  <a href="../css/C29#C29-sa1">Using Cookies</a></li>
+                  <a href="https://waic.jp/docs/WCAG-TECHS/C29.html#C29-sa1">クッキーを使用する</a></li>
                
-               <li><a href="../css/C29#C29-sa2">Progressive Enhancement and Unobtrusive JavaScript</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/C29.html#C29-sa2">プログレッシブエンハンスメントとアンオブトルーシブ JavaScript</a></li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
-                     alternate version</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G136.html">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                
-               <li><a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/C29.html">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                
-               <li><a href="../server-side-script/SVR4">SVR4: Allowing users to provide preferences for the display of conforming alternate versions</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/SVR4.html">SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check enhanced versions of the web page contain a link to the "Conforming Alternate
-                     Version".
+                  <li>拡張されたウェブページが「適合している代替版」へのリンクを含んでいる。
                   </li>
                   
-                  <li>Check that the alternate version is a <a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a> of the original page and that it conforms to WCAG 2.0 at the claimed conformance
-                     level.
+                  <li>代替版が、オリジナルページの<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>であり、かつ要求された適合レベルで WCAG 2.0 に適合していることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true. </li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
