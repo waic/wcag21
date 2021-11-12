@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SCR37: Creating Custom Dialogs in a Device Independent Way</title>
+      <title>SCR37: デバイス非依存な方法でカスタムダイアログを作成する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,82 +10,72 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SCR36">Previous Technique: SCR36</a></li>
-            <li><a href="SCR38">Next Technique: SCR38</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SCR36">前の達成方法: SCR36</a></li>
+            <li><a href="SCR38">次の達成方法: SCR38</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Creating Custom Dialogs in a Device Independent Way</h1>
+      <h1>デバイス非依存な方法でカスタムダイアログを作成する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>HTML and XHTML used with script.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">Success Criterion 2.4.3: Focus Order</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>スクリプトで使用される HTML 及び XHTML</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">達成基準 2.4.3: フォーカス順序</a> (書かれていない達成方法を満たす慣習的な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Site designers often want to create dialogs that do not use the pop-up windows supplied
-               by the browser. This is typically accomplished by enclosing the dialog contents in
-               a <code class="el">div</code> and placing the <code class="el">div</code> above the page content using z-order and absolute positioning in CSS. 
+            <h2>解説</h2>
+            <p>コンテンツ制作者はしばしば、ブラウザによって提供されるポップアップウインドウを使わずに、独自のダイアログを作成したがる。これは通常、ダイアログのコンテンツを <code class="el">div</div> の中に収めて、その <code class="el">div</div> をコンテンツの上に CSS による重なり順及び絶対配置を用いて配置するというやり方でおこなわれる。
             </p>
-            <p>To be accessible, these dialogs must follow a few simple rules. </p>
+            <p>これらのダイアログをアクセシブルにするには、いくつかの簡単なルールに従う必要がある。</p>
             <ol>
                
-               <li>Trigger the script that launches the dialog from the onclick event of a link or button.</li>
+               <li>リンクやボタンの onclick イベントからダイアログを起動するスクリプトをトリガーにする。</li>
                
-               <li>Place the dialog <code class="el">div</code> into the Document Object Model (DOM) immediately after the element that triggered
-                  it. The triggering element will maintain focus, and inserting the dialog content after
-                  that element will make the content inside the dialog next in the screen-reader reading
-                  order and next in the tab order. The dialog can still be absolutely positioned to
-                  be elsewhere on the page visually. This can be done either by creating the dialog
-                  in the HTML and hiding it with CSS, as in the example below, or by inserting it immediately
-                  after the triggering element with script. 
+               <li>ダイアログの <code class="el">div</div> を Document Object Model (DOM) の中、トリガーした要素の直後に配置する。トリガーした要素がフォーカスを保持し、ダイアログのコンテンツをその要素のあとに挿入することで、ダイアログの中のコンテンツがスクリーンリーダーの読み上げ順序で次になり、タブ順序も次になる。それでも、ダイアログは視覚的にページ上のあらゆる場所に絶対配置できる。これは、下の例のようにダイアログを HTML の中で作成し、CSS で非表示にする方法又は、トリガーした要素の直後にスクリプトで挿入する方法のどちらでも実装できる。
                </li>
                
-               <li>Ensure that the HTML inside the dialog div meets the same accessibility standard as
-                  other content.
+               <li>ダイアログの div 内部の HTML が、その他のコンテンツと同じアクセシビリティガイドラインの要件を満たしていることを保証する。
                </li>
                
             </ol>
-            <p>It is also nice, but not always necessary, to make the launching link toggle the dialog
-               open and closed, and to close the dialog when the keyboard focus leaves it. 
+            <p>リンクがダイアログを開閉できたり、キーボードのフォーカスが外れるとダイアログが閉じるようにしたりすることはすばらしいが、必ずしも必要なわけではない。
             </p>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+              <div>
+                <p>WAIC では SCR37 に関する</a href="https://waic.jp/guideline/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
+                <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/SCR37.html">アクセシビリティ・サポーテッド（AS）情報: SCR37</a> では、「要注意」と評価されている。WAIC はウェブ制作者にこの達成方法が一部の環境では動作しないことに注意を促すものである。</p>
+              </div>
+            </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-an-options-button-that-opens-a-dialog">
-               <h3>Example 1: An options button that opens a dialog</h3>
-               <p>The HTML for this example includes a triggering Element, in this case a button, and
-                  a div that acts as the frame for the dialog. 
+               <h3>事例 1: ダイアログを開くオプションボタン</h3>
+               <p>この例の HTML には、トリガーとなる要素、この場合はボタンとダイアログのフレームとして機能する div がある。
                </p>
-               <p>The triggering element is a button and the script is triggered from the onclick event.
-                  This sends the appropriate events to the operating system so that assistive technology
-                  is aware of the change in the DOM. 
+               <p>トリガーとなる要素はボタンで、スクリプトは onclick イベントのトリガーである。これは適切なイベントをオペレーティングシステムに送るので、支援技術は DOM の中の変化に気がつくことができる。
                </p>
-               <p>In this example, the Submit and Reset buttons inside the dialog simply hide the <code class="el">div</code>. 
+               <p>この例では、ダイアログ内の送信及びリセットボタンは単純に <code class="el">div</a> に隠れている。
                </p><pre xml:space="preserve">...
 &lt;button onclick="TogglePopup(event,true)"
 	name="pop0001"&gt;Options&lt;/button&gt;
@@ -106,7 +96,7 @@
 
 &lt;/div&gt;
 ...
-</pre><p>The <code class="el">div</code>, heading and <code class="el">form</code> elements are styled with CSS to look like a dialog. 
+</pre><p><code class="el">div</code>、見出し、及び <code class="el">form</code> 要素は CSS でダイアログに見えるようにスタイル付けされている。
                </p><pre xml:space="preserve">...
 a { color:blue; }
 a.clickPopup img { border:none; width:0; }
@@ -120,7 +110,7 @@ div.popover h3 { margin:0; padding:0.1em 0.5em; background-color:navy; color:whi
 #pop0001 div.buttons { text-align:right; }
 #pop0001 div.buttons input { width:6em; }
 ...
-</pre><p>The script toggles the display of the popup <code class="el">div</code>, showing it and hiding it. 
+</pre><p>スクリプトはポップアップする <code class="el">div</code> の表示を切り替え、表示させたり隠したりする。
                </p><pre xml:space="preserve">...
 function TogglePopup(evt,show)
 {
@@ -170,13 +160,13 @@ function ResetForm(elem)
 	return false;
 }
 ...
-</pre><p class="working-example">A working example, <a href="../../working-examples/script-options-button-dialog/">an options button that opens a dialog</a>, is available. 
+</pre>このコードの実装サンプル: <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR37/default.htm">ダイアログを開くオプションボタン</a>
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>Microsoft Developer Network Whitepaper:<a href="http://download.microsoft.com/download/0/f/5/0f5e941c-c495-401a-9031-eab8315da35e/writing_accessible_web_applications.doc"> Writing Accessible Web Applications</a> by Cynthia C. Shelly and George Young. (Microsoft Word Format)
@@ -205,48 +195,70 @@ function ResetForm(elem)
                </li>
                
             </ul>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 1</div>
+              <div>
+                <p>「Microsoft Internet Explorer Developer Toolbar」はページが削除されているが、代わりに開発者ツールを使用できる。詳細については、<a href="https://docs.microsoft.com/ja-jp/previous-versions//dd565628(v=vs.85)?redirectedfrom=MSDN">Internet Explorer 開発者ツールを理解する</a>を参照のこと。</p>
+              </div>
+            </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 2</div>
+              <div>
+                <p>Firefox のアドオン「Firebug」は開発が終了している。代わりに開発ツールを使用できる。<a href="https://developer.mozilla.org/ja/docs/Tools">開発ツール | MDN</a> も参照のこと。</p>
+              </div>
+            </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 3</div>
+              <div>
+                <p>Google Chrome の場合、類似のツールが利用できる。詳細については、<a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools  |  Tools for Web Developers  |  Google Developers</a> を参照のこと。</p>
+              </div>
+            </div>
+            <div class="note">
+              <div role="heading" class="note-title marker" aria-level="3">訳注 4</div>
+              <div>
+                <p>Edge の場合も、類似のツールが利用できる。詳細については、<a href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/">Microsoft Edge Developer Tools - Microsoft Edge Development | Microsoft Docs</a> を参照のこと。</p>
+              </div>
+            </div>
+            
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="SCR26">SCR26: Inserting dynamic content into the Document Object Model immediately following its
-                     trigger element</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/SCR26.html">SCR26: 動的なコンテンツを、Document Object Model の、そのトリガーとなる要素の直後に挿入する</a></li>
                
-               <li><a href="../general/G59">G59: Placing the interactive elements in an order that follows sequences and relationships
-                     within the content</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G59.html">G59: コンテンツ内の順番及び関係に従った順序で、インタラクティブな要素を配置する</a></li>
                
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Find all areas of the page that trigger dialogs that are not pop-up windows. </li>
+                  <li>ポップアップウインドウでないダイアログのトリガーとなるものページ内の全ての場所を探す。</li>
                   
-                  <li>Check that the dialogs can be opened by tabbing to the area and hitting enter. </li>
+                  <li>Tab キーでその場所に移動して Enter キーを押下することで、ダイアログを開くことができることを確認する。</li>
                   
-                  <li>Check that, once opened, the dialog is next in the tab order. </li>
+                  <li>一度開いたら、タブ順序でダイアログが次の位置にあることを確認する。</li>
                   
-                  <li>Check that the dialogs are triggered from the click event of a button or a link. </li>
+                  <li>ダイアログがボタン又はリンクのクリックイベントからトリガーされていることを確認する。</li>
                   
-                  <li>Using a tool that allows you to inspect the DOM generated by script, check that the
-                     dialog is next in the DOM. 
+                  <li>スクリプトによって生成された DOM を検証できるツールを用いて、DOM 内でダイアログが次にあることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2, #3, #4 and #5 are true. </li>
+                  <li>2.、3.、4. 及び 5. の結果が真である。</li>
                   
                </ul>
                
