@@ -2,9 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of
-         text) 
-         and background behind the text
+      <title>G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -13,126 +11,90 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G17">Previous Technique: G17</a></li>
-            <li><a href="G19">Next Technique: G19</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G17">前の達成方法: G17</a></li>
+            <li><a href="G19">次の達成方法: G19</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of
-         text) 
-         and background behind the text
+      <h1>テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology that produces visual output.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>視覚的な出力を行うあらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">Success Criterion 1.4.3: Contrast (Minimum)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">Success Criterion 1.4.6: Contrast (Enhanced)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to make sure that users can read text
-               that is presented over a background. For Success Criterion 1.4.3, this technique describes
-               the minimum contrast ratio for text that is less than 18 point (if not bold) and less
-               than 14 point (if bold). For Success Criterion 1.4.5, this technique relaxes the 7:1
-               contrast ratio requirement  for text that is at least 18 point (if not bold) or at
-               least 14 point (if bold).
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が背景の上にあるテキストを読めるようにすることである。達成基準 1.4.3 に関しては、この達成方法は 18pt (太字ではない: 日本語の場合は 22pt) 未満と 14pt (太字: 日本語の場合は 18pt) 未満のテキストのための最小コントラスト比を説明している。さらに、達成基準 1.4.6 においては、この達成方法は少なくとも 18pt (太字ではない: 日本語の場合は 22pt) 又は少なくとも 14pt (太字: 日本語の場合は 18pt) のテキストに対して 7:1 のコントラスト比を要求している。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>When evaluating this success criterion, the font size in points should be obtained
-                     from the user agent or calculated on font metrics in the way that user agents do.
-                     Point sizes are based on the CSS pt size <a href="https://www.w3.org/TR/css3-values/#absolute-lengths">CSS3 Values</a>. The ratio between sizes in points and CSS pixels is 1pt = 1.333px, therefore 14pt
-                     and 18pt are equivalent to approximately 18.5px and 24px.
+                  <p>この達成基準を評価する際、フォントサイズのポイント数は、ユーザエージェントから得られるか、あるいはユーザエージェントが行うフォントメトリクスによって計算されるであろう。ポイントのサイズは、CSS の pt を定義する <a href="https://www.w3.org/TR/css3-values/#absolute-lengths">CSS3 Values</a> に基づく。ポイントと CSS のピクセルとの比率は 1pt = 1.333px であるため、14pt と 18pt はそれぞれおよそ 18.5px と 24px に等しい。
                   </p>
                   
                </div>
             </div>
-            <p>If the background is a solid color (or all black or all white) then the
-               relative luminance of the text can be maintained by making sure that each
-               of the text letters have 4.5:1 contrast ratio with the background.
+            <p>もし背景が無地の色 (または真っ黒、真白) の場合、各テキストの文字が背景とのコントラスト比を 4.5:1 で保持することによってテキストの相対輝度を維持することができる。
             </p>
-            <p>If the background or the letters vary in relative luminance (or are patterned) then
-               the background around the letters can be chosen or shaded so that the
-               letters maintain a 4.5:1 contrast ratio with the background behind them
-               even if they do not have that contrast ratio with the entire background.
+            <p>背景または文字が相対輝度において変化する (またはパターン化されている) 場合、たとえ背景全体とのコントラスト比を 4.5:1 で保持していなくとも、文字の周囲の背景又は陰影によって、文字と背景のコントラスト比を維持することができる。
             </p>
-            <p>For example, if a letter is lighter at the top than it is a the bottom, it may be
-               difficult to maintain the contrast ratio between the letter and the background over
-               the full letter. In this case, the designer might darken the background behind the
-               letter, or add a thin black outline (at least one pixel wide) around the letter in
-               order to keep the contrast ratio between the letter and the background above 4.5:1.
+            <p>例えば、文字の上部が下部よりも明るい場合、文字と背景のコントラスト比を文字の周り全体で維持することが難しい。その場合、文字と背景のコントラスト比 4.5:1 以上を保持するため、背景を暗くするか、細い黒枠線 (少なくとも 1 ピクセル) を追加する。
             </p>
-            <p>The contrast ratio can sometimes be maintained by changing the
-               relative luminance of the letters as the relative luminance of the background changes
-               across
-               the page.
+            <p>コントラスト比は、背景の相対輝度がページをまたがって変化する時に、文字の相対輝度も変化させることによって維持されることもある。
             </p>
-            <p>For example, if a page is very light on one edge and fades to very dark on the other
-               edge, there is no color that can run across the page and meet the contrast guidelines
-               on both edges. One way of addressing this would be to change the lightness of the
-               letters as well so that each letter always meets the contrast ratio for the background
-               that is immediately behind the letter.
+            <p>例えば、ページの一端が非常に明るく、反対側の非常に暗い一端に向かってフェードする場合、ページ全体を通してコントラストの基準を満たす色は存在しない。対応する方法のひとつは、文字のその時の背景に対してコントラスト比を満たすように、文字の明るさを変化させることだろう。
             </p>
-            <p>Another method is to provide a halo around the text that provides the
-               necessary contrast ratio if the background image or color would not
-               normally be sufficiently different in relative luminance.
+            <p>もし、背景画像または背景色が標準的に相対輝度で十分に違いがない場合は、他の方法として必要なコントラスト比を提供したテキストの周りに後光を提供する方法もある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A black background is chosen so that light colored letters that match the company
-                  logo can be used.
+               <li>黒い背景を選ぶことによって、企業ロゴに合った明るい色の文字を使うことができる。
                </li>
                
                <li>
                   
-                  <p>Text is placed over a picture of the college campus.
-                     Since a wide variety of colors and shades appear in the picture,
-                     the area behind the text is fogged white so that the picture is very
-                     faint and the maximum darkness is still light enough to maintain a
-                     4.5:1 contrast ratio with the black text written over the picture.
+                  <p>テキストが大学のキャンパスの写真の上に書かれている。 幅広いさまざまな色や色合いが写真に現れているので、テキストの下のエリアが霧のような白にすることで、写真はとてもかすみ、一番暗い所は写真の上に書かれている黒いテキストとの 4.5:1 のコントラスト比を維持するのに 十分な明るさである。
                   </p>
                   
-                  <p>See also the contrast samples in related resources.</p>
+                  <p>参考リソースのコントラストについてのサンプル ("Color Contrst Samples") も参照のこと。
+</p>
                   
                </li>
                
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -177,90 +139,51 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>                  
+                  <p>「Colour Contrast Analyser」は 2018 年現在、<a href="https://addons.mozilla.org/ja/firefox/">Firefox Add-ons</a> から入手できない状態にある。
+                  </p>
+               </div>
+            </div>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>Measure the relative luminance of each letter (unless they are all
-                        uniform) using the formula:
+                     <p>以下の公式を用いて、各文字 (すべて同一ではない限り) の相対輝度を測る:
                      </p>
                      
                      <ul>
                         
                         <li>
                            
-                           <p>L = 0.2126 *
-                              <strong>R</strong>
-                              + 0.7152 *
-                              <strong>G</strong>
-                              + 0.0722 *
-                              <strong>B</strong>
-                              where
-                              <strong>R</strong>,
-                              <strong>G</strong>
-                              and
-                              <strong>B</strong>
-                              are defined as:
+                           <p>色の相対輝度 L = 0.2126 * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> と定義されている。この場合の <strong>R</strong>, <strong>G</strong> 及び <strong>B</strong> は:
                            </p>
                            
                            <ul>
                               
-                              <li>if R
-                                 sRGB
-                                 &lt;= 0.03928 then
-                                 <strong>R</strong>
-                                 = R
-                                 sRGB
-                                 /12.92 else
-                                 <strong>R</strong>
-                                 = ((R
-                                 sRGB
-                                 +0.055)/1.055) ^ 2.4
+                              <li>R sRGB &lt;= 0.03928 の場合: <strong>R</strong> = R sRGB /12.92、それ以外の場合: <strong>R</strong> = ((R sRGB +0.055)/1.055) ^ 2.4
                               </li>
                               
-                              <li>if G
-                                 sRGB
-                                 &lt;= 0.03928 then
-                                 <strong>G</strong>
-                                 = G
-                                 sRGB
-                                 /12.92 else
-                                 <strong>G</strong>
-                                 = ((G
-                                 sRGB
-                                 +0.055)/1.055) ^ 2.4
+                              <li>G sRGB  &lt;= 0.03928 の場合: <strong>G</strong> = G sRGB /12.92、それ以外の場合: <strong>G</strong> = ((G sRGB +0.055)/1.055) ^ 2.4
                               </li>
                               
-                              <li>if B
-                                 sRGB
-                                 &lt;= 0.03928 then
-                                 <strong>B</strong>
-                                 = B
-                                 sRGB
-                                 /12.92 else
-                                 <strong>B</strong>
-                                 = ((B
-                                 sRGB
-                                 +0.055)/1.055) ^ 2.4
+                              <li>B sRGB  &lt;= 0.03928 の場合: <strong>B</strong> = B sRGB /12.92、それ以外の場合: <strong>B</strong> = ((B sRGB +0.055)/1.055) ^ 2.4
                               </li>
                               
                            </ul>
                            
                            <div class="note">
-                              <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                              <div role="heading" class="note-title marker" aria-level="4">注記</div>
                               <div>
                                  
-                                 <p>and R
-                                    sRGB, G
-                                    sRGB, and B
-                                    sRGB
-                                    are defined as:
+                                 <p>また、R sRGB , G sRGB , 及び B sRGB  は以下のように定義される:
                                  </p>
                                  
                               </div>
@@ -292,10 +215,10 @@
                            </ul>
                            
                            <div class="note">
-                              <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                              <div role="heading" class="note-title marker" aria-level="4">注記</div>
                               <div>
                                  
-                                 <p>The "^" character is the exponentiation operator.</p>
+                                 <p>"^" 記号は指数演算子である。</p>
                                  
                               </div>
                            </div>
@@ -305,11 +228,10 @@
                      </ul>
                      
                      <div class="note">
-                        <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                        <div role="heading" class="note-title marker" aria-level="4">注記</div>
                         <div>
                            
-                           <p>For aliased letters, use the relative luminance value found two pixels in
-                              from the edge of the letter.
+                           <p>エイリアス文字の場合は、文字の端から 2 ピクセルの部分の相対輝度の値を使用する。
                            </p>
                            
                         </div>
@@ -317,32 +239,26 @@
                      
                   </li>
                   
-                  <li>Measure the relative luminance of the background pixels
-                     immediately next to the letter using same formula.
+                  <li>同じ公式を用いて、文字のすぐ隣の背景のピクセルの相対輝度を測る。
                   </li>
                   
                   <li>
                      
-                     <p>Calculate the contrast ratio using the following
-                        formula.
+                     <p>次の公式を用いて、コントラスト比を算出する。
                      </p>
                      
                      <ul>
                         
                         <li>
                            
-                           <p>(L1 + 0.05) / (L2 + 0.05), where</p>
+                           <p>(L1 + 0.05) / (L2 + 0.05) ここで、</p>
                            
                            <ul>
                               
-                              <li>L1 is the
-                                 <a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">relative luminance</a>
-                                 of the lighter of the foreground or background colors, and
+                              <li>L1 は前景又は背景色の明るい方の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a>である。及び、
                               </li>
                               
-                              <li>L2 is the
-                                 <a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">relative luminance</a>
-                                 of the darker of the foreground or background colors.
+                              <li>L2 は前景又は背景色の暗い方の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a>である。
                               </li>
                               
                            </ul>
@@ -353,19 +269,18 @@
                      
                   </li>
                   
-                  <li>Check that the contrast ratio is equal to or
-                     greater than 4.5:1
+                  <li>コントラスト比が 4.5:1 以上である。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#4 is true.</li>
+                  <li>#4 の結果が真である。</li>
                   
                </ul>
                
