@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G162: Positioning labels to maximize predictability of relationships</title>
+      <title>G162: 関係性を最大限に予測できるようにするためにラベルを配置する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,105 +10,87 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G161">Previous Technique: G161</a></li>
-            <li><a href="G163">Next Technique: G163</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G161">前の達成方法: G161</a></li>
+            <li><a href="G163">次の達成方法: G163</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Positioning labels to maximize predictability of relationships</h1>
+      <h1>関係性を最大限に予測できるようにするためにラベルを配置する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support forms</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>フォームをサポートするウェブコンテンツ技術全て</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient as a way to meet <a href="../general/G131">G131: Providing descriptive labels</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (<a href="../general/G131">G131: 説明的なラベルを提供する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When labels for form fields are positioned where the user expects them visually, it
-               is easier to understand complex forms and to locate specific fields. Labels for most
-               fields are positioned immediately before the field, that is, for left-to-right languages,
-               either to the left of the field or above it, and for right-to-left languages, to the
-               right of the field or above it. Labels for radio buttons and checkboxes are positioned
-               after the field.
+            <h2>解説</h2>
+            <p>フォームのフィールドに対するラベルを、視覚的に利用者が予想しやすい位置に置くと、複雑なフォームを理解したり、特定のフィールドを見つけるのが容易になる。ほとんどのフィールドに対するラベルは、そのフィールドの直前、すなわち、書字方向が左から右の言語の場合、そのフィールドの左か上に、書字方向が右から左の言語の場合、そのフィールドの右か上に置かれる。ラジオボタン及びチェックボックスのためのラベルはそのフィールドの後に置かれる。
             </p>
-            <p>These positions are defined because that is the usual (and therefore most predictable)
-               position for the label for fields, radiobuttons and checkboxes.
+            <p>これらの配置は自明である。フィールド、ラジオボタン、及びチェックボックスのラベルを置く一般的な (そのために最も予測できる) 位置だからである。
             </p>
-            <p>Labels are positioned before input fields since the fields sometimes vary in length.
-               Positioning them before allows the labels to line up. It also makes labels easier
-               to locate with a screen magnifier since they are immediately before the field and
-               also can be found in a vertical column (when the start of the fields line up vertically).
-               Finally, if the field has data in it, it is easier to understand or check the data
-               if one reads the label first and then the content rather than the other way around.
+            <p>入力フィールドはさまざまな長さになることがあるため、ラベルはフィールドの前に置かれる。フィールドの前にそれらを置くことでラベルを整列させることができる。また、ラベルがフィールドの直前にあるため、画面拡大ツール使用時でもラベルの場所を見つけることが容易になり、また、(フィールドの始まりが縦に整列しているとき) 縦の列の中でも見つけることができる。最後に、フィールドにデータが入力されているならば、ラベルを読んでから内容を読むほうが、逆の場合よりもデータを理解したりチェックすることが容易になる。
             </p>
-            <p>Checkboxes and radio buttons have a uniform width while their labels often do not.
-               Having the radio button or checkbox first therefore allows both the buttons and the
-               labels to line up vertically.
+            <p>チェックボックス及びラジオボタンは一定の幅を持っているが、それらのラベルは往々にしてそうではない。チェックボックス又はラジオボタンを最初に置くことで、ボタンとラベルの両方を縦に整列させることができる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-labels-above-text-fields">
-               <h3>Example 1: Labels above text fields</h3>
+               <h3>例 1: テキストフィールドの上側のラベル</h3>
                <figure id="figure-labels-above">
                   	<img src="img/lbl-position_01.gif" />
                   	
-                  <figcaption>Figure 1Two form fields with labels positioned immediately above them.</figcaption>
+                  <figcaption>図 1: すぐ上にラベルが配置された二つのフォームフィールド</figcaption>
                   
                </figure>
             </section>
             <section class="example" id="example-2-labels-to-the-left-of-text-fields">
-               <h3>Example 2: Labels to the left of text fields</h3>
+               <h3>例 2: テキストフィールドの左側のラベル</h3>
                <figure id="figure-labels-left">
                   	<img src="img/lbl-position_02.gif" />
                   	
-                  <figcaption>Figure 2Two form fields with labels positioned immediately to the left.</figcaption>
+                  <figcaption>図 2 : すぐ左側にラベルが配置された二つのフォームフィールド。</figcaption>
                   
                </figure>
             </section>
             <section class="example" id="example-3-labels-to-the-right-of-radio-buttons">
-               <h3>Example 3: Labels to the right of radio buttons</h3>
+               <h3>例 3: ラジオボタンの右側のラベル</h3>
                <figure id="figure-labels-right">
                   	<img src="img/lbl-position_03.gif" />
                   	
-                  <figcaption>Figure 3A group of form controls contains two radio buttons with labels positioned to the
-                     right of the radio buttons.
+                  <figcaption>図 3 : ラジオボタンの右側にラベルが配置された二つのラジオボタンを含むフォームコントロールのグループ。
                   </figcaption>
                   
                </figure>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -139,51 +121,47 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="../html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="../html/H71">H71:  Providing a description for groups of form controls using fieldset and legend elements
-                     </a></li>
+               <li><a href="../html/H71">H71:  fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する</a></li>
                
-               <li><a href="../html/H65">H65: Using the title attribute to identify form controls when the label element cannot
-                     be used</a></li>
+               <li><a href="../html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
                
-               <li><a href="G131">G131: Providing descriptive labels</a></li>
+               <li><a href="G131">G131: 説明的なラベルを提供する</a></li>
                
-               <li><a href="G167">G167: Using an adjacent button to label the purpose of a field</a></li>
+               <li><a href="G167">G167: テキストフィールドの目的をラベル付けするために隣接するボタンを用いる</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each form field on the Web page:</p>
+               <p>ウェブページの各フォームのフィールドに対して:</p>
                
                <ol>
                   
-                  <li>Check that the form field has a visible label.</li>
+                  <li>フォームのフィールドに目に見えるラベルがあることを確認する。</li>
                   
-                  <li>If the form field is a checkbox or radio button, check that the label is immediately
-                     after the field.
+                  <li>フォームのフィールドがチェックボックス又はラジオボタンである場合、ラベルがそのフィールドの直後にあることを確認する。
                   </li>
                   
-                  <li>If the form field is not a checkbox or radio button, check that the label is immediately
-                     before the field.
+                  <li>フォームのフィールドがチェックボックス又はラジオボタンでない場合、ラベルがそのフィールドの直前にあることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks are true.</li>
+                  <li>全ての結果が真である。</li>
                   
                </ul>
                
