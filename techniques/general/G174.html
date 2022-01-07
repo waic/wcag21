@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G174: Providing a control with a sufficient contrast ratio that allows users to switch to
-         a presentation that uses sufficient contrast
+      <title>G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,164 +11,124 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G173">Previous Technique: G173</a></li>
-            <li><a href="G175">Next Technique: G175</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G173">前の達成方法: G173</a></li>
+            <li><a href="G175">次の達成方法: G175</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a control with a sufficient contrast ratio that allows users to switch to
-         a presentation that uses sufficient contrast
+      <h1>利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Any technology.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>あらゆるウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">Success Criterion 1.4.3: Contrast (Minimum)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3: コントラスト (最低限)</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">Success Criterion 1.4.6: Contrast (Enhanced)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">達成基準 1.4.6: コントラスト (高度)</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">Success Criterion 1.4.11: Non-text Contrast</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">達成基準 1.4.11: 非テキストのコントラスト</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When the contrast between the text and its background for some portion of the page
-               has not been designed to meet the contrast level for
-               <a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">Success Criterion 1.4.3</a>
-               or
-               <a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">1.4.6</a>, it is possible to meet these guidelines using the "Alternate Version" clause in
-               the conformance requirements (<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">Conformance Requirement 1</a>). A link or control on the page can either change the page so that all aspects conform,
-               or it could take the viewer to a new version of the page that does conform at the
-               desired level. Placing the link or control prominently on the page will assist users
-               in accessing the conforming content readily.
+            <h2>解説</h2>
+            <p>テキストとそのページの一部の背景の間のコントラストが<a href="https://waic.jp/docs/WCAG21/Understanding/contrast-minimum">達成基準 1.4.3</a> または <a href="https://waic.jp/docs/WCAG21/Understanding/contrast-enhanced">1.4.6</a> のコントラストレベルを満たすように作られていない場合、<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">適合要件 1</a> における「代替版」を用いる ことでこれらのガイドラインを満たすことが可能である。ページのリンク又はコントロールは、ページを変更することによって 全ての側面を適合させたり、閲覧者を求められるレベルに適合した新しいバージョンのページに導いたりすることができる。また、そのリンクまたはコントロールをウェブページ上の目立つところに置くことによって、利用者が適合しているコンテンツにアクセスしやすくなる。
             </p>
-            <p>For this technique to be used successfully, three things must be true:</p>
+            <p>この達成方法を正しく用いるためには、次の三つを満たさなければならない。</p>
             <ol>
                
-               <li>The link or control on the original page must itself meet the contrast requirement
-                  of the desired SC. (If the user cannot see the control they may not be able to use
-                  it to go to the new page.)
+               <li>オリジナルページにあるリンクやコントロール自身は、求められる達成基準のコントラスト要求を満たさなければならない (もし利用者がコントロールを見ることができない場合、新しいページに行くためにそれを使用することができないかもしれない)。
                </li>
                
-               <li>The new page must contain all the same information and functionality as the original
-                  page.
+               <li>新しいページはオリジナルページと同様に全ての情報と機能性を含んでいなければならない。
                </li>
                
-               <li>The new page must conform to all of the SC for the desired level of conformance. (i.e.,
-                  the new page cannot just have the desired level of contrast but otherwise not conform).
+               <li>新しいページは求められる適合レベルのための全ての達成基準に適合すべきである (つまり、新しいページは求められたコントラストレベルは確保しているが他は適合していないということであってはならない)。
                </li>
                
             </ol>
-            <p>This technique can be used to meet Success Criterion 1.4.3 by having text (or images
-               of text) on the alternate version of the page be 4.5:1 contrast and any large text
-               (or images of large text) be 3:1 contrast with its background. If the alternate version
-               of the page has all text (or images of text) with 7:1 contrast and large text (or
-               images of large text) with 4.5:1 contrast then it would satisfy both Success Criterion
-               1.4.3 and 1.4.6.
+            <p>この達成方法は、ページの代替版のテキスト (又はテキストの画像) に背景と 4.5:1 のコントラストがある、及び大きいサイズのテキスト (又は大きなテキストの画像) に背景と 3:1 のコントラストがあることによって達成基準 1.4.3 を満たすために用いることができる。もしページの代替版に 7:1 のコントラストのあるテキスト (テキストの画像) と 4.5:1 のコントラストのある大きいサイズのテキスト (又は大きなテキストの画像) があるならば、それは達成基準 1.4.3 と 1.4.6 の両方を満たしている。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>This technique can be used in combination with a style switching technique to present
-                     a page that is a
-                     <a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a>
-                     for non-conforming content. Refer to
-                     <a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a>
-                     and
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
-                     for more information.
+                  <p>この達成方法は、不適合コンテンツのための<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>である現在のページにスタイルを切り替える達成方法と組み合わせることで用いることができる。詳しくは、　<a href="https://waic.jp/docs/WCAG-TECHS/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a>と<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">適合している代替版</a>を理解するを参照。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A page with some headlines that do not meet the 3:1 contrast requirements has a high
-                  contrast (5:1) link at the top of the page that takes the user to a new version of
-                  the page with minimum 4.5:1 contrast on all text and images of text.
+               <li>3:1 のコントラスト要件を満たしていない見出しがあるページでは、すべてのテキスト及び文字画像で最低限 4.5:1 のコントラストを持つ新しいバージョンのページに移動させるハイコントラスト (5:1) のリンクがページの上部にある。
                </li>
                
-               <li>A page uses shaded backgrounds for effect but results in text to background contrast
-                  of 4:1. A control at the top of the page says "high contrast". Clicking on it causes
-                  different styles to be used and dropping the background colors to achieve 7:1 contrast.
+               <li>ページが効果のため陰影のある背景を使っていて、結果として背景とテキストのコントラストは 4:1 しかない。ページのトップにあるコントロールは「ハイコントラスト」となっていて、それをクリックすると異なるスタイルとなり、7:1 のコントラストを達成するように背景色が変わる。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G17">G17: Ensuring that a contrast ratio of at least 7:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G17.html">G17: テキスト (及び文字画像) とその背景の間に、少なくとも 7:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="G18">G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G18.html">G18: テキスト (及び文字画像) とその背景の間に、少なくとも 4.5:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="G145">G145: Ensuring that a contrast ratio of at least 3:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G145.html">G145: テキスト (及び文字画像) とその背景の間に、少なくとも 3:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="G148">G148: Not specifying background color, not specifying text color, and not using technology
-                     features that change those defaults</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G148.html">G148: 背景色及び文字色を指定せず、その初期設定を変更するウェブコンテンツ技術の機能を使用しない</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that a link or control exists on the original page that provides access to the
-                     alternate version.
+                  <li>オリジナルページ上に代替版へのアクセスを提供するリンク又はコントロールがあることを確認する。
                   </li>
                   
-                  <li>Check that the link or control on the original page conforms to all success criteria
-                     for the conformance level being tested.
+                  <li>オリジナルページのリンク又はコントロールが、テストされている適合レベルの全ての達成基準に適合していることを確認する。
                   </li>
                   
-                  <li>Check that the alternate version meets the contrast and all other success criteria
-                     for the conformance level being tested.
+                  <li>代替版が、テストされている適合レベルのコントラスト及び他の全ての達成基準を満たしていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All three checks are true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
