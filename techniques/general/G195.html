@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G195: Using an author-supplied, highly visible focus indicator</title>
+      <title>G195: コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,125 +10,104 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G194">Previous Technique: G194</a></li>
-            <li><a href="G196">Next Technique: G196</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G194">前の達成方法: G194</a></li>
+            <li><a href="G196">次の達成方法: G196</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using an author-supplied, highly visible focus indicator</h1>
+      <h1>コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Generally applicable.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">Success Criterion 1.4.11: Non-text Contrast</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/non-text-contrast">達成基準 1.4.11: 非テキストのコントラスト</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">Success Criterion 2.4.7: Focus Visible</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is enhance the focus indicator in the browser, by
-               creating a highly visible one in the content. The default focus indicator in many
-               browsers is a thin,dotted, black line. It can be difficult to see the line when it
-               is around a form element which already has an outline, when the focused element is
-               inside a table cell, when the focused element is very small, or when the background
-               of the page is a dark color.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、視認性に優れたフォーカスを作ることによりブラウザのフォーカスインジケータを強調することである。多くのブラウザにおける初期値のフォーカスインジケータは、細いドットの黒い線になっている。アウトラインを既に持っているようなフォーム要素を囲っている場合、テーブルセルの中にフォーカス要素が入っている場合、フォーカスされた要素がとても小さい場合、もしくはページの背景の色が濃い色の場合は、そのフォーカスを見ることが困難である。
             </p>
-            <p>In this technique, when the user places focus on an element, using the mouse, tab
-               key, arrow keys, keyboard shortcuts, or any other method, the application makes that
-               focus more visible, using a combination of a highly contrasting color, a thick line,
-               and other visual indicators such as a glow.
+            <p>この達成方法において、利用者がマウス、Tab キー、矢印キー、キーボードのショートカット、もしくは他の方法を用いて要素にフォーカスを置いている時、アプリケーションは高いコントラスト比を持った色、太字、そして光を放つような視覚的インジケータを用いることによってフォーカスをより視認性のあるものにしている。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-links">
-               <h3>Example 1: Links</h3>
-               <p>A Web page has a dark background color and light text and links. When focus lands
-                  on a link, the link is outlined with a bright yellow line, 3 pixels wide.
+               <h3>例 1: リンク</h3>
+               <p>濃い背景色と明るい文字とリンクを持つウェブページがある。フォーカスがリンクにあたると、そのリンクは 3 ピクセルの明るい黄色のラインで囲まれる。
                </p>
             </section>
             <section class="example" id="example-2-form-elements">
-               <h3>Example 2: Form Elements</h3>
-               <p>A Web page includes a form inside a table. The borders of both the table and the form
-                  elements are thin, black lines. When focus lands on a form element, the element is
-                  outlined with a 5 pixel red line that is partially transparent.
+               <h3>例 2: フォーム要素</h3>
+               <p>テーブルの中にフォームが書かれているウェブページがある。テーブルとフォームの要素の両方の境界は細くて黒い線になっている。フォーカスがフォーム要素に当たる時、その要素は部分的に透明になっている 5 ピクセルの赤い線で囲まれる。
                </p>
             </section>
             <section class="example" id="example-3-menus">
-               <h3>Example 3: Menus</h3>
-               <p>A Web page includes an interactive menu with sub-menus. A user can move focus in the
-                  menu using the arrow keys. As focus moves, the currently focused menu item changes
-                  its background to a different color, which has a 3:1 contrast ratio with the surrouding
-                  items and a 4.5:1 contrast ratio with its own text.
+               <h3>例 3: メニュー</h3>
+               <p>サブメニューを持ったインタラクティブなメニューを含んだウェブページがある。利用者は矢印キーを使ってメニューの中でフォーカスを動かすことができる。フォーカスが動くと、フォーカスが当たっているメニュー項目はその背景を異なる色に変える。その色は周りの項目に対して 3:1 のコントラスト比を持ち、そのメニューのテキストの色と 4.5:1 のコントラスト比を持っている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G149">G149: Using user interface components that are highlighted by the user agent when they receive
-                     focus</a></li>
+               <li><a href="G149">G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する</a></li>
                
-               <li><a href="G165">G165: Using the default focus indicator for the platform so that high visibility default
-                     focus indicators will carry over</a></li>
+               <li><a href="G165">G165: 視認性の高いデフォルトのフォーカスインジケータが引き継がれるように、プラットフォームデフォルトのフォーカスインジケータを使用する</a></li>
                
-               <li><a href="../css/C15">C15: Using CSS to change the presentation of a user interface component when it receives
-                     focus</a></li>
+               <li><a href="../css/C15">C15: ユーザインタフェースコンポーネントがフォーカスを受けとったときの提示を変更するために、CSS を使用する</a></li>
                
-               <li><a href="../client-side-script/SCR31">SCR31: Using script to change the background color or border of the element with focus</a></li>
+               <li><a href="../client-side-script/SCR31">SCR31: フォーカスのある要素の背景色又はボーダーを変更するために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Place focus on each focusable user interface element on the page using the mouse.</li>
+                  <li>マウスを用いてページ上のそれぞれのフォーカスできるユーザインタフェース要素にフォーカスを置く。</li>
                   
-                  <li>Check that there is a highly visible focus indicator.</li>
+                  <li>視認性に優れたフォーカスインジケータがあることを確認する。</li>
                   
-                  <li>Place focus on each focusable user interface element on the page using the keyboard.</li>
+                  <li>キーボードを用いてページ上のそれぞれのフォーカスできるユーザインタフェース要素にフォーカスを置く。</li>
                   
-                  <li>Check that there is a highly visible focus indicator.</li>
+                  <li>視認性に優れたフォーカスインジケータがあることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and  #4 are true.</li>
+                  <li>#2 及び  #4 の結果が真である。</li>
                   
                </ul>
                
