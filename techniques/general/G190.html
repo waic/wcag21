@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G190: Providing a link adjacent to or associated with a non-conforming object that links
-         to a conforming alternate version
+      <title>G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,118 +11,93 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G189">Previous Technique: G189</a></li>
-            <li><a href="G191">Next Technique: G191</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G189">前の達成方法: G189</a></li>
+            <li><a href="G191">次の達成方法: G191</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a link adjacent to or associated with a non-conforming object that links
-         to a conforming alternate version
+      <h1>適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique is not referenced from any Understanding document.</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>(この達成方法は、解説書から参照されていない。)</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>It is better for all objects on a page to conform, but there are certain circumstances
-               where that may not be possible. There may be situations when an object or section
-               of content targets people with certain disabilities while those same attributes make
-               it inaccessible for someone else. There may also be other reasons not to have a conforming
-               object on the Web page. When an object does not conform, then a link to a conforming
-               alternate version is adjacent to the non-conforming object in the linear reading order
-               or is associated with the the non-conforming content. The conforming alternate version
-               conveys the same information as the non-conforming version.
+            <h2>解説</h2>
+            <p>ページにあるすべてのオブジェクトが適合しているのがより望ましいが、それが可能ではない状況もある。オブジェクト又はコンテンツのセクションが特定の障害のある利用者を想定していると、一方でそういった同じ属性が他の利用者にとってアクセシブルではなくなるという状況がありえる。また、ウェブページ上に適合しているオブジェクトを持たない他の理由も考えられる。オブジェクトが適合していない際には、適合している代替版へのリンクが線形化した読み上げ順序の中で適合していないオブジェクトに隣接している、又は適合していないコンテンツと関連付けられている。適合している代替版は、適合していないバージョンと同じ情報を伝達している。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-video-of-a-rap-song-where-audio-descriptions-would-interfere-with-the-artistic-integrity-of-the-music">
-               <h3>Example 1: A video of a rap song where audio descriptions would interfere with the
-                  artistic integrity of the music
+               <h3>例 1: 音楽の芸術的な品位を阻害する音声解説のあるラップ音楽映像
                </h3>
-               <p>A video of a rap song named "The Hip Hop Kid" has a musical background. Introducing
-                  "Audio Description" speaking parts during the pauses in the song would interfere with
-                  the guitar lines and drum grooves that the artist is trying to convey. On the Web
-                  page, immediately following the video object, there is a link that says, "Audio described
-                  version of 'The hip hop kid'" which contains a version of the video containing audio
-                  descriptions of what is happening visually in the video.
+               <p>「ヒップホップキッド」という名前のラップ音楽の映像には背景音がある。音声解説を歌の合い間に挿入することは、アーティストが伝えようとしているギターとドラムの最高潮の演奏を妨げるであろう。そのウェブページ上では、映像オブジェクトのすぐ次に「"ヒップホップキッド"の音声解説バージョン」というリンクがあり、映像の中で視覚的に何が起きているかという音声解説を含んでいるバージョンが提供されている。
                </p>
             </section>
             <section class="example" id="example-2-an-image-of-a-historical-document">
-               <h3>Example 2: An image of a historical document</h3>
-               <p>A Web page about the Declaration of Independence contains an image of the document.
-                  There is not sufficient contrast between the text and the background, and the handwriting
-                  on the document is difficult to read. A link takes the user to an HTML version of
-                  the document.
+               <h3>例 2: 歴史文書の画像</h3>
+               <p>独立宣言についてのウェブページに、文書の画像がある。テキストと背景の間のコントラストは不十分であり、手書きの文書は読むことが困難である。利用者をその文書の HTML バージョンへ誘導するリンクがある。
                </p>
             </section>
             <section class="example" id="example-3-an-animation-that-is-not-accessibility-supported">
-               <h3>Example 3: An animation that is not accessibility supported</h3>
-               <p>An interactive animation created using a Web technology that is not accessibility
-                  supported is displayed on a Web page. A link to a conforming alternate version of
-                  the animation is adjacent to the non-conforming content.
+               <h3>例 3: アクセシビリティ サポーテッドではないアニメーション</h3>
+               <p>アクセシビリティ サポーテッドではないウェブコンテンツ技術を使用して制作されたインタラクティブなアニメーションがウェブページ上で表示されている。アニメーションの適合している代替版へのリンクは、適合していないコンテンツに隣接している。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
-                     alternate version</a></li>
+               <li><a href="G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each non-conforming object in a page:</p>
+               <p>ページ内の適合していないオブジェクトそれぞれに対して:</p>
                
                <ol>
                   
-                  <li>Check to see if there is a non-conforming object on the Web Page.</li>
+                  <li>ウェブページ上に適合していないオブジェクトがあるかどうかを確認する。</li>
                   
-                  <li>Check to see if there is a link to an identifiable conforming version of the object
-                     directly after the non-conforming object in the linear reading order.
+                  <li>線形の読み上げ順序で、適合していないオブジェクトの直後に、オブジェクトの特定可能な適合しているバージョンへのリンクがあるかどうかを確認する。
                   </li>
                   
-                  <li>Check to see if the link goes to a conforming version.</li>
+                  <li>そのリンク先に適合しているバージョンがあるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true.</li>
+                  <li>#2 及び #3 の結果が真である。</li>
                   
                </ul>
                

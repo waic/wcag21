@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G55: Linking to definitions</title>
+      <title>G55: 定義にリンクする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,97 +10,82 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G54">Previous Technique: G54</a></li>
-            <li><a href="G56">Next Technique: G56</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G54">前の達成方法: G54</a></li>
+            <li><a href="G56">次の達成方法: G56</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Linking to definitions</h1>
+      <h1>定義にリンクする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that include links.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>リンク機能を含む全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/unusual-words">Success Criterion 3.1.3: Unusual Words</a> (Sufficient using a more specific technique as a way to meet <a href="../general/G101">G101: Providing the definition of a word or phrase used in an unusual or restricted
-                     way</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/unusual-words">達成基準 3.1.3: 一般的ではない用語</a> (<a href="../general/G101">G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/abbreviations">Success Criterion 3.1.4: Abbreviations</a> (Sufficient as a way to meet <a href="../general/G102">G102: Providing the expansion or explanation of an abbreviation</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/abbreviations">達成基準 3.1.4: 略語</a> (<a href="../general/G102">G102: 略語の元の語又は説明を提供する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to make the definition of a word, phrase, or abbreviation
-               available by providing the definition, either within the same Web page or in a different
-               Web page, and establishing a link between the item and its definition.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、同じウェブページ又は異なるウェブページの中で定義を提供し、項目とその定義の間にリンクを指定することで、単語、句、又は略語の定義を入手できるようにすることである。
             </p>
-            <p>Links are a powerful option for providing access to the definition of a word, phrase,
-               or abbreviation. A user can use the link to find the definition quickly and easily,
-               and then return to his place in the content via the user agent's Back button.
+            <p>リンクは、単語、句、又は略語の定義へのアクセスを提供するための強力な選択肢である。利用者は、迅速かつ容易に定義を見つけるのにリンクを使用し、それから、ユーザエージェントの戻るボタンによってコンテンツの元の場所に戻る。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Technical terms and abbreviations in an article about sports injuries are linked to
-                  definitions in a medical dictionary.
+               <h3>例 1</h3>
+               <p>スポーツ障害に関する記事中の専門用語と略語は、医学辞典の定義にリンクされている。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A textbook contains a glossary of new vocabulary words introduced in each chapter.
-                  The first occurrence of each of these words is linked to its definition in the glossary.
+               <h3>例 2</h3>
+               <p>教科書には各章で紹介された新しい単語の用語集がある。これらの単語は初出時に、用語集の定義にリンクが貼られている。
                </p>
             </section>
             <section class="example" id="example-3">
-               <h3>Example 3</h3>
-               <p>A general glossary of abbreviations is provided. All occurrences of abbreviations
-                  are linked directly to the appropriate definition within that glossary.
+               <h3>例 3</h3>
+               <p>略語の一般的な用語集が提供されている。略語が出現するすべての箇所には、用語集の中の適切な定義に直接リンクが貼られている。
                </p>
             </section>
             <section class="example" id="example-4">
-               <h3>Example 4</h3>
-               <p>The word
+               <h3>例 4</h3>
+               <p>
                   <em>
-                     <a href="https://waic.jp/docs/WCAG21/#dfn-jargon">jargon</a>
+                     <a href="https://waic.jp/docs/WCAG21/#dfn-jargon">業界用語 (jargon)</a>
                      </em>
-                  is linked to its definition in the WCAG2 Glossary.
-               </p>
+                  という用語は WCAG 2.1 の用語集の定義にリンクされている。
+                   </p>
             </section>
             <section class="example" id="example-5">
-               <h3>Example 5</h3>
-               <p>The word "modulo" is jargon used in Web content about mathematics. A definition for
-                  modulo is included within the Web page. Each occurrence of the word modulo is linked
-                  to its definition.
+               <h3>例 5</h3>
+               <p>「モジュロ」という単語は、数学に関するウェブコンテンツで使用される専門用語である。モジュロの定義はウェブページの中に含まれている。モジュロという単語の各出現時に、その定義にリンクが貼られている。
                </p>
             </section>
             <section class="example" id="example-6">
-               <h3>Example 6</h3>
-               <p>A Japanese idiom is linked to its definition. This example uses a link within the
-                  page to navigate to the definition of an idiomatic expression.
+               <h3>例 6</h3>
+               <p>日本語の慣用句は定義にリンクされている。この例は、ページの中で慣用句の定義へ案内するリンクを使用している。
                </p><pre xml:space="preserve">
               &lt;p&gt;...&lt;a href="#definition"&gt;さじを投げる&lt;/a&gt;...&lt;/p&gt;
                 &lt;h3&gt;脚注：&lt;/h3&gt;
@@ -111,49 +96,49 @@
             </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G62">G62: Providing a glossary</a></li>
+               <li><a href="G62">G62: 用語集を提供する</a></li>
                
-               <li><a href="G70">G70: Providing a function to search an online dictionary</a></li>
+               <li><a href="G70">G70: オンライン辞書を検索する機能を提供する</a></li>
                
-               <li><a href="G101">G101: Providing the definition of a word or phrase used in an unusual or restricted way</a></li>
+               <li><a href="G101">G101: 一般的ではない、又は限定された用法で用いられている単語又は語句の定義を提供する</a></li>
                
-               <li><a href="G102">G102: Providing the expansion or explanation of an abbreviation</a></li>
+               <li><a href="G102">G102: 略語の元の語又は説明を提供する</a></li>
                
-               <li><a href="G112">G112: Using inline definitions</a></li>
+               <li><a href="G112">G112: インラインの定義を使用する</a></li>
                
-               <li><a href="../html/H40">H40: Using description lists</a></li>
+               <li><a href="../html/H40">H40: 記述リストを使用する</a></li>
                
-               <li><a href="../html/H60">H60: Using the link element to link to a glossary</a></li>
+               <li><a href="../html/H60">H60: 用語集にリンクするために、link 要素を使用する</a></li>
                
-               <li><a href="../html/H64">H64: Using the title attribute of the frame and iframe elements</a></li>
+               <li><a href="../html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each word, phrase, or abbreviation to be defined:</p>
+               <p>定義される各単語、句、又は略語について:</p>
                
                <ol>
                   
-                  <li>Check that at least the first instance of the item is a link.</li>
+                  <li>少なくともそのアイテムが最初の箇所がリンクであることを確認する。</li>
                   
-                  <li>Check that each link navigates to the definition of the item.</li>
+                  <li>各リンクがそのアイテムの定義にナビゲートすることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
