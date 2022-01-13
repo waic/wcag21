@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G168: Requesting confirmation to continue with selected action</title>
+      <title>G168: 選択されたアクションを続行するために確認を求める</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,136 +10,102 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G167">Previous Technique: G167</a></li>
-            <li><a href="G169">Next Technique: G169</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G167">前の達成方法: G167</a></li>
+            <li><a href="G169">次の達成方法: G169</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Requesting confirmation to continue with selected action</h1>
+      <h1>選択されたアクションを続行するために確認を求める</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">Success Criterion 3.3.4: Error Prevention (Legal, Financial, Data)</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">達成基準 3.3.4: エラー回避 (法的、金融、データ)</a></span> (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This technique is to seek confirmation from the user that the selected action is his
-               or her intended action. Use this technique in situations where the action can not
-               be undone after it has been followed through. This will help users avoid submitting
-               a form or deleting data by mistake.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、選択されたアクションが利用者の意図どおりであるかどうか、利用者に対して確認を求めることである。アクションが遂行された後では取消が不可能な場合は、この達成方法を用いる。これによって、利用者が誤ってフォームを送信してしまったり、データを削除してしまったりすることを防ぐことができる。
             </p>
-            <p>For example, this may occur when the user expects the 'submit' and 'cancel' buttons
-               to occur in an order contrary to what is provided and selects a button too quickly
-               to notice the unexpected order. Presenting the user with a confirmation request allows
-               the user to recognize the error and either stop the submission of data or stop the
-               loss of entered data.
+            <p>例えば、利用者が想定していた「送信」ボタンと「キャンセル」ボタンの提示順序が、システムの設定とは逆だった場合、ボタンを早く押し過ぎて予想とは違う順序であることに気付かないことによって、誤操作が起こりうる。利用者に確認の要求を提示することで、間違いに気付き、データの送信を中止する、又は入力したデータが失われないようにすることができる。
             </p>
-            <p>The request for confirmation should inform the user of the action that was selected
-               and the consequences of continuing with the action.
+            <p>確認の要求では、選択されたアクション、及びアクションを継続した場合の結果を利用者に伝えるべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-airline-travel">
-               <h3>Example 1: Airline travel</h3>
-               <p>An online travel Web site lets users create travel itineraries that reserve seats
-                  with different airlines. Users may look up, amend and cancel their current itineraries.
-                  If the user needs to cancel his travel plans, he finds the itinerary on the Web page
-                  and deletes it from his list of current itineraries. This action results in the cancellation
-                  of his seat reservations and is not reversible. The user is informed that the selected
-                  action will cancel their current seat reservations and that it may not be possible
-                  to make a comparable booking on the same flights once this action has been taken.
-                  The user is asked to confirm or cancel the deletion of the itinerary.
+               <h3>事例 1: 飛行機を利用した旅行</h3>
+               <p>オンラインの旅行サイトで、利用者はいろいろな航空会社の座席の予約をして、旅程表を作成することができる。利用者はその時点での旅程表を確認して、修正したり、キャンセルしたりすることができる。旅行の予定をキャンセルしたいとき、ウェブページ上でその予約を見つけて、旅程表から削除する。このアクションで彼の座席の予約はキャンセルされ、元には戻らなくなる。利用者は選択したアクションによって現在の座席の予約がキャンセルされ、アクションが実行されると同じフライトでの予約が不可能になることを知らされる。利用者は予約を取り消してよいか、又は予約の取消を中止するかの確認を求められる。
                </p>
             </section>
             <section class="example" id="example-2-webmail">
-               <h3>Example 2: Webmail</h3>
-               <p>A Webmail application stores a user's email on a server, so that it can be accessed
-                  from anywhere on the web. When a user deletes an email message, it is moved to a trash
-                  folder from which it can be retrieved if it was deleted by accident. There is an "empty
-                  trash" command for deleting the messages in the trash folder from the server. Once
-                  the trash folder has been emptied, the messages can no longer be retrieved. Before
-                  emptying the trash folder, the user is asked to confirm or cancel deletion of the
-                  email in the trash folder.
+               <h3>事例 2: ウェブメール</h3>
+               <p>ウェブメールのアプリケーションが、インターネットにつながっている場所ならどこからでもアクセスできるように利用者の電子メールをサーバー上に保存している。利用者が電子メールのメッセージを削除する場合、間違って削除してしまっても取り出すことができるゴミ箱フォルダーにメッセージは移動される。ゴミ箱フォルダのメッセージをサーバーから削除するための「ゴミ箱を空にする」コマンドがある。ゴミ箱フォルダーが空にされると、メッセージは 2 度と取り出すことはできなくなる。そのため、ゴミ箱フォルダーを空にする前に、利用者はゴミ箱フォルダの電子メールを削除してよいか、又は削除するのを中止するかの確認を求められる。
                </p>
             </section>
             <section class="example" id="example-3-an-online-test">
-               <h3>Example 3: An online test</h3>
-               <p>A form is used to collect answers for a test. When the 'submit' or 'reset' button
-                  is selected the user is presented with a web page that informs them of their choice
-                  and asks for confirmation to continue. Example 1: "You have selected to reset the
-                  form. This will delete all previously entered data and will not submit any answers.
-                  Would you like to reset the form? [yes button] [no button]" Example 2: "You have selected
-                  to submit the form. This will submit entered data as your final answers and can not
-                  be changed. Would you like to submit the form? [yes button] [no button]"
+               <h3>事例 3: オンライン上の試験</h3>
+               <p>試験の答案の回収用にフォームが使用されている。「送信」ボタンまたは「リセット」ボタンが選択されると、ウェブページ上で、どちらを選択したかが表示され、続行してよいか確認を求められる。事例 1:「フォームをリセットするを選択しました。入力したデータは全て削除され、回答は送信されません。フォームをリセットしますか？　[はい　ボタン][いいえ　ボタン]」。事例 2:「フォームを送信するを選択しました。入力されたデータはあなたの最終回答として送信され、変更することができなくなります。フォームを送信しますか？[はい　ボタン][いいえ　ボタン]」。
                </p>
             </section>
             <section class="example" id="example-4-trading-stocks">
-               <h3>Example 4: Trading stocks</h3>
-               <p>A brokerage site allows users to buy and sell stocks and other securities. If the
-                  user makes a transaction during trading hours, a dialog is presented informing the
-                  user that the transaction is immediate and irreversible, and has buttons that say
-                  "continue" and "cancel."
+               <h3>事例 4: 株取引</h3>
+               <p>株取引のサイトで利用者は株や他の証券の売買ができる。取引時間内に利用者が取引を行った場合、取引は即時に処理され、変更不可能であるということがダイログで提示される。ダイアログには、「続ける」ボタンと「中止する」ボタンがある。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G98">G98: Providing the ability for the user to review and correct answers before submitting</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G98">G98: 送信する前に、利用者が回答を確認及び修正できるようにする</a></li>
                
-               <li><a href="G99">G99: Providing the ability to recover deleted information</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G99">G99: 削除した情報を復元する機能を提供する</a></li>
                
-               <li><a href="G155">G155: Providing a checkbox in addition to a submit button</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G155">G155: 送信ボタンに加えてチェックボックスを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Initiate the action that can not be reversed or changed.</li>
+                  <li>元に戻す又は変更が不可能なアクションを始める。</li>
                   
-                  <li>Check that a request to confirm the selected action is presented.</li>
+                  <li>選択したアクションに対して、確認の要求が提示されることを確認する。</li>
                   
-                  <li>Check that the action can be confirmed and canceled.</li>
+                  <li>アクションを確定することができる、及びアクションを取り消すことができることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true.</li>
+                  <li>2.及び 3.の結果が真である。</li>
                   
                </ul>
                
