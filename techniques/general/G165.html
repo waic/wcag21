@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G165: Using the default focus indicator for the platform so that high visibility default
-         focus indicators will carry over
+      <title>G165: 視認性の高いデフォルトのフォーカスインジケータが引き継がれるように、プラットフォームデフォルトのフォーカスインジケータを使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,110 +11,89 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G164">Previous Technique: G164</a></li>
-            <li><a href="G166">Next Technique: G166</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G164">前の達成方法: G164</a></li>
+            <li><a href="G166">次の達成方法: G166</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using the default focus indicator for the platform so that high visibility default
-         focus indicators will carry over
+      <h1>視認性の高いデフォルトのフォーカスインジケータが引き継がれるように、プラットフォームデフォルトのフォーカスインジケータを使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Technologies that contain focusable elements</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">Success Criterion 2.4.7: Focus Visible</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>フォーカス可能な要素を提供する全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/focus-visible">達成基準 2.4.7: フォーカスの可視化</a></span>  (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Operating systems have a native indication of focus, which is available in many user
-               agents. The default rendering of the focus indicator isn't always highly visible and
-               may even be difficult to see against certain backgrounds. However, many platforms
-               allow the user to customize the rendering of this focus indicator. Assistive technology
-               can also change the appearance of the native focus indicator. If you use the native
-               focus indicator, any system-wide settings for its visibility will carry over to the
-               Web page. If you draw your own focus indicator, for example by coloring sections of
-               the page in response to user action, these settings will not carry over, and AT will
-               not usually be able to find your focus indicator.
+            <h2>解説</h2>
+            <p>OS には標準のフォーカス表示があり、多くのユーザエージェントで利用可能となっている。フォーカスインジケータのデフォルトのレンダリングは常に視認性に優れているわけではなく、ある背景では見づらいことがある。しかし、多くのプラットフォームでは、利用者がフォーカスインジケータのレンダリングのカスタマイズをすることができる。支援技術では、標準のフォーカスインジケータの外観を変更することもできる。コンテンツ制作者が標準のフォーカスインジケータを使用する場合、システム全体に対する見え方の設定はウェブページに引き継がれる。例えば、利用者の操作に反応してページの一部分を色付けするといったコンテンツ制作者独自のフォーカスインジケータを表示させる場合、このような設定は引継がれず、通常、支援技術はコンテンツ制作者独自のフォーカスインジケータを見つけることはできない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>The default focus indicator on Microsoft Windows is a one-pixel, black dotted line
-                  around the focused element. On a page with a dark background, this can be very difficult
-                  to see. The creator of the page uses the default, and the user customizes it in Windows
-                  to make it a bright color.
+               <h3>事例 1</h3>
+               <p>Microsoft Windows のデフォルトのフォーカスインジケータは、フォーカスが当たっている要素の回りに 1 ピクセルの黒い点線で表示される。暗い背景のページ上では、これは非常に見づらくなる。そのページの制作者がデフォルトを使用し、利用者は Windows 上で明るい色にカスタマイズする。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>In HTML, form elements and links can be focused by default. In addition, any element
-                  with a tabindex attribute &gt;= 0 can take focus. Both types of focused elements use
-                  the system focus indicator and will pick up platform changes in the focus indicator
-                  style.
+               <h3>事例 2</h3>
+               <p>HTML において、フォーム要素とリンクにはデフォルトでフォーカスが当たるようになっている。さらに、tabindex の属性値が 0 以上のあらゆる要素はフォーカスを受け取る。フォーカスが当たっている要素はどちらのタイプの場合でも、システムのフォーカスインジケータを使用し、フォーカスインジケータのスタイルについてのプラットフォームの変更を検知する。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G149">G149: Using user interface components that are highlighted by the user agent when they receive
-                     focus</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G149">G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する</a></li>
                
-               <li><a href="../css/C15">C15: Using CSS to change the presentation of a user interface component when it receives
-                     focus</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/css/C15">C15: ユーザインタフェースコンポーネントがフォーカスを受けとったときの提示を変更するために、CSS を使用する</a></li>
                
-               <li><a href="../client-side-script/SCR31">SCR31: Using script to change the background color or border of the element with focus</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR31">SCR31: フォーカスのある要素の背景色又はボーダーを変更するために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Use the features of your platform to customize the appearance of the focus indicator</li>
+                  <li>フォーカスインジケータの外観をカスタマイズするには、プラットフォームの機能を使用する。</li>
                   
-                  <li>Tab through the page, noting the path of the focus</li>
+                  <li>フォーカスの移動順序に注意しながら、ページ内をタブキーで移動する。</li>
                   
-                  <li>Check that the focus indicator for each control is visible</li>
+                  <li>各コントロールでフォーカスインジケータが視覚的に認識可能であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3 is true</li>
+                  <li>3.の結果が真である。</li>
                   
                </ul>
                
