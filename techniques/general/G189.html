@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G189: Providing a control near the beginning of the Web page that changes the link text</title>
+      <title>G189: ウェブページの先頭近くに、リンクテキストを変更するコントロールを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,93 +10,65 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G188">Previous Technique: G188</a></li>
-            <li><a href="G190">Next Technique: G190</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G188">前の達成方法: G188</a></li>
+            <li><a href="G190">次の達成方法: G190</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a control near the beginning of the Web page that changes the link text</h1>
+      <h1>ウェブページの先頭近くに、リンクテキストを変更するコントロールを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that contain links.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>リンクを実装できる全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">Success Criterion 2.4.9: Link Purpose (Link Only)</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">達成基準 2.4.9: リンクの目的 (リンクのみ)</a> (書かれていない達成方法を満たす手段として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide the user with a control near the beginning
-               of the page that takes the user to a conforming alternate version of the Web page
-               where the link text alone of each link is sufficient to determine its purpose out
-               of context.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページの先頭近くに、そのウェブページの適合している代替版へ利用者を誘導するコントロールを提供することである。その代替版では、各リンクのリンクテキストだけで前後のコンテキストを見なくてもリンクの目的がわかるようになっている。
             </p>
-            <p>Some users prefer to have links that are self-contained, where there is no need to
-               explore the context of the link. Other users find including the context information
-               in each link to be repetitive and to reduce their ability to use a site. Among users
-               of assistive technology, the feedback to the working group on which is preferable
-               has been divided. This technique allows users to pick the approach that works best
-               for them. Users who need or prefer potentially longer but complete link text use this
-               version.
+            <p>利用者の中には、リンクのコンテキストを見なくても、リンクの目的がわかるのでリンクテキストにそのコンテキストも含んだリンクを好む利用者がいる。一方で、コンテキストの情報を各リンクに含めることでリンクテキストが冗長になるため、サイトの使い勝手が悪くなると感じる利用者もいる。WCAG ワーキンググループに支援技術の利用者から寄せられたフィードバックでも、どちらを好むかは意見が分かれている。この達成方法を用いることにより、利用者は、自分にとって最適なアプローチを選べるようになる。長くなる可能性があっても完全なリンクテキストを必要とする又はそれを好む利用者は、代替版を使用することができる。
             </p>
-            <p>If the control for switching to the alternate version is a link, it must always be
-               possible to understand the purpose of the control directly from its link text.
+            <p>代替版に変換するコントロールがリンクである場合、そのコントロールの目的が、常にリンクテキストだけでわかるようにしておかなければならない。
             </p>
-            <p>This technique provides the alternate version for the current page view. It is also
-               possible, and in some cases would be advisable, to save this preference in a cookie
-               or server-side user profile, so that users would only have to make the selection once
-               per site and would automatically be taken to their preferred version.
+            <p>この達成方法は、現在のページ表示に対する代替版を提供する。この環境設定をクッキー又はサーバーサイドのユーザプロフィールに保存して、利用者が一度選択すれば、その後はサイトを訪れるごとに選択しなくても、自動的に利用者の好むバージョンが表示されるようにすることもでき、そうするのが望ましい場合もある。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <div>
-                  
-                  <p>This technique can be used in combination with a style switching technique to present
-                     a page that is a
-                     <a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a>
-                     for non-conforming content. Refer to
-                     <a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a>
-                     and
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
-                     for more information.
-                  </p>
-                  
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>                 
+                  <p>この達成方法は、表示スタイルを変更して不適合コンテンツに対する<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>となるページを提供する達成方法と併せて使うことができる。詳しくは、<a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a>及び<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">適合している代替版を理解する</a>を参照のこと。</p>                  
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-providing-a-link-to-another-version">
-               <h3>Example 1: Providing a Link to another Version</h3>
-               <p>A Web page lists books for download in different formats. Alternate versions of the
-                  Web page use just the book format as the link text or the book title and format type.
+               <h3>例 1: 別バージョンへのリンクを提供する</h3>
+               <p>ウェブページに、様々なフォーマットでダウンロードできる書籍のリストがある。このウェブページの代替版では、書籍のフォーマットだけ、又は書籍名とフォーマットのタイプが、リンクテキストとして使われている。
                </p>
-               <p>Version with short link text:</p><pre xml:space="preserve">
+               <p>短いリンクテキストのバージョン:</p><pre xml:space="preserve">
               ...
                 &lt;h1&gt;Books for download&lt;/h1&gt;
                 &lt;p&gt;&lt;a href="books-full-links.html" &gt;Full link Version&lt;/a&gt;&lt;/p&gt;
@@ -108,7 +80,7 @@
                 &lt;/li&gt;
                 ...
                 &lt;/ul&gt;
-            </pre><p>Version with full link text:</p><pre xml:space="preserve">
+            </pre><p>完全なリンクテキストを用いたバージョン:</p><pre xml:space="preserve">
               ...
                 &lt;h1&gt;Books for download&lt;/h1&gt;
                 &lt;p&gt;&lt;a href="books-short-links.html" &gt;Short link Version&lt;/a&gt;&lt;/p&gt;
@@ -123,51 +95,49 @@
             </pre></section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
-               <li><a href="../html/H30">H30: Providing link text that describes the purpose of a link for anchor elements</a></li>
+               <li><a href="../html/H30">H30: a 要素のリンクの目的を説明するリンクテキストを提供する</a></li>
                
-               <li><a href="../html/H24">H24:  Providing text alternatives for the area elements of image maps </a></li>
+               <li><a href="../html/H24">H24:  イメージマップの area 要素にテキストによる代替を提供する</a></li>
                
-               <li><a href="../css/C7">C7: Using CSS to hide a portion of the link text</a></li>
+               <li><a href="../css/C7">C7: リンクテキストの一部を非表示にするために、CSS を使用する</a></li>
                
-               <li><a href="../client-side-script/SCR30">SCR30: Using scripts to change the link text</a></li>
+               <li><a href="../client-side-script/SCR30">SCR30: リンクテキストを変更するために、スクリプトを使用する</a></li>
                
-               <li><a href="G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
-                     alternate version</a></li>
+               <li><a href="G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                
-               <li><a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that there is a control near the beginning of the Web page to change link text.</li>
+                  <li>ウェブページの先頭近くに、リンクテキストを変換するコントロールがあることを確認する。</li>
                   
-                  <li>Activate the control.</li>
+                  <li>コントロールを起動する。</li>
                   
-                  <li>Check that all links in the resulting Web page have link text that describes their
-                     purpose.
+                  <li>得られるウェブページで、全てのリンクにその目的を説明しているリンクテキストがあることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #3 are true.</li>
+                  <li>#1 及び #3 の結果が真である。</li>
                   
                </ul>
                
