@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual
-         cues on focus for links or controls where color alone is used to identify them
+      <title>G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,120 +11,82 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G182">Previous Technique: G182</a></li>
-            <li><a href="G184">Next Technique: G184</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G182">前の達成方法: G182</a></li>
+            <li><a href="G184">次の達成方法: G184</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a contrast ratio of 3:1 with surrounding text and providing additional visual
-         cues on focus for links or controls where color alone is used to identify them
+      <h1>色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Colored text when color alone is used to convey information such as words that are
-               links in a paragraph
+            <h2>適用 (対象)</h2>
+            <p>段落中にあるリンクの文字列のように、情報を伝達するために色だけが使われているテキスト
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">達成基準 1.4.1: 色の使用</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to provide a redundant visual cue for users who may
-               not be able to discern a difference in text color. Color is commonly used to indicate
-               words that are links within a paragraph or other block of text. For example, scattered
-               words in text may be hypertext links that are identified only by a difference in color
-               with surrounding text. This technique describes a way to provide additional cues on
-               hover and focus so that users who may have difficulty perceiving color differences
-               or have low vision can identify them.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、テキストの色の違いを識別することができない利用者に対して、同じ情報を示す豊富な視覚的な手がかりを提供することである。色は、段落や他のテキストのブロックの中にある文字列がリンクであることを示すために、一般的に使用されている。例えば、テキスト中に散らばる文字列が、周囲のテキストとの色の違いだけでハイパーテキストのリンクであると認識される。この達成方法は、色の違いを知覚することが困難である、又はロービジョンである利用者がそれらを見分けることができるよう、カーソルを重ねたりフォーカスが当たったときに、手がかりを補足する方法を説明している。
             </p>
-            <p>With this technique, a
-               <a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">relative luminance</a>
-               (lightness) difference of 3:1 or greater with the text around it can be used if additional
-               visual confirmation is available when a user points or tabs to the link. Visual highlights
-               may, for example, take the form of underline, a change in font style such as bold
-               or italics, or an increase in font size.
+            <p>利用者がカーソルを合わせるか Tab キーでリンクに移動するとき、この達成方法とともに視覚的な補足の確認手段があれば、テキストとその周りの<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a> (明るさ) の差を 3:1 かそれ以上にしてもよい。視覚的なハイライトとは、例えば、アンダーライン、太字又は斜体といったフォントスタイルの変化、又はフォントサイズが大きくなるといった形になる。
             </p>
-            <p>While using this technique is sufficient to meet this success criteria, it is not
-               the preferred technique to differentiate link text. This is because links that use
-               the relative luminance of color alone may not be obvious to people with black/white
-               color blindness. If there are not a large number of links in the block of text, underlines
-               are recommended for links.
+            <p>この達成方法を使うことは、この達成基準を満たすために十分であるが、リンクテキストを区別するには、好ましい達成方法ではない。これは、色の相対輝度だけを使用するリンクは、全色盲の人々には分からないかもしれないからである。もしテキストのブロックに大量のリンクがないならば、リンクにはアンダーラインが推薦される。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>This technique is about the use of color in addition to luminosity. In this technique,
-                     the contrast ratio refers to the contrast between a link and the words around it.
-                     In Success Criterion 1.4.3 and 1.4.6, contrast ratio refers to the contrast between
-                     a word and its background. The difference is that  this technique is about the ability
-                     for users to tell the difference (a noticeable difference) between different pieces
-                     of text whereas the contrast ratio used in success criterion 1.4.3 and 1.4.6 is about
-                     the readability of the text with its background for different color and vision disabilities.
+                  <p>この達成方法は輝度に加えて色の使用に関するものである。この達成方法では、コントラスト比はリンクとその周囲の語句とのコントラストについて言及している。達成基準 1.4.3 と 1.4.6 では、コントラスト比は単語とその背景とのコントラストについて言及している。この違いは、達成基準 1.4.3 と 1.4.6 に使用されるコントラスト比は、異なる色覚及び視覚障害のための、テキストとその背景の可読性に関するものであるが、この達成方法は利用者がテキストの異なる部分の違い (明らかな違い) を識別する能力に関するものだからである。
                   </p>
                   
-                  <p>If an author wants to use the color portion of this technique (i.e., using different
-                     colors for the words where the colors have sufficient contrast with each other) and
-                     the author also wants to conform to SC 1.4.3 (contrast of both words with their backgrounds)
-                     the following colors can be used. (e.g., black text in a paragraph on a white background
-                     with the links shown as one of the colors in example 1 below.
+                  <p>コンテンツ制作者がこの達成方法の色の部分を使用したい (すなわち、互いに十分なコントラストが確保されている異なる色を語句に使用する) と望んでいて、かつ、コンテンツ制作者が達成基準 1.4.3 にも適合したい (それぞれの語句と背景とのコントラストを確保する) 場合、以下で挙げる色を用いることができる。(例えば、白い背景の段落内で黒いテキストを使い、リンクは以下の事例 1 にある色のいずれかで表現する)。
                   </p>
                   
-                  <p>If assistive technology or Web browsers at some point all provide an option to underline
-                     all links on Web pages for users, this could be used instead of an author-provided
-                     link highlighting mechanism.
+                  <p>もしある時点でのすべての支援技術又はウェブブラウザが、利用者のためにウェブページのすべてのリンクにアンダーラインを引く選択肢を提供するなら、これは、コンテンツ制作者によって提供されたリンクをハイライトするメカニズムの代わりに使用することができる。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-colors-that-would-provide-31-contrast-with-black-words-and-4.51-contrast-with-a-white-background">
-               <h3>Example 1: Colors that would provide 3:1 contrast with black words and 4.5:1 contrast
-                  with a white background
+               <h3>例 1: 黒い文字列に 3:1 のコントラスト、及び白地に 4.5:1 のコントラストを提供する色
                </h3>
-               <p class="working-example">Refer to
-                  <a href="../../working-examples/link-contrast/">Links with a 3:1 contrast ratio with surrounding text</a>
+               <p class="working-example">この事例のサンプル: 
+                  <a href="https://www.w3.org/WAI/WCAG21/working-examples/link-contrast/">周囲のテキストと 3:1 のコントラスト比を持つリンク</a>
                   
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>The hypertext links in a document are medium-light blue (#3366CC) and the regular
-                  text is black (#000000). Because the blue text is light enough, it has a contrast
-                  of 3.9:1 with the surrounding text and can be identified as being different than the
-                  surrounding text by people with all types of color blindness, including those individuals
-                  who cannot see color at all.
+               <h3>例 2</h3>
+               <p>ドキュメントのハイパーテキストのリンクは中位の明るい青 (#3366CC) で、通常のテキストは黒 (#000000) である。なぜなら青のテキストは十分に明るく、周囲のテキストと 3.9:1 のコントラストを持ち、まったく色を見ることができない人も含め、すべての種類の色覚障害を持つ人々が周囲のテキストと違うことを識別することができるからである。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -144,55 +105,54 @@
                </li>
                
             </ul>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <div>                 
+                  <p>「Colour Contrast Analyser」は 2018 年現在、<a href="https://addons.mozilla.org/ja/firefox/">Firefox Add-ons</a> から入手できない状態にある。</p>                  
+               </div>
+            </div>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G14">G14: Ensuring that information conveyed by color differences is also available in text</a></li>
+               <li><a href="G14">G14: 色の違いで伝えている情報をテキストでも入手可能にする</a></li>
                
-               <li><a href="G205">G205: Including a text cue for colored form control labels</a></li>
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
                
-               <li><a href="G145">G145: Ensuring that a contrast ratio of at least 3:1 exists between text (and images of
-                     text) and background behind the text</a></li>
+               <li><a href="G145">G145: テキスト (及び文字画像) とその背景の間に、少なくとも 3:1 のコントラスト比を確保する</a></li>
                
-               <li><a href="G182">G182: Ensuring that additional visual cues are available when text color differences are
-                     used to convey information</a></li>
+               <li><a href="G182">G182: 文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Locate all instances where color alone is used to convey information about text.</li>
+                  <li>テキストにおいて、情報を伝えるために色だけが使われているすべての箇所を見つける。</li>
                   
-                  <li>Check that the
-                     <a href="https://w3c.github.io/wcag/guidelines/#" target="terms">relative luminance</a>
-                     of the color of the text differs from the relative luminance of the surrounding text
-                     by a contrast ratio of at least 3:1.
+                  <li>テキストの色の相対輝度が、周囲のテキストの<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a>と少なくとも 3:1 のコントラスト比の違いがあることを確認する。
                   </li>
                   
-                  <li>Check that pointing (mouseover) to the link causes a visual enhancement (such as an
-                     underline, font change, etc.)
+                  <li>リンクへのポインティング (マウスオーバー) が、視覚的に強調 (アンダーラインやフォントの変更など) を引き起こすことを確認する。
                   </li>
                   
-                  <li>Check that moving keyboard focus to the link causes a visual enhancement (such as
-                     an underline, font change, etc.)
+                  <li>キーボードフォーカスをリンクに移動すると、視覚的に強調 (アンダーラインやフォントの変更など) を引き起こすことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2, #3, and #4 are all true.</li>
+                  <li>#2、#3、及び #4 の結果が真である。</li>
                   
                </ul>
                
