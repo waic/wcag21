@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G167: Using an adjacent button to label the purpose of a field</title>
+      <title>G167: テキストフィールドの目的をラベル付けするために隣接するボタンを用いる</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,127 +10,107 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G166">Previous Technique: G166</a></li>
-            <li><a href="G168">Next Technique: G168</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G166">前の達成方法: G166</a></li>
+            <li><a href="G168">次の達成方法: G168</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using an adjacent button to label the purpose of a field</h1>
+      <h1>テキストフィールドの目的をラベル付けするために隣接するボタンを用いる</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support forms</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>フォームをサポートするウェブコンテンツ技術すべて</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 1.2.1: ラベル又は説明</a></span>  (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>When a button invokes a function on an input field, has a clear text label, and is
-               rendered adjacent to the input field, the button also acts as a label for the input
-               field. This label helps users understand the purpose of the field without introducing
-               repetitive text on the Web page. Buttons that label single text fields typically follow
-               the input field.
+            <h2>解説</h2>
+            <p>テキストフィールド上である機能を実行するボタンがあり、ボタンは明確にラベル付けされていて、テキストフィールドと隣り合って表示される場合、ボタンはテキストフィールドに対するラベルとしての役割も果たす。このラベルは、ページ上に新たな反復的なテキストを追加することなく、利用者がこのテキストフィールドの目的を理解するのを助ける。一つのテキストフィールドをラベル付けするボタンは通常はテキストフィールドの後に置かれる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>The field must also have a programmatically determined name, per
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">Success Criterion 4.1.2</a>.
+                  <p>このフィールドはまた、<a href="https://waic.jp/docs/WCAG21/Understanding/name-role-value">達成基準 4.1.2</a> によって、プログラムによる解釈が可能な名前 (name) を持っていなければならない。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-a-search-function">
-               <h3>Example 1: A search function</h3>
-               <p>A Web page contains a text field where the user can enter search terms and a button
-                  labeled "Search" for performing the search. The button is positioned right after the
-                  text field so that it is clear to the user that the text field is where to enter the
-                  search term.
+               <h3>事例 1: 検索機能</h3>
+               <p>あるウェブページには、利用者が検索文字列を入力するためのテキストフィールドと、検索を実行するための「検索」とラベル付けされたボタンがある。ボタンはテキストフィールドの直後に配置されているため、このテキストフィールドが検索のための文字列を入力するためのものであることが利用者にとって明らかである。
                </p>
                <figure id="figure-button-label-field">
                   	<img src="img/button-as-label.jpg" />
                   	
-                  <figcaption>Figure 1A text field with a button positioned to the right demonstrating the use of a button
-                     to label a field.
+                  <figcaption>図1A 右側にボタンを配置したテキストフィールド。ボタンはフィールドにラベルを付けている。
                   </figcaption>
                   
                </figure>
             </section>
             <section class="example" id="example-2-picking-a-form">
-               <h3>Example 2: Picking a form</h3>
-               <p>A user in the United States must fill in a form. Since the laws and requirements are
-                  different in different states within the United States, the user must select the version
-                  of a form for his state of residence. A dropdown list allows the user to pick a state.
-                  The adjacent button is labeled "Get Form for State." Pressing the button takes the
-                  user to the Web page containing the form for the selected state.
+               <h3>事例 2: フォームの選択</h3>
+               <p>あるフォームではアメリカ合衆国の利用者に記入を求めている。州によって法律や要求が異なるので、利用者は自分が居住する州に対応したバージョンのフォームを選択しなければならない。ドロップダウンリストから利用者が州を選択するようになっている。隣接するボタンには「この州のフォームを開く」とラベル付けされている。ボタンを押すと、選択した州のためのフォームを表示するウェブページに移動する。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G131">G131: Providing descriptive labels</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G131">G131: 説明的なラベルを提供する</a></li>
                
-               <li><a href="../html/H44">H44: Using label elements to associate text labels with form controls</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/html/H44">H44: テキストラベルとフォームコントロールを関連付けるために、label 要素を使用する</a></li>
                
-               <li><a href="../html/H65">H65: Using the title attribute to identify form controls when the label element cannot
-                     be used</a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/html/H65">H65: label 要素を使用できない場合に、フォームコントロールを特定するために、title 属性を使用する</a></li>
                
-               <li><a href="../html/H71">H71:  Providing a description for groups of form controls using fieldset and legend elements
-                     </a></li>
+               <li><a href="https://waic.jp/docs/WCAG21/Techniques/html/H71">H71: fieldset 要素及び legend 要素を使用して、フォームコントロールのグループに関する説明を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For a field and a button using this technique:</p>
+               <p>この達成方法を用いているテキストフィールド及びボタンに対して:</p>
                
                <ol>
                   
-                  <li>Check that the field and button are adjacent to one another in the programmatically
-                     determined reading sequence.
+                  <li>テキストフィールド及びボタンが、プログラムによる解釈がされる読み上げ順序で、互いに隣接していることを確認する。
                   </li>
                   
-                  <li>Check that the field and button are visually rendered adjacent to one another.</li>
+                  <li>テキストフィールド及びボタンが互いに視覚的に隣接してレンダリングされていることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks are true.</li>
+                  <li>上記の手順全ての結果が真である。</li>
                   
                </ul>
                

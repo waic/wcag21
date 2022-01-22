@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G164: Providing a stated time within which an online request (or transaction) may be amended
-         or canceled by the user after making the request
+      <title>G164: オンラインリクエスト後に、利用者がそのリクエスト (又はトランザクション) を修正又はキャンセルできる一定の時間を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,117 +11,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G163">Previous Technique: G163</a></li>
-            <li><a href="G165">Next Technique: G165</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G163">前の達成方法: G163</a></li>
+            <li><a href="G165">次の達成方法: G165</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a stated time within which an online request (or transaction) may be amended
-         or canceled by the user after making the request
+      <h1>オンラインリクエスト後に、利用者がそのリクエスト (又はトランザクション) を修正又はキャンセルできる一定の時間を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that provide forms.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">Success Criterion 3.3.4: Error Prevention (Legal, Financial, Data)</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>フォームを提供する全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/error-prevention-legal-financial-data">達成基準 3.3.4: エラー回避 (法的、金融、データ)</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to allow users to recover from errors made when
-               placing an order by providing them with a period of time during which they can cancel
-               or change the order. In general, a contract or an order is a legal commitment and
-               cannot be canceled. However, a Web site may choose to offer this capability, and it
-               provides a way for users to recover from errors.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、注文を変更又はキャンセルできる猶予期間を提供することによって、利用者が誤った注文をしてしまった際にその内容を変更又はキャンセルできるようにすることである。一般的には、契約又は注文は法的な義務であり、キャンセルすることができない。しかしながら、ウェブサイトにおいては、この機能を提供し、利用者が注文内容を間違えてしまった際には、注文を変更又はキャンセルできるようにすることが可能である。
             </p>
-            <p>The Web content would need to tell the user how long the cancellation period is after
-               submitting the form and what the procedure would be to cancel the order. The cancellation
-               procedure may not be possible online. It may, for instance, require written notice
-               be sent to an address listed on the Web page.
+            <p>ウェブコンテンツでは、フォームを送信した後、キャンセル可能期間がどのくらいなのか、及びどのような手続きで注文をキャンセルするかを利用者に伝える必要がある。注文をキャセルする手続きがオンラインでは利用できない場合もあり得る。例えば、ウェブページ上に記載された住所宛に書面による通知が必要な場合である。
             </p>
-            <p>After submitting the form, the user is informed of the length of the cancellation
-               period and the procedure for canceling the transaction. It's best to provide the cancellation
-               procedure at the same website where the transaction was submitted so that it is as
-               easy to cancel as it was to submit and to accommodate users who may be unable to use
-               other mechanisms. But, if necessary, the cancellation procedure may be provided through
-               some other mechanism or combination of mechanisms as long as it has equivalent cross-disability
-               accessibility. In this case, users are warned prior to submitting the form that they
-               will not be able to cancel their order online.
+            <p>フォームを送信した後に、利用者にキャンセル可能期間の長さ及び、注文キャンセルの手続き方法を伝える。注文キャンセルの手続き方法を、キャンセル可能期間と同時に伝えることは、他のメカニズムを使えない利用者に必要で、最善の方法といえる。しかし、必要であれば、複合的な障害に対するアクセシビリティを担保できる場合に限り、他のメカニズムや他のメカニズムとの組み合わせでキャンセル手続きの方法を提供してもよい。その場合は、利用者にフォームを送信する前にオンラインでの注文はキャンセルができないことを警告する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-online-shopping">
-               <h3>Example 1: Online shopping</h3>
-               <p>An online shopping Web site lets users cancel purchases up to 24 hours after they
-                  have been made. The Web site explains their policy, and includes a summary of the
-                  policy on the purchase receipt emailed to the user. After 24 hours, the purchase will
-                  be shipped to the user and can no longer be canceled.
+               <h3>例 1: オンラインショッピング</h3>
+               <p>オンラインショッピングのウェブサイトで、24 時間以内であれば利用者が購入をキャンセルできるようにしている。そのウェブサイトでは彼らの方針を説明しており、電子メールで利用者に送られる注文確認書の方針の要約も含まれている。24 時間以降は購入した物は利用者宛に発送され、キャンセルすることはできない。
                </p>
             </section>
             <section class="example" id="example-2-custom-orders">
-               <h3>Example 2: Custom orders</h3>
-               <p>A Web site sells custom sports jackets that are made to order. The customer chooses
-                  the fabric and provides body measurements for the tailor. The Web site gives customers
-                  up to three days to change or cancel an order. Once the material has been cut to the
-                  customer's specifications, it is no longer possible to change or cancel the order.
-                  The company policy is described on its Web site.
+               <h3>例 2: カスタムオーダー</h3>
+               <p>あるウェブサイトでオーダーメイドのスポーツジャケットを販売している。顧客は生地を選び、身体の寸法を仕立て店に送る。ウェブサイトは注文の変更やキャンセルに対して 3 日の猶予を与えている。その顧客の寸法に合わせて生地が裁断されると、注文の変更又はキャンセルはできなくなる。そして、会社の方針がウェブサイト上で説明されている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G98">G98: Providing the ability for the user to review and correct answers before submitting</a></li>
+               <li><a href="G98">G98: 送信する前に、利用者が回答を確認及び修正できるようにする</a></li>
                
-               <li><a href="G155">G155: Providing a checkbox in addition to a submit button</a></li>
+               <li><a href="G155">G155: 送信ボタンに加えてチェックボックスを提供する</a></li>
                
-               <li><a href="G168">G168: Requesting confirmation to continue with selected action</a></li>
+               <li><a href="G168">G168: 選択されたアクションを続行するために確認を求める</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that the Web page describes the time period to cancel or change an order.</li>
+                  <li>注文のキャンセル又は変更するための期間についてウェブページ上に記述があることを確認する。</li>
                   
-                  <li>Check that the Web page describes the process for canceling or changing an order.</li>
+                  <li>注文のキャンセル又は変更するための手続きについてウェブページ上に記述があることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                

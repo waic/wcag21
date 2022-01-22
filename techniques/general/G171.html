@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G171: Playing sounds only on user request</title>
+      <title>G171: 利用者の要求に応じてのみ、音声を再生する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,102 +10,86 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G170">Previous Technique: G170</a></li>
-            <li><a href="G172">Next Technique: G172</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G170">前の達成方法: G170</a></li>
+            <li><a href="G172">次の達成方法: G172</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Playing sounds only on user request</h1>
+      <h1>利用者の要求に応じてのみ、音声を再生する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that can play sound.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/audio-control">Success Criterion 1.4.2: Audio Control</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>音を再生できるウェブコンテンツ技術すべて</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/audio-control">達成基準 1.4.2: 音声の制御</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to allow a user to control the use of sounds in Web
-               content. Someone that uses a screen reader may find it very distracting and difficult
-               to listen to their screen reader if there are also sounds coming from Web content.
-               Providing a way to play sounds only upon request will give a user the control needed
-               to listen to any sounds or other audio without interfering with the output from a
-               screen reader.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブコンテンツにおける音声の使用を利用者が制御できるようにすることである。スクリーンリーダーを使う利用者にとっては、ウェブコンテンツから音声が再生されていると、スクリーンリーダーの音声を聞き取る上で非常に気が散ったり聞き取るのが困難になるかもしれない。利用者の要求によってのみ音声を再生する方法を提供することで、利用者はスクリーンリーダーからの出力と干渉せずに音声を聴くために必要な制御を行えるようになる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A Web page from a grey whale conservation society has a looping background sound of
-                  grey whales singing. There are also sounds of water splashing. The sounds do not start
-                  automatically. Instead, the Web content provides a link at the top of the page to
-                  allow the user to start the sounds manually. The button says "Turn sounds on." After
-                  pressing the "turn sounds on" button, the sounds are heard. The user is then presented
-                  with an option to "turn sounds off."
+               <h3>事例 1</h3>
+               <p>あるコククジラ保護団体のウェブページでは、コククジラの鳴き声と水しぶきの音が背景として繰り返し流れるようになっている。その音声は自動的には開始されない。その代わり、ウェブコンテンツには先頭付近に、利用者が手動で再生を開始できるボタンが置かれている。ボタンには「音声を再生」と書かれており、このボタンを押すことで音声が聞こえてくる。再生が始まると利用者には「音声を停止する」という選択肢が提供される。
                </p>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A link is provided to a sound file that includes the sounds of the grey whales. The
-                  link text says, "Hear the song of the grey whale (mp3)."
+               <h3>事例 2</h3>
+               <p>コククジラの音が含まれる音声ファイルへのリンクが提供されている。リンクテキストには「コククジラの鳴き声を聴く (MP3)」と書かれている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G60">G60: Playing a sound that turns off automatically within three seconds</a></li>
+               <li><a href="G60">G60: 音声の再生を 3 秒以内に自動的に停止する</a></li>
                
-               <li><a href="G170">G170: Providing a control near the beginning of the Web page that turns off sounds that
-                     play automatically</a></li>
+               <li><a href="G170">G170: 自動的に再生される音声を停止するコントロールを、ウェブページの先頭付近で提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Load a Web page that is known to contain sounds that play for 3 seconds or longer.</li>
+                  <li>3 秒以上の音声を再生することが既知のウェブページを読み込む。</li>
                   
-                  <li>Check that no sounds play automatically.</li>
+                  <li>音声が自動的に再生されないことを確認する。</li>
                   
-                  <li>Check that there is a way for a user to start sounds manually.</li>
+                  <li>利用者が手動で音声の再生を開始する方法があることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3 is true.</li>
+                  <li>3. の結果が真である。</li>
                   
                </ul>
                
