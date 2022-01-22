@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G202: Ensuring keyboard control for all functionality</title>
+      <title>G202: 全ての機能に対してキーボード制御を確保する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,132 +10,99 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G201">Previous Technique: G201</a></li>
-            <li><a href="G203">Next Technique: G203</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G201">前の達成方法: G201</a></li>
+            <li><a href="G203">次の達成方法: G203</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring keyboard control for all functionality</h1>
+      <h1>全ての機能に対してキーボード制御を確保する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies that support interactive operation.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>インタラクティブな操作をサポートするウェブコンテンツ技術すべて</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide keyboard operation for all the functionality
-               of the page. When all functionality of content can be operated through a keyboard
-               or keyboard interface, it can be operated by those with no vision as well as by those
-               who must use alternate keyboards or input devices that act as keyboard emulators like
-               speech input software or on-screen keyboards.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページのすべての機能をキーボードで操作可能にすることである。ウェブコンテンツのすべての機能がキーボード又はキーボードインタフェースによって操作可能であれば、全盲の利用者や代替キーボード、音声入力ソフトウェアやオンスクリーンキーボードのようなキーボードエミュレータとよばれる入力デバイスを使用しなければならない利用者が操作できることになる。
             </p>
-            <p>A <a href="https://waic.jp/docs/WCAG21/#dfn-keyboard-interface">keyboard interface</a> allows users to provide keystroke input to programs even if the computing device
-               that they are using does not contain a hardware keyboard. For example, many mobile
-               devices have keyboard interfaces within their operating system as well the option
-               to connect external wireless keyboards. Applications can use the interface to obtain
-               keyboard input either from an external keyboard or from other services that provide
-               simulated keyboard output, such as switch devices, handwriting interpreters or speech-to-text
-               applications.
+            <p>たとえ使用している計算装置がハードウェアキーボードを含んでいなくても、<a href="https://waic.jp/docs/WCAG21/#dfn-keyboard-interface">キーボードインタフェース</a>は、利用者がプログラムにキーストローク入力を提供することを可能にする。例えば、多くのモバイルデバイスはオペレーティングシステムにキーボードインタフェースか、又は外部接続のワイヤレスキーボードに接続する選択肢を持っている。アプリケーションは、外部接続のキーボードまたは他の模擬的にキーボードアウトプットができるサービスからキーボードインプットを得るインターフェースを使える。例えば、スイッチデバイス、手書き解釈プログラムまたは書き起こしアプリケーションなどがある。
             </p>
-            <p>To implement this technique, first determine what functionality is available to users
-               on the page. In this step, it is important to consider functions performed using both
-               the mouse and the keyboard together. Examples of functionality include the use of
-               physical controls such as links, menus, buttons, checkboxes, radio buttons and form
-               fields as well as the use of features like drag and drop, selecting text, resizing
-               regions or bringing up context menus. Other examples of functionality may based on
-               tasks such as adding or removing an item from a shopping cart or initiating a chat
-               session with a sales representative.
+            <p>この達成方法を用いるには、まずそのウェブページでどのような機能が利用者に提供されているのかを確認する必要がある。その際には、マウスやキーボードを使って使用する機能を特定することが重要である。そういった機能の例としては、リンク、メニュー、ボタン、チェックボックス、ラジオボタン、フォームフィールドのような操作系のものや、ドラッグ＆ドロップ、テキスト選択、領域のサイズ変更、コンテキストメニューの表示のような機能的なものが挙げられる。他にも、ショッピングカートでのアイテムの追加や削除、販売担当者とのチャットの起動などのように、タスクをベースにした機能が例として挙げられる。
             </p>
-            <p>Once the functionality of the content has been determined, the author verifies that
-               each of the functions identified can be performed using only the keyboard.
+            <p>ウェブコンテンツが提供している機能を確認したら、コンテンツ制作者はそれぞれの機能がキーボードだけでも操作することが可能かどうかを検証する。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>This does not necessarily mean that each of the individual controls can be used from
-                     the keyboard as long as there are multiple methods to perform the same function available
-                     on the page. Authors are advised to consider how users will discover any keyboard
-                     equivalents which are available.
+                  <p>同じ機能を使用できる手段がウェブページ上で複数提供されている場合には、必ずしもそれぞれのコントロールをキーボードだけで操作可能にする必要はない。その場合、コンテンツ制作者には、利用者がキーボードで操作可能な手段を見つけやすくすることが推奨される。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A page with images used as links changes when the user hovers over the image with
-                  a mouse. To provide keyboard users with a similar experience, the image is also changed
-                  when a user tabs to it.
+               <li>利用者がマウスオーバーすると変化するリンク画像のあるウェブページがある。キーボード利用者に対して同様の体験を提供するために、利用者がキーボード操作でフォーカスをそのリンク画像に移動させたときにも画像が変化するようにしている。
                </li>
                
-               <li>A page that allows users to click and drag items in a list to reorder them also includes
-                  a series of controls that allows keyboard users to move items up, down or to the beginning
-                  and end of the list.
+               <li>リストにあるアイテムをクリックしてドラッグすると順序を入れ替えることができるウェブページで、キーボード操作でリスト内のアイテムの順序を前後に移動させたり、リストの先頭や最後に移動させたりすることのできるコントロール一式も提供している。
                </li>
                
-               <li>The mobile version of a web site includes a menu button that is tapped to open a site
-                  menu, which is implemented as a floating overlay. To provide access to people using
-                  external keyboards or ability switches with their mobile device, the menu button and
-                  the site menu are both implemented such that they can be operated via the mobile device's
-                  keyboard interface.
+               <li>モバイル版ウェブサイトに、タップするとフロートオーバーレイでサイトメニューを開くメニューボタンがある。モバイルデバイスに接続する外部接続キーボードまたは特殊スイッチを利用している人々へのアクセスを提供するために、メニューボタン及びサイトメニューがいずれもモバイルデバイスのキーボードインタフェースで操作できるようにしている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G90">G90: Providing keyboard-triggered event handlers</a></li>
+               <li><a href="G90">G90: キーボードがトリガーとなるイベントハンドラを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify all functionality on the content.</li>
+                  <li>ウェブコンテンツの全ての機能を特定する。</li>
                   
-                  <li>Check that all functionality can be accessed using only the keyboard or keyboard interface.</li>
+                  <li>キーボードのみ、又はキーボードインタフェースのみで全ての機能にアクセスが可能であることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>#2 の結果が真である。</li>
                   
                </ul>
                
