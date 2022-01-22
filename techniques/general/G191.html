@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G191: Providing a link, button, or other mechanism that reloads the page without any blinking
-         content
+      <title>G191: 点滅するコンテンツのないページを再読み込みするリンク、ボタン、又はその他のメカニズムを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,131 +11,108 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G190">Previous Technique: G190</a></li>
-            <li><a href="G192">Next Technique: G192</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G190">前の達成方法: G190</a></li>
+            <li><a href="G192">次の達成方法: G192</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a link, button, or other mechanism that reloads the page without any blinking
-         content
+      <h1>点滅するコンテンツのないページを再読み込みするリンク、ボタン、又はその他のメカニズムを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique relates to all technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">Success Criterion 2.2.2: Pause, Stop, Hide</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">達成基準 2.2.2: 一時停止、停止、非表示</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>This is a general technique for allowing people who cannot use a page with blinking
-               content to turn the blinking content off.
-               <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">Conformance Requirement 1</a>
-               allows for conforming alternate pages to be used to meet conformance. This technique
-               is an example of that approach applied to success criteria 2.2.2.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページに点滅するコンテンツがあると閲覧できない利用者が点滅をオフにできるようにすることである。<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">適合要件 1</a> では、代替ページを使用することによって適合要件を満たすことが認められている。この達成方法は、達成基準 2.2.2 に対してこのアプローチを取った例である。
             </p>
-            <p>It is important that the page without blinking content contain all of the information
-               that was on the page with blinking content.
+            <p>点滅するコンテンツのないページが、点滅するコンテンツのあるページと全く同じ情報を提供していることが重要である。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Removing the content that was blinking from the page would only be satisfactory if
-                     the blinking content was redundant with non blinking content in the original page.
+                  <p>ウェブページから点滅するコンテンツを取り除くことは、そのコンテンツが点滅しないコンテンツと重複している場合にのみ有効である。
                   </p>
                   
-                  <p>This technique can be used in combination with a style switching technique to present
-                     a page that is a
-                     <a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a>
-                     for non-conforming content. Refer to
-                     <a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a>
-                     and
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
-                     for more information.
+                  <p>この達成方法は、表示スタイルを変更して不適合コンテンツに対する<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>となるページを提供する達成方法と併せて用いることができる。詳しくは、<a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a>及び<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">適合している代替版を理解する</a>を参照のこと。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A page has blinking text at the top warning users that they should not submit the
-                  page without first registering. A link at the very top of the page reloads the page
-                  with the blinking text replaced with text that is styled to be highly visible but
-                  does not blink.
+               <li>ページの上部には初回登録なしでページを送信すべきでないことを警告する点滅するテキストがある。ページの最上部にあるリンクはページを再読み込みし、点滅するテキストは、よく目に見えるようにスタイル付けされるが点滅しないテキストに置き換えられる。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G4">G4: Allowing the content to be paused and restarted from where it was paused</a></li>
+               <li><a href="G4">G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</a></li>
                
-               <li><a href="G11">G11: Creating content that blinks for less than 5 seconds</a></li>
+               <li><a href="G11">G11: 5 秒未満で点滅するコンテンツを制作する</a></li>
                
-               <li><a href="G152">G152: Setting animated gif images to stop blinking after n cycles (within 5 seconds)</a></li>
+               <li><a href="G152">G152: (5 秒以内の) 数回のループ後に点滅を停止するように、アニメーション GIF を設定する</a></li>
                
-               <li><a href="G186">G186: Using a control in the Web page that stops moving, blinking, or auto-updating content</a></li>
+               <li><a href="G186">G186: 動きのあるコンテンツ、点滅するコンテンツ、又は自動更新するコンテンツを停止させるコントロールを使用する</a></li>
                
-               <li><a href="G187">G187: Using a technology to include blinking content that can be turned off via the user
-                     agent</a></li>
+               <li><a href="G187">G187: ユーザエージェントによって点滅するコンテンツを停止できるウェブコンテンツ技術を使用する</a></li>
                
-               <li><a href="../client-side-script/SCR22">SCR22: Using scripts to control blinking and stop it in five seconds or less</a></li>
+               <li><a href="../client-side-script/SCR22">SCR22: 点滅を制御し、5 秒以内に停止させるために、スクリプトを使用する</a></li>
                
-               <li><a href="../client-side-script/SCR33">SCR33: Using script to scroll content, and providing a mechanism to pause it</a></li>
+               <li><a href="../client-side-script/SCR33">SCR33: コンテンツをスクロールし、かつそれを一時停止するメカニズムを提供するためにスクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that there is a mechanism to reload page to turn off blinking.</li>
+                  <li>点滅をオフにするためのページを再読み込みするメカニズムがあることを確認する。</li>
                   
-                  <li>Check that reloaded page has no blinking.</li>
+                  <li>再読み込みしたページには点滅がないことを確認する。</li>
                   
-                  <li>Check that the reloaded page has all the information and functionality of the original
-                     page.
+                  <li>再読み込みしたページでは、元のページにある情報及び機能があることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All of the above checks are true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
