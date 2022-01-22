@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G198: Providing a way for the user to turn the time limit off</title>
+      <title>G198: 利用者が制限時間を解除するための手段を提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,104 +10,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G197">Previous Technique: G197</a></li>
-            <li><a href="G199">Next Technique: G199</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G197">前の達成方法: G197</a></li>
+            <li><a href="G199">次の達成方法: G199</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing a way for the user to turn the time limit off</h1>
+      <h1>利用者が制限時間を解除するための手段を提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>This technique relates to all technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">達成基準 2.2.1: タイミング調整可能</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a mechanism for people who cannot complete
-               tasks within a specified time limit to turn off the time limit.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、指定された制限時間内にタスクを完了できない利用者に対して、制限時間を解除するメカニズムを提供することである。
             </p>
-            <p>It is essential that the mechanism for turning off the time limit can be completed
-               without a time limit itself and before the time limit for the page expires. To do
-               this - the mechanism should be available at or near the top of the page so that it
-               can be found and activated quickly by people with a wide range of disabilities.
+            <p>制限時間を解除するメカニズム自体に制限時間が設けられておらず、かつ、ウェブページ全体の制限時間前に完了できるようにすることが非常に重要である。そのためには、さまざまな障害のある利用者がすばやく見つけて解除できるように、このメカニズムをページの上部又は上部近くで提供すべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A page has a listing of news headlines that automatically update every minute. At
-                  the top of the page is a link that turns off the updating.
+               <li>ウェブページに、毎分自動更新されるニュースの見出しのリストが表示されている。このページの上部に、更新をオフにするリンクがある。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G133">G133: Providing a checkbox on the first page of a multipart form that allows users to ask
-                     for longer session time limit or no session time limit</a></li>
+               <li><a href="G133">G133: 複数部分で構成されるフォームの最初のページに、利用者がセッションの制限時間を延長又は解除を要求できるチェックボックスを提供する</a></li>
                
-               <li><a href="G180">G180: Providing the user with a means to set the time limit to 10 times the default time
-                     limit</a></li>
+               <li><a href="G180">G180: 利用者がデフォルトの制限時間を 10 倍に設定できる手段を提供する</a></li>
                
-               <li><a href="../client-side-script/SCR16">SCR16: Providing a script that warns the user a time limit is about to expire</a></li>
+               <li><a href="../client-side-script/SCR16">SCR16: 制限時間が切れようとしていることを利用者に警告するスクリプトを提供する</a></li>
                
-               <li><a href="G4">G4: Allowing the content to be paused and restarted from where it was paused</a></li>
+               <li><a href="G4">G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</a></li>
                
-               <li><a href="../client-side-script/SCR33">SCR33: Using script to scroll content, and providing a mechanism to pause it</a></li>
+               <li><a href="../client-side-script/SCR33">SCR33: コンテンツをスクロールし、かつそれを一時停止するメカニズムを提供するためにスクリプトを使用する</a></li>
                
-               <li><a href="../client-side-script/SCR36">SCR36: Providing a mechanism to allow users to display moving, scrolling, or auto-updating
-                     text in a static window or area</a></li>
+               <li><a href="../client-side-script/SCR36">SCR36: 静的なウィンドウ又は領域にある、動きのあるテキスト、スクロールするテキスト、又は自動更新されるテキストを利用者が表示できるメカニズムを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that there is a mechanism to turn off any time limits near the top of the page.</li>
+                  <li>ウェブページの上部近くに、あらゆる制限時間を解除するメカニズムがあることを確認する。</li>
                   
-                  <li>Verify that the time limit for the page is long enough that a user can easily navigate
-                     to the mechanism even if they are 10 times slower than most users.
+                  <li>ウェブページの制限時間が、一般的な利用者よりも 10 倍の時間を要する利用者でも、そのメカニズムを利用できるのに十分な長さであることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #2 are true.</li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
