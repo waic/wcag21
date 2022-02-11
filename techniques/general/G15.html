@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G15: Using a tool to ensure that content does not violate the general flash threshold or
-         red flash threshold
+      <title>G15: コンテンツが一般閃光閾値及び赤色閃光閾値を越えていないことを確認するためにツールを使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,98 +11,77 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G14">Previous Technique: G14</a></li>
-            <li><a href="G17">Next Technique: G17</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G14">前の達成方法: G14</a></li>
+            <li><a href="G17">次の達成方法: G17</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a tool to ensure that content does not violate the general flash threshold or
-         red flash threshold
+      <h1>コンテンツが一般閃光閾値及び赤色閃光閾値を越えていないことを確認するためにツールを使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Applies to any technology</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes-or-below-threshold">Success Criterion 2.3.1: Three Flashes or Below Threshold</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes-or-below-threshold">達成基準 2.3.1: 3 回の閃光、又は閾値以下</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of testing for violations of the general and red flash thresholds is to
-               allow people who have photosensitive seizures to view Web sites without encountering
-               material that is likely to cause a seizure. Warnings can be provided but people may
-               miss them and children may not be able to read or understand them. With this technique
-               all material is checked and if it violates flash or red flash thresholds it is either
-               not put on the site or it is modified so that it does not violate the thresholds.
+            <h2>解説</h2>
+            <p>一般閃光閾値と赤色閃光閾値を違反しているかどうかを検証する目的は、光感受性による発作のある利用者が、発作を起こしそうなコンテンツに遭遇することなくウェブサイトを閲覧できるようにすることである。警告を示すという方法もあるが、見逃すことも考えられるし、また子どもたちは警告があっても読めなかったり、理解できなかったりするかもしれない。この達成方法を用いることによって、コンテンツのチェックができるので、一般閃光や赤色閃光の閾値を違反している場合は、サイト上で用いないことにするか、あるいは閾値に反しないように修正する。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>There are some simple tests that can be run for particular simple types of flashing.
-                     For example:
+                  <p>特定の単純な閃光であれば用いることができる検証がある。例えば:
                   </p>
                   
                   <ul>
                      
-                     <li>If material flashes 3 times per second or less then the simple test in
-                        <a href="#G19"></a>
-                        can be used.
+                     <li>コンテンツが 1 秒間に 3 回あるいはそれよりも少ない回数の閃光を放つものであれば、<a href="G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a>を用いることができる。
                      </li>
                      
-                     <li>If material flashes in only one place on screen at a time and is quite small then
-                        the simple test in technique
-                        <a href="#G176"></a>
-                        can be used.
+                     <li>コンテンツが画面上で一度に一箇所でだけ閃光を放ち、その面積が十分に小さいならば、達成方法 <a href="G176">G176: 閃光を放つ領域を十分に小さくする</a>を用いることができる。
                      </li>
                      
                   </ul>
                   
-                  <p>For all other types, a tool is needed to keep track of all the factors and apply them
-                     to the video on a time-continuous basis.
+                  <p>その他の場合は、すべての要因を把握し、連続する時間単位で映像に適用するツールが必要である。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An animation of a thunderstorm shows six flashes of lightning. The flashes are so
-                  fast and large that the general flash threshold is violated when tested with a flash
-                  analysis tool. The animation is modified to create a short pause after each pair of
-                  lightning flashes. After the changes are made, the animation does not violate the
-                  general flash threshold.
+               <li>雷のアニメーションにおいて、稲光が 6 回閃光を放つ。閃光はとても速く、大きく、閃光の解析ツールで検証したところ、一般閃光閾値に違反している。アニメーションは、稲妻閃光が 2 回続いた後に短い休止が入るように編集されている。 変更後のアニメーションは、一般閃光閾値に違反していない。
                </li>
                
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -119,40 +97,37 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G19">G19: Ensuring that no component of the content flashes more than three times in any 1-second
-                     period</a></li>
+               <li><a href="G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a></li>
                
-               <li><a href="G176">G176: Keeping the flashing area small enough</a></li>
+               <li><a href="G176">G176: 閃光を放つ領域を十分に小さくする</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>Check to see to see that content does not violate the general flash and/or red flash
-                  threshold
+               <p>コンテンツが一般閃光閾値及び／又は赤色閃光閾値に違反していないかどうかを確認する。
                </p>
                
                <ol>
                   
-                  <li>use a tool  to determine that neither the General Flash nor Red Flash threshold were
-                     exceeded
+                  <li>ツールを使って、一般閃光閾値も赤色閃光閾値も超えていないことを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true.</li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
