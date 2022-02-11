@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G184: Providing text instructions at the beginning of a form or set of fields that describes
-         the necessary input
+      <title>G184: フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,133 +11,109 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G183">Previous Technique: G183</a></li>
-            <li><a href="G185">Next Technique: G185</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G183">前の達成方法: G183</a></li>
+            <li><a href="G185">次の達成方法: G185</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing text instructions at the beginning of a form or set of fields that describes
-         the necessary input
+      <h1>フォーム又はテキストフィールド一式の先頭に、必須の入力を記述するテキストの説明を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">Success Criterion 3.3.2: Labels or Instructions</a> (Sufficient as a way to meet <a href="../general/G131">G131: Providing descriptive labels</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions">達成基準 3.3.2: ラベル又は説明</a> (<a href="../general/G131">G131: 説明的なラベルを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/help">Success Criterion 3.3.5: Help</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/help">達成基準 3.3.5: ヘルプ</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to help the user avoid input errors by informing
-               them ahead of time about restrictions on the format of data that they must enter.
-               Instructions on such restrictions are provided at the top of forms. This technique
-               works best for forms that have a small number of fields or those where many form fields
-               require data in the same format. In these cases, it is more efficient to describe
-               the format once in instructions at the top of the form rather than repeating the same
-               information for each field that has the same restricted format requirement.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が入力しなければならないデータのフォーマットに関する制限を事前に知らせることによって、利用者が入力エラーを回避するのを助けることである。そのような制限に関する情報を一連のフォームの先頭で提示する。この方法は、少数のフィールドからなるフォーム、又は複数のフィールドが同じフォーマットのデータを要求するようなフォームにおいて最も有効である。このようなケースでは、フォーマットの説明をフォームの先頭に置く説明文で一度だけ提示するほうが、同じ説明を同一のフォーマット制限が要求されるフィールドすべてについて繰り返すよりも効果的である。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>A business networking site allows users to post descriptions of jobs they have held.
-                  The form to gather the information includes fields for the company name, job title,
-                  from and to dates, and job description. At the top of the form are the following instructions:
+               <h3>例 1</h3>
+               <p>あるビジネスネットワーキングのサイトでは、利用者が自分の職歴に関する説明を投稿することができる。情報を入力するフォームには、企業名、役職、業務開始及び終了年月日、そして業務の説明などのフィールドがある。フォームの先頭には以下のような指示がある:
                </p>
                <ul>
                   
-                  <li>Enter requested information about the position you wish to add to your profile. Dates
-                     should be entered in mm/dd/yyyy format."
+                  <li>「あなたのプロフィールに追加したい職歴について、必要事項を入力してください。 日付は yyyy/mm/dd の形式 (例: 2009/01/01) で入力してください。」
                   </li>
                   
                </ul>
             </section>
             <section class="example" id="example-2">
-               <h3>Example 2</h3>
-               <p>A corporate directory allows users to customize information such as telephone number
-                  and job responsibilities by editing their profile. At the top of the form are the
-                  following instructions:
+               <h3>例 2</h3>
+               <p>ある企業内アドレス帳では、利用者が自分のプロフィールを編集して、電話番号や職務内容をカスタマイズできるようになっている。フォームの先頭には以下のような指示がある:
                </p>
                <ul>
                   
-                  <li>You can modify the information in any field. When you select Finish, your changes
-                     will be saved and you will have the opportunity to publish your profile. Should you
-                     decide that you don't want to keep your changes, select the Cancel button.
+                  <li>入力欄に表示された任意の情報を変更することができます。「終了」を選択すると情報が記録され、プロフィールを公開することができます。変更を破棄したい場合は「中断」を選択してください。
                   </li>
                   
-                  <li>You cannot edit the information that is displayed as system text in your profile (i.e.,
-                     not contained in a field). This information has been obtained from an corporate human
-                     resources information. If you find something is incorrect or out of date that you
-                     cannot edit, select the help icon next to the information to find out how to correct
-                     it.
+                  <li>プロフィール中で、入力欄外にシステムのテキストとして表示された情報は変更できません。これらの情報は企業内人事情報から取得しています。編集できない部分に誤りや更新すべき情報がある場合は、表示情報の隣にあるヘルプアイコンを選択すると修正方法を確認できます。
                   </li>
                   
-                  <li>Phone numbers may contain numbers and dashes (-) only.</li>
+                  <li>電話番号は半角の数字とハイフン (-) のみ入力できます。</li>
                   
-                  <li>Required fields are marked with an asterisk (*) and must be filled in to complete
-                     the form.
+                  <li>必須の入力欄はアスタリスク (*) で示されており、入力しなければフォームを完了できません。
                   </li>
                   
                </ul>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G89">G89: Providing expected data format and example</a></li>
+               <li><a href="G89">G89: 期待されるデータ書式及び入力例を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify form controls that will only accept user input data in a given format.</li>
+                  <li>利用者の入力データを所定のフォーマットでのみ受け付けるフォームコントロールを特定する。</li>
                   
-                  <li>Determine if instructions are provided at the top of the form about the expected format
-                     of each of the form controls identified in 1.
+                  <li>フォームの先頭に、1. で特定したそれぞれのフォームコントロールの所定のフォーマットに関する指示があるかどうかを判断する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>#2 の結果が真である。</li>
                   
                </ul>
                
