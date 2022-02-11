@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G182: Ensuring that additional visual cues are available when text color differences are
-         used to convey information
+      <title>G182: 文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,146 +11,112 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G181">Previous Technique: G181</a></li>
-            <li><a href="G183">Next Technique: G183</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G181">前の達成方法: G181</a></li>
+            <li><a href="G183">次の達成方法: G183</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring that additional visual cues are available when text color differences are
-         used to convey information
+      <h1>文字色の違いが情報を伝えるために使用される場合に、利用可能な追加の視覚的な手がかりを確保する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Colored text when the color is used to convey information such as:</p>
+            <h2>適用 (対象)</h2>
+            <p>次のように、色を用いて情報を伝えている際の色つきのテキスト:</p>
             <ul>
                
-               <li>Words that are links in a paragraph</li>
+               <li>パラグラフ内でリンクになっている語句</li>
                
-               <li>Items in a list where some are different than others and are presented in colored
-                  text
+               <li>リスト内で、他のリスト項目とは異なり、色つきのテキストで提示されているリスト項目
                </li>
                
             </ul>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/use-of-color">達成基準 1.4.1: 色の使用</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to provide a redundant visual cue for users who may
-               not be able to discern a difference in text color. Color is commonly used to indicate
-               the different status of words that are part of a paragraph or other block of text
-               or where special characters or graphics cannot be used to indicate which words have
-               special status. For example, scattered words in text may be hypertext links that are
-               marked as such by being printed in a different color. This technique describes a way
-               to provide cues in addition to color so that users who may have difficulty perceiving
-               color differences or have low vision can identify them.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、テキストの色の違いを識別することができない利用者に対して、同じ情報を示す豊富な視覚的な手がかりを提供することである。パラグラフの一部である語句又はテキストの他のブロックの一部である語句とは異なるステータスを示すために、又は特殊な文字あるいはグラフィックを用いて特別なステータスを有する語句を示すことができない場合に、色をよく用いる。例えば、テキスト内に散在している語句は、異なる色で表示されていれば、それがハイパテキストのリンクであることを示している可能性がある。この達成方法は、色の違いを知覚するのが困難な利用者又はロービジョンの利用者にその違いが分かるように、色に加えて手がかりを提供する方法に関するものである。
             </p>
-            <p>To use this technique, an author incorporates a visual cue in addition to color for
-               each place where color alone is used to convey information. Visual cues can take many
-               forms including changes to the font style, the addition of underlines, bold, or italics,
-               or changes to the font size.
+            <p>この達成方法を用いるにあたり、色だけを用いて情報を伝えている全ての箇所に対して、コンテンツ制作者は色に加えて視覚的な手がかりを提供する。視覚的な手がかりには、フォントのスタイル、下線の付加、太字、イタリックへの変化、又は文字サイズの変化などをはじめ、様々な形態が考えられる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>While this technique is sufficient to meet the visual requirements of Success Criterion
-                     1.4.1, the information conveyed by the color must also be available programmatically
-                     to satisfy Success Criterion 1.3.1. See
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">How to Meet 1.3.1</a>.
+                  <p>この達成方法が達成基準 1.4.1 の視覚的な必須要件を満たしている時、色によって伝えられる情報は、達成基準 1.3.1 も満たすようプログラムで利用可能でなければならない。<a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">How to Meet 1.3.1</a> を参照のこと。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>The default formatting for links on a page includes presenting them both in a different
-                  color than the other text on the page underlining them to make the links identifiable
-                  even without color vision.
+               <li>同じページ上の他のテキストと異なる色で表示し、また色が識別できなくともリンクを識別できるよう下線とともに表示するのが、リンクの標準的なフォーマットである。
                </li>
                
-               <li>An article comparing the use of similar elements in different markup languages uses
-                  colored text to identify the elements from each language. Elements from the first
-                  markup language are identified using BLUE, bolded text. Elements from the second are
-                  presented as RED, italicized text.
+               <li>様々なマークアップ言語における似た要素の使用法を比較した記事で、色つきのテキストを用いて各言語の要素を示している。一つめのマークアップ言語の要素には青色の太字のテキストを用い、二つめのマークアップ言語の要素には、赤色のイタリックのテキストを用いている。
                </li>
                
-               <li>A news site lists links to the articles appearing on its site. Additional information
-                  such as the section the article appears in, the time the article was posted, a related
-                  location or an indication that it is accompanied by live video appears in some cases.
-                  The links to the articles are in a different color than the additional information
-                  but the links are not underlined, and each link is presented in a larger font than
-                  the rest of the information so that users who have problems distinguishing between
-                  colors can identify the links more easily.
+               <li>あるニュースサイトでは、そのサイトに掲載されている記事の見出しを一覧にしている。例えば、その記事が掲載されているセクション、その記事が掲載された時刻、関連する場所、又はライブの映像があることを示す表示などの補足的な情報がある場合もある。そのような補足的な情報は、その記事へのリンクとは異なる色で提示されているが、利用者がリンクをより容易に見つけられるように、各リンクはその他のテキストよりも大きなフォントで提示されている。
                </li>
                
-               <li>Short news items sometimes have sentences that are also links to more information.
-                  Those sentences are printed in color and use a sans-serif font face while the rest
-                  of the paragraph is in black Times-Roman.
+               <li>短めのニュース項目には、より詳細な情報へのリンクでもある文を含んでいることがある。パラグラフの残り部分では黒色の Times-Roman という書体を用いているが、それらの文には色がついていて、サンセリフの書体を用いている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G14">G14: Ensuring that information conveyed by color differences is also available in text</a></li>
+               <li><a href="G14">G14: 色の違いで伝えている情報をテキストでも入手可能にする</a></li>
                
-               <li><a href="G205">G205: Including a text cue for colored form control labels</a></li>
+               <li><a href="G205">G205: 色のついたフォームコントロールのラベルに対して、テキストによる手がかりを含める</a></li>
                
-               <li><a href="G183">G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual
-                     cues on focus for links or controls where color alone is used to identify them</a></li>
+               <li><a href="G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Locate all instances where the color of text is used to convey information.</li>
+                  <li>テキストの色を用いて情報を伝えている全ての箇所を探す。</li>
                   
-                  <li>Check that any text where color is used to convey information is also styled or uses
-                     a font that makes it visually distinct from other text around it.
+                  <li>色を用いて情報を伝えているテキストは、スタイルも変えているか、又はその周囲にあるその他のテキストと視覚的に区別がつくフォントを用いていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #2 is true.</li>
+                  <li>#2 の結果が真である。</li>
                   
                </ul>
                
