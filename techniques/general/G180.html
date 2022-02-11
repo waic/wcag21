@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G180: Providing the user with a means to set the time limit to 10 times the default time
-         limit
+      <title>G180: 利用者がデフォルトの制限時間を 10 倍に設定できる手段を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,116 +11,94 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G179">Previous Technique: G179</a></li>
-            <li><a href="G181">Next Technique: G181</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G179">前の達成方法: G179</a></li>
+            <li><a href="G181">次の達成方法: G181</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing the user with a means to set the time limit to 10 times the default time
-         limit
+      <h1>利用者がデフォルトの制限時間を 10 倍に設定できる手段を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">Success Criterion 2.2.1: Timing Adjustable</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/timing-adjustable">達成基準 2.2.1: タイミング調整可能</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to give people with disabilities enough time to
-               complete tasks which may take them longer than someone without those challenges. Some
-               mechanism such as a preference setting or a control on the page lets the user change
-               the time limits to at least 10 times the default time limit. Preferably, the mechanism
-               would have a variable adjustment that lets the user change the time limit to any value
-               in its range, but could also provide ways to change the time limit by discrete increments.
-               The user changes the time limit at the beginning of his session, before any activity
-               that has a time limit.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、障害のない利用者に比べて障害のある利用者が長時間必要とするかもしれないタスクにおいて、障害のある利用者に完了するための十分な時間を提供することである。環境設定又はページ上のコントロールのようなメカニズムによって、利用者がデフォルトの制限時間の少なくとも 10 倍まで制限時間を延長できるようにする。可能であれば、このメカニズムはさまざまな調整機能を備え、利用者が制限時間を範囲内の任意の値に変えられるだけでなく、任意の増減幅で変えられる方法も提供するとよい。これにより、利用者は、制限時間のあるセッションを始める前に、制限時間を変更できるようになる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An airline has an online ticket purchasing application. By default, the application
-                  has a 1 minute time limit for each step of the purchase process. At the beginning
-                  of the session, a Web page includes information that says, "We expect that each step
-                  in the purchasing process will take users one minute to complete. Would you like to
-                  adjust the time limit?" followed by several radio buttons "1 minute, 2 minutes, 5
-                  minutes, 10 minutes."
+               <li>航空会社が、オンラインで航空券を購入するためのアプリケーションを提供している。このアプリケーションは、購入プロセスの各ステップに対して 1 分間の制限時間をデフォルトで設定している。セッションの開始時に、「購入プロセスの各ステップには制限時間があり、1分以内に完了させる必要があります。この制限時間を調整しますか？」とウェブページに表示され、続いて「1 分」「2 分」「5 分」「10 分」などのラジオボタンがいくつか表示されている。
                </li>
                
-               <li>A Web based email application automatically logs users out when there has been no
-                  activity for 30 minutes. The application includes a preference that allows users to
-                  adjust the amount of time to any value.
+               <li>ウェブベースの E メールアプリケーションで、30 分間利用者の操作がないと、自動的にログアウトするようになっている。このアプリケーションには、利用者がタイムアウト時間を任意の値に調整できる環境設定が含まれている。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G133">G133: Providing a checkbox on the first page of a multipart form that allows users to ask
-                     for longer session time limit or no session time limit</a></li>
+               <li><a href="G133">G133: 複数部分で構成されるフォームの最初のページに、利用者がセッションの制限時間を延長又は解除を要求できるチェックボックスを提供する</a></li>
                
-               <li><a href="../client-side-script/SCR1">SCR1: Allowing the user to extend the default time limit </a></li>
+               <li><a href="../client-side-script/SCR1">SCR1: 利用者が初期設定の制限時間を延長できるようにする</a></li>
                
-               <li><a href="../client-side-script/SCR16">SCR16: Providing a script that warns the user a time limit is about to expire</a></li>
+               <li><a href="../client-side-script/SCR16">SCR16: 制限時間が切れようとしていることを利用者に警告するスクリプトを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check to see if there is a mechanism to set the time limit to 10 times the default
-                     time limit.
+                  <li>制限時間をデフォルトの 10 倍に設定するメカニズムがあるかどうかを確認する。
                   </li>
                   
-                  <li>Change the time limit to a new value that is 10 times the default time limit.</li>
+                  <li>制限時間をデフォルトの 10 倍にあたる新しい値に変更する。</li>
                   
-                  <li>Perform an action that has a time limit.</li>
+                  <li>制限時間のあるタスクを遂行する。</li>
                   
-                  <li>Wait until the default time limit has passed.</li>
+                  <li>デフォルトの制限時間が経過するのを待つ。</li>
                   
-                  <li>Check that the time limit does not expire until the limit specified in step 2 has
-                     passed.
+                  <li>上記 2. で設定した制限時間になるまで時間切れにならない。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #5 are true.</li>
+                  <li>#1 及び #5 の結果が真である。</li>
                   
                </ul>
                

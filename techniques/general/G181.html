@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G181: Encoding user data as hidden or encrypted data in a re-authorization page</title>
+      <title>G181: 利用者のデータを、再認証したページで非表示データ又は暗号化されたデータとしてエンコーディングする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,137 +10,103 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G180">Previous Technique: G180</a></li>
-            <li><a href="G182">Next Technique: G182</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G180">前の達成方法: G180</a></li>
+            <li><a href="G182">次の達成方法: G182</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Encoding user data as hidden or encrypted data in a re-authorization page</h1>
+      <h1>利用者のデータを、再認証したページで非表示データ又は暗号化されたデータとしてエンコーディングする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Pages that require user authentication where the time available for submitting data
-               is limited.
+            <h2>適用 (対象)</h2>
+            <p>データを送信するのに、利用者認証を求め制限時間のあるウェブページ
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/re-authenticating">Success Criterion 2.2.5: Re-authenticating</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/re-authenticating">達成基準 2.2.5: 再認証</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>Web servers that require user authentication often terminate the session after a set
-               period of time if there is no activity from the user. If the user is unable to input
-               the data quickly enough and the session times out before they submit, the server will
-               require re-authentication before proceeding. When this happens, the server passes
-               (as hidden data) the information from the form into the page that is used for re-authentication.
-               Then, when the user re-authenticates, the server can use the information passed on
-               from the re-authentication page to submit the form directly or to present a page that
-               includes the data that is to be submitted for review. In this technique, the server
-               does not have to store any user-submitted data on server. This is an important technique
-               for those cases where it is either illegal or a security risk for the server to store
-               information temporarily. It also is useful in that it frees the server from having
-               to maintain the stored information and reconnect it with the newly authenticated session.
+            <h2>解説</h2>
+            <p>利用者に認証を求めるウェブサーバーは、一定時間、利用者の操作がない場合、セッションを終了することがよくある。利用者が素早くデータを入力できず、送信前にセッションが時間切れになってしまった場合、プロセスの続行前にサーバーから再認証が求められるだろう。この場合、サーバーはフォームからの情報 (隠しデータ) を再認証ページに受け渡す。その後、利用者が再認証したら、フォームデータを直接送信するか、確認データを含んだページを表示するために、サーバーは再認証ページから受け渡された情報を利用する。この達成方法では、サーバーは利用者が送信したデータを保存しておかなくてもよい。この達成方法が重要なのは、サーバーに一時的に情報を保存することが、違法性やセキュリティリスクに関わるケースである。また、サーバーが記録した情報を保持しつづけたり、新しく認証したセッションでその情報に再接続する必要性から解放する点でも有用である。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>If the data users are submitting is sensitive or presents a security risk, authors
-                     should consider the process used to pass the data to the re-authentication page and,
-                     after re-authentication, to the page that will process the original data in order
-                     to ensure that the data is protected.
+                  <p>利用者から送信されたデータが機密情報であったり、セキュリティリスクの疑いがある場合、データを再認証ページに受け渡したり、再認証後、データ保護を保証するために元のデータを処理してページに受け渡すプロセスを、コンテンツ制作者は見直すべきである。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A user has logged in to use a wiki and begins editing a page. The time taken to complete
-                  the edits exceeds the time allowed by the server for session inactivity. When the
-                  user submits the edits, the user is notified that the session has timed out and is
-                  redirected to a login page. The script that handles the original form submission passes
-                  the edits as a variable to the login page and when the user successfully logs in,
-                  passes the users edits back to the script that handles form submissions and the edits
-                  are processed as though no session timeout had occurred.
+               <li>ある Wiki に利用者がログインし、ページの編集を始めた。編集の完了にかかる時間は、サーバーから許可されている不操作セッション時間よりも長いとする。利用者が編集データを送信したが、セッションの時間切れが通知され、ログインページにリダイレクトされた。フォーム送信を処理するスクリプトは、ログインページに元の編集データを変数として受け渡す。利用者のログインが成功すれば、編集画面に戻ることができ、まるでセッションの時間切れがなかったかのようにスクリプトが編集データを処理する。
                </li>
                
-               <li>A user had logged in to a secure shopping site and fills out some of the information
-                  on an order form. For security reasons, the session times out after 30 mintues, but
-                  the user does not submit the form until 45 minutes after loading the page. The user
-                  is informed of the time out and is prompted to log-in again. If the user logs in correctly,
-                  the order form is presented to the user with all of the data previously entered and
-                  the user is able to review their submission and submit the form. If the log-in is
-                  not successfully completed, then the form data is discarded by the server.
+               <li>セキュリティが保護されたショッピングサイトに利用者がログインし、注文フォームに情報を入力している。セキュリティ上の理由から、セッションは 30 分後に時間切れとなるが、その利用者はページを読み込んでから 45 分経ってもまだフォームデータを送信していない。利用者には時間切れが通知され、再ログインが促された。利用者が正しくログインできれば、以前に入力したデータが全て残った注文フォームが表示され、内容を確認し、送信できる。ログインが成功しなければ、サーバーによってフォームデータが破棄される。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G105">G105: Saving data so that it can be used after a user re-authenticates</a></li>
+               <li><a href="G105">G105: 利用者が再認証した後に利用できるようにデータを保存する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>On a site that requires user login to submit data:</p>
+               <p>データの送信にあたって利用者にログインを求めるサイトについて:</p>
                
                <ol>
                   
-                  <li>Log in and begin the timed activity.</li>
+                  <li>ログインし、時間制限のある操作を始める。</li>
                   
-                  <li>Allow the session to time out.</li>
+                  <li>セッションを時間切れにさせる。</li>
                   
-                  <li>Submit the data.</li>
+                  <li>データを送信する。</li>
                   
-                  <li>Re-authenticate.</li>
+                  <li>再認証する。</li>
                   
-                  <li>Check that the process can continue and be completed without loss of data, including
-                     the original data and any changes made after re-authentication.
+                  <li>再認証後に元のデータ及び変更内容が保持された状態で、その後のプロセスが継続可能で、データの欠落なく完了できることを確認する。
                   </li>
                   
-                  <li>Check that the process used to save the information submitted in step 3 is not stored
-                     on the server. (Note: This requires knowledge of the technology and features used
-                     to implement the technique.)
+                  <li>手順 3.で送信した情報を保存するために用いた途中経過のデータが、サーバーに残っていないことを確認する (注記: この手法を実行するための技術及び機能の知識が必要である)。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #5 and #6 are true.</li>
+                  <li>#5 及び #6 の結果が真である。</li>
                   
                </ul>
                

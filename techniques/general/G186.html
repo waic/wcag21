@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G186: Using a control in the Web page that stops moving, blinking, or auto-updating content</title>
+      <title>G186: 動きのあるコンテンツ、点滅するコンテンツ、又は自動更新するコンテンツを停止させるコントロールを使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,106 +10,88 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G185">Previous Technique: G185</a></li>
-            <li><a href="G187">Next Technique: G187</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G185">前の達成方法: G185</a></li>
+            <li><a href="G187">次の達成方法: G187</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using a control in the Web page that stops moving, blinking, or auto-updating content</h1>
+      <h1>動きのあるコンテンツ、点滅するコンテンツ、又は自動更新するコンテンツを停止させるコントロールを使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">Success Criterion 2.2.2: Pause, Stop, Hide</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/pause-stop-hide">達成基準 2.2.2: 一時停止、停止、非表示</a> (十分な達成方法)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide the user a control that allows him to
-               stop moving or blinking content. Since the control is in the web page, the control
-               itself meets the appropriate level of WCAG conformance e.g., it has appropriate contrast,
-               it has a name that identifies it, it is keyboard accessible. The control is either
-               at the top of the page or adjacent to the moving content. A single control may stop
-               all moving or blinking content on the page, or there may be separate controls for
-               separate parts of the content.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、動きのあるコンテンツや点滅するコンテンツを、利用者が停止できるコントロールを提供することである。このようなコントロールがウェブページ上にあれば、そのコントロール自体は適切なレベルでの WCAG の適合要件、たとえば適切なコントラストであること、特定できる名前を持つこと、キーボードによるアクセスが可能であることに合致する。コントロールはページの先頭か、動きのあるコンテンツの近くに配置する。動きのあるコンテンツ又は点滅するコンテンツのすべてを一つのコントロールで停止できるか、コンテンツの別々の部分を別々のコントロールで停止できればよい。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-stock-market-ticker-tape">
-               <h3>Example 1: Stock Market Ticker Tape</h3>
-               <p>A Web page displays the latest stock market results in a "ticker tape" that automatically
-                  scrolls across the bottom of the screen. A "Pause" button lets the user stop the ticker
-                  tape. When the ticker tape is unpaused, it resumes displaying the current stock market
-                  information.
+               <h3>例 1: 株式市場のティッカーテープ</h3>
+               <p>あるウェブページに、株式市場の最新結果を表示する「ティッカーテープ」があり、画面の下に向かって自動スクロールする。利用者は「一時停止」ボタンでティッカーテープの動きを停止させることができる。一時停止を解除すれば、現在の株式市場の情報表示を再開する。
                </p>
             </section>
             <section class="example" id="example-2-teleconferencing-tool">
-               <h3>Example 2: Teleconferencing Tool</h3>
-               <p>A teleconferencing Web page displays a speaker queue of people who wish to speak.
-                  A checkbox on the page lets the user choose whether the display of the queue should
-                  be updated automatically when a new person is added or removed, or whether it should
-                  only be updated when the user presses the "Refresh" button. When the queue is being
-                  updated automatically, the Refresh button is deactivated.
+               <h3>例 2: 電子会議ツール</h3>
+               <p>電子会議用のウェブページに、発言待ちのスピーカーの一覧がある。利用者は、新しい人が加わったり外れたりするときに一覧を自動更新するか、それとも「更新」ボタンを押したときにだけ更新するかを、ページ上のチェックボックスで選択できる。一覧が自動更新に設定されている場合、更新ボタンは非活性になっている。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G4">G4: Allowing the content to be paused and restarted from where it was paused</a></li>
+               <li><a href="G4">G4: コンテンツを一時停止させて、一時停止させたところから再開できるようにする</a></li>
                
-               <li><a href="G191">G191: Providing a link, button, or other mechanism that reloads the page without any blinking
-                     content</a></li>
+               <li><a href="G191">G191: 点滅するコンテンツのないページを再読み込みするリンク、ボタン、又はその他のメカニズムを提供する</a></li>
                
-               <li><a href="../client-side-script/SCR22">SCR22: Using scripts to control blinking and stop it in five seconds or less</a></li>
+               <li><a href="../client-side-script/SCR22">SCR22: 点滅を制御し、5 秒以内に停止させるために、スクリプトを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Check that there is a control on the Web page to stop the motion.</li>
+                  <li>コンテンツの動き、点滅、自動更新を停止させるコントロールがウェブページ上にあることを確認する。</li>
                   
-                  <li>Activate the control.</li>
+                  <li>そのコントロールを有効にする。</li>
                   
-                  <li>Check that the motion, blinking  or auto-updating has stopped.</li>
+                  <li>コンテンツの動き、点滅、自動更新が停止することを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #1 and #3 are true.</li>
+                  <li>#1 及び #3 の結果が真である。</li>
                   
                </ul>
                
