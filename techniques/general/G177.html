@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G177: Providing suggested correction text</title>
+      <title>G177: テキストの修正候補を提示する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,137 +10,105 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G176">Previous Technique: G176</a></li>
-            <li><a href="G178">Next Technique: G178</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G176">前の達成方法: G176</a></li>
+            <li><a href="G178">次の達成方法: G178</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing suggested correction text</h1>
+      <h1>テキストの修正候補を提示する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content that accepts user data input, with restrictions on the format, value, and/or
-               type of the input.
+            <h2>適用 (対象)</h2>
+            <p>フォーマット、値及び又は入力のタイプに制限があり、利用者のデータ入力を受け付けるコンテンツ
             </p>
-            <p>This technique relates to:</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><span><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">>達成基準 3.3.3: エラー修正の提案</a></span> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">Success Criterion 4.1.3: Status Messages</a> (Sufficient as a way to meet <a href="../aria/ARIA19">ARIA19: Using ARIA role=alert or Live Regions to Identify Errors</a>)
+               <li><span><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a></span> (<a href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to suggest correct text where the information supplied
-               by the user is not accepted and possible correct text is known. The suggestions may
-               include correct spelling or similar text from a known pool of possible text.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が入力した情報が受け付けられないとき、正しいと思われるテキストを推測できる場合には、そのテキストを提示することである。修正候補としては、正しい綴りのテキストや、あらかじめ蓄積されているテキスト群にある類似したテキストなどが含まれる。
             </p>
-            <p>Depending on the form, suggestions could be located next to the field where the error
-               was identified, elsewhere on the page or via a search mechanism or reference where
-               results would be listed on another URI. Where possible, suggestions for correction
-               should be incorporated in a way that is easy for the user. For example, an incorrect
-               submission may return a list of possible corrections where the user can select a checkbox
-               or radio button to indicate which option was intended. Suggestions or links to the
-               suggestions should be placed close to the form fields they are associated with, such
-               as at the top of the form, preceding the form fields, or next to the form fields requiring
-               correction.
+            <p>フォームによって修正候補の提示方法は異なるが、エラーが発生した入力欄の横、ページの他の部分に表示することもできるし、検索機能やリンクを用いて修正候補の一覧が掲載されている他の URI に誘導することもできる。可能であれば、修正候補は利用者にとって利用しやすい方法で提示すべきである。たとえば、誤った情報が送信されたとき、利用者が意図した内容をチェックボックスやラジオボタンを用いて選択できるような形式で修正候補の一覧を提示するような方法が考えられる。修正候補や修正候補へのリンクは、たとえば、フォームの先頭、エラーがあるフィールドの直前または直後など、エラーを含むしたフォームフィールドの近くに配置しなければならない。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A form field requires the user to input a length of time that could range from days
-                  to years. The user enters the number "6". The server returns the form as the user
-                  had submitted it and also includes a suggested text next to the form field: "Error
-                  detected. Did you mean: 6 days, 6 weeks, 6 months or 6 years?"
+               <li>あるフォームフィールドでは、日単位から年単位で時間の長さを入力することが求められている。利用者が "6" と入力してフォームを送信すると、サーバーは利用者が入力した内容をそのまま残した上で、入力フィールドの横に「エラー: 6 日、6 週間、6 ヶ月、6 年のいずれかを入力してください」というテキストも返す。
                </li>
                
-               <li>The user enters an incorrectly spelled city name. The server returns the form as the
-                  user had submitted it and also includes a message at the top of the form informing
-                  the user of the error and a link to a list of city names that the user may have meant,
-                  as determined by comparing their original input to a database of city names.
+               <li>利用者が、間違った都市名を入力したとする。サーバーは、利用者がフォームを送信したときにフォームを返す。また、フォームの最上部に、都市名のデータベースと元の入力を比較することで判定される、エラーを通知するメッセージと、利用者が意図した都市名のリストへのリンクが含まれている。
                </li>
                
-               <li>A bus route trip planner allows users to enter their origin an destination, allowing
-                  users to enter street addresses, intersections and city landmarks. When a user enters
-                  "Kohl," they are prompted with a list of search results with similar matches that
-                  reads, "Your search for 'Kohl' returned the following". A select box follows the prompt
-                  lists, "Kohl Center," "Kohl's Dept. Store-East" and "Kohl's Dept. Store-West" as options
-                  the user can choose from.
+               <li>あるバスの経路検索のシステムでは、利用者が住所、交差点の名前、目印となる建物などを入力して出発地と目的地を指定できる。利用者が "Kohl" と入力すると、「"Kohl" の検索結果は以下の通りです」という類似の検索結果のリストが表示される。利用者が選択できるオプションとして、続くセレクトボックスに "Kohl Center"、"Kohl's Dept. Store-East" 及び "Kohl's Dept. Store-West" が列挙されている。
                </li>
                
-               <li>A search runs a spell check on input and provides a link of alternatives if a spelling
-                  error is detected. When the user clicks on the link, the search is automatically resubmitted
-                  with the correct spelling.
+               <li>検索を実行すると、入力されたテキストに対するスペルチェックが実行される。エラーが発見された場合には、修正候補へのリンクを表示する。利用者が修正候補から正しい綴りのテキストを選択してそのリンクをクリックすると、その単語が入力されたものとして検索フォームの内容が再送信される。
                </li>
                
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../client-side-script/SCR18">SCR18: Providing client-side validation and alert</a></li>
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
                
-               <li><a href="G84">G84: Providing a text description when the user provides information that is not in the
-                     list of allowed values</a></li>
+               <li><a href="G84">G84: 利用者が許可された値のリストにない情報を与えた場合に、テキストの説明を提供する</a></li>
                
-               <li><a href="G85">G85: Providing a text description when user input falls outside the required format or
-                     values</a></li>
+               <li><a href="G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Identify form fields where correct text could be inferred from incorrect text.</li>
+                  <li>誤ったテキストから正しいテキストを推測可能なフォームフィールドを特定する。</li>
                   
-                  <li>Fill out the form, deliberately filling in the identified form fields with incorrect
-                     text.
+                  <li>フォームに入力し、特定したフィールドに意図的に誤ったテキストを入力する。
                   </li>
                   
-                  <li>Check that the user is presented with suggestions for the correct text.</li>
+                  <li>利用者に対して正しいテキストの修正候補が提示されることを確認する。</li>
                   
-                  <li>Check that the suggestions are provided next to the form field or a link to the suggestions
-                     is provided close to the form field.
+                  <li>フォームフィールドの横に修正候補が表示される、又は修正候補へのリンクがフォームフィールドの近くに配置されていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #3 and #4 are true.</li>
+                  <li>3. 及び 4.の結果が真である。</li>
                   
                </ul>
                
