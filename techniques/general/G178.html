@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G178: Providing controls on the Web page that allow users to incrementally change the size
-         of all text on the page up to 200 percent
+      <title>G178: 利用者がウェブページ上のすべてのテキストを 200％まで徐々に変更できるコントロールをウェブページ上で提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,144 +11,104 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G177">Previous Technique: G177</a></li>
-            <li><a href="G179">Next Technique: G179</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G177">前の達成方法: G177</a></li>
+            <li><a href="G179">次の達成方法: G179</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing controls on the Web page that allow users to incrementally change the size
-         of all text on the page up to 200 percent
+      <h1>利用者がウェブページ上のすべてのテキストを 200％まで徐々に変更できるコントロールをウェブページ上で提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>All technologies.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">Success Criterion 1.4.4: Resize text</a> (Sufficient)</span>.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/resize-text">達成基準 1.4.4: テキストのサイズ変更</a></span> (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to provide a mechanism on the Web page to incrementally
-               increase the size of text. Many people with low vision do not use magnifying software,
-               and they may not be familiar with their browser's text size adjustments. This may
-               be particularly true of older people who are learning about computers later in life
-               and who may be experiencing age related vision loss. It may also be true of some people
-               with cognitive disabilities who require increased font size.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、文字のサイズを徐々に大きくするメカニズムをウェブサイト上で提供することである。多くのロービジョンの人々は拡大鏡ソフトウェアを使っておらず、そしてブラウザの文字サイズの調整について精通していない。このことは、あとからコンピューターを学んだり、また失明に近い症状の高齢者にも特に当てはまる。 これはフォントサイズを大きくしたいと思っている認知障害者もまた同様である。
             </p>
-            <p>This technique provides a mechanism that some users will find easier to use. The mechanism
-               may include links or buttons that will switch the visual presentation to a different
-               style sheet or use scripts to change the text size dynamically.
+            <p>この達成方法は、利用者がより簡単に使うことのできるメカニズムを提供する。このメカニズムは視覚的提示を異なるスタイルシートに切り替えたり、文字サイズをダイナミックに変化するためのスクリプトを使用したりするリンクやボタンを含んでいる。
             </p>
-            <p>To implement this technique, an author provides controls that allow the user to incrementally
-               increase or decrease the text size of all of the text on the page to a size that is
-               at least 200% of the default text size.
+            <p>この達成方法を実装するために、コンテンツ制作者は利用者がページ上のすべてのテキストの文字サイズをデフォルト文字サイズの少なくとも 200％の大きさに徐々に増加又は減少させるコントロールを提供する。
             </p>
-            <p>This can be achieved by providing links, buttons or linked images and the controls
-               themselves should be as easy to find (e.g. prominently positioned within the page,
-               presented in a larger text size, high contrast, etc.) as possible.
+            <p>これはリンクやボタンまたはリンク画像によって達成可能であり、そしてそれらコントロールは可能な限り簡単に見つけられるべきである。(ページ内で目立つ場所にある、大きなテキスト、ハイコントラストで表現されているなど。)
             </p>
-            <p>This technique can also be used in circumstances where scalable fonts cannot be used,
-               such as legacy code situations.
+            <p>この達成方法は、レガシーコードの場合のように、拡大縮小可能なフォントを用いることができない状況でも同様に用いることができる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>This technique can be used in combination with a style switching technique to present
-                     a page that is a
-                     <a href="https://w3c.github.io/wcag/guidelines/#" target="terms">conforming alternate version</a>
-                     for non-conforming content. Refer to
-                     <a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a>
-                     and
-                     <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">Understanding Conforming Alternate Versions</a>
-                     for more information.
+                  <p>この達成方法は、不適合コンテンツのための<a href="https://w3c.github.io/wcag/guidelines/#" target="terms">適合している代替版</a>のページを表示させるためのスタイル切り替えの達成方法との組み合わせで用いることができる。更なる情報は <a href="https://waic.jp/docs/WCAG21/Techniques/css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a> と<a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conforming-alt-versions">適合している代替版を理解する</a>を参照。
                   </p>
                   
                </div>
             </div>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>A newspaper article has two buttons near the top of the page. The "increase text size"
-                  button has a big letter "T" with an upward arrow and the "decrease text size" button
-                  has a small letter "T" with a down arrow. There is
-                  <code class="att">alt</code>
-                  text on each button.
+               <li>新聞記事のページ上部に二つのボタンがある。「文字サイズを大きくする」ボタンは上矢印と大文字「T」、「文字サイズを小さくする」ボタンは下矢印と小文字「T」がある。それぞれのボタンには <code class="att">alt</code> テキストがある。
                </li>
                
-               <li>A site has a number of style sheets with different text size. The user can choose
-                  any of the style sheets if their browser provides this functionality. Each page also
-                  includes the links "Increase text size" and "Decrease text size" that will change
-                  the style sheet currently applied to the appropriate alternate style sheet.
+               <li>サイトは、異なる文字サイズの複数のスタイルシートを持つ。ブラウザがこの機能を提供する場合、利用者はスタイルシートのいずれかを選択できる。各ページには、各ページには現在適用されているスタイルシートを適切な代替スタイルシートに変更するリンク「文字サイズを大きくする」と「文字サイズを小さくする」も含まれている。
                </li>
                
-               <li>A site includes the text "Change text size:" followed by text links "Up" and "Down"
-                  on every Web page. The links trigger a Javascript that alters the value of the text-size
-                  property accordingly.
+               <li>サイトは、すべてのウェブページで「文字サイズを変更」というテキストの後に「上へ」および「下へ」のテキストリンクを含んでいる。リンクは、それに応じて text-size プロパティの値を変更する Javascript をトリガーする。
                </li>
                
-               <li>A site includes a link on every page that reads "Change text size." The resulting
-                  page includes a series of links that includes options representing the available sizes.
-                  The links read, "Smallest font size," "Small font size," "Default font size," "Large
-                  font size," etc. Instructions preceding the list direct users to choose a link to
-                  change to the desired font size.
+               <li>サイトは、「文字サイズを変更する」と表示されているすべてのページにリンクが含まれている。結果のページには、利用可能なサイズを表すオプションを含む一連のリンクが含まれている。リンクは、「最小フォントサイズ」、「小さいフォントサイズ」、「デフォルトフォントサイズ」、「大きいフォントサイズ」などが表示されている。
                </li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Set the viewport size to 1024px by 768px or larger.</li>
+                  <li>ビューポートのサイズを 1024px × 768px 以上に設定する。</li>
                   
-                  <li>Increase the text size and check to see if the text size increased.</li>
+                  <li>テキストサイズを大きくして、テキストサイズが大きくなるかどうかを確認する。</li>
                   
-                  <li>Check that the text size can be increased to 200% of the original size.</li>
+                  <li>テキストサイズが元のサイズから 200％に大きくすることができることを確認する。</li>
                   
-                  <li>Check that after increasing the text size to 200% of the original size, there is no
-                     loss of content or functionality (e.g. no parts of the text are clipped, boxes do
-                     not overlap, controls are not obscured or separated from their labels, etc.).
+                  <li>テキストサイズが元のサイズから 200％に大きくした後、コンテンツ又は機能が損なわれていないことを確認する (例えば、テキストの一部が表示されなくなる、ボックスが重なり合う、コントロールが隠れてしまったりラベルから離れてしまったりする、というような状態にならない)。
                   </li>
                   
-                  <li>Decrease the text size to its default value and check to see if it in fact returned
-                     to the default size.
+                  <li>テキストサイズを初期値まで小さくし、実際に初期値に戻っていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2, #3, #4 and #5 are true.</li>
+                  <li>2. ～ 5. の結果が真である。</li>
                   
                </ul>
                
