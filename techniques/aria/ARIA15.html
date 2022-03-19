@@ -44,7 +44,7 @@
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法の目的は、簡潔なテキストによる代替がオブジェクトで提供される機能や情報を適切に伝達しない場合に、画像の説明を提供することである。
+            <p>この達成方法の目的は、短いテキストによる代替がオブジェクトで提供される機能や情報を適切に伝達しない場合に、画像の説明を提供することである。
             </p>
             <p>WAI-ARIA には、<code class="prop">aria-describedby</code> プロパティを使用して、セクション、描画、フォーム要素、画像などと説明テキストを関連付けできる機能がある。これは、利用者が複雑な画像を理解するのを助ける追加情報を提供するのに両者が有用であるという点において <code class="att">longdesc</code> 属性に似ている。<code class="att">longdesc</code> のように、<code class="att">aria-describedby</code> を使用して提供される説明テキストは、HTML で <code class="att">alt</code> 属性を使用して提供される短い名前とは別のものである。<code class="att">longdesc</code> と異なり、<code class="att">aria-describedby</code> は画像を含むページの外の記述を参照できない。画像と同じページのコンテンツを使用して長い説明を提供する利点は、支援技術を持たない、目の見える人を含め、その代替が誰でも利用できることである。執筆時点 (2013 年 10 月) で、一部の支援技術が利用者の操作なしに画像の alt 属性情報の直後に <code class="att">aria-describedby</code> の内容を読みあげることは注目に値する――これは、<code class="att">longdesc</code> 属性のほとんどの実装が、追加の説明を読むために利用者の明示的な操作を必要とすることとは対照的である。
             </p>
