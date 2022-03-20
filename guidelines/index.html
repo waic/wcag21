@@ -1642,12 +1642,12 @@ details.respec-tests-details > li {
        
    
    					
-    	<p>ポインタホバー又はキーボードフォーカスを受け取ってから外すことで、追加コンテンツを表示させてから非表示にさせる場合は、以下の要件を満たす:</p>
+    	<p>ポインタホバー又はキーボードフォーカスを受け取ってから外すことで、追加コンテンツを表示させてから非表示にさせる場合は、以下の要件を全て満たす:</p>
 
   <dl>
 
     <dt>非表示にすることができる</dt>
-    <dd>ポインタホバーやキーボードフォーカスを動かさずに追加コンテンツを非表示にする<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が存在する。ただし、追加コンテンツが<a href="#dfn-input-error" class="internalDFN" data-link-type="dfn">入力エラー</a>を伝える場合や、他のコンテンツを不明瞭にしたり置き換えたりしない場合は除く。</dd>
+    <dd>ポインタホバー又はキーボードフォーカスを動かさずに追加コンテンツを非表示にする<a href="#dfn-mechanism" class="internalDFN" data-link-type="dfn">メカニズム</a>が存在する。ただし、追加コンテンツが<a href="#dfn-input-error" class="internalDFN" data-link-type="dfn">入力エラー</a>を伝える場合や、他のコンテンツを不明瞭にしたり置き換えたりしない場合は除く。</dd>
 
     <dt>ホバーすることができる</dt>
    <dd>ポインタホバーによって追加コンテンツを表示させることができる場合、その追加コンテンツを消すことなく、ポインタを追加コンテンツ上で動かすことができる。</dd>
@@ -2550,7 +2550,7 @@ details.respec-tests-details > li {
                     <p>適合表明は、<strong>必須ではない</strong>。コンテンツ制作者は、適合表明をしなくても、WCAG 2.1 に適合することができる。しかし、もし適合表明をする場合には、その適合表明には以下の情報が含まれてい<strong>なければならない</strong>:</p>
                     <ol>
                         <li>表明<strong>日</strong></li>
-                        <li><strong>ガイドライン名、バージョン、及び URI</strong> "Web Content Accessibility Guidelines 2.1 at <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>" <span class="ednote">In WCAG 2.0 this was a dated URI, which may need to be adjusted when this becomes a Rec.</span></li>
+                        <li><strong>ガイドライン名、バージョン、及び URI</strong> "Web Content Accessibility Guidelines 2.1 (<a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>)"</li>
                         <li>満たしている<strong>適合レベル</strong>: (レベル A、AA、又は AAA)</li>
                         <li>
                             <p>対象となる<strong>ウェブページに関する簡潔な説明</strong>: 例えば、サブドメインも表明の対象に含まれているかどうかも含む、表明の対象となっている URI のリスト。</p>
@@ -2731,7 +2731,7 @@ details.respec-tests-details > li {
    <div class="note" id="issue-container-generatedID-45"><div role="heading" class="note-title marker" id="h-note-45" aria-level="3"><span>注記</span></div><p class="">複数のバージョンを有するウェブコンテンツ技術を挙げる際は、アクセシビリティ サポーテッドなバージョンを特定すべきである。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-46"><div role="heading" class="note-title marker" id="h-note-46" aria-level="3"><span>注記</span></div><p class="">コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance">Understanding Accessibility-Supported Web Technology Uses</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしていなければならない。
+   <div class="note" id="issue-container-generatedID-46"><div role="heading" class="note-title marker" id="h-note-46" aria-level="3"><span>注記</span></div><p class="">コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance">Understanding Accessibility-Supported Web Technology Uses</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしている必要がある。
    </p></div>
    
 </dd>
@@ -2887,7 +2887,7 @@ details.respec-tests-details > li {
                 <dt><dfn data-dfn-type="dfn" id="dfn-captions">キャプション (captions)</dfn></dt>
 <dd>
    
-   <p>そのメディアのコンテンツを理解するのに必要な、会話及び会話でない音声情報に対する、同期した視覚、又は<a href="#dfn-text-alternative" class="internalDFN" data-link-type="dfn">テキストによる代替</a>。
+   <p>そのメディアのコンテンツを理解するのに必要な、会話及び会話でない音声情報に対する、同期した視覚、及び／又は<a href="#dfn-text-alternative" class="internalDFN" data-link-type="dfn">テキストによる代替</a>。
    </p>
    
    <div class="note" id="issue-container-generatedID-59"><div role="heading" class="note-title marker" id="h-note-59" aria-level="3"><span>注記</span></div><p class="">キャプションは会話のみの字幕と似ているが、会話の内容だけを伝えるのではなく、その番組の内容を理解するために必要な効果音、音楽、笑い声、話者の特定、位置などを含む、会話でない音声情報と同等の内容も伝える点が異なる。
@@ -3391,7 +3391,7 @@ details.respec-tests-details > li {
    <div class="note" id="issue-container-generatedID-105"><div role="heading" class="note-title marker" id="h-note-105" aria-level="3"><span>注記</span></div><p class="">メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="#dfn-assistive-technologies" class="internalDFN" data-link-type="dfn">支援技術</a>を含む<a href="#dfn-user-agents" class="internalDFN" data-link-type="dfn">ユーザエージェント</a>で提供されるものに<a href="#dfn-relied-upon" class="internalDFN" data-link-type="dfn">依存</a>することもある。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-106"><div role="heading" class="note-title marker" id="h-note-106" aria-level="3"><span>注記</span></div><p class="">メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p></div>
+   <div class="note" id="issue-container-generatedID-106"><div role="heading" class="note-title marker" id="h-note-106" aria-level="3"><span>注記</span></div><p class="">メカニズムは、宣言する適合レベルのすべての達成基準を満たしている必要がある。</p></div>
    
 </dd>
 
@@ -4080,9 +4080,9 @@ details.respec-tests-details > li {
 		<li><strong>address-line1</strong> - 所在地住所 (フィールドごとに 1 行、1 行目)</li>
 		<li><strong>address-line2</strong> - 所在地住所 (フィールドごとに 1 行、2 行目)</li>
 		<li><strong>address-line3</strong> - 所在地住所 (フィールドごとに 1 行、3 行目)</li>
-		<li><strong>address-level4</strong> - 四つの行政レベルでのアドレスの中で、最もきめ細かい行政レベル。</li>
+		<li><strong>address-level4</strong> - 四つの行政レベルでの住所の中で、最もきめ細かい行政レベル。</li>
 		<li><strong>address-level3</strong> - 三つ以上の行政レベルの住所で、第 3 行政レベル</li>
-		<li><strong>address-level2</strong> - 二つ以上の管理レベルの住所で、第 2 管理レベル。二つの行政レベルをもつ国で、これは通常、関連する所在地住所が見つけられる、市、町、村、又は他の地方になる</li>
+		<li><strong>address-level2</strong> - 二つ以上の行政レベルの住所で、第 2 行政レベル。二つの行政レベルをもつ国で、これは通常、関連する所在地住所が見つけられる、市、町、村、又は他の地方になる</li>
 		<li><strong>address-level1</strong> - 住所で最も広範な行政レベル、すなわち位置関係が発見される中の地方。たとえば、アメリカで、これは州 (state) になる。スイスで州 (canton) になる。英国で、郵便町 (post town) になる。</li>
 		<li><strong>country</strong> - 国コード</li>
 		<li><strong>country-name</strong> - 国名</li>
