@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>G176: Keeping the flashing area small enough</title>
+      <title>G176: 閃光を放つ領域を十分に小さくする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,188 +10,130 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="G175">Previous Technique: G175</a></li>
-            <li><a href="G177">Next Technique: G177</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="G175">前の達成方法: G175</a></li>
+            <li><a href="G177">次の達成方法: G177</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Keeping the flashing area small enough</h1>
+      <h1>閃光を放つ領域を十分に小さくする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Appropriate to use for all general Web content including special cases like material
-               that is specifically designed for a display in a foyer.
+            <h2>適用 (対象)</h2>
+            <p>全てのウェブコンテンツ技術
             </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes-or-below-threshold">Success Criterion 2.3.1: Three Flashes or Below Threshold</a> (Sufficient)</span>.
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/three-flashes-or-below-threshold">達成基準 2.3.1: 3 回の閃光、又は閾値以下</a></span>  (十分な達成方法) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to provide an easy way to pass the success criterion
-               for things that flash, but are small.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、閃光を放つが小さいものに関して、達成基準を満たす容易な方法を提供することである。
             </p>
-            <p>If you have something that flashes
-               <em>more</em>
-               than 3 times in a one second period (so G19 can't be used), but the area that is flashing
-               is less than 25% of 10 degrees of visual field (which represents the central area
-               of vision in the eye), then it would automatically pass.
+            <p>ある 1 秒間において 3 回<em>以上</em>の閃光を放つものがある (つまり、G19 の達成方法を用いることができない) が、閃光を放つ領域が視野 10 度 (これは視界における中心視野に相当する) の 25％未満である場合、自動的に達成基準を満たすことになる。
             </p>
-            <p>The 10 degree of visual field represents the central area of vision in the eye. This
-               area is highly packed with visual sensors. Flashes in this area are transmitted to
-               the visual cortex. For those with photosensitivity, this flashing of activity on the
-               visual cortex can cause seizures. Flashing on other areas of the eye (which have far
-               fewer sensors) has much less effect on the cortex. Hence, the focus on just the 10
-               degrees of central vision.
+            <p>視野 10 度は、視界における中心視野にあたる。この視野には、視覚センサーがたくさんある。この視野における閃光は、視覚野に送られる。光過敏性発作のある利用者は、視覚野上において閃光を受け取ることで発作を引き起こす恐れがある。その他の視野 (視覚センサーがずっと少ない部分) での閃光は、視覚野に与える影響がずっと少ない。そのため、中心視野の 10 度だけを対象とする。
             </p>
             <ul>
                
-               <li>If the content is for general Web use, you can use
-                  <a href="#smallsafe1">Formula 1: Small Safe Area for Web Content</a>.
+               <li>コンテンツを一般的なウェブで使用する場合には、<a href="#smallsafe1">公式 1: ウェブコンテンツにおける小さくて安全な領域</a>を用いることができる。
                </li>
                
-               <li>If the content is for a known display (e.g., in a company foyer) then
-                  <a href="#smallsafe2">Formula 2: Small Safe Area for Known Displays</a>
-                  should be used.
+               <li>コンテンツを既知のディスプレイ (例: 会社のロビーにあるディスプレイ) で使用する場合には、<a href="#smallsafe2">公式 2: 既知のディスプレイにおける小さくて安全な領域</a>を用いるべきである。
                </li>
                
             </ul>
             <p id="smallsafe1">
-               <strong>Formula 1: Small Safe Area for Web Content</strong>
+               <strong>公式 1: ウェブコンテンツにおける小さくて安全な領域</strong>
                
             </p>
-            <p>Most Web authors do not know how to translate visual field to pixels, which is what
-               they generally can deal with. This technique provides that translation.
+            <p>ほとんどのウェブコンテンツ制作者は、視野をピクセルに変換する方法を知らない。が、それは一般に対処可能なものである。この達成方法では、その変換方法を提供する。
             </p>
-            <p>At this point in time, the most prevalent display is 1024 x 768 and about 15-17 inches
-               diagonally. When viewed at a typical viewing distance (22-26 inches) a 10 degree visual
-               field will capture an area approximately 341 x 256 pixels. This is not circular, but
-               neither is the central vision of most users, and the difference is so small (and at
-               the edge of the central vision where sensors are fewer) that it is not important.
+            <p>この文書を執筆している時点では、最も一般的なディスプレイの解像度は 1024 x 768 ピクセルで、画面は約 15～17 インチである。一般的な画面との距離 (56～66 センチメートル) で閲覧している際、視野 10 度はおおよそ 341 x 256 ピクセルの領域を占めることになる。これは円形ではないが、ほとんどの利用者の中心視野も円形ではない。その差異はとても小さいので (そして、中心視野でも視覚センサーの少ない端のことなので)、重要なことではない。
             </p>
-            <p>Since the criterion is 25% of any 10 degree visual field,
-               <strong>any single flashing event on a screen (there is no other flashing on screen) that
-                  is smaller than a contiguous area of 21,824 sq pixels (any shape), would pass the
-                  General and Red Flash Thresholds</strong>.
+            <p>基準は視野 10 度の 25% なので、<strong>(画面上に他に閃光を放つものがなければ) 画面上で (どんな形であれ) 21,824 平方ピクセルの隣接した領域よりも小さい単一の閃光を放つものは、一般閃光)及び赤色閃光の閾値を下回っていることになる。</strong>
             </p>
-            <p>1024 x 768 was chosen because it represents the most common screen size. It also works
-               with higher resolution screens since the tighter pixel density would result in a smaller
-               and safer image size.
+            <p>1024 x 768 ピクセルの画面解像度は、それが最も一般的であるという理由で選ばれている。よりぎっしり詰まったピクセル密度ではより小さくより安全な画像サイズになるので、高解像度のディスプレイでも前述の内容は通用する。
             </p>
-            <p>Users with lower resolution displays or that enlarge or view their screens closely
-               would have a higher risk depending on the viewing distance. To address the needs of
-               this group,
-               <a href="#G19"></a>
-               should be used since it is independent of screen resolution or viewing distance.
+            <p>低解像度のディスプレイ、拡大した画面、又はより近い画面との距離で閲覧している利用者は、その画面との距離によっては危険が高まることになる。そのような利用者のニーズに対処するためには、<a href="#G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a>画面解像度又は画面との距離に依存しないように、確認するべきである。
             </p>
             <p id="smallsafe2">
-               <strong>Formula 2: Small Safe Area for Known Displays</strong>
+               <strong>公式 2: 既知のディスプレイにおける小さくて安全な領域</strong>
                
             </p>
-            <p>To calculate the
-               <em>small safe area</em>
-               (in pixels) on the screen when the screen size, resolution, and viewing distance is
-               known, use the following procedure.
+            <p>画面サイズ、解像度、及び画面からの距離が明らかな際に画面上の<em>小さくて安全な領域</em>を (ピクセルで) 計算するには、次の手順を用いる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>For a number of reasons (distribution of central vision sensors often non-circular,
-                     simplicity, computational convenience, historical), a 4:3 rectangular approximation
-                     of the central 10 degree of visual field is used that is 10 degrees wide and 7.5 degrees
-                     high. This has an area of 75 square degrees, vs the 78.5 square degree area of a true
-                     circle of 10 degrees.
+                  <p>（中心視野のセンサーの分布は円形ではない、簡易さ、計算上の便宜、歴史的) など幾つもの理由から、中心の視野 10 度に相当する 4:3 の矩形の近似値が用いられる。それは 10 度の幅と 7.5 度の高さに相当する。これは、75 平方度の領域を持ち、10 度の真円の 78.5 平方度に相当する領域である。
                   </p>
                   
                </div>
             </div>
             <ol>
                
-               <li>To convert viewing distance to rectangle size, multiply the viewing distance by 0.1745
-                  (10 * Pi / 180) to get the width of the rectangle, and multiply the viewing distance
-                  by 0.1309 (7.5 * Pi / 180) to get the height of the rectangle. (This calculation can
-                  be done in inches, or millimeters, or any other unit of length.)
+               <li>画面との距離を矩形サイズに変換するには、その画面との距離に 0.1745 (10 * Pi / 180) を掛けて矩形の幅を算出し、画面との距離に 0.1309 (7.5 * Pi / 180) を掛けて矩形の高さを算出する (この計算は、インチ、ミリメートル、又はその他のあらゆる長さの単位で用いることが可能)。
                </li>
                
                <li>
                   
-                  <p>Determine size of 10 degree angle of view in pixels.</p>
+                  <p>視野角 10 度のサイズをピクセルで定める。</p>
                   
-                  <p>To do this, multiply the width and height of the rectangle from step 1 by the resolution
-                     of the screen, in pixels per unit length, to get the horizontal and vertical size
-                     of the rectangle in pixels.
+                  <p>それには、単位長さあたりピクセルで、手順 1 で算出した矩形の幅及び高さに画面解像度を掛けて、矩形の水平方向及び垂直方向のサイズをピクセルで算出する。
                   </p>
                   
                   <ul>
                      
-                     <li>For a 1080p widescreen display (which is 1920 by 1080 pixels), the resolution of the
-                        screen in pixels per inch is 2203 divided by the diagonal screen size, in inches.
+                     <li>1080p (1920 x 1080 ピクセル) のワイドスクリーンのディスプレイの場合、ピクセルパーインチでの画面の解像度は、2203 を対角線の画面サイズ (インチ) で割った数になる。
                      </li>
                      
-                     <li>For a 720p widescreen display (which is usually 1365 by 768 pixels), the resolution
-                        of the screen in pixels per inch is 1566 divided by the diagonal screen size, in inches.
+                     <li>720p (通常は、1365 x 768 ピクセル) のワイドスクリーンのディスプレイの場合、ピクセルパーインチでの画面の解像度は、1566 を対角線の画面サイズ (インチ) で割った数になる。
                      </li>
                      
-                     <li>For an LCD computer monitor which specifies the pixel pitch in millimeters / pixel,
-                        the resolution of the screen in pixels per inch is 25.4 divided by the pixel pitch
-                        in millimeters.
+                     <li>ピクセルピッチをミリメートル又はピクセルで指定した LCD のコンピュータのモニタの場合、ピクセルパーインチでの画面の解像度は、25.4 をピクセルピッチ (ミリメートル) で割った数になる。
                      </li>
                      
                   </ul>
                   
-                  <p>For any display, if you know the actual diagonal screen size in inches, and the horizontal
-                     and vertical resolution of the display in pixels, then the resolution of the screen
-                     in pixels per inch is the square-root of ( (horizontal resolution in pixels) * (horizontal
-                     resolution in pixels) + (vertical resolution in pixels) * (vertical resolution in
-                     pixels) ).
+                  <p>どんなディスプレイでも、実際の対角線の画面サイズがインチでわかっていて、ディスプレイの水平方向と垂直方向の解像度がピクセルでわかっている場合、ピクセルパーインチでの画面解像度は、((水平方向の解像度:ピクセル) x (水平方向の解像度:ピクセル) + (垂直方向の解像度:ピクセル) x (垂直方向の解像度:ピクセル)) の平方根である。
                   </p>
                   
                </li>
                
-               <li>Multiply the width of the rectangle by the height and divide by 4.</li>
+               <li>矩形の幅に高さを掛けて、4 で割る。</li>
                
             </ol>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <ul>
                
-               <li>An author creates an animation that will be displayed on a screen in the entrance
-                  lounge at a company. Using the size and resolution of the display and the closest
-                  distance that a person can stand when viewing the display, they calculate the size
-                  of 25% of the 10 degree of central vision in pixels (using the formula above). This
-                  would be the
-                  <em>small safe area</em>. They then are careful to never flash any area larger than the
-                  <em>small safe area</em>.
+               <li>コンテンツ制作者が、会社の入口ラウンジにあるスクリーンで流れるアニメーションを制作する。ディスプレイのサイズ及び画面解像度とディスプレイを見る際の最も近い画面との距離から、中央視野 10 度の 25 ％をピクセルで計算している (前述の公式を使用)。これは<em>小さくて安全な領域</em>といえる。コンテンツ制作者は、その<em>小さくて安全な領域</em>よりも大きい領域で閃光を放つことがないように留意している。
                </li>
                
             </ul>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -227,45 +169,39 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="G15">G15: Using a tool to ensure that content does not violate the general flash threshold or
-                     red flash threshold</a></li>
+               <li><a href="G15">G15: コンテンツが一般閃光閾値及び赤色閃光閾値を越えていないことを確認するためにツールを使用する</a></li>
                
-               <li><a href="G19">G19: Ensuring that no component of the content flashes more than three times in any 1-second
-                     period</a></li>
+               <li><a href="G19">G19: どの 1 秒間においても、コンテンツに 3 回よりも多く閃光を放つコンポーネントがないことを確認する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>The
-                     <em>small safe area</em>
-                     is calculated.
+                  <li><em>小さくて安全な領域</em>を計算する。
                   </li>
                   
-                  <li>Check that only one area of the screen is flashing at any time.</li>
+                  <li>どのタイミングにおいても画面の一つの領域だけが閃光を放っていることを確認する。</li>
                   
-                  <li>Check that the flashing content would fit into a contiguous container whose area is
-                     less than the
-                     <em>small safe area</em>.
+                  <li>閃光を放つコンテンツは、<em>小さくて安全な領域</em>よりも小さい連続したコンテナ内に収まっていることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true.</li>
+                  <li>2. 及び 3. の結果が真である。</li>
                   
                </ul>
                
