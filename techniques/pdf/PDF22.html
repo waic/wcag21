@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF22: Indicating when user input falls outside the required format or
-         			values in PDF forms
+      <title>PDF22: PDF フォームにおいて、利用者の入力が必須形式又は値の範囲外となった場合に、そのことを明示する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,124 +11,91 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF21">Previous Technique: PDF21</a></li>
-            <li><a href="PDF23">Next Technique: PDF23</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF21">前の達成方法: PDF21</a></li>
+            <li><a href="PDF23">次の達成方法: PDF23</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Indicating when user input falls outside the required format or
-         			values in PDF forms
+      <h1>PDF フォームにおいて、利用者の入力が必須形式又は値の範囲外となった場合に、そのことを明示する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">Success Criterion 3.3.1: Error Identification</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-identification">達成基準 3.3.1: エラーの特定</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">Success Criterion 3.3.3: Error Suggestion</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/error-suggestion">達成基準 3.3.3: エラー修正の提案</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to notify the user when user
-               				input to a field that requires a specific, required format (e.g.,
-               				date fields) is not submitted in that format. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、特定の必須形式 (日付フィールドなど) が求められるフィールドへの利用者の入力が、その形式で送信されないときに利用者に通知することを目的としている。
             </p>
-            <p>If the required format is not used, an alert dialog describes the
-               				nature of the error in text. This may be accomplished through scripting
-               				created by the author (see, for example, <a href="../client-side-script/SCR18">SCR18: Providing client-side validation and alert</a>). User agents, such
-               				as Adobe LiveCycle can provide automatic alerts (as described in
-               				the examples below). 
+            <p>必須形式が使用されていない場合、エラーの性質について説明するテキストがアラートダイアログボックスで表示される。これは作成者が作成したスクリプトを通じて指定できる (例えば、「<a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a>」を参照のこと)。Adobe LiveCycle などのユーザエージェントでは、(以下の事例で説明されているように) 自動的にアラートを表示できる。
             </p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div>
                   
-                  <p>Once the user dismisses the alert dialog,
-                     				it may be helpful if the script positions the keyboard focus on
-                     				the field where the error occurred, although some users may expect
-                     				the focus to remain on the last control focused prior to the alert
-                     				appearing. Authors should exercise care to ensure that any movement
-                     				of the focus will be expected. For example, if the alert announces
-                     				an error in a phone number format, positioning the focus on the
-                     				phone number field when the alert is dismissed can be regarded as
-                     				helpful and expected. In some cases, however, this may not be possible.
-                     				If multiple input errors occur on the page, an alternative approach
-                     				to error notification should be implemented. 
+                  <p>利用者がアラートダイアログボックスを閉じた後に、エラーの発生したフィールドにキーボードのフォーカスが移動するようにスクリプトを記述すると役立つ。ただし利用者によっては、アラートが表示される直前にフォーカスされていたコントロールにフォーカスが残ることを想定する場合がある。作成者は、利用者が想定するとおりにフォーカスを移動するよう注意を払う必要がある。例えば、電話番号の形式が間違っていることを示すアラートダイアログボックスが表示された場合に、アラートダイアログボックスを閉じると電話番号フィールドにフォーカスが置かれるようにすることは、利用者にとって役立ち、想定される動作であると考えられる。ただし場合によっては、これが不可能なことがある。ページ上で複数の入力エラーが発生した場合には、エラーを通知するための別のアプローチが取られる必要がある。
                   </p>
                   
                </div>
             </div>
-            <p>Ensuring that users are aware an error has occurred, can determine
-               				what is wrong, and can correct it are key to software usability
-               				and accessibility. Meeting this objective helps ensure that all
-               				users can complete for-based transactions with ease and confidence. 
+            <p>利用者が必ずエラーが発生したことに気付き、何が間違っているのかを判断し、修正できるようにすることは、ソフトウェアのユーザビリティとアクセシビリティにとって重要である。この目的を達成することは、すべての利用者が簡単かつ確実にフォームベースのトランザクションを完了できるようにするのに役立つ。
             </p>
             <section id="labels-for-required-formats-in-form-controls">
                
-               <h3>Labels for required formats in form controls</h3>
+               <h3>フォームコントロール内の必須形式のラベル</h3>
                
-               <p>It is also important that users are aware that an error <em>may</em> occur.
-                  					You can incorporate this information in labels; for example, "Date
-                  					(MM/DD/YYYY)." See <a href="#PDF10"></a>. 
+               <p>エラーが発生する可能性があることを利用者が認識することも重要である。この情報は、「日付 (MM/DD/YYYY)」のように、ラベルに組み込むことができる。「<a href="PDF10">PDF10: PDF 文書内のインタラクティブなフォームコントロールにラベルを付ける</a>」を参照のこと。
                </p>
                
             </section>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-providing-validation-for-an-input-field-format-using&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;adobe-acrobat-9-pro">
-               <h3>Example 1: Providing validation for an input field format using
-                  					Adobe Acrobat 9 Pro
+               <h3>例 1: Adobe Acrobat 9 Pro を使用して入力フィールド形式の検証を提供する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software
-                  						tools that perform similar functions. See the list of other software
-                  						tools in <a href="#pdf_notes_acc-sup_files_applications"></a>. 
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。 
                </p>
-               <p>Many fields -- telephone number, postal code, date -- must have
-                  						data entered in a specific format or pattern. 
+               <p>電話番号、郵便番号、日付など、多くのフィールドでは、特定の形式またはパターンに従ってデータを入力する必要がある。
                </p>
                <ol>
                   
-                  <li> Access the context menu for the form control that requires
-                     						a specific format. 
+                  <li>特定の形式を必要とするフォームコントロールのコンテキストメニューにアクセスする
                   </li>
                   
-                  <li> Select Properties... </li>
+                  <li>［プロパティ］を選択する</li>
                   
-                  <li> In the Format tab, select the Format Category (in this case,
-                     							Date). The Date Options appear. 
+                  <li>［書式］タブで、「形式カテゴリ」(この場合は「日付」) を選択すると、「日付オプション」が表示される
                   </li>
                   
-                  <li> Select the format for this form control (in this case, mm/dd/yyyy). </li>
+                  <li>このフォームコントロールの書式 (この場合、mm/dd/yyyy) を選択する</li>
                   
-                  <li> In the General tab, specify "Date (mm/dd/yyyy)" for
-                     								the Name and Tooltip for the control. 
+                  <li>［一般］タブで、コントロールの名前およびツールチップとして「日付 (mm/dd/yyyy)」を指定する
                   </li>
                   
                </ol>
@@ -137,88 +103,68 @@
                   <img src="img/dateformat.jpg" />
                   
                   
-                  <figcaption>Figure 1Specifying a required format for an input field format using Adobe Acrobat 9 Pro</figcaption> 
+                  <figcaption>図 1 Adobe Acrobat 9 Pro で入力フィールドのフォーマットに必須な形式を指定する。</figcaption> 
                   
                   
                </figure>
-               <p>When a user types a recognized date format, it is converted automatically
-                  						to the specified format. If the date format or value is not recognized,
-                  						an error alert appears and provides further information, as shown
-                  						in the image below. 
+               <p>認識されている日付形式を利用者が入力すると、その日付形式は指定した形式に自動的に変換される。日付形式または値が認識されない場合、以下の画像に示されているように、エラーアラートが表示され、詳細情報が提示される。
                </p>
                <figure id="figure-date-error">
                   <img src="img/dateerror.jpg" />
                   
                   
-                  <figcaption>Figure 2Error alert for date with unrecognized format or value.</figcaption>
+                  <figcaption>図 2 認識できない形式又は値を持つ日付に対するエラーアラート。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-required-fields/required-fields.pdf">working example of Required Fields in Acrobat</a>.
-               </p>
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-required-fields/required-fields.pdf">Acrobat の必須項目フィールドのサンプル (PDF ファイル)</a> がある。               </p>
             </section>
             <section class="example" id="example-2-providing-validation-for-an-input-field-format-using&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;adobe-livecycle-designer-es-8.2.1">
-               <h3>Example 2: Providing validation for an input field format using
-                  					Adobe LiveCycle Designer ES 8.2.1
+               <h3>例 2: Adobe LiveCycle Designer ES 8.2.1 を使用して入力フィールド形式の検証を提供する
                </h3>
-               <p>This example is shown with Adobe LiveCycle Designer. There are
-                  						other software tools that perform similar functions. See the list
-                  						of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>. 
+               <p>この事例は Adobe LiveCycle Designer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
                <ol>
                   
-                  <li> Select the form control that has a required format. </li>
+                  <li>必須形式のあるフォームコントロールを選択する </li>
                   
-                  <li> In the Object palette, click the Validation Pattern... button. </li>
+                  <li>［オブジェクト］パレットで、［検証パターン］ボタンをクリックする</li>
                   
                   <li>
                      
-                     <p> Because this is a date field the Patterns-Date Field dialog
-                        						appears. Select the pattern or format you want users to enter.
-                        						Then click OK.
+                     <p>これは日付フィールドなので、パターン - 日付フィールドダイアログボックスが表示される。利用者が入力する必要のあるパターンまたは書式を選択する。［OK］をクリックする
                      </p>
                      
                      <figure id="figure-form-validation">
                         <img src="img/form-validation.jpg" />
                         
                         
-                        <figcaption>Figure 3Using LiveCycle to specify form fields that require pattern validation</figcaption>
+                        <figcaption>図 3 LiveCycle を使用して、パターン検証を必要とするフォームフィールドを指定する。</figcaption>
                         
                         
                      </figure>
                      
                   </li>
                   
-                  <li> In the Object palette, use the Validation Pattern Message box
-                     							to type a warning message. Be sure to include the required pattern.
-                     							This message appears when a user tries to submit the form using
-                     							an invalid date format. 
+                  <li>［オブジェクト］パレットで、「検証パターンのメッセージ」ボックスを使用して警告メッセージを入力する。必要なパターンが含まれていることを確認する。このメッセージは、利用者が無効な日付書式を使用してフォームを発行しようとしたときに表示される 
                   </li>
                   
                </ol>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-required-fields/required-fields-lc.pdf">working example of Required Fields in LiveCycle Designer</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-required-fields/required-fields-lc.pdf">LiveCycle Designer の必須フィールドのサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-3-validating-a-required-date-format-in-a-pdf-form-using&#xA;----&#x9;&#x9;&#x9;&#x9;javascript-using-adobe-acrobat-pro-9">
-               <h3>Example 3: Validating a required date format in a PDF form using
-                  				JavaScript using Adobe Acrobat Pro 9
+               <h3>例 3: Adobe Acrobat Pro 9 を使用して、JavaScript を使用した PDF フォームで必須日付形式を検証する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software
-                  						tools that perform similar functions. See the list of other software
-                  						tools in <a href="#pdf_notes_acc-sup_files_applications"></a>. 
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>The following JavaScript code illustrates the use of a script to
-                  						validate form fields, in this case, a date field. To add this script
-                  						to the form field, open the Text Field Properties dialog, as shown
-                  						in Example 1, and select Edit in the Validate tab: 
+               <p>次の JavaScript コードは、フォームフィールド (この場合は日付フィールド) を検証するために使用されるスクリプトを示している。このスクリプトをフォームフィールドに追加するには、事例 1 に示されているように、［テキストフィールドのプロパティ］ダイアログボックスを開き、［検証］タブの「編集」を選択する。
                </p>
                <figure id="figure-text-field-props">
                   <img src="img/jscript.jpg" />
                   
                   
-                  <figcaption>Figure 4Text Field Properties dialog, with the Validate tab open to specify JavaScript validation
-                     code.
-                  </figcaption>
+                  <figcaption>図 4 [テキストフィールドのプロパティ] ダイアログで、[検証] タブを開き、JavaScript の検証コードを指定する。                  </figcaption>
                   
                   
                </figure><pre xml:space="preserve">// JavaScript code for date mask format MM/DD/YYYY
@@ -235,8 +181,8 @@ if (event.value !="") {
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -248,49 +194,45 @@ if (event.value !="") {
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G89">G89: Providing expected data format and example</a></li>
+               <li><a href="../general/G89">G89: 期待されるデータ書式及び入力例を提供する</a></li>
                
-               <li><a href="../client-side-script/SCR18">SCR18: Providing client-side validation and alert</a></li>
+               <li><a href="../client-side-script/SCR18">SCR18: クライアントサイドのバリデーション及びアラートを提供する</a></li>
                
-               <li><a href="PDF23">PDF23: Providing interactive form controls in PDF documents</a></li>
+               <li><a href="PDF23">PDF23: 文書内でインタラクティブなフォームコントロールを提供する</a></li>
                
-               <li><a href="PDF10">PDF10: Providing labels for interactive form controls in PDF documents</a></li>
+               <li><a href="PDF10">PDF10: PDF 文書内のインタラクティブなフォームコントロールにラベルを付ける</a></li>
                
-               <li><a href="PDF5">PDF5: Indicating required form controls in PDF forms</a></li>
+               <li><a href="PDF5">PDF5: PDF フォームで必須項目のフォームコントロールを示す</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each form field that requires specific input, verify that validation
-                  					information and instructions are provided by applying the following: 
-               </p>
+               <p>特定の入力を必要とする各フォームフィールドについて、次の方法によって、検証情報と説明文が入力されていることを確認する。               </p>
                
                <ol>
                   
-                  <li> Check that the format or value that is required is indicated
-                     					in the form control's label. 
+                  <li>求められる形式または値がフォームコントロールのラベルに示されていることを確認する。
                   </li>
                   
-                  <li> Use an erroneous format or value and move off the field: make
-                     						sure that an alert describing the error is provided. 
+                  <li>誤りのある形式または値を使用し、フィールド以外の場所に移動する。エラーについて説明するアラートが表示されることを確認する。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 and #2 are true. </li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
