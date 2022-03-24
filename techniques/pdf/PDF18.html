@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF18: Specifying the document title using the Title entry in the document
-         			information dictionary of a PDF document
+      <title>PDF18: PDF 文書の文書情報辞書内の Title エントリを使用して文書のタイトルを指定する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,104 +11,82 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF17">Previous Technique: PDF17</a></li>
-            <li><a href="PDF19">Next Technique: PDF19</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF17">前の達成方法: PDF17</a></li>
+            <li><a href="PDF19">次の達成方法: PDF19</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Specifying the document title using the Title entry in the document
-         			information dictionary of a PDF document
+      <h1>PDF 文書の文書情報辞書内の Title エントリを使用して文書のタイトルを指定する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/page-titled">Success Criterion 2.4.2: Page Titled</a> (Sufficient as a way to meet <a href="../general/G88">G88: Providing descriptive titles for Web pages</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/page-titled">達成基準 2.4.2: ページタイトル</a> (<a href="../general/G88">G88: ウェブページに説明的なタイトルを提供する</a> の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to show how a descriptive title for
-               				a PDF document can be specified for assistive technology by using the
-               				/Title entry in the document information dictionary and by setting
-               				the DisplayDocTitle flag to True in a viewer preferences dictionary.
-               				This is typically accomplished by using a tool for authoring PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、文書情報辞書内の /Title エントリを使用したり、ビューアの優先辞書内の DisplayDocTitle フラグを True に設定したりすることにより、PDF 文書の説明的なタイトルを支援技術用に指定できる方法を示すことである。これは通常、PDF のオーサリングツールを使用して行う。
             </p>
-            <p>Document titles identify the current location without requiring users
-               				to read or interpret page content. User agents make the title of the
-               				page easily available to the user for identifying the page. For instance,
-               				a user agent may display the page title in the window title bar or
-               				as the name of the tab containing the page. 
+            <p>文書のタイトルは、利用者がページの内容を読んだり解釈したりせずに現在位置を特定できるようにする。ユーザエージェントはページのタイトルを利用しやすくして、利用者がページを確認できるようにする。例えば、ユーザエージェントは、ウィンドウのタイトルバー内に、またはページを含むタブの名前としてページのタイトルを表示できる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-setting-the-document-title-in-the-metadata-and-specifying&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;that-the-title-be-displayed-in-the-title-bar-using-adobe-acrobat-9-pro">
-               <h3>Example 1: Setting the document title in the metadata and specifying
-                  					that the title be displayed in the title bar using Adobe Acrobat 9 Pro
+               <h3>例 1: Adobe Acrobat 9 Pro を使用し、文書のタイトルをメタデータ内に設定して、タイトルがタイトルバー内に表示されるように指定する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>Open the PDF document in Adobe Acrobat Pro: </p>
+               <p>Adobe Acrobat Pro で PDF 文書を開く。</p>
                <ol>
                   
-                  <li> Select File &gt; Properties </li>
+                  <li>ファイル &gt; プロパティを選択する </li>
                   
-                  <li> Select the Description tab to view the metadata in the document,
-                     						including the document information dictionary 
+                  <li>［説明］タブを選択して、文書情報辞書を含む文書内のメタデータを表示する
                   </li>
                   
-                  <li> Modify the Title field to add or change the document's Title entry </li>
+                  <li>「タイトル」フィールドを変更して、文書のタイトルエントリを追加または変更する</li>
                   
                </ol>
                <figure id="figure-title-field">
                   <img src="img/title-entry.jpg" />
                   
                   
-                  <figcaption>Figure 1Viewing the Title field in the Description tab of the Properties dialog. The document
-                     title is entered in the field.
+                  <figcaption>図 1 プロパティダイアログの [説明] タブにある「タイトル」フィールドを表示したところ。このフィールドには、文書のタイトルが入力されている。
                   </figcaption>
                   
                   
                </figure>
-               <p>Note that, with Adobe Acrobat installed, you can also enter and read
-                  						the data properties information from the desktop. Access the file's
-                  						context menu, choose Properties, and select the PDF tab. Any information
-                  						you type or edit in this dialog box also appears in the Document Properties
-                  						Description when you open the file. 
+               <p>Adobe Acrobat がインストールされている場合、デスクトップからデータのプロパティを入力し、読み取ることもできる。ファイルのコンテキストメニューから［プロパティ］を選択し、［PDF］タブを選択する。このダイアログボックス内で入力または編集した情報も、ファイルを開いたときに［文書のプロパティ］の［説明］タブに表示される。
                </p>
-               <p>To display the document title in the title bar of a user agent: </p>
+               <p>ユーザエージェントのタイトルバー内に文書のタイトルを表示するには、次の操作を行う。</p>
                <ol>
                   
-                  <li> Select File &gt; Properties </li>
+                  <li> ファイル &gt; プロパティを選択する </li>
                   
-                  <li> Select the Initial View tab </li>
+                  <li>［初期表示］タブを選択する</li>
                   
-                  <li> In the Window Options section, select Document Title in the Show
-                     						pull-down list. 
+                  <li>「ウィンドウオプション」セクションで、「表示」プルダウンリストの「文書のタイトル」を選択する
                   </li>
                   
                </ol>
@@ -117,31 +94,26 @@
                   <img src="img/doc-title.jpg" />
                   
                   
-                  <figcaption>Figure 2Specifying that the document title be displayed in the title bar. In the Window Options,
-                     Show Document Title is selected.
+                  <figcaption>図 2 タイトルバーに文書のタイトルを表示するように指定する。「ウィンドウオプション」の「表示」で「文書のタイトル」が選択されている。
                   </figcaption>
                   
                   
                </figure>
-               <p>The title is displayed in the title bar, as shown in the image below. </p>
+               <p>以下の画像に示されているように、タイトルがタイトルバーに表示される。 </p>
                <figure id="figure-acrobat-title-bar">
                   <img src="img/title-bar.jpg" />
                   
                   
-                  <figcaption>Figure 3Image of the Adobe Acrobat Pro title bar with the title of the document displayed.</figcaption>
+                  <figcaption>図 3 Adobe Acrobat Pro のタイトルバーで、ドキュメントのタイトルが表示されるイメージ。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-document-title/title-bar.pdf">working example of displaying document title in the title bar</a>.
-               </p>
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-document-title/title-bar.pdf">文書のタイトルをタイトルバーに表示したサンプル (PDF ファイル)</a> がある。               </p>
             </section>
             <section class="example" id="example-2-a-/title-entry-in-the-document-information-dictionary&#xA;----&#x9;&#x9;&#x9;&#x9;of-a-pdf-document">
-               <h3>Example 2: A /Title entry in the document information dictionary
-                  				of a PDF document
+               <h3>例 2: PDF 文書の文書情報辞書内の /Title エントリ
                </h3>
-               <p>The following code fragment illustrates code that is typical for providing
-                  						a /Title entry in a document information dictionary that contains a
-                  						document title. 
+               <p>次のコードフラグメントは、文書のタイトルを含む文書情報辞書内に /Title エントリを提供する一般的なコードを示している。 
                </p><pre xml:space="preserve">1 0 obj   
    &lt;&lt; /Title (Applying Guerrilla Tactics to Usability Testing by People with Disabilities)    
       /Author (Mary Smith) 
@@ -151,8 +123,8 @@ endobj
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -174,39 +146,34 @@ endobj
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G88">G88: Providing descriptive titles for Web pages</a></li>
+               <li><a href="../general/G88">G88: ウェブページに説明的なタイトルを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>Verify that the title for the document is correctly specified and
-                        					displayed in the user agent title bar by applying one of the following:
+                     <p>次のいずれかを適用することにより、文書のタイトルが正しく指定されていて、ユーザエージェントのタイトルバーに表示されることを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> Open the PDF document with a screen reader, listening to hear
-                           						that the document title is read correctly. 
+                        <li>PDF 文書をスクリーンリーダーで読み上げると、文書のタイトルが正しく読み上げられる。 
                         </li>
                         
-                        <li> Using a PDF editor, check that the document title is specified.
-                           							Select the Initial View tab to check that the title will be displayed. 
+                        <li>PDF エディターを使用して、文書のタイトルが指定されていること、また「初期表示」タブを選択し、タイトルが表示されることを確認する。 
                         </li>
                         
-                        <li> Use a tool which is capable of showing the /Title entry value
-                           								in the document catalog to open the PDF document and view the
-                           								/Title entry and /DisplayDocTitle flag settings. 
+                        <li>文書カタログ内の /Title エントリ値を表示できるツールを使用して PDF 文書を開き、/Title エントリおよび /DisplayDocTitle フラグ設定を表示する。
                         </li>
                         
                      </ul>
@@ -217,11 +184,11 @@ endobj
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true. </li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
