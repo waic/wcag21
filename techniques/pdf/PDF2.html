@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF2: Creating bookmarks in PDF documents</title>
+      <title>PDF2: PDF 文書内でしおりを作成する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,74 +10,62 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF1">Previous Technique: PDF1</a></li>
-            <li><a href="PDF3">Next Technique: PDF3</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF1">前の達成方法: PDF1</a></li>
+            <li><a href="PDF3">次の達成方法: PDF3</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Creating bookmarks in PDF documents</h1>
+      <h1>PDF 文書内でしおりを作成する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/multiple-ways">Success Criterion 2.4.5: Multiple Ways</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/multiple-ways">達成基準 2.4.5: 複数の手段</a></span> (書かれていない達成方法を満たす手段として十分) に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to make it possible for users to locate
-               				content using bookmarks (<em>outline entries</em> in an Outline dictionary)
-               				in long documents. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、利用者が長い文書でしおり (アウトライン辞書の<em>アウトラインエントリ</em>) を使用してコンテンツを見つけられるようにすることである。
             </p>
-            <p>A person with cognitive disabilities may prefer a hierarchical outline
-               				that provides an overview of the document rather than reading and traversing
-               				through many pages. This is also a conventional means of navigating
-               				a document that benefits all users. 
+            <p>認知障害のある利用者は、多数のページを読み進めるよりも、文書の概要を提供する階層的なアウトラインを好む場合がある。また、これは文書内を移動する方法として一般的なものであり、どのような利用者にとっても役立つものである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-converting-a-table-of-contents-created-with-microsoft&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;word-2007-and-creating-bookmarks-for-adobe-reader-9-and-acrobat-9-pro">
-               <h3>Example 1: Converting a table of contents created with Microsoft
-                  					Word 2007 and creating bookmarks for Adobe Reader 9 and Acrobat 9 Pro
+               <h3>事例 1: Microsoft Word 2007 で作成した目次を変換し、Adobe Reader 9 および Acrobat 9 Pro のしおりを作成する
                </h3>
-               <p>This example is shown with Microsoft Word and Adobe Acrobat Pro. There are other software
-                  tools that perform similar functions. See the list of other software 
-                  tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Microsoft Word と Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストを参照。<a href="#pdf_notes_acc-sup_files_applications"></a>.
                </p>
                <ol>
                   
                   <li>
                      
-                     <p> Create a table of contents at the beginning of the Word document. </p>
+                     <p>Word 文書の最初に目次を作成する。</p>
                      
                      <figure id="figure-reference-tab">
                         <img src="img/word-toc.jpg" />
                         
                         
-                        <figcaption>Figure 1Reference tab on Word ribbon, showing Table of Contents tool.</figcaption>
+                        <figcaption>図1. [目次] ツールが表示されたWordリボンの [参照] タブ</figcaption>
                         
                         
                      </figure>
@@ -86,79 +74,62 @@
                   
                   <li>
                      
-                     <p> Use Save as... &gt; Adobe PDF to convert the Word document to
-                        						PDF, specifying both of the following:
+                     <p>名前を付けて保存 > PDF (*.pdf) を選択し、次の両方の項目を有効にして Word 文書を PDF に変換する。
                      </p>
                      
                      <ul>
                         
-                        <li> Enable Accessibility and Reflow with Tagged Adobe PDF </li>
+                        <li>タグ付き Adobe PDF でアクセシビリティと折り返しを有効にする</li>
                         
-                        <li> Convert Word Headings into Bookmarks </li>
+                        <li>Word の見出しをしおりに変換</li>
                         
                      </ul>
                      
                   </li>
                   
                </ol>
-               <p>The table-of-contents entries in the converted document will be linked
-                  						to the headings in the document. 
+               <p>変換された文書の目次エントリは、文書内の見出しにリンクされる。
                </p>
-               <p>In addition, the headings will appear as PDF Bookmarks in the left-hand
-                  						Navigation pane. 
+               <p>さらに、左側のナビゲーションウィンドウに、見出しが PDF のしおりとして表示される。
                </p>
                <figure id="figure-toc-bookmarks">
                   <img src="img/bookmarks.jpg" />
                   
                   
-                  <figcaption>Figure 2PDF document showing the Table of Contents and Bookmarks created from the headings
-                     in a Word document.
+                  <figcaption>図2. Word文書の見出しから作成された目次とブックマークを表示するPDF文書
                   </figcaption>
                   
                   
                </figure>
-               <p>If the document provides a glossary and/or index, these sections
-                  						should have headings that appear in the table of contents (and thus
-                  						as bookmarks in the Navigation pane). The table of contents also
-                  						should be marked up with a heading so it is bookmarked as well. 
+               <p>文書に用語集やインデックスが含まれている場合、これらのセクションの見出しが目次に (またナビゲーションウィンドウのしおりとして) 表示される。また、目次は、しおりも付けられるようにするために、見出しによってマークアップされなければならない。
                </p>
-               <p>If this markup has not been done in the authoring tool, Adobe Acrobat
-                  						Pro can be used to provide the tags. See <a href="#PDF9"></a> if
-                  							you need to modify converted headings or add new ones. 
+               <p>このマークアップがオーサリングツールによって行われていない場合は、Adobe Acrobat Pro を使用してタグを設定することができる。変換された見出しを変更する方法または新しい見出しを追加する方法については、<a href="#PDF9"></a>参照のこと。
                </p>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-bookmarks/bookmarks.docx">working example of creating bookmarks with Word 2007</a>.
+               <p class="working-example">この事例には、<a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/PDF2/bookmarks.docx">working example of creating bookmarks with Word 2007</a> でしおりを作成するサンプル (Word ファイル) がある。
                </p>
             </section>
             <section class="example" id="example-2-converting-a-table-of-contents-created-with-openoffice.org&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;writer-2.2-and-creating-bookmarks-for-adobe-reader-9-and-acrobat-9&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;pro">
-               <h3>Example 2: Converting a table of contents created with OpenOffice.org
-                  					Writer 2.2 and creating bookmarks for Adobe Reader 9 and Acrobat 9
-                  					Pro
+               <h3>事例 2: OpenOffice.org Writer 2.2 で作成した目次を変換し、Adobe Reader 9 および Acrobat 9 Pro のしおりを作成する
                </h3>
-               <p>This example is shown with OpenOffice.org Writer and Adobe Acrobat Pro and Reader.
-                  There are other software tools that perform similar functions. See the list of other
-                  software 
-                  tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は、OpenOffice.org Writer と Adobe Acrobat Pro および Reader の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストを参照。<a href="#pdf_notes_acc-sup_files_applications"></a>
                </p>
                <ol>
                   
                   <li>
                      
-                     <p> Create a table of contents at the beginning of the OpenOffice.org
-                        						Writer document:
+                     <p>OpenOffice.org Writer 文書の最初に目次を作成する。
                      </p>
                      
                      <ul>
                         
-                        <li> Insert &gt; Indexes and Tables... &gt; Indexes and Tables &gt; Insert
-                           							Index/Table 
+                        <li>挿入 &gt; 目次と索引 &gt; 目次と索引 &gt; 目次と索引の挿入
                         </li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li> Use File &gt; Export as PDF... to convert the document to PDF,
-                     						specifying Tagged PDF in the Options dialog. 
+                  <li>ファイル &gt; PDF としてエクスポートを選択し、Options ダイアログボックスでタグ付き PDF を選択して、文書を PDF に変換する。
                   </li>
                   
                </ol>
@@ -166,77 +137,64 @@
                   <img src="img/oo-toc.jpg" />
                   
                   
-                  <figcaption>Figure 3Image of the Insert Index/Table dialog in OpenOffice.org Writer.</figcaption>
+                  <figcaption>図3. OpenOffice.org Writerの目次と索引の挿入ダイアログボックスの画像</figcaption>
                   
                   
                </figure>
-               <p>The table-of-contents entries in the converted document will be linked
-                  						to the headings in the document, and will appear as PDF Bookmarks in
-                  						the left-hand Navigation pane. The OpenOffice.org Table of Contents
-                  						and Bookmarks look the same as they appeared in Example 1. 
+               <p>変換された文書の目次エントリは、文書内の見出しにリンクされ、左側のナビゲーションウィンドウに PDF のしおりとして表示される。OpenOffice.org の目次としおりは、事例 1 と同様に表示される。
                </p>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-bookmarks/bookmarks.odt">working example of creating bookmarks with OpenOffice Writer</a>.
+               <p class="working-example">この事例には、<a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/PDF2/bookmarks.odt">working example of creating bookmarks with OpenOffice Writer</a> でしおりを生成するサンプル (Open Document Text ファイル) がある。
                </p>
             </section>
             <section class="example" id="example-3-adding-bookmarks-using-adobe-acrobat-9-pro-after-conversion">
-               <h3>Example 3: Adding bookmarks using Adobe Acrobat 9 Pro after conversion</h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software 
-                  tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <h3>事例 3: 変換後に Adobe Acrobat 9 Pro を使用して、しおりを追加する</h3>
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストを参照。<a href="#pdf_notes_acc-sup_files_applications"></a>
                </p>
-               <p>After conversion to tagged PDF, you may decide to add bookmarks that
-                  						were not automatically generated. Like the converted bookmarks, tagged
-                  						bookmarks use the underlying structural information in the document. 
+               <p>タグ付き PDF に変換した後で、自動的に生成されなかったしおりを追加することができる。変換されたしおりと同様に、タグ付きしおりでも文書内の構造情報が使用される。
                </p>
                <ol>
                   
-                  <li> In the Bookmarks panel, choose the options menu, then choose New
-                     						Bookmarks From Structure... 
+                  <li>しおりパネルでオプションメニューを選択し、［ストラクチャから新規しおり作成］を選択する。
                   </li>
                   
-                  <li> From the Structure Elements dialog, select the elements you want
-                     							specified as tagged bookmarks. 
+                  <li>構造エレメントダイアログボックスで、タグ付きしおりとして指定するエレメントを選択する。
                   </li>
                   
                </ol>
-               <p>The image below shows the Bookmarks options menu. </p>
+               <p>次の画像は、しおりオプションメニューを示している。</p>
                <figure id="figure-bookmarks-options">
                   <img src="img/bookmark1.jpg" />
                   
                   
-                  <figcaption>Figure 4The Bookmarks options menu.</figcaption>
+                  <figcaption>図4. しおりオプションメニュー</figcaption>
                   
                   
                </figure>
-               <p>The next image shows the selection of links in the document for bookmarking. </p>
+               <p>次の画像は、しおりを付けるために文書内のリンクを選択するようすを示している。</p>
                <figure id="figure-bookmarks-links">
                   <img src="img/bookmark2.jpg" />
                   
                   
-                  <figcaption>Figure 5The tagged elements that can be used for bookmarking, with 'links' selected.</figcaption>
+                  <figcaption>図5. "リンク"を選択した状態で、しおりに使用できるタグ付き要素</figcaption>
                   
                   
                </figure>
-               <p>The tagged bookmarks are nested under a new, untitled bookmark. Access
-                  						the context menu for the new bookmark and select the Rename option
-                  						to rename the new bookmark, as shown in the following image. 
+               <p>タグ付きしおりは、タイトルのない新規しおりの下にネストされている。新規しおりのコンテキストメニューから「名前を変更」オプションを選択して、次の画像に示すように新規しおりの名前を変更する。
                </p>
                <figure id="figure-bookmarks-hyperlinks">
                   <img src="img/link-bookmark.jpg" />
                   
                   
-                  <figcaption>Figure 6The bookmarks for the hyperlink in the document.</figcaption>
+                  <figcaption>図6. 文書内のハイパーリンクのしおり</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-bookmarks/bookmarks.pdf">working example of creating bookmarks with Acrobat Pro</a>.
+               <p class="working-example">この事例には、<a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/PDF2/bookmarks.pdf">working example of creating bookmarks with Acrobat Pro</a> で作成したしおりのサンプル (PDF ファイル) がある。
                </p>
             </section>
             <section class="example" id="example-4-creating-bookmarks-with-the-outline-hierarchy">
-               <h3>Example 4: Creating bookmarks with the outline hierarchy</h3>
-               <p>The following code fragment illustrates part of an outline hierarchy
-                  						used to create bookmarks This is typically accomplished by an authoring
-                  						tool. 
+               <h3>事例 4: アウトライン階層によってしおりを作成する</h3>
+               <p>次のコードフラグメントは、しおりの作成に使用するアウトライン階層の一部を示している。これは通常、オーサリングツールを使用して行う。
                </p><pre xml:space="preserve">121 0 obj
  &lt;&lt; /Type /Outlines
     /First 22 0 R
@@ -264,8 +222,8 @@ endobj
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 12.3.3 (Document Outline) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -281,33 +239,33 @@ endobj
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G64">G64: Providing a Table of Contents</a></li>
+               <li><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G64.html">G64: 目次を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Check that the Bookmarks panel displays bookmarks. </li>
+                  <li>しおりパネルにしおりが表示されていることを確認する。</li>
                   
-                  <li> Check that the bookmarks link to the correct sections in the document. </li>
+                  <li>しおりが文書内の正しいセクションにリンクされていることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 and Check #2 are true. </li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
