@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF14: Providing running headers and footers in PDF documents</title>
+      <title>PDF14: PDF 文書内に連続するヘッダーとフッターを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,118 +10,89 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF13">Previous Technique: PDF13</a></li>
-            <li><a href="PDF15">Next Technique: PDF15</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF13">前の達成方法: PDF13</a></li>
+            <li><a href="PDF15">次の達成方法: PDF15</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing running headers and footers in PDF documents</h1>
+      <h1>PDF 文書内に連続するヘッダーとフッターを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/location">Success Criterion 2.4.8: Location</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/location">達成基準 2.4.8: 現在位置</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-navigation">Success Criterion 3.2.3: Consistent Navigation</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-navigation">達成基準 3.2.3: 一貫したナビゲーション</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to help users locate themselves
-               				in a document by providing running headers and footers via pagination
-               				artifacts. This is normally accomplished using a tool for authoring
-               				PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ページネーションアーティファクトを通じて、連続するヘッダーとフッターを提供することにより、利用者が文書内の現在位置を確認できるよう支援することである。これは通常、PDF のオーサリングツールを使用して行う。 
             </p>
-            <p>Running headers and footers help make content easier to use and understandable
-               				by providing repeated information in a consistent and predictable way.
-               				The content of headers and footers will vary widely depending on the
-               				document scope and content, the audience, and design decisions. Some
-               				examples of location information that may be used in headers and footers
-               				are listed below. Whether the information appears in a header or a
-               				footer is often a design decision; page numbers often appear in footers
-               				but they may alternatively appear in headers. 
+            <p>連続するヘッダーとフッターは、一貫性のある予測可能な方法で繰り返される情報を提供することにより、コンテンツの利用と理解を容易にするために役立つ。ヘッダーとフッターのコンテンツは、文書の範囲と内容、対象読者および設計上の決定によって大きく異なる。ヘッダーとフッターで使用される現在位置情報の事例のいくつかを以下の一覧に示す。情報がヘッダーに現れるのかフッターに現れるのかは、設計上の決定である場合が多い。ページ番号は、多くの場合フッターにあるが、ヘッダーにあってもかまわない。
             </p>
             <ul>
                
-               <li> Document title </li>
+               <li> 文書のタイトル </li>
                
-               <li> Current chapter and/or section in the document</li>
+               <li> 文書内の現在の章及び節</li>
                
-               <li> Page numbers with location information such as, "Page 3-4" or "Page
-                  				9 of 15." 
+               <li>「ページ 3-4」又は「ページ 9/15」のような現在位置情報のあるページ番号
                </li>
                
-               <li> Author and/or date information. </li>
+               <li> 作成者及び日付情報 </li>
                
             </ul>
-            <p>Consistency helps users with cognitive limitations, screen-reader
-               				users and low-vision magnifier users, and users with intellectual disabilities
-               				understand content more readily. 
+            <p>一貫性は、認知障害のある利用者、スクリーンリーダーの利用者、ロービジョン拡大鏡の利用者および知的障害のある利用者がコンテンツを理解しやすくするために役立つ。
             </p>
-            <p>The easiest way to provide page headers and footers is in the authoring
-               				tool for the document. Authoring tools typically provide features for
-               				creating header and footer text and information (such as page numbers).
-               				However, if after converting your document to PDF, you need to add
-               				or modify page headers and footers, authoring or repair tools like Adobe Acrobat
-               Pro's Header &amp; Footer
-               				tools can be used. In all cases, the tools generate page headers and
-               				footers in consistent and predictable layout, format, and text. 
+            <p>ページヘッダーとフッターを提供する最も容易な方法は、文書のオーサリングツール内で行う方法である。オーサリングツールは通常、ヘッダーおよびフッターテキストと情報 (ページ番号など) を作成するための機能を提供する。ただし、文書を PDF に変換した後でページヘッダーおよびフッターを追加または変更する必要がある場合、Adobe Acrobat Pro のヘッダーとフッターのツールのようなオーサリングまたは修正ツールを使用することができる。いかなる場合でも、ツールは一貫性のある予測可能なレイアウト、形式およびテキストでページヘッダーおよびフッターを生成する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-adding-running-headers-and-footers-using-microsoft-word&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;2007">
-               <h3>Example 1: Adding running headers and footers using Microsoft Word
-                  					2007
+               <h3>例 1: Microsoft Word 2007 を使用して連続するヘッダーとフッターを追加する
                </h3>
-               <p>This example is shown with Microsoft Word. There are other software tools that perform
-                  similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Microsoft Word の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>In Microsoft Word, use the Insert ribbon, which allows you to specify
-                  						header, footer, and page number information and layout, as shown in
-                  						the following images. 
+               <p>Microsoft Word で、以下の画像に示されているように、ヘッダー、フッター、ページ番号情報およびレイアウトを指定できる挿入リボンを使用する。
                </p>
                <figure id="figure-word-footertools">
                   <img src="img/word-headerfootertools.jpg" />
                   
                   
-                  <figcaption>Figure 1Header and Footer tools on the Word Insert ribbon</figcaption>
+                  <figcaption>図 1 Word の挿入リボンにあるヘッダー及びフッターのツール。</figcaption>
                   
                   
                </figure>
-               <p>You can use these tools to specify headers and footers as shown in
-                  						the following images: 
+               <p>次の画像に示されているように、これらのツールを使用してヘッダーとフッターを指定することができる。
                </p>
                <figure id="figure-header-word">
                   <img src="img/header-word.jpg" />
                   
                   
-                  <figcaption>Figure 2Page headers in a Word document</figcaption>
+                  <figcaption>図 2 Word 文書でのページヘッダー。</figcaption>
                   
                   
                </figure>
@@ -129,18 +100,17 @@
                   <img src="img/footer-word.jpg" />
                   
                   
-                  <figcaption>Figure 3Page footers in a Word document.</figcaption>
+                  <figcaption>図 3 Word 文書でのページフッター。</figcaption>
                   
                   
                </figure>
-               <p>When converted to PDF, the page headers and footers appear in the
-                  						document. 
+               <p>PDF への変換時に、ページヘッダーおよびフッターが文書内に表示される。
                </p>
                <figure id="figure-page-header">
                   <img src="img/pdf-page-header.jpg" />
                   
                   
-                  <figcaption>Figure 4Page headers converted from Word.</figcaption>
+                  <figcaption>図 4 Word から変換されたページヘッダー。</figcaption>
                   
                   
                </figure>
@@ -148,29 +118,25 @@
                   <img src="img/pdf-page-footer.jpg" />
                   
                   
-                  <figcaption>Figure 5Page footers converted from Word.</figcaption>
+                  <figcaption>図 5 Word から変換されたページフッター。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-headers-footers/headers-footers.docx">working example of adding running headers using Word (Word file)</a> and <a href="../../working-examples/pdf-headers-footers/headers-footers-word.pdf">working example of adding running headers using Word (PDF file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-headers-footers/headers-footers.docx">Word を使用して連続するヘッダーを追加したサンプル (Word ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-headers-footers/headers-footers-word.pdf">Word を使用して連続するヘッダーを追加したサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-2-adding-running-headers-and-footers-using-openoffice.org&#xA;----&#x9;&#x9;&#x9;&#x9;writer-2.2">
-               <h3>Example 2: Adding running headers and footers using OpenOffice.org
-                  				Writer 2.2
+               <h3>例 2: OpenOffice.org Writer 2.2 を使用して連続するヘッダーとフッターを追加する
                </h3>
-               <p>This example is shown with OpenOffice.org Writer. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は OpenOffice.org Writer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>In OpenOffice.org Writer, use the Insert &gt; Header and Insert &gt;   Footer
-                  						tools, which allow you to specify header and footer information and
-                  						layout, as shown in the following images. 
+               <p>OpenOffice.org Writer で、以下の画像に示されているように、ヘッダーおよびフッター情報とレイアウトを指定できる挿入 &gt; ヘッダーツールと挿入 &gt; フッターツールを使用する。
                </p>
                <figure id="figure-ooheaderfooter">
                   <img src="img/ooheaderfootertools.jpg" />
                   
                   
-                  <figcaption>Figure 6Header and Footer tools in OpenOffice.org Writer.</figcaption>
+                  <figcaption>図 6 OpenOffice.org Writer にあるヘッダー及びフッターのツール。</figcaption>
                   
                   
                </figure>
@@ -178,7 +144,7 @@
                   <img src="img/header-oo.jpg" />
                   
                   
-                  <figcaption>Figure 7Page headers in an OpenOffice.org Writer document.</figcaption>
+                  <figcaption>図 7 OpenOffice.org Writer 文書でのページヘッダー。</figcaption>
                   
                   
                </figure>
@@ -186,80 +152,67 @@
                   <img src="img/footer-oo.jpg" />
                   
                   
-                  <figcaption>Figure 8Page footers in an OpenOffice.org Writer document.</figcaption>
+                  <figcaption>図 8 OpenOffice.org Writer 文書でのページフッター。</figcaption>
                   
                   
                </figure>
-               <p>When converted to PDF, the page headers and footers appear in the
-                  					document as they do in the converted Word document in Example 1. 
+               <p>PDF への変換時に、ページヘッダーおよびページフッターは、例 1 で変換された Word 文書で設定したように文書内に表示される。 
                </p>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-headers-footers/headers-footers.odt">working example of adding running headers using OpenOffice Writer (OpenOffice file)</a> and <a href="../../working-examples/pdf-headers-footers/headers-footers-oo.pdf">working example of adding running headers using OpenOffice Writer (PDF file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-headers-footers/headers-footers.odt">OpenOffice Writer を使用して連続するヘッダーを追加したサンプル (OpenOffice ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-headers-footers/headers-footers-oo.pdf">OpenOffice Writer を使用して連続するヘッダーを追加したサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-3-adding-running-headers-and-footers-to-pdf-documents-using&#xA;----&#x9;&#x9;&#x9;&#x9;adobe-acrobat-9-pro">
-               <h3>Example 3: Adding running headers and footers to PDF documents using
-                  				Adobe Acrobat 9 Pro
+               <h3>例 3: Adobe Acrobat 9 Pro を使用して PDF 文書に連続するヘッダーとフッターを追加する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>In Adobe Acrobat Pro, you can add or modify headers and footers: </p>
+               <p>Adobe Acrobat Pro で、ヘッダーとフッターを追加したり変更したりできる。</p>
                <ol>
                   
-                  <li> Select Document &gt; Header &amp; Footer &gt; Add... </li>
+                  <li> 文書 &gt; ヘッダーとフッター &gt; 追加を選択する </li>
                   
-                  <li> In the Add Header and Footer tool, specify text and formats for
-                     						headers and footers in your document. 
+                  <li> ヘッダーとフッターの追加ツールで、文書内のヘッダーとフッターのテキストと形式を指定する 
                   </li>
                   
-                  <li> Use the Previews to make sure the text, fonts, and layout are
-                     							as you want them for your document. 
+                  <li> 「プレビュー」を使用して、文書のテキスト、フォントおよびレイアウトが望み通りになっていることを確認する
                   </li>
                   
                </ol>
-               <p>The image below shows Acrobat Pro's Add Header and Footer tool. </p>
+               <p>次の画像は、Acrobat Pro のヘッダーとフッターの追加ツールを示している。</p>
                <figure id="figure-pro-header-footer">
                   <img src="img/pro-header-footer-tool.jpg" />
                   
                   
-                  <figcaption>Figure 9Add Header and Footer tool in Adobe Acrobat Pro</figcaption>
+                  <figcaption>図 9 Acrobat Pro のヘッダーとフッターの追加ツール</figcaption>
                   
                   
                </figure>
             </section>
             <section class="example" id="example-4-marking-a-running-header-or-footer-as-a-pagination-artifact&#xA;----&#x9;&#x9;&#x9;&#x9;in-a-pdf-document-using-an-/artifact-tag-or-property-list">
-               <h3>Example 4: Marking a running header or footer as a pagination artifact
-                  				in a PDF document using an /Artifact tag or property list
+               <h3>例 4: /Artifact タグまたはプロパティリストを使用して、PDF 文書内で連続するヘッダーまたはフッターをページネーションアーティファクトとしてマークする
                </h3>
-               <p>The PDF specification allows running headers and footers to be marked
-                  						as "pagination artifacts" as defined in section 14.8.2.2 "Real
-                  						Content and Artifacts," of <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
-                     							1.7 (ISO 32000-1)</a>. 
+               <p>PDF 仕様を使用すると、<a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF 1.7 (ISO 32000-1)</a> の節 14.8.2.2 "Real Content and Artifacts" で定義されているように、連続するヘッダーとフッターを「ページネーションアーティファクト」としてマークできるようになる。
                </p>
-               <p>An artifact is explicitly distinguished from real content by enclosing
-                  					it in a marked-content sequence with the /Artifact tag. 
+               <p>アーティファクトは、/Artifact タグと共に、マークされたコンテンツ順序に含められることで実際のコンテンツと明示的に区別される。
+
+ 
                </p><pre xml:space="preserve">/Artifact
 BMC
 ...
 EMC
-</pre><p>or</p><pre xml:space="preserve">/Artifact propertyList
+</pre><p>又は</p><pre xml:space="preserve">/Artifact propertyList
 BDC
 ...
 EMC
-</pre><p>The first is used to identify a generic artifact; the second is
-                  						used for artifacts that have an associated property list. Note: to
-                  						aid in text reflow, artifacts should be defined with property lists
-                  						whenever possible. Artifacts lacking a specified bounding box are
-                  						likely to be discarded during reflow. 
+</pre><p>前者は一般的なアーティファクトを特定するために使用され、後者はプロパティリストが関連付けられているアーティファクトで使用される。注記: テキストのリフローを可能にするために、アーティファクトは可能な限りプロパティリストを関連付けて定義すべきである。境界ボックスが指定されていないアーティファクトは、リフロー中に削除される可能性がある。
                </p>
-               <p>Property list entries for artifacts include Type, BBox, Attached,
-                  						and Subtype. 
+               <p>アーティファクトのプロパティリストのエントリには、Type、BBox、Attached、Subtype などがある。 
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.8.2.2 (Real Content and Artifacts) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -275,42 +228,39 @@ EMC
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G61">G61: Presenting repeated components in the same relative order each time they appear</a></li>
+               <li><a href="../general/G61">G61: 毎回同じ相対的順序で繰り返されるコンポーネントを提示する</a></li>
                
-               <li><a href="PDF9">PDF9: Providing headings by marking content with heading tags in PDF documents</a></li>
+               <li><a href="PDF9">PDF9: PDF 文書内のコンテンツを見出しタグでマークアップすることによって見出しを作成する</a></li>
                
-               <li><a href="PDF2">PDF2: Creating bookmarks in PDF documents</a></li>
+               <li><a href="PDF2">PDF2: PDF 文書内でしおりを作成する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Check that running headers and/or footers are provided and contain
-                     					information to help users locate themselves within the document (such
-                     					as page numbers or chapter numbers). 
+                  <li> 連続するヘッダーおよびフッターが提供されていて、利用者が文書内での現在位置を確認するために役立つ情報 (ページ番号または章番号など) が含まれている。
                   </li>
                   
-                  <li> If section headers are used in the running header or footer, check
-                     						that the section header and the running header or footer are consistent. 
+                  <li> 連続しているヘッダーまたはフッターでセクションヘッダーが使用されている場合、セクションヘッダーと連続しているヘッダーまたはフッターに一貫性がある。
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 and #2 are true. </li>
+                  <li>#1 及び #2 の結果が真である。</li>
                   
                </ul>
                
