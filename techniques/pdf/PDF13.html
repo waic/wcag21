@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF13: Providing replacement text using the /Alt entry for links in PDF
-         			documents
+      <title>PDF13: PDF 文書内のリンクに対して /Alt エントリを使用して置換テキストを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,152 +11,117 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF12">Previous Technique: PDF12</a></li>
-            <li><a href="PDF14">Next Technique: PDF14</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF12">前の達成方法: PDF12</a></li>
+            <li><a href="PDF14">次の達成方法: PDF14</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing replacement text using the /Alt entry for links in PDF
-         			documents
+      <h1>PDF 文書内のリンクに対して /Alt エントリを使用して置換テキストを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Tagged PDF documents that contain links. </p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>リンクを含むタグ付きPDF文書 </p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient as a way to meet <a href="../general/G91">G91: Providing link text that describes the purpose of a link</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (<a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">Success Criterion 2.4.9: Link Purpose (Link Only)</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">達成基準 2.4.9: リンクの目的 (リンクのみ)</a> (書かれていない達成方法を満たす手段として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide replacement link text
-               				via the /Alt entry in the property list for a tag. This is usually
-               				not necessary, but in some situations, additional information beyond
-               				the visible link text is needed, particularly for screen reader users.
-               				Screen readers can read visible link text, but replacing the screen
-               				text with meaningful alternate text for links in a PDF document can
-               				make links more accessible. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、タグのプロパティリストにある /Alt エントリを通じて、代替リンクテキストを提供することである。これは通常必要ないものであるが、特にスクリーンリーダーの利用者用に視覚的リンクテキスト以外の追加情報が必要になる場合がある。スクリーンリーダーは視覚的リンクテキストを読み上げることができるが、PDF 文書内のリンクのスクリーンテキストを意味のある代替テキストに置き換えることで、リンクをよりアクセシブルなものにすることができる。 
             </p>
-            <p>Links in PDF documents are represented by a Link tag and objects in
-               				its sub-tree, consisting of a link object reference (or Link annotation)
-               				and one or more text objects. The text object or objects inside the
-               				Link tag are used by assistive technologies to provide a name for the
-               				link. 
+            <p>PDF 文書内のリンクは、そのサブツリー内のリンクタグおよびオブジェクトで表わされ、リンクオブジェクト参照 (リンク注釈) と一つまたは複数のテキストオブジェクトで構成される。リンクタグ内のテキストオブジェクトまたはオブジェクトは、リンクの名前を提供するために支援技術で使用される。
             </p>
-            <p>Authors can replace the default link text by providing an /Alt entry
-               				for the Link tag. When the Link tag has an /Alt entry, screen readers
-               				ignore the value of any visible text objects in the Link tag and use
-               				the /Alt entry value for the link text. 
+            <p>コンテンツ制作者は、リンクタグに対して /Alt エントリを提供することにより、デフォルトリンクテキストを置き換えることができる。リンクタグに /Alt エントリがある場合、スクリーンリーダーはリンクタグ内の視覚的テキストオブジェクトの値を無視し、リンクテキストに /Alt エントリ値を使用する。
             </p>
-            <p>The simplest way to provide context-independent link text that complies
-               				with the WCAG 2.0 success criteria is to create them when authoring
-               				the document, before conversion to PDF. In some cases, it may not be
-               				possible to create the links using the original authoring tool. When editing PDF
-               documents with Adobe Acrobat Pro, the best way to create accessible links is to use
-               the Create Link command.
+            <p>WCAG 2.0 達成基準に適合する、文脈に依存しないリンクテキストを提供する最も容易な方法は、PDF に変換する前の、文書をオーサリングする段階でリンクを作成することである。元のオーサリングツールを使用してリンクを作成することができない場合もある。Adobe Acrobat Pro を使用して PDF 文書を編集する場合、アクセシブルなリンクを作成する最善の方法は、「リンクの作成」コマンドを使用することである。
             </p>
-            <p>Authors should make sure that the alternate text makes sense in context
-               				of the screen text before and after the link. 
+            <p>コンテンツ制作者は、リンクの前後にあるスクリーンテキストの文脈において代替テキストが意味をなしていることを確認する必要がある。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-adding-alternate-link-text-using-adobe-acrobat-9-pro">
-               <h3>Example 1: Adding alternate link text using Adobe Acrobat 9 Pro</h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <h3>例 1: Adobe Acrobat 9 Pro を使用して代替リンクテキストを追加する</h3>
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>The image below shows a document converted to PDF from Oracle Open
-                  						Office. Note that the visible link text is the URL for the link target.
-                  						A screen reader will read the entire URI as the link text. 
+               <p>以下の画像は、Oracle Open Office から PDF に変換される文書を示している。視覚的リンクテキストは、リンク先の URL であることに注意すること。スクリーンリーダーはリンクテキストとして URI 全体を読み上げる。 
                </p>
                <figure id="figure-link-uri-link-text">
                   <img src="img/link-alt1.jpg" />
                   
                   
-                  <figcaption>Figure 1A document with the link URI as the link text.</figcaption>
+                  <figcaption>図 1 リンク URI をリンクテキストとする文書。</figcaption>
                   
                   
                </figure>
-               <p>To create more accessible link text for assistive technology: </p>
+               <p>支援技術向けに、よりアクセシブルなリンクテキストを作成するには、以下の操作を行う。</p>
                <ol>
                   
-                  <li> In the View menu, open the Tag panel by selecting Navigation Panels &gt; Tags. </li>
+                  <li>［表示］メニューから、ナビゲーションパネル &gt; タグを選択して［タグ］パネルを開く </li>
                   
-                  <li> Locate the Link tag in the tag tree, access the context menu for
-                     						the link, and select Properties. 
+                  <li> タグツリー内で Link タグを見つけ、そのリンクのコンテキストメニューにアクセスして、［プロパティ］を選択する。 
                   </li>
                   
-                  <li> In the TouchUp Properties dialog, in the Tags tab, enter replacement
-                     							text in the Alternate Text field. Screen readers will read this text
-                     							instead of the entire URI. 
+                  <li>［TouchUp のプロパティ］ダイアログボックスの［タグ］タブにある「代替テキスト」フィールドに、代替テキストを入力する。スクリーンリーダーは、URI 全体ではなくこのテキストを読み上げる 
                   </li>
                   
                </ol>
-               <p>The next image shows the Link tag structure in the Tag panel. </p>
+               <p>次の画像は、［タグ］パネル内での Link タグの構造を示している</p>
                <figure id="figure-link-tag-structure">
                   <img src="img/link-alt2.jpg" />
                   
                   
-                  <figcaption>Figure 2The Link tag structure in the tag panel.</figcaption>
+                  <figcaption>図 2 ［タグ］パネル内での Link タグの構造。</figcaption>
                   
                   
                </figure>
-               <p>The last image shows the Alternate Text specified in the Link tag's
-                  						TouchUp Properties dialog. A screen reader will read the Alternate
-                  						Text as the link text. 
+               <p>最後の画像は、Link タグの［TouchUp のプロパティ］ダイアログボックス内で指定されている代替テキストを示している。スクリーンリーダーはリンクテキストとして代替テキストを読み上げる。
                </p>
                <figure id="figure-new-alt-text">
                   <img src="img/link-alt3.jpg" />
                   
                   
-                  <figcaption>Figure 3The new Alternate Text: 'Boston Globe technology page'</figcaption>
+                  <figcaption>図 3 新しい代替テキスト: 「Boston Globe technology page」</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-link-alt-text/link-text.odt">working example of adding alternate link text (OpenOffice file)</a> and <a href="../../working-examples/pdf-link-alt-text/link-text-oo.pdf">working example of adding alternate link text (PDF file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-link-alt-text/link-text.odt">代替リンクテキストを追加したサンプル (OpenDocument テキスト ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-link-alt-text/link-text-oo.pdf">代替リンクテキストを追加したサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-2-adding-alternate-link-text-in-a-pdf-document-using-the&#xA;----&#x9;&#x9;&#x9;&#x9;/alt-entry">
-               <h3>Example 2: Adding alternate link text in a PDF document using the
-                  				/Alt entry
+               <h3>例 2: /Alt エントリを使用して PDF 文書内に代替リンクテキストを追加する
                </h3>
-               <p>The following code fragment illustrates code that is typical for alternative
-                  					text for a link. This is typically accomplished by an authoring tool. 
+               <p>次のコードフラグメントは、リンクの代替テキストで一般的に使用されるコードを示している。これは通常、オーサリングツールを使用して行う。 
                </p><pre xml:space="preserve">32 0 obj
 &lt;&lt;
   /S/URI                                       %Action type (required), must be URI for a URI action
   /URI(http://www.boston.com/business/technology/)  %Uniform resource identifier(required), the URI to be resolved
 &gt;&gt;
 endobj
-</pre><p>The following illustrates how to specify alternate text for the
-                  					URL in the above link: 
+</pre><p>以下は、前述のリンク内の URL に対して代替テキストを指定する方法を示している。
                </p><pre xml:space="preserve">11 0 obj
 &lt;&lt;
   /Alt(Boston Globe technology page)    %Alternate text entry
@@ -176,8 +140,8 @@ endobj
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.9.4 (Replacement Text) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -193,48 +157,40 @@ endobj
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G53">G53: Identifying the purpose of a link using link text combined with the text of the enclosing
-                     sentence</a></li>
+               <li><a href="../general/G53">G53: リンクテキストとそれが含まれている文中のテキストとを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="../general/G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
-               <li><a href="../general/G149">G149: Using user interface components that are highlighted by the user agent when they receive
-                     focus</a></li>
+               <li><a href="../general/G149">G149: フォーカスを受け取るときに、ユーザエージェントによって強調されるユーザインタフェース コンポーネントを使用する</a></li>
                
-               <li><a href="PDF11">PDF11: Providing links and link text using the Link annotation and the /Link structure element
-                     in PDF documents</a></li>
+               <li><a href="PDF11">PDF11: PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> For the hyperlink, verify that the alternate link text is properly
-                        					coded by one of the following:
+                     <p>ハイパーリンクについて、代替リンクテキストが次のいずれかの方法で適切にコード化されていることを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> Read the PDF document with a screen reader, listening to hear
-                           						that the alternate link text is read correctly. 
+                        <li> PDF 文書をスクリーンリーダーで読み上げると、代替テキストが正しく読み上げられる。 
                         </li>
                         
-                        <li> Use a tool that is capable of showing the /Alt entry to open
-                           							the PDF document and view the hyperlink and alternate link text. 
+                        <li>/Alt エントリを表示できるツールを使用して PDF 文書を開き、ハイパーリンクと代替リンクテキストを表示する。
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           								API and verify that the alternate link text is the text for the
-                           								link. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用し、代替リンクテキストがリンクに関するテキストであることを確認する。
                         </li>
                         
                      </ul>
@@ -245,11 +201,11 @@ endobj
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true. </li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
