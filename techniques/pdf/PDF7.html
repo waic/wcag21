@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF7: Performing OCR on a scanned PDF document to provide actual text</title>
+      <title>PDF7: スキャンされた PDF 文書で OCR を実行し、実際のテキストを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,169 +10,128 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF6">Previous Technique: PDF6</a></li>
-            <li><a href="PDF8">Next Technique: PDF8</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF6">前の達成方法: PDF6</a></li>
+            <li><a href="PDF8">次の達成方法: PDF8</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Performing OCR on a scanned PDF document to provide actual text</h1>
+      <h1>スキャンされた PDF 文書で OCR を実行し、実際のテキストを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Scanned PDF documents</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>スキャンされた PDF 文書</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">Success Criterion 1.4.5: Images of Text</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text">達成基準 1.4.5: 文字画像</a> (十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">Success Criterion 1.4.9: Images of Text (No Exception)</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/images-of-text-no-exception">達成基準 1.4.6: 文字画像 (例外なし)</a> (十分な達成方法)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to ensure that visually rendered text
-               				is presented in such a manner that it can be perceived without its
-               				visual presentation interfering with its readability. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、視覚的にレンダリングされたテキストが、視覚的提示によって読みやすさが損なわれることなく、知覚可能な方法で提示されることを保証することである。
             </p>
-            <p>A document that consists of scanned images of text is inherently inaccessible
-               				because the content of the document is images, not searchable text.
-               				Assistive technologies cannot read or extract the words; users cannot
-               				select, edit, resize, or reflow text nor can they change text and background
-               				colors; and authors cannot manipulate the PDF for accessibility. 
+            <p>テキストをスキャンした画像で構成される文書は、文書のコンテンツが画像であって検索可能なテキストではないので、本質的にアクセシブルではない。支援技術で語句を読み上げたり抽出したりすることはできない。利用者はテキストを選択、編集、サイズ変更またはリフローすることも、テキストや背景色を変更することもできない。作成者は PDF を操作してアクセシビリティを実現することができない。
             </p>
-            <p>For these reasons, authors should use actual text rather than images
-               				of text, using an authoring tool such as Microsoft Word or Oracle Open
-               				Office to author and convert content to PDF. 
+            <p>これらの理由から、作成者はテキストの画像ではなく実際のテキストを使用し、Microsoft Word や Oracle Open Office などのオーサリングツールを使用してコンテンツを作成し PDF に変換すべきである。
             </p>
-            <p>If authors do not have access to the source file and authoring tool,
-               				scanned images of text can be converted to PDF using optical character
-               				recognition (OCR). Adobe Acrobat Pro can then be used to create accessible
-               				text. 
+            <p>作成者がソースファイルやオーサリングツールを利用できない場合は、光学式文字認識 (OCR) を使用することで、テキストをスキャンした画像を PDF に変換できる。その後で、Adobe Acrobat Pro を使用することでアクセシブルなテキストを作成できる。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-generating-actual-text-rather-than-images-of-text-using&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;adobe-acrobat-9-pro">
-               <h3>Example 1: Generating actual text rather than images of text using
-                  					Adobe Acrobat 9 Pro
+               <h3>事例 1: Adobe Acrobat 9 Pro を使用して、テキストの画像ではなく実際のテキストを生成する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストを参照<a href="#pdf_notes_acc-sup_files_applications"></a>。
                </p>
-               <p>This example uses a simple one-page scanned image of text. To ensure
-                  						that actual text is stored in the document, perform the following steps: 
+               <p>この事例では、テキストをスキャンした、単純な 1 ページの画像を使用している。文書に実際のテキストが確実に格納されるようにするには、以下の手順を実行する。
                </p>
                <ol>
                   
-                  <li> Scan the document using as high a resolution as possible to improve
-                     						the OCR performance. 
+                  <li>可能な限り高い解像度で文書をスキャンして、OCR のパフォーマンスを向上させる
                   </li>
                   
-                  <li> Load the scanned document in Acrobat Pro. Select Document &gt; OCR
-                     						Text Recognition &gt; Recognize Text Using OCR... 
+                  <li>スキャンされた文書を Acrobat Pro に読み込む。文書構造を使用 &gt; OCR テキスト認識 &gt; OCR を使用して［テキストを認識］を選択する
                   </li>
                   
-                  <li> In the next dialog, select the All Pages radio button under Pages
-                     								(or Current Page if you are converting only one page), and then select
-                     								OK. 
+                  <li>次のダイアログボックスで、「ページ」(1 ページのみ変換する場合は「現在のページ」) の下の「すべてのページ」ラジオボタンを選択し、［OK］を選択する
                   </li>
                   
-                  <li> Under the Settings list, select Edit. In the next dialog, select
-                     									Formatted Text and Graphics in the PDF Output Style drop-down list.
-                     									This is important for ensuring accessibility. 
+                  <li>「設定」リストで「編集」を選択する。次のダイアログボックスで、「PDF の出力形式」ドロップダウンリストの「テキストとグラフィック」を選択する。これはアクセシビリティを確保するために重要である
                   </li>
                   
-                  <li> Depending on the resolution and how clear the text was, OCR converts
-                     										images of words and characters to actual text. Text that Acrobat
-                     										Pro does not recognize is listed as an "OCR suspect," or
-                     										text element that Acrobat suspects was not recognized correctly. 
+                  <li>解像度とテキストの明瞭度に応じて、OCR が単語や文字のイメージを実際のテキストに変換する。Acrobat Pro で認識されないテキストは、「不明テキスト」と表示される。これは、正しく認識されなかったことが疑われるテキストエレメントである
                   </li>
                   
-                  <li> To fix the suspects, choose Document &gt; OCR Text Recognition   &gt; Find
-                     											First OCR Suspect. Acrobat Pro presents each suspect one at a time,
-                     											which can be corrected using Acrobat Pro touchup tools. 
+                  <li>不明テキストを修正するには、文書構造を使用 &gt; OCR テキスト認識 &gt; 最初の不明テキストを表示を選択する。Acrobat Pro では不明テキストが一つずつ表示され、不明テキストは Acrobat Pro TouchUp ツールを使用して修正できる
                   </li>
                   
-                  <li> Run Advanced &gt; Accessibility &gt; Add Tags to Document </li>
+                  <li>アドバンスト &gt; アクセシビリティ &gt; 文書にタグを追加を実行する</li>
                   
-                  <li> Test for accessibility: Advanced &gt; Accessibility &gt; Full
-                     						Check... 
+                  <li>アドバンスト &gt; アクセシビリティ &gt; フルチェックを実行して、アクセシビリティをテストする
                   </li>
                   
                </ol>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Alternatively, you can use Document &gt; OCR
-                        						Text Recognition &gt; Find All OCR Suspects to display all OCR suspects
-                        						at the same time for faster editing. 
+                     <p>別の方法として、文書構造を使用 &gt; OCR テキスト認識 &gt; すべての不明テキストを表示を使用し、すべての不明テキストを同時に表示して編集を素早く行うこともできる。
                      </p>
                      
                   </div>
                </div>
-               <p>The following image shows a scanned one-page document in Adobe Acrobat
-                  						Pro. 
+               <p>次の画像は、Adobe Acrobat Pro に表示されている、スキャンされた 1 ページの文書を示している。
                </p>
                <figure id="figure-acrobat-scanned-image">
                   <img src="img/ocr1.jpg" />
                   
                   
-                  <figcaption>Figure 1A scanned page in Acrobat Pro showing soup recipes.</figcaption> 
+                  <figcaption>図1. Acrobat Proでスキャンしたページにスープのレシピが表示される。</figcaption> 
                   
                   
                </figure>
-               <p>The next image shows the converted content after adding tags to the
-                  						document. It will probably be necessary to use the TouchUp Reading
-                  						Order tool and the Tags panel to tag the content properly for the intended
-                  						final document. For this example, the image of the spiral book binding
-                  						was tagged in the conversion. The TouchUp Reading Order tool was used
-                  						to hide the image as a background (decorative) image (see <a href="#PDF4"></a>). The recipe
-                  						titles were tagged as first level headers. 
+               <p>次の画像は、文書にタグを追加した後で変換されたコンテンツを示している。コンテンツに正しくタグ付けし、最終的に意図した文書を得るには、TouchUp 読み上げ順序ツールとタグパネルを使用する必要があると考えられる。この事例では、らせん綴じの本の画像がタグ付けされ変換されている。TouchUp 読み上げ順序ツールを使用することで、画像が (装飾的な) 背景画像として非表示になっている<a href="#PDF4"></a>。レシピのタイトルは、第 1 レベルのヘッダーとしてタグ付けされている。 
                </p>
                <figure id="figure-acrobat-converted-scanned">
                   <img src="img/ocr3.jpg" />
                   
                   
-                  <figcaption>Figure 2A tagged converted page in Acrobat Pro showing soup recipes. The name of each soup
-                     is a first level header. The image of the spiral book binding was hidden as a decorative
-                     image.
+                  <figcaption>図2. Acrobat Proで変換されたタグ付きページにスープのレシピが表示されている。各スープの名前は1段目のヘッダ。らせん綴じの絵は装飾的なイメージで隠されている。
                   </figcaption>
                   
                   
                </figure>
-               <p>Note: Acrobat Pro may automatically add tags when the file is run
-                  					through OCR. 
+               <p>注記: Acrobat Pro では、ファイルに対して OCR を実行すると自動的にタグが追加される場合がある。
                </p>
                <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-ocr/ocr-example.pdf">working example of generating actual text</a> and the <a href="../../working-examples/pdf-ocr/ocr-example-tagged.pdf">result of performing OCR</a>.
+                 この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/PDF7/ocr-example.pdf">実際のテキストを生成するサンプル (PDF ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG20/Techniques/working-examples/PDF7/ocr-example-tagged.pdf">OCR の実行結果サンプル (PDF ファイル)</a> がある。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -183,45 +142,37 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G140">G140: Separating information and structure from presentation to enable different presentations</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G140.html">G140: 異なる提示を可能にするために、情報と構造を表現から分離する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> For each page converted to text using OCR, ensure that the resulting
-                        					PDF has been converted correctly, using one of the following ways:
+                     <p>OCR を使用して各ページをテキストに変換した場合には、次のいずれかの方法を使用して、PDF が正しく変換されたことを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> Read the PDF document with a screen reader or a tool that reads aloud, listening
-                           to hear that all text is read correctly
-                           						and in the correct reading order. 
+                        <li>スクリーンリーダーまたは読み上げ機能があるツールを使用して PDF 文書を読み上げると、すべてのテキストが正しい順序で読み上げられている。
                         </li>
                         
-                        <li> Save the document as text and check that the converted text
-                           							is complete and in the correct reading order. 
+                        <li>文書をテキストとして保存すると、変換されたテキストが完全であり、正しい読み上げ順序になっている。
                         </li>
                         
-                        <li> Use a tool that is capable of showing the converted content
-                           								to open the PDF document and verify that all text was converted
-                           								and is in the correct reading order. 
+                        <li>変換されたコンテンツを表示できるツールを使用して PDF 文書を開くと、すべてのテキストが変換されて正しい読み上げ順序になっている。
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           									API and verify that all text was converted and is in the correct
-                           									reading order. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用して、すべてのテキストが変換されて正しい読み上げ順序になっていることを確認する。
                         </li>
                         
                      </ul>
@@ -232,11 +183,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true. </li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
                
