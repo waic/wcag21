@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>T1: Using standard text formatting conventions for paragraphs</title>
+      <title>T1: 段落に、標準的なテキストの書式の表現法を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,78 +10,69 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="../smil/SM14">Previous Technique: SM14</a></li>
-            <li><a href="T2">Next Technique: T2</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="../smil/SM14">前の達成方法: SM14</a></li>
+            <li><a href="T2">次の達成方法: T2</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using standard text formatting conventions for paragraphs</h1>
+      <h1>段落に、標準的なテキストの書式の表現法を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Plain text documents. Not applicable to technologies that contain markup.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>プレーンテキストのドキュメント。マークアップを含むウェブコンテンツ技術は対象外。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to recognize a paragraph in a plain text document.
-               A paragraph is a coherent block of text, such as a group of related sentences that
-               develop a single topic or a coherent part of a larger topic. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、プレーンテキストのドキュメントにおいて、段落であることが分かるようにすることである。段落は、まとまりのあるテキストのブロックで、例えば、関連する複数の文章によって一つのトピックを形成したり、より大きなトピックの中でまとまりのある一部分を形成したりするものである。
             </p>
-            <p>The beginning of a paragraph is indicated by
+            <p>段落の始まりは、次のものによって示される。
                
             </p>
             <ul>
                
-               <li>the beginning of the content, that is, the paragraph is the first content in the document,
-                  or
+               <li>コンテンツの始まり (つまり、その段落が文書内で最初のコンテンツとなっている)、又は
                </li>
                
-               <li>exactly one blank line preceding the paragraph text</li>
+               <li>段落のテキストの前にある 1 行の空白行</li>
                
             </ul>
-            <p>The end of a paragraph is indicated by 
+            <p>段落の終わりは、次のものによって示される。
                
             </p>
             <ul>
                
-               <li>the end of the content, that is, the paragraph is the last content in the document,
-                  or
+               <li>コンテンツの終わり (つまり、その段落が文書内で最後のコンテンツとなっている)、又は
                </li>
                
-               <li>one or more blank lines following the paragraph text</li>
+               <li>段落のテキストの後にある 1 行もしくは複数の空白行</li>
                
             </ul>
-            <p>A blank line contains zero or more non-printing characters, such as space or tab,
-               followed by a new line.
+            <p>空白行には、何もないか、又はスペースやタブなどの印刷できない文字が含まれていて、そのすぐ後に新しい行がある。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1">
-               <h3>Example 1</h3>
-               <p>Two paragraphs. Each starts and ends with a blank line.</p><pre xml:space="preserve">
+               <h3>例 1</h3>
+               <p>二つの段落。それぞれが 1 行の空白行で始まり、1 行の空白行で終わっている。</p><pre xml:space="preserve">
 						
 This is the first sentence in this
 paragraph. Paragraphs may be long
@@ -97,35 +88,33 @@ lines are significant.
 </pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each paragraph:
+               <p>それぞれの段落に対して:
                   							
                </p>
                
                <ol>
                   
-                  <li>Check that the paragraph is preceded by exactly one blank line, or that the paragraph
-                     is the first content in the Web page
+                  <li>段落の前に 1 行の空白行がある、又はその段落がウェブページの最初のコンテンツであることを確認する。
                   </li>
                   
-                  <li>Check that the paragraph is followed by at least one blank line, or that the paragraph
-                     is the last content in the Web page.
+                  <li>段落の後に少なくとも 1 行の空白行がある、又はその段落がウェブページの最後のコンテンツであることを確認する。
                   </li>
                   
-                  <li>Check that no paragraph contains any blank lines</li>
+                  <li>段落内に空白行がないことを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks above are all true for each paragraph.</li>
+                  <li>それぞれの段落について、上記の全ての結果が真である。</li>
                   
                </ul>
                
