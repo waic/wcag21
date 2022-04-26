@@ -106,7 +106,7 @@ xmlns="https://www.w3.org/TR/REC-smil" qt:time-slider="true"&gt;
   &lt;/par&gt;
 &lt;/body&gt;
 &lt;/smil&gt;
-</pre><p>上記のマークアップは、五つの &lt;par&gt; セグメントに分割されている。各セグメントに &lt;video&gt; と &lt;audio&gt; のタグが一つずつある (ただし、最後の &lt;par&gt; に &lt;audio&gt; がないのは意図的なものである)。拡張音声解説の通常の使い方は、音声解説が提供される間、メインのメディアを一時停止するというものである。SMIL 1.0でこれを実現するには、映像クリップの開始と終了を指定する「clip-begin」と「clip-end」を設定して、その「clip-begin」と「clip-end」で定義されるよりも長い再生時間をクリップに設定する。fill=「freeze」は、拡張音声解説の再生中、映像の最後のフレームを保持する。&lt;audio&gt; タグには「<code class="att">begin</code>」の属性があり、その前の &lt;video&gt; タグで定義された「clip-end」の値と同じ値を持っている。
+</pre><p>上記のマークアップは、五つの &lt;par&gt; セグメントに分割されている。各セグメントに &lt;video&gt; と &lt;audio&gt; のタグが一つずつある (ただし、最後の &lt;par&gt; に &lt;audio&gt; がないのは意図的なものである)。拡張音声解説の通常の使い方は、音声解説が提供される間、メインのメディアを一時停止するというものである。SMIL 1.0でこれを実現するには、映像クリップの開始と終了を指定する「clip-begin」と「clip-end」を設定して、その「clip-begin」と「clip-end」で定義されるよりも長い再生時間をクリップに設定する。fill="freeze" は、拡張音声解説の再生中、映像の最後のフレームを保持する。&lt;audio&gt; タグには「<code class="att">begin</code>」の属性があり、その前の &lt;video&gt; タグで定義された「clip-end」の値と同じ値を持っている。
                </p>
                <p>「clip-begin」「clip-end」「dur」の値を決めるにあたっては、音声解説が開始及び終了する前の映像部分の時間と、拡張音声解説の全体の長さを調べる必要がある。「clip-begin」と「clip-end」は、それ自体の値を定義するが、「<code class="att">dur</code>」の値は、「clip-begin」と「clip-end」によって定義される拡張音声解説及び映像クリップを合計した長さとなる。最初の &lt;par&gt; では、映像クリップが 0 秒で始まり、5.4 秒で終わる。そして記述の長さは 3.3 秒だ。このため、「<code class="att">dur</code>」の値は、5.4 + 3.3 = 8.7 秒となる。
                </p>
