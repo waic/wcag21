@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SM1: Adding extended audio description in SMIL 1.0</title>
+      <title>SM1: SMIL 1.0 で拡張音声解説を追加する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,77 +10,61 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="../silverlight/SL35">Previous Technique: SL35</a></li>
-            <li><a href="SM2">Next Technique: SM2</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="../silverlight/SL35">前の達成方法: SL35</a></li>
+            <li><a href="SM2">次の達成方法: SM2</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Adding extended audio description in SMIL 1.0</h1>
+      <h1>SMIL 1.0 で拡張音声解説を追加する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Applies whenever SMIL 1.0 player is available </p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>SMIL 1.0 プレーヤーが利用可能な場合 </p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">Success Criterion 1.2.3: Audio Description or Media Alternative (Prerecorded)</a> (Sufficient as a way to meet <a href="../general/G8">G8: Providing a movie with extended audio descriptions</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded">達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済)</a> (<a href="../general/G8">G8: 拡張音声解説が付いたムービーを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">Success Criterion 1.2.5: Audio Description (Prerecorded)</a> (Sufficient as a way to meet <a href="../general/G8">G8: Providing a movie with extended audio descriptions</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/audio-description-prerecorded">達成基準 1.2.5: 音声解説 (収録済)</a> (<a href="../general/G8">G8: 拡張音声解説が付いたムービーを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/extended-audio-description-prerecorded">Success Criterion 1.2.7: Extended Audio Description (Prerecorded)</a> (Sufficient as a way to meet <a href="../general/G8">G8: Providing a movie with extended audio descriptions</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/extended-audio-description-prerecorded">達成基準 1.2.7: 拡張音声解説 (収録済)</a> (<a href="../general/G8">G8: 拡張音声解説が付いたムービーを提供する</a>の達成方法として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p> The purpose of this technique is to allow there to be more audio description than
-               will fit into the gaps in the dialogue of the audio-visual material.
+            <h2>解説</h2>
+            <p> この達成方法の目的は、会話の合間に入れられるよりも多くの音声解説を、視聴覚素材に付加することである。
             </p>
-            <p>With SMIL 1.0 there is no easy way to do this but it can be done by breaking the audio
-               and video files up into a series of files that are played sequentially. Additional
-               audio description is then played while the audio-visual program is frozen. The last
-               frame of the video file is frozen so that it remains on screen while the audio file
-               plays out.
+            <p>SMIL 1.0 にはこれを達成する簡単な方法がないが、連続して順番に再生される複数のファイルに、音声ファイル及び映像ファイルを分割することによって実装できる。この方法によって追加した音声解説は、視聴覚コンテンツが停止している間に再生される。映像ファイルの最後のフレームは、画面に表示されたまま一時停止し、その間に音声ファイルが再生される。
             </p>
-            <p>The effect is that the video appears to play through from end to end but freezes in
-               places while a longer audio description is provided. It then continues automatically
-               when the audio description is complete.
+            <p>これにより、映像は最初から最後まで再生されるように見えながらも、ところどころで停止して、その間に長めの音声解説が提供される。そして、音声解説が終了すると、映像の再生が自動的に再開する。
             </p>
-            <p>To turn the extended audio description on and off one could use script to switch back
-               and forth between two SMIL scripts, one with and one without the extended audio description
-               lines. Or script could be used to add or remove the extended audio description lines
-               from the SMIL file so that the film clips would just play sequentially.
+            <p>この拡張音声解説のオン／オフを操作するには、スクリプトを使用して、拡張音声解説を含んだ SMIL スクリプト及び含まない SMIL スクリプトの二つの間で切り替えることによって実装できる。又は、スクリプトを使用して、拡張音声解説を SMIL ファイルに追加したり SMIL ファイルから削除したりすることもできる。そうすることで、映像クリップは、単純に順序どおり再生されることになる。
             </p>
-            <p>If scripting is not available then two versions of the video could be provided, one
-               with and one without extended audio descriptions.
+            <p>スクリプトが使用できない場合は、二つのバージョンの映像を提供することによって可能となる。つまり、一つは拡張音声解説を含んだバージョン、もう一つは含まないバージョンを提供するのである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-smil-1.0-video-with-audio-descriptions-that-pause-the-main-media-in-4-locations-to-allow-extended-audio-description">
-               <h3>Example 1: SMIL 1.0 Video with audio descriptions that pause the main media in 4 locations
-                  to allow extended audio description
+               <h3>例 1: 拡張音声解説のある SMIL 1.0 の映像、メインのメディアを 4 箇所で停止して拡張音声解説を挿入している
                </h3><pre xml:space="preserve">   
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;smil xmlns:qt="http://www.apple.com/quicktime/resources/smilextensions" 
@@ -122,28 +106,15 @@ xmlns="https://www.w3.org/TR/REC-smil" qt:time-slider="true"&gt;
   &lt;/par&gt;
 &lt;/body&gt;
 &lt;/smil&gt;
-</pre><p>The markup above is broken into five &lt;par&gt; segments. In each, there is a &lt;video&gt; and
-                  an &lt;audio&gt; tag (the last &lt;par&gt; has no &lt;audio&gt; tag intentionally). The convention with
-                  extended audio descriptions is that the main media pauses during the description.
-                  The way to make this happen in SMIL 1.0 is to set a "clip-begin" and "clip-end" which
-                  dictate the start and end of the video clip, and to set a duration for the clip that
-                  is longer than what is defined by the "clip-begin" and "clip-end". The fill="freeze"
-                  holds the last frame of the video during the extended description. The &lt;audio&gt; tag
-                  has a "<code class="att">begin</code>" attribute with a value that is equal to the "clip-end" value of the preceding &lt;video&gt;
-                  tag.
+</pre><p>上記のマークアップは、五つの &lt;par&gt; セグメントに分割されている。各セグメントに &lt;video&gt; と &lt;audio&gt; のタグが一つずつある (ただし、最後の &lt;par&gt; に &lt;audio&gt; がないのは意図的なものである)。拡張音声解説の通常の使い方は、音声解説が提供される間、メインのメディアを一時停止するというものである。SMIL 1.0でこれを実現するには、映像クリップの開始と終了を指定する「clip-begin」と「clip-end」を設定して、その「clip-begin」と「clip-end」で定義されるよりも長い再生時間をクリップに設定する。fill="freeze" は、拡張音声解説の再生中、映像の最後のフレームを保持する。&lt;audio&gt; タグには「<code class="att">begin</code>」の属性があり、その前の &lt;video&gt; タグで定義された「clip-end」の値と同じ値を持っている。
                </p>
-               <p>To determine the values for "clip-begin," "clip-end", and "dur", find the start and
-                  end time of the portion of the video being described, and find out the total length
-                  of the extended audio description. The "clip-begin" and "clip-end" define their own
-                  values, but the "<code class="att">dur</code>" value is the sum of the length of the extended description and the clip defined
-                  by the "clip-begin" and "clip-end". In the first &lt;par&gt;, the video clip starts at 0
-                  seconds, ends at 5.4 seconds, and the description length is 3.3 seconds, so the "<code class="att">dur</code>" value is 5.4s + 3.3s = 8.7s.
+               <p>「clip-begin」「clip-end」「dur」の値を決めるにあたっては、音声解説が開始及び終了する前の映像部分の時間と、拡張音声解説の全体の長さを調べる必要がある。「clip-begin」と「clip-end」は、それ自体の値を定義するが、「<code class="att">dur</code>」の値は、「clip-begin」と「clip-end」によって定義される拡張音声解説及び映像クリップを合計した長さとなる。最初の &lt;par&gt; では、映像クリップが 0 秒で始まり、5.4 秒で終わる。そして記述の長さは 3.3 秒だ。このため、「<code class="att">dur</code>」の値は、5.4 + 3.3 = 8.7 秒となる。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -173,42 +144,41 @@ xmlns="https://www.w3.org/TR/REC-smil" qt:time-slider="true"&gt;
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="SM2">SM2: Adding extended audio description in SMIL 2.0</a></li>
+               <li><a href="SM2">SM2: SMIL 2.0 で拡張音声解説を追加する</a></li>
                
-               <li><a href="SM6">SM6: Providing audio description in SMIL 1.0</a></li>
+               <li><a href="SM6">SM6: SMIL 1.0 で音声解説を提供する</a></li>
                
-               <li><a href="../general/G81">G81: Providing a synchronized video of the sign language interpreter that can be displayed
-                     in a different viewport or overlaid on the image by the player</a></li>
+               <li><a href="../general/G81">G81: プレーヤーによって別のビューポートに表示する、又は画像上に重ねることのできる、手話通訳の同期した映像を提供する</a></li>
                
-               <li><a href="SM11">SM11: Providing captions through synchronized text streams in SMIL 1.0</a></li>
+               <li><a href="SM11">SM11: SMIL 1.0 で同期したテキストストリームによるキャプションを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Play file with extended audio descriptions</li>
+                  <li>拡張音声解説のあるファイルを再生する。</li>
                   
-                  <li> Play file with audio description </li>
+                  <li>音声解説のあるファイルを再生する。</li>
                   
-                  <li>Check whether video freezes in places and plays extended audio description</li>
+                  <li>映像がところどころ一時停止して、拡張音声解説が再生されることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> #3 is true </li>
+                  <li> #3 の結果が真である。</li>
                   
                </ul>
                
