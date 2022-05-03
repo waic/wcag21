@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>T2: Using standard text formatting conventions for lists</title>
+      <title>T2: リストに、標準的なテキストの書式の表現法を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,66 +10,55 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="T1">Previous Technique: T1</a></li>
-            <li><a href="T3">Next Technique: T3</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="T1">前の達成方法: T1</a></li>
+            <li><a href="T3">次の達成方法: T3</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using standard text formatting conventions for lists</h1>
+      <h1>リストに、標準的なテキストの書式の表現法を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Plain text documents. Not applicable to technologies that contain markup.</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>プレーンテキストのドキュメント。マークアップを含むウェブコンテンツ技術は対象外。</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to use text formatting conventions to create simple
-               lists of related items. Hierarchical lists or nested lists cannot be represented using
-               this technique and should be represented using a different technology. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、テキストの書式の規則を用いて、関連する項目のシンプルなリストを作ることである。ただし、階層構造になったリストや入れ子のリストは、この達成方法では表現できないため、別のウェブコンテンツ技術を使って表現すべきである。
             </p>
-            <p>A list is a sequence of list items. A list item is a paragraph that begins with a
-               label. For unordered lists, asterisks, dashes, and bullet characters may be used as
-               the label, but the same label characters must be used for all the items in a list.
-               For ordered lists, the label may be alphabetic or numeric, and may be terminated by
-               a period or a right parenthesis. The labels must be in ascending order, that is,
+            <p>リストは、連続したリスト項目によって構成される。そして、リスト項目は、ラベルで始まる段落である。順不同のリストでは、アスタリスク、ダッシュ、箇条書きの行頭文字などをラベルとして用いる。ただし、同じリスト内では全ての項目に同じラベル文字を使わなければならない。順序付きリストでは、英数字をラベルとして用い、ピリオドや閉じ括弧をつける。ラベルは、次のいずれかの昇順になっていなければならない。
                						
             </p>
             <ul>
                
-               <li>numbers must be in numeric order,</li>
+               <li>数字の場合、数字の順に並んでいなければならない。</li>
                
-               <li>alphabetic labels must be in alphabetical order or in numeric order when interpreted
-                  as Roman numerals.
+               <li>アルファベットの場合、アルファベット順又はローマ数字として解釈される際は数字の順に並んでいなければならない。
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-unordered-list">
-               <h3>Example 1: Unordered list</h3><pre xml:space="preserve">
+               <h3>例 1: 順不同リスト</h3><pre xml:space="preserve">
 						
 - unordered list item
  
@@ -79,7 +68,7 @@
 
 </pre></section>
             <section class="example" id="example-2-numeric-ordered-list">
-               <h3>Example 2: Numeric ordered list</h3><pre xml:space="preserve">
+               <h3>例 2: 数字の順序付きリスト</h3><pre xml:space="preserve">
 						
 1. Ordered list item
  
@@ -89,7 +78,7 @@
 
 </pre></section>
             <section class="example" id="example-3-roman-numeral-ordered-list">
-               <h3>Example 3: Roman numeral ordered list</h3><pre xml:space="preserve">
+               <h3>例 3: ローマ数字の順序付きリスト</h3><pre xml:space="preserve">
 						
 i.   Ordered list item
  
@@ -101,7 +90,7 @@ iv.  Ordered list item
 
 </pre></section>
             <section class="example" id="example-4-alphabetic-ordered-list">
-               <h3>Example 4: Alphabetic ordered list</h3><pre xml:space="preserve">
+               <h3>例 4: アルファベットの順序付きリスト</h3><pre xml:space="preserve">
 						
 A) Ordered list item
  
@@ -112,35 +101,35 @@ C) Ordered list item
 </pre></section>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each list in the text content
+               <p>テキストのコンテンツにあるリストに対して:
                   							
                </p>
                
                <ol>
                   
-                  <li>Check that each list item is a paragraph that starts with a label</li>
+                  <li>各リスト項目が、ラベルで始まる段落であることを確認する。</li>
                   
-                  <li>Check that the list contains no lines that are not list items</li>
+                  <li>リスト項目ではない行が、リストに含まれていないことを確認する。</li>
                   
-                  <li>Check that all list items in a list use the same style label</li>
+                  <li>リストにあるリスト項目全てが、同じスタイルのラベルを用いていることを確認する。</li>
                   
-                  <li>Check that the labels in ordered lists are in sequential order</li>
+                  <li>順序付きリストのラベルが、連続した順序になっていることを確認する。</li>
                   
-                  <li>Check that the labels in each unordered list are the same</li>
+                  <li>順不同リストのラベルが、同じであることを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>All checks above are all true.</li>
+                  <li>上記の全ての結果が真である。</li>
                   
                </ul>
                
