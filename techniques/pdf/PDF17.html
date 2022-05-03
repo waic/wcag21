@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF17: Specifying consistent page numbering for PDF documents</title>
+      <title>PDF17: PDF 文書に一貫性のあるページ番号を指定する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,201 +10,156 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF16">Previous Technique: PDF16</a></li>
-            <li><a href="PDF18">Next Technique: PDF18</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF16">前の達成方法: PDF16</a></li>
+            <li><a href="PDF18">次の達成方法: PDF18</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Specifying consistent page numbering for PDF documents</h1>
+      <h1>PDF 文書に一貫性のあるページ番号を指定する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/location">Success Criterion 2.4.8: Location</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/location">達成基準 2.4.8: 現在位置</a> (参考)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-navigation">Success Criterion 3.2.3: Consistent Navigation</a> (Advisory)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/consistent-navigation">達成基準 3.2.3: 一貫したナビゲーション</a> (参考)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to help users locate themselves in a document by
-               ensuring that the page numbering displayed in the PDF viewer page controls has the
-               same page numbering as the document. For example, Adobe Acrobat Pro and Reader display
-               page numbers in the Page Navigation toolbar. The page number format is specified by
-               the /PageLabels entry in the Document Catalog.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、PDF ビューアページコントロールに表示されるページ番号付けが文書のページ番号付けと同じであることを確認することにより、利用者が文書内の現在位置を確認できるよう支援することである。例えば、Adobe Acrobat Pro および Reader では、ページナビゲーションツールバーにページ番号が表示される。ページ番号の形式は、文書カタログ内の /PageLabels エントリにより指定される。
             </p>
-            <p>Many documents use specific page number formats within a document. Commonly, front
-               matter is numbered with lowercase Roman numerals. The main content, starting on the
-               page numbered 1, may actually be the fifth or sixth page in the document. Similarly,
-               appendices may begin with page number 1 plus a prefix of the appendix letter (e.g.,
-               "A-1").
+            <p>多くの文書では、文書内で特定のページ番号形式を使用する。一般に、前付けは小文字のローマ数字で番号付けされる。1 というページ番号で始まる主要コンテンツは、実際は文書の 5 ページ目または 6 ページ目である場合がある。同様に、付録はページ番号 1 で始まり、付録という英単語の接頭語が付けられる (例えば、「A-1」)。
             </p>
-            <p>Authors should make sure that the page numbering of their converted documents is reflected
-               in any page number displays in their user agent. Consistency in presenting the document's
-               page numbers will help make navigating the document more predictable and understandable.
+            <p>コンテンツ制作者は、変換された文書のページ番号付けが、ユーザエージェントで表示されるページ番号に反映されていることを確認する必要がある。文書のページ番号表示の一貫性は、文書内の移動をより予測可能で分かりやすいものにするのに役立つ。
             </p>
-            <p>As an example, if /PageLabels has not been provided to describe the page number formatting,
-               the page numbering scheme will not be reflected in the Page Navigation toolbar in
-               Adobe Acrobat Pro or Reader. This toolbar displays the page number in a text box,
-               which users can change to move to another page. In addition, users can select the
-               arrows to move one page up or down in the document. The toolbar also displays the
-               relative page number location. In the image below, the default display indicates the
-               user is on page 1 of 4 pages.
+            <p>例えば、ページ番号付けの書式について記述する /PageLabels が提供されていない場合、ページ番号付けスキームが Adobe Acrobat Pro または Reader のページナビゲーションツールバーに反映されない。このツールバーでは、ページ番号がテキストボックスに表示される。利用者は、このテキストボックスのページ番号を変更して別のページに移動できる。さらに、利用者は、文書内で矢印を選択してページを上下に移動できる。ツールバーには相対的なページ番号の位置も表示される。以下の画像は、現在位置が 1/4 ページであることを示すデフォルトの表示を示している。
             </p>
             <figure id="figure-page-nav-toolbar">
                <img src="img/page_nos-nav.jpg" />
                
                
-               <figcaption>Figure 1Page Navigation toolbar in Adobe Acrobat Pro, displaying the page number in a text
-                  box, which users can change to move to another page. In addition, users can select
-                  the arrows to move one page up or down in the document. The toolbar also displays
-                  the relative page number location, e.g., page 1 of 4 pages.
-               </figcaption>
+               <figcaption>図 1 Adobe Acrobat Proのページナビゲーションツールバーでは、ページ番号をテキストボックスに表示することで、利用者がそれを変更して別のページに移動することができる。さらに利用者は、矢印を選択して文書内のページを上下に移動することができる。ツールバーは又、4ページ中の1ページ目というように、相対的なページ番号の位置も表示する。               </figcaption>
                
                
             </figure>
-            <p>A more direct way of going to a page is to use the shortcut for the View &gt; Page Navigation
-               &gt; Page menu item. On Windows, this shortcut is "Ctrl + Shift + N"; on Mac OS, it is
-               "Cmd + Shift + N". This brings up a dialog box to go to a specific page number.
+            <p>より直接的なページへの移動方法は、「表示 &gt; ページナビゲーション &gt; ページ」メニューのショートカットを使用することである。Windowsでは「Ctrl + Shift + N」、Mac OSでは「Cmd + Shift + N」がこのショートカットキーである。これにより、特定のページ番号に移動するためのダイアログボックスが表示される。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-editing-pdf-page-number-formatting-specifications-using-adobe-acrobat-9-pro">
-               <h3>Example 1: Editing PDF page number formatting specifications using Adobe Acrobat 9
-                  Pro
+               <h3>例 1: Adobe Acrobat 9 Pro を使用して PDF ページ番号の書式の指定を編集する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>The example document converted from Microsoft Word 2007 has 4 pages, numbered
-                  						i, ii, iii, 1. The image below shows the Word document with lowercase
-                  						Roman numeral page numbering specified In Word using: 
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
+
+               <p>Microsoft Word 2007 から変換された事例の文書は 4 ページあり、i、ii、iii、1 という番号が付けられている。以下の画像は、Word で次のコマンドを使用して、小文字のローマ数字のページ番号付けが指定された Word 文書を示している。
                </p>
                <ul>
                   
-                  <li> Insert ribbon &gt; Page number &gt; Page Number Format </li>
+                  <li>［挿入］リボン &gt; ページ番号 &gt; ページ番号の書式設定</li>
                   
                </ul>
-               <p>In this document, a new section has been created with page numbering
-                  						beginning with Arabic numeral 1 on the fourth page of the document. The document
-                  						was then converted to PDF from Word. 
+               <p>この文書では、アラビア数字の 1 で始まるページ番号付けを使用して、文書の 4 ページ目に新しいセクションが作成されている。その後、文書は Word から PDF に変換された。
                </p>
                <figure id="figure-page-number-dialog">
                   <img src="img/pages_nos_word.jpg" />
                   
                   
-                  <figcaption>Figure 2The Page Number Format dialog in Word, specifying lowercase Roman page numbering.</figcaption>
+                  <figcaption>図 2 Word の「ページ番号の書式設定」ダイアログで、小文字のローマ数字のページ番号を指定したもの。</figcaption>
                   
                   
                </figure>
-               <p>In Adobe Acrobat Pro, Select View &gt; Navigation Panels &gt; Pages.
-                  						The following image shows the page thumbnails in the Pages panel
-                  						and the Page Navigation toolbar. Both the thumbnails and the toolbar
-                  						use Arabic page numbers. 
-               </p>
+               <p>Adobe Acrobat Pro で、表示 &gt; ナビゲーションパネル &gt; ページを選択する。次の画像は、ページパネル及びページナビゲーションツールバーのページサムネイルを示している。サムネイルとツールバーの両方で、アラビア数字のページ番号が使用されている。               </p>
                <figure id="figure-page-thumbnails-1">
                   <img src="img/page_nos1.jpg" />
                   
                   
-                  <figcaption>Figure 3Page thumbnails in the Pages panel and the Page Navigation toolbar, both using Arabic
-                     page numbers.
+                  <figcaption>図 3 ページパネル及びページナビゲーションツールバーのページサムネイル。いずれもアラビア数字のページ番号が使用されている。
                   </figcaption>
                   
                   
                </figure>
-               <p>To correct the page numbers: </p>
+               <p>ページ番号を修正するには、次の操作を行う。</p>
                <ol>
                   
-                  <li> Select the pages to be renumbered </li>
+                  <li> 番号を再設定するページを選択する</li>
                   
-                  <li> Access the context menu for the selected pages and select Number
-                     						Pages 
+                  <li>選択したページのコンテキストメニューから「ページ番号を設定」を選択する
                   </li>
                   
-                  <li> In the Page Numbering dialog, select the lowercase Roman numeral
-                     							style and the starting page (1 by default, which is correct in this
-                     							case) 
+                  <li>ページ番号付けダイアログボックスで、小文字のローマ数字のスタイルと開始ページ (デフォルトでは 1、この場合はそのままで良い) を選択する 
                   </li>
                   
-                  <li> Select OK </li>
+                  <li>［OK］を押下する</li>
                   
                </ol>
-               <p>The following image shows the Page Numbering dialog and selections. </p>
+               <p>次の画像は、ページ番号付けダイアログボックスと選択内容を示している。</p>
                <figure id="figure-page-thumbnails-2">
                   <img src="img/page_nos2.jpg" />
                   
                   
-                  <figcaption>Figure 4Three pages selected on the Pages panel and the Page Numbering dialog specifying the
-                     new page styles. The starting page is specified as 1 (default), which is correct.
+                  <figcaption>図 4 ページパネルで三つのページを選択し、ページ番号付けダイアログで新しいページスタイルを指定した状態。開始ページが  (デフォルトで) 1 と指定されているが、これで正しい。
                   </figcaption>
                   
                   
                </figure>
-               <p>Follow the same process to change the fourth page number to Arabic
-                  						numeral 1. 
+               <p>同じプロセスに従い、4 ページ目のページ番号をアラビア数字の 1 に変更する。
                </p>
-               <p>The following image shows the correct page numbers for the 4 pages.
-                  						Note that page iii is selected in the Pages panel and the Page Navigation
-                  						toolbar shows iii in the text area. In addition, the relative location
-                  						in the document is shown at the right of the toolbar: "(3 of 4)." 
+               <p>以下の画像は、4 ページ目の正しいページ番号を示している。ページ iii がページパネルで選択されており、ページナビゲーションツールバーのテキスト領域に iii が表示されている。さらに、文書内の相対的位置 (3/4) がツールバーの右側に表示されている。
                </p>
                <figure id="figure-page-thumbnails-3">
                   <img src="img/page_nos3.jpg" />
                   
                   
-                  <figcaption>Figure 5The Pages panel in Adobe Acrobat Pro showing pages numbered i, ii, iii, 1. The Page
-                     Navigation toolbar shows iii for the third page. The relative page location is also
-                     displayed as '(3 of 4).'
-                  </figcaption>
+                  <figcaption>図 5 Adobe Acrobat Pro のページパネルには、ページ番号 i、ii、iii、1 が表示されている。ページナビゲーションツールバーには、3 ページ目を表す iii が表示されている。相対的なページの位置も「(3 of 4)」と表示されている。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-page-numbers/page-numbers.docx">working example of specifying page numbers in a document converted from Word (Word
-                     file)</a> and <a href="../../working-examples/pdf-page-numbers/page-numbers.pdf">working example of specifying page numbers in a document converted from Word (PDF
-                     file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-page-numbers/page-numbers.docx">Word から変換された文書内のページ番号を指定したサンプル (Word ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-page-numbers/page-numbers.pdf">Word から変換された文書内のページ番号を指定したサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-2-specifying-page-numbers-using-the-/pagelabels-entry">
-               <h3>Example 2: Specifying page numbers using the /PageLabels entry</h3>
-               <p>The following code fragment illustrates code that is typical for specifying
-                  						multiple page numbering schemes in a document. 
+               <h3>例 2: /PageLabels エントリを使用してページ番号を指定する</h3>
+               <p>次のコードフラグメントは、文書内の複数のページ番号付けスキーマを指定する一般的なコードを示している。
                </p>
-               <p>The example below is for a document with pages labeled: </p>
+               <p>以下の事例は、次のようなラベルがページに付けられる文書の例である。</p>
                <aside class="example">
                   
-                  <p>i, ii, iii, iv, 1, 2, 3, A-8, A-9, …  </p>
+                  <p>事例: i, ii, iii, iv, 1, 2, 3, A-8, A-9, …</p>
                   
                </aside>
-               <p>This numbering scheme requires 3 page-label dictionaries (for lowercase
-                  						Roman, Arabic, and prefixed numbers) 
+               <p>この番号付けスキームでは、三つのページラベル辞書 (小文字のローマ字、アラビア語、接頭語が付いた番号) が必要になる。 
                </p><pre xml:space="preserve">1 0 obj
     &lt;&lt; /Type /Catalog
        /PageLabels &lt;&lt; /Nums [ 0 &lt;&lt; /S /r &gt;&gt;  % lowercase Roman numerals
@@ -218,35 +173,34 @@
        …
    &gt;&gt;
   endobj
-</pre><p>Page labels are specified as follows: </p>
+</pre><p>ページラベルは次のように指定される。</p>
                <ul>
                   
                   <li>
                      
                      <p>
-                        /S specifies the numbering style for page numbers:
-                     </p>
+                        /Sは、ページ番号の番号付けスタイルを指定する。                     </p>
                      
                      <ul>
                         
                         <li>
-                           /D - Arabic numerals (1,2,3...) 
+                           /D - アラビア数字 (1、2、3...)
                         </li>
                         
                         <li>
-                           /r - lowercase Roman numerals (i, ii, iii,...) 
+                           /r - 小文字のローマ数字 (i、ii、iii...)
                         </li>
                         
                         <li>
-                           /R - uppercase Roman numerals (I, II, III,...) 
+                           /R - 大文字のローマ数字 (I、II、III...)
                         </li>
                         
                         <li>
-                           /A - uppercase letters (A-Z) 
+                           /A - 大文字 (A ～ Z)
                         </li>
                         
                         <li>
-                           /a - lowercase letters (a-z) 
+                           /a - 小文字 (a ～ z) 
                         </li>
                         
                      </ul>
@@ -254,20 +208,19 @@
                   </li>
                   
                   <li>
-                     /P (optional) - page number prefix 
+                     /P (オプション) - ページ番号接頭語
                   </li>
                   
                   <li>
-                     /St (optional) - the value of the first page number in the range
-                     						(default: 1) 
+                     /St (オプション) - 範囲内の最初のページ番号の値 (デフォルト: 1) 
                   </li>
                   
                </ul>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 12.4.2 (Page Labels) <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -283,45 +236,36 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="PDF14">PDF14: Providing running headers and footers in PDF documents</a></li>
+               <li><a href="PDF14">PDF14: PDF 文書内に連続するヘッダーとフッターを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> For every section in the document that uses a different pagination
-                        					format, check that the page navigation feature uses the same format
-                        					used on the document pages:
-                     </p>
+                     <p>異なるページネーション形式を使用する文書内の各セクションについて、文書のページで使用されている形式と同じものがページナビゲーション機能で使用されていることを確認する。                     </p>
                      
                      <ul>
                         
-                        <li> Select the pages that begin a new pagination
-                           						format and visually verify that the same format and page number
-                           						is shown in the page navigation feature. 
+                        <li>新しいページネーション形式を始めるページを選択すると、同じ形式およびページ番号がページネーション機能で表示される。
                         </li>
                         
-                        <li> Using a screen reader, check that the page number announced
-                           							in the page navigation feature is the same as the page number
-                           							announced on the document page. 
+                        <li>スクリーンリーダーを使用して、ページナビゲーション機能で読み上げられるページ番号が、文書のページで読み上げられるページ番号と同じである。
                         </li>
                         
-                        <li> Using a tool that is capable of showing the /PageLabels entries,
-                           								open the PDF document and view the entries. 
+                        <li>/PageLabels エントリを表示できるツールを使用して PDF 文書を開き、エントリを表示する。
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           									API, and verify that the /PageLabels entries are specified correctly. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用して、/PageLabels エントリが正しく指定されていることを確認する。
                         </li>
                         
                      </ul>
@@ -332,11 +276,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true. </li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
