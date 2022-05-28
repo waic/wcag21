@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SVR4: Allowing users to provide preferences for the display of conforming alternate versions</title>
+      <title>SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,73 +10,54 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SVR3">Previous Technique: SVR3</a></li>
-            <li><a href="SVR5">Next Technique: SVR5</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SVR3">前の達成方法: SVR3</a></li>
+            <li><a href="SVR5">次の達成方法: SVR5</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Allowing users to provide preferences for the display of conforming alternate versions</h1>
+      <h1>適合している代替版の表示に関する設定を利用者が行えるようにする</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content created using server-side scripting to store preferences.</p>
-            <p>This technique is not referenced from any Understanding document.</p>
+            <h2>適用 (対象)</h2>
+            <p>設定を保存するためにサーバーサイドのスクリプトを用いて生成されたコンテンツ。</p>
+            <p>(この達成方法は、解説書から参照されていない。)</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a mechanism for users to select a preference
-               for an alternate conforming version of a Web page.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、ウェブページの適合している代替版の設定を利用者が選択できるメカニズムを提供することである。
             </p>
-            <p>Providing preferences to allow users to view conforming alternate versions can be
-               accomplished in several ways. One common method is to provide a link which triggers
-               a server-side process that sets a session or persistent cookie that the Web server
-               uses to modify the page or redirect the user to the alternate version. Other methods
-               include providing user-specific choices that are stored as part of the user's login
-               information for a system where users sign in to access a Web page or service. 
+            <p>利用者が適合している代替版を見ることができるような設定を提供するにはいくつかの方法が可能である。一般的な方法としては、ウェブサーバーがページを修正する、又は利用者を代替版にリダイレクトするのに使うセッション又は永続的なクッキーを設定するサーバーサイドのプロセスのトリガーとなるリンクを提供する方法がある。他の方法には、利用者がウェブページ又はサービスにアクセスする際にサインインするシステムへのログイン情報の一部として利用者ごとの選択肢を提供する方法がある。
             </p>
-            <p>Users requiring an alternate version will need the mechanism provided in the non-conforming
-               page to be accessible in order to find and use it. The mechanism itself should conform
-               to the accessibility level being claimed. 
+            <p>不適合なページで提供されるメカニズムは、代替版を必要とする利用者が、それを探して利用するためにアクセシブルである必要がある。そのメカニズム自体は宣言しているアクセシビリティレベルに適合しているべきである。 
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-setting-a-session-or-persistent-cookie-to-store-a-user-preference-">
-               <h3>Example 1: Setting a session or persistent cookie to store a user preference </h3>
-               <p>A Web site offers a link to a "preferences" page on pages within the site. On this
-                  page, there is an option to view an alternate version of the site. There may be various
-                  aspects of the page that are affected, or the user may be opting to view an entirely
-                  alternate version of the site. The preference may be to display a version of the site
-                  where video included on the site displays captioning, or it may be offered because
-                  the primary site contains accessibility conformance issues that are addressed only
-                  via the alternative. 
+               <h3>例 1: 利用者設定を保存するためにセッション又は永続的なクッキーを設定する</h3>
+               <p>あるウェブサイトは、サイト内のページには「設定」ページへのリンクを提供している。このページには、サイトの代替版を見るためのオプションがある。好みによってページのさまざまな見方があるかもしれないし、利用者はサイトの完全な代替版を見たいかもしれない。その設定はサイト上で動画が含まれる部分ではキャプションを表示するものかもしれない。また、主となるサイトが、代替版からしかわからないアクセシビリティ適合についての問題を含んでいるために提供されているのかもしれない。 
                </p>
-               <p>A Web page author may choose to handle this preference via a cookie, which may be
-                  handled via a server-side scripting language such as PHP.
+               <p>あるウェブページの制作者はクッキーを使って設定を扱うことがある。それは、PHP のようなサーバーサイドのスクリプトを用いて扱われるかもしれない。
                </p>
-               <p>The preferences page may be offered as follows: </p><pre xml:space="preserve"> &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+               <p>設定のページは例えば次のように提供される: </p><pre xml:space="preserve"> &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
   &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
       &lt;head&gt;
       &lt;title&gt;Site Preferences&lt;/title&gt;
@@ -93,8 +74,7 @@
           &lt;/fieldset&gt; 
       &lt;/form&gt;
   &lt;/body&gt;
-  &lt;/html&gt;</pre><p>The form is submitted to the pref.php file for processing. A cookie is set, and in
-                  this simple example the user's browser is directed to the site home page.
+  &lt;/html&gt;</pre><p>フォームは処理のためにpref.phpのファイルへと送信される。クッキーが設定され、この単純な例では、利用者のブラウザはサイトのトップページへと移動する。
                </p>
                <p>pref.php: </p><pre xml:space="preserve">&lt;?php
     if(isset($site_pref)) {
@@ -102,7 +82,7 @@
         header("location: http://www.example.com"); //redirects to home page
     }
 ?&gt;
-</pre><p>The home page starts with code that implements the user's preference. </p>
+</pre><p>トップページは利用者の設定を実装するコードから始まる。</p>
                <p>index.php: </p><pre xml:space="preserve">&lt;?
 if(isset($site_pref)) {
 	if($site_pref="axx") {
@@ -113,14 +93,13 @@ if(isset($site_pref)) {
 &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
 &lt;head&gt;
 ...
-</pre><p>For a login-based system, the preference is stored in the user's database record and
-                  referred to by the server-side script generating the pages for the user to view. 
+</pre><p>ログインを必要とするシステムでは、設定は利用者のデータベース記録に保存され、利用者が見るページを生成するサーバーサイドのスクリプトによって参照される。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li>
@@ -131,57 +110,51 @@ if(isset($site_pref)) {
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
-                     alternate version</a></li>
+               <li><a href="../general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                
-               <li><a href="../general/G190">G190: Providing a link adjacent to or associated with a non-conforming object that links
-                     to a conforming alternate version</a></li>
+               <li><a href="../general/G190">G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する</a></li>
                
-               <li><a href="../client-side-script/SCR38">SCR38: Creating a conforming alternate version for a web page designed with progressive enhancement</a></li>
+               <li><a href="../client-side-script/SCR38">SCR38: プログレッシブエンハンスメントで設計されたウェブページに対して、適合している代替版を作成する</a></li>
                
-               <li><a href="SVR2">SVR2: Using .htaccess to ensure that the only way to access non-conforming content is from
-                     conforming content</a></li>
+               <li><a href="SVR2">SVR2: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、.htaccess を使用する</a></li>
                
-               <li><a href="SVR3">SVR3: Using HTTP referer to ensure that the only way to access non-conforming content is
-                     from conforming content</a></li>
+               <li><a href="SVR3">SVR3: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する</a></li>
                
-               <li><a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li>Change a preference for how pages on the site are displayed. </li>
+                  <li>そのサイトのページの表示方法についての設定を変更する。</li>
                   
-                  <li>Check that the preference itself or a link to that page where it can be set can be
-                     reached from each non-conforming page. 
+                  <li>各不適合なページから、設定そのもの、又は設定できるページへのリンクにアクセスできることを確認する。 
                   </li>
                   
-                  <li>Check that Web pages are displayed according to the selected preference. </li>
+                  <li>ウェブページが選択した設定に応じて表示されることを確認する。</li>
                   
-                  <li>Check that when the preference(s) are set, the Web page conforms as claimed. </li>
+                  <li>設定が行われた時に、ウェブページが宣言通りに適合していることを確認する。</li>
                   
-                  <li>Verify that the resulting page is a conforming alternate version for the original
-                     page. 
+                  <li>結果となるページが元のページの適合している代替版となっていることを確認する。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Checks #2 and #3 are true. </li>
+                  <li>#2 及び #3 の結果が真である。 </li>
                   
                </ul>
                
