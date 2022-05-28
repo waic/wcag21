@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SVR3: Using HTTP referer to ensure that the only way to access non-conforming content is
-         from conforming content
+      <title>SVR3: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,90 +11,58 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SVR2">Previous Technique: SVR2</a></li>
-            <li><a href="SVR4">Next Technique: SVR4</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SVR2">前の達成方法: SVR2</a></li>
+            <li><a href="SVR4">次の達成方法: SVR4</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using HTTP referer to ensure that the only way to access non-conforming content is
-         from conforming content
+      <h1>適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、HTTP リファラを使用する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Content created using server-side scripting where a conforming version of content
-               is provided as an alternative to a non-conforming version based on HTTP Referer.
+            <h2>適用 (対象)</h2>
+            <p>サーバーサイドのスクリプトを用いて生成されたコンテンツで、コンテンツの適合したバージョンが HTTP リファラによって不適合バージョンの代替として提供されているもの。
             </p>
-            <p>This technique is not referenced from any Understanding document.</p>
+            <p>(この達成方法は、解説書から参照されていない。)</p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to ensure that users can obtain an accessible version
-               of content where both non-conforming and conforming versions are provided.
+            <h2>解説</h2>
+            <p>この達成方法の目的は、不適合及び適合したバージョンが両方提供されているときに、利用者がコンテンツのアクセシブルなバージョンを取得できることを保証することである。
             </p>
-            <p>
-               <a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">Conformance Requirement 1</a> allows non-conforming pages to be included within the scope of conformance as long
-               as they have a "<a href="https://www.w3.org/TR/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a>". It is not always possible for authors to include accessibility supported links
-               to conforming content from within non-conforming content. Therefore, authors may need
-               to rely on the use of Server Side Scripting technologies (ex. PHP, ASP, JSP) to ensure
-               that the non-conforming version can only be reached from a conforming page.
+            <p><a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">適合要件 1</a> は、「<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>」がある限り、不適合なページが適合の範囲内に含まれることを認めている。コンテンツ制作者にとって、不適合なコンテンツの中から適合しているコンテンツへのアクセシビリティ サポーテッドなリンクを含むことは常に可能とはいえない。そこで、不適合のバージョンへは適合しているページからしか到達できないようにするために、コンテンツ制作者はサーバーサイドのスクリプト技術 (例：PHP、ASP、JSP) に依存しなければならなくなる。
             </p>
-            <p>This technique describes how to use information provided by the HTTP referer to ensure
-               that non-conforming content can only be reached from a conforming page. The HTTP referer
-               header is set by the user agent and contains the URI of the page (if any) which referred
-               the user agent to the non-conforming page.
+            <p>この達成方法は、不適合のコンテンツへは、適合しているページからしか到達できないことを保証するための、HTTP referer により提供される情報の利用方法について説明する。HTTP referer ヘッダーはユーザエージェントによって設定され、(もしあれば) ユーザエージェントが不適合なページを参照する際のページの URI を含む。
             </p>
-            <p>To implement this technique, an author identifies the URI for the conforming version
-               of the content, for each non-conforming page. When a request for the non-conforming
-               version of a page is received, the server compares the value of the HTTP referer header
-               against the URI of the conforming version to determine whether the link to the non-conforming
-               version came from the conforming version. The non-conforming version is only served
-               if the HTTP referer matches the URI of the non-conforming version. Otherwise, the
-               user is redirected to the conforming version of the content. Note that when comparing
-               the URI in the HTTP referer header, non-relevant variations in the URI, such as in
-               the query and target, should be taken into account.
+            <p>この方法を実装するために、コンテンツ制作者は不適合なページそれぞれについて、コンテンツの適合しているバージョンの URI を特定する。ページの不適合なバージョンへのリクエストを受け取った際に、サーバーは HTTP referer ヘッダーの値と、適合しているバージョンの URI を比較して、不適合バージョンへのリンクが適合しているバージョンからのものであるかどうかを判断する。不適合バージョンは HTTP referer が不適合バージョンの URI と一致したときにだけ提供される。それ以外の時には、利用者はコンテンツの適合したバージョンへとリダイレクトされる。HTTP リファラヘッダー内の URI を比較する際に、URI 中にクエリーや target のような関連のない変化も考慮に入れる必要があることに注意すべきである。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-interactive-demonstrations-of-physical-processes">
-               <h3>Example 1: Interactive demonstrations of physical processes</h3>
-               <p>An online physics course uses a proprietary modeling language to provide interactive
-                  demonstrations of physical processes. The user agent for the modeling language is
-                  not compatible with assistive technology. The site includes a script that uses the
-                  HTTP referer to ensure that unless users attempt to access the interactive demonstration
-                  from a page that contains a conforming description of the process and models, the
-                  server redirects the request to a conforming page which contains a link to the non-conforming
-                  version. Students may choose to access the non-conforming, interactive version, but
-                  those who do not are still able to learn about the process.
+               <h3>例 1: インタラクティブな物理プロセスのデモ</h3>
+               <p>オンラインの物理の授業では、インタラクティブな物理プロセスのデモを提供するために専用のモデリング言語を使用する。そのモデリング言語のためのユーザエージェントは支援技術との互換性がない。そのサイトは利用者が適合するプロセスとモデルの説明を含むページからインタラクティブなデモにアクセスしようとしない限り、サーバーがそのリクエストを不適合バージョンへのリンクを含む、適合しているページへとリダイレクトする、HTTP リファラを使用するスクリプトを含んでいる。生徒は不適合のインタラクティブなバージョンへのアクセスを選択する事ができるが、そうしない生徒もプロセスについて学ぶことができる。
                </p>
             </section>
             <section class="example" id="example-2-using-http-referer-in-php">
-               <h3>Example 2: Using Http referer in PHP</h3>
-               <p>The following example illustrates how this technique can be used in PHP. It includes
-                  two files, conforming.php and non-conforming.php which work together to ensure that
-                  the only way to access non-conforming content is from conforming content.
+               <h3>例 2: PHP で Http リファラを使う</h3>
+               <p>次の例は、この達成方法が PHP でどのように使われるかを説明している。conforming.php と non-conforming.php という不適合なコンテンツへのアクセスが適合しているコンテンツからのみとなるようにするために連携する二つのファイルを含む。
                </p>
                <p>conforming.php:</p><pre xml:space="preserve">
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -137,55 +104,50 @@ else  {
 header("Location: conforming.php");
 }
 ?&gt;					
-    				</pre><p class="working-example">A working example, <a href="../../working-examples/server-referrer-access-nonconforming/non-conforming.php">Conforming content</a>, is available.
+    				</pre><p class="working-example">動作例として <a href="https://www.w3.org/WAI/WCAG21/working-examples/server-referrer-access-nonconforming/conforming.php">Conforming content</a> が利用できる。
                </p>
             </section>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G136">G136: Providing a link at the beginning of a nonconforming Web page that points to a conforming
-                     alternate version</a></li>
+               <li><a href="../general/G136">G136: 不適合なウェブページの先頭に、適合している代替版を指すリンクを提供する</a></li>
                
-               <li><a href="../general/G190">G190: Providing a link adjacent to or associated with a non-conforming object that links
-                     to a conforming alternate version</a></li>
+               <li><a href="../general/G190">G190: 適合している代替版へのリンクを、不適合のオブジェクトに隣接して、又は関連付けて提供する</a></li>
                
-               <li><a href="SVR2">SVR2: Using .htaccess to ensure that the only way to access non-conforming content is from
-                     conforming content</a></li>
+               <li><a href="SVR2">SVR2: 適合しているコンテンツからのみ、適合していないコンテンツにアクセスできるように、.htaccess を使用する</a></li>
                
-               <li><a href="SVR4">SVR4: Allowing users to provide preferences for the display of conforming alternate versions</a></li>
+               <li><a href="SVR4">SVR4: 適合している代替版の表示に関する設定を利用者が行えるようにする</a></li>
                
-               <li><a href="../css/C29">C29: Using a style switcher to provide a conforming alternate version</a></li>
+               <li><a href="../css/C29">C29: 適合している代替版を提供するために、スタイルスイッチャーを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>Where WCAG-conforming alternatives are provided for non-conforming content:</p>
+               <p>不適合コンテンツに対して、WCAG に適合している代替版が提供されている場合:</p>
                
                <ol>
                   
-                  <li>Identify pages that do not conform to WCAG at the conformance Level claimed where
-                     accessible alternatives are served based on HTTP Referrer.
+                  <li>HTTP リファラに基づいてアクセシブルな代替版が提供されている場合、宣言している適合レベルで WCAG に適合していないページを特定する。
                   </li>
                   
-                  <li>Visit the URI of the non-conforming content.</li>
+                  <li>不適合のコンテンツの URI を開く。.</li>
                   
                   <li>
                      
-                     <p>Verify that the resulting page is one of the following:</p>
+                     <p>開いたページが次のうちの一つである:</p>
                      
                      <ol>
                         
-                        <li>a <a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">conforming alternate version</a> for the non-conforming content
+                        <li>不適合のコンテンツの<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>
                         </li>
                         
-                        <li>a page that includes a link to both the conforming alternate version and the non-conforming
-                           content
+                        <li>適合している代替版と不適合のコンテンツの両方へのリンクを含むページ
                         </li>
                         
                      </ol>
@@ -196,11 +158,11 @@ header("Location: conforming.php");
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #3.1 or #3.2 is true.</li>
+                  <li>#3.1 又は #3.2 の結果が真である。</li>
                   
                </ul>
                

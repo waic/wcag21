@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF6: Using table elements for table markup in PDF Documents</title>
+      <title>PDF6: PDF 文書でテーブルのマークアップにテーブル要素を使用する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,104 +10,86 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF5">Previous Technique: PDF5</a></li>
-            <li><a href="PDF7">Next Technique: PDF7</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF5">前の達成方法: PDF5</a></li>
+            <li><a href="PDF7">次の達成方法: PDF7</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Using table elements for table markup in PDF Documents</h1>
+      <h1>PDF 文書でテーブルのマークアップにテーブル要素を使用する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Tagged PDF documents with tables</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)</span>.
+            <h2>適用 (対象)</h2>
+            <p>テーブルのあるタグ付き PDF 文書</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to show how tables in PDF documents
-               				can be marked up so that they are recognized by assistive technology.
-               				This is typically accomplished by using a tool for authoring PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、支援技術で認識されるように PDF 文書内のテーブルをマークアップする方法を示すことである。これは通常、PDF のオーサリングツールを使用して行う。
             </p>
-            <p>Tabular information must be presented in a way that preserves relationships
-               				within the information even when users cannot see the table or the
-               				presentation format is changed. Information is considered tabular when
-               				logical relationships among text, numbers, images, or other data exist
-               				in two dimensions (vertical and horizontal). These relationships are
-               				represented in columns and rows, and the columns and rows must be recognizable
-               				in order for the logical relationships to be perceived. 
+            <p>表の情報は、利用者がテーブルを見られない場合や提示形式が変更された場合でも、情報内の関係を維持する方法で表示されなければならない。情報は、テキスト、数字、画像または他のデータ間の論理的な関係が 2 次元 (垂直と水平) で存在する場合に表と見なされる。これらの関係は、列と行で表わされ、論理的な関係を把握するために列と行が認識可能である必要がある。
             </p>
-            <p>Tagged tables can be created using the Add Tags to Document feature
-               				in Adobe Acrobat, using the Object Library in Adobe LiveCycle, or converting
-               				tables to PDF from a third-party application, such as Microsoft Word.
-               				However, the resulting tables may not be tagged correctly and you should
-               				ensure that table tagging issues are resolved. 
+            <p>タグ付きのテーブルは、Adobe Acrobat で「文書にタグを追加」機能を使用するか、Adobe LiveCycle のオブジェクトライブラリを使用するか、Microsoft Word などのサードパーティアプリケーションから表を PDF に変換することで作成できる。ただし、結果のテーブルは正しくタグが設定されない場合があるので、テーブルのタグ付けの問題が解決されたことを確認する必要がある。
             </p>
-            <p>Within PDF documents, a table uses the following structure types for
-               				table elements: 
+            <p>PDF 文書内のテーブルでは、次のような table エレメントの構造タイプが使用される。
             </p>
             <ul>
                
-               <li> A table element (<em>Table</em>). 
+               <li>テーブルエレメント (<em>Table</em>)
                </li>
                
-               <li> One or more table row elements(<em>TR</em>) which define each
-                  				row of table cells as immediate children of the <em>Table</em> element. 
+               <li><em>Table</em> エレメントの直接の子としてテーブルのセルの各行を定義する一つまたは複数のテーブル行エレメント (<em>TR</em>)
                </li>
                
-               <li> One or more table header elements (<em>TH</em>) or table data
-                  					elements (<em>TD</em>) as the immediate children of each table row
-                  					element. 
+               <li>テーブル行エレメントの直接の子としての一つまたは複数のテーブルヘッダーエレメント (<em>TH</em>) またはテーブルデータエレメント (<em>TD</em>)
                </li>
                
-               <li> Cells that span two or more rows or columns should use the <em>RowSpan</em> or <em>ColSpan</em> attribute. 
+               <li>二つ以上の行または列にまたがるセルは、<em>RowSpan</em> または <em>ColSpan</em> 属性を使用する必要がある
                </li>
                
-               <li> For tables that contain blank cells, you may need to add empty <em>TD</em> cells
-                  						so that each row or column has the same number of cells. 
+               <li>空白のセルを含むテーブルの場合は、空白の <em>TD</em> セルを追加して各行または列のセルの数が同じになるようにする必要がある
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-creating-tables-in-microsoft-word-2007-that-have-correctly&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;tagged-headings-when-converted-to-pdf">
-               <h3>Example 1: Creating tables in Microsoft Word 2007 that have correctly
-                  					tagged headings when converted to PDF
+               <h3>事例 1: Microsoft Word 2007 で PDF 変換時に正しいタグ付き見出しがある表を作成する
                </h3>
-               <p>This example is shown with Microsoft Word. There are other software tools that perform
-                  similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Microsoft Word の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>
                <ol>
                   
-                  <li> Access the table header row's context menu and select Table Properties... </li>
+                  <li>表のヘッダー行のコンテキストメニューから［表のプロパティ］を選択する</li>
                   
-                  <li> Select the Row tab. </li>
+                  <li>［行］タブを選択する</li>
                   
-                  <li> Check "Repeat as header at the top of each page" as
-                     						shown in the following image. 
+                  <li>次の画像に示すように、「各ページにタイトル行を表示する」を選択する
                   </li>
                   
                </ol>
@@ -115,43 +97,41 @@
                   <img src="img/word-table.jpg" />
                   
                   
-                  <figcaption>Figure 1Image of Table properties dialog for the first table row in Word, with the Row tab
-                     selected. 'Repeat as header at the top of each page' is checked to ensure that the
-                     first row is marked as header cells.
+                  <figcaption>図1. [行] タブが選択された Word の表の最初の行の [表プロパティ] ダイアログボックスのイメージ。最初の行がヘッダーセルとしてマークされていることを確認するには、「各ページにタイトル行を表示する」 を選択する。
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-tables/table-example-noheaderrow.docx">working example of tagged table headings in Word 2007</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-tables/table-example-noheaderrow.docx">Word 2007 でのタグ付きテーブル見出しのサンプル (Word ファイル)</a>がある。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>Microsoft Word can only mark up cells as column headings, not as row headings.  Only
-                        the first row can be marked as heading for all table columns.  When the table has
-                        row headings or a more complex heading structure, this mark-up must be added in a
-                        PDF editor such as Acrobat Pro.
+                     <p>Microsoft Word では、セルは行見出しではなく列見出しとしてのみマークアップできる。すべての表の列について、見出しとしてマークできるのは最初の行だけである。表に行見出しまたはさらに複雑な見出し構造がある場合、このマークアップは Acrobat Pro などの PDF エディターで追加する必要がある。
                      </p>
                      
                   </div>
                </div>
             </section>
             <section class="example" id="example-2-creating-tables-in-openoffice.org-writer-2.2-that-have&#xA;----&#x9;&#x9;&#x9;&#x9;correctly-tagged-headings-when-converted-to-pdf">
-               <h3>Example 2: Creating tables in OpenOffice.org Writer 2.2 that have
-                  				correctly tagged headings when converted to PDF
+               <h3>事例 2: OpenOffice.org Writer 2.2 で PDF 変換時に正しいタグ付き見出しがある表を作成する
                </h3>
-               <p>This example is shown with OpenOffice.org Writer. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は OpenOffice.org Writer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>
                <ol>
                   
-                  <li> Access the table's context menu and select Table... </li>
+                  <li>表のコンテキストメニューから［表］を選択する</li>
                   
-                  <li> Select the Table Format tab. </li>
+                  <li>［体裁］タブを選択する。</li>
                   
-                  <li> Check Repeat Heading and select "1" in the First Rows
-                     						listbox as shown in the following image. 
+                  <li>次の画像に示すように、「見出しの繰り返し」を選択し、「最初の n 行」リストボックスで「1」を選択する。
                   </li>
                   
                </ol>
@@ -159,87 +139,79 @@
                   <img src="img/openofficetableheads.jpg" />
                   
                   
-                  <figcaption>Figure 2Image of Table dialog in OpenOffice.org Writer with Table Format tab selected. Repeat
-                     Heading is checked and 1 is selected in the First Rows listbox to ensure that the
-                     first row is marked as header cells.
+                  <figcaption>図2. OpenOffice.org Writerの [表形式] タブが選択された状態の [表] ダイアログボックスのイメージ。最初の行がヘッダーセルとしてマークされるように、 「見出しの繰り返し」 が選択され、 「最初の n 行」 リストボックスで 「1」 が選択されている。
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-tables/table-example-noheaderrow.odt">working example of tagged table headings in OpenOffice Writer</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-tables/table-example-noheaderrow.odt">OpenOffice Writer でのタグ付きテーブル見出しのサンプル (OpenDocument テキストファイル)</a> がある。
                </p>
                <div class="note">
-                  <div role="heading" class="note-title marker" aria-level="4">Note</div>
+                  <div role="heading" class="note-title marker" aria-level="4">注記</div>
                   <div>
                      
-                     <p>OpenOffice.org Writer can only mark up cells as column headings, not as row headings.
-                        Only the first row can be marked as heading for all table columns.  When the table
-                        has row headings or a more complex heading structure, this mark-up must be added in
-                        a PDF editor such as Acrobat Pro.
+                     <p>OpenOffice.org Writer では、セルは行見出しではなく列見出しとしてのみマークアップできる。すべての表の列について、見出しとしてマークできるのは最初の行だけである。表に行見出しまたはさらに複雑な見出し構造がある場合、このマークアップは Acrobat Pro などの PDF エディターで追加する必要がある。
                      </p>
                      
                   </div>
                </div>
             </section>
             <section class="example" id="example-3-modifying-table-tags-using-the-tags-tab-in-adobe-acrobat&#xA;----&#x9;&#x9;&#x9;&#x9;9-pro">
-               <h3>Example 3: Modifying table tags using the Tags tab in Adobe Acrobat
-                  				9 Pro
+               <h3>事例 3: Adobe Acrobat 9 Pro の［タグ］タブを使用してテーブルタグを変更する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>To check that a converted document with tables has correct table tagging: </p>
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>
+               <p>変換された文書内のテーブルが正しくタグ付けされていることを確認するには、次の操作を行う。</p>
                <ul>
                   
-                  <li> In the View menu, select Navigation Panel, then select Tags. </li>
+                  <li>［表示］メニューからナビゲーションパネル > タブを選択する。</li>
                   
                </ul>
                <figure id="figure-acrobat-tables-tags">
                   <img src="img/table-example.jpg" />
                   
                   
-                  <figcaption>Figure 3Table in Adobe Acrobat Pro showing the Tags tab opened to display the table tags.
-                     All table cells are marked TD.
+                  <figcaption>図3. テーブルタグを表示するために開いた [タグ] タブを示す Adobe Acrobat Pro の表。すべてのテーブルセルに TD のマークが付けられる。
                   </figcaption>
                   
                   
                </figure>
-               <p>Note that in this case, the table headers were not formatted as illustrated
-                  						in Examples 1 and 2, and are marked as data cells (<em>TD</em>). To
-                  						change these to <em>TH</em> tags: 
+               <p>この場合、テーブルヘッダーには事例 1 および 2 に示すような書式は設定されておらず、データセルとしてマークされている (<em>TD</em>)。これらを <em>TH</em> タグに変更するには、次の操作を行う。
                </p>
                <ol>
                   
-                  <li> On the Tags tab, open the table row that contains the header cells,
-                     						as shown on the image above. 
+                  <li>上の画像に示すように、［タグ］タブで、ヘッダーセルを含むテーブル行を開く
                   </li>
                   
-                  <li> Select on the first data cell and select Properties... </li>
+                  <li>最初のデータセルを選択し、［プロパティ］を選択する</li>
                   
-                  <li> On the Tags tab in the Properties dialog, use the Type dropdown
-                     							to change Table Data Cell to Table Header Cell. 
+                  <li>［プロパティ］ダイアログボックスの［タグ］タブで、種類ドロップダウンリストを使用して、「テーブルデータセル」を「テーブルヘッダーセル」に変更する。
                   </li>
                   
-                  <li> Repeat for all the table header cells in the first table row. </li>
+                  <li>テーブルの最初の行にあるすべてのテーブルヘッダーセルについて、同じ操作を繰り返す</li>
                   
                </ol>
                <figure id="figure-acrobat-table-tag-props">
                   <img src="img/table-example2.jpg" />
                   
                   
-                  <figcaption>Figure 4Table in Adobe Acrobat Pro showing the use of the Tag Properties dialog to change
-                     data cells to header cells
+                  <figcaption>図4. [タグプロパティ] ダイアログボックスを使用してデータセルをヘッダーセルに変更する方法を示した Adobe Acrobat Pro のテーブル
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-tables/table-example-repaired.pdf">working example of tagged table headings in Acrobat</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/wcag21/working-examples/pdf-tables/table-example-repaired.pdf">Acrobat でのタグ付きテーブル見出しのサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-4-marking-up-a-table-using-table-structure-elements">
-               <h3>Example 4: Marking up a table using table structure elements</h3>
-               <p>The following code fragment illustrates code that is typical for a
-                  					simple table (header row and data row) such as shown in Examples 1-3: 
+               <h3>事例 4: テーブルの構造エレメントを使用してテーブルをマークアップする</h3>
+               <p>次のコードフラグメントは、事例 1 ～ 3 に示すような単純なテーブル (ヘッダー行とデータ行) で一般的に使用されるコードを示している。
                </p><pre xml:space="preserve">95 0 obj                %Structure element for a table
  &lt;&lt; 
   /A 39 0 R
@@ -275,8 +247,8 @@ endobj
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.8.4.3.4 (Table Elements) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -292,47 +264,38 @@ endobj
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../html/H51">H51: Using table markup to present tabular information</a></li>
+               <li><a href="../html/H51">H51: 表形式の情報を提示するために、テーブルのマークアップを使用する</a></li>
                
-               <li><a href="PDF20">PDF20: Using Adobe Acrobat Pro's Table Editor to repair mistagged tables</a></li>
+               <li><a href="PDF20">PDF20: 間違ってタグ付けされているテーブルを修復するために、Adobe Acrobat Pro のテーブルエディタを使用する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p>For each table, confirm one of the following:</p>
+                     <p>各テーブルで、次のいずれかを確認する。</p>
                      
                      <ul>
                         
-                        <li> Read the PDF document with a screen reader, listening to hear
-                           						that the tabular information is presented in a way that preserves
-                           						logical relationships among the table header and data cells. 
+                        <li>PDF 文書をスクリーンリーダーで読み上げると、テーブルヘッダーおよびデータセル間の論理的関係を維持する方法で表の情報が読み上げられる。
                         </li>
                         
-                        <li> Using a PDF editor, verify that the appropriate <em>TR</em>, <em>TH</em>,
-                           							and <em>TD</em> tags are in the proper reading order and hierarchy
-                           							in the table tree. 
+                        <li>PDF エディターを使用し、適切な <em>TR</em>、<em>TH</em> および <em>TD</em> タグが正しい読み上げ順序でテーブルツリー内の階層に配置されていることを確認する。
                         </li>
                         
-                        <li> Use a tool which is capable of showing the table elements
-                           								to open the PDF document, view the table structure, and verify
-                           								that it contains the appropriate TR, TH, and TD structures. 
+                        <li>テーブルエレメントを表示できるツールを使用して PDF 文書を開き、テーブル構造を表示して、適切な TR、TH および TD 構造が含まれていることを確認する。
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           									API, and verify that the table structure contains the appropriate
-                           									TR, TH, and TD structures, and that they are in the proper reading
-                           									order and hierarchy. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用して、テーブル構造に適切な TR、TH および TD 構造が含まれ、正しい読み上げ順序と階層になっていることを確認する。
                         </li>
                         
                      </ul>
@@ -343,11 +306,11 @@ endobj
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true. </li>
+                  <li>1. の結果が真である。</li>
                   
                </ul>
                
