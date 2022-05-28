@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF15: Providing submit buttons with the submit-form action in PDF forms</title>
+      <title>PDF15: PDF フォームで送信フォームアクションのある送信ボタンを提供する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,193 +10,170 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF14">Previous Technique: PDF14</a></li>
-            <li><a href="PDF16">Next Technique: PDF16</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF14">前の達成方法: PDF14</a></li>
+            <li><a href="PDF16">次の達成方法: PDF16</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing submit buttons with the submit-form action in PDF forms</h1>
+      <h1>PDF フォームで送信フォームアクションのある送信ボタンを提供する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Tagged PDF documents with forms. </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/on-input">Success Criterion 3.2.2: On Input</a> (Sufficient as a way to meet <a href="../general/G80">G80: Providing a submit button to initiate a change of context</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>フォームが含まれているタグ付き PDF 文書</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/on-input">達成基準 3.2.2: 入力時</a> (<a href="../general/G80">G80: コンテキストの変化を開始する送信ボタンを提供する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a mechanism that allows
-               				users to explicitly request a change of context using the submit-form
-               				action in a PDF form. The intended use of a submit button is to generate
-               				an HTTP request that submits data entered in a form, so it is an appropriate
-               				control to use for causing a change of context. In PDF documents, submit buttons
-               are normally implemented using a tool for authoring PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、PDF フォームの送信フォームアクションを使用して、利用者が明示的に文脈の変更を要求できるメカニズムを提供することがある。送信ボタンの使用目的は、フォームに入力されたデータを送信する HTTP 要求を生成することなので、送信ボタンは文脈を変更するための適切なコントロールである。PDF 文書の送信ボタンは通常、PDF のオーサリングツールを使用して実装される。
             </p>
-            <p>Examples 1 and 2 demonstrate how to add a submit button using specific
-               authoring tools. There are other PDF tools that perform similar
-               functions. Check the functionality provided by <a href="#pdf_notes_acc-sup_files_applications"></a>.
+            <p>事例 1 および 2 は、特定のオーサリングツールを使用して送信ボタンを追加する方法を示している。同様の機能を実行する PDF ツールは他にも存在する。「<a href="#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」により提供される機能を参照のこと。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-adding-a-submit-button-using-adobe-acrobat-9-pro">
-               <h3>Example 1: Adding a submit button using Adobe Acrobat 9 Pro</h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <h3>例 1: Adobe Acrobat 9 Pro を使用して送信ボタンを追加する</h3>
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
+
                <ol>
                   
-                  <li> From the toolbar, select Forms &gt; Form Tools &gt; Button and
-                     						create a button on the form. 
+                  <li> ツールバーからフォーム &gt; フォームツール &gt; ボタンを選択し、フォーム上にボタンを作成する 
                   </li>
                   
-                  <li> Access the context menu for the button and select Properties...
-                     							to open the Button Properties dialog. 
+                  <li> ボタンのコンテキストメニューから「プロパティ」を選択し、［ボタンのプロパティ］ダイアログボックスを開く 
                   </li>
                   
-                  <li> In the General tab, provide a tooltip for the button. </li>
+                  <li>［一般］タブで、ボタンのツールヒントを入力する</li>
                   
-                  <li> In the Options tab, choose an option in the Layout menu for the
-                     								button label, icon image, or both. Then, type text in the Label box
-                     								to identify the button as a submit button and/or click Choose Icon
-                     								and locate the image file you want to use. 
+                  <li>［オプション］タブで、ボタンラベルかアイコンイメージまたはその両方に対して、レイアウトメニューのオプションを選択する。次に、ボタンを送信ボタンとして指定するために「ラベル」ボックスにテキストを入力したり、「アイコンを選択」をクリックして、使用するイメージファイルを配置したりする 
                   </li>
                   
                   <li>
                      
-                     <p> In the Actions tab:</p>
+                     <p>［アクション］タブで次の操作を行う</p>
                      
                      <ul>
                         
-                        <li> For Select Trigger, choose Mouse Up. (The Mouse Up event is
-                           										keyboard accessible and, in addition, ensures that the button
-                           										will not change context unexpectedly, as it might with, e.g.,
-                           										a Mouse Enter event.) 
+                        <li>「トリガを選択」で「マウスアップ」を選択する (Mouse Up イベントは、キーボードでアクセス可能である。また、Mouse Up イベントでは、Mouse Enter イベントなどが発生しても、ボタンで予想外にコンテキストが変更されない)
                         </li>
                         
-                        <li> For Select Action, choose Submit A Form. </li>
+                        <li> 「アクションを選択」で「フォームを送信」を選択する </li>
                         
-                        <li> Click Add. </li>
+                        <li>［追加］をクリックする</li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li> In the Add dialog, enter a URL to collect data on a server or
-                     									collect form data as e-mail attachments. 
+                  <li>［追加］ダイアログボックスで、サーバー上のデータを収集したり、電子メールの添付ファイルとしてフォームデータを収集したりするための URL を入力する
                   </li>
                   
                </ol>
-               <p>The following image shows the Options tab on the Button Properties
-                  						dialog. 
+               <p>次の画像は、ボタンのプロパティダイアログボックスの［オプション］タブを示している。
                </p>
                <figure id="figure-options-tab">
                   <img src="img/submit-button2.jpg" />
                   
                   
-                  <figcaption>Figure 1The Options tab in the Button Properties dialog, showing the layout and label button
-                     properties.
+                  <figcaption>図 1 ボタンプロパティダイアログの [オプション] タブには、レイアウトとラベルボタンのプロパティが表示される。
                   </figcaption>
                   
                   
                </figure>
-               <p>The following image shows the Actions tab on the Button Properties
-                  						dialog. 
+               <p>次の画像は、ボタンのプロパティダイアログボックスの「アクション」タブを示している。
                </p>
                <figure id="figure-action-tab">
                   <img src="img/submit-button.jpg" />
                   
                   
-                  <figcaption>Figure 2The Action tab in the Button Properties dialog with the Select Action option specified.</figcaption>
+                  <figcaption>図 2 ボタンプロパティダイアログの [アクション] タブで、「アクションを選択」のオプションが指定された状態。</figcaption>
                   
                   
                </figure>
             </section>
             <section class="example" id="example-2-adding-a-submit-button-using-adobe-livecycle-designer&#xA;----&#x9;&#x9;&#x9;&#x9;es-8.2.1">
-               <h3>Example 2: Adding a submit button using Adobe LiveCycle Designer
-                  				ES 8.2.1
+               <h3>例 2: Adobe LiveCycle Designer ES 8.2.1 を使用して送信ボタンを追加する
                </h3>
-               <p>This example is shown with Adobe LiveCycle Designer. There are other software tools
-                  that perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe LiveCycle Designer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。 他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
+               
                <ol>
                   
-                  <li> On the Insert &gt; Standard menu, select the HTTP Submit Button
-                     						item. 
+                  <li>挿入 &gt; 標準メニューで、「HTTP 送信ボタン」項目を選択する
                   </li>
                   
-                  <li> On the Object panel for the HTTP Submit Button, insert the URL
-                     							for form-submission processing. 
+                  <li>「HTTP 送信ボタン」の［オブジェクト］パネルに、フォーム送信処理の URL を挿入する
                   </li>
                   
                </ol>
-               <p>The following image shows the Standard menu with the list of form
-                  						controls. 
+               <p>次の画像は、フォームコントロールの一覧が表示されている標準メニューを示している。
                </p>
                <figure id="figure-standard-menu">
                   <img src="img/http.gif" />
                   
                   
-                  <figcaption>Figure 3The Standard menu showing the list of form controls, including the selection of the
-                     HTTP Submit Button.
-                  </figcaption>
+                  <figcaption>図 3 「HTTP 送信ボタン」の選択を含む、フォームコントロールの一覧を表示する標準メニュー。</figcaption>
                   
                   
                </figure>
-               <p>The following image shows the Object panel with the URL and other
-                  						fields for button appearance. 
+               <p>次の画像は、URL とボタンの外観に関するその他のフィールドが表示されたオブジェクトパネルを示している。
                </p>
                <figure id="figure-object-panel">
                   <img src="img/submit-panel.gif" />
                   
                   
-                  <figcaption>Figure 4The Object panel showing the URL and other fields for specifying the submit button's
-                     appearance and action.
+                  <figcaption>図 4 送信ボタンの外観や動作を指定するための URL などのフィールドが表示されたオブジェクトパネル。
                   </figcaption>
                   
                   
                </figure>
             </section>
             <section class="example" id="example-3-adding-a-script-action-to-a-submit-button-in-a-pdf-document&#xA;----&#x9;&#x9;&#x9;&#x9;using-javascript">
-               <h3>Example 3: Adding a script action to a submit button in a PDF document
-                  				using JavaScript
+               <h3>例 3: JavaScript を使用して PDF 文書内の送信ボタンにスクリプトアクションを追加する
                </h3>
-               <p>The following JavaScript code illustrates the use of a script to specify
-                  						the submit-form action. To add this script to the form field: 
+               <p>次の JavaScript コードは、送信フォームアクションを指定するために使用されるスクリプトを示している。このスクリプトをフォームフィールドに追加するには、次の操作を行う。
                </p>
                <ol>
                   
-                  <li> Open the Button Properties dialog, as shown in Example 1, and
-                     						select the Actions tab 
+                  <li>例 1 に示されているように、［ボタンのプロパティ］ダイアログボックスを開き、［アクション］タブを選択する
                   </li>
                   
-                  <li> Select Run a JavaScript from the drop-down list, and select the
-                     							Add button 
+                  <li>ドロップダウンリストから「JavaScript を実行」を選択し、「追加」ボタンを選択する 
                   </li>
                   
-                  <li> Enter JavaScript code in the JavaScript Editor dialog, for example: </li>
+                  <li>［JavaScript エディター］ダイアログボックスで、次のような JavaScript コードを入力する</li>
                   
                </ol><pre xml:space="preserve">var aSubmitFields = new Array( "name", "id", "juser" );
 this.submitForm({
@@ -204,12 +181,12 @@ this.submitForm({
   aFields: aSubmitFields,
   cSubmitAs: "FDF" // the default, not needed here
 });
-</pre><p>The following images illustrate this process: </p>
+</pre><p>次の画像は、このプロセスを示している。</p>
                <figure id="figure-button-props-dialog">
                   <img src="img/submit-button1.jpg" />
                   
                   
-                  <figcaption>Figure 5The Button Properties dialog for a submit button.</figcaption>
+                  <figcaption>図 5 送信ボタンの「ボタンのプロパティ」ダイアログ。</figcaption>
                   
                   
                </figure>
@@ -217,17 +194,16 @@ this.submitForm({
                   <img src="img/submit-button3.jpg" />
                   
                   
-                  <figcaption>Figure 6The JavaScript added to the Action tab of the Button Properties dialog.</figcaption>
+                  <figcaption>図 6 「ボタンのプロパティ」ダイアログの [アクション] タブに追加された JavaScript。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-submit-button/submit-button-js.pdf">working example of adding a script action to a submit button</a>.
-               </p>
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-submit-button/submit-button-js.pdf">スクリプトアクションを送信ボタンに追加したサンプル</a>がある。               </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 12.7.5.2 (Submit-Form Action) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -255,39 +231,34 @@ this.submitForm({
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G80">G80: Providing a submit button to initiate a change of context</a></li>
+               <li><a href="../general/G80">G80: コンテキストの変化を開始する送信ボタンを提供する</a></li>
                
-               <li><a href="PDF23">PDF23: Providing interactive form controls in PDF documents</a></li>
+               <li><a href="PDF23">PDF23: PDF 文書内でインタラクティブなフォームコントロールを提供する</a></li>
                
-               <li><a href="PDF12">PDF12: Providing name, role, value information for form fields in PDF documents</a></li>
+               <li><a href="PDF12">PDF12: PDF 文書内のフォームフィールドの名前 (name)、役割 (role)、値 (value) 情報を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> For each page that submits a form, visually verify that the form
-                        					contains a submit button and check one of the following:
-                     </p>
+                     <p>フォームを送信するページごとに、送信ボタンが含まれているフォームを視覚的に確認し、以下のいずれかを確認する。                     </p>
                      
                      <ul>
                         
-                        <li> Tab to the button and check that it submits the form in response
-                           						to user action to select the button. 
+                        <li> ボタンにタブ移動し、ボタンを選択する利用者のアクションに反応してフォームが送信される。
                         </li>
                         
-                        <li> Open the PDF document with a tool that is capable of showing
-                           								the submit-form action and check that the button action is to
-                           								submit the form. 
+                        <li>送信フォームアクションを示すことができるツールを使用して PDF 文書を開き、ボタンアクションがフォームの送信であることを確認する。
                         </li>
                         
                      </ul>
@@ -298,11 +269,11 @@ this.submitForm({
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 is true for each page that contains a form. </li>
+                  <li>フォームが含まれている各ページにおいて、#1 の結果が真である。</li>
                   
                </ul>
                

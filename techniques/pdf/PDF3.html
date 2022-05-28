@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF3: Ensuring correct tab and reading order in PDF documents</title>
+      <title>PDF3: PDF 文書で正しいタブ順序と読み上げ順序を確保する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
       <link rel="stylesheet" type="text/css" href="../slicenav.css" />
@@ -10,183 +10,159 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF2">Previous Technique: PDF2</a></li>
-            <li><a href="PDF4">Next Technique: PDF4</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF2">前の達成方法: PDF2</a></li>
+            <li><a href="PDF4">次の達成方法: PDF4</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Ensuring correct tab and reading order in PDF documents</h1>
+      <h1>PDF 文書で正しいタブ順序と読み上げ順序を確保する</h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p id="pdf.applicability.general">Tagged PDF documents</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p id="pdf.applicability.general">タグ付き PDF 文書</p>
+            <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">Success Criterion 1.3.2: Meaningful Sequence</a> (Sufficient)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/meaningful-sequence">達成基準 1.3.2: 意味のある順序</a> (十分な達成方法) 
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (書かれていない達成方法を満たす手段として十分) 
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">Success Criterion 2.4.3: Focus Order</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/focus-order">達成基準 2.4.3: フォーカス順序</a> (書かれていない達成方法を満たす手段として十分) 
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The intent of this technique is to ensure that users can navigate
-               				through content in a logical order that is consistent with the meaning
-               				of the content. Correct tab and reading order is typically accomplished
-               				using a tool for authoring PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、コンテンツの意味と一貫性がある論理的な順序で利用者がコンテンツ内を移動できるようにすることである。正しいタブ順序と読み上げ順序は通常、PDF のオーサリングツールを使用して指定できる。
             </p>
-            <p>For sighted users, the logical order of PDF content is also the visual
-               				order on the screen. For keyboard and assistive technology users, the
-               				tab order through content, including interactive elements (form fields
-               				and links), determines the order in which these users can navigate
-               				the content. The tab order must reflect the logical order of the document. 
+            <p>画面を見ている利用者にとっては、PDF コンテンツの論理的な順序は画面上の視覚的な順序でもある。キーボードおよび支援技術の利用者の場合は、インタラクティブなエレメント (フォームフィールドおよびリンク) を含むコンテンツ内のタブの順序によって、利用者がコンテンツ内を移動できる順序が決定される。タブの順序には、文書の論理的な順序が反映されていなければならない。
             </p>
-            <p>Logical structure is created when a document is saved as tagged PDF.
-               				The reading order of a PDF document is determined primarily by the tag order of
-               document elements, including interactive elements, but the order of content within
-               individual tags is determined by the PDF document’s content tree structure.
+            <p>論理構造は、文書がタグ付き PDF として保存されたときに作成される。PDF 文書の読み上げ順序は、インタラクティブなエレメントを含めて、文書エレメントのタグ順序によって主に決定されるが、個々のタグの中のコンテンツの順序は PDF 文書のコンテンツのツリー構造によって決定される。
             </p>
-            <p>If the reading order is not correct, keyboard and assistive technology
-               				users may not be able to understand the content. For example, some
-               				documents use multiple columns, and the reading order is clear visually
-               				to sighted users as flowing from the top to the bottom of the first
-               				column, then to the top of the next column. But if the document is
-               				not properly tagged, a screen reader may read the document from top
-               				to bottom, across both columns, interpreting them as one column. 
+            <p>読み上げ順序が正しくないと、キーボードおよび支援技術の利用者がコンテンツを理解できない場合がある。例えば、複数の列がある文書では、視力のある利用者にとっては読む順序は視覚的に明確であり、最初の列の上から下へ、続いて次の列の先頭に移動するというようになる。しかし文書のタグ付けが適切でないと、スクリーンリーダーは文書の二つの列を一つの列として解釈して、列をまたいで上から下へ読み上げる場合がある。
             </p>
-            <p>The simplest way to ensure correct reading order is to structure the
-               				document correctly in the authoring tool used to create the document,
-               				before conversion to tagged PDF. Note, however, that pages with complex
-               				layouts with graphics, tables, footnotes, side-bars, form fields, and
-               				other elements may not convert to tagged PDF in the correct reading
-               				order. These inconsistencies must then be corrected with repair tools
-               				such as Acrobat Pro. 
+            <p>正しい読み上げ順序を指定する最も簡単な方法は、タグ付き PDF に変換する前に、文書の作成に使用するオーサリングツールで文書を正しく構成することである。ただし、グラフィック、表、脚注、サイドバー、フォームフィールドなどのエレメントが含まれた複雑なレイアウトのページは、正しい読み上げ順序でタグ付き PDF に変換されない可能性がある。このような不整合は、Acrobat Pro などの修復ツールで修正する必要がある。
             </p>
-            <p>When a PDF document containing form fields has a correct reading order,
-               				all form fields are contained in the tab order in the appropriate order,
-               				and in the correct order relative to other content in the PDF. Common
-               				tab-order errors include: 
+            <p>フォームフィールドが含まれる PDF 文書に正しい読み上げ順序が設定された場合には、すべてのフォームフィールドが適切なタブ順序で配置され、また PDF 内の他のコンテンツとの相対的な順序も正しく設定される。一般的なタブ順序エラーには次のものがある。
             </p>
             <ul>
                
-               <li> Form fields missing from the tagged content. </li>
+               <li>タグ付きコンテンツにフォームフィールドが含まれていない。</li>
                
-               <li> Form fields in the wrong location in the PDF content; e.g., at
-                  				the end of non-interactive content. 
+               <li>フォームフィールドが、非インタラクティブなコンテンツの末尾など、PDF コンテンツ内の誤った場所にある。
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-creating-a-2-column-document-using-microsoft-word-2007">
-               <h3>Example 1: Creating a 2-column document using Microsoft Word 2007</h3>
-               <p>This example is shown with Microsoft Word. There are other software tools that perform
-                  similar functions. See the list of other software 
-                  tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <h3>事例 1: Microsoft Word 2007 を使用して 2 段組みの文書を作成する</h3>
+               <p>この事例は Microsoft Word の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>Multi-column documents created using Word's Page Layout &gt;   Columns...
-                  						tool typically are in the correct reading order when converted to tagged
-                  						PDF. The image below shows Word's Columns tool. 
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>
+               <p>Word のページレイアウト > 段組みツールを使用して作成した複数列の文書は通常、タグ付き PDF に変換したときに正しい読み上げ順序になる。次の画像は Word の段組みツールを示している。
                </p>
                <figure id="figure-vcolumns-tool-word">
                   <img src="img/word-col-tool.jpg" />
                   
                   
-                  <figcaption>Figure 1The Columns tool in Word. Two is selected to lay out the page in 2 columns.</figcaption>
+                  <figcaption>図1. Word の段組みツール。「2」 を選択すると、ページが 2 段組みになる。</figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-reading-order/reading-order-2cols-word.docx">working example of 2-column document using Word 2007 (Word file)</a> and <a href="../../working-examples/pdf-reading-order/reading-order-2cols-word.pdf">working example of 2-column document using Word 2007 (PDF file)</a>.
-               </p>
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order-2cols-word.docx">Word 2007 を使用した 2 段組み文書のサンプル (Word ファイル)</a> と <a href-"https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order-2cols-word.pdf">Word 2007 を使用した 2 段組み文書のサンプル (PDF ファイル)</a> がある。
+                                </p>
             </section>
             <section class="example" id="example-2-creating-a-2-column-document-using-openoffice.org-writer&#xA;----&#x9;&#x9;&#x9;&#x9;2.2">
-               <h3>Example 2: Creating a 2-column document using OpenOffice.org Writer
-                  				2.2
+               <h3>事例 2: OpenOffice.org Writer 2.2 を使用して 2 段組みの文書を作成する
                </h3>
-               <p>This example is shown with OpenOffice.org Writer. There are other software tools that
-                  perform similar functions. See the list of other software 
-                  tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は OpenOffice.org Writer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>Multi-column documents created using OpenOffice.org Writer's Format   &gt; Columns...
-                  						tool typically are in the correct reading order when converted to tagged
-                  						PDF. The image below shows Writer's Columns tool. 
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>
+               <p>OpenOffice.org Writer の書式 > 段組みツールを使用して作成した複数列の文書は通常、タグ付き PDF に変換したときに正しい読み上げ順序になる。次の画像は OpenOffice.org Writer の段組みツールを示している。
                </p>
                <figure id="figure-columns-tool-openoffice">
                   <img src="img/oo-2col-tool.jpg" />
                   
                   
-                  <figcaption>Figure 2The Columns tool in OpenOffice.org Writer. Two is selected to lay out the page in
-                     2 columns.
+                  <figcaption>図2. OpenOffice.org Writer の段組みツール。「2」 を選択すると、ページが 2 段組みになる。
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-reading-order/reading-order-2cols-oo.odt">working example of 2-column document using OpenOffice Writer (OpenOffice file)</a> and <a href="../../working-examples/pdf-reading-order/reading-order-2cols-oo.pdf">working example of 2-column document using OpenOffice Writer (PDF file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order-2cols-oo.odt">OpenOffice Writer を使用した 2 段組み文書のサンプル (OpenOffice ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order-2cols-oo.pdf">OpenOffice Writer を使用した 2 段組み文書のサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-3-setting-the-tab-order-for-one-or-more-pages-using-adobe&#xA;----&#x9;&#x9;&#x9;&#x9;acrobat-9-pro">
-               <h3>Example 3: Setting the tab order for one or more pages using Adobe
-                  				Acrobat 9 Pro
+               <h3>事例 3: Adobe Acrobat 9 Pro を使用して 一つまたは複数のページのタブ順序を設定する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>In a tagged PDF document: </p>
+               <div class="note">
+                 <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
+                 <div>
+                   <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+                 </div>
+               </div>               
+               <p>タグ付き PDF 文書で次の手順を実行する。</p>
                <ol>
                   
                   <li>
                      
-                     <p> Open the Pages panel by either:</p>
+                     <p>次のいずれかの方法で［ページ］パネルを開く。</p>
                      
                      <ul>
                         
-                        <li> Clicking the Pages icon 
+                        <li>ページアイコンをクリック
                            
-                           <img src="img/pages-icon.jpg" alt="Pages icon in the upper left of the Adobe Acrobat Pro navigation pane" />
+                           <img src="img/pages-icon.jpg" alt="スクリーンショット: Adobe Acrobat Pro のナビゲーションウィンドウの左上にあるページのアイコン" />
                            
                            
                         </li>
                         
-                        <li> Or selecting View &gt; Navigation Panels &gt; Pages </li>
+                        <li>表示 &gt; ナビゲーションパネル &gt; ページを選択
+                        </li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li> Select one or more page thumbnails. </li>
+                  <li>一つまたは複数のページサムネイルを選択する。</li>
                   
-                  <li> Access the context menu for the selected thumbnail(s) and select
-                     						Page Properties... 
+                  <li>選択したサムネイルのコンテキストメニューから［ページのプロパティ］を選択する。
                   </li>
                   
-                  <li> Select the Tab Order tab in the Page Properties dialog. </li>
+                  <li>［ページのプロパティ］ダイアログボックスの［タブの順序］タブを選択する。</li>
                   
-                  <li> If needed, select a tab order option: </li>
+                  <li>必要に応じて、タブの順序オプションを選択する。</li>
                   
                </ol>
                <table id="PDF3_options">
@@ -195,35 +171,20 @@
                      			
                      <tr>
                         				
-                        <th> Option </th>
+                        <th>オプション</th>
                         				
-                        <th> Description </th>
+                        <th>説明</th>
                         			
                      </tr>
                      			
                      <tr>
                         				
                         <td>
-                           					<strong>Use Row Order</strong> 
+                           					<strong>行の順序を使用</strong> 
                            				
                         </td>
                         				
-                        <td> Tabs from the upper left field, moving first left to right
-                           					and then down, one table row at a time. 
-                        </td>
-                        			
-                     </tr>
-                     			
-                     <tr>
-                        				
-                        <td>
-                           					<strong>Use Column Order</strong> 
-                           				
-                        </td>
-                        				
-                        <td> Tabs from the upper left field, moving first from top to
-                           							bottom and then across from left to right, one table column
-                           					at a time. 
+                        <td>左上のフィールドからタブ移動を開始して、まず左から右に移動し、次に表の行を 1 行ずつ下に移動する。
                         </td>
                         			
                      </tr>
@@ -231,17 +192,27 @@
                      <tr>
                         				
                         <td>
-                           					<strong>Use Document Structure</strong> 
+                           					<strong>列の順序を使用</strong> 
                            				
                         </td>
                         				
-                        <td> For tagged documents, moves in the tag order specified by
-                           								the authoring application.
+                        <td>左上のフィールドからタブ移動を開始して、まず上から下に移動し、次に表の列を左から右に 1 列ずつ移動する。
+                        </td>
+                        			
+                     </tr>
+                     			
+                     <tr>
+                        				
+                        <td>
+                           					<strong>文書構造を使用</strong> 
+                           				
+                        </td>
+                        				
+                        <td>タグ付き文書では、オーサリングアプリケーションで指定されたタグ順序で移動する。
                            					
                            <div class="note">
-                              <div role="heading" class="note-title marker" aria-level="4">Note</div>
-                              <p>This is usually the correct reading
-                                 									order and will be selected by default for tagged documents. 
+                              <div role="heading" class="note-title marker" aria-level="4">注記</div>
+                              <p>通常はこれが正しい読み上げ順序であり、タグ付き文書に対してデフォルトで選択される。
                               </p>
                            </div>
                            				
@@ -252,15 +223,11 @@
                      <tr>
                         				
                         <td>
-                           					<strong>Unspecified</strong> 
+                           					<strong>指定しない</strong> 
                            				
                         </td>
                         				
-                        <td> If the document was created using an earlier version of
-                           									Acrobat Pro, the tab order is Unspecified by default. With
-                           									this setting, form fields are tabbed through first, followed
-                           									by links and then comments ordered by row. This may not be
-                           					correct reading order. 
+                        <td>Acrobat Pro の旧バージョンで作成された文書の場合は、タブ順序はデフォルトでは「指定しない」となる。この設定では、最初にフォームフィールドを順にタブ移動し、次にリンク、コメントが行の順にタブ移動する。これは正しい読み上げ順序ではないかもしれない。
                         </td>
                         			
                      </tr>
@@ -272,47 +239,36 @@
                   <img src="img/page-props.jpg" />
                   
                   
-                  <figcaption>Figure 3Page properties in Adobe Acrobat Professional. The choices are Use Row Order, Use
-                     Column Order, Use Document Structure, Unspecified. Use Document Structure is selected.
-                     This is also the default.
+                  <figcaption>図3. Adobe Acrobat Professionalのページプロパティ。選択肢は、 「Use Row Order」 、 「Use Column Order」 、 「Use Document Structure」 、 「Unspecified」 。「Use Document Structure」 が選択されている。デフォルトでもある。
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-reading-order/reading-order.docx">working example of setting the tab order (Word file)</a> and <a href="../../working-examples/pdf-reading-order/reading-order.pdf">working example of setting the tab order (PDF file)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order.docx">タブ順序設定のサンプル (Word ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-reading-order/reading-order.pdf">タブ順序設定のサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-4-repairing-the-reading-order-using-the-tags-panel-in-adobe&#xA;----&#x9;&#x9;&#x9;&#x9;acrobat-9-pro">
-               <h3>Example 4: Repairing the reading order using the Tags panel in Adobe
-                  				Acrobat 9 Pro
+               <h3>事例 4: Adobe Acrobat 9 Pro のタグパネルを使用して読み上げ順序を修正する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software
-                  					tools that perform similar functions. See the list of other software
-                  					tools in PDF Authoring Tools that Provide Accessibility Support
-                  					(http://trace.wisc.edu/wcag_wiki/index.php?title=PDF_Technology_Notes).
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「<a href="http://trace.wisc.edu/wcag_wiki/index.php?title=PDF_Technology_Notes">アクセシビリティがサポートされている PDF オーサリングツール</a>」を参照のこと。
                </p>
-               <p>To correct the reading order in Example 5, use the Tags panel, and either</p>
+               <p>事例 5 の読み上げ順序を修正するには、［タグ］パネルで次のいずれかの操作を行う。</p>
                <ul>
                   
-                  <li>Drag-and-drop the <code class="el">H1</code> tag to precede the required-field text
-                     						(tagged <code class="el">H2</code>), or
+                  <li><code class="el">H1</code> タグを必須フィールドのテキスト (<code class="el">H2</code> タグ) の前にドラッグ＆ドロップ
                   </li>
                   
-                  <li>Cut-and-paste the <code class="el">H2</code> tag to follow the <code class="el">H1</code> tag.
+                  <li><code class="el">H2</code> タグを切り取り、<code class="el">H1</code> タグの後に貼り付け
                   </li>
                   
                </ul>
-               <p>In the following image, the reading order is correct for the text and
-                  								header. That is, the content elements <code class="el">H1</code> and <code class="el">H2</code> have been switched
-                  								into the correct reading order.
+               <p>次の画像では、テキストと見出しの読み上げ順序が正しくなっている。つまり、コンテンツのエレメント <code class="el">H1</code> と <code class="el">H2</code> が、正しい読み上げ順序に従って入れ替えられたことになる。
                </p>
                <figure id="figure-acrobat-reading-order">
                   <img src="img/tab-order.jpg" />
                   
                   
-                  <figcaption>Figure 4Image showing the corrected reading order In
-                     						Adobe Acrobat Pro. The tags <code class="el">H1</code> and <code class="el">H2</code> have been switched and are
-                     							now in the correct order.
+                  <figcaption>図4. Adobe Acrobat Pro で修正された読み上げ順序を示す画像。タグ <code class="el">H1</code> と <code class="el">H2</code> が切り替えられ、正しい順序になった。
                   </figcaption>
                   
                   
@@ -320,13 +276,12 @@
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>この参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.8 (Tagged PDF) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
-                     					1.7 (ISO 32000-1)</a> 
-                  
+                     					1.7 (ISO 32000-1)</a>
                </li>
                
                <li>
@@ -342,40 +297,35 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G57">G57: Ordering the content in a meaningful sequence</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G57.html">G57: コンテンツを意味のある順序で並べる</a></li>
                
-               <li><a href="../general/G59">G59: Placing the interactive elements in an order that follows sequences and relationships
-                     within the content</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G59.html">G59: コンテンツ内の順番及び関係に従った順序で、インタラクティブな要素を配置する</a></li>
                
-               <li><a href="../general/G202">G202: Ensuring keyboard control for all functionality</a></li>
+               <li><a href="https://waic.jp/docs/WCAG-TECHS/G202.html">G202: すべての機能に対してキーボード制御を確保する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> Verify that the content is in the correct reading order by one
-                        					of the following:
+                     <p>次のいずれかの方法で、コンテンツが正しい読み上げ順序になっていることを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> Read the PDF document with a screen reader or a tool that reads aloud, listening
-                           to hear that each element is read in
-                           						the correct order. 
+                        <li>スクリーンリーダーまたは読み上げ機能があるツールを使用して PDF 文書を読み上げ、各エレメントが正しい順序で読み上げられていることを確認する
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           							API, and verify that the reading order is correct. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用して、読み上げ順序が正しいことを確認する
                         </li>
                         
                      </ul>
@@ -384,17 +334,14 @@
                   
                   <li>
                      
-                     <p> Verify that the tab order is correct for focusable content by
-                        					one of the following:
+                     <p>次のいずれかの方法で、フォーカス可能なコンテンツのタブ順序が正しいことを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> Use the tab key to traverse the focus order in the document. </li>
+                        <li>Tab キーを使用して、文書内のフォーカス順序をトラバースする。</li>
                         
-                        <li> Use a tool that is capable of showing the page object entry
-                           						that specifies the tab order setting to open the PDF document
-                           						and view the setting. 
+                        <li>タブ順序設定を指定するページオブジェクトのエントリを表示できるツールを使用して、PDF 文書を開き、設定を表示する。
                         </li>
                         
                      </ul>
@@ -405,11 +352,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 and Check #2 are true. </li>
+                  <li>1. 及び 2. の結果が真である。</li>
                   
                </ul>
                
