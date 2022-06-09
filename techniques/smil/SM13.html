@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>SM13: Providing sign language interpretation through synchronized video
-         streams in SMIL 1.0
+      <title>SM13: SMIL 1.0 で、同期した映像ストリームを通じて手話通訳を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,63 +11,49 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="SM12">Previous Technique: SM12</a></li>
-            <li><a href="SM14">Next Technique: SM14</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="SM12">前の達成方法: SM12</a></li>
+            <li><a href="SM14">次の達成方法: SM14</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing sign language interpretation through synchronized video
-         streams in SMIL 1.0
+      <h1>SMIL 1.0 で、同期した映像ストリームを通じて手話通訳を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p> Applies whenever SMIL 1.0 player is available </p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/sign-language-prerecorded">Success Criterion 1.2.6: Sign Language (Prerecorded)</a> (Sufficient as a way to meet <a href="../general/G81">G81: Providing a synchronized video of the sign language interpreter that can be displayed
-                     in a different viewport or overlaid on the image by the player</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>SMIL 1.0 プレーヤーが利用可能な場合</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/sign-language-prerecorded">達成基準 1.2.6: 手話 (収録済)</a> (<a href="../general/G81">G81: プレーヤーによって別のビューポートに表示する、又は画像上に重ねることのできる、手話通訳の同期した映像を提供する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide a way for people who are deaf
-               or otherwise have trouble hearing the dialogue in audio visual material to be
-               able to view the material. With this technique all of the dialogue and
-               important sounds are available in a sign-language interpretation video that
-               is displayed in a caption area. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、耳が聞こえないか、またはそうでなくとも、視聴覚コンテンツにおいて発話を聞くことに問題のある利用者に、コンテンツを閲覧できる方法を提供することである。この達成方法では、発話と重要な音の全てがキャプション領域に表示される手話通訳の映像によって入手できる。 
             </p>
-            <p> With SMIL 1.0, separate regions can be defined for the two videos. The two
-               video playbacks are synchronized, with the content video displayed in one
-               region of the screen, while the corresponding sign-language interpretation
-               video is displayed in another region. 
+            <p>SMIL 1.0 では、二つの映像のために別々の領域を定義できる。二つの映像再生が同期していて、画面の一つの領域に本編のビデオを表示し、もう一つの領域に本編に対する手話通訳の映像を表示する。
             </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-smil-1.0-sign-language-interpretation-sample-for-quicktime&#xA;----------------------------player-">
-               <h3>Example 1: SMIL 1.0 sign-language interpretation sample for QuickTime
-                  player 
+               <h3>例 1: QuickTime プレーヤーでの SMIL 1.0 による手話通訳のサンプル
                </h3><pre xml:space="preserve"> 
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;smil xmlns:qt="http://www.apple.com/quicktime/resources/smilextensions" 
@@ -92,7 +77,7 @@
   &lt;/body&gt;
 &lt;/smil&gt;</pre></section>
             <section class="example" id="example-2-smil-1.0-sign-language-sample-for-realmedia-player">
-               <h3>Example 2: SMIL 1.0 sign-language sample for RealMedia player:</h3><pre xml:space="preserve"> 
+               <h3>例 2: RealMedia プレーヤーでの SMIL 1.0 手話のサンプル</h3><pre xml:space="preserve"> 
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;smil xmlns="https://www.w3.org/TR/REC-smil"&gt;
   &lt;head&gt;
@@ -112,20 +97,13 @@
       src="salesdemo_si.mov" alt="Sales Demo Sign Language Interpretation"/&gt;
     &lt;/par&gt;
   &lt;/body&gt;
-&lt;/smil&gt;</pre><p> The example shows a &lt;par&gt; segment
-                  containing two &lt;video&gt; tags. The
-                  system-captions attribute indicates that the sign language video
-                  should be displayed when the user's player setting for captions
-                  indicates the preference for captions to be displayed. The
-                  &lt;layout&gt; section defines the regions
-                  used for the main video and the sign language interpretation video.
-                  
+&lt;/smil&gt;</pre><p>この事例では、二つの &lt;video&gt; タグを含む &lt;par&gt; セグメントを示している。system-captions 属性は、利用者のプレーヤーの字幕設定が、字幕を表示する選択になっているとき、手話の映像が表示されるべきであることを示す。&lt;layout&gt; セクションは、本編の映像と手話通訳の映像に割り当てる領域を定義している。
                </p>
             </section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> 
@@ -151,38 +129,36 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="SM14">SM14: Providing sign language interpretation through synchronized video streams in SMIL
-                     2.0</a></li>
+               <li><a href="SM14">SM14: SMIL 2.0 で、同期した映像ストリームを通じて手話通訳を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
-                  <li> Enable control in content or player to turn on sign language
-                     interpretation (unless it is always shown) 
+                  <li>(手話通訳が常に表示される場合を除いて、) 手話通訳が表示されるように、コンテンツ内又はプレーヤーのコントロールを有効にする。
                   </li>
                   
-                  <li> Play file with sign-language interpretation </li>
+                  <li>手話通訳を含むファイルを再生する。</li>
                   
-                  <li> Check whether sign language interpretation is displayed </li>
+                  <li>手話通訳が表示されるかどうかを確認する。</li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li> #3 is true </li>
+                  <li>#3 の結果が真である。</li>
                   
                </ul>
                
