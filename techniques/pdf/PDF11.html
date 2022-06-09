@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF11: Providing links and link text using the Link annotation and the /Link structure element
-         in PDF documents
+      <title>PDF11: PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,235 +11,201 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF10">Previous Technique: PDF10</a></li>
-            <li><a href="PDF12">Next Technique: PDF12</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF10">前の達成方法: PDF10</a></li>
+            <li><a href="PDF12">次の達成方法: PDF12</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing links and link text using the Link annotation and the /Link structure element
-         in PDF documents
+      <h1>PDF 文書内で Link アノテーションと /Link 構造要素を使用してリンクとリンクテキストを提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>PDF documents that contain links</p>
-            <p>This technique relates to:</p>
+            <h2>適用 (対象)</h2>
+            <p>リンクを含む PDF 文書</p>
+            <p>これは、次の達成基準に関する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">Success Criterion 1.3.1: Info and Relationships</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/info-and-relationships">達成基準 1.3.1: 情報及び関係性</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">Success Criterion 2.1.1: Keyboard</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/keyboard">達成基準 2.1.1: キーボード</a> (書かれていない達成方法を満たす手段として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">Success Criterion 2.4.4: Link Purpose (In Context)</a> (Sufficient as a way to meet <a href="../general/G91">G91: Providing link text that describes the purpose of a link</a>)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-in-context">達成基準 2.4.4: リンクの目的 (コンテキスト内)</a> (<a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a>の達成方法として十分)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">Success Criterion 2.4.9: Link Purpose (Link Only)</a> (Sufficient as a way to meet an unwritten technique)
+               <li><a href="https://waic.jp/docs/WCAG21/Understanding/link-purpose-link-only">達成基準 2.4.9: リンクの目的 (リンクのみ)</a> (書かれていない達成方法を満たす手段として十分)
                </li>
             </ul>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The purpose of this technique is to show how link text in PDF documents
-               				can be marked up to be recognizable by keyboard and assistive technology
-               				users. That is, the link information is programmatically available
-               				to user agents so that links are recognizable when presented in a different
-               				format. This is typically accomplished by using a tool for authoring
-               				PDF. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、キーボードおよび支援技術の利用者が認識できるように PDF 文書内のリンクテキストをマークアップする方法を示すことである。つまり、リンクが別の形式で表示されたときに認識可能であるように、リンク情報をプログラム的に利用可能にする。これは通常、PDF のオーサリングツールを使用して行う。 
             </p>
-            <p>Links in PDF documents are represented by a Link tag and objects in
-               				its sub-tree, consisting of a link object reference (or Link annotation)
-               				and one or more text objects. The text object or objects inside the
-               				Link tag are used by assistive technologies to provide a name for the
-               				link. 
+            <p>PDF 文書内のリンクは、そのサブツリー内のリンクタグおよびオブジェクトで表わされ、リンクオブジェクト参照 (リンク注釈) と 一つまたは複数のテキストオブジェクトで構成される。リンクタグ内のテキストオブジェクトまたはオブジェクトは、リンクの名前を提供するために支援技術で使用される。
             </p>
-            <p>The simplest way to provide links that comply with the WCAG success
-               				criteria is to create them when authoring the document, before conversion
-               				to PDF. 
+            <p>WCAG 達成基準に適合するリンクを提供する最も容易な方法は、PDF に変換する前の、文書をオーサリングする段階でリンクを作成することである。
             </p>
-            <p>However, in some cases, it may not be possible to create the links
-               				using the original authoring tool. In these cases, Adobe Acrobat Pro
-               				can be used to create the link. But, because the tooltip created using
-               				the Link dialog in Adobe Acrobat Pro is not accessible to screen readers,
-               				be sure that the link text or the link context makes the purpose clear. 
+            <p>ただし、元のオーサリングツールを使用してリンクを作成することができない場合もある。そのような場合は、Adobe Acrobat Pro を使用してリンクを作成することができる。ただし、Adobe Acrobat Pro のリンクダイアログボックスを使用して作成したツールヒントは、スクリーンリーダーからアクセスできないため、そのリンクテキストまたはリンクの文脈で目的を明確にすること。
             </p>
-            <p>In all cases, link purpose should be made clear as described in the
-               				general techniques: 
+            <p>いかなる場合でも、次の一般的なテクニックで説明されているように、リンクの目的を明確にする必要がある。
             </p>
             <ul>
                
                <li> 
-                  <a href="../general/G53">G53: Identifying the purpose of a link using link text combined with the text of the enclosing
-                     sentence</a> 
+                  <a href="../general/G53">G53: リンクテキストとそれが含まれている文中のテキストとを組み合わせて、リンクの目的を特定する</a> 
                   
                </li>
                
                <li> 
-                  <a href="../general/G91">G91: Providing link text that describes the purpose of a link</a> 
+                  <a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a> 
                   
                </li>
                
             </ul>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-creating-a-hyperlink-in-microsoft-word-2007-before-conversion&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;to-pdf">
-               <h3>Example 1: Creating a hyperlink in Microsoft Word 2007 before conversion
-                  					to PDF
+               <h3>例 1: PDF に変換する前に Microsoft Word 2007 でハイパーリンクを作成する
                </h3>
-               <p>This example is shown with Microsoft Word. There are other software tools that perform
-                  similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Microsoft Word の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>To create a hyperlink in Microsoft Word, first locate the item (e.g.,
-                  						web page) to link to. Then: 
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
+               <p>Microsoft Word でハイパーリンクを作成するには、まずリンク先の項目 (Web ページなど) を特定する。次に、以下の作業を行う。
                </p>
                <ol>
                   
                   <li>
                      
-                     <p> Either</p>
+                     <p>次のいずれかの作業を行う</p>
                      
                      <ul>
                         
-                        <li>Select Insert on the ribbon and select Hyperlink in the Links
-                           							tools 
+                        <li>リボン上にある「挿入」を選択し、リンクツールの「ハイパーリンク」を選択する 
                         </li>
                         
-                        <li>Or, use the CTRL+K keyboard shortcut </li>
+                        <li>Ctrl + K キーボードショートカットを使用する</li>
                         
                      </ul>
                      
                   </li>
                   
-                  <li> On the Insert Hyperlink dialog, add the link destination and link
-                     						text. 
+                  <li>ハイパーリンクの挿入ダイアログボックスで、リンク先とリンクテキストを追加する
                   </li>
                   
-                  <li> Save the file as tagged PDF. (See the <a href="#pdf_notes"></a>.) 
+                  <li> タグ付き PDF としてファイルを保存する (「<a href="#pdf_notes">PDF テクノロジーノート</a>」を参照のこと。) 
                   </li>
                   
                </ol>
             </section>
             <section class="example" id="example-2-creating-a-hyperlink-in-openoffice.org-writer-2.2-before&#xA;----&#x9;&#x9;&#x9;&#x9;conversion-to-pdf">
-               <h3>Example 2: Creating a hyperlink in OpenOffice.org Writer 2.2 before
-                  				conversion to PDF
+               <h3>例 2: PDF に変換する前に OpenOffice.org Writer 2.2 でハイパーリンクを作成する
                </h3>
-               <p>This example is shown with OpenOffice.org Writer. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は OpenOffice.org Writer の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
                <ol>
                   
-                  <li> On the Insert menu, select Hyperlink. </li>
+                  <li>［挿入］メニューの［ハイパーリンク］を選択する</li>
                   
-                  <li> In the Hyperlink dialog, insert the target URI in the Target field
-                     						under Hyperlink Type. 
+                  <li>［ハイパーリンク］ダイアログボックスで、「ハイパーリンクの種類」の「ターゲット」フィールドにリンク先の URI を挿入する
                   </li>
                   
-                  <li> Insert the link text in the Text field under Further Settings.
-                     							(You can also select the link text from the document text before
-                     							bringing up the dialog. The Text field will be filled in with the
-                     							selected text.) 
+                  <li> 「詳細設定」の「テキスト」フィールドにリンクテキストを挿入する (このダイアログボックスを表示する前に、文書のテキストからリンクテキストを選択することもできる。選択したテキストが「テキスト」フィールドに挿入される)
                   </li>
                   
-                  <li> Save the file as tagged PDF. (See the <a href="#pdf_notes"></a>.) 
+                  <li>タグ付き PDF としてファイルを保存する (「<a href="#pdf_notes">PDF テクノロジーノート</a>」を参照のこと)  
                   </li>
                   
                </ol>
             </section>
             <section class="example" id="example-3-creating-a-hyperlink-using-the-create-link-dialog-in-adobe&#xA;----&#x9;&#x9;&#x9;&#x9;acrobat-9-pro">
-               <h3>Example 3: Creating a hyperlink using the Create Link dialog in Adobe
-                  				Acrobat 9 Pro
-               </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <h3>例 3: Adobe Acrobat 9 Pro でリンクの作成ダイアログボックスを使用してハイパーリンクを作成する               </h3>
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
                <ol>
                   
-                  <li> Select the text that will become the link text. </li>
+                  <li>リンクテキストにするテキストを選択する </li>
                   
-                  <li> Access the context menu and select Create Link. </li>
+                  <li>コンテキストメニューから［リンクの作成］を選択する</li>
                   
                </ol>
                <figure id="figure-pdf-text-hyperlink">
                   <img src="img/capelink1.jpg" />
                   
                   
-                  <figcaption>Figure 1Image of a PDF document with text selected to create a hyperlink. The context menu
-                     shows Create Link selected.
+                  <figcaption>図 1 ハイパーリンクを作成するためにテキストを選択した PDF 文書のイメージ。コンテキストメニューでは［リンクの作成］が選択されている。
                   </figcaption>
                   
                   
                </figure>
-               <p>3. Follow the instructions in the Create Link dialog to specify the
-                  						link appearance, as shown below. 
+               <p>3. リンクの作成ダイアログボックスの指示に従い、以下に示されているように、リンクの外観を指定する
                </p>
                <figure id="figure-acrobat-create-link">
                   <img src="img/capelink2.jpg" />
                   
                   
-                  <figcaption>Figure 2Image of a PDF document with the Create Link dialog open and link appearance options
-                     selected.
+                  <figcaption>図 2 リンクの作成ダイアログを開き、リンクの外観オプションを選択した状態の PDF文書 のイメージ。
                   </figcaption>
                   
                   
                </figure>
-               <p>Then select Next and specify the URI. The image below shows the resulting
-                  						hyperlink and tooltip. 
+               <p>「次へ」を選択し、URI を指定する。次の画像は、結果として表示されるハイパーリンクとツールヒントを示している。
                </p>
                <figure id="figure-hyperlink-create-link-dialog">
                   <img src="img/capelink3.jpg" />
                   
                   
-                  <figcaption>Figure 3Image of a PDF document with a hyperlink created using the Create Link dialog, including
-                     the resulting tooltip on mouseover.
+                  <figcaption>図 3 リンクの作成ダイアログでハイパーリンク (マウスオーバー時のツールチップを含む) を作成した PDF 文書のイメージ。
                   </figcaption>
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-links/links.pdf">working example of creating a hyperlink in PDF</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-links/links.pdf">PDF でハイパーリンクを作成したサンプル (PDF ファイル)<a> がある。
                </p>
             </section>
             <section class="example" id="example-4-marking-up-link-text-using-a-/link-structure-element">
-               <h3>Example 4: Marking up link text using a /Link structure element</h3>
-               <p>Link annotations in PDF documents are associated with a geometric
-                  						region of a page rather than a particular object in a content stream.
-                  						For this reason, link annotations alone are not useful for users with
-                  						visual impairments, or to applications that must determine which content
-                  						can be activated to invoke a hypertext link. 
+               <h3>例 4: /Link 構造エレメントを使用してリンクテキストをマークアップする</h3>
+               <p>PDF 文書内のリンク注釈は、コンテンツストリームの特定のオブジェクトではなくページの幾何学的領域に関連付けられる。このため、リンク注釈は単独では、視覚障害のある利用者、またはハイパーテキストリンクを起動するためにどのコンテンツをアクティブ化できるのかを判断する必要のあるアプリケーションにとって有用ではない。 
                </p>
-               <p>Tagged PDF /Link elements use PDF's logical structure to establish
-                  						the association between content items and link annotations, providing
-                  						functionality comparable to HTML hypertext links. 
+               <p>タグ付き PDF の /Link エレメントは、PDF の論理構造を使用してコンテンツ項目とリンク注釈の間の関連付けを確立し、HTML ハイパーテキストリンクに相当する機能を提供する。 
                </p>
-               <p>In HTML, the following example produces text containing a hypertext
-                  						link: 
+               <p>HTML の場合、次の事例はハイパーテキストリンクを含むテキストを生成する。 
                </p><pre xml:space="preserve">Here is some text &lt;a href="https://www.w3.org/WAI/"&gt; with a link &lt;/a&gt; inside.
-</pre><p>In PDF the page must be painted first and then a link annotation
-                  						placed over the area where the object action will occur. 
+</pre><p>PDF の場合、最初にページが表現され、オブジェクトアクションが発生する領域にリンク注釈が配置される必要がある。
                </p>
-               <p>The following code fragment shows PDF equivalent to the HTML above;
-                  						it uses link text displayed in blue and underlined. A second code fragment
-                  						follows, indicating the associated logical structure hierarchy. This
-                  						is typically accomplished by an authoring tool. 
+               <p>次のコードフラグメントは、アンダーラインの付いた青色で表示されるリンクテキストを使用する、上述の HTML に相当する PDF を示している。次に続く 2 番目のコードフラグメントは、関連付けられた論理構造階層を示している。これは通常、オーサリングツールを使用して行う。
                </p><pre xml:space="preserve"> /P &lt;&lt;/MCID 0&gt;&gt;                                                %Marked Content Sequence 0 (paragraph)
   BDC                                                          %Begin marked content sequence
    BT                                                          %Begin text object
@@ -282,9 +247,7 @@
     [( )] TJ                                                   %empty text string showing white space
    ET                                                          %end text object
   EMC                                                          %end marked content sequence 
-  </pre><p> The following code fragment is an excerpt from the logical structure
-                  						that establishes the association between the content items and the
-                  						link annotation: 
+  </pre><p> 次のコードフラグメントは、コンテンツ項目とリンク注釈の間の関連付けを確立する論理構造からの抜粋である。 
                </p><pre xml:space="preserve"> 11 0 obj                                              %Object ID 11, generation   0, obj keyword
   &lt;&lt;/K[1                                               %immediate child of the structure tree root
    &lt;&lt;
@@ -320,8 +283,8 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.8.4.4.2 (Link Elements) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -337,62 +300,53 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G53">G53: Identifying the purpose of a link using link text combined with the text of the enclosing
-                     sentence</a></li>
+               <li><a href="../general/G53">G53: リンクテキストとそれが含まれている文中のテキストとを組み合わせて、リンクの目的を特定する</a></li>
                
-               <li><a href="../general/G91">G91: Providing link text that describes the purpose of a link</a></li>
+               <li><a href="../general/G91">G91: リンクの目的を説明したリンクテキストを提供する</a></li>
                
-               <li><a href="PDF13">PDF13: Providing replacement text using the /Alt entry for links in PDF documents</a></li>
+               <li><a href="PDF13">PDF13: PDF 文書内のリンクに対して /Alt エントリを使用して置換テキストを提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
-               <p>For each hyperlink, verify that the link is correctly tagged and the
-                  					link text is properly exposed: 
+               <p>各ハイパーリンクについて、リンクが正しくタグ付けされており、リンクテキストが適切に表示されることを確認する。 
                </p>
                
                <ol>
                   
-                  <li> Read the PDF document with a screen reader, listening to hear
-                     					that the link is read correctly and that it describes the purpose
-                     					of the link (i.e., its destination). 
+                  <li>PDF 文書をスクリーンリーダーで読み上げると、リンクが正しく読み上げられ、リンクの目的 (例えば、リンク先) が説明されている。
                   </li>
                   
-                  <li> Visually scan the tag tree to verify that the link is tagged correctly
-                     						and the link text is exposed (for screen magnifier users and sighted
-                     						users with cognitive disabilities). 
+                  <li>タグツリーを視覚的にスキャンすると、リンクが正しくタグ付けされ、(スクリーン拡大鏡の利用者と、認知障害があるが視力のある利用者向けに) リンクテキストが表示される。
                   </li>
                   
-                  <li> Use a tool that is capable of showing the /Link entry value to
-                     							open the PDF document and view the hyperlink and link text. 
+                  <li>/Link エントリ値を表示できるツールを使用して PDF 文書を開き、ハイパーリンクとリンクテキストを表示する。
                   </li>
                   
-                  <li> Use a tool that exposes the document through the accessibility
-                     								API and verify that the link has the correct link text. 
+                  <li> アクセシビリティ API を通じて文書を表示するツールを使用し、リンクに正しいリンクテキストがあることを確認する。
                   </li>
                   
-                  <li> Tab to each link and check that it can be followed to its target
-                     									by pressing Enter. 
+                  <li>各リンクにタブ移動し、Enter を押すことによりそのリンク先にアクセスできる。 
                   </li>
                   
                </ol>
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>#1 or #2 or #3 or #4 is true.</li>
+                  <li>#1 又は #2 又は #3 又は #4 の結果が真である。</li>
                   
-                  <li>#5 is true.</li>
+                  <li>#5 の結果が真である。</li>
                   
                </ul>
                
