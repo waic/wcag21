@@ -2,8 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>PDF8: Providing definitions for abbreviations via an E entry for a structure
-         			element
+      <title>PDF8: 構造要素の E エントリによって略語の定義を提供する
       </title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="../techniques.css" />
@@ -12,124 +11,93 @@
    <body>
       <nav>
          <ul id="navigation">
-            <li><a href="../#techniques" title="Table of Contents">Contents</a></li>
-            <li><a href="../#introduction" title="Introduction to Techniques">Intro</a></li>
-            <li><a href="PDF7">Previous Technique: PDF7</a></li>
-            <li><a href="PDF9">Next Technique: PDF9</a></li>
+            <li><a href="../#techniques" title="Table of Contents">目次</a></li>
+            <li><a href="../#introduction" title="Introduction to Techniques">イントロダクション</a></li>
+            <li><a href="PDF7">前の達成方法: PDF7</a></li>
+            <li><a href="PDF9">次の達成方法: PDF9</a></li>
          </ul>
       </nav>
       <nav class="navtoc">
-         <p>On this page:</p>
+         <p>>このページのコンテンツ:</p>
          <ul id="navbar">
-            <li><a href="#important-information">Important Information about Techniques</a></li>
-            <li><a href="#applicability">Applicability</a></li>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#resources">Related Resources</a></li>
-            <li><a href="#related">Related Techniques</a></li>
-            <li><a href="#tests">Tests</a></li>
+            <li><a href="#important-information">達成方法に関する重要な情報</a></li>
+            <li><a href="#applicability">適用 (対象)</a></li>
+            <li><a href="#description">解説</a></li>
+            <li><a href="#examples">事例</a></li>
+            <li><a href="#resources">参考リソース</a></li>
+            <li><a href="#related">関連する達成方法</a></li>
+            <li><a href="#tests">検証</a></li>
          </ul>
       </nav>
-      <h1>Providing definitions for abbreviations via an E entry for a structure
-         			element
+      <h1>構造要素の E エントリによって略語の定義を提供する
       </h1>
       <section id="important-information">
-         <h2>Important Information about Techniques</h2>
-         <p>See <a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">Understanding Techniques for WCAG Success Criteria</a> for important information about the usage of these informative techniques and how
-            they relate to the normative WCAG 2.1 success criteria. The Applicability section
-            explains the scope of the technique, and the presence of techniques for a specific
-            technology does not imply that the technology can be used in all situations to create
-            content that meets WCAG 2.1.
+         <h2>達成方法に関する重要な情報</h2>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
          <section id="applicability">
-            <h2>Applicability</h2>
-            <p>Tagged PDF documents containing abbreviations or acronyms</p>
-            <p>This technique relates to <span><a href="https://waic.jp/docs/WCAG21/Understanding/abbreviations">Success Criterion 3.1.4: Abbreviations</a> (Sufficient as a way to meet <a href="../general/G102">G102: Providing the expansion or explanation of an abbreviation</a>)</span>.
+            <h2>適用 (対象)</h2>
+            <p>略語または頭字語を含んでいるタグ付き PDF 文書</p>
+            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/abbreviations">達成基準 3.1.4: 略語</a> (<a href="../general/G102">G102: 略語の元の語又は説明を提供する</a>の達成方法として十分)</span> に関する達成方法である。
             </p>
          </section>
          <section id="description">
-            <h2>Description</h2>
-            <p>The objective of this technique is to provide an expansion or definition
-               				of an abbreviation for the first occurrence of the abbreviation. For
-               				example, a reference to an abbreviation, such as   "WCAG," should
-               				be available as   "Web Content Accessibility Guidelines (WCAG)" on
-               				its first occurrence in a document. 
+            <h2>解説</h2>
+            <p>この達成方法の目的は、最初に出現した略語に対して略語の拡張または定義を提供することである。例えば、「WCAG」という略語の場合は、文書内で最初に出現したときに「Web Content Accessibility Guidelines (WCAG)」のように表記される必要がある。 
             </p>
-            <p>This is done by setting expansion text using an /E entry for a structure
-               				element, and is normally accomplished using a tool for authoring PDF.
-               				A Span structure element is typically used to tag the abbreviation,
-               				but the /E entry is valid with any structure element. 
+            <p>これを行うには、通常は PDF のオーサリングツールを使用して、構造エレメントに対して /E エントリを使用して拡張テキストを設定する。Span 構造エレメントは通常、略語のタグ付けに使用されるが、/E エントリ はすべての構造エレメントで有効である。
             </p>
-            <p>This technique is applicable for any abbreviation, including acronyms
-               				and initialisms. Note that on the first occurrence of the abbreviation,
-               				both the abbreviation and the expansion text must be provided. This
-               				will aid recognition of later use of the abbreviation. 
+            <p>この達成方法は、頭字語や頭文字語を含む、すべての略語に適用できる。この方法では、略語が最初に出現したときに、略語と拡張テキストの両方を表示させる必要がある。それによって、後で略語を使用したときに容易に認識できるようになる。 
             </p>
-            <p>PDF documents may be enhanced by providing expansions for abbreviations.
-               				In fact, such expansions are required for accessibility to ensure understanding
-               				by people who have difficulty decoding words; rely on screen magnification
-               				(which may obscure context); have limited memory; or who have difficulty
-               				using context to aid understanding. 
-            </p>
+            <p>PDF 文書は、略語に対する拡張テキストを提供することで強化される。実際に、単語の判読が困難な利用者、画面拡大表示 (コンテキストが不明瞭になる) が必要な利用者、記憶に障害がある利用者、またはコンテンツによる理解が困難な利用者が確実に理解できるようにするには、このようなアクセシビリティのための拡張が必要になる。            </p>
          </section>
          <section id="examples">
-            <h2>Examples</h2>
+            <h2>事例</h2>
             <section class="example" id="example-1-adding-an-/e-entry-to-an-abbreviation-using-adobe-acrobat&#xA;----&#x9;&#x9;&#x9;&#x9;&#x9;9-pro's-tags-panel">
-               <h3>Example 1: Adding an /E entry to an abbreviation using Adobe Acrobat
-                  					9 Pro's Tags panel
+               <h3>例 1: Adobe Acrobat 9 Pro のタグパネルを使用して、略語に /E エントリを追加する
                </h3>
-               <p>This example is shown with Adobe Acrobat Pro. There are other software tools that
-                  perform similar functions. See the list of other software tools in <a href="#pdf_notes_acc-sup_files_applications"></a>.
+               <p>この事例は Adobe Acrobat Pro の場合を示している。同様の機能を実行するソフトウェアツールは他にも存在する。他のソフトウェアツールのリストについては、「」を参照のこと。
                </p>
-               <p>In a tagged PDF document: </p>
+               <div class="note">
+               <div role="heading" class="note-title marker" aria-level="4">訳注:</div>
+               <div>
+               <p>上記「」に該当する記述が、WCAG 2.1 達成方法集の原文では削除されている。WCAG 2.0 達成方法集においては、<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html">PDF テクノロジーノート</a>の中に「<a href="https://waic.jp/docs/WCAG-TECHS/pdf_notes.html#pdf_notes_acc-sup_files_applications">アクセシビリティがサポートされている PDF オーサリングツール</a>」というセクションがある。</p>
+               </div>
+               </div>
+               
+               <p>タグ付き PDF 文書で次の手順を実行する。 </p>
                <ol>
                   
-                  <li> Select the Tags panel, using Views &gt; Navigation Panes &gt; Tags </li>
+                  <li>表示 &gt; ナビゲーションパネル &gt; タグを使用して［タグ］パネルを選択する</li>
                   
-                  <li>Select the first instance of the abbreviated text that needs to be expanded. If the
-                     selected text is part of a larger tag, access the Tags panel options menu, select
-                     Create Tag from Selection, and create a new Span tag. In this example, the text "WCAG2"
-                     (within the LBody tag) has been enclosed in a Span tag.
+                  <li>最初に出現する、拡張が必要な略語化されたテキストを選択する。選択したテキストが大きなタグの一部である場合には、［タグ］パネルのオプションメニューの「選択範囲からタグを作成」を選択し、新しい Span タグを作成する。この事例では、(LBody タグ内の)「WCAG2」というテキストが Span タグで囲まれている。
                   </li>
                   
-                  <li> In the Tags panel, access the context menu for the spanned text
-                     							and select Properties... to open the TouchUp Properties dialog for
-                     							the Span tag. 
+                  <li>［タグ］パネルで、拡張されたテキストのコンテキストメニューから「プロパティ」を選択し、Span タグの［TouchUp のプロパティ］ダイアログボックスを開く。
                   </li>
                   
-                  <li> On the Content tab of the TouchUp Properties dialog, enter the
-                     								expansion text, followed by the originally selected text. 
-                  </li>
+                  <li>［TouchUp のプロパティ］ダイアログボックスの［コンテンツ］タブに拡張テキストを入力し、最初に選択したテキストを入力する。</li>
                   
                </ol>
-               <p>The following image illustrates this technique: </p>
+               <p>次の画像はこの達成方法を示している。 </p>
                <figure id="figure-expansion-text">
                   <img src="img/abbr.jpg" />
                   
                   
-                  <figcaption>Figure 1The addition of expansion text to an abbreviation using the Tags panel. The text 'WCAG2.0'
-                     has been selected and a Span tag created for it. The expansion text 'Web Content Accessibility
-                     Guidelines (WCAG) 2.0' is entered as the expansion of 'WCAG2.0' using the TouchUp
-                     Properties dialog
-                  </figcaption> 
+                  <figcaption>図 1 ［タグ］パネルを用いた、拡張されたテキストの略語への追加。「WCAG2.0」というテキストが選択され、そのための Span タグが作成されている。拡張されたテキスト「Web Content Accessibility Guidelines (WCAG) 2.0」は、「WCAG2.0」の拡張として［TouchUp のプロパティ］ダイアログを用いて入力されている。</figcaption> 
                   
                   
                </figure>
-               <p class="working-example">This example is shown in operation in the <a href="../../working-examples/pdf-abbreviation-definitions/headers-definitions.docx">working example of Providing definitions for Abbreviations (Word document)</a>, <a href="../../working-examples/headers-definitions.odt">working example of Providing definitions for Abbreviations (OpenOffice document)</a>, and <a href="../../working-examples/pdf-abbreviation-definitions/headers-definitions.pdf">working example of Providing definitions for Abbreviations (PDF document)</a>.
+               <p class="working-example">この事例のサンプルとして、<a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-abbreviation-definitions/headers-definitions.docx">略語の定義を提供するサンプル (Word ファイル)</a>、<a href="https://www.w3.org/WAI/WCAG21/working-examples/headers-definitions.odt">略語の定義を提供するサンプル (OpenDocument テキスト ファイル)</a> と <a href="https://www.w3.org/WAI/WCAG21/working-examples/pdf-abbreviation-definitions/headers-definitions.pdf">略語の定義を提供するサンプル (PDF ファイル)</a> がある。
                </p>
             </section>
             <section class="example" id="example-2-using-a-/span-structure-element-with-an-/e-entry-to-define&#xA;----&#x9;&#x9;&#x9;&#x9;an-abbreviation">
-               <h3>Example 2: Using a /Span structure element with an /E entry to define
-                  				an abbreviation
-               </h3>
-               <p>The following code fragment illustrates code that is typical for using
-                  						the /Span structure element to define an abbreviation. 
+               <h3>例 2: /E エントリを含む /Span 構造エレメントを使用して略語を定義する               </h3>
+               <p>次のコードフラグメントは、/Span 構造エレメントを使用して略語を定義する一般的なコードを示している。
                </p>
-               <p>This example uses the sentence "Sugar is commonly sold in 5 lb
-                  						bags." The abbreviation "lb" is tagged as a /Span structure
-                  						element with an /E entry (typically accomplished by an authoring tool). 
+               <p>この事例では、「Sugar is commonly sold in 5 lb bags.」という文を使用している。略語「lb」は、/E エントリによって /Span 構造エレメントとしてタグ付けされている (通常、オーサリングツールを使用して行う)。
                </p><pre xml:space="preserve"> 1 0 obj                                  % structure element
    &lt;&lt; /Type /StructElemen
             /S /Span                      % element type
@@ -143,19 +111,13 @@
  endobj
 </pre></section>
             <section class="example" id="example-3-using-a-/th-structure-element-with-an-/e-entry-to-define&#xA;----&#x9;&#x9;&#x9;&#x9;an-abbreviation">
-               <h3>Example 3: Using a /TH structure element with an /E entry to define
-                  				an abbreviation
+               <h3>例 3: /E エントリを含む /TH 構造エレメントを使用して略語を定義する
                </h3>
-               <p>As noted in the Description, the /E entry is valid with any structure
-                  						element. 
+               <p>解説に記載されているように、/E エントリはすべての構造エレメントで有効である。 
                </p>
-               <p>The following code fragment illustrates code that is typical for using
-                  						an /E entry to define an abbreviation. 
+               <p>次のコードフラグメントは、/E エントリを使用して略語を定義する一般的なコードを示している。
                </p>
-               <p>A table that contains columns for each month uses abbreviations as
-                  						the values of column headers. The expansion for each abbreviation is
-                  						provided as the /E entry of the /TH structure element (typically accomplished
-                  						by an authoring tool). 
+               <p>各月の列を含むテーブルでは、列ヘッダーの値として略語が使用される。各略語を拡張したものが、/TH 構造エレメントの /E エントリとして提供される (通常、オーサリングツールを使用して行う)。
                </p><pre xml:space="preserve"> 1 0 obj                                  % structure element
    &lt;&lt; /Type /StructElemen
             /S /TH                        % element type
@@ -170,8 +132,8 @@
 </pre></section>
          </section>
          <section id="resources">
-            <h2>Resources</h2>
-            <p>Resources are for information purposes only, no endorsement implied.</p>
+            <h2>参考リソース</h2>
+            <p>参考リソースは、あくまでも情報提供のみが目的であり、推薦などを意味するものではない。</p>
             <ul>
                
                <li> Section 14.9.5 (Expansion of Abbreviations and Acronyms) in <a href="http://www.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF
@@ -193,64 +155,48 @@
             </ul>
          </section>
          <section id="related">
-            <h2>Related Techniques</h2>
+            <h2>関連する達成方法</h2>
             <ul>
                
-               <li><a href="../general/G102">G102: Providing the expansion or explanation of an abbreviation</a></li>
+               <li><a href="../general/G102">G102: 略語の元の語又は説明を提供する</a></li>
                
-               <li><a href="../general/G55">G55: Linking to definitions</a></li>
+               <li><a href="../general/G55">G55: 定義にリンクする</a></li>
                
-               <li><a href="../general/G62">G62: Providing a glossary</a></li>
+               <li><a href="../general/G62">G62: 用語集を提供する</a></li>
                
-               <li><a href="../general/G70">G70: Providing a function to search an online dictionary</a></li>
+               <li><a href="../general/G70">G70: オンライン辞書を検索する機能を提供する</a></li>
                
-               <li><a href="../general/G97">G97: Providing the first use of an abbreviation immediately before or after the expanded
-                     form</a></li>
+               <li><a href="../general/G97">G97: 略語の初出時、その直前又は直後に元の語を提供する</a></li>
                
             </ul>
          </section>
          <section id="tests">
-            <h2>Tests</h2>
+            <h2>検証</h2>
             <section class="procedure" id="procedure">
-               <h3>Procedure</h3>
+               <h3>手順</h3>
                
                <ol>
                   
                   <li>
                      
-                     <p> Verify that the first occurrence of abbreviations that require
-                        					expansion text have /E entries on an enclosing tag by one of the
-                        					following and that both the abbreviation and the expansion text are
-                        					provided:
+                     <p>次のいずれかの方法で、最初に出現した、拡張が必要な略語に /E エントリがタグによって指定されていること、また略語と拡張テキストの両方が入力されていることを確認する。
                      </p>
                      
                      <ul>
                         
-                        <li> In Windows, use Microsoft's Inspect.exe tool, or some other
-                           						tool that allows inspection of the MSAA interface, to locate
-                           						the text of the abbreviation in the document tree and ensure
-                           						that the value of the abbreviation is in the expansion text. 
+                        <li>Windows では、Microsoft の Inspect.exe ツール、または MSAA インタフェースの検査が可能なその他のツールを使用して、文書ツリー内の略語のテキストを特定し、略語の値が拡張テキスト内にあることを確認する。
                         </li>
                         
-                        <li> In a PDF editor, locate the tag
-                           							for the text that is the abbreviation, and check that an expansion
-                           							or definition is provided for each abbreviation in the Expansion
-                           							Text field in the corresponding tag's properties. 
+                        <li>PDF エディターでは、略語であるテキストのタグを特定し、対応するタグのプロパティの「拡張テキスト」フィールドにより、各略語に拡張や定義が提供されていることを確認する。 
                         </li>
                         
-                        <li> Read the PDF document with a screen reader, listening to hear
-                           								that on the first occurrence, the abbreviation and expansion
-                           								are read when the screen reader reads the content line-by-line. 
+                        <li>PDF 文書をスクリーンリーダーで読み上げると、コンテンツが 1 行単位で読み上げられるときに、最初に出現した略語および拡張テキストが読み上げられる。
                         </li>
                         
-                        <li> Use a tool that is capable of showing the /E entry value,
-                           									such as aDesigner to open the PDF document and view the GUI summary
-                           									to read the text expansions for abbreviations. 
+                        <li>/E エントリの値を表示できるツール (aDesigner など) を使用して PDF 文書を開き、GUI サマリを表示して、略語の拡張テキストを読んで確認する。
                         </li>
                         
-                        <li> Use a tool that exposes the document through the accessibility
-                           										API and verify that the text expansion of the abbreviation is
-                           										properly implemented. 
+                        <li>アクセシビリティ API を通じて文書を表示するツールを使用して、略語の拡張テキストが正しく実装されていることを確認する。 
                         </li>
                         
                      </ul>
@@ -261,11 +207,11 @@
                
             </section>
             <section class="results" id="expected-results">
-               <h3>Expected Results</h3>
+               <h3>期待される結果</h3>
                
                <ul>
                   
-                  <li>Check #1 is true. </li>
+                  <li>#1 の結果が真である。</li>
                   
                </ul>
                
