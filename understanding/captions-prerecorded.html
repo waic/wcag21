@@ -237,16 +237,15 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
-            <dt id="dfn-ascii-art">ascii art</dt>
+            <dt id="dfn-ascii-art">ASCII アート (ASCII art)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">picture created by a spatial arrangement of characters or glyphs (typically from the
-                     95 printable characters defined by ASCII)
+                  <p xmlns="http://www.w3.org/1999/xhtml">文字やグリフの空間的配置によって作られた図画 (典型的には、ASCII で定義されている 95 の印字可能文字から作られる)。
                      </p>
                   </definition>
             </dd>
-            <dt id="dfn-assistive-technology">assistive technology</dt>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
             <dd>
                <definition xmlns="">
 
@@ -255,64 +254,43 @@
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>functionality provided by assistive technology includes alternative presentations
-                        (e.g., as synthesized speech or magnified content), alternative input methods (e.g.,
-                        voice), additional navigation or orientation mechanisms, and content transformations
-                        (e.g., to make tables more accessible).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Assistive technologies often communicate data and messages with mainstream user agents
-                        by using and monitoring APIs.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>The distinction between mainstream user agents and assistive technologies is not absolute.
-                        Many mainstream user agents provide some features to assist individuals with disabilities.
-                        The basic difference is that mainstream user agents target broad and diverse audiences
-                        that usually include people with and without disabilities. Assistive technologies
-                        target narrowly defined populations of users with specific disabilities. The assistance
-                        provided by an assistive technology is more specific and appropriate to the needs
-                        of its target users. The mainstream user agent may provide important functionality
-                        to assistive technologies like retrieving Web content from program objects or parsing
-                        markup into identifiable bundles.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
                         </p>
                   </div>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Assistive technologies that are important in the context of this document include
-                     the following:
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
                      </p>
 
                   <ul xmlns="http://www.w3.org/1999/xhtml">
 
-                     <li>screen magnifiers, and other visual reading assistants, which are used by people with
-                        visual, perceptual and physical print disabilities to change text font, size, spacing,
-                        color, synchronization with speech, etc. in order to improve the visual readability
-                        of rendered text and images;
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
                         </li>
 
-                     <li>screen readers, which are used by people who are blind to read textual information
-                        through synthesized speech or braille;
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
                         </li>
 
-                     <li>text-to-speech software, which is used by some people with cognitive, language, and
-                        learning disabilities to convert text into synthetic speech;
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
                         </li>
 
-                     <li>speech recognition software, which may be used by people who have some physical disabilities;</li>
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
 
-                     <li>alternative keyboards, which are used by people with certain physical disabilities
-                        to simulate the keyboard (including alternate keyboards that use head pointers, single
-                        switches, sip/puff and other special input devices.);
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
                         </li>
 
-                     <li>alternative pointing devices, which are used by people with certain physical disabilities
-                        to simulate mouse pointing and button activations.
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
                         </li>
                      </ul>
                   </definition>
@@ -331,38 +309,37 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-audio-description">audio description</dt>
+            <dt id="dfn-audio-description">音声解説 (audio description)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">narration added to the soundtrack to describe important visual details that cannot
-                     be understood from the main soundtrack alone
+                  <p xmlns="http://www.w3.org/1999/xhtml">主音声のトラックだけでは理解できない重要で視覚的な詳細を説明するために、音声トラックに追加されたナレーション。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Audio description of <a href="#dfn-video">video</a> provides information about actions, characters, scene changes, on-screen text, and
-                        other visual content.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-video">映像</a>の音声解説は、動作、登場人物、場面の変化、画面上のテキスト、及びその他の視覚的なコンテンツに関する情報を提供する。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>In standard audio description, narration is added during existing pauses in dialogue.
-                        (See also <a href="#dfn-extended-audio-description">extended audio description</a>.)
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>標準的な音声解説では、ナレーションが会話の合間に挿入される。(<a href="#dfn-extended-audio-description">拡張音声解説</a>も参照。)
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Where all of the <a href="#dfn-video">video</a> information is already provided in existing <a href="#dfn-audio">audio</a>, no additional audio description is necessary.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-video">映像</a>情報のすべてが既存の<a href="#dfn-audio">音声</a>ですでに提供されている場合、補足の音声解説は不要である。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Also called "video description" and "descriptive narration."</p>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>"video description" や "descriptive narration" とも呼ばれる。</p>
+                     <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注</div><p>日本語では「音声ガイド」とも呼ばれる。</p></div>
                   </div>
+
                   </definition>
             </dd>
             <dt id="dfn-captions">キャプション (captions)</dt>
@@ -405,71 +382,66 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-extended-audio-description">extended audio description</dt>
+            <dt id="dfn-extended-audio-description">拡張音声解説 (extended audio description)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">audio description that is added to an audiovisual presentation by pausing the <a href="#dfn-video">video</a> so that there is time to add additional description
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-video">映像</a>を一時停止することで追加の説明を付加するための時間を確保し、視聴覚提示に付加した音声解説。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>This technique is only used when the sense of the <a href="#dfn-video">video</a> would be lost without the additional <a href="#dfn-audio-description">audio description</a> and the pauses between dialogue/narration are too short.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この達成方法は、追加の<a href="#dfn-audio-description">音声解説</a>がないと<a href="#dfn-video">映像</a>の意味が損なわれてしまい、かつ会話やナレーションの合間が短すぎる場合だけに用いられる。
                         </p>
                   </div>
                   </definition>
             </dd>
-            <dt id="dfn-human-language">human language</dt>
+            <dt id="dfn-human-language">自然言語 (human language)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">language that is spoken, written or signed (through visual or tactile means) to communicate
-                     with humans
+                  <p xmlns="http://www.w3.org/1999/xhtml">人間とコミュニケーションをとるための言語で、話される、書かれる、又は (視覚的あるいは触覚的な手段で) 手話にされるもの。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>See also <a href="#dfn-sign-language">sign language</a>.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-sign-language">手話</a>も参照。
                         </p>
                   </div>
                   </definition>
             </dd>
-            <dt id="dfn-image-of-text">image of text</dt>
+            <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">text that has been rendered in a non-text form (e.g., an image) in order to achieve
-                     a particular visual effect
+                  <p xmlns="http://www.w3.org/1999/xhtml">特定の視覚的効果を得るために非テキスト形式 (例えば画像) でレンダリングされたテキスト。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>This does not include <a href="#dfn-text">text</a> that is part of a picture that contains significant other visual content.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-text">テキスト</a>以外の部分が重要な視覚的コンテンツである場合、画像に含まれるテキストは該当しない。
                         </p>
                   </div>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">A person's name on a nametag in a photograph.</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">写真に写っている人の名札にある人名。</p>
                   </definition>
             </dd>
-            <dt id="dfn-live">live</dt>
+            <dt id="dfn-live">ライブ (live)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">information captured from a real-world event and transmitted to the receiver with
-                     no more than a broadcast delay
+                  <p xmlns="http://www.w3.org/1999/xhtml">現実の出来事から取り込まれ、放送遅延以上の遅延なく受け手に送信される情報。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>A broadcast delay is a short (usually automated) delay, for example used in order
-                        to give the broadcaster time to cue or censor the audio (or video) feed, but not sufficient
-                        to allow significant editing.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>放送遅延は、短時間の (通常は自動的な) 遅れで、例えば放送局に放送のタイミング[queue→cue]の調整や音声 (又は映像) の検閲のための時間を与えるものだが、意味のある編集ができるほどのものではない。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>If information is completely computer generated, it is not live.</p>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>もし情報が完全にコンピュータで生成されたものならば、それはライブではない。</p>
                   </div>
                   </definition>
             </dd>
@@ -487,17 +459,16 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-non-text-content">non-text content</dt>
+            <dt id="dfn-non-text-content">非テキストコンテンツ (non-text content)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">any content that is not a sequence of characters that can be <a href="#dfn-programmatically-determined">programmatically determined</a> or where the sequence is not expressing something in <a href="#dfn-human-language">human language</a>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びではないコンテンツ、又は文字の並びが<a href="#dfn-human-language">自然言語</a>においても何をも表現していないコンテンツ。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>This includes <a href="#dfn-ascii-art">ASCII Art</a> (which is a pattern of characters), emoticons, leetspeak (which uses character substitution),
-                        and images representing text
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>これには、 (文字による図画である) <a href="#dfn-ascii-art">ASCII アート</a>、顔文字、 (文字を置き換える) リートスピーク、文字を表現している画像が含まれる。
                         </p>
                   </div>
                   </definition>
@@ -511,30 +482,25 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-programmatically-determined">programmatically determined</dt>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">determined by software from author-supplied data provided in a way that different
-                     <a href="#dfn-user-agent">user agents</a>, including <a href="#dfn-assistive-technology">assistive technologies</a>, can extract and present this information to users in different modalities
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。
                      </p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Determined in a markup language from elements and attributes that are accessed directly
-                     by commonly available assistive technology.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。
                      </p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Determined from technology-specific data structures in a non-markup language and exposed
-                     to assistive technology via an accessibility API that is supported by commonly available
-                     assistive technology.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。
                      </p>
                   </definition>
             </dd>
-            <dt id="dfn-sign-language">sign language</dt>
+            <dt id="dfn-sign-language">手話 (sign language)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">a language using combinations of movements of the hands and arms, facial expressions,
-                     or body positions to convey meaning
+                  <p xmlns="http://www.w3.org/1999/xhtml">意味を伝えるために、手と腕の動き、顔の表情又は身振りなどの組み合わせを用いる言語。
                      </p>
                   </definition>
             </dd>
@@ -547,54 +513,50 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-text">text</dt>
+            <dt id="dfn-text">テキスト (text)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">sequence of characters that can be <a href="#dfn-programmatically-determined">programmatically determined</a>, where the sequence is expressing something in <a href="#dfn-human-language">human language</a>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びで、<a href="#dfn-human-language">自然言語</a>で何かを表現しているもの。
                      </p>
                   </definition>
             </dd>
-            <dt id="dfn-text-alternative">text alternative</dt>
+            <dt id="dfn-text-alternative">テキストによる代替 (text alternative)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">
-                     <a href="#dfn-text">Text</a> that is programmatically associated with <a href="#dfn-non-text-content">non-text content</a> or referred to from text that is programmatically associated with non-text content.
-                     Programmatically associated text is text whose location can be programmatically determined
-                     from the non-text content.
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-non-text-content">非テキストコンテンツ</a>とプログラムで関連付けられる<a href="#dfn-text">テキスト</a>。又は非テキストコンテンツとプログラムで関連付けられるテキストから参照されるテキスト。プログラムで関連付けられたテキストとは、その場所を、非テキストコンテンツからプログラムによる解釈が可能なテキストである。
                      </p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">An image of a chart is described in text in the paragraph after the chart. The short
-                     text alternative for the chart indicates that a description follows.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">チャートの画像があり、その直後の段落にテキストによる説明がある。チャートに対する短いテキストによる代替で後に説明があることを示している。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Refer to <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#text-alternatives">Understanding Text Alternatives</a> for more information.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>より詳細な情報は、 <a href="conformance.html#text-alternatives">「テキストによる代替」を理解する</a>を参照。
                         </p>
                   </div>
                   </definition>
             </dd>
-            <dt id="dfn-user-agent">user agent</dt>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">any software that retrieves and presents Web content for users</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Web browsers, media players, plug-ins, and other programs — including <a href="#dfn-assistive-technology">assistive technologies</a> — that help in retrieving, rendering, and interacting with Web content.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
                      </p>
                   </definition>
             </dd>
-            <dt id="dfn-video">video</dt>
+            <dt id="dfn-video">映像 (video)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">the technology of moving or sequenced pictures or images</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">写真や画像を動かしたり、連続して表示したりする技術。</p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Video can be made up of animated or photographic images, or both.</p>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>映像はアニメーション、実写、もしくはその両方で構成され得る。</p>
                   </div>
                   </definition>
             </dd>
