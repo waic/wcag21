@@ -3143,15 +3143,15 @@ details.respec-tests-details > li {
                 <dt><dfn data-dfn-type="dfn" id="dfn-general-flash-and-red-flash-thresholds">一般閃光閾値及び赤色閃光閾値 (general flash and red flash thresholds)</dfn></dt>
 <dd>
    
-   <p>次のいずれかに該当していれば、連続した<a href="#dfn-flashes" class="internalDFN" data-link-type="dfn">閃光</a>、又は急速に変化する画像の連続は、閾値を下回っている (すなわち、コンテンツは基準を<strong>満たして</strong>いる) ことになる:
+   <p>次のいずれかに該当する場合、<a href="#dfn-flashes" class="internalDFN" data-link-type="dfn">閃光</a>、又は急速に変化する映像シーケンスは、閾値を下回っている (すなわち、コンテンツは基準を<strong>満たして</strong>いる) ことになる:
    </p>
    
    <ol>
       
-      <li>あらゆる 1 秒間において、<strong>一般閃光</strong>及び／又は<strong>赤色閃光</strong>は 3 回以下である。もしくは、
+      <li>あらゆる 1 秒間において、<strong>一般閃光</strong>及び／もしくは<strong>赤色閃光</strong>は 3 回以下である。又は、
       </li>
       
-      <li>一般的な閲覧距離で、同時に生じている閃光が占める領域の合計が、画面上のどの視野 10 度においても、合計 0.006 ステラジアン (画面上の視野 10 度の 25％) よりも多くを占めていない。
+      <li>典型的な閲覧距離で、同時に発生する閃光の領域の合計が、画面上のどの視野 10 度内で、合計 0.006 ステラジアン (画面上の視野 10 度の 25％) よりも多くを占めていない。
       </li>
       
    </ol>
@@ -3160,27 +3160,27 @@ details.respec-tests-details > li {
    
    <ul>
       
-      <li><strong>一般閃光</strong>とは、暗いほうの<a href="#dfn-relative-luminance" class="internalDFN" data-link-type="dfn">相対輝度</a>が 0.80 未満であるときの、最大相対輝度の 10%以上の相対輝度の交互の変化のことである。ここでいう「交互の変化」とは、増加した後に減少する、又は減少した後に増加するものを指す。そして、
+      <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance" class="internalDFN" data-link-type="dfn">相対輝度</a>が 0.80 未満である、最大相対輝度の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
       </li>
       
-      <li><strong>赤色閃光</strong>とは、彩度の高い赤色を含んだ交互の遷移のことである。
+      <li><strong>赤色閃光</strong>は、彩度の高い赤色を含んだ相反する遷移として定義される。
       </li>
       
    </ul>
    
-   <p><em>例外:</em> ホワイトノイズ又は 1 辺が (典型的な閲覧距離における視野の) 0.1 度未満の市松模様のように、細かくて整っている模様の閃光は、閾値を超えることにはならない。
+   <p><em>例外:</em> ホワイトノイズや、1 辺が (典型的な閲覧距離における視野の) 0.1 度未満の市松模様のような細かくバランスの取れた閃光は、閾値を超えることにはならない。
    </p>
    
-   <div class="note" id="issue-container-generatedID-83"><div role="heading" class="note-title marker" id="h-note-83" aria-level="3"><span>注記</span></div><p class="">一般的なソフトウェアやウェブコンテンツでは、コンテンツを 1024 × 768 ピクセルの解像度で閲覧している際の画面上での 341 × 256 ピクセルの矩形が、標準的な画面サイズ及び画面からの距離 (例: 22～26 インチの距離で、15～17 インチの画面) における視野角 10 度に該当する (同じコンテンツでも高解像度のディスプレイでは小さく安全になるので、閾値を定めるには低解像度が用いられている)。
+   <div class="note" id="issue-container-generatedID-83"><div role="heading" class="note-title marker" id="h-note-83" aria-level="3"><span>注記</span></div><p class="">一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を 22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる (同じコンテンツでも高解像度のディスプレイでは小さく安全になるので、閾値を定めるには低解像度が用いられている)。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-84"><div role="heading" class="note-title marker" id="h-note-84" aria-level="3"><span>注記</span></div><p class="">遷移とは、相対輝度 (赤色閃光の相対輝度/色) の計測値を時間軸でプロットしたときの隣接する山と谷の間における相対輝度 (赤色閃光の相対輝度/色) の変化である。閃光は、ひと組の逆方向の遷移から成る。
+   <div class="note" id="issue-container-generatedID-84"><div role="heading" class="note-title marker" id="h-note-84" aria-level="3"><span>注記</span></div><p class="">遷移とは、相対輝度 (赤色閃光の相対輝度/色) の計測値を時間軸でプロットしたときの隣接する山と谷の間の相対輝度 (赤色閃光の相対輝度/色) の変化である。閃光は、2 つの相反する遷移で構成される。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-85"><div role="heading" class="note-title marker" id="h-note-85" aria-level="3"><span>注記</span></div><p class=""><strong>「彩度の高い赤色を含む相反する遷移の組合せ」</strong>の現時点での定義は、各遷移に含まれる状態の一方又は双方とも、R / (R＋G＋B) &gt;= 0.8 で、(R－G－B) × 320 の値の変化が双方の遷移において 20 より大きい (ただし、(R－G－B) × 320 が負の値になるときはゼロとする)。R、G、B の値は、相対輝度 の定義で定められているように 0～1 の範囲である。[<cite><a class="bibref" href="#bib-HARDING-BINNIE">HARDING-BINNIE</a></cite>]
+   <div class="note" id="issue-container-generatedID-85"><div role="heading" class="note-title marker" id="h-note-85" aria-level="3"><span>注記</span></div><p class=""><strong>「彩度の高い赤色を含む相反する遷移の組合せ」</strong>の現時点での定義は、各遷移に含まれる一方又は双方の状態が、R / (R＋G＋B) &gt;= 0.8 であり、かつ、(R－G－B) × 320 の値の変化が双方の遷移において 20 より大きい (ただし、(R－G－B) × 320 が負の値になるときはゼロとする)。R、G、B の値は、「相対輝度」の定義で定められているように 0～1 の範囲である。[<cite><a class="bibref" href="#bib-HARDING-BINNIE">HARDING-BINNIE</a></cite>]
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-86"><div role="heading" class="note-title marker" id="h-note-86" aria-level="3"><span>注記</span></div><p class="">ビデオの画面キャプチャから分析を行うツールを利用できる。しかし、閃光があらゆる 1 秒間の間隔において 3 回以下であれば、ツールでこの条件を満たしているかどうかを確認する必要はない。コンテンツは自動的に条件を満たしたことになるからである (上記 1.及び 2.を参照)。
+   <div class="note" id="issue-container-generatedID-86"><div role="heading" class="note-title marker" id="h-note-86" aria-level="3"><span>注記</span></div><p class="">ビデオの画面キャプチャから分析を行うツールを利用できる。しかし、閃光があらゆる 1 秒間の間隔において 3 回以下であれば、ツールでこの条件を満たしているかどうかを確認する必要はない。コンテンツは自動的に条件を満たすことになる (上記 1.及び 2.を参照)。
    </p></div>
    
 </dd>
