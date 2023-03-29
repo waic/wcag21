@@ -75,14 +75,14 @@
                   
                   
                   <p>画像編集アプリケーションによってデフォルトとなるピクセル密度が異なるため (例: 72 PPI 又は 96 PPI)、特定のサイズでテキストを提示する場合、画像編集アプリケーション内部からフォントのポイント数を特定することは信頼性に欠ける。サイズの大きな文字画像を作成する場合、コンテンツ制作者は画面に表示される画像の文字が、ブラウザによってレンダリングされる本文のテキストの標準サイズの 1.2em 及び 1.5em 又は 120% 及び 150% におおよそ相当することを確認すべきである。</p>
-                  
+                  <p>この達成基準で言及されている 3:1 及び 4.5:1 のコントラスト比は、閾値として扱われることを意図している。算出されたコントラスト比を達成基準のコントラスト比と比較する場合、算出された値は丸めるべきではない（例えば、4.499:1 は 4.5:1 という閾値を満たさない）。</p>
                   
                </div>
             </div>
             <p>前述のテキストに対するコントラストの要件は、達成基準 1.4.5 で述べられているように、文字画像 (ピクセルでレンダリングされ、画像フォーマットで保存された文字) にも適用される。</p>
             <p>この要件は、文字画像がテキストとして理解されることを意図した状況に適用される。たまたま道路標識が入った写真などの付随的なテキストはこの例外には含まれない。なんらかの理由で、すべての利用者に見えないように設計されているテキストも含まれない。企業のロゴなどの図案化されたテキストは、ページ上の機能の観点から取り扱われるべきであり、これは、テキストによる代替でコンテンツを含むことを保証するかもしれないし、保証しないかもしれない。ロゴ及びロゴタイプの範囲を超える企業の視覚的なガイドラインは含まれない。</p>
             <p>この達成基準には、「意味のあるその他の視覚的なコンテンツを含む写真の一部分である」という例外がある。この例外は、特定の見た目にするためにテキストを置き換えるための文字画像から、テキストのある写真を区別することを意図している。</p>
-            <p>この達成基準はテキストだけに適用されるが、チャートやグラフ、ダイアグラム、および他の非テキスト情報内のコンテンツにおいても同様の問題は起こる。この様に表示されるコンテンツは、より多くの利用者が情報にアクセスすることを保障するために、十分なコントラストも確保している必要がある。</p>
+            <p>この達成基準はテキストだけに適用されるが、同様の問題は、チャート、グラフ、ダイアグラム、及び他のテキストベースでない情報で提示されるコンテンツにおいても生じることであり、<a href="non-text-contrast.html">達成基準 1.4.11 非テキストのコントラスト</a>でカバーされている。</p>
             <section id="rationale-for-the-ratios-chosen">
                
                
@@ -120,13 +120,13 @@
                <h3>計算式に関する注記</h3>
                
                
-               <p>RGB 値の非線形から線形への変換は、IEC/4WD 61966-2-1 [IEC-4WD] 及び &quot;A Standard Default Color Space for the Internet - sRGB&quot; [sRGB] に基づいている。</p>
+               <p>RGB 値の非線形から線形への変換は、IEC/4WD 61966-2-1 [IEC-4WD] に基づいている。</p>
                
                
                <p>コントラストの計算式 (L1/L2) は、[ISO-9241-3] 及び [ANSI-HFES-100-1988] 規格に基づいている。</p>
                
                
-               <p>ANSI/HFS 100-1988 規格では、L1 及び L2 の計算を含むために、周辺光からの寄与を必要とする。用いている 0.05 という値は、[IEC-4WD] の Typical Viewing Flare 及び M.Stokes et al の論文 [sRGB] に基づいている。</p>
+               <p>ANSI/HFS 100-1988 規格では、L1 及び L2 の計算を含むために、周辺光からの寄与を必要とする。用いている 0.05 という値は、[IEC-4WD] の Typical Viewing Flare に基づいている。</p>
                
                
                <p>この達成基準及びその定義では、ウェブコンテンツが光そのものを放たないという事実を反映するために、「輝度」ではなく、「コントラスト比」及び「相対輝度」という用語を用いている。コントラスト比は、コンテンツが表示されたときに生じる相対輝度の評価基準 (尺度) を与える。(比率なので無次元である)</p>
@@ -161,22 +161,20 @@
             <ul>
                
                
-               <li><a href="https://www.paciellogroup.com/resources/contrastanalyser/">Contrast Analyser – Application</a></li>
+               <li><a href="https://www.tpgi.com/color-contrast-checker/">Colour Contrast Analyser application</a></li>
                
                
-               <li><a href="http://juicystudio.com/services/luminositycontrastratio.php">Contrast Ratio Analyser - online service</a></li>
+               
+               <li><a href="https://juicystudio.com/services/luminositycontrastratio.php">Luminosity Colour Contrast Ratio Analyser</a></li>
                
                
-               <li><a href="http://juicystudio.com/article/colour-contrast-analyser-firefox-extension.php">Colour Contrast Analyser - Firefox Extension</a></li>
+               <li><a href="https://snook.ca/technical/colour_contrast/colour.html">Colour Contrast Check</a></li>
                
                
-               <li><a href="http://snook.ca/technical/colour_contrast/colour.html">Colour Contrast Check</a></li>
+               <li><a href="https://www.msfw.com/Services/ContrastRatioCalculator">Contrast Ratio Calculator</a></li>
                
                
-               <li><a href="http://www.msfw.com/accessibility/tools/contrastratiocalculator.aspx">Contrast Ratio Calculator</a></li>
-               
-               
-               <li><a href="http://trace.wisc.edu/contrast-ratio-examples/">Color Contrast Samples</a></li>
+               <li><a href="https://color.adobe.com/create/color-contrast-analyzer">Adobe Color - Color Contrast Analyzer Tool</a></li>
                
                
                <li><a href="https://www.w3.org/Graphics/atypical-color-response">Atypical colour response</a></li>
@@ -185,16 +183,10 @@
                <li><a href="http://www.colorsontheweb.com/colorcontrast.asp">Colors On the Web Color Contrast Analyzer</a></li>
                
                
-               <li><a href="http://uxmovement.com/content/6-surprising-bad-practices-that-hurt-dyslexic-users/">6 Surprising Bad Practices That Hurt Dyslexic Users</a></li>
+               <li><a href="https://www.iansyst.co.uk/fonts/">Reading with Dyslexia - Fonts that can help alleviate visual stress.</a></li>
                
                
-               <li><a href="http://accessites.org/site/2006/11/designing-for-dyslexics-part-3-of-3">Design for Dyslexics</a></li>
-               
-               
-               <li><a href="http://www.iansyst.co.uk/articles/article/articles/2012/10/18/fonts-for-dyslexia">Typefaces for Dyslexia</a></li>
-               
-               
-               <li><a href="http://www.dyslexia.com/library/webdesign.htm">Web Design for Dyslexia</a></li>
+               <li><a href="https://blog.dyslexia.com/good-fonts-for-dyslexia-an-experimental-study/">Good Fonts for Dyslexia - An Experimental Study</a></li>
                
                
             </ul>
@@ -223,8 +215,6 @@
                      <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
                      
                      
-                     <li><a class="silverlight" href="https://waic.jp/docs/WCAG21/Techniques/silverlight/SL13">SL13: Providing A Style Switcher To Switch To High Contrast</a></li>
-                     
                      
                   </ol>
                   
@@ -247,8 +237,6 @@
                      
                      <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G174">G174: 利用者が十分なコントラストのある提示に切り替えられるように、十分なコントラスト比のあるコントロールを提供する</a></li>
                      
-                     
-                     <li><a class="silverlight" href="https://waic.jp/docs/WCAG21/Techniques/silverlight/SL13">SL13: Providing A Style Switcher To Switch To High Contrast</a></li>
                      
                      
                   </ol>
@@ -284,6 +272,55 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+			            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
+                        </li>
+
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
+                        </li>
+
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
+                        </li>
+
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
+                        </li>
+
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
             <dt id="dfn-contrast-ratio">コントラスト比 (contrast ratio)</dt>
             <dd><definition xmlns="">
                   
@@ -294,10 +331,10 @@
                   <ul xmlns="http://www.w3.org/1999/xhtml">
                      
                      
-                     <li>L1 は、明るいほうの色の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a>である。そして、</li>
+                     <li>L1 は、明るいほうの色の<a href="#dfn-relative-luminance">相対輝度</a>である。そして、</li>
                      
                      
-                     <li>L2 は、暗いほうの色の<a href="https://waic.jp/docs/WCAG21/#dfn-relative-luminance">相対輝度</a>である。</li>
+                     <li>L2 は、暗いほうの色の<a href="#dfn-relative-luminance">相対輝度</a>である。</li>
                      
                      
                   </ul>
@@ -335,6 +372,20 @@
                   
                </definition>
             </dd>
+           <dt id="dfn-human-language">自然言語 (human language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">人間とコミュニケーションをとるための言語で、話される、書かれる、又は (視覚的あるいは触覚的な手段で) 手話にされるもの。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-sign-language">手話</a>も参照。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-image-of-text">文字画像 (image of text)</dt>
             <dd><definition xmlns="">
                   
@@ -343,7 +394,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://waic.jp/docs/WCAG21/#dfn-text">テキスト</a>は該当しない。</p>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="#dfn-text">テキスト</a>は該当しない。</p>
                   </div>
                   
                   
@@ -387,6 +438,20 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-pure-decoration">純粋な装飾 (pure decoration)</dt>
             <dd><definition xmlns="">
                   
@@ -404,14 +469,104 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-relative-luminance">相対輝度 (relative luminance)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">最も暗い黒を 0 に、最も明るい白を 1 に正規化した色空間内の任意の点の相対的な明るさ。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div>
+
+                        <p>sRGB　色空間においては、色の相対輝度は、L = 0.2126 * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> と定義されており、<strong>R</strong>、<strong>G</strong> 及び <strong>B</strong> は以下のように定義される:
+                           </p>
+
+                        <ul>
+
+                           <li>RsRGB <= 0.04045 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>GsRGB <= 0.04045 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>BsRGB <= 0.04045 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+                           </ul>
+
+                        <p>そして、RsRGB、GsRGB、及び BsRGB は、次のように定義される:</p>
+
+                        <ul>
+
+                           <li>RsRGB = R8bit/255</li>
+
+                           <li>GsRGB = G8bit/255</li>
+
+                           <li>BsRGB = B8bit/255</li>
+                           </ul>
+
+                        <p>^ という記号は、指数演算子である(計算式は、[IEC-4WD]を参考にしている)。
+                           </p>
+                        </div>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>2021 年 5 月以前は、定義にある 0.04045 の値が異なっていた (0.03928)。これは、仕様の古いバージョンから取られたものであり、更新されている。本ガイドラインの文脈における計算には、実用上の影響はない。</p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+	<p>ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっているのでない限り、コンテンツ制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="contrast-minimum.html">達成基準 1.4.3</a> を参照。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>表示時にディザリングが発生する場合は、元の色の値が用いられる。元々ディザリングがかけられている色については、用いられている色の平均値を用いるべきである (R の平均値、G の平均値、及び B の平均値)。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コントラストと閃光を検証する際に、この計算を自動で行うツールが利用できる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://www.w3.org/TR/WCAG21/relative-luminance.xml">MathML version of the relative luminance definition</a> も参照できる。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
+            <dt id="dfn-sign-language">手話 (sign language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">意味を伝えるために、手と腕の動き、顔の表情又は身振りなどの組み合わせを用いる言語。
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-text">テキスト (text)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://waic.jp/docs/WCAG21/#dfn-human-language">自然言語</a>で何かを表現しているもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びで、<a href="#dfn-human-language">自然言語</a>で何かを表現しているもの。</p>
                   
                   
                </definition>
+            </dd>
+           <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
+                     </p>
+                  </definition>
             </dd>
             <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
             <dd><definition xmlns="">
@@ -421,7 +576,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいう「コンポーネント」は、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
                   </div>
                   
                   
@@ -443,6 +598,6 @@
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
