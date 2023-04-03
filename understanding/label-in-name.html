@@ -29,7 +29,7 @@
       </nav>
       <h1>達成基準 2.5.3: 名前 (name) のラベルを理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#label-in-name" style="font-weight: bold;">2.5.3 名前 (name) のラベル</a> (レベル A): <a href="#dfn-user-interface-component" >ユーザインタフェース コンポーネント</a>が<a href="#dfn-text" >テキスト</a>又は<a href="#dfn-image-of-text" >文字画像</a>を含む<a href="#dfn-label" >ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="#dfn-name" >名前 (name)</a> に含まれている。</p>
+         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#label-in-name" style="font-weight: bold;">2.5.3 名前 (name) のラベル</a> (レベル A): <a href="#dfn-user-interface-component" >ユーザインタフェース コンポーネント</a>が<a href="#dfn-text" >テキスト</a>又は<a href="#dfn-image-of-text" >文字画像</a>を含む<a href="#dfn-label" >ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="#dfn-name" >名前 (name)</a> に含まれている。</p>
          <p class="note">ベストプラクティスは、ラベルのテキストを名前の最初に使用することである。</p>
       </blockquote>
       <main>
@@ -50,7 +50,7 @@
                <li>ボタン及びタブの内側、又はボタンとして機能するアイコンのすぐ下</li>
 
             </ul>
-            <p>これらの規則のいくつかの根本原理は、<a href="https://waic.jp/docs/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a>で説明されている。</p>
+            <p>これらの規則のいくつかの根本原理は、<a href="https://waic.jp/translations/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a>で説明されている。</p>
             <p>テキストラベルを構成するものを自由に解釈すると、予測可能性の低下によりこの達成基準の価値が危険にさらされる可能性があるため、隣接するテキストのみをラベルとして扱うようにバイアスをかけることが重要である。コンポーネントに近接した単一の文字列にラベルを分離すると、開発者、テスター、およびエンドユーザがこの達成基準で評価の対象となるラベルを簡単に特定できるようになる。ラベル付けの予測可能な解釈により、音声認識技術の利用者は、伝統的な位置にあるラベルを通して要素とやりとりでき、画面読み上げ技術の利用者は、近くに表示されるラベルとコンポーネントの通知された名前との間の一貫性を得ることを可能にする。</p>
             <p>入力フィールド内のプレースホルダーテキストは、ラベルを提供する適切な手段とは見なされないことに注意する。<a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 仕様</a> では、<q>プレースホルダー属性を&lt;label&gt;の代わりに使用すべきでない</q>と記述されている。しかし、その HTML5 ステートメントの "ラベル" はコードブラケット内にあり、<code>label</code>要素にリンクしていることに注意する。名前 (name) のラベルの達成基準の目的のために、"ラベル" はそのようなプログラム的な意味で使用されないが、単にコンポーネントに視覚的に近接したテキスト文字列を指す。そのため、 (前述のリストで説明したように) 近くに他のテキスト文字列がない場合に、入力にプレースホルダーテキストが含まれているならば、そのようなテキストは名前 (name) のラベルの候補になることがある。これは、アクセシブルな名前の計算 (後で説明) と、可視ラベルが他に提供されない場合、音声入力の利用者が入力をともなうやりとりの手段としてプレースホルダーテキストの値を使用しようとする可能性があるという実際的な意味の両方でサポートされる。</p>
             <section id="text-labels-&#34;express-something-in-human-language&#34;">
@@ -61,7 +61,7 @@
 
                   <h4>記号的な文字</h4>
 
-                  <p>この達成基準のために、テキストは、WCAG の<a href="#dfn-text">テキスト</a>の定義に従って直接<q>自然言語で何かを表現しているもの</q>よりむしろ、記号的な方法で使用される場合、可視のラベルと見なされるべきでない。例えば、<a href="https://waic.jp/docs/WCAG21/#images-of-text">1.4.5 文字画像</a>は、「記号的な文字」に関する考慮事項を説明している。文字画像の例では、「B」、「I」、及び「ABC」がテキストエディタのアイコンに表示される。これらは、それぞれ太字、斜体、およびスペルの機能を表すことを目的としている。そのような場合、アクセシブルな名前 (accessible name) は、表示されている記号的な文字ではなく、ボタンが提供する機能 (「スペルチェック」や「スペルをチェックする」など) とするべきである。同様のテキストエディタを次の図に示す。</p>
+                  <p>この達成基準のために、テキストは、WCAG の<a href="#dfn-text">テキスト</a>の定義に従って直接<q>自然言語で何かを表現しているもの</q>よりむしろ、記号的な方法で使用される場合、可視のラベルと見なされるべきでない。例えば、<a href="https://waic.jp/translations/WCAG21/#images-of-text">1.4.5 文字画像</a>は、「記号的な文字」に関する考慮事項を説明している。文字画像の例では、「B」、「I」、及び「ABC」がテキストエディタのアイコンに表示される。これらは、それぞれ太字、斜体、およびスペルの機能を表すことを目的としている。そのような場合、アクセシブルな名前 (accessible name) は、表示されている記号的な文字ではなく、ボタンが提供する機能 (「スペルチェック」や「スペルをチェックする」など) とするべきである。同様のテキストエディタを次の図に示す。</p>
 
                   <figure id="figure-RTE-github">
                      	<img alt="見出し、太字、斜体、引用、コード、リンクなどのテキストを変換するためのアイコン、順序付き及び順序なしのリスト並びにその他のコントロールのアイコン" src="img/rich-text-editor-detail.png" />
@@ -167,9 +167,9 @@
                <h3>十分な達成方法</h3>
                <ul>
                   					
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G208">G208: アクセシブルな名前 (accessible name) の一部として可視ラベルのテキストを含める</a></li>
+                  <li><a href="https://waic.jp/translations/WCAG21/Techniques/general/G208">G208: アクセシブルな名前 (accessible name) の一部として可視ラベルのテキストを含める</a></li>
                   					
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G211">G211: アクセシブルな名前 (accessible name) を視覚的なラベルと一致させる</a></li>
+                  <li><a href="https://waic.jp/translations/WCAG21/Techniques/general/G211">G211: アクセシブルな名前 (accessible name) を視覚的なラベルと一致させる</a></li>
                   				
                </ul>
             </section>
@@ -179,7 +179,7 @@
 
                <ul>
 
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a></li>
+                  <li><a href="https://waic.jp/translations/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a></li>
                   <li>@@ アイコンに付随するテキストがない場合、アクセシブルな名前 (accessible name) としてそのホバーテキストを用いることを検討する。</li>
                </ul>
             </section>
@@ -188,7 +188,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
                   					
-                  <li><a href="https://waic.jp/docs/WCAG21/Techniques/failures/F96">F96: 達成基準 2.5.3 の失敗例 - アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいない。</a></li>
+                  <li><a href="https://waic.jp/translations/WCAG21/Techniques/failures/F96">F96: 達成基準 2.5.3 の失敗例 - アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいない。</a></li>
                   					
                   <li>@@ アクセシブルな名前 (accessible name) が可視ラベルのテキストを含んでいるが、語順が可視ラベルのテキストと同一でない。</li>
                   					
@@ -207,7 +207,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://waic.jp/docs/WCAG21/#dfn-text">テキスト</a>は該当しない。</p>
+                     <p>テキスト以外の部分が重要な視覚的コンテンツである場合、画像に含まれる<a href="https://waic.jp/translations/WCAG21/#dfn-text">テキスト</a>は該当しない。</p>
                   </div>
                   
                   
@@ -220,11 +220,11 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-text">テキスト</a>、又は<a href="https://waic.jp/docs/WCAG21/#dfn-text-alternative">テキストによる代替</a>を伴うコンポーネントで、ウェブ<a href="https://waic.jp/docs/WCAG21/#dfn-content">コンテンツ</a>内のコンポーネントを識別するために利用者に提示されているもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-text">テキスト</a>、又は<a href="https://waic.jp/translations/WCAG21/#dfn-text-alternative">テキストによる代替</a>を伴うコンポーネントで、ウェブ<a href="https://waic.jp/translations/WCAG21/#dfn-content">コンテンツ</a>内のコンポーネントを識別するために利用者に提示されているもの。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-name">名前 (name)</a> は隠されていて、支援技術に対してだけ公開される場合がある一方で、ラベルはすべての利用者に提示される。多くの場合 (すべてではないが)、名前 (name) とラベルは同じである。</p>
+                     <p><a href="https://waic.jp/translations/WCAG21/#dfn-name">名前 (name)</a> は隠されていて、支援技術に対してだけ公開される場合がある一方で、ラベルはすべての利用者に提示される。多くの場合 (すべてではないが)、名前 (name) とラベルは同じである。</p>
                   </div>
                   
                   
@@ -243,7 +243,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p><a href="https://waic.jp/docs/WCAG21/#dfn-label">ラベル</a>はすべての利用者に提示される一方で、名前 (name) は隠されていて、支援技術に対してだけ明らかにされる場合もある。多くの場合 (すべてではないが)、ラベルと名前 (name) は同じである。</p>
+                     <p><a href="https://waic.jp/translations/WCAG21/#dfn-label">ラベル</a>はすべての利用者に提示される一方で、名前 (name) は隠されていて、支援技術に対してだけ明らかにされる場合もある。多くの場合 (すべてではないが)、ラベルと名前 (name) は同じである。</p>
                   </div>
                   
                   
@@ -258,7 +258,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://waic.jp/docs/WCAG21/#dfn-human-language">自然言語</a>で何かを表現しているもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-programmatically-determined">プログラムによる解釈</a>が可能な文字の並びで、<a href="https://waic.jp/translations/WCAG21/#dfn-human-language">自然言語</a>で何かを表現しているもの。</p>
                   
                   
                </definition>
