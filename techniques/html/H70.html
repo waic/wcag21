@@ -31,13 +31,13 @@
       <h1>繰り返されているコンテンツのブロックをグループ化するために、frame 要素を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。</p>
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/translations/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。</p>
       </section>
       <main>
          <section id="applicability">
             <h2>適用 (対象)</h2>
             <p>フレームを用いている HTML 及び XHTML ドキュメント</p>
-            <p>これは<span><a href="https://waic.jp/docs/WCAG21/Understanding/bypass-blocks">達成基準 2.4.1: ブロックスキップ</a> (書かれていない達成方法を満たす手段として <a href="../html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a> とともに十分)</span> に関する達成方法である。</p>
+            <p>これは<span><a href="https://waic.jp/translations/WCAG21/Understanding/bypass-blocks">達成基準 2.4.1: ブロックスキップ</a> (書かれていない達成方法を満たす手段として <a href="../html/H64">H64: frame 要素及び iframe 要素の title 属性を使用する</a> とともに十分)</span> に関する達成方法である。</p>
          </section>
          <section id="description">
             <h2>解説</h2>
@@ -45,21 +45,21 @@
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
                <div>
-               <p>WAIC では H70 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
-               <p>2014 年 6 月版の<a href="https://waic.jp/docs/as/info/201406/H70.html">アクセシビリティ・サポーテッド（AS）情報: H70</a>では、「達成不可能」と評価されている。WAIC はウェブ制作者がこの達成方法を使用することを推奨しない。</p>
+               <p>WAIC では H70 に関する<a href="https://waic.jp/translations/as/">アクセシビリティ・サポーテッド（AS）情報</a>を提供している。</p>
+               <p>2014 年 6 月版の<a href="https://waic.jp/translations/as/info/201406/H70.html">アクセシビリティ・サポーテッド（AS）情報: H70</a>では、「達成不可能」と評価されている。WAIC はウェブ制作者がこの達成方法を使用することを推奨しない。</p>
                </div>
             </div>
             
             <div class="note">
                <div role="heading" class="note-title marker" aria-level="3">訳注:</div>
                <div>
-               <p>WAIC では H70 に関する<a href="https://waic.jp/docs/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。</p>
-               <p>2020 年 3 月版の<a href="https://waic.jp/docs/as/info/202003/techs/H70.html">アクセシビリティ サポーテッド（AS）情報: H70</a>も参照されたい。</p>
+               <p>WAIC では H70 に関する<a href="https://waic.jp/translations/as/">アクセシビリティ サポーテッド（AS）情報</a>を提供している。</p>
+               <p>2020 年 3 月版の<a href="https://waic.jp/translations/as/info/202003/techs/H70.html">アクセシビリティ サポーテッド（AS）情報: H70</a>も参照されたい。</p>
                </div>
             </div>
             
             <p>この達成方法の目的は、繰り返しているブロックをグループ化するために、どのようにフレームセットを用いることができるかを示すことである。ユーザエージェント及び支援技術のほとんどが、フレームからフレームへとナビゲートする手段を提供しているため、要素をまとめるのにフレームを使うことによって、繰り返されているコンテンツのブロックを簡単に通過できるメカニズムを提供することができる。ウェブサイトでフレームセットを用いている場合、コンテンツのブロックそれぞれを別々のフレームにまとめられる。そして、繰り返しているコンテンツのブロックを、各ウェブページのフレームセットの中で、同一のフレームに表示させる。さらに、各<code>flame</code> 要素には、そのフレームの内容を説明する <code>title</code> 属性を指定しなければならない。フレームに適切なタイトルが付いていれば、利用者はフレームのナビゲーション機能を使用してコンテンツのブロック間を簡単に移動することができるようになる。</p>
-            <p>この達成方法は、ページ内のコンテンツを構成するのに既にフレームセットを用いている場合に適している。フレームセットを用いていないウェブページには、他の達成方法を用いることが望ましい。多くの支援技術利用者は、フレームの扱いに手間がかかるからである。さらに対応が望まれる達成方法 (参考) として、ノーフレーム (<code>noframes</code> 要素) を用いる達成方法が、<a href="https://waic.jp/docs/WCAG21/Understanding/non-text-content">達成基準 1.1.1</a> にある。</p>
+            <p>この達成方法は、ページ内のコンテンツを構成するのに既にフレームセットを用いている場合に適している。フレームセットを用いていないウェブページには、他の達成方法を用いることが望ましい。多くの支援技術利用者は、フレームの扱いに手間がかかるからである。さらに対応が望まれる達成方法 (参考) として、ノーフレーム (<code>noframes</code> 要素) を用いる達成方法が、<a href="https://waic.jp/translations/WCAG21/Understanding/non-text-content">達成基準 1.1.1</a> にある。</p>
             <p>HTML5 では、<code>frame</code>要素は廃止されている。</p>
          </section>
          <section id="examples">
