@@ -32,7 +32,7 @@
       </h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/translations/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
@@ -46,7 +46,7 @@
             <h2>解説</h2>
             <p>この達成方法の目的は、不適合及び適合したバージョンが両方提供されているときに、利用者がコンテンツのアクセシブルなバージョンを取得できることを保証することである。
             </p>
-            <p><a href="https://waic.jp/docs/WCAG21/Understanding/conformance#conf-req1">適合要件 1</a> は、「<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>」がある限り、不適合なページが適合の範囲内に含まれることを認めている。コンテンツ制作者にとって、不適合なコンテンツの中から適合しているコンテンツへのアクセシビリティ サポーテッドなリンクを含むことは常に可能とはいえない。そこで、不適合のバージョンへは適合しているページからしか到達できないようにするために、コンテンツ制作者はサーバーサイドのスクリプト技術 (例：PHP、ASP、JSP) に依存しなければならなくなる。
+            <p><a href="https://waic.jp/translations/WCAG21/Understanding/conformance#conf-req1">適合要件 1</a> は、「<a href="https://waic.jp/translations/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>」がある限り、不適合なページが適合の範囲内に含まれることを認めている。コンテンツ制作者にとって、不適合なコンテンツの中から適合しているコンテンツへのアクセシビリティ サポーテッドなリンクを含むことは常に可能とはいえない。そこで、不適合のバージョンへは適合しているページからしか到達できないようにするために、コンテンツ制作者はサーバーサイドのスクリプト技術 (例：PHP、ASP、JSP) に依存しなければならなくなる。
             </p>
             <p>この達成方法は、不適合のコンテンツへは、適合しているページからしか到達できないことを保証するための、HTTP referer により提供される情報の利用方法について説明する。HTTP referer ヘッダーはユーザエージェントによって設定され、(もしあれば) ユーザエージェントが不適合なページを参照する際のページの URI を含む。
             </p>
@@ -144,7 +144,7 @@ header("Location: conforming.php");
                      
                      <ol>
                         
-                        <li>不適合のコンテンツの<a href="https://waic.jp/docs/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>
+                        <li>不適合のコンテンツの<a href="https://waic.jp/translations/WCAG21/#dfn-conforming-alternate-version">適合している代替版</a>
                         </li>
                         
                         <li>適合している代替版と不適合のコンテンツの両方へのリンクを含むページ
