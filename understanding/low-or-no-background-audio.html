@@ -28,7 +28,7 @@
       </nav>
       <h1>達成基準 1.4.7: 小さな背景音、又は背景音なしを理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#low-or-no-background-audio" style="font-weight: bold;">1.4.7 小さな背景音、又は背景音なし</a> (レベル AAA): <a href="#dfn-prerecorded" >収録済</a>の<a href="#dfn-audio-only" >音声しか含まない</a>コンテンツで、(1) 前景に主として発話を含み、(2) 音声 <a href="#dfn-captcha" >CAPTCHA</a> 又は音声ロゴではなく、かつ、(3) 例えば、歌やラップなどのように、主として音楽表現を意図した発声ではないものについては、次に挙げる事項のうち、少なくとも一つを満たしている:</p>
+         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#low-or-no-background-audio" style="font-weight: bold;">1.4.7 小さな背景音、又は背景音なし</a> (レベル AAA): <a href="#dfn-prerecorded" >収録済</a>の<a href="#dfn-audio-only" >音声しか含まない</a>コンテンツで、(1) 前景に主として発話を含み、(2) 音声 <a href="#dfn-captcha" >CAPTCHA</a> 又は音声ロゴではなく、かつ、(3) 例えば、歌やラップなどのように、主として音楽表現を意図した発声ではないものについては、次に挙げる事項のうち、少なくとも一つを満たしている:</p>
          <dl>
             
             
@@ -86,7 +86,7 @@
             <ul>
                
                
-               <li><a href="http://trace.wisc.edu/docs/2004-About-dB/index.htm">About Decibels</a></li>
+               <li><a href="https://ds.gpii.net/content/about-decibels-db">About Decibels</a></li>
                
                
             </ul>
@@ -99,7 +99,7 @@
                <ol>
                   
                   
-                  <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G56">G56: 非発話音が発話音声コンテンツより少なくとも 20 デシベル低くなるように、音声ファイルを編集する</a></li>
+                  <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G56">G56: 非発話音が発話音声コンテンツより少なくとも 20 デシベル低くなるように、音声ファイルを編集する</a></li>
                   
                   
                </ol>
@@ -107,11 +107,24 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-audio">音声 (audio)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">音の再生技術。</p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>音声には、合成して作られたもの (音声合成を含む)、実世界の音を収録したもの、又はその両方が含まれる。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-audio-only">音声しか含まない (audio-only)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-audio">音声</a>のみを含んだ、時間に依存する提示 (<a href="https://waic.jp/docs/WCAG21/#dfn-video">映像</a>やインタラクションを含まない)。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-audio">音声</a>のみを含んだ、時間に依存する提示 (<a href="#dfn-video">映像</a>やインタラクションを含まない)。</p>
                   
                   
                </definition>
@@ -135,18 +148,49 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-live">ライブ (live)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">現実の出来事から取り込まれ、放送遅延以上の遅延なく受け手に送信される情報。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>放送遅延は、短時間の (通常は自動的な) 遅れで、例えば放送局に放送のタイミング[queue→cue]の調整や音声 (又は映像) の検閲のための時間を与えるものだが、意味のある編集ができるほどのものではない。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>もし情報が完全にコンピュータで生成されたものならば、それはライブではない。</p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-prerecorded">収録済 (prerecorded)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-live">ライブ</a>ではない情報。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-live">ライブ</a>ではない情報。</p>
                   
                   
                </definition>
             </dd>
+            <dt id="dfn-video">映像 (video)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">写真や画像を動かしたり、連続して表示したりする技術。</p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>映像はアニメーション、実写、もしくはその両方で構成され得る。</p>
+                  </div>
+                  </definition>
+            </dd>
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
