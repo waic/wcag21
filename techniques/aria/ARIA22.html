@@ -29,7 +29,7 @@
       <h1>ステータスメッセージを提示するために role=status を使用する</h1>
       <section id="important-information">
          <h2>達成方法に関する重要な情報</h2>
-         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/docs/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
+         <p>この達成方法 (参考) の使用法と、この達成方法が WCAG 2.1 達成基準 (規定) とどのように関係するのかに関する重要な情報については、<a href="https://waic.jp/translations/WCAG21/Understanding/understanding-techniques">WCAG 達成基準の達成方法を理解する</a>を参照のこと。適用 (対象) のセクションは、その達成方法の範囲について説明しており、特定の技術に関する達成方法の存在は、その技術があらゆる状況で WCAG 2.1 を満たすコンテンツを作成するために使用できることを意味するものではない。
          </p>
       </section>
       <main>
@@ -39,15 +39,15 @@
             </p>
             <p>これは、次の達成基準に関連する達成方法である:</p>
             <ul>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (より具体的な手法を用いる十分な達成方法)
+               <li><a href="https://waic.jp/translations/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (より具体的な手法を用いる十分な達成方法)
                </li>
-               <li><a href="https://waic.jp/docs/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (十分、<a href="../general/G193">G193: ウェブページでアシスタントによるヘルプを提供する</a>とともに)
+               <li><a href="https://waic.jp/translations/WCAG21/Understanding/status-messages">達成基準 4.1.3: ステータスメッセージ</a> (十分、<a href="../general/G193">G193: ウェブページでアシスタントによるヘルプを提供する</a>とともに)
                </li>
             </ul>
          </section>
          <section id="description">
             <h2>解説</h2>
-            <p>この達成方法は、ARIA 仕様の <code>status</code> ロールを用いて、コンテンツが利用者又はアプリケーションの状態についての情報を更新した際に、支援技術に通知するものである。これは、<a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージ (status message)</a> を含む要素に <code>role="status"</code> を追加することで行われる。<code>status</code> ロールの ARIA ライブリージョンは、暗黙的に <code>aria-live</code> の属性値 <code>polite</code> を持っており、ステータスメッセージが追加されたときに、利用者は支援技術 (スクリーンリーダーなど) を介して通知を受けることが可能になる。<code>status</code> ロールはまた、<code>aria-atomic</code> のデフォルト属性値 <code>true</code> を持っており、そのため <code>status</code> ロールでマークされたコンテナへの更新は、コンテンツ制作者が定義したラベル（又は追加のネストされた要素）を含むコンテナの内容全体が、支援技術によって利用者に提示される結果になる。このような追加のコンテキストは、ステータスメッセージのテキストだけでは視覚的な体験と同等のものを提供しない場合に、重要になり得る。aria-live コンテナのコンテンツは、テキストが表示されている箇所にフォーカスが当たらなくても、支援技術が自動的に読み上げる。詳細は <a href="https://www.w3.org/TR/wai-aria-1.1/#status">WAI-ARIA 1.1 status (role)</a> を参照のこと。
+            <p>この達成方法は、ARIA 仕様の <code>status</code> ロールを用いて、コンテンツが利用者又はアプリケーションの状態についての情報を更新した際に、支援技術に通知するものである。これは、<a href="https://waic.jp/translations/WCAG21/#dfn-status-messages">ステータスメッセージ (status message)</a> を含む要素に <code>role="status"</code> を追加することで行われる。<code>status</code> ロールの ARIA ライブリージョンは、暗黙的に <code>aria-live</code> の属性値 <code>polite</code> を持っており、ステータスメッセージが追加されたときに、利用者は支援技術 (スクリーンリーダーなど) を介して通知を受けることが可能になる。<code>status</code> ロールはまた、<code>aria-atomic</code> のデフォルト属性値 <code>true</code> を持っており、そのため <code>status</code> ロールでマークされたコンテナへの更新は、コンテンツ制作者が定義したラベル（又は追加のネストされた要素）を含むコンテナの内容全体が、支援技術によって利用者に提示される結果になる。このような追加のコンテキストは、ステータスメッセージのテキストだけでは視覚的な体験と同等のものを提供しない場合に、重要になり得る。aria-live コンテナのコンテンツは、テキストが表示されている箇所にフォーカスが当たらなくても、支援技術が自動的に読み上げる。詳細は <a href="https://www.w3.org/TR/wai-aria-1.1/#status">WAI-ARIA 1.1 status (role)</a> を参照のこと。
             </p>
          </section>
          <section id="examples">
@@ -79,7 +79,7 @@
             <h2>検証</h2>
             <section class="test-procedure">
                <h3>手順</h3>
-               <p>それぞれの <a href="https://waic.jp/docs/WCAG21/#dfn-status-messages">ステータスメッセージ (status message)</a> に対して:
+               <p>それぞれの <a href="https://waic.jp/translations/WCAG21/#dfn-status-messages">ステータスメッセージ (status message)</a> に対して:
                </p>
                <ol>
                   <li>ステータスメッセージを持つことになるコンテナが、そのステータスメッセージが出現する<em>前に</em>、<code>role</code> 属性及びその値 <code>status</code> を持つことを確認する。

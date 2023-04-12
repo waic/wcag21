@@ -29,7 +29,7 @@
       </nav>
       <h1>達成基準 4.1.3: ステータスメッセージを理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/docs/WCAG21/#status-messages" style="font-weight: bold;">4.1.3 ステータスメッセージ</a> (レベル AA): マークアップ言語を使って実装されたコンテンツでは、<a href="#dfn-status-message" >ステータスメッセージ</a>は、<a href="#dfn-role" >役割 (role)</a> 又はプロパティを通して<a href="#dfn-programmatically-determined" >プログラムによる解釈が可能</a>であり、フォーカスを受けとらなくても<a href="#dfn-assistive-technology" >支援技術</a>によって利用者に提示することができる。</p>
+         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#status-messages" style="font-weight: bold;">4.1.3 ステータスメッセージ</a> (レベル AA): マークアップ言語を使って実装されたコンテンツでは、<a href="#dfn-status-message" >ステータスメッセージ</a>は、<a href="#dfn-role" >役割 (role)</a> 又はプロパティを通して<a href="#dfn-programmatically-determined" >プログラムによる解釈が可能</a>であり、フォーカスを受けとらなくても<a href="#dfn-assistive-technology" >支援技術</a>によって利用者に提示することができる。</p>
       </blockquote>
       <main>
          <section id="intent">
@@ -39,9 +39,9 @@
             <p>この達成基準の範囲は、ステータスメッセージを含むコンテンツの変化に特化している。<a href="#dfn-status-message">ステータスメッセージ</a>は WCAG で定められている用語である。何がステータスメッセージの定義を満たすかどうかを判断する主な二つの基準がある：</p>
             <ol>
                		
-               <li>メッセージは<q>アクションの成功又は結果、アプリケーションの待機状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供する</q></li>
+               <li>そのメッセージは、<q>アクションの成功又は結果、アプリケーションの待機状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供する</q></li>
                		
-               <li>メッセージはコンテキストの変化によって配信されない</li>
+               <li>そのメッセージは、コンテキストの変化によって配信されたものではない</li>
                	
             </ol>
             <p>ステータスメッセージの定義を満たさないページに情報を追加できる。例えば、検索から取得した結果のリストはステータスの更新とは見なされないため、この達成基準の対象外である。ただし、「検索中...」、「18 件の結果が返されました」、「結果が返されませんでした」など、検索の完了又はステータス<em>について</em>表示される簡潔なテキストメッセージは、フォーカスを受け取らないとステータスが更新される。ステータスメッセージの例は、以下の<a href="#status-examples">ステータスメッセージの例</a>というセクションにある。</p>
@@ -204,9 +204,9 @@
                   					
                   <ul>
                      						
-                     <li><a class="aria" href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA22">ARIA22: ステータスメッセージを提示するために role=status を使用する</a> と次のいずれかと組み合わせる:<ul>
+                     <li><a class="aria" href="https://waic.jp/translations/WCAG21/Techniques/aria/ARIA22">ARIA22: ステータスメッセージを提示するために role=status を使用する</a> と次のいずれかと組み合わせる:<ul>
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G199">G199: データが正常に送信されたときに、フィードバックを提供する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G199">G199: データが正常に送信されたときに、フィードバックを提供する</a></li>
                            							
                         </ul>
                         							
@@ -223,18 +223,18 @@
                   					
                   <ul>
                      						
-                     <li><a class="aria" href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a>と次のいずれかと組み合わせる:<ul>
+                     <li><a class="aria" href="https://waic.jp/translations/WCAG21/Techniques/aria/ARIA19">ARIA19: エラーを特定するために、ARIA role=alert 又はライブリージョン (Live Regions) を使用する</a>と次のいずれかと組み合わせる:<ul>
                            								
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G83">G83: 入力が完了していない必須項目を特定するために、テキストの説明を提供する</a></li>
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G84">G84: 利用者が許可された値のリストにない情報を与えた場合に、テキストの説明を提供する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G84">G84: 利用者が許可された値のリストにない情報を与えた場合に、テキストの説明を提供する</a></li>
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G85">G85: 利用者の入力が要求されたフォーマット又は値の範囲外の場合に、テキストの説明を提供する</a></li>
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G177">G177: テキストの修正候補を提示する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G177">G177: テキストの修正候補を提示する</a></li>
                            								
-                           <li><a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G194">G194: テキスト入力に対するスペルチェック及び修正候補を提供する</a></li>
+                           <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G194">G194: テキスト入力に対するスペルチェック及び修正候補を提供する</a></li>
                            								
                            							
                         </ul>
@@ -258,11 +258,11 @@
                   <ul>
                      					
                      						
-                     <li><a class="aria" href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA23">ARIA23: 逐次的な情報更新を識別するために role=log を使用する</a></li>
+                     <li><a class="aria" href="https://waic.jp/translations/WCAG21/Techniques/aria/ARIA23">ARIA23: 逐次的な情報更新を識別するために role=log を使用する</a></li>
                      						
                      <li>Using <code>role=&quot;progressbar&quot;</code> (future link)</li>
                      						
-                     <li><a class="aria" href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA22">ARIA22: ステータスメッセージを提示するために role=status を使用する</a> と <a class="general" href="https://waic.jp/docs/WCAG21/Techniques/general/G193">G193: ウェブページでアシスタントによるヘルプを提供する</a>を組み合わせる</li>
+                     <li><a class="aria" href="https://waic.jp/translations/WCAG21/Techniques/aria/ARIA22">ARIA22: ステータスメッセージを提示するために role=status を使用する</a> と <a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G193">G193: ウェブページでアシスタントによるヘルプを提供する</a>を組み合わせる</li>
                      					
                   </ul>
                   				
@@ -281,9 +281,9 @@
                   		
                   <li>Using <code>role=&quot;timer&quot;</code> (future link)</li>
                   					
-                  <li>必要に応じて、<a class="aria" href="https://waic.jp/docs/WCAG21/Techniques/aria/ARIA18">ARIA18: エラーを特定するために aria-alertdialog を使用する</a>を使用して新しいコンテンツにフォーカスを移動する。</li>
+                  <li>必要に応じて、<a class="aria" href="https://waic.jp/translations/WCAG21/Techniques/aria/ARIA18">ARIA18: エラーを特定するために aria-alertdialog を使用する</a>を使用して新しいコンテンツにフォーカスを移動する。</li>
                   					
-                  <li>利用者がライブコンテンツに好みを設定するオプションを提供することにより、パーソナライズをサポートする。<a class="script" href="https://waic.jp/docs/WCAG21/Techniques/client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>	
+                  <li>利用者がライブコンテンツに好みを設定するオプションを提供することにより、パーソナライズをサポートする。<a class="script" href="https://waic.jp/translations/WCAG21/Techniques/client-side-script/SCR14">SCR14: 不可欠ではないアラートの表示を任意にするために、スクリプトを使用する</a></li>	
                   	
                </ul>
             </section>
@@ -292,7 +292,7 @@
                <p>以下に挙げるものは、WCAG ワーキンググループが達成基準の失敗例とみなした、よくある間違いである。</p>
                <ul>
 
-                  <li><a class="failure" href="https://waic.jp/docs/WCAG21/Techniques/failures/F103">F103: 達成基準 4.1.3 の失敗例 － 役割 (role) 又はプロパティを通してプログラムによる解釈が可能でないステータスメッセージを提供する</a></li>
+                  <li><a class="failure" href="https://waic.jp/translations/WCAG21/Techniques/failures/F103">F103: 達成基準 4.1.3 の失敗例 － 役割 (role) 又はプロパティを通してプログラムによる解釈が可能でないステータスメッセージを提供する</a></li>
                   				
                   <li>Using <code>role=&quot;alert&quot;</code> or <code>aria-live=&quot;assertive&quot;</code> on content which is not important and time-sensitive (future link)</li>
                   			
@@ -305,7 +305,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-user-agents">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>として機能する、又は主流のユーザエージェントと一緒に機能するハードウェア及び／又はソフトウェアで、主流のユーザエージェントで提供されている機能以上の機能を、障害のある利用者の要求を満たすために提供するもの。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
@@ -356,7 +356,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-web-page">ウェブページ</a>のコンテンツにおける大きな変化で、利用者が気づかないと、ウェブページ全体を一度に見ることのできない利用者を混乱させる恐れのあるもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-web-page">ウェブページ</a>のコンテンツにおける大きな変化で、利用者が気づかないと、ウェブページ全体を一度に見ることのできない利用者を混乱させる恐れのあるもの。</p>
                   
                   
                   <p xmlns="http://www.w3.org/1999/xhtml">コンテキストの変化には次に挙げるものの変化が含まれる:</p>
@@ -365,16 +365,16 @@
                   <ol xmlns="http://www.w3.org/1999/xhtml">
                      
                      
-                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-user-agents">ユーザエージェント</a></li>
+                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a></li>
                      
                      
-                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-viewport">ビューポート</a></li>
+                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-viewport">ビューポート</a></li>
                      
                      
                      <li>フォーカス</li>
                      
                      
-                     <li><a href="https://waic.jp/docs/WCAG21/#dfn-web-page">ウェブページ</a>の意味を変える<a href="https://waic.jp/docs/WCAG21/#dfn-content">コンテンツ</a></li>
+                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-web-page">ウェブページ</a>の意味を変える<a href="https://waic.jp/translations/WCAG21/#dfn-content">コンテンツ</a></li>
                      
                      
                   </ol>
@@ -394,7 +394,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-assistive-technology">支援技術</a>を含む様々な<a href="https://waic.jp/docs/WCAG21/#dfn-user-agents">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-assistive-technology">支援技術</a>を含む様々な<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
@@ -425,7 +425,7 @@
             <dd><definition xmlns="">
                   					
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/docs/WCAG21/#dfn-changes-of-context">コンテキストの変化</a>ではなく、コンテンツにおける変化で、アクションの成否又は結果、アプリケーションの処理待ち状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供する。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-changes-of-context">コンテキストの変化</a>ではなく、コンテンツにおける変化で、アクションの成否又は結果、アプリケーションの処理待ち状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供する。</p>
                   
                   
                </definition>
