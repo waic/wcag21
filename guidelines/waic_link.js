@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		const href = anchor.getAttribute('href');
 		taregtUrlString.forEach(taregtString => {
 			if(href.indexOf(taregtString)!=-1 ){
-				const jaLinkUrl = href.replace('\/\/www.w3.org\/WAI\/WCAG21\/', '//waic.jp/docs/WCAG21/');
+				const jaLinkUrl = href.replace('\/\/www.w3.org\/WAI\/WCAG21\/', '//waic.jp/translations/WCAG21/');
 				const jaLinkTitle = '"' + anchor.textContent + '"' + jaLinkTitleSuffix;
 				const jaAnchor = document.createElement('a');
 				jaAnchor.setAttribute('href', jaLinkUrl);
