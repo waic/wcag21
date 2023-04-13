@@ -25,6 +25,7 @@
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#test-rules">テストルール</a></li>
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
@@ -86,9 +87,9 @@
                
                <h3>リフローにおけるコンテンツの例外</h3>
                
-               <p>利用や意味の理解のために 2 次元レイアウトを必須とするコンテンツは、意味を失うことなくリフローすることはできない。したがって、この達成基準の範囲外となる。例えば、画像及び動画は性質上 2 次元である。画像を切り取って縦に並べるとコンテンツは使用できなくなるため、範囲外となる。ただし、ズームレベルが 400 ％になっても、これらの要素をビューポートの境界内に収めたままにすることはできる (参考達成方法を参照)。</p>
+               <p>利用や意味の理解のために 2 次元レイアウトを必須とするコンテンツは、意味を失うことなくリフローすることはできない。したがって、この達成基準の範囲外となる。例えば、画像及び動画は性質上 2 次元である。画像を切り取って縦に並べるとコンテンツは使用できなくなるため、範囲外となる。このようなコンテンツの部分については、2 次元スクロールを提供することは許容される。ただし、ズームレベルが 400 ％になっても、これらの要素をビューポートの境界内に収めたままにすることはできる (参考達成方法を参照)。</p>
                
-               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブル全体には適用されない。ただし、データテーブル内のセルは、用法又は意味のために 2 次元レイアウトを必要とする種類のコンテンツを含まない限り、サイズ要件内に収まるべきである。</p>
+               <p>複雑なデータテーブルは、見出しとデータセルの間に 2 次元の関係がある。この関係性はコンテンツの意味を伝えるために不可欠である。したがって、この達成基準はデータテーブル全体には適用されず、それらに対して 2 次元スクロールを提供することは許容される。ただし、データテーブル内のセルは、用法又は意味のために 2 次元レイアウトを必要とする種類のコンテンツを含まない限り、サイズ要件内に収まるべきである。</p>
                
                <p>コンテンツを編集するためのツールバーのあるインタフェースは、ビューポートにコンテンツとツールバーの両方を表示する必要がある。ツールバーのボタン数に応じて、ツールバーはテキストの方向にスクロールする必要があるかもしれない (例えば、縦スクロールするページで横方向に)。したがって、この達成基準はツールバーのあるインタフェースには適用されない。</p>
                	
@@ -158,12 +159,13 @@
             <p>リソースは、情報提供のみを目的としており、推奨を意味するものではない。</p>
             <ul>
                
-               <li><a href="http://nosetothepage.org/Fitz/2dScroll.html">Operational Overhead Caused by Horizontal Scrolling Text</a> by Wayne Dick, 2017. The study shows the impact of horizontal scrolling on reading effort</li>
-               
+               <li><a href="http://nosetothepage.org/Fitz/2dScroll.html">Operational Overhead Caused by Horizontal Scrolling Text</a> by Wayne Dick, 2017. The study shows the impact of horizontal scrolling on reading
+                  effort</li>
+
                <li><a href="https://www.w3.org/TR/low-vision-needs/">Accessibility Requirements for People with Low Vision</a>. W3C First Public Working Draft 17 March 2016</li>
-               
+
                <li><a href="https://developer.mozilla.org/en-US/Apps/Progressive/Responsive">Responsive design resources</a> from MDN Web docs</li>
-               
+
                <li><a href="https://developers.google.com/web/fundamentals/design-and-ux/responsive/">Responsive web design basics</a> tutorial from Google</li>
                
             </ul>
@@ -187,7 +189,7 @@
                   
                   <li><a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G206">G206: 利用者が横スクロールをしなくてもテキストの行を読めるようにするような、レイアウトを切り替えるオプションをコンテンツの中で提供する</a></li>
                   
-                  <li>@@ New: Using PDF/UA when creating PDFs.</li>
+                  <li>PDF 作成時に PDF/UA を使用する (将来、達成方法に追加される可能性あり)</li>
                   
                </ul>
             </section>
@@ -200,11 +202,11 @@
                   
                   <li><a href="https://waic.jp/translations/WCAG21/Techniques/css/C37">C37: 画像を収めるために、CSS の max-width 及び height を使用する</a></li>
                   
-                  <li>@@ CSS, Reflowing simple data tables.</li>
+                  <li>CSS で、シンプルなデータテーブルをリフローさせる (将来、達成方法に追加される可能性あり)</li>
                   
-                  <li>@@ CSS, Fitting data cells within the width of the viewport.</li>
+                  <li>CSS で、データセルをビューポートの幅に収める (将来、達成方法に追加される可能性あり)</li>
                   
-                  <li>@@ Mechanism to allow mobile view at any time</li>
+                  <li>いつでもモバイルビューができるようにするためのメカニズム (将来、達成方法に追加される可能性あり)</li>
                   
                </ul>
             </section>
@@ -217,6 +219,14 @@
                   
                </ul>
             </section>
+         </section>
+         <section id="test-rules">
+            <h2>テストルール</h2>
+            <p>以下は、この達成基準の特定の側面に関するテストルールである。この特定のルールを使用して WCAG に適合しているかどうかを確認する必要はないが、これらのルールは定義され、承認されたテスト方法である。テストルールの使用については、<a href="understanding-act-rules.html">WCAG 達成基準のテストルールを理解する</a>を参照のこと。
+
+            <ul>
+               <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/meta-viewport-b4f0c3/">meta viewport allows for zoom</a></li>
+            </ul>
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
@@ -235,7 +245,7 @@
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p>
       </div>
    </body>
 </html>
