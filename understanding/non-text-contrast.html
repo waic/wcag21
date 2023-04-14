@@ -137,121 +137,98 @@
 
                <h3>フォーカスの可視化との関係性</h3>
                
-               <p><a href="https://www.w3.org/TR/WCAG21/#focus-visible">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。</p>
+               <p><a href="focus-visible.html">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。</p>
 
-				<p>Most focus indicators appear outside the component - in that case it needs to contrast
-                  with the background that the component is on. Other cases include focus indicators
-                  which are:</p>
+				<p>ほとんどのフォーカスインジケータはコンポーネントの外側に表示される。その場合、コンポーネントの背景とコントラストをつける必要がある。その他のケースとしては、以下のようなフォーカスインジケータがある:</p>
 
 
                <ul>
 
-                  <li>only inside the component and need to contrast with the adjacent color(s) within the
-                     component.</li>
+                  <li>コンポーネント内部のみにあって、コンポーネント内の隣接する色とコントラストをつける必要がある。</li>
 
-                  <li>the border of the component (inside the component and adjacent to the outside) and
-                     need to contrast with both adjacent colours. </li>
+                  <li>コンポーネントの境界 (コンポーネントの内側と外側に隣接する) にあり、隣接する両方の色とコントラストをつける必要がある。</li>
 
-                  <li>partly inside and partly outside, where either part of the focus indicator can contrast
-                     with the adjacent colors.</li>
+                  <li>一部は内部、一部は外部にあって、フォーカスインジケータのいずれかの部分が隣接する色とコントラストをつけることができる。</li>
                   				</ul>
 
 
                <figure id="figure-focus-inner">
-                  					<img src="img/ntc-focus-inner.png" alt="Three blue buttons, the middle has a thick yellow outline well inside the border of the button." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-inner.png" alt="青いボタンが 3 つあり、真ん中は、ボタンの枠の内側に、太い黄色のアウトラインがある。" width="400" />
 
-                  <figcaption>Figure 8 
-                     						The internal yellow indicator (#FFFF00) contrasts with the blue button background
-                     (#4189B9), <strong>passing</strong> the criterion.
+                  <figcaption>図 8 
+                     						内部の黄色いインジケータ (#FFFF00) は、青いボタンの背景 (#4189B9) とコントラストがついていて、達成基準を<strong>満たしている</strong>。
                      					</figcaption>
                   				</figure>
 
 
 
                <figure id="figure-focus-outer-yellow">
-                  					<img src="img/ntc-focus-outer-yellow.png" alt="Three blue buttons on a white background, the middle has a light yellow outline outside of the botton's non-focused boundary." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-outer-yellow.png" alt="白い背景に 3 つの青いボタンがあり、真ん中は、ボタンのフォーカスでない境界の外側に、薄い黄色のアウトラインがある。" width="400" />
 
-                  <figcaption>Figure 9 
-                     						The external yellow indicator (#FFFF00) does not contrast with the white background
-                     (#FFF) which the component is on, <strong>failing</strong> the criterion.
+                  <figcaption>図 9 
+                     						外側の黄色いインジケータ (#FFFF00) は、コンポーネントが置かれている白い背景 (#FFF) とのコントラストが十分でなく、達成基準の<strong>失敗</strong>となる。
                      					</figcaption>
                   				</figure>
 
 
                <figure id="figure-focus-outer-green">
-                  					<img src="img/ntc-focus-outer-green.png" alt="Three blue buttons on a white background, the middle has a dark green outline outside of the botton's non-focused boundary." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-outer-green.png" alt="白い背景に 3 つの青いボタンがあり、真ん中は、ボタンのフォーカスでない境界の外側に、濃い緑のアウトラインがある。" width="400" />
 
-                  <figcaption>Figure 10 
-                     						The external green indicator (#008000) does contrast with the white background
-                     (#FFF) which the component is on, <strong>passing</strong> the criterion. It does not need to contrast with both the component background and
-                     the component.
+                  <figcaption>図 10 
+                     						外側の緑色のインジケータ (#008000) は、コンポーネントが置かれている白い背景 (#FFF) との間でコントラストがあり、達成基準を<strong>満たしている</strong>。コンポーネントの背景及びコンポーネントの両方との間で、コントラストがついている必要はない。
                      					</figcaption>
                   				</figure>
 
-               <p>Although the figure above with a dark outline passes non-text contrast, it is not
-                  a good indicator unless it is very thick. </p>
+               <p>上の図のようにアウトラインが濃いものは、非テキストのコントラストの達成基準を満たすものの、よほど太いものでない限り、よいインジケータではない。</p>
 
-
-               <p>If an indicator is partly inside and partly outside the component, either part of
-                  the indicator could provide contrast.</p>
+               <p>インジケータの一部がコンポーネントの内側にあり、一部が外側にある場合は、インジケータのどちらかの部分にコントラストがついている可能性がある。</p>
 
 
                <figure id="figure-focus-outer-inner">
-                  					<img src="img/ntc-focus-inner-outer.png" alt="Three blue buttons on a white background, the middle has the outline of a yellow rectangle that is partly inside the button's boundary, and partly outside on the white background." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-inner-outer.png" alt="白い背景に 3 つの青いボタンがあり、真ん中には、黄色い四角形のアウトラインが、一部はボタンの境界の内側に、一部は外側の白い背景の上にある。" width="400" />
 
-                  <figcaption>Figure 11 
-                     						The focus indicator is partially inside, partially outside the button. The internal
-                     part of the yellow indicator (#FFFF00) contrasts with the blue button background (#4189B9),
-                     <strong>passing</strong> the criterion.
+                  <figcaption>図 11 
+                     						フォーカスインジケータの一部がボタンの内側に、一部がボタンの外側にある。内側にある黄色のインジケータ (#FFFF00) は、青いボタンの背景色 (#4189B9) との間でコントラストがついているため、達成基準を<strong>満たしている</strong>。
                      					</figcaption>
                   				</figure>
 
 
-               <p>If the focus indicator changes the border of the component within the visible boundary
-                  it must contrast with the component. Typically an outline goes around (outside) the
-                  visible boundary of the component, in this case changing the border is just inside
-                  the visible edge of the component.</p>
+               <p>フォーカスインジケータが、コンポーネントの目に見える境界にある境界線を変更する場合、コンポーネントとの間でコントラストがついていなければならない。通常、アウトラインはコンポーネントの目に見える境界の周り (外側) を囲むが、この場合は、境界を変更するのはコンポーネントの目に見えるちょうど端である。</p>
 
 
                <figure id="figure-focus-border">
-                  					<img src="img/ntc-focus-border.png" alt="Three blue buttons on a white background, the center button has a green border exactly on the outer boundary of the button." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-border.png" alt="白い背景に 3 つの青いボタンがあり、真ん中のボタンは、ボタンのちょうど境界に、緑の境界線がある。" width="400" />
 
-                  <figcaption>Figure 12 
-                     						The border of the control changes from blue (#4189B9) to green (#4B933A). This
-                     is within the component and does not contrast with the inside background of the component
-                     therefore <strong>fails</strong> non-text contrast.
-                     					</figcaption>
+                  <figcaption>図 12 
+                     						コントロールの境界線が青 (#4189B9) から緑 (#4B933A) に変化する。これはコンポーネント内のことであり、コンポーネント内側の背景色とのコントラストが十分でないため、非テキストのコントラストの達成基準の<strong>失敗</strong>となる。</figcaption>
                   				</figure>
 
 
                <figure id="figure-focus-inner-green">
-                  					<img src="img/ntc-focus-inner-border.png" alt="Three blue buttons with a black border on a white background, the center button has a green border inside, adjacent to the inner background and black border." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-inner-border.png" alt="白い背景に、黒い境界線を持つ青いボタンが 3 つあり、真ん中のボタンは、その内側に緑の境界線があり、内側の背景色及び黒い境界線と隣接している。" width="400" />
 
-                  <figcaption>Figure 13 
-                     						An inner border of dark green (#008000) does contrast with the black border,
-                     but does not contrast with the blue component background, therefore <strong>fails</strong> non-text contrast.
+                  <figcaption>図 13 
+                     						内側にある濃い緑 (#008000) の境界線は、黒い境界線との間でコントラストをもつが、コンポーネントの青い背景色とのコントラストが十分ないため、とは対照的でないため、非テキストのコントラストの達成基準の<strong>失敗</strong>となる。
                      					</figcaption>
                   				</figure>
 
 
                <figure id="figure-focus-inner-white">
-                  					<img src="img/ntc-focus-inner-white.png" alt="Three blue buttons with a black border on a white background, the center button has a white border inside, adjacent to the inner background and black border." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-inner-white.png" alt="白い背景に、黒い境界線を持つ青いボタンが 3 つあり、真ん中のボタンは、その内側に白い境界線があり、内側の背景色及び黒い境界線と隣接している。" width="400" />
 
-                  <figcaption>Figure 14 
-                     						An inner border of white contrasts with the black border and the blue component
-                     background, therefore <strong>passes</strong> non-text contrast.
+                  <figcaption>図 14 
+                     						白い内側にある境界線は、黒い境界線及びコンポーネントの青い背景色との間でコントラストがついているため、非テキストのコントラストの達成基準を<strong>満たしている</strong>。
                      					</figcaption>
                   				</figure>
                
                <p>この達成基準は、コントロールのフォーカスされた状態とフォーカスされていない状態を直接比較しないことに注意すること。フォーカス状態が色の変化 (例: ボタンの背景色<em>のみ</em>を変更する) に依存している場合、この達成基準は、二つの状態間のコントラストの違いに関する要件を定義していない。</p>
                <figure id="figure-focus-background">
-                  					<img src="img/ntc-focus-background.png" alt="Three blue buttons, the center button is a lighter blue than the others." width="400" />
+                  					<img src="https://www.w3.org/WAI/WCAG21/Understanding/img/ntc-focus-background.png" alt="3 つの青いボタンばあり、真ん中のボタンは、他のボタンより薄い青色になっている。" width="400" />
 
-                  <figcaption>Figure 15 
-                     						The change of background within the component is not in scope of non-text contrast.
-                     However, this would not pass <a href="use-of-color.html">Use of color</a>.
+                  <figcaption>図 15 
+					コンポーネント内の背景色の変更は、非テキストのコントラストの範囲外である。ただしこれは、<a href="use-of-color.html">色の使用</a>の達成基準を満たさない。
                      					</figcaption>
-                  				</figure>ｓ
+                  				</figure>
 
                <section id="active-user-interface-component-examples">
                   					
@@ -604,13 +581,7 @@
                   <h4>動的な例</h4>
                   
                   				
-                  <p>Some graphics may have interactions that either vary the contrast, or display the
-                     information as text when you mouseover/tap/focus each graphical object. In order for
-                     someone to discern the graphics exist at all, the unfocused default version must already
-                     have sufficiently contrasting colors or text. For the area that receives focus, information
-                     can then be made available dynamically as pop-up text, or be foregrounded dynamically
-                     by increasing the contrast.
-					いくつかのグラフィックはコントラストを変更する、又は各グラフィカルオブジェクトにマウスオーバー／タップ／フォーカスをすると情報をテキストとして表示する、いずれかのインタラクションがあるかもしれない。人がグラフィックが存在することを認識するためには、グラフィックを見つけるためにコントラストをもつ色又はテキストがなければならない。その領域内では、適合する方法 (例: フォーカス可能な要素) で提供されている情報は動的なテキスト、又は動的にコントラストを増加して、その情報を提供するために使用できる。</p>
+                  <p>グラフィックの中には、コントラストを変更したり、各グラフィカルオブジェクトにマウスオーバー／タップ／フォーカスをしたときに情報をテキストとして表示するインタラクションがあるかもしれない。人がグラフィックの存在を認識するには結局のところ、フォーカスされていないデフォルトのバージョンにおいて、あらかじめ色又はテキストのコントラストが十分でなければならない。フォーカスを受け取る部分においては、ポップアップテキストとして動的に情報を提供したり、コントラストを高めることで動的に前景化させたりすることができる。</p>
                   
                   				
                   <!-- example from http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=pieChart&demo=default -->
@@ -854,82 +825,60 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
-            <dt id="dfn-assistive-technology">assistive technology</dt>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">hardware and/or software that acts as a <a href="#dfn-user-agent">user agent</a>, or along with a mainstream user agent, to provide functionality to meet the requirements
-                     of users with disabilities that go beyond those offered by mainstream user agents
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>functionality provided by assistive technology includes alternative presentations
-                        (e.g., as synthesized speech or magnified content), alternative input methods (e.g.,
-                        voice), additional navigation or orientation mechanisms, and content transformations
-                        (e.g., to make tables more accessible).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Assistive technologies often communicate data and messages with mainstream user agents
-                        by using and monitoring APIs.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>The distinction between mainstream user agents and assistive technologies is not absolute.
-                        Many mainstream user agents provide some features to assist individuals with disabilities.
-                        The basic difference is that mainstream user agents target broad and diverse audiences
-                        that usually include people with and without disabilities. Assistive technologies
-                        target narrowly defined populations of users with specific disabilities. The assistance
-                        provided by an assistive technology is more specific and appropriate to the needs
-                        of its target users. The mainstream user agent may provide important functionality
-                        to assistive technologies like retrieving Web content from program objects or parsing
-                        markup into identifiable bundles.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
                         </p>
                   </div>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Assistive technologies that are important in the context of this document include
-                     the following:
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
                      </p>
 
                   <ul xmlns="http://www.w3.org/1999/xhtml">
 
-                     <li>screen magnifiers, and other visual reading assistants, which are used by people with
-                        visual, perceptual and physical print disabilities to change text font, size, spacing,
-                        color, synchronization with speech, etc. in order to improve the visual readability
-                        of rendered text and images;
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
                         </li>
 
-                     <li>screen readers, which are used by people who are blind to read textual information
-                        through synthesized speech or braille;
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
                         </li>
 
-                     <li>text-to-speech software, which is used by some people with cognitive, language, and
-                        learning disabilities to convert text into synthetic speech;
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
                         </li>
 
-                     <li>speech recognition software, which may be used by people who have some physical disabilities;</li>
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
 
-                     <li>alternative keyboards, which are used by people with certain physical disabilities
-                        to simulate the keyboard (including alternate keyboards that use head pointers, single
-                        switches, sip/puff and other special input devices.);
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
                         </li>
 
-                     <li>alternative pointing devices, which are used by people with certain physical disabilities
-                        to simulate mouse pointing and button activations.
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
                         </li>
                      </ul>
                   </definition>
             </dd>
-            <dt id="dfn-content">content</dt>
+            <dt id="dfn-content">コンテンツ (content)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">information and sensory experience to be communicated to the user by means of a <a href="#dfn-user-agent">user agent</a>, including code or markup that defines the content's <a href="#dfn-structure">structure</a>, <a href="#dfn-presentation">presentation</a>, and interactions
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>によって利用者に伝達される情報及び感覚的な体験。コンテンツの<a href="#dfn-structure">構造</a>、<a href="#dfn-presentation">提示</a>、及びインタラクションを定義するコードやマークアップを含む。
                      </p>
                   </definition>
             </dd>
@@ -1002,35 +951,33 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-relative-luminance">relative luminance</dt>
+            <dt id="dfn-relative-luminance">相対輝度 (relative luminance)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">the relative brightness of any point in a colorspace, normalized to 0 for darkest
-                     black and 1 for lightest white
+                  <p xmlns="http://www.w3.org/1999/xhtml">最も暗い黒を 0 に、最も明るい白を 1 に正規化した色空間内の任意の点の相対的な明るさ。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <div>
 
-                        <p>For the sRGB colorspace, the relative luminance of a color is defined as L = 0.2126
-                           * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> where <strong>R</strong>, <strong>G</strong> and <strong>B</strong> are defined as:
+                        <p>sRGB　色空間においては、色の相対輝度は、L = 0.2126 * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> と定義されており、<strong>R</strong>、<strong>G</strong> 及び <strong>B</strong> は以下のように定義される:
                            </p>
 
                         <ul>
 
-                           <li>if RsRGB &lt;= 0.04045 then <strong>R</strong> = RsRGB/12.92 else <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+                           <li>RsRGB <= 0.04045 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
                               </li>
 
-                           <li>if GsRGB &lt;= 0.04045 then <strong>G</strong> = GsRGB/12.92 else <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+                           <li>GsRGB <= 0.04045 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
                               </li>
 
-                           <li>if BsRGB &lt;= 0.04045 then <strong>B</strong> = BsRGB/12.92 else <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+                           <li>BsRGB <= 0.04045 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
                               </li>
                            </ul>
 
-                        <p>and RsRGB, GsRGB, and BsRGB are defined as:</p>
+                        <p>そして、RsRGB、GsRGB、及び BsRGB は、次のように定義される:</p>
 
                         <ul>
 
@@ -1041,45 +988,37 @@
                            <li>BsRGB = B8bit/255</li>
                            </ul>
 
-                        <p>The "^" character is the exponentiation operator. (Formula taken from 
-                           [[IEC-4WD]].)
+                        <p>^ という記号は、指数演算子である(計算式は、[IEC-4WD]を参考にしている)。
                            </p>
                         </div>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Before May 2021 the value of 0.04045 in the definition was different (0.03928). It
-                        was taken from an older version of the specification and has been updated. It has
-                        no practical effect on the calculations in the context of these guidelines.</p>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>2021 年 5 月以前は、定義にある 0.04045 の値が異なっていた (0.03928)。これは、仕様の古いバージョンから取られたものであり、更新されている。本ガイドラインの文脈における計算には、実用上の影響はない。</p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Almost all systems used today to view Web content assume sRGB encoding. Unless it
-                        is known that another color space will be used to process and display the content,
-                        authors should evaluate using sRGB colorspace. If using other color spaces, see <a href="contrast-minimum">Understanding Success Criterion 1.4.3</a>.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+	<p>ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっているのでない限り、コンテンツ制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="contrast-minimum.html">達成基準 1.4.3</a> を参照。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>If dithering occurs after delivery, then the source color value is used. For colors
-                        that are dithered at the source, the average values of the colors that are dithered
-                        should be used (average R, average G, and average B).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>表示時にディザリングが発生する場合は、元の色の値が用いられる。元々ディザリングがかけられている色については、用いられている色の平均値を用いるべきである (R の平均値、G の平均値、及び B の平均値)。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Tools are available that automatically do the calculations when testing contrast and
-                        flash.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コントラストと閃光を検証する際に、この計算を自動で行うツールが利用できる。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>A <a href="relative-luminance.xml">MathML version of the relative luminance definition</a> is available.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://www.w3.org/TR/WCAG21/relative-luminance.xml">MathML version of the relative luminance definition</a> も参照できる。
                         </p>
                   </div>
                   </definition>
@@ -1094,27 +1033,31 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-structure">structure</dt>
-            <dd>
-               <definition xmlns="">
-
+            <dt id="dfn-structure">構造 (structure)</dt>
+            <dd><definition xmlns="">
+                  
+                  
                   <ol xmlns="http://www.w3.org/1999/xhtml">
-
-                     <li>The way the parts of a <a href="#dfn-web-page">Web page</a> are organized in relation to each other; and
-                        </li>
-
-                     <li>The way a collection of <a href="#dfn-web-page">Web pages</a> is organized
-                        </li>
-                     </ol>
-                  </definition>
+                     
+                     
+                     <li><a href="#dfn-web-page">ウェブページ</a>の各部を相互の関係性によりまとめる方法論。及び、</li>
+                     
+                     
+                     <li>一連の<a href="#dfn-web-page">ウェブページ</a>をまとめる方法論。</li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </definition>
             </dd>
-            <dt id="dfn-user-agent">user agent</dt>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">any software that retrieves and presents Web content for users</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Web browsers, media players, plug-ins, and other programs — including <a href="#dfn-assistive-technology">assistive technologies</a> — that help in retrieving, rendering, and interacting with Web content.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
                      </p>
                   </definition>
             </dd>
@@ -1145,48 +1088,36 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-web-page">web page</dt>
-            <dd>
-               <definition xmlns="">
-
-                  <p xmlns="http://www.w3.org/1999/xhtml">a non-embedded resource obtained from a single URI using HTTP plus any other resources
-                     that are used in the rendering or intended to be rendered together with it by a <a href="#dfn-user-agent">user agent</a>
-                     </p>
-
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Although any "other resources" would be rendered together with the primary resource,
-                        they would not necessarily be rendered simultaneously with each other.
-                        </p>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
                   </div>
-
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>For the purposes of conformance with these guidelines, a resource must be "non-embedded"
-                        within the scope of conformance to be considered a Web page.
-                        </p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
                   </div>
-
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">A Web resource including all embedded images and media.</p>
-
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">A Web mail program built using Asynchronous JavaScript and XML (AJAX). The program
-                     lives entirely at http://example.com/mail, but includes an inbox, a contacts area
-                     and a calendar. Links or buttons are provided that cause the inbox, contacts, or calendar
-                     to display, but do not change the URI of the page as a whole.
-                     </p>
-
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">A customizable portal site, where users can choose content to display from a set of
-                     different content modules.
-                     </p>
-
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">When you enter "http://shopping.example.com/" in your browser, you enter a movie-like
-                     interactive shopping environment where you visually move around in a store dragging
-                     products off of the shelves around you and into a visual shopping cart in front of
-                     you. Clicking on a product causes it to be demonstrated with a specification sheet
-                     floating alongside. This might be a single-page Web site or just one page within a
-                     Web site.
-                     </p>
-                  </definition>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
             </dd>
          </section>
       </main>
