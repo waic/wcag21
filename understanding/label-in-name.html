@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>達成基準 2.5.3: 名前 (name) のラベルを理解する</title>
+      <title>達成基準 2.5.3: ラベルを含む名前 (name) を理解する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="understanding.css" />
       <link rel="stylesheet" type="text/css" href="slicenav.css" />
@@ -27,9 +27,9 @@
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
-      <h1>達成基準 2.5.3: 名前 (name) のラベルを理解する</h1>
+      <h1>達成基準 2.5.3: ラベルを含む名前 (name) を理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#label-in-name" style="font-weight: bold;">2.5.3 名前 (name) のラベル</a> (レベル A): <a href="#dfn-user-interface-component" >ユーザインタフェース コンポーネント</a>が<a href="#dfn-text" >テキスト</a>又は<a href="#dfn-image-of-text" >文字画像</a>を含む<a href="#dfn-label" >ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="#dfn-name" >名前 (name)</a> に含まれている。</p>
+         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#label-in-name" style="font-weight: bold;">2.5.3 ラベルを含む名前 (name)</a> (レベル A): <a href="#dfn-user-interface-component" >ユーザインタフェース コンポーネント</a>が<a href="#dfn-text" >テキスト</a>又は<a href="#dfn-image-of-text" >文字画像</a>を含む<a href="#dfn-label" >ラベル</a>を持つ場合、視覚的に提示されたテキストが<a href="#dfn-name" >名前 (name)</a> に含まれている。</p>
          <p class="note">ベストプラクティスは、ラベルのテキストを名前の最初に使用することである。</p>
       </blockquote>
       <main>
@@ -52,7 +52,7 @@
             </ul>
             <p>これらの規則のいくつかの根本原理は、<a href="https://waic.jp/translations/WCAG21/Techniques/general/G162">G162: 関係性を最大限に予測できるようにするためにラベルを配置する</a>で説明されている。</p>
             <p>テキストラベルを構成するものを自由に解釈すると、予測可能性の低下によりこの達成基準の価値が危険にさらされる可能性があるため、隣接するテキストのみをラベルとして扱うようにバイアスをかけることが重要である。コンポーネントに近接した単一の文字列にラベルを分離すると、開発者、テスター、およびエンドユーザがこの達成基準で評価の対象となるラベルを簡単に特定できるようになる。ラベル付けの予測可能な解釈により、音声認識技術の利用者は、伝統的な位置にあるラベルを通して要素とやりとりでき、画面読み上げ技術の利用者は、近くに表示されるラベルとコンポーネントの通知された名前との間の一貫性を得ることを可能にする。</p>
-            <p>入力フィールド内のプレースホルダーテキストは、ラベルを提供する適切な手段とは見なされないことに注意する。<a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 仕様</a> では、<q>プレースホルダー属性を&lt;label&gt;の代わりに使用すべきでない</q>と記述されている。しかし、その HTML5 ステートメントの "ラベル" はコードブラケット内にあり、<code>label</code>要素にリンクしていることに注意する。名前 (name) のラベルの達成基準の目的のために、"ラベル" はそのようなプログラム的な意味で使用されないが、単にコンポーネントに視覚的に近接したテキスト文字列を指す。そのため、 (前述のリストで説明したように) 近くに他のテキスト文字列がない場合に、入力にプレースホルダーテキストが含まれているならば、そのようなテキストは名前 (name) のラベルの候補になることがある。これは、アクセシブルな名前の計算 (後で説明) と、可視ラベルが他に提供されない場合、音声入力の利用者が入力をともなうやりとりの手段としてプレースホルダーテキストの値を使用しようとする可能性があるという実際的な意味の両方でサポートされる。</p>
+            <p>入力フィールド内のプレースホルダーテキストは、ラベルを提供する適切な手段とは見なされないことに注意する。<a href="https://www.w3.org/TR/html52/sec-forms.html#the-placeholder-attribute">HTML5 仕様</a> では、<q>プレースホルダー属性を&lt;label&gt;の代わりに使用すべきでない</q>と記述されている。しかし、その HTML5 ステートメントの "ラベル" はコードブラケット内にあり、<code>label</code>要素にリンクしていることに注意する。ラベルを含む名前 (name)の達成基準の目的のために、"ラベル" はそのようなプログラム的な意味で使用されないが、単にコンポーネントに視覚的に近接したテキスト文字列を指す。そのため、 (前述のリストで説明したように) 近くに他のテキスト文字列がない場合に、入力にプレースホルダーテキストが含まれているならば、そのようなテキストはラベルを含む名前 (name) の候補になることがある。これは、アクセシブルな名前の計算 (後で説明) と、可視ラベルが他に提供されない場合、音声入力の利用者が入力をともなうやりとりの手段としてプレースホルダーテキストの値を使用しようとする可能性があるという実際的な意味の両方でサポートされる。</p>
             <section id="text-labels-&#34;express-something-in-human-language&#34;">
 
                <h3>「自然言語で何かを表現している」テキストラベル</h3>
