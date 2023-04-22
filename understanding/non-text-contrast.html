@@ -52,6 +52,13 @@
             <h2>意図</h2>
             <p>この達成基準の意図は、アクティブなユーザインタフェース コンポーネント (つまり、コントロール) 及び意味のあるグラフィックが中程度のロービジョンの人によって識別できるようすることである。この必須要件の根拠は、<a href="contrast-minimum.html">コントラスト (最低限)</a> の大きな文字のものと同様である。</p>
             <p>低いコントラストのコントロールは知覚するのが難しく、かつ視覚障害のある人に完全に見逃される可能性がある。同様に、ウェブページのコンテンツ又は機能を理解するためにグラフィックが必要とされる場合、コントラストを強化する支援技術の必要なくロービジョン又は他の障害のある人に知覚されるべきある。</p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <div>
+
+               <p>この達成基準で言及されている 3:1 のコントラスト比は、閾値として扱われることを意図している。算出されたコントラスト比を達成基準のコントラスト比と比較する場合、算出された値は丸めるべきではない（例えば、 2.999:1 は 3:1 という閾値を満たさない）。</p>
+               </div>
+            </div>
             <section id="user-interface-components">
                				
                <h3>アクティブなユーザインタフェース コンポーネント</h3>
@@ -66,7 +73,7 @@
                <h3>境界</h3>
                				
                				
-               <p>この達成基準はコントロールにヒット領域を示す視覚的な境界が存在することを求めないが、コントロールの視覚的インジケータがコントロールを識別する唯一の方法である場合、そのインジケータは十分なコントラストがなければならない。ボタン内のテキスト (もしくはアイコン) 又はテキスト入力内のプレースホルダーテキストが可視であり、かつヒット領域の視覚的なしるしがない場合、達成基準に合格する。テキストボタンに色つきのボーダーもある場合、ボーダーはしるしだけを提供しないため、テキストのコントラスト (<a href="contrast-minimum.html">1.4.3 コントラスト (最低限)</a>) を越えるコントラストの要件はない。認知障害のある人には、コントロールを認識するため、ひいては動作の完了のための支援をするために、コントロールの境界の輪郭を描くことが推奨されることに注意する。</p>
+               <p>この達成基準はコントロールにヒット領域を示す視覚的な境界が存在することを求めないが、コントロールの視覚的インジケータがコントロールを識別する唯一の方法である場合、そのインジケータは十分なコントラストがなければならない。ボタン内のテキスト (もしくはアイコン) 又はテキスト入力内のプレースホルダーテキストが可視であり、かつヒット領域の視覚的なしるしがない場合、達成基準に合格する。テキストボタンに色つきのボーダーもある場合、ボーダーはしるしだけを提供しないため、テキストのコントラスト (<a href="contrast-minimum.html">1.4.3 コントラスト (最低限)</a>) を越えるコントラストの要件はない。認知障害のある人には、コントロールを認識するため、ひいては動作の完了のための支援をするために、コントロールの境界を描くことが推奨されることに注意する。</p>
                				
                				
                <figure id="figure-buttons-no-visual-indicator"><img alt="二つのボタン。一つ目は「ボタン」というテキスト以外の視覚的インジケータがない。二つ目は同じだが、グレーのボーダーが追加されている。" src="img/minimal-button.png" /><figcaption>図 1 視覚的境界のないボタン (アクティブなコントロール) 及び白に隣接する灰色 (#949494) の定義された視覚的境界のあるフォーカスインジケータのある同じボタン。</figcaption>
@@ -108,7 +115,7 @@
                </figure>
                
                				
-               <h3>色の使用とフォーカスの可視化との関係性</h3>
+               <h3>色の使用との関係性</h3>
                
                				
                <p><a href="use-of-color.html">色の使用</a>という達成基準は、オブジェクトの形を一切変えずにオブジェクト又はテキストの<strong>色のみ</strong> (色相) を変更することを取り上げている。この原則は、コントラスト比 (明るさの差) がテキスト又はグラフィックを区別するために使用できるということである。例えば、<a href="https://waic.jp/translations/WCAG21/Techniques/general/G183">G183: 色が単独でリンク又はコントロールを特定する場所で、周囲のテキストと一緒に 3:1 のコントラスト比を使用し、そのリンク又はコントロールのフォーカスに追加の視覚的な手がかりを提供する</a>は周囲のテキストと 3:1 のコントラスト比を使用してリンク及びコントロールを区別する達成方法である。この場合、ワーキンググループは、テキストがリンクであることを伝えるために色 (色相) だけでなくコントラスト比にも依存しているため、リンクではないテキスト色に対して 3:1 のコントラスト比を満たすリンクの色は達成基準 <a href="use-of-color.html">1.4.1 色の使用</a>を満たすと考える。</p>
@@ -127,11 +134,101 @@
                
                				
                <p>フォーカス及び他の状態にコントラストの変化を使用することは状態を区別する方法である。これは <a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G195">G195: コンテンツ制作者が提供する視認性に優れたフォーカスインジケータを使用する</a>の基礎であり、かつより多くの達成方法が追加されている。</p>
+
+               <h3>フォーカスの可視化との関係性</h3>
                
-               				
-               <p><a href="https://www.w3.org/TR/WCAG21/#focus-visible">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。</p>
+               <p><a href="focus-visible.html">2.4.7 フォーカスの可視化</a>と組み合わせて、コンポーネントがフォーカスされている時に、そのコンポーネントの視覚的なフォーカスインジケータは、隣接している背景に対して十分なコントラストが<em>なければならない</em>。ただし、コンポーネントの見た目がユーザエージェントにより決定されており、かつコンテンツ制作者により変更されていない場合を除く。</p>
+
+				<p>ほとんどのフォーカスインジケータはコンポーネントの外側に表示される。その場合、コンポーネントの背景とコントラストをつける必要がある。その他のケースとしては、以下のようなフォーカスインジケータがある:</p>
+
+
+               <ul>
+
+                  <li>コンポーネントの内側のみにあって、コンポーネント内における隣接色とコントラストをつける必要がある。</li>
+
+                  <li>コンポーネントのボーダーにあって (コンポーネントの内側にあって、外側に隣接している)、隣接する両方の色とコントラストをつける必要がある。</li>
+
+                  <li>一部は内部、一部は外部にあって、フォーカスインジケータのいずれかの部分が隣接する色とコントラストをつけることができる。</li>
+                  				</ul>
+
+
+               <figure id="figure-focus-inner">
+                  					<img src="img/ntc-focus-inner.png" alt="青いボタンが 3 つあり、真ん中は、ボタンの枠の内側に、太い黄色のアウトラインがある。" width="400" />
+
+                  <figcaption>図 8 
+                     						内部の黄色いインジケータ (#FFFF00) は、青いボタンの背景 (#4189B9) とコントラストがついていて、達成基準を<strong>満たしている</strong>。
+                     					</figcaption>
+                  				</figure>
+
+
+
+               <figure id="figure-focus-outer-yellow">
+                  					<img src="img/ntc-focus-outer-yellow.png" alt="白い背景に 3 つの青いボタンがあり、真ん中は、ボタンのフォーカスでない境界の外側に、薄い黄色のアウトラインがある。" width="400" />
+
+                  <figcaption>図 9 
+                     						外側の黄色いインジケータ (#FFFF00) は、コンポーネントが置かれている白い背景 (#FFF) とのコントラストが十分でなく、達成基準の<strong>失敗</strong>となる。
+                     					</figcaption>
+                  				</figure>
+
+
+               <figure id="figure-focus-outer-green">
+                  					<img src="img/ntc-focus-outer-green.png" alt="白い背景に 3 つの青いボタンがあり、真ん中は、ボタンのフォーカスでない境界の外側に、濃い緑のアウトラインがある。" width="400" />
+
+                  <figcaption>図 10 
+                     						外側の緑色のインジケータ (#008000) は、コンポーネントが置かれている白い背景 (#FFF) との間でコントラストがあり、達成基準を<strong>満たしている</strong>。コンポーネントの背景及びコンポーネントの両方との間で、コントラストがついている必要はない。
+                     					</figcaption>
+                  				</figure>
+
+               <p>上の図のようにアウトラインが濃いものは、非テキストのコントラストの達成基準を満たすものの、よほど太いものでない限り、よいインジケータではない。</p>
+
+               <p>インジケータの一部がコンポーネントの内側にあり、一部が外側にある場合は、インジケータのどちらかの部分にコントラストがついている可能性がある。</p>
+
+
+               <figure id="figure-focus-outer-inner">
+                  					<img src="img/ntc-focus-inner-outer.png" alt="白い背景に 3 つの青いボタンがあり、真ん中には、黄色い四角形のアウトラインが、一部はボタンの境界の内側に、一部は外側の白い背景の上にある。" width="400" />
+
+                  <figcaption>図 11 
+                     						フォーカスインジケータの一部がボタンの内側に、一部がボタンの外側にある。内側にある黄色のインジケータ (#FFFF00) は、青いボタンの背景色 (#4189B9) との間でコントラストがついているため、達成基準を<strong>満たしている</strong>。
+                     					</figcaption>
+                  				</figure>
+
+
+               <p>フォーカスインジケータが、コンポーネントの目に見える境界にあるボーダーを変更する場合、コンポーネントとの間でコントラストがついていなければならない。通常、アウトラインはコンポーネントの目に見える境界の周り (外側) を一回りするが、この場合、ボーダーを変更するのはコンポーネントの目に見える辺のすぐ内側である。</p>
+
+
+               <figure id="figure-focus-border">
+                  					<img src="img/ntc-focus-border.png" alt="白い背景に 3 つの青いボタンがあり、真ん中のボタンは、ボタンのちょうど境界の上に、緑のボーダーがある。" width="400" />
+
+                  <figcaption>図 12 
+                     						コントロールのボーダーが青 (#4189B9) から緑 (#4B933A) に変化する。これはコンポーネントの中であり、コンポーネント内側の背景色とのコントラストが十分でないため、非テキストのコントラストの達成基準の<strong>失敗</strong>となる。</figcaption>
+                  				</figure>
+
+
+               <figure id="figure-focus-inner-green">
+                  					<img src="img/ntc-focus-inner-border.png" alt="白い背景に、黒いボーダーを持つ青いボタンが 3 つあり、真ん中のボタンは、その内側に緑のボーダーがあり、内側の背景色及び黒いボーダーと隣接している。" width="400" />
+
+                  <figcaption>図 13 
+                     						内側にある濃い緑 (#008000) のボーダーは、黒いボーダーとの間でコントラストをもつが、コンポーネントの青い背景色とのコントラストが十分ないため、非テキストのコントラストの達成基準の<strong>失敗</strong>となる。
+                     					</figcaption>
+                  				</figure>
+
+
+               <figure id="figure-focus-inner-white">
+                  					<img src="img/ntc-focus-inner-white.png" alt="白い背景に、黒いボーダーを持つ青いボタンが 3 つあり、真ん中のボタンは、その内側に白いボーダーがあり、内側の背景色及び黒いボーダーと隣接している。" width="400" />
+
+                  <figcaption>図 14 
+                     						白い内側にあるボーダーは、黒いボーダー及びコンポーネントの青い背景色との間でコントラストがついているため、非テキストのコントラストの達成基準を<strong>満たしている</strong>。
+                     					</figcaption>
+                  				</figure>
                
                <p>この達成基準は、コントロールのフォーカスされた状態とフォーカスされていない状態を直接比較しないことに注意すること。フォーカス状態が色の変化 (例: ボタンの背景色<em>のみ</em>を変更する) に依存している場合、この達成基準は、二つの状態間のコントラストの違いに関する要件を定義していない。</p>
+               <figure id="figure-focus-background">
+                  					<img src="img/ntc-focus-background.png" alt="3 つの青いボタンばあり、真ん中のボタンは、他のボタンより薄い青色になっている。" width="400" />
+
+                  <figcaption>図 15 
+					コンポーネント内の背景色の変更は、非テキストのコントラストの範囲外である。ただしこれは、<a href="use-of-color.html">色の使用</a>の達成基準を満たさない。
+                     					</figcaption>
+                  				</figure>
 
                <section id="active-user-interface-component-examples">
                   					
@@ -300,7 +397,7 @@
 
                         <td>フォーカスインジケータが必要である。フォーカスインジケータがコンテンツ制作者によってスタイル設定されている場合、隣接する色との 3:1 のコントラスト比を満たさなければならない。この場合、灰色 (#AAA) インジケータのコントラスト比は隣接する白色 (#FFF) の背景に対して 2.3:1 と不十分である。</td>
 
-                        <td><img src="img/checkbox-example5.png" alt="フォーカス表示として太い灰色の追加のアウトラインがある未チェックのチェックボックス。" /></td>
+                        <td><img src="img/checkbox-example5.png" alt="フォーカス表示として太い灰色の追加のアウトラインがある未チェックのチェックボックス。" width="150" /></td>
 
                      </tr>
                      					
@@ -316,7 +413,7 @@
                   					
                   <p>利用者とのインタラクションに利用できないユーザインタフェース コンポーネント (例: HTML で無効化されたコントロール) は WCAG 2.1 ではコントラストの要件を満たすことを求められていない。アクティブではないユーザインタフェース コンポーネントは可視だが、現在は操作可能ではない。例としては、可視だが、フォームのすべての必須のフィールドに記入されるまで有効化できないフォームの下部にある送信ボタンがある。</p>
                   					
-                  <figure id="figure-grey-button-and-text"><img src="img/inactive-button.png" alt="グレーのボタンとコントラストをもたないグレーのテキスト。" width="120" /><figcaption>図 8 デフォルトのブラウザのスタイルを用いたアクティブではないボタン</figcaption>
+                  <figure id="figure-grey-button-and-text"><img src="img/inactive-button.png" alt="グレーのボタンとコントラストをもたないグレーのテキスト。" width="120" /><figcaption>図 16 デフォルトのブラウザのスタイルを用いたアクティブではないボタン</figcaption>
                      					
                   </figure>
                   					
@@ -474,7 +571,7 @@
                   				
                   <p>グラデーションは領域間の見かけのコントラストを減らすことができ、かつ検証をより困難にする。一般的な原則としては、理解するのに必要なグラフィカルオブジェクトを特定し、その領域の中央の色をとることである。もし十分なコントラストのない隣接している色を取り除いても、まだグラフィカルオブジェクトを特定しかつ理解することができるのか？</p>
                   				
-                  <figure id="figure-blue-circle-i-versions"><img src="img/contrast-gradient.png" alt="「i」が情報ということを示す二つのバージョンの青い円。一つ目の例では青いグラデーションの背景があり、二つ目は上半分の背景がなくなっており、 i を不明瞭にしている。" width="300" /><figcaption>図 9 十分なコントラストのない背景を取り除くことは、グラフィカルオブジェクト (「i」) が理解できなくなることを強調する。</figcaption>
+                  <figure id="figure-blue-circle-i-versions"><img src="img/contrast-gradient.png" alt="「i」が情報ということを示す二つのバージョンの青い円。一つ目の例では青いグラデーションの背景があり、二つ目は上半分の背景がなくなっており、 i を不明瞭にしている。" width="300" /><figcaption>図 17 十分なコントラストのない背景を取り除くことは、グラフィカルオブジェクト (「i」) が理解できなくなることを強調する。</figcaption>
                   </figure>
                   				
                </section>
@@ -484,12 +581,12 @@
                   <h4>動的な例</h4>
                   
                   				
-                  <p>いくつかのグラフィックはコントラストを変更する、又は各グラフィカルオブジェクトにマウスオーバー／タップ／フォーカスをすると情報をテキストとして表示する、いずれかのインタラクションがあるかもしれない。人がグラフィックが存在することを認識するためには、グラフィックを見つけるためにコントラストをもつ色又はテキストがなければならない。その領域内では、適合する方法 (例: フォーカス可能な要素) で提供されている情報は動的なテキスト、又は動的にコントラストを増加して、その情報を提供するために使用できる。</p>
+                  <p>グラフィックの中には、コントラストを変更したり、各グラフィカルオブジェクトにマウスオーバー／タップ／フォーカスをしたときに情報をテキストとして表示するインタラクションがあるかもしれない。結局のところ人がグラフィックの存在を認識するには、フォーカスされていないデフォルトのバージョンにおいて、あらかじめ十分なコントラストの色又はテキストがなければならない。フォーカスを受け取る領域においては、情報をポップアップテキストとして動的に提供したり、コントラストを高めることで動的に目立たせたりすることができる。</p>
                   
                   				
                   <!-- example from http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=pieChart&demo=default -->
                   				
-                  <figure><img alt="一つの扇形が強調された円グラフ及び隣に付いているボックスはデータを表していて、かつ凡例内のソースを示している。" src="img/dynamic-pie-chart.png" width="350" /><figcaption>図 10 現在の「扇形」がホバー又はフォーカスされている動的なチャートは、値の関連しているテキスト表示を活性化し、かつ series を強調する</figcaption>
+                  <figure><img alt="一つの扇形が強調された円グラフ及び隣に付いているボックスはデータを表していて、かつ凡例内のソースを示している。" src="img/dynamic-pie-chart.png" width="350" /><figcaption>図 18 現在の「扇形」がホバー又はフォーカスされている動的なチャートは、値の関連しているテキスト表示を活性化し、かつ series を強調する</figcaption>
                      				
                   </figure>
                   				
@@ -620,7 +717,7 @@
                				
                <figure id="figure-failing-pie-chart"><img src="img/graphics-contrast_pie-chart_fail.png" alt="失敗している円グラフ" /><figcaption>
                      						
-                     <p>図 11 <strong>失敗:</strong>円グラフには各扇形にラベルがついている (そのため、1.4.1 色の使用は合格する) が、扇形の割合を理解するためには、その扇形の縁 (必要不可欠な情報を伝えるグラフィカルオブジェクト) を認識しなければならず、かつ各扇形間のコントラストは 3:1 又はそれ以上ではない。</p>
+                     <p>図 19 <strong>失敗:</strong>円グラフには各扇形にラベルがついている (そのため、1.4.1 色の使用は合格する) が、扇形の割合を理解するためには、その扇形の縁 (必要不可欠な情報を伝えるグラフィカルオブジェクト) を認識しなければならず、かつ各扇形間のコントラストは 3:1 又はそれ以上ではない。</p>
                      					
                   </figcaption>
                   				
@@ -628,7 +725,7 @@
                				
                <figure id="figure-not-applicable-pie-chart"><img src="img/graphics-contrast_pie-chart_na.png" alt="適用されない円グラフ" /><figcaption>
                      						
-                     <p>図 12 <strong>非適用:</strong>円グラフには可視ラベル<em>及び</em>値があり、グラフィカルオブジェクト (円の扇形) の同等の情報を伝えている。</p>
+                     <p>図 20 <strong>非適用:</strong>円グラフには可視ラベル<em>及び</em>値があり、グラフィカルオブジェクト (円の扇形) の同等の情報を伝えている。</p>
                      					
                   </figcaption>
                   				
@@ -636,7 +733,7 @@
                				
                <figure id="figure-passing-pie-chart"><img src="img/graphics-contrast_pie-chart_pass.png" alt="合格している円グラフ" /><figcaption>
                      						
-                     <p>図 13 <strong>合格:</strong>円グラフには可視ラベルがあり、かつ十分なコントラストが円グラフの扇形 (グラフィカルオブジェクト) の周囲及び間にある。コントラストレベルを得るために、さらに濃いボーダーが黄色い扇形の周りに追加されている。</p>
+                     <p>図 21 <strong>合格:</strong>円グラフには可視ラベルがあり、かつ十分なコントラストが円グラフの扇形 (グラフィカルオブジェクト) の周囲及び間にある。コントラストレベルを得るために、さらに濃いボーダーが黄色い扇形の周りに追加されている。</p>
                      					
                   </figcaption>
                   				
@@ -649,7 +746,7 @@
                				
                <figure id="figure-infographic-light-circles"><img src="img/infographic-fail.png" alt="五つの異なるソーシャルネットワークのサイズ示すために複数のサイズの明るい色の円で表しているインフォグラフィック" /><figcaption>
                      						
-                     <p>図 14 <strong>失敗:</strong>ネットワークのサイズを理解するために円を識別する必要があり、かつどのネットワークを表しているかを識別するために各円の中のアイコンを区別する必要がある。</p>
+                     <p>図 22 <strong>失敗:</strong>ネットワークのサイズを理解するために円を識別する必要があり、かつどのネットワークを表しているかを識別するために各円の中のアイコンを区別する必要がある。</p>
                      					
                   </figcaption>
                   				
@@ -659,7 +756,7 @@
                				
                <figure id="figure-infographic-contrasting-text"><img src="img/infographic-pass.png" alt="円の周りに濃いボーダーとコントラストをもつアイコン、コントラストをもつテキストのある同じインフォグラフィック" /><figcaption>
                      						
-                     <p>図 15 <strong>合格:</strong>円にはコントラストをもつボーダーがあり、かつアイコンは薄い円の背景に対してコントラストをもつ濃い色である。</p>
+                     <p>図 23 <strong>合格:</strong>円にはコントラストをもつボーダーがあり、かつアイコンは薄い円の背景に対してコントラストをもつ濃い色である。</p>
                      					
                   </figcaption>
                   				
@@ -688,7 +785,6 @@
             <section id="sufficient">
                <h3>十分な達成方法</h3>
                <p>そのコンテンツに合致する状況を以下から選択すること。それぞれの状況には、WCAG ワーキンググループがその状況において十分であると判断する、番号付の達成方法 (又は、達成方法の組み合わせ) がある。</p>
-               <section class="situation" id="situation-b-color-is-required-to-understand-graphical-content">
                   
                   <section class="situation" id="situation-a-color-is-used-to-identify-user-interface-components-or-used-to-identify-user-interface-component-states">
 
@@ -704,8 +800,8 @@
                      </ul>
 
                   </section>
-                  				
-                  <h4>状況 B: 色はグラフィカルコンテンツを理解するために必須である</h4>
+                  <section class="situation" id="situation-b-color-is-required-to-understand-graphical-content"> 				
+                     <h4>状況 B: 色はグラフィカルコンテンツを理解するために必須である</h4>
                   					
                   <ul>
                      						
@@ -729,6 +825,63 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
+                        </li>
+
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
+                        </li>
+
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
+                        </li>
+
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
+                        </li>
+
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
+            <dt id="dfn-content">コンテンツ (content)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>によって利用者に伝達される情報及び感覚的な体験。コンテンツの<a href="#dfn-structure">構造</a>、<a href="#dfn-presentation">提示</a>、及びインタラクションを定義するコードやマークアップを含む。
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-contrast-ratio">コントラスト比 (contrast ratio)</dt>
             <dd><definition xmlns="">
                   
@@ -798,6 +951,78 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-relative-luminance">相対輝度 (relative luminance)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">最も暗い黒を 0 に、最も明るい白を 1 に正規化した色空間内の任意の点の相対的な明るさ。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <div>
+
+                        <p>sRGB　色空間においては、色の相対輝度は、L = 0.2126 * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> と定義されており、<strong>R</strong>、<strong>G</strong> 及び <strong>B</strong> は以下のように定義される:
+                           </p>
+
+                        <ul>
+
+                           <li>RsRGB <= 0.04045 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>GsRGB <= 0.04045 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>BsRGB <= 0.04045 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+                           </ul>
+
+                        <p>そして、RsRGB、GsRGB、及び BsRGB は、次のように定義される:</p>
+
+                        <ul>
+
+                           <li>RsRGB = R8bit/255</li>
+
+                           <li>GsRGB = G8bit/255</li>
+
+                           <li>BsRGB = B8bit/255</li>
+                           </ul>
+
+                        <p>^ という記号は、指数演算子である(計算式は、[IEC-4WD]を参考にしている)。
+                           </p>
+                        </div>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>2021 年 5 月以前は、定義にある 0.04045 の値が異なっていた (0.03928)。これは、仕様の古いバージョンから取られたものであり、更新されている。本ガイドラインの文脈における計算には、実用上の影響はない。</p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+	<p>ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっているのでない限り、コンテンツ制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="contrast-minimum.html">達成基準 1.4.3</a> を参照。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>表示時にディザリングが発生する場合は、元の色の値が用いられる。元々ディザリングがかけられている色については、用いられている色の平均値を用いるべきである (R の平均値、G の平均値、及び B の平均値)。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コントラストと閃光を検証する際に、この計算を自動で行うツールが利用できる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://www.w3.org/TR/WCAG21/relative-luminance.xml">MathML version of the relative luminance definition</a> も参照できる。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-state">状態 (state)</dt>
             <dd><definition xmlns="">
                   					
@@ -808,6 +1033,34 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-structure">構造 (structure)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><a href="#dfn-web-page">ウェブページ</a>の各部を相互の関係性によりまとめる方法論。及び、</li>
+                     
+                     
+                     <li>一連の<a href="#dfn-web-page">ウェブページ</a>をまとめる方法論。</li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-user-interface-component">ユーザインタフェース コンポーネント (user interface component)</dt>
             <dd><definition xmlns="">
                   
@@ -816,7 +1069,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
+                     <p>複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいう「コンポーネント」は、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。</p>
                   </div>
                   
                   
@@ -835,9 +1088,40 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-web-page">ウェブページ (Web page)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。</p>
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。</p>
+                  </div>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURIは全体を通して変わらない。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで&quot;http://shopping.example.com/&quot;へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。</p>
+                  
+                  
+               </definition>
+            </dd>
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
