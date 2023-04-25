@@ -36,9 +36,44 @@
          <section id="intent">
             <h2>意図</h2>
             <p>この達成基準の意図は、利用者が光感受性による発作を引き起こすことなく、サイト上のすべてのコンテンツを利用できるようにすることである。</p>
-            <p>光感受性による発作性障害のある人は、特定の周波数で数回以上の閃光を放つコンテンツによって発作を引き起こす恐れがある。人間は他の色よりも赤色の閃光に対してさらに敏感であるため、彩度の高い赤色の閃光に対して特別な試験方法が提供されている。このガイドラインは、コンピュータの画面にも適合するような、放送業界向けのガイドラインに基づいている。</p>
-            <p>そこでは、コンテンツがより近い距離で (より大きな視角を用いて) 閲覧される。閃光は、ディスプレイ、画像をレンダリングするコンピュータ、又はレンダリングされたコンテンツによって、発生する可能性がある。コンテンツ制作者には、最初の二つを制御することはできない。それらは、ディスプレイ及びコンピュータの設計及び速度によって対処される。この達成基準の意図は、コンテンツ自体が閃光閾値に違反する明滅を引き起こさないようにすることである。</p>
-            <p>例えば、コンテンツは、ストロボの閃光を放つ、又は立て続けに起こる爆発をクローズアップした、動画又はアニメーション画像が含まれているかもしれない。この達成基準は、広い周波数帯域 (3～50 ヘルツ) 内のあらゆる閃光 (1 ピクセルでさえも) を許容しなかった、はるかに厳格な WCAG 1.0 の基準を置き換えるものである。この達成基準は、英国及び諸国でテレビ放送向けに用いられている既存の仕様に基づいており、コンピュータのディスプレイの表示にも適応している。1024 x 768 ピクセルの画面を評価の基準となる画面解像度として用いている。341 x 256 ピクセルの矩形が、典型的な視距離で視野角 10 度のビューポートに相当する (10 度の視野角は、原仕様から取り出した数字で、人間が光の刺激に対して最も敏感である、眼の中心視野に相当する)。</p>
+            <p>光感受性による発作性障害のある人は、特定の周波数で数回以上の閃光を放つコンテンツによって発作を引き起こす恐れがある。人間は他の色よりも赤色の閃光に対してさらに敏感であるため、彩度の高い赤色の閃光に対して特別な試験方法が提供されている。このガイドラインは、もともと放送業界向けであったガイドラインに基づいたもので、より近い距離から (より大きな視野角で) コンテンツを見るデスクトップモニターに適合させたものである。
+			</p>
+            <p>閃光は、ディスプレイ、画像をレンダリングするコンピュータ、又はレンダリングされたコンテンツによって、発生する可能性がある。コンテンツ制作者には、最初の二つを制御することはできない。それらは、ディスプレイ及びコンピュータの設計及び速度によって対処される。この達成基準の意図は、コンテンツ自体が閃光閾値に違反する明滅を引き起こさないようにすることである。</p>
+            <p>この達成基準は、広い周波数帯域 (3～50 ヘルツ) 内のあらゆる閃光 (1 ピクセルでさえも) を許容しなかった、はるかに厳格な WCAG 1.0 の基準を置き換えるものである。この達成基準は、英国及び諸国でテレビ放送向けに用いられている既存の仕様に基づいており、コンピュータのディスプレイの表示にも適応している。WCAG 2.0 では、1024 x 768 ピクセルの画面を評価の基準となる画面解像度として用いている。341 x 256 ピクセルの矩形が、典型的な視距離で視野角 10 度のビューポートに相当する (10 度の視野角は、原仕様から取り出した数字で、人間が光の刺激に対して最も敏感である、眼の中心視野に相当する)。</p>
+            <p>With the proliferation of devices of varying screen sizes (from small hand-helds to
+               large living room displays), as well as the adoption of <a href="https://www.w3.org/TR/WCAG21/#dfn-css-pixels">CSS pixels</a> as a density-independent unit of measurement, the prior assessment criteria may seem
+               outdated. However, an image of a consistent size uses up relatively the same percentage
+               of a user's visual field on any device. On a large screen, the image takes up less
+               size, but the large screen takes up a larger part of the visual field. On a mobile
+               screen, the image may take up most or all of the screen; however, the mobile screen
+               itself takes up a smaller portion of the user's visual field. So the same dimension
+               of the flashing content, represented in CSS pixels can still provide a consistent
+               means of assessment. Substituting CSS pixels for the original pixel block means that
+               the combined area of flashing becomes 341 x 256 CSS pixels, or a flashing area of
+               87,296 CSS pixels.</p>
+            <p>Content should be analyzed at the largest scale at which a user may view the content,
+               and at the standard zoom level of the user agent. For example, with a video that may
+               play in an area of a web page and also at full screen, the video should be analyzed
+               for risks at full screen.</p>
+            <p>Where video content is provided in color spaces other than sRGB, the version provided
+               with the highest dynamic range should be tested. In such cases the industry standard
+               definition of a general flash is a change in luminance of 20 cd/m2 or more where the
+               darker image is below 160 cd/m2. (<a href="https://www.itu.int/rec/R-REC-BT.1702/">ITU-R BT.1702</a>.) This is applicable for standard dynamic range (SDR) and high dynamic range (HDR)
+               content. For HDR content when the darker state is 160 cd/m2 or more, a general flash
+               is one where the Michelson contrast is 1/17 or greater — where the Michelson contrast
+               is calculated as (LHigh - LLow) / (LHigh + LLow), and where LHigh and LLow are the
+               luminance of the high and low luminance states, respectively.</p>
+            <p>For short clips that might be looped (such as GIF animations), the content should
+               be analyzed while looping. </p>
+            <div class="note">
+               <div role="heading" class="note-title marker" aria-level="3">Note</div>
+               <p>The specification cannot account for the actual viewing distance that a person chooses.
+                  Users that are closer to their screens than the idealized viewing distance will be
+                  affected by flashing areas that normatively pass. The same problem applies to users
+                  who rely on zoom or screen magnification. Conversely, users who are further away from
+                  the screen than the idealized distance should be able to tolerate flashing areas that
+                  are larger than the threshold.</p>
+            </div>
             <p>同時に、かつ隣接して存在する閃光を組み合わせた領域は、実質的には同時に閃光を放っている全領域を意味する。その領域は、任意の視角 10 度以内で同時に閃光を放っている隣接した領域を合計して算出される。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div><p>「点滅」と「閃光」は、同じコンテンツを指すこともある。</p>
@@ -91,10 +126,10 @@
             <ul>
                
                
-               <li><a href="http://www.hardingfpa.com/">Harding FPA Web Site</a></li>
+               <li><a href="https://www.hardingfpa.com/">Harding FPA Web Site</a></li>
                
                
-               <li><a href="https://trace.umd.edu/peat/">Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)</a></li>
+               <li><a href="https://trace.umd.edu/peat/">Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)</li>
                
                
                <li><a href="https://trace.umd.edu/information-about-photosensitive-seizure-disorders/">Information about Photosensitive Seizure Disorders</a></li>
@@ -103,10 +138,9 @@
                <li><a href="https://www.epilepsy.org.uk/">Epilepsy Action</a></li>
                
                
-               <li><a href="http://www.epilepsy.com/learn/triggers-seizures/photosensitivity-and-seizures">Epilepsy Foundation</a></li>
+               <li><a href="http://www.epilepsy.com/learn/triggers-seizures/photosensitivity-and-seizures">Epilepsy Foundation - Photosensitivity and Seizures</a></li>
                
                
-               <li><a href="http://www.ofcom.org.uk/static/archive/itc/itc_publications/codes_guidance/flashing_images/index.asp.html">ITC Guidance Note for Licensees on Flashing Images and Regular Patterns in Television</a></li>
                
                
             </ul>
@@ -133,20 +167,105 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">assistive technology</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">hardware and/or software that acts as a <a href="#dfn-user-agent">user agent</a>, or along with a mainstream user agent, to provide functionality to meet the requirements
+                     of users with disabilities that go beyond those offered by mainstream user agents
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>functionality provided by assistive technology includes alternative presentations
+                        (e.g., as synthesized speech or magnified content), alternative input methods (e.g.,
+                        voice), additional navigation or orientation mechanisms, and content transformations
+                        (e.g., to make tables more accessible).
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Assistive technologies often communicate data and messages with mainstream user agents
+                        by using and monitoring APIs.
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>The distinction between mainstream user agents and assistive technologies is not absolute.
+                        Many mainstream user agents provide some features to assist individuals with disabilities.
+                        The basic difference is that mainstream user agents target broad and diverse audiences
+                        that usually include people with and without disabilities. Assistive technologies
+                        target narrowly defined populations of users with specific disabilities. The assistance
+                        provided by an assistive technology is more specific and appropriate to the needs
+                        of its target users. The mainstream user agent may provide important functionality
+                        to assistive technologies like retrieving Web content from program objects or parsing
+                        markup into identifiable bundles.
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Assistive technologies that are important in the context of this document include
+                     the following:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>screen magnifiers, and other visual reading assistants, which are used by people with
+                        visual, perceptual and physical print disabilities to change text font, size, spacing,
+                        color, synchronization with speech, etc. in order to improve the visual readability
+                        of rendered text and images;
+                        </li>
+
+                     <li>screen readers, which are used by people who are blind to read textual information
+                        through synthesized speech or braille;
+                        </li>
+
+                     <li>text-to-speech software, which is used by some people with cognitive, language, and
+                        learning disabilities to convert text into synthetic speech;
+                        </li>
+
+                     <li>speech recognition software, which may be used by people who have some physical disabilities;</li>
+
+                     <li>alternative keyboards, which are used by people with certain physical disabilities
+                        to simulate the keyboard (including alternate keyboards that use head pointers, single
+                        switches, sip/puff and other special input devices.);
+                        </li>
+
+                     <li>alternative pointing devices, which are used by people with certain physical disabilities
+                        to simulate mouse pointing and button activations.
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
+            <dt id="dfn-blinking">blinking</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">switch back and forth between two visual states in a way that is meant to draw attention</p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>See also <a href="#dfn-flash">flash</a>. It is possible for something to be large enough and blink brightly enough at the
+                        right frequency to be also classified as a flash.
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-flash">閃光 (flash)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-relative-luminance">相対輝度</a>の相反する変化の組合せで、十分な広さを持ち、かつ特定の頻度の場合に、一部の人に発作を誘発する恐れがあるもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-relative-luminance">相対輝度</a>の相反する変化の組合せで、十分な広さを持ち、かつ特定の頻度の場合に、一部の人に発作を誘発する恐れがあるもの。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>許容されない閃光の種類に関する情報は、<a href="https://waic.jp/translations/WCAG21/#dfn-general-flash-and-red-flash-thresholds">一般閃光閾値及び赤色閃光閾値</a>を参照。</p>
+                     <p>許容されない閃光の種類に関する情報は、<a href="#dfn-general-flash-and-red-flash-thresholds">一般閃光閾値及び赤色閃光閾値</a>を参照。</p>
                   </div>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p><a href="https://waic.jp/translations/WCAG21/#dfn-blinking">点滅</a>も参照。</p>
+                     <p><a href="#dfn-blinking">点滅</a>も参照。</p>
                   </div>
                   
                   
@@ -156,7 +275,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">次のいずれかに該当する場合、<a href="https://waic.jp/translations/WCAG21/#dfn-flash">閃光</a>、又は急速に変化する映像シーケンスは、閾値を下回っている (すなわち、コンテンツは基準を<strong>満たしている</strong>) ことになる:</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">次のいずれかに該当する場合、<a href="#dfn-flash">閃光</a>、又は急速に変化する映像シーケンスは、閾値を下回っている (すなわち、コンテンツは基準を<strong>満たしている</strong>) ことになる:</p>
                   
                   
                   <ol xmlns="http://www.w3.org/1999/xhtml">
@@ -177,7 +296,10 @@
                   <ul xmlns="http://www.w3.org/1999/xhtml">
                      
                      
-                     <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="https://waic.jp/translations/WCAG21/#dfn-relative-luminance">相対輝度</a>が 0.80 未満である、最大相対輝度の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、</li>
+                     <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance">相対輝度</a>が 0.80 未満である、最大相対輝度の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
+					
+					A <strong>general flash</strong> is defined as a pair of opposing changes in <a href="#dfn-relative-luminance">relative luminance</a> of 10% or more of the maximum relative luminance (1.0) where the relative luminance of the darker image is below 0.80; and where "a pair of opposing changes" is an increase followed by a decrease, or a decrease followed by an increase, and
+					</li>
                      
                      
                      <li><strong>赤色閃光</strong>は、彩度の高い赤色を含んだ相反する遷移として定義される。</li>
@@ -190,7 +312,7 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる (同じコンテンツでも高解像度のディスプレイでは小さく安全になるので、閾値を定めるには低解像度が用いられている)。</p>
+                     <p>一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる。This resolution of 75 - 85 ppi is known to be lower, and thus more conservative than the nominal CSS pixel resolution of 96 ppi in CSS specifications. Higher resolutions displays showing the same rendering of the content yield smaller and safer images so it is lower resolutions that are used to define the thresholds. </p>
                   </div>
                   
                   
@@ -211,11 +333,103 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-relative-luminance">relative luminance</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">the relative brightness of any point in a colorspace, normalized to 0 for darkest
+                     black and 1 for lightest white
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <div>
+
+                        <p>For the sRGB colorspace, the relative luminance of a color is defined as L = 0.2126
+                           * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> where <strong>R</strong>, <strong>G</strong> and <strong>B</strong> are defined as:
+                           </p>
+
+                        <ul>
+
+                           <li>if RsRGB &lt;= 0.04045 then <strong>R</strong> = RsRGB/12.92 else <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>if GsRGB &lt;= 0.04045 then <strong>G</strong> = GsRGB/12.92 else <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+
+                           <li>if BsRGB &lt;= 0.04045 then <strong>B</strong> = BsRGB/12.92 else <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+                              </li>
+                           </ul>
+
+                        <p>and RsRGB, GsRGB, and BsRGB are defined as:</p>
+
+                        <ul>
+
+                           <li>RsRGB = R8bit/255</li>
+
+                           <li>GsRGB = G8bit/255</li>
+
+                           <li>BsRGB = B8bit/255</li>
+                           </ul>
+
+                        <p>The "^" character is the exponentiation operator. (Formula taken from 
+                           [[IEC-4WD]].)
+                           </p>
+                        </div>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Before May 2021 the value of 0.04045 in the definition was different (0.03928). It
+                        was taken from an older version of the specification and has been updated. It has
+                        no practical effect on the calculations in the context of these guidelines.</p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Almost all systems used today to view Web content assume sRGB encoding. Unless it
+                        is known that another color space will be used to process and display the content,
+                        authors should evaluate using sRGB colorspace. If using other color spaces, see <a href="contrast-minimum">Understanding Success Criterion 1.4.3</a>.
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>If dithering occurs after delivery, then the source color value is used. For colors
+                        that are dithered at the source, the average values of the colors that are dithered
+                        should be used (average R, average G, and average B).
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>Tools are available that automatically do the calculations when testing contrast and
+                        flash.
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <p>A <a href="relative-luminance.xml">MathML version of the relative luminance definition</a> is available.
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
+            <dt id="dfn-user-agent">user agent</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">any software that retrieves and presents Web content for users</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Web browsers, media players, plug-ins, and other programs — including <a href="#dfn-assistive-technology">assistive technologies</a> — that help in retrieving, rendering, and interacting with Web content.
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-web-page">ウェブページ (Web page)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agents">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
@@ -245,6 +459,6 @@
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
