@@ -39,40 +39,16 @@
             <p>光感受性による発作性障害のある人は、特定の周波数で数回以上の閃光を放つコンテンツによって発作を引き起こす恐れがある。人間は他の色よりも赤色の閃光に対してさらに敏感であるため、彩度の高い赤色の閃光に対して特別な試験方法が提供されている。このガイドラインは、もともと放送業界向けであったガイドラインに基づいたもので、より近い距離から (より大きな視野角で) コンテンツを見るデスクトップモニターに適合させたものである。
 			</p>
             <p>閃光は、ディスプレイ、画像をレンダリングするコンピュータ、又はレンダリングされたコンテンツによって、発生する可能性がある。コンテンツ制作者には、最初の二つを制御することはできない。それらは、ディスプレイ及びコンピュータの設計及び速度によって対処される。この達成基準の意図は、コンテンツ自体が閃光閾値に違反する明滅を引き起こさないようにすることである。</p>
-            <p>この達成基準は、広い周波数帯域 (3～50 ヘルツ) 内のあらゆる閃光 (1 ピクセルでさえも) を許容しなかった、はるかに厳格な WCAG 1.0 の基準を置き換えるものである。この達成基準は、英国及び諸国でテレビ放送向けに用いられている既存の仕様に基づいており、コンピュータのディスプレイの表示にも適応している。WCAG 2.0 では、1024 x 768 ピクセルの画面を評価の基準となる画面解像度として用いている。341 x 256 ピクセルの矩形が、典型的な視距離で視野角 10 度のビューポートに相当する (10 度の視野角は、原仕様から取り出した数字で、人間が光の刺激に対して最も敏感である、眼の中心視野に相当する)。</p>
-            <p>With the proliferation of devices of varying screen sizes (from small hand-helds to
-               large living room displays), as well as the adoption of <a href="https://www.w3.org/TR/WCAG21/#dfn-css-pixels">CSS pixels</a> as a density-independent unit of measurement, the prior assessment criteria may seem
-               outdated. However, an image of a consistent size uses up relatively the same percentage
-               of a user's visual field on any device. On a large screen, the image takes up less
-               size, but the large screen takes up a larger part of the visual field. On a mobile
-               screen, the image may take up most or all of the screen; however, the mobile screen
-               itself takes up a smaller portion of the user's visual field. So the same dimension
-               of the flashing content, represented in CSS pixels can still provide a consistent
-               means of assessment. Substituting CSS pixels for the original pixel block means that
-               the combined area of flashing becomes 341 x 256 CSS pixels, or a flashing area of
-               87,296 CSS pixels.</p>
-            <p>Content should be analyzed at the largest scale at which a user may view the content,
-               and at the standard zoom level of the user agent. For example, with a video that may
-               play in an area of a web page and also at full screen, the video should be analyzed
-               for risks at full screen.</p>
-            <p>Where video content is provided in color spaces other than sRGB, the version provided
-               with the highest dynamic range should be tested. In such cases the industry standard
-               definition of a general flash is a change in luminance of 20 cd/m2 or more where the
-               darker image is below 160 cd/m2. (<a href="https://www.itu.int/rec/R-REC-BT.1702/">ITU-R BT.1702</a>.) This is applicable for standard dynamic range (SDR) and high dynamic range (HDR)
-               content. For HDR content when the darker state is 160 cd/m2 or more, a general flash
-               is one where the Michelson contrast is 1/17 or greater — where the Michelson contrast
-               is calculated as (LHigh - LLow) / (LHigh + LLow), and where LHigh and LLow are the
-               luminance of the high and low luminance states, respectively.</p>
-            <p>For short clips that might be looped (such as GIF animations), the content should
-               be analyzed while looping. </p>
+            <p>この達成基準は、広い周波数帯域 (3～50 ヘルツ) 内のあらゆる閃光 (1 ピクセルでさえも) を許容しなかった、はるかに厳格な WCAG 1.0 の基準を置き換えるものである。この達成基準は、英国及び諸国でテレビ放送向けに用いられている既存の仕様に基づいており、コンピュータのディスプレイの表示にも適応している。WCAG 2.0 では、1024 x 768 ピクセルの画面を評価の基準となる画面解像度として用いている。341 x 256 ピクセルの矩形が、典型的な視聴距離で視野角 10 度のビューポートに相当する (10 度の視野角は、原仕様から取り出した数字で、人間が光の刺激に対して最も敏感である、眼の中心視野に相当する)。</p>
+			<p>さまざまな画面サイズのデバイス (小型の携帯電話からリビングルームの大型ディスプレイまで) が急増し、解像度に依存しない測定単位である <a href="https://www.w3.org/TR/WCAG21/#dfn-css-pixels">CSS ピクセル</a>が採用されたことで、以前の評価基準は時代遅れに見えるかもしれない。しかし、一貫した大きさの画像であれば、どのようなデバイスでも利用者の視野に占める割合は相対的に同じである。大画面の場合、画像のサイズは小さくなるが、大画面は視野の大部分を占める。モバイル画面では、画像は画面のほとんど又はすべてを占めるかもしれないが、モバイル画面自体が利用者の視野に占める割合は小さい。そのため、CSS ピクセルで表現される、閃光するコンテンツの同じ寸法は、一貫した評価手段を提供することができる。CSS ピクセルを元のピクセルブロックに置き換えると、閃光の合計面積は 341 × 256 CSS ピクセル、つまり 87,296 CSS ピクセルの閃光面積となる。</p>
+			
+            <p>コンテンツは、利用者がコンテンツを見ることができる最大のスケール、及びユーザエージェントの標準的なズームレベルで、分析するべきである。例えば、ウェブページのある領域で再生され、かつフルスクリーンで再生される可能性のある映像では、フルスクリーンでのリスクを分析するべきである。</p>
+            <p>映像コンテンツが sRGB 以外の色空間で提供される場合、最も高いダイナミックレンジで提供されるバージョンをテストする必要がある。このような場合、業界標準の一般的な閃光の定義は、暗い方の画像が 160cd/m2 以下である場合に、20cd/m2 以上の輝度変化があることである (<a href="https://www.itu.int/rec/R-REC-BT.1702/">ITU-R BT.1702</a>)。これは、標準ダイナミックレンジ (SDR) 及びハイダイナミックレンジ (HDR) コンテンツに適用される。HDR コンテンツで暗い状態が 160cd/m2 以上の場合、一般的な閃光は、マイケルソンコントラストが 1/17 以上のものである。マイケルソンコントラストは (LHigh - LLow) / (LHigh + LLow) で計算され、LHigh 及び LLowはそれぞれ、高輝度と低輝度の状態である。</p>
+
+            <p>ループする可能性のある短いクリップ (GIF アニメーションなど) については、ループしながらコンテンツを分析する必要がある。</p>
             <div class="note">
-               <div role="heading" class="note-title marker" aria-level="3">Note</div>
-               <p>The specification cannot account for the actual viewing distance that a person chooses.
-                  Users that are closer to their screens than the idealized viewing distance will be
-                  affected by flashing areas that normatively pass. The same problem applies to users
-                  who rely on zoom or screen magnification. Conversely, users who are further away from
-                  the screen than the idealized distance should be able to tolerate flashing areas that
-                  are larger than the threshold.</p>
+               <div role="heading" class="note-title marker" aria-level="3">注記</div>
+               <p>仕様では、人が選択する実際の視聴距離を考慮することはできない。理想とされる視聴距離よりも画面に近い利用者は、規範的に適合する閃光領域の影響を受けることになる。同じ問題は、ズームや画面拡大に依存する利用者にも当てはまる。逆に、理想とされる距離よりも画面から離れている利用者は、閾値よりも大きな閃光領域を許容できるはずである。</p>
             </div>
             <p>同時に、かつ隣接して存在する閃光を組み合わせた領域は、実質的には同時に閃光を放っている全領域を意味する。その領域は、任意の視角 10 度以内で同時に閃光を放っている隣接した領域を合計して算出される。</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
@@ -167,90 +143,68 @@
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
-            <dt id="dfn-assistive-technology">assistive technology</dt>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">hardware and/or software that acts as a <a href="#dfn-user-agent">user agent</a>, or along with a mainstream user agent, to provide functionality to meet the requirements
-                     of users with disabilities that go beyond those offered by mainstream user agents
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>functionality provided by assistive technology includes alternative presentations
-                        (e.g., as synthesized speech or magnified content), alternative input methods (e.g.,
-                        voice), additional navigation or orientation mechanisms, and content transformations
-                        (e.g., to make tables more accessible).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Assistive technologies often communicate data and messages with mainstream user agents
-                        by using and monitoring APIs.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>The distinction between mainstream user agents and assistive technologies is not absolute.
-                        Many mainstream user agents provide some features to assist individuals with disabilities.
-                        The basic difference is that mainstream user agents target broad and diverse audiences
-                        that usually include people with and without disabilities. Assistive technologies
-                        target narrowly defined populations of users with specific disabilities. The assistance
-                        provided by an assistive technology is more specific and appropriate to the needs
-                        of its target users. The mainstream user agent may provide important functionality
-                        to assistive technologies like retrieving Web content from program objects or parsing
-                        markup into identifiable bundles.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
                         </p>
                   </div>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Assistive technologies that are important in the context of this document include
-                     the following:
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
                      </p>
 
                   <ul xmlns="http://www.w3.org/1999/xhtml">
 
-                     <li>screen magnifiers, and other visual reading assistants, which are used by people with
-                        visual, perceptual and physical print disabilities to change text font, size, spacing,
-                        color, synchronization with speech, etc. in order to improve the visual readability
-                        of rendered text and images;
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
                         </li>
 
-                     <li>screen readers, which are used by people who are blind to read textual information
-                        through synthesized speech or braille;
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
                         </li>
 
-                     <li>text-to-speech software, which is used by some people with cognitive, language, and
-                        learning disabilities to convert text into synthetic speech;
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
                         </li>
 
-                     <li>speech recognition software, which may be used by people who have some physical disabilities;</li>
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
 
-                     <li>alternative keyboards, which are used by people with certain physical disabilities
-                        to simulate the keyboard (including alternate keyboards that use head pointers, single
-                        switches, sip/puff and other special input devices.);
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
                         </li>
 
-                     <li>alternative pointing devices, which are used by people with certain physical disabilities
-                        to simulate mouse pointing and button activations.
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
                         </li>
                      </ul>
                   </definition>
             </dd>
-            <dt id="dfn-blinking">blinking</dt>
-            <dd>
-               <definition xmlns="">
-
-                  <p xmlns="http://www.w3.org/1999/xhtml">switch back and forth between two visual states in a way that is meant to draw attention</p>
-
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>See also <a href="#dfn-flash">flash</a>. It is possible for something to be large enough and blink brightly enough at the
-                        right frequency to be also classified as a flash.
-                        </p>
+            <dt id="dfn-blinking">点滅 (blinking)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">注意を引く意図で、二つの視覚的な状態を交互に切り替えること。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-flash">閃光</a>も参照。ある程度の面積をもち、ある程度の明るさ、特定の頻度で点滅するものは、閃光に分類されることもありうる。</p>
                   </div>
-                  </definition>
+                  
+                  
+               </definition>
             </dd>
             <dt id="dfn-flash">閃光 (flash)</dt>
             <dd><definition xmlns="">
@@ -296,9 +250,7 @@
                   <ul xmlns="http://www.w3.org/1999/xhtml">
                      
                      
-                     <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance">相対輝度</a>が 0.80 未満である、最大相対輝度の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
-					
-					A <strong>general flash</strong> is defined as a pair of opposing changes in <a href="#dfn-relative-luminance">relative luminance</a> of 10% or more of the maximum relative luminance (1.0) where the relative luminance of the darker image is below 0.80; and where "a pair of opposing changes" is an increase followed by a decrease, or a decrease followed by an increase, and
+                     <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance">相対輝度</a>が 0.80 未満である、最大相対輝度 (1.0) の 10 ％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
 					</li>
                      
                      
@@ -312,7 +264,8 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる。This resolution of 75 - 85 ppi is known to be lower, and thus more conservative than the nominal CSS pixel resolution of 96 ppi in CSS specifications. Higher resolutions displays showing the same rendering of the content yield smaller and safer images so it is lower resolutions that are used to define the thresholds. </p>
+                     <p>一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を 22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる。
+					この 75～85 ppi という解像度は、CSS 仕様の公称ピクセル解像度である 96 ppi よりも低いことが知られており、そのためより保守的である。高解像度のディスプレイで同じコンテンツのレンダリングを表示すると、より小さく安全な画像が得られるため、閾値の定義に用いられているのはより低い解像度のほうである。</p>
                   </div>
                   
                   
@@ -333,35 +286,33 @@
                   
                </definition>
             </dd>
-            <dt id="dfn-relative-luminance">relative luminance</dt>
+            <dt id="dfn-relative-luminance">相対輝度 (relative luminance)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">the relative brightness of any point in a colorspace, normalized to 0 for darkest
-                     black and 1 for lightest white
+                  <p xmlns="http://www.w3.org/1999/xhtml">最も暗い黒を 0 に、最も明るい白を 1 に正規化した色空間内の任意の点の相対的な明るさ。
                      </p>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
                      <div>
 
-                        <p>For the sRGB colorspace, the relative luminance of a color is defined as L = 0.2126
-                           * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> where <strong>R</strong>, <strong>G</strong> and <strong>B</strong> are defined as:
+                        <p>sRGB　色空間においては、色の相対輝度は、L = 0.2126 * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> と定義されており、<strong>R</strong>、<strong>G</strong> 及び <strong>B</strong> は以下のように定義される:
                            </p>
 
                         <ul>
 
-                           <li>if RsRGB &lt;= 0.04045 then <strong>R</strong> = RsRGB/12.92 else <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+                           <li>RsRGB <= 0.04045 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
                               </li>
 
-                           <li>if GsRGB &lt;= 0.04045 then <strong>G</strong> = GsRGB/12.92 else <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+                           <li>GsRGB <= 0.04045 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
                               </li>
 
-                           <li>if BsRGB &lt;= 0.04045 then <strong>B</strong> = BsRGB/12.92 else <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+                           <li>BsRGB <= 0.04045 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
                               </li>
                            </ul>
 
-                        <p>and RsRGB, GsRGB, and BsRGB are defined as:</p>
+                        <p>そして、RsRGB、GsRGB、及び BsRGB は、次のように定義される:</p>
 
                         <ul>
 
@@ -372,56 +323,48 @@
                            <li>BsRGB = B8bit/255</li>
                            </ul>
 
-                        <p>The "^" character is the exponentiation operator. (Formula taken from 
-                           [[IEC-4WD]].)
+                        <p>^ という記号は、指数演算子である(計算式は、[IEC-4WD]を参考にしている)。
                            </p>
                         </div>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Before May 2021 the value of 0.04045 in the definition was different (0.03928). It
-                        was taken from an older version of the specification and has been updated. It has
-                        no practical effect on the calculations in the context of these guidelines.</p>
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>2021 年 5 月以前は、定義にある 0.04045 の値が異なっていた (0.03928)。これは、仕様の古いバージョンから取られたものであり、更新されている。本ガイドラインの文脈における計算には、実用上の影響はない。</p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Almost all systems used today to view Web content assume sRGB encoding. Unless it
-                        is known that another color space will be used to process and display the content,
-                        authors should evaluate using sRGB colorspace. If using other color spaces, see <a href="contrast-minimum">Understanding Success Criterion 1.4.3</a>.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+	<p>ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっているのでない限り、コンテンツ制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="contrast-minimum.html">達成基準 1.4.3</a> を参照。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>If dithering occurs after delivery, then the source color value is used. For colors
-                        that are dithered at the source, the average values of the colors that are dithered
-                        should be used (average R, average G, and average B).
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>表示時にディザリングが発生する場合は、元の色の値が用いられる。元々ディザリングがかけられている色については、用いられている色の平均値を用いるべきである (R の平均値、G の平均値、及び B の平均値)。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>Tools are available that automatically do the calculations when testing contrast and
-                        flash.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コントラストと閃光を検証する際に、この計算を自動で行うツールが利用できる。
                         </p>
                   </div>
 
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note">
-                     <div role="heading" class="note-title marker" aria-level="2">Note</div>
-                     <p>A <a href="relative-luminance.xml">MathML version of the relative luminance definition</a> is available.
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="https://www.w3.org/TR/WCAG21/relative-luminance.xml">MathML version of the relative luminance definition</a> も参照できる。
                         </p>
                   </div>
                   </definition>
             </dd>
-            <dt id="dfn-user-agent">user agent</dt>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
             <dd>
                <definition xmlns="">
 
-                  <p xmlns="http://www.w3.org/1999/xhtml">any software that retrieves and presents Web content for users</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
 
-                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Web browsers, media players, plug-ins, and other programs — including <a href="#dfn-assistive-technology">assistive technologies</a> — that help in retrieving, rendering, and interacting with Web content.
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
                      </p>
                   </definition>
             </dd>
