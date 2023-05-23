@@ -24,6 +24,7 @@
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#test-rules">テストルール</a></li>
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
@@ -233,7 +234,6 @@
                         <li><a class="pdf" href="https://waic.jp/translations/WCAG21/Techniques/pdf/PDF13">PDF13: PDF 文書内のリンクに対して /Alt エントリを使用して置換テキストを提供する</a></li>
                         
                         
-                        <li><a class="silverlight" href="https://waic.jp/translations/WCAG21/Techniques/silverlight/SL18">SL18: Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name</a></li>
                         
                         
                      </ul>
@@ -273,8 +273,122 @@
                </ul>
             </section>
          </section>
+         <section id="test-rules">
+            <h2>テストルール</h2>
+            <p>以下は、この達成基準の特定の側面に関するテストルールである。WCAG への適合を確認するために、これらの特定のテストルールを使用する必要はないが、これらは定義され、承認されたテスト方法である。テストルールの使用については、<a href="understanding-act-rules.html">WCAG 達成基準のテストルールを理解する</a>を参照のこと。</p>
+
+            <ul>
+               <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/link-non-empty-accessible-name-c487ae/">Link has non-empty accessible name</a></li>
+            </ul>
+         </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-accessibility-supported">アクセシビリティ サポーテッド (accessibility supported)</dt>
+            <dd><definition xmlns="">
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の<a href="#dfn-assistive-technology">支援技術</a>と、ブラウザ及びその他の<a href="#dfn-user-agent">ユーザエージェント</a>にあるアクセシビリティ機能でサポートされていること。</p>
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">あるウェブコンテンツ技術 (あるいは、ある技術の機能) の使用方法がアクセシビリティ サポーテッドであると認められるためには、そのウェブコンテンツ技術 (あるいは、機能) について、次の 1.と2.の両方が満たされていなければならない:</p>
+
+
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+
+
+                     <li><p><strong>その<a href="#dfn-technology">ウェブコンテンツ技術</a>の使用方法が、利用者の支援技術によりサポートされていなければならない。</strong>これは、その技術の使用方法が、そのコンテンツの<a href="#dfn-human-language">自然言語</a>における利用者の支援技術との相互運用性について検証されていることを意味する。</p>
+
+
+                        <p><strong>かつ</strong></p>
+
+
+                     </li>
+
+
+                     <li><p><strong>そのウェブコンテンツ技術には、アクセシビリティ サポーテッドで、利用者が利用できるユーザエージェントがなければならない。</strong>これは、少なくとも次の 4 つのうち一つを満たしていることを意味する:</p>
+
+
+                        <ol>
+
+
+                           <li><p>その技術が (HTML や CSS のように)、広く配布されているアクセシビリティ サポーテッドなユーザエージェントに標準でサポートされている。</p>
+
+
+                              <p><strong>又は、</strong></p>
+
+                           </li>
+
+
+                           <li><p>その技術が、広く配布されているアクセシビリティ サポーテッドなプラグインでサポートされている。</p>
+
+
+                              <p><strong>又は、</strong></p>
+
+                           </li>
+
+
+                           <li><p>そのコンテンツが、大学あるいは企業内ネットワークのような閉じた環境で利用できるものであり、その技術に必要とされていて、その組織で使用されているユーザエージェントがアクセシビリティ サポーテッドである。</p>
+
+
+                              <p><strong>又は、</strong></p>
+
+                           </li>
+
+
+                           <li><p>その技術をサポートするユーザエージェントが、アクセシビリティ サポーテッドであって、次のようにダウンロードあるいは購入できる:</p>
+
+
+                              <ul>
+
+
+                                 <li>障害のある人に障害のない人よりも時間や労力がかかるようなことはなく、<strong>かつ</strong>、</li>
+
+
+                                 <li>障害のある人も障害のない人と同じくらい容易に探して入手することができる。</li>
+
+
+                              </ul>
+
+
+                           </li>
+
+
+                        </ol>
+
+
+                     </li>
+
+
+                  </ol>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>Accessibility Guidelines Working Group ならびに W3C は、あるウェブ技術のある特定の使用方法がアクセシビリティ サポーテッドであると分類するために、そのウェブ技術の特定の使用方法に対して、どの支援技術によるどれだけのサポートが必要なのかを定めない(<a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level">Level of Assistive Technology Support Needed for &quot;Accessibility Support&quot;</a> を参照)。</p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>そのウェブ技術に<a href="#dfn-relied-upon">依存して</a>おらず、<a href="https://waic.jp/translations/WCAG21/#cc4">適合要件 4</a> 及び<a href="https://waic.jp/translations/WCAG21/#cc5">適合要件 5</a> が満たしている場合は、そのウェブ技術をアクセシビリティ サポーテッドではない方法で用いることができる。</p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-technology">ウェブ技術</a>がアクセシビリティ サポーテッドな方法で用いられている場合、その技術全体、又はその技術の使用方法すべてがアクセシビリティ サポーテッドであるということを暗に示すわけではない。ほとんどの技術は、HTML を含めてアクセシビリティ サポーテッドではない機能、又は使用方法が少なくとも一つある。ウェブページが WCAG に適合するのは、依存する技術のアクセシビリティ サポーテッドな使用方法を用いて WCAG の要件を満たしている場合だけである。</p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>複数のバージョンを有するウェブコンテンツ技術を挙げる際は、アクセシビリティ サポーテッドなバージョンを特定すべきである。</p>
+                  </div>
+
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>コンテンツ制作者が技術のアクセシビリティ サポーテッドな使用方法を見つける方法の一つは、アクセシビリティ サポーテッドであることが文書化されている使用方法の資料を参考にすることである(<a href="conformance.html#documented-lists">ウェブ技術のアクセシビリティ サポーテッドな使用法を理解する</a> を参照)。コンテンツ制作者、企業、技術ベンダー、あるいはその他の者が、ウェブコンテンツ技術のアクセシビリティ サポーテッドな使用方法を文書化してもよい。しかし、文書中の技術の使用方法すべては、前述のアクセシビリティ サポーテッドなウェブコンテンツ技術の定義を満たしていなければならない。</p>
+                  </div>
+
+
+               </definition>
+            </dd>
             <dt id="dfn-ambiguous-to-users-in-general">ほとんどの利用者にとって曖昧 (ambiguous to users in general)</dt>
             <dd><definition xmlns="">
                   
@@ -285,6 +399,61 @@
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">「注目すべき輸出品のひとつはグァバです」という文中にある「グァバ」という単語がリンクになっている。そのリンク先は、グァバの定義、グァバの輸出量を挙げる図表、又はグァバを収穫している人々の写真のいずれにもなり得る。リンクを動作させるまで、すべての利用者が確信を持てないため、障害のある人が不利な立場に置かれることはない。</p>
                   
                </definition>
+            </dd>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
+            <dd>
+               <definition xmlns="">
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
+                        </li>
+
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
+                        </li>
+
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
+                        </li>
+
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
+                        </li>
+
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
+            <dt id="dfn-conformance">適合 (conformance)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">与えられた規格、ガイドライン、あるいは仕様のすべての要件を満たすこと。</p>
+                  </definition>
             </dd>
             <dt id="dfn-conforming-alternate-version">適合している代替版 (conforming alternate version)</dt>
             <dd>
@@ -400,6 +569,37 @@
 
                </definition>
             </dd>
+            <dt id="dfn-content">コンテンツ (content)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>によって利用者に伝達される情報及び感覚的な体験。コンテンツの<a href="#dfn-structure">構造</a>、<a href="#dfn-presentation">提示</a>、及びインタラクションを定義するコードやマークアップを含む。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-functionality">機能 (functionality)</dt>
+            <dd><definition xmlns="">
+
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者の操作により実現可能な<a href="#dfn-process">プロセス</a>及び結果。</p>
+
+
+               </definition>
+            </dd>
+            <dt id="dfn-human-language">自然言語 (human language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">人間とコミュニケーションをとるための言語で、話される、書かれる、又は (視覚的あるいは触覚的な手段で) 手話にされるもの。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p><a href="#dfn-sign-language">手話</a>も参照。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
             <dt id="dfn-link-purpose">リンクの目的 (link purpose)</dt>
             <dd><definition xmlns="">
                   
@@ -409,11 +609,68 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-mechanism">メカニズム (mechanism)</dt>
+            <dd><definition xmlns="">
+                  
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">結果を得るための<a href="#dfn-process">プロセス</a>又は手法。</p>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、コンテンツ内で明示的に提供されることもあれば、プラットフォーム又は<a href="#dfn-assistive-technology">支援技術</a>を含む<a href="#dfn-user-agent">ユーザエージェント</a>で提供されるものに<a href="#dfn-relied-upon">依存する</a>こともある。</p>
+
+                  </div>
+                  
+                  
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>メカニズムは、宣言する適合レベルのすべての達成基準を満たさなければならない。</p>
+                  </div>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-presentation">提示 (presentation)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者が知覚できる形式で<a href="#dfn-content">コンテンツ</a>をレンダリングすること。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-process">プロセス (process)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ある活動を完了させるために必要な利用者の一連の動作。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ショッピングサイト上の一連のウェブページで目的を果たすためには、利用者が選択肢となりうる製品、価格及び内容を閲覧した後、製品を選択して注文し、配送先情報及び支払情報を入力する必要がある。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">アカウント登録ページでは、登録フォームにアクセスする前に<a href="https://www.w3.org/TR/turingtest/">チューリングテスト</a>に成功する必要がある。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  
+                  
+<p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
+                  
+                  
+<p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
+                  
+                  
+               </definition>
+            </dd>
             <dt id="dfn-programmatically-determined-link-context">プログラムによる解釈が可能なリンクのコンテキスト (programmatically determined link context)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">リンクとの<a href="https://waic.jp/translations/WCAG21/#dfn-relationships">関係性</a>から<a href="https://waic.jp/translations/WCAG21/#dfn-programmatically-determined">プログラムによる解釈</a>が可能であり、リンクテキストと結びつけることができ、様々な感覚モダリティで利用者に提示することができる付加的情報。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">リンクとの<a href="#dfn-relationships">関係性</a>から<a href="#dfn-programmatically-determined">プログラムによる解釈</a>が可能であり、リンクテキストと結びつけることができ、様々な感覚モダリティで利用者に提示することができる付加的情報。</p>
                   
                   
                   <p xmlns="http://www.w3.org/1999/xhtml" class="example">HTML では、英語で記述されたリンクからプログラムによる解釈が可能な情報には、そのリンクと同じ段落、リスト、又はテーブルのセルにあるテキスト、あるいはリンクのあるテーブルのセルと関連付けられたテーブルの見出しセルにあるテキストなどがある。</p>
@@ -426,9 +683,134 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-relationships">関係性 (relationships)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの異なる部分間における意味のあるつながり。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-relied-upon">依存されている (relied upon)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">その<a href="#dfn-technology">技術</a>が無効になっている場合、又はサポートされていない場合に、コンテンツが<a href="#dfn-conformance">適合</a>できないこと。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-sign-language">手話 (sign language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">意味を伝えるために、手と腕の動き、顔の表情又は身振りなどの組み合わせを用いる言語。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-structure">構造 (structure)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+                     
+                     
+                     <li><a href="#dfn-web-page">ウェブページ</a>の各部を相互の関係性によりまとめる方法論。及び、</li>
+                     
+                     
+                     <li>一連の<a href="#dfn-web-page">ウェブページ</a>をまとめる方法論。</li>
+                     
+                     
+                  </ol>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-supplemental-content">補足コンテンツ (supplemental content)</dt>
+            <dd><definition xmlns="">
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml">元の<a href="#dfn-content">コンテンツ</a>を説明、又はより明確にするために付加されたコンテンツ。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example"><a href="#dfn-web-page">ウェブページ</a>の音声版。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">複雑な<a href="#dfn-process">プロセス</a>を示したイラスト。</p>
+                  
+                  
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">調査研究でなされた主要な成果及び提言を要約する段落。</p>
+                  
+                  
+               </definition>
+            </dd>
+            <dt id="dfn-technology">技術 (technology)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>がどのようにレンダリング、再生、又は実行するかを符号化する<a href="#dfn-mechanism">メカニズム</a>。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>このガイドラインで用いられている「ウェブ技術」及び (単独で用いられている) 「技術」という用語は、どちらもウェブコンテンツ技術を指す。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>ウェブコンテンツ技術には、マークアップ言語、データ形式、及びプログラム言語などがあり、これらをコンテンツ制作者が単独で、又は組み合わせて用いることによって、静的なウェブページや同期したメディアによる提示、さらには動的なウェブアプリケーションに至るまでの様々なエンドユーザ体験を作ることができる。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブコンテンツ技術のよくある事例としては、HTML、CSS、SVG、PNG、PDF、Flash、 JavaScript などがある。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (web page)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <pこのガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURI は全体を通して変わらない。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで "http://shopping.example.com/" へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。
+                     </p>
+                  </definition>
+            </dd>
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
