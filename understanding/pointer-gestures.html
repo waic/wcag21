@@ -41,8 +41,10 @@
                			
             </figure>
             <p>軌跡ベースのジェスチャの例には、インタラクションの方向に応じたスワイプ、スライダー、カルーセル、及び特定の形状の描画などの指定された軌跡をトレースするその他のジェスチャが含まれる。このような軌跡は、タッチスクリーン、ペンタブレットもしくはトラックパッド上で指もしくはスタイラスペンを用いて、又はマウス、ジョイスティックもしくは同様のポインタデバイスを用いて描画されるかもしれない。</p>
-            <p>Dragging is a movement where the user picks up an object with a pointer (such as mouse cursor or a finger) and moves it to some other position. This movement from start point to end point does not require the user to follow any particular path or direction. Dragging is therefore not path-based. In contrast, a path-based pointer gesture requires the traversal of an intermediate point, which is a technical way of expressing that the directionality and possibly speed of the gesture communicates a particular command to the system. Dragging motions are covered in <a href="https://www.w3.org/WAI/WCAG22/Understanding/dragging.html">Success Criterion 2.5.7: Dragging</a>.</p>
-			<!--<p>始点と終点の間の動きが任意の方向に進む可能性があり、完全に自由あるようなポインタのインタラクションは、軌跡ベースではない。</p>-->
+            <p>ドラッグとは、利用者がポインタ (マウスカーソルや指など) でオブジェクトをつかんで、他の位置に移動させる動作のことである。この始点から終点への動作は、利用者に特定の軌跡又は方向をたどることを要求しない。ドラッグはしたがって軌跡ベースではない。これに対して、軌跡ベースのポインタジェスチャでは中間点の通過が求められるが、これは、ジェスチャの方向性、及びもしかしたら速度も、によってシステムに特定のコマンドを伝達する技術的な表現方法である。ドラッグ動作については<a href="https://www.w3.org/WAI/WCAG22/Understanding/dragging.html">達成基準 2.5.7: Dragging Movements</a> で解説している。</p>
+            <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注</div>
+               <p><a href="https://www.w3.org/WAI/WCAG22/Understanding/dragging.html">達成基準 2.5.7: Dragging Movements</a> は、WCAG 2.2 で追加される予定の達成基準である。</p>
+            </div>
             <figure id="figure-path-based-gesture-2"><img src="img/path-based-gesture-2.png" width="400" alt="1、タッチの開始を示す手。2、2 番目のポイントに移動する。非常にランダムな軌跡をたどる。" /><figcaption>図 2 自由形式のジェスチャでは、終点の前に特定の経路を必要とせず、始点と (オプションで) 終点のみが重要である。</figcaption>
                			
             </figure>
@@ -63,7 +65,7 @@
             <p>タッチスクリーンデバイスはデフォルトのジェスチャを適用できるため、特定のコンポーネントが軌跡ベースのジェスチャを必要するかどうかわからない場合は、タッチスクリーンデバイスでテストすることが重要である。</p>
             <p>タッチスクリーンデバイスのブラウザは一般に、軌跡ベースのジェスチャが必要かどうかに影響を及ぼすいくつかのデフォルトのジェスチャを提供する。例えば、タッチスクリーンデバイス上のウェブブラウザは、垂直方向のジェスチャを検出してページをスクロールすることがある。利用者がスライダーのつまみに指を置いて上に動かすと (下にスクロールするため)、スライダーが作動しないことがある (実装による)。利用者が最初に水平方向に動かす場合、スライダーはそのジェスチャをキャプチャし、垂直方向の動きを無視して、軌跡のジェスチャを生成することがある。アクセシビリティ サポーテッドとしてタッチスクリーンデバイスを含める場合、同様の方法でマウスを使用しても同じブラウザの動作をトリガーしないため、このタイプのインタラクションはタッチスクリーンでテストする必要がある。</p>
             <p>この達成基準では、全ての機能がポインティングデバイスで利用できる必要はないが、ポインティングデバイスで使用できる場合は、軌跡ベースのジェスチャを要求すべきでない。コンテンツ制作者は、複雑なジェスチャと同等の動作を実行するキーボードコマンド又は他の非ポインタメカニズムを一般に提供する必要があるが (達成基準 2.1.1 キーボードを参照)、この達成基準に適合するためには十分ではない。ポインティングデバイスに完全に依存している又はシンプルなポインタ入力が代替手段よりもはるかに実行しやすく理解しやすいと感じる利用者がいるからである。例えば、利用者がヘッドポインタに依存している場合、スクリーンキーボードを動作させてキーボードショートカットをエミュレートするよりも、コントロールをクリックする方がはるかに便利と感じるだろうし、一連のキー (又はジェスチャ) を覚えるのが困難な利用者は、ラベル付きコントロールをクリックする方がはるかに簡単であると感じるだろう。したがって、一つ以上のポインタベースのメカニズムがサポートされている場合、それらの恩恵は、単純かつ単独のシングルポイントによる動作を通して利用者に提供される必要がある。</p>
-            <p>シングルポインタの操作には、タップ及びクリック、ダブルタップ及びダブルクリック、長押し、スワイプ、ドラッグ、軌跡ベースのジェスチャ、などがある。「ピンチでズーム」のようなジェスチャ又は 2 本指でのスワイプは、2 つ以上のポインタ入力 (この場合はタッチスクリーン上の 2 本指) を必要とするため、<em>マルチポイントのジェスチャ</em>となる。</p>
+            <p>シングルポインタの操作には、タップ及びクリック、ダブルタップ及びダブルクリック、長押し、スワイプ、ドラッグ、軌跡ベースのジェスチャ、などがある。「ピンチでズーム」のようなジェスチャ又は 2 本指でのスワイプは、2 つ以上のポインタ入力 (この場合はタッチスクリーン上の 2 本指) を必要とするため、<em>マルチポイントジェスチャ</em>となる。</p>
             <p>ただし、本質的かつ必然的に複雑な軌跡又はマルチポイントジェスチャに基づく機能により例外ができる。例えば、署名の入力は (何かを認証したり、身元を確認する必要はないが) 本質的に軌跡ベースだろう。</p>
             <p>ドラッグ操作では始点と終点のみが重要であるため、任意の方向へのドラッグを伴うジェスチャは、この達成基準の範囲には含まれない。しかし、そのようなジェスチャには細かい運動制御を必要とする。コンテンツ制作者は、ドラッグしない方法を提供することを勧める。例えば、ドラッグ＆ドロップ操作は、(タップ又はキーボード操作で) アイテムを選択し、2 番目のステップとしてその目的地を選択することによっても実現できる。</p>
          </section>
@@ -73,12 +75,10 @@
                					
                <li><p>タッチスクリーン又はマウスで、複雑なポインタのジェスチャを (正確に) 実行できない利用者には、コンテンツを操作するための代替手段がある。</p>
                </li>
-               <li><p>Users who cannot perform multi-pointer gestures on a touchscreen (for instance, because they are operating the touchscreen with an alternative input such as a head pointer) will have a single-pointer alternative for operating the content.</p>
+               <li><p>タッチスクリーンでマルチポインタのジェスチャができない利用者 (例えば、ヘッドポインタなどの代替入力でタッチスクリーンを操作しているため) は、シングルポインタによる代替手段でコンテンツを操作できるようになる。</p>
                </li>
-               <li><p>Users who may not understand the custom gesture interaction intended by the author will be able to rely on simple, frequently used gestures to interact. This can be especially beneficial for users with cognitive or learning disabilities.</p>
+               <li><p>コンテンツ制作者が意図したカスタムジェスチャのインタラクションを理解できない利用者は、シンプルでよく使うジェスチャに依ってインタラクションできるようになる。これは、認知障害や学習障害のある利用者にとって特に有益なものになり得る。</p>
                </li>
-               <!--<li><p>複雑なジェスチャの代替として提供されるユーザインタフェース要素が利用可能であることは、複雑なポインタジェスチャのサポートに気付かないことが多い利用者を助ける。これは特に認知又は学習障害のある利用者にとって有益である。</p>
-			   </li>-->
                				
             </ul>
          </section>
@@ -88,7 +88,7 @@
                
                <li><p>ウェブサイトには、マップコンテンツを拡大するためのピンチジェスチャをサポートするマップビューが含まれている。ユーザインタフェースコントロールは、プラスボタンとマイナスボタンを使用してズームイン及びズームアウトする操作を提供する。</p>
                </li>
-               <li><p>A web site includes a map view that supports the pinch gesture to zoom into the map content. As an single-pointer alternative, the map also allows users to double-tap, hold, and then move the pointer up or down to zoom in or out.</p>
+               <li><p>ウェブサイトには地図表示が含まれており、地図コンテンツを拡大するためのピンチジェスチャがサポートされている。シングルポインタによる代替手段として、その地図で利用者は、ダブルタップして長押ししたままポインタを上下移動してズームイン又はズームアウトすることも可能である。</p>
                </li>
                <li><p>ニュースサイトには、素早い水平方向のスワイプ／フリック動作によってビューポートに移動できる、隠されたニュースティーザーを含む水平コンテンツスライダーがある。また、1 回の動作により隣接するスライダーコンテンツに移動するための、前後の矢印ボタンを提供する。</p>
                </li>
