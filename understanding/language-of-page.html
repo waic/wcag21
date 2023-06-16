@@ -24,6 +24,7 @@
             <li><a href="#examples">事例</a></li>
             <li><a href="#resources">関連リソース</a></li>
             <li><a href="#techniques">達成方法</a></li>
+            <li><a href="#test-rules">テストルール</a></li>
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
@@ -35,7 +36,7 @@
          <section id="intent">
             <h2>意図</h2>
             <p>この達成基準の意図は、ユーザエージェントがテキスト及びその他の形式の言語学上の言語によるコンテンツを正しく提示するために必要なウェブページの情報を、コンテンツ制作者が提供することを保証することである。支援技術と従来のユーザエージェントはともに、ウェブページの言語が識別されるとき、テキストをより正確に描画することができる。スクリーンリーダーは、正しい発音規則を読み込むことができる。ビジュアルブラウザは、文字や書体を正しく表示することができる。メディアプレーヤーは、キャプションを正しく表示できる。結果として、障害のある利用者がコンテンツをより理解できるようになる。</p>
-            <p><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a> で述べられているように、ウェブページのデフォルトの自然言語が、デフォルトのテキスト処理言語となる。ウェブページがいくつかの言語を使用している時、デフォルトのテキスト処理言語は、最も使われている言語である。(複数の言語が同じ割合で使われている場合、最初に使われている言語をデフォルトの自然言語として選択する必要がある。)</p>
+            <p><a href="https://www.w3.org/International/techniques/authoring-html#gslang">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a> で述べられているように、ウェブページのデフォルトの自然言語が、デフォルトのテキスト処理言語となる。ウェブページがいくつかの言語を使用している時、デフォルトのテキスト処理言語は、最も使われている言語である。(複数の言語が同じ割合で使われている場合、最初に使われている言語をデフォルトの自然言語として選択する必要がある。)</p>
             <div class="note"><div role="heading" class="note-title marker" aria-level="3">注記</div>
                <div><p>適合レベル A を目指している多言語サイトについて、WCAG ワーキンググループはコンテンツ制作者に、レベル AA の達成基準ではあるが、達成基準 3.1.2 にも同じように適合することを強く推奨する。</p>
                   
@@ -85,7 +86,7 @@
             <ul>
                
                
-               <li><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a></li>
+               <li><a href="https://www.w3.org/International/techniques/authoring-html#gslang">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a></li>
                
                
                
@@ -121,19 +122,66 @@
                   
                </ul>
             </section>
-            <section id="testing-rules">
+            <section id="test-rules">
                <h2>テストルール</h2>
-               <p>以下は、この達成基準の特定の側面に関するテストルールである。この特定のルールを使用して WCAG に適合しているかどうかを確認する必要はないが、これらのルールは定義され、承認されたテスト方法である。Accessibility Conformance Testing (ACT) ルールの使用については、<a href="understanding-act-rules.html">WCAG 達成基準の ACT ルールを理解する</a>を参照のこと。
-               </p>
+               <p>以下は、この達成基準の特定の側面に関するテストルールである。WCAG への適合を確認するために、これらの特定のテストルールを使用する必要はないが、これらは定義され、承認されたテスト方法である。テストルールの使用については、<a href="understanding-act-rules.html">WCAG 達成基準のテストルールを理解する</a>を参照のこと。</p>
                <ul>
-                  <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-b5c3f8/">HTML page has `lang` attribute</a></li>
-                  <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-valid-bf051a/">HTML page language is valid</a></li>
+                  <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-b5c3f8/">HTML page has lang attribute</a></li>
+                  <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-valid-bf051a/">HTML page lang attribute has valid language tag</a></li>
                   <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-xml-lang-match-5b7ae0/">HTML page lang and xml:lang attributes have matching values</a></li>
                </ul>
             </section>
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
+            <dd>
+               <definition xmlns="">
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
+                        </li>
+
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
+                        </li>
+
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
+                        </li>
+
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
+                        </li>
+
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
             <dt id="dfn-human-language">自然言語 (human language)</dt>
             <dd><definition xmlns="">
                   
@@ -142,36 +190,49 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p><a href="https://waic.jp/translations/WCAG21/#dfn-sign-language">手話</a>も参照。</p>
+                     <p><a href="#dfn-sign-language">手話</a>も参照。</p>
                   </div>
                   
                   
                </definition>
             </dd>
             <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
-            <dd><definition xmlns="">
-                  
-                  
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-assistive-technology">支援技術</a>を含む様々な<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
-                  
-                  
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
-                  </div>
-                  
-                  
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
-                  </div>
-                  
-                  
-               </definition>
+            <dd>
+               <definition xmlns="">
+
+				<p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-sign-language">手話 (sign language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">意味を伝えるために、手と腕の動き、顔の表情又は身体の姿勢の組み合わせを用いる言語。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブコンテンツの取得、レンダリング及びインタラクションを支援する、ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム (<a href="#dfn-assistive-technology">支援技術</a>も含む)。
+                     </p>
+                  </definition>
             </dd>
             <dt id="dfn-web-page">ウェブページ (Web page)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。</p>
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
@@ -201,6 +262,6 @@
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
