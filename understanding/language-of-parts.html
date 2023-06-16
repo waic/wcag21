@@ -36,7 +36,7 @@
             <h2>意図</h2>
             <p>この達成基準の意図は、ユーザエージェントが、複数の言語で書かれているコンテンツを正しく提示できるようにすることである。これにより、その言語の提示規則および発音規則に従ってコンテンツをユーザエージェントおよび支援技術に提示することが可能になる。これは、スクリーンリーダー、点字ディスプレイ及びその他の音声ブラウザだけでなくグラフィカルブラウザも適用される。</p>
             <p>支援技術及び従来のユーザエージェントはともに、テキストの各節の言語が識別される場合、テキストをより正確にレンダリングできる。スクリーンリーダーは、テキストの言語の発音規則を用いることができる。ビジュアルブラウザは、適切な方法で文字及び書体を表示することができる。これは、左から右に読む言語と右から左に読む言語を切り替えるとき、又はテキストが異なるアルファベットを使用する言語でレンダリングされるときに特に重要である。ウェブページで用いられているすべての言語を理解している障害のある利用者は、各節が適切にレンダリングされたとき、コンテンツをよりよく理解できるようになる。</p>
-            <p>テキストの語句又は節に何も言語が指定されていない場合、そのテキストの自然言語は、ウェブページのデフォルトの自然言語である (達成基準 3.1.1 を参照)。そのため、単一言語の文書にあるすべてのコンテンツの言語は、プログラムによる解釈が可能となる。</p>
+			<p>テキストの語句又は節に何も言語が指定されていない場合、そのテキストの自然言語は、ウェブページのデフォルトの自然言語である (<a href="language-of-page.html">達成基準 3.1.1</a> を参照)。そのため、単一言語の文書にあるすべてのコンテンツの言語は、プログラムによる解釈が可能となる。</p>
             <p>ある言語の個々の単語又は語句が、その他の言語の一部になることがある。例えば、&quot;rendezvous&quot; は、英語に採用され、英語の辞書に現れ、英語のスクリーンリーダーによって適切に発音される、フランス語の単語である。したがって、英語のテキストの一節に、その自然言語がフランス語であることを示すことなく &quot;rendezvous&quot; という単語が含まれていても、この達成基準を満たしていることになる。しばしば、テキストの自然言語が一つの単語に対して変化するような時、その単語は周囲にテキストの言語の一部となっていることがある。これは、一部の言語では一般的なことなので、言語を意図的に変えていることが明白でない限り、その単語は周囲のテキストの言語の一部とみなすべきである。言語を意図的に変えているかどうかが疑わしい場合は、単語が、隣接する周囲のテキストの言語で同じように発音されるかどうかを考えてみるとよいだろう (ただし、アクセントやイントネーションは除く)。</p>
             <p>ほとんどの専門的な職業では、外国語からきた技術用語を頻繁に使うことを必要とする。そのような用語は、通常すべての言語に翻訳されていない。技術用語の広く共通な性質は、専門家の間でのコミュニケーションも促進する。</p>
             <p>技術用語のよくある例としては、次のようなものがある: ホモ サピエンス (Homo sapiens)、アルファケンタウリ (Alpha Centauri)、ヘルツ (hertz)、ヘイビアス コーパス (habeas corpus) など。</p>
@@ -48,7 +48,7 @@
                   <div class="note"><div role="heading" class="note-title marker" aria-level="3">訳注</div><p>2 級点字はグレード 2 とも呼ばれる。これは、英語の点字において、使用頻度の高い単語又は単語の一部を短縮した特別な点字を用いるものである。詳細については、<a href="https://ja.wikipedia.org/wiki/%E8%8B%B1%E8%AA%9E%E3%81%AE%E7%82%B9%E5%AD%97">英語の点字</a>及び<a href="http://www.dinf.ne.jp/doc/japanese/resource/blind/eigohyoki_rewrite.html">日本における英語点字の表記について</a>を参照のこと。</li>
                
                
-               <li>複数の言語をサポートしている合成音声は、適切な発音で適切なアクセントのテキストを話すことができるようになる。言語の変化が示されていない場合、合成音声は、動作するデフォルトの言語として単語を読み上げるのに最善を尽くそうとする。したがって、自動車を表すフランス語の単語 &quot;voiture&quot; は、デフォルトの言語として英語を用いている合成音声では &quot;voyture&quot; と発音されるだろう。</li>
+						<li>複数の言語をサポートしている合成音声は、適切な発音で適切なアクセントのテキストを話すことができるようになる。言語の変化が示されていない場合、合成音声は、動作するデフォルトの言語として単語を読み上げるのに最善を尽くそうとする。したがって、自動車を表すフランス語の単語 &quot;<span lang="fr">voiture</span>&quot; は、デフォルトの言語として英語を用いている合成音声では &quot;voyture&quot; と発音されるだろう。</li>
                
                
                <li>言語の変更を示すことは、将来の技術開発に役立つことがあり、例えば、言語の間を行き来して翻訳をすることができない利用者は、機械翻訳を使ってよく知らない言語の翻訳に機械を用いることができるだろう。</li>
@@ -87,7 +87,7 @@
                <li><p><strong>英語の文章中にあるドイツ語の一節</strong></p>
                   
                   
-                  <p>文章中の &quot;He maintained that the DDR (German Democratic Republic) was just a &#39; Treppenwitz der Weltgeschichte&#39;,&quot; は、ドイツ語の一節 &#39;Treppenwitz der Weltgeschichte&#39; がドイツ語であることが示されている。マークアップ言語に応じて、英語は、指定された箇所を除く文書全体の言語として示すこともできるし、段落レベルで示すこともできる。スクリーンリーダーがドイツ語の一節を読み上げる際は、その単語を正確に発音するために、英語からドイツ語に発音規則を変更する。</p>
+						<p>文章中の &quot;He maintained that the DDR (German Democratic Republic) was just a &#39; <span lang="de">Treppenwitz der Weltgeschichte</span>&#39;,&quot; は、ドイツ語の一節 &#39;<span lang="de">Treppenwitz der Weltgeschichte</span>&#39; がドイツ語であることが示されている。マークアップ言語に応じて、英語は、指定された箇所を除く文書全体の言語として示すこともできるし、段落レベルで示すこともできる。スクリーンリーダーがドイツ語の一節を読み上げる際は、その単語を正確に発音するために、英語からドイツ語に発音規則を変更する。</p>
                   
                   
                </li>
@@ -96,7 +96,7 @@
                <li><p><strong>代わりの言語へのリンク</strong></p>
                   
                   
-                  <p>ある HTML のウェブページには、そのページの他言語版へのリンクがある (例: Deutsch, Français, Nederlands, Castellano など)。それぞれのリンクのテキストは、その言語で言語の名前である。それぞれのリンクの言語は、lang 属性で示されている。</p>
+                  <p>ある HTML のウェブページには、そのページの他言語版へのリンクがある (例: <span lang="de">Deutsch</span>, <span lang="fr">Français</span>, <span lang="nl">Nederlands</span>, <span lang="ca">Catalan</span> など)。それぞれのリンクのテキストは、その言語で言語の名前である。それぞれのリンクの言語は、<code class="att">lang</code> 属性で示されている。</p>
                   
                   
                </li>
@@ -105,7 +105,7 @@
                <li><p><strong>フランス語の文章中で使われている &quot;Podcast&quot;</strong></p>
                   
                   
-                  <p>&quot;podcast&quot; は、次の引用 &quot;A l&#39;occasion de l&#39;exposition &quot;Energie eternelle. 1500 ans d&#39;art indien&quot;, le Palais des Beaux-Arts de Bruxelles a lancé son premier podcast. Vous pouvez telecharger ce podcast au format M4A et MP3,&quot; の周囲にあるテキストの母国語の一部なので、言語の変更を示す必要はない。</p>
+                  <p>&quot;podcast&quot; は、次の引用 &quot;<span lang="fr">A l&#39;occasion de l&#39;exposition &quot;Energie eternelle. 1500 ans d&#39;art indien&quot;, le Palais des Beaux-Arts de Bruxelles a lancé son premier podcast. Vous pouvez telecharger ce podcast au format M4A et MP3</span>&quot; の周囲にあるテキストの母国語の一部なので、言語の変更を示す必要はない。</p>
                   
                   
                </li>
@@ -119,10 +119,17 @@
             <ul>
                
                
-               <li><a href="https://www.w3.org/International/articles/language-tags/Overview.en.php">Language tags in HTML and XML</a> - W3C Internationalization Working Group</li>
-               
-               
-               <li><a href="https://www.w3.org/TR/i18n-html-tech-lang/">Internationalization Best Practices: Specifying Language in XHTML &amp; HTML Content</a></li>
+               <li>
+                  <a href="https://html.spec.whatwg.org/multipage/dom.html#attr-lang">HTML - The <code class="att">lang</code> and <code class="att">xml:lang</code> attributes</a>.
+                  </li>
+
+               <li>
+                  <a href="https://www.w3.org/International/articles/language-tags/index.en">Language tags in HTML and XML</a>.
+                  </li>
+
+               <li>							       
+                  <a href="https://www.w3.org/TR/i18n-html-tech-lang/">Authoring HTML: Language declarations</a>.							     
+                  </li>
                
                
                
@@ -142,25 +149,62 @@
                   <li><a class="pdf" href="https://waic.jp/translations/WCAG21/Techniques/pdf/PDF19">PDF19: PDF 文書内で Lang エントリを使用して節や句の言語を指定する</a></li>
                   
                   
-                  <li><a class="silverlight" href="https://waic.jp/translations/WCAG21/Techniques/silverlight/SL4">SL4: Declaring Discrete Silverlight Objects to Specify Language Parts in the HTML DOM</a></li>
                   
                   
                </ol>
             </section>
-            <section id="advisory">
-               <h3>参考達成方法</h3>
-               <p>適合のために必須ではないが、コンテンツをよりアクセシブルにするために、次の追加の達成方法を検討することが望ましい。ただし、すべての状況において、すべての達成方法が使用可能、又は効果的であるとは限らない。</p>
-               <ul>
-                  
-                  
-                  <li><a class="silverlight" href="https://waic.jp/translations/WCAG21/Techniques/silverlight/SL27">SL27: Using Language/Culture Properties as Exposed by Silverlight Applications and Assistive Technologies</a></li>
-                  
-                  
-               </ul>
-            </section>
+
          </section>
          <section id="key-terms">
             <h2>重要な用語</h2>
+            <dt id="dfn-assistive-technology">支援技術 (assistive technology)</dt>
+            <dd>
+               <definition xmlns="">
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>としてふるまうか、もしくは主流のユーザエージェントと共に用いられ、障害のある利用者が必要とする、主流のユーザエージェントが提供する以上の機能を提供するためのハードウェア及び／又はソフトウェア。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術が提供する機能としては、代替の提示 (例: 合成音声や拡大表示したコンテンツ)、代替入力手法 (例: 音声認識)、付加的なナビゲーション又は位置確認のメカニズム、及びコンテンツ変換 (例: テーブルをよりアクセシブルにするもの) などを挙げることができる。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>支援技術は、API を利用、監視することで、主流のユーザエージェントとデータやメッセージのやりとりをすることが多い。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>主流のユーザエージェントと支援技術との区別は、絶対的なものではない。多くの主流のユーザエージェントは、障害のある個人を支援する機能を提供している。基本的な差異は、主流のユーザエージェントが障害のある人もない人も含めて、広く多様な利用者を対象にしているのに対し、支援技術は、特定の障害のある利用者という、より狭く限られた人たちを対象にしているということである。支援技術により提供される支援は、対象とする利用者に特化した、よりニーズに適したものである。主流のユーザエージェントは、プログラムオブジェクトからのウェブコンテンツの抽出、マークアップの識別可能な構造への解釈といった、重要な機能を支援技術に対して提供する場合がある。
+                        </p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">この文書の文脈において重要な支援技術としては、以下のものが挙げられる:
+                     </p>
+
+                  <ul xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li>画面拡大ソフト及びその他の視覚的な表示に関する支援技術。視覚障害、知覚障害、及び読書困難などの障害のある人が、レンダリング後のテキスト及び画像の視覚的な読みやすさを改善するために、テキストのフォント、サイズ、間隔、色、音声との同期などを変更するのに使用している。
+                        </li>
+
+                     <li>スクリーンリーダー。全盲の人がテキスト情報を合成音声あるいは点字で読み取るために使用している。
+                        </li>
+
+                     <li>音声変換ソフトウェア。認知障害、言語障害、及び学習障害のある人が、テキストを合成音声に変換するために使用している。
+                        </li>
+
+                     <li>音声認識ソフトウェア。何らかの身体障害のある利用者が使用することがある。</li>
+
+                     <li>代替キーボード。特定の身体障害のある人がキーボード操作をシミュレートするのに使用している (ヘッドポインタ、シングルスイッチ、呼気・吸気スイッチ、及びその他の特別な入力デバイスを使った代替キーボードを含む)。
+                        </li>
+
+                     <li>代替ポインティングデバイス。特定の身体障害のある人がマウスポインタとボタンの動きをシミュレートするのに使用している。
+                        </li>
+                     </ul>
+                  </definition>
+            </dd>
             <dt id="dfn-human-language">自然言語 (human language)</dt>
             <dd><definition xmlns="">
                   
@@ -169,34 +213,47 @@
                   
                   
                   <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p><a href="https://waic.jp/translations/WCAG21/#dfn-sign-language">手話</a>も参照。</p>
+                     <p><a href="#dfn-sign-language">手話</a>も参照。</p>
                   </div>
                   
                   
                </definition>
             </dd>
             <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
-            <dd><definition xmlns="">
-                  
-                  
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-assistive-technology">支援技術</a>を含む様々な<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
-                  
-                  
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
-                  </div>
-                  
-                  
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
-                  </div>
-                  
-                  
-               </definition>
+            <dd>
+               <definition xmlns="">
+
+				<p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-sign-language">手話 (sign language)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">意味を伝えるために、手と腕の動き、顔の表情又は身体の姿勢の組み合わせを用いる言語。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブコンテンツの取得、レンダリング及びインタラクションを支援する、ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム (<a href="#dfn-assistive-technology">支援技術</a>も含む)。
+                     </p>
+                  </definition>
             </dd>
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
