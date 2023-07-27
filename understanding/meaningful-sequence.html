@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
    <head>
       <meta charset="UTF-8" />
-      <title>達成基準 1.3.2: 意味のある順序を理解する</title>
+      <title>達成基準 1.3.2: 意味のあるシーケンスを理解する</title>
       <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/base" />
       <link rel="stylesheet" type="text/css" href="understanding.css" />
       <link rel="stylesheet" type="text/css" href="slicenav.css" />
@@ -26,16 +26,16 @@
             <li><a href="#key-terms">重要な用語</a></li>
          </ul>
       </nav>
-      <h1>達成基準 1.3.2: 意味のある順序を理解する</h1>
+      <h1>達成基準 1.3.2: 意味のあるシーケンスを理解する</h1>
       <blockquote class="scquote">
-         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#meaningful-sequence" style="font-weight: bold;">1.3.2 意味のある順序</a> (レベル A): コンテンツが提示されている順序が意味に影響を及ぼす場合には、<a href="#dfn-correct-reading-sequence">正しく読む順序</a>は<a href="#dfn-programmatically-determined">プログラムによる解釈が可能</a>である。</p>
+         <p>達成基準 <a href="https://waic.jp/translations/WCAG21/#meaningful-sequence" style="font-weight: bold;">1.3.2 意味のあるシーケンス</a> (レベル A): コンテンツが提示されている順序が意味に影響を及ぼす場合には、<a href="#dfn-correct-reading-sequence">正しく読むシーケンス</a>は<a href="#dfn-programmatically-determined">プログラムによる解釈が可能</a>である。</p>
       </blockquote>
       <main>
          <section id="intent">
             <h2>意図</h2>
             <p>この達成基準の意図は、コンテンツの意味を理解するのに必要な音声読み上げの順序を保ちながら、ユーザエージェントがコンテンツの代替表現を提供できるようにすることである。意味のあるコンテンツの少なくとも一つの順序がプログラムによる解釈が可能であることが重要である。この達成基準を満たしていないコンテンツは、支援技術がそのコンテンツを正しくない順序で読み上げたり、代替スタイルシート又はその他の書式変更が適用されたりしたときに、利用者を困惑あるいは混乱させてしまう恐れがある。</p>
-            <p>コンテンツの並び順を変更すると、コンテンツの意味に影響を及ぼす場合、その順序には<em>意味</em>がある。例えば、あるページに二つの独立した記事がある場合、それらの記事の相対的な順序がそれぞれの意味に影響を及ぼす可能性はない。そのような状況においては、それらの記事自体には意味のある順序があるかもしれないが、それらの記事が入っているテキストコンテナには意味のある順序はないかもしれない。</p>
-            <p>ある要素のプログラムが持つ意味が、そのコンテンツに意味のある順序があるかどうかを定義している。例えば、HTML では、テキストには常に意味のある順序がある。テーブル及び順序付きリストには意味のある順序があるが、順序なしリストには意味のある順序がない。</p>
+            <p>コンテンツの並び順を変更すると、コンテンツの意味に影響を及ぼす場合、その順序には<em>意味</em>がある。例えば、あるページに二つの独立した記事がある場合、それらの記事の相対的な順序がそれぞれの意味に影響を及ぼす可能性はない。そのような状況においては、それらの記事自体には意味のあるシーケンスがあるかもしれないが、それらの記事が入っているテキストコンテナには意味のあるシーケンスはないかもしれない。</p>
+            <p>ある要素のプログラムが持つ意味が、そのコンテンツに意味のあるシーケンスがあるかどうかを定義している。例えば、HTML では、テキストには常に意味のあるシーケンスがある。テーブル及び順序付きリストには意味のあるシーケンスがあるが、順序なしリストには意味のあるシーケンスがない。</p>
             <p>コンテンツの並び順には、常に意味があるとは限らない。例えば、あるウェブページのメイン部分とナビゲーション部分の相対的な順序は、それぞれの意味には影響を及ぼさない。それらは、プログラムによる解釈が可能な音声読み上げ順序で、どちらが先にもなりえる。もう一つの例としては、雑誌の記事にはいくつかの補足記事がいくつか含まれている。記事と補足記事の順序は、それぞれの意味に影響を及ぼすことはない。このような場合においては、この達成基準を満たすことのできるウェブページには、異なる音声読み上げ順序が複数あることになる。</p>
             <p>誤解のないように書くと:</p>
             <ol>
@@ -83,10 +83,10 @@
                <ol>
                   
                   
-                  <li>ウェブページにあるすべてのコンテンツについて、<a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G57">G57: コンテンツを意味のある順序で並べる</a></li>
+                  <li>ウェブページにあるすべてのコンテンツについて、<a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G57">G57: コンテンツを意味のあるシーケンスで並べる</a></li>
                   
                   
-                  <li><p>次の達成方法のどれか一つを用いて、コンテンツの並び順を意味のあるものにする、<strong>かつ</strong>、その並び順については、<a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G57">G57: コンテンツを意味のある順序で並べる</a></p>
+                  <li><p>次の達成方法のどれか一つを用いて、コンテンツの並び順を意味のあるものにする、<strong>かつ</strong>、その並び順については、<a class="general" href="https://waic.jp/translations/WCAG21/Techniques/general/G57">G57: コンテンツを意味のあるシーケンスで並べる</a></p>
                      
                      
                      <ul>
@@ -194,11 +194,11 @@
                      </ul>
                   </definition>
             </dd>
-            <dt id="dfn-correct-reading-sequence">正しく読む順序 (correct reading sequence)</dt>
+            <dt id="dfn-correct-reading-sequence">正しく読むシーケンス (correct reading sequence)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの意味を変更せずに、単語や段落が提示される順序。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツの意味を変更せずに、単語及び段落が提示されるシーケンス。</p>
                   
                   
                </definition>

@@ -356,7 +356,7 @@
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-web-page">ウェブページ</a>のコンテンツにおける大きな変化で、利用者が気づかないと、ウェブページ全体を一度に見ることのできない利用者を混乱させる恐れのあるもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者が意識することなく生じた場合に、ページ全体を一覧できない利用者を混乱させる恐れのある大きな変化。</p>
                   
                   
                   <p xmlns="http://www.w3.org/1999/xhtml">コンテキストの変化には次に挙げるものの変化が含まれる:</p>
@@ -365,16 +365,16 @@
                   <ol xmlns="http://www.w3.org/1999/xhtml">
                      
                      
-                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a></li>
+                     <li><a href="#dfn-user-agent">ユーザエージェント</a></li>
                      
                      
-                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-viewport">ビューポート</a></li>
+                     <li><a href="#dfn-viewport">ビューポート</a></li>
                      
                      
                      <li>フォーカス</li>
                      
                      
-                     <li><a href="https://waic.jp/translations/WCAG21/#dfn-web-page">ウェブページ</a>の意味を変える<a href="https://waic.jp/translations/WCAG21/#dfn-content">コンテンツ</a></li>
+                     <li><a href="#dfn-web-page">ウェブページ</a>の意味を変える<a href="#dfn-content">コンテンツ</a></li>
                      
                      
                   </ol>
@@ -390,21 +390,33 @@
                   
                </definition>
             </dd>
+            <dt id="dfn-content">コンテンツ (content)</dt>
+            <dd>
+               <definition xmlns="">
+
+		<p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-user-agent">ユーザエージェント</a>によって利用者に伝達される情報及び感覚的な体験。コンテンツの<a href="#dfn-structure">構造</a>、<a href="#dfn-presentation">提示</a>、及びインタラクションを定義するコードやマークアップを含む。
+                     </p>
+                  </definition>
+            </dd>
+            <dt id="dfn-presentation">提示 (presentation)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">利用者が知覚できる形式で<a href="#dfn-content">コンテンツ</a>をレンダリングすること。
+                     </p>
+                  </definition>
+            </dd>
             <dt id="dfn-programmatically-determined">プログラムによる解釈 (programmatically determined)</dt>
             <dd><definition xmlns="">
                   
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="https://waic.jp/translations/WCAG21/#dfn-assistive-technology">支援技術</a>を含む様々な<a href="https://waic.jp/translations/WCAG21/#dfn-user-agents">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml"><a href="#dfn-assistive-technology">支援技術</a>を含む様々な<a href="#dfn-user-agent">ユーザエージェント</a>が抽出でき、利用者に様々な感覚モダリティで提示できるような形のデータがコンテンツ制作者によって提供されたとき、そのデータがソフトウェアによって解釈されること。</p>
                   
                   
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
-                  </div>
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">マークアップ言語で、一般に入手可能な支援技術が直接アクセスできる要素と属性から解釈される。</p>
                   
                   
-                  <div xmlns="http://www.w3.org/1999/xhtml" class="note"><div role="heading" class="note-title marker" aria-level="2">注記</div>
-                     <p>非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
-                  </div>
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">非マークアップ言語の技術特有のデータ構造から解釈され、一般に入手可能な支援技術がサポートするアクセシビリティ API を通じて支援技術に提供される。</p>
                   
                   
                </definition>
@@ -425,14 +437,88 @@
             <dd><definition xmlns="">
                   					
                   
-                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツ内の変化であって、<a href="https://waic.jp/translations/WCAG21/#dfn-changes-of-context">コンテキストの変化</a>ではなく、かつ、アクションの成否もしくは結果、アプリケーションの処理待ち状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供するもの。</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">コンテンツ内の変化であって、<a href="#dfn-changes-of-context">コンテキストの変化</a>ではなく、かつ、アクションの成否もしくは結果、アプリケーションの処理待ち状態、プロセスの進捗、又はエラーの存在に関する情報を利用者に提供するもの。</p>
                   
                   
                </definition>
             </dd>
+            <dt id="dfn-structure">構造 (structure)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <ol xmlns="http://www.w3.org/1999/xhtml">
+
+                     <li><a href="#dfn-web-page">ウェブページ</a>の各部を相互の関係性によりまとめる方法論。及び、
+                        </li>
+
+                     <li>一連の<a href="#dfn-web-page">ウェブページ</a>をまとめる方法論。
+                        </li>
+                     </ol>
+                  </definition>
+            </dd>
+            <dt id="dfn-user-agent">ユーザエージェント (user agent)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ウェブコンテンツを取得して利用者に提示するあらゆるソフトウェア。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ウェブブラウザ、メディアプレーヤ、プラグイン、及びその他のプログラム。その他のプログラムには、ウェブコンテンツの取得、レンダリング、やり取りを支援する<a href="#dfn-assistive-technology">支援技術</a>を含む。
+                     </p>
+                  </definition>
+            </dd>
+           <dt id="dfn-viewport">ビューポート (viewport)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">ユーザエージェントがコンテンツを提示するオブジェクト。</p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+				<p><a href="#dfn-user-agent">ユーザエージェント</a>は、一つ以上のビューポートでコンテンツを提示する。ビューポートには、ウィンドウ、フレーム、スピーカー、拡大鏡ソフトなどがある。ビューポートは、他のビューポートを含んでいることがある (例えば、入れ子のフレーム)。プロンプト、メニュー、アラートのように、ユーザエージェントが作成するインタフェース コンポーネントは、ビューポートではない。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>この定義は、<a href="https://www.w3.org/TR/WAI-USERAGENT/glossary.html">User Agent Accessibility Guidelines 1.0 Glossary</a> [UAAG10] をもとにしている。
+                        </p>
+                  </div>
+                  </definition>
+            </dd>
+            <dt id="dfn-web-page">ウェブページ (web page)</dt>
+            <dd>
+               <definition xmlns="">
+
+                  <p xmlns="http://www.w3.org/1999/xhtml">単一の URI から HTTP で得た埋め込まれていないリソースに加え、レンダリングに使われる、又は<a href="#dfn-user-agent">ユーザエージェント</a>がこのリソースと一緒にレンダリングすることを意図しているその他のあらゆるリソースを合わせたもの。
+                     </p>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+                     <p>どのような「その他のリソース」も主たるリソースと一緒にレンダリングされるであろうが、これらのリソースが同時にレンダリングされるとは限らない。
+                        </p>
+                  </div>
+
+                  <div xmlns="http://www.w3.org/1999/xhtml" class="note">
+                     <div role="heading" class="note-title marker" aria-level="2">注記</div>
+				<p>このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。
+					</p>
+                  </div>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">すべての埋め込まれている画像とメディアを含んだウェブリソース。</p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mailに存在しているが、受信箱、アドレス帳、カレンダーがある。リンク又はボタンがあり、それを押すと受信箱、アドレス帳やカレンダーを表示するが、ページのURI は全体を通して変わらない。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。
+                     </p>
+
+                  <p xmlns="http://www.w3.org/1999/xhtml" class="example">ブラウザで "http://shopping.example.com/" へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは1ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの1ページなのかもしれない。
+                     </p>
+                  </definition>
+            </dd>
          </section>
       </main>
       <hr>
-      <div><p>訳注: このページは、2020 年 12 月 2 日版の Understanding WCAG 2.1 の翻訳です。2020 年 12 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
+      <div><p>訳注: このページは、2022 年 9 月 2 日版の Understanding WCAG 2.1 の翻訳です。2022 年 9 月 2 日版の原文は <a href="https://github.com/waic/w3c-wcag">WAIC の管理するレポジトリ</a>から入手可能です。</p></div>
    </body>
 </html>
