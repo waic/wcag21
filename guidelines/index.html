@@ -2204,6 +2204,7 @@ details.respec-tests-details > li {
 
             <section class="guideline" id="readable">
                 <h3 id="x3-1-readable"><span class="secno">ガイドライン 3.1 </span>読み取り可能<span class="permalink"><a href="#readable" aria-label="Permalink for 3.1 Readable" title="Permalink for 3.1 Readable"><span>§</span></a></span></h3>
+<div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/Understanding/readable.html">Understanding Readable</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/quickref/#readable">How to Meet Readable</a></div>
                 <p>テキストコンテンツの読み取りと理解を可能にすること。</p>
 
                 <section class="sc" id="language-of-page">
@@ -2276,6 +2277,7 @@ details.respec-tests-details > li {
 
             <section class="guideline" id="predictable">
                 <h3 id="x3-2-predictable"><span class="secno">ガイドライン 3.2 </span>予測可能<span class="permalink"><a href="#predictable" aria-label="Permalink for 3.2 Predictable" title="Permalink for 3.2 Predictable"><span>§</span></a></span></h3>
+<div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/Understanding/predictable.html">Understanding Predictable</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/quickref/#predictable">How to Meet Predictable</a></div>
                 <p>ウェブページの表示や挙動を予測可能にすること。</p>
 
                 <section class="sc" id="on-focus">
@@ -2337,6 +2339,9 @@ details.respec-tests-details > li {
 
             <section class="guideline" id="input-assistance">
                 <h3 id="x3-3-input-assistance"><span class="secno">ガイドライン 3.3 </span>入力支援<span class="permalink"><a href="#input-assistance" aria-label="Permalink for 3.3 Input Assistance" title="Permalink for 3.3 Input Assistance"><span>§</span></a></span></h3>
+
+<div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/Understanding/input-assistance.html">Understanding Input Assistance</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/quickref/#input-assistance">How to Meet Input Assistance</a></div>
+
                 <p>利用者の間違いを防ぎ、修正を支援すること。</p>
 
                 <section class="sc" id="error-identification">
@@ -2428,6 +2433,9 @@ details.respec-tests-details > li {
 
             <section class="guideline" id="compatible">
                 <h3 id="x4-1-compatible"><span class="secno">ガイドライン 4.1 </span>互換性<span class="permalink"><a href="#compatible" aria-label="Permalink for 4.1 Compatible" title="Permalink for 4.1 Compatible"><span>§</span></a></span></h3>
+
+<div class="doclinks"><a href="https://www.w3.org/WAI/WCAG21/Understanding/compatible.html">Understanding Compatible</a> <span class="screenreader">|</span> <br><a href="https://www.w3.org/WAI/WCAG21/quickref/#compatible">How to Meet Compatible</a></div>
+
                 <p>現在及び将来の、支援技術を含むユーザエージェントとの互換性を最大化すること。</p>
 
                 <section class="sc" id="parsing">
@@ -2439,9 +2447,16 @@ details.respec-tests-details > li {
    <p>マークアップ言語を用いて実装されているコンテンツにおいては、要素には完全な開始タグ及び終了タグがあり、要素は仕様に準じて入れ子になっていて、要素には重複した属性がなく、どの ID も一意的である。ただし、仕様で認められているものを除く。
    </p>
    
-   <div class="note" id="issue-container-generatedID-26"><div role="heading" class="note-title marker" id="h-note-26" aria-level="5"><span>注記</span></div><p class="">開始及び終了タグに重要な記号が欠けている場合、例えば、タグを閉じる山括弧がない、又は属性値の引用符が一致していない場合は、完全とはいえない。
-   </p></div>
+   <div class="note" role="note" id="issue-container-generatedID-26"><div role="heading" class="note-title marker" id="h-note-26" aria-level="5"><span>注記</span></div><p class="">HTML 又は XML を使用するすべてのコンテンツでは、この達成基準は常に満たされているとみなすべきである。</p></div>
    
+  <div class="note" role="note" id="issue-container-generatedID-27"><div role="heading" class="note-title marker" id="h-note-27" aria-level="5"><span>注記</span></div><div class="">
+      <p>この基準が作成されて以降、HTML Living Standard は、ユーザーエージェントが不完全なタグ、不正な要素のネスト、重複した属性、および一意でない ID をどのように処理しなければならないかを規定する明確な要件を採用した。 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>]</p>
+      
+      <p>HTML Standard では、これらのケースのいくつかをコンテンツ制作者に対する不適合として扱うが、仕様ではユーザエージェントがこれらのケースの一貫した処理をサポートすることを要求しているため、この達成基準の説明にある「仕様で認められているもの」とみなせる。実際には、この基準自体は、もはや障害のある人々に何の利益ももたらさない。</p>
+      
+      <p>不適切に入れ子にされた要素による役割の欠落、ID の重複による不正な状態や名前などの問題は、別の達成基準で扱われており、4.1.1 の問題としてではなく、それらの基準に基づいて報告されるべきである。</p>
+   </div></div>
+
 </section>
 
                 <section class="sc" id="name-role-value">
