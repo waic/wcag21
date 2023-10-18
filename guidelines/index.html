@@ -3174,7 +3174,7 @@ details.respec-tests-details > li {
    
    <ul>
       
-      <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance" class="internalDFN" data-link-type="dfn">相対輝度</a>が 0.80 未満である、最大相対輝度の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
+      <li><strong>一般閃光</strong>は、暗いほうの映像の<a href="#dfn-relative-luminance" class="internalDFN" data-link-type="dfn">相対輝度</a>が 0.80 未満である、最大相対輝度 (1.0) の 10％以上の相対輝度の相反する変化の組合せとして定義される。ここでいう「相反する変化の組合せ」とは、増加した後に減少する、又は減少した後に増加するものである。そして、
       </li>
       
       <li><strong>赤色閃光</strong>は、彩度の高い赤色を含んだ相反する遷移として定義される。
@@ -3185,13 +3185,13 @@ details.respec-tests-details > li {
    <p><em>例外:</em> ホワイトノイズや、1 辺が (典型的な閲覧距離における視野の) 0.1 度未満の市松模様のような細かくバランスの取れた閃光は、閾値を超えることにはならない。
    </p>
    
-   <div class="note" id="issue-container-generatedID-83"><div role="heading" class="note-title marker" id="h-note-83" aria-level="3"><span>注記</span></div><p class="">一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を 22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる (同じコンテンツでも高解像度のディスプレイでは小さく安全になるので、閾値を定めるには低解像度が用いられている)。
+   <div class="note" id="issue-container-generatedID-83"><div role="heading" class="note-title marker" id="h-note-83" aria-level="3"><span>注記</span></div><p class="">一般的なソフトウェア又はウェブコンテンツの場合、コンテンツを 1024 × 768 ピクセルで表示したときに画面上の任意の場所で 341 × 256 ピクセルの矩形を使用すると、標準的な画面サイズ及び視聴距離 (例: 15～17 インチの画面を 22～26 インチの距離で視聴) における視野 10 度の適切な見積もりとなる。この 75～85 ppi という解像度は、CSS 仕様の公称ピクセル解像度である 96 ppi よりも低く、したがってより保守的であると知られている。同じコンテンツのレンダリングを表示する高解像度のディスプレイは、より小さく安全な画像が得られるため、閾値値の定義に使用される解像度はより低くなる。
    </p></div>
    
    <div class="note" id="issue-container-generatedID-84"><div role="heading" class="note-title marker" id="h-note-84" aria-level="3"><span>注記</span></div><p class="">遷移とは、相対輝度 (赤色閃光の相対輝度/色) の計測値を時間軸でプロットしたときの隣接する山と谷の間の相対輝度 (赤色閃光の相対輝度/色) の変化である。閃光は、2 つの相反する遷移で構成される。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-85"><div role="heading" class="note-title marker" id="h-note-85" aria-level="3"><span>注記</span></div><p class=""><strong>「彩度の高い赤色を含む相反する遷移の組合せ」</strong>の現時点での定義は、各遷移に含まれる一方又は双方の状態が、R / (R＋G＋B) &gt;= 0.8 であり、かつ、(R－G－B) × 320 の値の変化が双方の遷移において 20 より大きい (ただし、(R－G－B) × 320 が負の値になるときはゼロとする)。R、G、B の値は、「相対輝度」の定義で定められているように 0～1 の範囲である。[<cite><a class="bibref" href="#bib-HARDING-BINNIE">HARDING-BINNIE</a></cite>]
+   <div class="note" id="issue-container-generatedID-85"><div role="heading" class="note-title marker" id="h-note-85" aria-level="3"><span>注記</span></div><p class="">この分野における<strong>「彩度の高い赤色を含む相反する遷移の組合せ」</strong>の (2022 年時点での) 実用的定義は、一方の遷移が、R / (R＋G＋B) の値が 0.8 以上の状態への遷移、又はその状態からの遷移であり、かつ、状態間の差が、CIE 1976 UCS 色度図において0.2（単位なし）以上である、相反する遷移の組み合わせである。[<cite><a class="bibref" href="#bib-iso_9241-391">ISO_9241-391</a></cite>]
    </p></div>
    
    <div class="note" id="issue-container-generatedID-86"><div role="heading" class="note-title marker" id="h-note-86" aria-level="3"><span>注記</span></div><p class="">ビデオの画面キャプチャから分析を行うツールを利用できる。しかし、閃光があらゆる 1 秒間の間隔において 3 回以下であれば、ツールでこの条件を満たしているかどうかを確認する必要はない。コンテンツは自動的に条件を満たすことになる (上記 1.及び 2.を参照)。
@@ -3220,15 +3220,19 @@ details.respec-tests-details > li {
    
    <div class="note" id="issue-container-generatedID-88"><div role="heading" class="note-title marker" id="h-note-88" aria-level="3"><span>注記</span></div><p class="">慣用句は、その (文化的又は言語依存の) 意味を失わせることなく、直接に、逐語的に翻訳することはできない。
    </p></div>
-   
-   <p class="example">英語では、"spilling the beans" (豆をこぼす) は「秘密を漏らす」という意味である。しかし、"knocking over the beans" (豆をひっくり返す) 又は "spilling the vegetables" (野菜をこぼす) は同じ意味にはならない。
-   </p>
-   
-   <p class="example">日本語では、「<span lang="ja">さじを投げる</span>」という言い回しは、逐語訳では "he throws a spoon"となるが、「どうすることもできずに諦める」という意味である。
-   </p>
-   
-   <p class="example">オランダ語では、"<span lang="nl">Hij ging met de kippen op stok</span>"は、逐語訳すれば「彼はニワトリとねぐらについた」となるが、「彼は早く寝た」という意味である。
-   </p>
+
+   <aside class="example" id="example-7"><div class="marker">
+    <a class="self-link" href="#example-7">例<bdi> 7</bdi></a>
+  </div><p>英語では、"spilling the beans" (豆をこぼす) は「秘密を漏らす」という意味である。しかし、"knocking over the beans" (豆をひっくり返す) 又は "spilling the vegetables" (野菜をこぼす) は同じ意味にはならない。
+   </p></aside>
+   <aside class="example" id="example-8"><div class="marker">
+    <a class="self-link" href="#example-8">例<bdi> 8</bdi></a>
+  </div><p>日本語では、「<span lang="ja">さじを投げる</span>」という言い回しは、逐語訳では "he throws a spoon"となるが、「どうすることもできずに諦める」という意味である。
+   </p></aside>
+  <aside class="example" id="example-9"><div class="marker">
+    <a class="self-link" href="#example-9">例<bdi> 9</bdi></a>
+  </div><p>オランダ語では、"<span lang="nl">Hij ging met de kippen op stok</span>"は、逐語訳すれば「彼はニワトリとねぐらについた」となるが、「彼は早く寝た」という意味である。
+   </p></aside> 
    
 </dd>
 
@@ -3241,8 +3245,9 @@ details.respec-tests-details > li {
    
    <div class="note" id="issue-container-generatedID-89"><div role="heading" class="note-title marker" id="h-note-89" aria-level="3"><span>注記</span></div><p class=""><a href="#dfn-text" class="internalDFN" data-link-type="dfn">テキスト</a>以外の部分が重要な視覚的コンテンツである場合、画像に含まれるテキストは該当しない。
    </p></div>
-   
-   <p class="example">写真に写っている人の名札にある人名。</p>
+   <aside class="example" id="example-10"><div class="marker">
+    <a class="self-link" href="#example-10">例<bdi> 10</bdi></a>
+  </div><p>写真に写っている人の名札にある人名。</p></aside>
    
 </dd>
 
@@ -3282,8 +3287,10 @@ details.respec-tests-details > li {
 <dd>
    
    <p>特定の分野の人々が特定の用法で用いる単語。</p>
-   
-   <p class="example">固定キーという用語は、支援技術やアクセシビリティの分野における業界用語である。</p>
+					
+   <aside class="example" id="example-11"><div class="marker">
+    <a class="self-link" href="#example-11">例<bdi> 11</bdi></a>
+  </div><p>固定キーという用語は、支援技術やアクセシビリティの分野における業界用語である。</p></aside>
    
 </dd>
 
@@ -3294,10 +3301,11 @@ details.respec-tests-details > li {
    <p>キーストローク入力を取得するためにソフトウェアが用いるインタフェース。</p>
    
    <div class="note" id="issue-container-generatedID-92"><div role="heading" class="note-title marker" id="h-note-92" aria-level="3"><span>注記</span></div><p class="">標準ではキーボードが存在しない技術であっても、キーボードインタフェースによって、利用者がキーストローク入力をプログラムに提供できる。
-   </p></div>
-   
-   <div class="note" id="issue-container-generatedID-93"><div role="heading" class="note-title marker" id="h-note-93" aria-level="3"><span>注記</span></div><p class="">タッチスクリーンを搭載している PDA には、外部キーボードへのコネクタとあわせて、そのオペレーティングシステムに組み込まれたキーボードインタフェースがある。PDA 上のアプリケーションはそのインタフェースを用いて、外部キーボード、あるいは手書き解釈プログラムや「キーボードエミュレーション」機能付きの音声テキスト変換アプリケーションのような擬似キーボード出力を提供する他のアプリケーションのいずれかからキーボード入力を取得することができる。
-   </p></div>
+   </p>
+   <aside class="example" id="example-12"><div class="marker">
+    <a class="self-link" href="#example-12">例<bdi> 12</bdi></a>
+    </div><p>タッチスクリーンを搭載している PDA には、外部キーボードへのコネクタとあわせて、そのオペレーティングシステムに組み込まれたキーボードインタフェースがある。PDA 上のアプリケーションはそのインタフェースを用いて、外部キーボード、あるいは手書き解釈プログラムや「キーボードエミュレーション」機能付きの音声テキスト変換アプリケーションのような擬似キーボード出力を提供する他のアプリケーションのいずれかからキーボード入力を取得することができる。</p></aside>
+   </div>
    
    <div class="note" id="issue-container-generatedID-94"><div role="heading" class="note-title marker" id="h-note-94" aria-level="3"><span>注記</span></div><p class="">マウスキーのようなキーボード操作によるマウスエミュレータによるアプリケーション (又は、そのアプリケーションの一部) の操作は、キーボードインタフェースからの操作とは見なさない。なぜならば、この場合、プログラムの操作は、キーボードインタフェースからではなく、そのポインティングデバイス インタフェースからの入力によって行われるからである。
    </p></div>
@@ -3305,8 +3313,8 @@ details.respec-tests-details > li {
 </dd>
 
 
-                <dt class="new"><dfn data-lt="keyboard shortcuts|keyboard shortcut" data-dfn-type="dfn" id="dfn-keyboard-shortcuts">キーボードショートカット (keyboard shortcut)</dfn></dt>
-<dd class="new">
+                <dt><dfn data-lt="keyboard shortcuts|keyboard shortcut" data-dfn-type="dfn" id="dfn-keyboard-shortcuts">キーボードショートカット (keyboard shortcut)</dfn></dt>
+<dd>
    					
    
    					
@@ -3357,9 +3365,11 @@ details.respec-tests-details > li {
 <dd>
    
    <p>法的に拘束力のある義務あるいは利益が発生する取引。</p>
-   
-   <p class="example">結婚許可証、株取引 (金銭上及び法的)、遺言、ローン、採用、軍隊への入隊登録、あらゆる契約、など
-   </p>
+					
+   <aside class="example" id="example-13"><div class="marker">
+    <a class="self-link" href="#example-13">例<bdi> 13</bdi></a>
+  </div><p>結婚許可証、株取引 (金銭上及び法的)、遺言、ローン、採用、軍隊への入隊登録、あらゆる契約、など。
+   </p></aside>
    
 </dd>
 
