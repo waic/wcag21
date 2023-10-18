@@ -1,282 +1,322 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><head>
-<meta charset="UTF-8">
-<meta name="generator" content="ReSpec 34.1.8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<style>
-span.example-title{text-transform:none}
-:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
-div.illegal-example{color:red}
-div.illegal-example p{color:#000}
-:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
-aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-.example pre{background-color:rgba(0,0,0,.03)}
-</style>
-<style>
-.issue-label{text-transform:initial}
-.warning>p:first-child{margin-top:0}
-.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
-span.warning{padding:.1em .5em .15em}
-.issue.closed span.issue-number{text-decoration:line-through}
-.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
-.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
-li.task-list-item{list-style:none}
-input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
-.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
-</style>
-<style>
-dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
-.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
-.dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
-.dfn-panel>div{display:flex}
-.dfn-panel a.self-link{font-weight:700;margin-right:auto}
-.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
-.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
-.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
-.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
-.dfn-panel a[href]:hover{border-bottom-width:1px}
-.dfn-panel ul{padding:0}
-.dfn-panel li{margin-left:1em}
-.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
-</style>
-      
-      
-      
-      
-      
-<title>Web Content Accessibility Guidelines (WCAG) 2.1</title>
-      	
-<style id="respec-mainstyle">
-@keyframes pop{
-0%{transform:scale(1,1)}
-25%{transform:scale(1.25,1.25);opacity:.75}
-100%{transform:scale(1,1)}
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><head><meta charset="UTF-8"><meta name="generator" content="ReSpec 21.0.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.ednote-title, div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
 }
-:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
-dfn{font-weight:700}
-a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
-a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
-a.bibref{text-decoration:none}
-.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
-.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
-@supports not (text-decoration:red wavy underline){
-.respec-offending-element:not(pre){display:inline-block}
-.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+div.issue-title { color: #e05252; }
+div.note-title, div.ednote-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+    text-transform: uppercase;
 }
-#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
-a[href].orcid{padding-left:4px;padding-right:4px}
-a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
-ol.tof,ul.tof{list-style:none outside none}
-.caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
-#issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
-details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
-details.respec-tests-details>*{padding-right:2em}
-details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
-details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
-details.respec-tests-details>ul{width:100%;margin-top:-.3em}
-details.respec-tests-details>li{padding-left:1em}
-.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
-:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
-:is(h2,h3)+a.self-link{top:-.2em}
-:is(h4,h5,h6)+a.self-link::before{color:#000}
-@media (max-width:767px){
-dd{margin-left:0}
+div.note, div.issue, div.ednote, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
-@media print{
-.removeOnSave{display:none}
+.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .ednote, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.ednote,  div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note, .ednote {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+input.task-list-item-checkbox {
+    margin: 0 0.35em 0.25em -1.6em;
+    vertical-align: middle;
+}
+
+.issue a.respec-gh-label {
+  padding: 5px;
+  margin: 0 2px 0 2px;
+  font-size: 10px;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  position: relative;
+  bottom: 2px;
+}
+
+.issue a.respec-label-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.issue a.respec-label-light {
+  color: #000;
+  background-color: #fff;
 }
 </style>
-      	
-      	
-      	
-      	
-      
-      
-<link rel="stylesheet" type="text/css" href="guidelines.css">
-      
-   
-<meta name="description" content="Web Content Accessibility Guidelines (WCAG) 2.1 は、ウェブコンテンツをよりアクセシブルにするための広範囲に及ぶ推奨事項を網羅している。
-            Following these guidelines will make content
-            more accessible to a wider range of people with disabilities, including accommodations
-            for blindness and low vision, deafness and hearing loss, limited movement, speech
-            disabilities, photosensitivity, and combinations of these, and some accommodation
-            for learning disabilities and cognitive limitations; but will not address every user
-            need for people with these disabilities. These guidelines address accessibility of
-            web content on desktops, laptops, tablets, and mobile devices. Following these guidelines
-            will also often make Web content more usable to users in general.">
-<link rel="canonical" href="https://www.w3.org/TR/WCAG21/">
-<style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+<style>/* --- PERMALINKS --- */
+
+.permalink {
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  font-size: 10pt;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+  float: right;
+}
+
+.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
+  background:transparent !important;
+  text-decoration:none;
+  font-weight: bold;
+  color:#666 !important;
+}
+
+.permalink abbr {
+  border:0;
+}
 </style>
-<script id="initialUserConfig" type="application/json">{
-  "trace": true,
-  "useExperimentalStyles": true,
-  "doRDFa": "1.1",
-  "includePermalinks": true,
-  "permalinkEdge": true,
-  "permalinkHide": false,
-  "tocIntroductory": true,
-  "specStatus": "REC",
-  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
-  "shortName": "WCAG21",
-  "publishDate": "2023-09-21",
-  "copyrightStart": "2020",
-  "license": "document",
-  "previousPublishDate": "2018-06-05",
-  "previousMaturity": "REC",
-  "prevRecURI": "https://www.w3.org/TR/WCAG/",
-  "edDraftURI": "https://w3c.github.io/wcag/guidelines/22/",
-  "implementationReportURI": "https://www.w3.org/WAI/WCAG21/implementation-report/",
-  "group": "ag",
-  "github": "w3c/wcag",
-  "editors": [
-    {
-      "name": "Andrew Kirkpatrick",
-      "mailto": "akirkpat@adobe.com",
-      "company": "Adobe",
-      "companyURI": "http://www.adobe.com/",
-      "w3cid": 39770,
-      "url": "mailto:akirkpat@adobe.com"
-    },
-    {
-      "name": "Joshue O Connor",
-      "mailto": "josh@interaccess.ie",
-      "company": "Invited Expert, InterAccess",
-      "companyURI": "https://interaccess.org/",
-      "w3cid": 41218,
-      "url": "mailto:josh@interaccess.ie"
-    },
-    {
-      "name": "Alastair Campbell",
-      "mailto": "acampbell@nomensa.com",
-      "company": "Nomensa",
-      "companyURI": "https://www.nomensa.com/",
-      "w3cid": 44689,
-      "url": "mailto:acampbell@nomensa.com"
-    },
-    {
-      "name": "Michael Cooper",
-      "mailto": "cooper@w3.org",
-      "company": "W3C",
-      "companyURI": "https://www.w3.org",
-      "w3cid": 34017,
-      "url": "mailto:cooper@w3.org"
-    }
-  ],
-  "errata": "https://www.w3.org/WAI/WCAG21/errata/",
-  "wg": "Accessibility Guidelines Working Group",
-  "wgURI": "https://www.w3.org/WAI/GL/",
-  "wgPublicList": "public-agwg-comments",
-  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/35422/status",
-  "maxTocLevel": 4,
-  "postProcess": [
-    null
-  ],
-  "localBiblio": {
-    "CAPTCHA": {
-      "href": "http://www.captcha.net/",
-      "publisher": "Carnegie Mellon University",
-      "title": "The CAPTCHA Project"
-    },
-    "GPII": {
-      "href": "https://gpii.net/",
-      "title": "Global Public Inclusive Infrastructure"
-    },
-    "HARDING-BINNIE": {
-      "authors": [
-        "Harding G. F. A.",
-        "Binnie, C.D."
-      ],
-      "date": "2002",
-      "title": "Independent Analysis of the ITC Photosensitive Epilepsy Calibration Test Tape"
-    },
-    "IEC-4WD": {
-      "date": "May 5, 1998",
-      "title": "IEC/4WD 61966-2-1: Colour Measurement and Management in Multimedia Systems and Equipment - Part 2.1: Default Colour Space - sRGB"
-    },
-    "ISO_9241-112": {
-      "uri": "https://www.iso.org/standard/64840.html",
-      "title": "Ergonomics of human-system interaction -- Part 112: Principles for the presentation of information",
-      "publisher": "International Standards Organization"
-    },
-    "ISO_9241-391": {
-      "isoNumber": "9241-391",
-      "href": "https://www.iso.org/standard/56350.html",
-      "title": "Ergonomics of human-system interaction—Part 391: Requirements, analysis and compliance test methods for the reduction of photosensitive seizures",
-      "publisher": "International Standards Organization",
-      "id": "iso_9241-391"
-    },
-    "UNESCO": {
-      "date": "1997",
-      "href": "http://www.unesco.org/education/information/nfsunesco/doc/isced_1997.htm",
-      "title": "International Standard Classification of Education",
-      "id": "unesco"
-    }
-  },
-  "publishISODate": "2023-09-21T00:00:00.000Z",
-  "generatedSubtitle": "W3C Recommendation 21 September 2023"
-}</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-REC"></head>
-   
-   <body class="h-entry informative">
+        
+
+        <title>Web Content Accessibility Guidelines (WCAG) 2.1</title>
+    	
+    	
+    	
+    	
+    	
+        <link rel="stylesheet" type="text/css" href="https://www.w3.org/TR/WCAG21/guidelines.css">
+    <style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: .3em;
+  background-color: white;
+  padding-bottom: .5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-REC"><link rel="canonical" href="https://www.w3.org/TR/WCAG21/"><meta name="description" content="Web Content Accessibility Guidelines (WCAG) 2.1 は、ウェブコンテンツをよりアクセシブルにするための広範囲に及ぶ推奨事項を網羅している。Following these guidelines will make content more accessible to a wider range of people with disabilities, including accommodations for blindness and low vision, deafness and hearing loss, limited movement, speech disabilities, photosensitivity, and combinations of these, and some accommodation for learning disabilities and cognitive limitations; but will not address every user need for people with these disabilities. These guidelines address accessibility of web content on desktops, laptops, tablets, and mobile devices. Following these guidelines will also often make Web content more usable to users in general."></head>
+    <body class="h-entry">
 <aside class="trnote">
 <p>この文書は、<a href="https://www.w3.org/TR/2023/REC-WCAG21-20230921/">2023 年 9 月 21 日付けの W3C 勧告 Web Content Accessibility Guidelines (WCAG) 2.1</a>を、<a href="https://waic.jp/committee/wg4/">ウェブアクセシビリティ基盤委員会 (WAIC) の翻訳ワーキンググループ</a>が翻訳して公開しているものです。この文書の正式版は、W3C のサイトにある英語版です。正確な内容については、W3C が公開している原文 (英語) をご確認ください。この翻訳文書は作業進行中です。また、あくまで参考情報であり、翻訳上の誤りが含まれていることがあります。翻訳上の誤りを見つけられた場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIpvogLx8kGIMewhQ6MzhG2pOCQZ50iIBViGg8pUrRJuslKg/viewform?entry.685195438=https%3A%2F%2Fwaic.jp%2ftranslations%2fWCAG21%2f" id="file-issue">翻訳に関するお問い合わせ (Google フォーム)</a>からご連絡ください。</p>
 <p>この翻訳文書の利用条件については、<a href="https://waic.jp/license-for-translated-documents/">WAICが提供する翻訳文書のライセンス</a>をご覧ください。</p>
 </aside>
-<div class="head">
-    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
-  </a></p>
-    <h1 id="title" class="title">Web Content Accessibility Guidelines (WCAG) 2.1</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#REC">W3C Recommendation</a> <time class="dt-published" datetime="2023-09-21">21 September 2023</time></p>
-    <details open="">
-      <summary>この文書の更なる詳細</summary>
-      <dl>
-        <dt>このバージョン:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/TR/2023/REC-WCAG21-20230921/">https://www.w3.org/TR/2023/REC-WCAG21-20230921/</a>
-              </dd>
-        <dt>最新バージョン:</dt><dd>
-                <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
-              </dd>
-        <dt>最新の編集者バージョン:</dt><dd><a href="https://w3c.github.io/wcag/guidelines/22/">https://w3c.github.io/wcag/guidelines/22/</a></dd>
+    <div class="head">
+  <a href="https://www.w3.org/" class="logo">
+      <img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48">
+  </a>
+  <h1 id="title" class="title p-name">Web Content Accessibility Guidelines (WCAG) 2.1</h1>
+  
+  <h2 id="w3c-recommendation-05-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Recommendation <time class="dt-published" datetime="2023-09-21">21 September 2023</time></h2>
+  <dl>
+    <dt>このバージョン:</dt><dd><a class="u-url" href="https://www.w3.org/TR/2023/REC-WCAG21-20230921/">https://www.w3.org/TR/2023/REC-WCAG21-20230921/</a></dd><dt>最新バージョン:</dt><dd><a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
+    <dt>最新の編集者バージョン:</dt><dd><a href="https://w3c.github.io/wcag/guidelines/22/">https://w3c.github.io/wcag/guidelines/22/</a></dd>
         <dt>履歴:</dt><dd>
                     <a href="https://www.w3.org/standards/history/WCAG21/">https://www.w3.org/standards/history/WCAG21/</a>
                   </dd><dd>
                     <a href="https://github.com/w3c/wcag/commits/">Commit history</a>
                   </dd>
-        
-        <dt>実装報告書:</dt><dd>
-                <a href="https://www.w3.org/WAI/WCAG21/implementation-report/">https://www.w3.org/WAI/WCAG21/implementation-report/</a>
-              </dd>
-        
-        
-        <dt>前の勧告:</dt><dd><a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
+    <dt>実装報告書:</dt><dd><a href="https://www.w3.org/WAI/WCAG21/implementation-report/">https://www.w3.org/WAI/WCAG21/implementation-report/</a></dd>
+    
+    
+    <dt>前の勧告:</dt><dd><a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
         <dt>編集者:</dt><dd class="editor p-author h-card vcard" data-editor-id="39770">
     <a class="ed_mailto u-email email p-name" href="mailto:akirkpat@adobe.com">Andrew Kirkpatrick</a> (<span class="p-org org h-org">Adobe</span>)
   </dd><dd class="editor p-author h-card vcard" data-editor-id="41218">
@@ -295,9 +335,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <a href="https://github.com/w3c/wcag/issues/">open issues</a>)
       </dd><dd><a href="mailto:public-agwg-comments@w3.org?subject=%5BWCAG21%5D%20YOUR%20TOPIC%20HERE">public-agwg-comments@w3.org</a> <kbd>[WCAG21] <em>… メッセージトピック …</em></kbd>の件名にて (<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-agwg-comments">archives</a>)</dd>
         <dt>エラッタ:</dt><dd><a href="https://www.w3.org/WAI/WCAG21/errata/">Errata exists</a>.</dd>
-        
-      </dl>
-    </details>
+    
+  </dl>
     <p>
           <a href="https://www.w3.org/Translations/?technology=WCAG21">
             <strong>translations</strong></a> も参照できる。
