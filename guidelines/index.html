@@ -3644,13 +3644,13 @@ details.respec-tests-details > li {
    
    <ul>
       
-      <li>RsRGB &lt;= 0.03928 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+      <li>RsRGB <= 0.04045 の場合 <strong>R</strong> = RsRGB/12.92 、そうでない場合 <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
       </li>
       
-      <li>GsRGB &lt;= 0.03928 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+      <li>GsRGB <= 0.04045 の場合 <strong>G</strong> = GsRGB/12.92 、そうでない場合 <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
       </li>
       
-      <li>BsRGB &lt;= 0.03928 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+      <li>BsRGB <= 0.04045 の場合 <strong>B</strong> = BsRGB/12.92 、そうでない場合 <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
       </li>
       
    </ul>
@@ -3667,11 +3667,13 @@ details.respec-tests-details > li {
       
    </ul>
    
-   <p>^ という記号は、指数演算子である(計算式は、[<cite><a class="bibref" href="#bib-sRGB">sRGB</a></cite>] 及び [<cite><a class="bibref" href="#bib-IEC-4WD">IEC-4WD</a></cite>]を参考にしている)。
+   <p>^ という記号は、指数演算子である(計算式は、[<cite><a class="bibref" data-link-type="biblio" href="#bib-srgb" title="Multimedia systems and equipment - Colour measurement and management - Part 2-1: Colour management - Default RGB colour space - sRGB">SRGB</a></cite>] を参考にしている)。
    </p>
 
   </div></div>
-  
+
+  <div class="note" role="note" id="issue-container-generatedID-120"><div role="heading" class="note-title marker" id="h-note-120" aria-level="3"><span>注記</span></div><p class="">2021 年 5 月以前は、定義にある 0.04045 の値が異なっていた (0.03928)。これは、仕様の古いバージョンから取られたものであり、更新されている。本ガイドラインの文脈における計算には、実用上の影響はない。</p></div>
+		
    <div class="note" id="issue-container-generatedID-121"><div role="heading" class="note-title marker" id="h-note-121" aria-level="3"><span>注記</span></div><p class="">ウェブコンテンツを閲覧するのに今日用いられているほとんどすべてのシステムは、sRGB 符号化を前提としている。コンテンツを処理して表示するのに別の色空間が用いられている事が分かっているのでない限り、コンテンツ制作者は sRGB 色空間を用いて検証するべきである。もしその他の色空間を用いるのであれば、<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast">Understanding Success Criterion 1.4.3</a> を参照。
    </p></div>
    
@@ -3681,7 +3683,7 @@ details.respec-tests-details > li {
    <div class="note" id="issue-container-generatedID-123"><div role="heading" class="note-title marker" id="h-note-123" aria-level="3"><span>注記</span></div><p class="">コントラストと閃光を検証する際に、この計算を自動で行うツールが利用できる。
    </p></div>
    
-   <div class="note" id="issue-container-generatedID-124"><div role="heading" class="note-title marker" id="h-note-124" aria-level="3"><span>注記</span></div><p class=""><a href="https://www.w3.org/TR/WCAG21/relative-luminance.xml">MathML version of the relative luminance definition</a> も参照できる。
+   <div class="note" id="issue-container-generatedID-124"><div role="heading" class="note-title marker" id="h-note-124" aria-level="3"><span>注記</span></div><p class="">計算式を表示するのに、<a href="https://www.w3.org/TR/WCAG21/relative-luminance.html">MathML を用いて相対輝度の定義を与える別のページ</a>が利用できる。
    </p></div>
    
 </dd>
@@ -3702,8 +3704,10 @@ details.respec-tests-details > li {
    <p>ソフトウェアがウェブコンテンツ内のコンポーネントの機能の識別を可能にするためのテキスト又は番号。
    </p>
    
-   <p class="example">画像がハイパーリンク、コマンドボタン、又はチェックボックスとしての機能を果たすかどうかを示す番号。
-   </p>
+   <aside class="example" id="example-24"><div class="marker">
+    <a class="self-link" href="#example-24">例<bdi> 24</bdi></a>
+  </div><p>画像がハイパーリンク、コマンドボタン、又はチェックボックスとしての機能を果たすかどうかを示す番号。
+   </p></aside>
    
 </dd>
 
@@ -3713,8 +3717,10 @@ details.respec-tests-details > li {
    
    <p>使うと同じ結果が得られること。</p>
    
-   <p class="example">あるウェブページ上にある "search" ボタンと他のウェブページ上にある "find" ボタンは、どちらもキーワードを入力するテキストフィールドがあり、そのウェブサイトにある入力されたキーワードに関係のあるコンテンツをリスト表示する。この場合、同じ機能を有しながらも、ラベルは一貫していないことになる。
-   </p>
+   <aside class="example" id="example-25"><div class="marker">
+    <a class="self-link" href="#example-25">例<bdi> 25</bdi></a>
+  </div><p>あるウェブページ上にある "search" ボタンと他のウェブページ上にある "find" ボタンは、どちらもキーワードを入力するテキストフィールドがあり、そのウェブサイトにある入力されたキーワードに関係のあるコンテンツをリスト表示する。この場合、同じ機能を有しながらも、ラベルは一貫していないことになる。
+   </p></aside>
    
 </dd>
 
