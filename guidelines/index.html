@@ -3978,7 +3978,7 @@ details.respec-tests-details > li {
    <p>コンテンツの一部分で、特定の機能を実現するための単一のコントロールとして利用者が知覚するもの。
    </p>
    
-   <div class="note" id="issue-container-generatedID-135"><div role="heading" class="note-title marker" id="h-note-135" aria-level="3"><span>注記</span></div><p class="">複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいうコンポーネントは、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。
+   <div class="note" id="issue-container-generatedID-135"><div role="heading" class="note-title marker" id="h-note-135" aria-level="3"><span>注記</span></div><p class="">複数のユーザインタフェース コンポーネントが、単一のプログラム要素で実装されることもある。ここでいう「コンポーネント」は、プログラムの手法と結びついたものではなく、利用者が別々のコントロールとして知覚するものを指す。
    </p></div>
    
    <div class="note" id="issue-container-generatedID-136"><div role="heading" class="note-title marker" id="h-note-136" aria-level="3"><span>注記</span></div><p class="">ユーザインタフェース コンポーネントには、フォーム要素、リンクだけでなく、スクリプトで生成されるコンポーネントが含まれる。
@@ -3987,14 +3987,16 @@ details.respec-tests-details > li {
    <div class="note" id="issue-container-generatedID-137"><div role="heading" class="note-title marker" id="h-note-137" aria-level="3"><span>注記</span></div><p class="">ここでの「コンポーネント」又は「ユーザインタフェース コンポーネント」は、「ユーザインターフェース要素」とも呼ばれる。
    </p></div>
    
-   <p class="example">アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。
-   </p>
+   <aside class="example" id="example-36"><div class="marker">
+    <a class="self-link" href="#example-36">例<bdi> 36</bdi></a>
+  </div><p>アプレットには、コンテンツ内を行単位、ページ単位、又はランダムアクセスで移動するために用いられる「コントロール」がある。これらには、いずれも名前 (name) を割り当て、個別に設定できるようにする必要があるため、それぞれが「ユーザインタフェース コンポーネント」となる。
+   </p></aside>
    
 </dd>
 
             	
-            	<dt class="new"><dfn data-dfn-type="dfn" id="dfn-user-inactivity">利用者の無操作 (user inactivity)</dfn></dt>
-<dd class="new">
+            	<dt><dfn data-dfn-type="dfn" id="dfn-user-inactivity">利用者の無操作 (user inactivity)</dfn></dt>
+<dd>
   
   <p>利用者がいかなる操作も行わない時間が続くこと。</p>
 	<p>そのトラッキングの方法は、ウェブサイトやアプリケーションによって決定される。</p>
@@ -4051,17 +4053,25 @@ details.respec-tests-details > li {
    <div class="note" id="issue-container-generatedID-142"><div role="heading" class="note-title marker" id="h-note-142" aria-level="3"><span>注記</span></div><p class="">このガイドラインの適合範囲に含まれる対象となるウェブページとみなされるためには、リソースが「埋め込まれていない」リソースでなければならない。
    </p></div>
    
-   <p class="example">単体のウェブリソースであり、埋め込まれている画像及びメディアのすべてを含んだもの。</p>
+   <aside class="example" id="example-37"><div class="marker">
+    <a class="self-link" href="#example-37">例<bdi> 37</bdi></a>
+  </div><p>単体のウェブリソースであり、埋め込まれている画像及びメディアのすべてを含んだもの。</p></aside>
    
-   <p class="example">Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mail に存在しているが、受信トレイ、連絡先、カレンダーがある。受信トレイ、連絡先、又はカレンダーを表示するリンク又はボタンが提供されているが、全体としてページの URI は変更されない。
-   </p>
+   <aside class="example" id="example-38"><div class="marker">
+    <a class="self-link" href="#example-38">例<bdi> 38</bdi></a>
+  </div><p>Asynchronous JavaScript and XML (AJAX) を用いたウェブメールのプログラム。そのプログラム全体は http://example.com/mail に存在しているが、受信トレイ、連絡先、カレンダーがある。受信トレイ、連絡先、又はカレンダーを表示するリンク又はボタンが提供されているが、全体としてページの URI は変更されない。
+   </p></aside>
    
-   <p class="example">カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。
-   </p>
+   <aside class="example" id="example-39"><div class="marker">
+    <a class="self-link" href="#example-39">例<bdi> 39</bdi></a>
+  </div><p>カスタマイズ可能なポータルサイトで、利用者が様々なコンテンツモジュールのセットから表示させるコンテンツを選択できるようなもの。
+   </p></aside>
    
-   <p class="example">ブラウザで "http://shopping.example.com/" へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは 1 ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの 1 ページなのかもしれない。
-   </p>
-   
+   <aside class="example" id="example-40"><div class="marker">
+    <a class="self-link" href="#example-40">例<bdi> 40</bdi></a>
+  </div><p>ブラウザで "http://shopping.example.com/" へ行くと、映画のようなインタラクティブなショッピング環境になる。そこでは、視覚的に店内を移動して、店内の棚から商品をドラッグして、目の前にある視覚的な買物カゴに商品を入れる。商品をクリックすると、同時に仕様書が浮き上がるように表示される。これは 1 ページだけのウェブサイトかもしれないし、ウェブサイトの中のほんの 1 ページなのかもしれない。
+   </p></aside>
+
 </dd>
 
 
