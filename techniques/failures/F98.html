@@ -82,7 +82,7 @@ if (window.matchMedia &amp;&amp; window.matchMedia("(pointer:coarse)").matches) 
   target.addEventListener('click', ...);
   ...
 }
-				</code></pre><p>同様に、タッチスクリーンが検知されたときに、関連する／必要なキーボードのイベントリスナー (例えば、タブインターフェースなど複雑なウィジェットに対して正しくキーボードインタラクションを行うためのもの) を省略するウェブコンテンツは、タッチデバイスという前提のもとでは、キーボードのサポートは必要ないであろう。
+				</code></pre><p>同様に、タッチスクリーンが検知されたときに、関連する／必要なキーボードのイベントリスナー (例えば、タブインタフェースなど複雑なウィジェットに対して正しくキーボードインタラクションを行うためのもの) を省略するウェブコンテンツは、タッチデバイスという前提のもとでは、キーボードのサポートは必要ないであろう。
                </p><pre><code>
 /* inferring the presence of a touchscreen based on
    the navigator.maxTouchPoints property defined in
@@ -99,7 +99,7 @@ if (window.PointerEvent &amp;&amp; ('maxTouchPoints' in navigator) &amp;&amp;
 }
 				</code></pre><div class="note">
                   <div role="heading" class="note-title marker" aria-level="4">注記</div>
-                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボードの失敗<em>も併せて</em>もたらすが、それはタッチスクリーンインターフェースも検知された状況でのみ、該当する。
+                  <p>一般的に、これらのアプローチは、達成基準 2.1.1 キーボードの失敗<em>も併せて</em>もたらすが、それはタッチスクリーンインタフェースも検知された状況でのみ、該当する。
                   </p>
                </div>
             </section>
